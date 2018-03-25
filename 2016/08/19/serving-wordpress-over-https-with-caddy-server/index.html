@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>Serving WordPress over HTTPS with Caddy Server &middot; Yo-Dave</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/clajburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <a class="pure-menu-heading" href="https://yo-dave.com/">Yo-Dave</a>
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2018, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Clajburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Serving WordPress over HTTPS with Caddy Server</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>19 Aug 2016 6:02:38 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/blogging">blogging</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/caddy">caddy</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/wordpress">wordpress</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>The <a href="https://caddyserver.com/">Caddy</a> server is a relatively new, easy-to-use server written in the <a href="https://golang.org/">Go programming language</a>. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (<a href="http://info.ssl.com/article.aspx?id=10241">Secure Sockets Layer</a>/<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>) certificates automatically from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> to let you serve a site with<a href="https://en.wikipedia.org/wiki/HTTPS"> HTTPS</a> by default. The project is open source and the certificates are free.</p>
+
+<p>Of course, <a href="https://wordpress.org/">WordPress</a> is a very popular blogging platform. Caddy provides some <a href="https://github.com/caddyserver/examples/tree/master/wordpress">guidance</a> on getting WordPress up and running on the server. However, it wasn&rsquo;t enough for me. Here&rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.</p>
+
+<p></p>
+
+<h1 id="some-preliminaries">Some Preliminaries</h1>
+
+<p>Starting from a freshly imaged and updated Ubuntu 16.04 installation, do the following.</p>
+
+<pre><code class="language-bash">mkdir downloads
+mkdir wordpress
+</code></pre>
+
+<p>Increase the number of files that the operating system can open. Caddy complains if the limit is below 8K. I have run with a lower limit; you probably can too. I just wanted to get rid of the nag. To do so, you need to edit a configuration file</p>
+
+<pre><code class="language-bash">sudo nano /etc/security/limits.conf
+</code></pre>
+
+<p>Then add the following two lines near the bottom of the file:</p>
+
+<pre><code class="language-shell">*   soft    nofile    8192
+*   hard    nofile    8192
+</code></pre>
+
+<p>Reboot to make the changes effective.</p>
+
+<h1 id="install-caddy">Install Caddy</h1>
+
+<p>With the preliminaries out of the way, it&rsquo;s time to install Caddy. Caddy can be installed with many optional packages. Read the docs. For our purposes, a &ldquo;plain vanilla&rdquo; install will work fine.</p>
+
+<h2 id="download-and-install">Download and Install</h2>
+
+<pre><code class="language-bash">curl https:/getcaddy.com | bash
+</code></pre>
+
+<p>The installation script will figure out the OS and architecture to use then build and download the appropriate version. On my system it looked something like this:</p>
+
+<pre><code class="language-shell">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  4801  100  4801    0     0    133      0  0:00:36  0:00:35  0:00:01   133
+Downloading Caddy for linux/amd64...
+https://caddyserver.com/download/build?os=linux&amp;arch=amd64&amp;arm=&amp;features=
+Extracting...
+Putting caddy in /usr/local/bin (may require password)
+[sudo] password for user:
+Caddy 0.9.0
+Successfully installed
+</code></pre>
+
+<p>As you can see, you will need to supply your <code>sudo</code> password near the end of the installation process. You can verify the installation location of the program like this.</p>
+
+<pre><code class="language-bash">which caddy
+/usr/local/bin/caddy
+</code></pre>
+
+<h2 id="set-up-a-caddyfile">Set Up a Caddyfile</h2>
+
+<p>Caddy operation is controlled by a configuration file, just like most other servers. There is plenty of documentation of the options on the Caddy site itself. For now, create a Caddy file in your home directory and edit it.</p>
+
+<pre><code class="language-bash">nano Caddyfile
+</code></pre>
+
+<p>Make it look like this.</p>
+
+<pre><code class="language-bash">www.example.com {
+    redir https://example.com{uri}
+}
+
+example.com {
+    root wordpress
+    log access.log
+    errors error.log
+
+  gzip
+
+  header / {
+    # Enable HTTP Strict Transport Security (HSTS) to force clients to always
+    # connect via HTTPS (not recommended if only experimenting with HTTPS)
+    Strict-Transport-Security  &quot;max-age=31536000;&quot;
+    # Enable cross-site filter (XSS) and tell browser to block detected attacks
+    X-XSS-Protection &quot;1; mode=block&quot;
+    # Prevent some browsers from MIME-sniffing a response away from the declared Content-Type
+    X-Content-Type-Options &quot;nosniff&quot;
+    # Disallow the site to be rendered within a frame (clickjacking protection)
+    X-Frame-Options &quot;DENY&quot;
+    # Disallow loading of resources from other sites
+#    Content-Security-Policy &quot;default-src 'self'; script-src 'self' maxcdn.bootstrapcdn.com code.jq$
+  }
+
+    # PHP-FPM with Unix socket
+    fastcgi / /var/run/php/php7.0-fpm.sock php
+
+    # PHP-FPM with regular udp socket
+#    fastcgi / 127.0.0.1:9000 php
+
+    # Routing for WordPress
+    rewrite / {
+        to {path} {path}/ /index.php?{query}
+    }
+}
+</code></pre>
+
+<p>This Caddyfile is based on one I found <a href="https://denbeke.be/blog/servers/caddy-server-and-wordpress-php-fpm/">here</a>. It is pretty obvious what is happening here.</p>
+
+<ul>
+<li>On your system, replace &ldquo;example.com&rdquo; with your domain name.</li>
+<li>The root directory of the served site is in the directory <code>wordpress</code>.</li>
+<li>The server will log accesses and errors to the files mentioned.</li>
+<li>The group of headers are just some standards used to protect the site from some kinds of attacks.</li>
+</ul>
+
+<p>The very long, commented out <code>Content-Security-Policy</code> header restricts the source of resources like scripts, images, fonts, etc. that can be used by the site. It is just a starting point that can be altered later. As it is, it will interfere with the normal operation of WordPress. Hence, it is commented out.</p>
+
+<p><code>The X-Frame-Options</code> header may cause you some issues too, depending on how you use the WordPress dashboard. It prevents contents of your site from being displayed in a frame on another HTML page. Some commands in the WordPress dashboard try to do that. If you have issues, just comment out the line in the Caddyfile.</p>
+
+<p>The rest hints at things to come that will be discussed later.</p>
+
+<h2 id="add-a-simple-home-page">Add a Simple Home Page</h2>
+
+<p>Create a home page for the site.</p>
+
+<pre><code class="language-bash">nano wordpress/index.html
+</code></pre>
+
+<p>Add the following contents to the file:</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;My Caddy Site&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Here's the Site&lt;/h1&gt;
+            &lt;p&gt;Pretty neat, huh?&lt;/p&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+<p>We plan to launch WordPress and the server as a &ldquo;normal&rdquo; user, that is, one without root privileges. However, Linux typically does not allow user-level programs to listen to ports below 1024. There are several ways this could be handled, for example, run the server configured to listen to higher ports. That&rsquo;s inconvenient in my opinion. One way to allow a user level program to listen on ports 80 and 443 (HTTP and HTTPS) is to use the <code>setcap</code> program.</p>
+
+<pre><code class="language-bash">sudo setcap cap_net_bind_service=+ep /usr/local/bin/caddy
+</code></pre>
+
+<h1 id="start-it-up">Start It Up</h1>
+
+<p>You&rsquo;re now ready to start Caddy and serve your site. When you start Caddy for the first time, you will be asked to enter your email address to aid in account recovery if it is ever needed later.</p>
+
+<pre><code class="language-bash">caddy
+Activating privacy features...
+Your sites will be served over HTTPS automatically using Let's Encrypt.
+By continuing, you agree to the Let's Encrypt Subscriber Agreement at:
+  https://letsencrypt.org/documents/LE-SA-v1.0.1-July-27-2015.pdf
+Please enter your email address so you can recover your account if needed.
+You can leave it blank, but you'll lose the ability to recover your account.
+Email address: Lost in Translation
+Activating privacy features... done.
+https://www.example.com
+https://example.com
+http://www.example.com
+http://example.com
+</code></pre>
+
+<p>If you point your browser to your site you should see the little web page we created above. But the exciting part is the little green lock icon that should be present next to the URL indicating you&rsquo;ve successfully generated and retrieved SSL/TLS certificates from Let&rsquo;s Encrypt.</p>
+
+<p>When I use the Firefox web console to monitor retrieval of the page, there are no errors or warnings. When I shut down the server (<code>Ctrl-C</code>), an new file, <code>access.log</code>, has appeared in my home directory containing details about the recent accesses from my browser. There is no <code>errors.log</code> file, indicating that caddy did not detect any errors. Woohoo!</p>
+
+<p>So, that should be working. If you experience any errors, fix them before moving on.</p>
+
+<h1 id="install-mariadb">Install MariaDB</h1>
+
+<p>WordPress requires a database to operate. The <a href="https://wordpress.org/about/requirements/">requirements page</a> lists two possible choices.</p>
+
+<ul>
+<li><a href="https://www.mysql.com/">MySQL</a> version 5.6 or greater</li>
+<li><a href="https://mariadb.org/">MariaDB</a> version 10.0 or greater</li>
+</ul>
+
+<p>I didn&rsquo;t know much about MariaDB, so I looked into it a little. It&rsquo;s a drop in replacement for MySQL from the same folks who originally developed MySQL. So&hellip;, let&rsquo;s give it a try.</p>
+
+<p>Since MariaDB is not in the Ubuntu package repositories, the <a href="https://downloads.mariadb.org/mariadb/repositories/#mirror=jmu">MariaDB site</a> will walk you through how to get it. These are the commands suggested to install MariaDB on my server.</p>
+
+<pre><code class="language-bash">sudo apt install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mariadb/repo/10.1/ubuntu xenial main'
+sudo apt update 
+sudo apt install mariadb-server
+</code></pre>
+
+<p>You should use their tool to get the latest stable version for your distro and architecture.</p>
+
+<p>The installation will take several minutes. During installation, you will be asked to provide a root password for the database. Keep it somewhere safe.</p>
+
+<p>After installation is complete, you should be able to do a<code>ps aux | grep 'mysql'</code> and see a <code>mysql</code> process somewhere in the list of running processes.</p>
+
+<h3 id="let-s-create-the-wordpress-database">Let&rsquo;s Create the WordPress Database</h3>
+
+<p>Now is a fine time to create the database that WordPress will use. Log into the MariaDB shell.</p>
+
+<pre><code class="language-bash">mysql -u root -p
+</code></pre>
+
+<p>You will be prompted to enter the database root password you created when installing MariaDB. Next, enter the following contents at the shell prompt.</p>
+
+<pre><code class="language-bash">CREATE DATABASE wordpress;
+CREATE USER wordpressuser@localhost;
+SET PASSWORD FOR wordpressuser@localhost= PASSWORD(&quot;password&quot;);
+GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+exit
+</code></pre>
+
+<p>After each entry you will receive a confirmation message that is not shown here. Those messages should start with&rdquo;<code>Query OK</code>&rdquo;.</p>
+
+<p>This creates a database named <code>wordpress</code> and a user of that database named <code>wordpressuser</code>. The user will have the password <code>password</code>. Of course, use something unique for your own password. Don&rsquo;t forget, you need to enter it in two places.</p>
+
+<h1 id="install-php">Install PHP</h1>
+
+<p>This is where I had the most difficulty.</p>
+
+<p>You can show which package will be installed by default by typing</p>
+
+<pre><code class="language-bash">sudo apt policy php
+</code></pre>
+
+<p>On my system, this output</p>
+
+<pre><code class="language-bash">php:
+ Installed: (none)
+ Candidate: 1:7.0+35ubuntu6
+ Version table:
+ *** 1:7.0+35ubuntu6 500
+        500 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 Packages
+        500 http://us.archive.ubuntu.com/ubuntu xenial/main i386 Packages
+        100 /var/lib/dpkg/status
+</code></pre>
+
+<p>I&rsquo;m sure you know the drill by now.</p>
+
+<pre><code class="language-bash">sudo apt install php php7.0-mysqlnd
+</code></pre>
+
+<p>(Note: On Ubuntu 14.04, the command to install php will install the php<strong>5</strong> package. Doing so includes a lot of other stuff, like setting up a version of the apache server, which takes over the port you want to use to serve caddy. Different installation instructions for that version.)</p>
+
+<p>I had to install the updated <code>php7.0-mysqlnd</code> package because WordPress would not operate with the version installed in the main package. Still don&rsquo;t know why.</p>
+
+<p>You also need to add your user to the <code>www-data</code> group.</p>
+
+<pre><code class="language-bash">sudo usermod -a -G www-data username
+</code></pre>
+
+<ul>
+<li>Now, edit <code>/etc/php/7.0/fpm/pool.d/www.conf</code>.</li>
+<li>Search (<code>Ctrl-W</code> on nano) for the line that says <code>user=www-data</code> and change it to <code>user=username</code> where you replace username with the name of the user on your system.</li>
+<li>Reboot.</li>
+</ul>
+
+<h1 id="install-wordpress">Install WordPress</h1>
+
+<p>Download the latest version of the WordPress system, unzip it, and modify the configuration to reflect the choices you made when setting up the database.</p>
+
+<pre><code class="language-bash">cd downloads
+wget https://wordpress.org/latest.tar.gz
+cd ..
+tar -xzvf downloads/latest.tar.gz
+cp wordpress/wp-config-sample.php wordpress/wp-config.php
+nano wordpress/wp-config.php
+</code></pre>
+
+<p>In the <code>wp-config.php</code> file, replace the database name, database user and user password with the values you set earlier. While the editor is open, go the block of code with the comment saying &ldquo;Authentication Unique Keys and Salts&amp;&rdquo; and point your browser at the location mentioned ( <a href="https://api.wordpress.org/secret-key/1.1/salt/">https://api.wordpress.org/secret-key/1.1/salt/</a>). When you open that page, it will display a code block with new, unique values you can use. Just cut and paste it right over the top of the pre-existing dummy values. Save and exit.</p>
+
+<p>OK. You are ready for WordPress to start installing. Start Caddy again and point your browser at &ldquo;<code>example.com/readme.html</code>&rdquo;, replacing &ldquo;<code>example.com</code>&rdquo; with your domain name. You should see a welcome message, including a section on the &ldquo;Famous 5-minute install&rdquo;. In step 2, click the link to &ldquo;<code>&lt;span class=&quot;file&quot;&gt;wp-admin/install.php&lt;/span&gt;</code>&rdquo;.</p>
+
+<p>A new page will appear prompting you to select your language.</p>
+
+<p>After selecting a language, a new page will load with spaces to input a bunch of information like the site name (what WordPress displays) a root user name for WordPress, a password for that user (the installation program will suggest a strong one for you), and an email address.</p>
+
+<p>After you&rsquo;ve filled in the information and saved a copy of the password somewhere, click the button that says &ldquo;Install WordPress&rdquo;;</p>
+
+<p>In a few seconds, you should be shown a new page indicating success and telling you to log in with the new user name and password. Click the button that says &ldquo;Log In&rdquo;;. Upon a successful log in, you will be taken to the WordPress dashboard for your site, ready to customize and start posting.</p>
+
+<p>Since you used Caddy to serve the site, you should also see a green lock icon somewhere on your URL address line. Happy Posting!</p>
+
+<p>Back in your SSH client, you will likely want to be able to log off your server, but leave Caddy and WordPress running. The <a href="http://manpages.ubuntu.com/manpages/precise/man1/nohup.1.html">nohup</a> command is what you want. First stop the server you started earlier with the <code>caddy</code> command. Then enter the following command.</p>
+
+<pre><code class="language-bash">nohup caddy &amp;
+</code></pre>
+
+<p>This will start the server in a separate process and allow you to log off.</p>
+
+<p>This has been a long post, but the steps are pretty simple. I think using Caddy is actually easier to set up than the <a href="https://nginx.org/en/">nginx</a> or <a href="https://httpd.apache.org/">Apache</a> servers. And so far, MariaDB has been working without complaint.</p>
+
+<p>Perhaps you&rsquo;re wondering why this site isn&rsquo;t running on Caddy yet. The reasons are long and arcane and have nothing to do with the technology. Perhaps some day soon though.</p>
+
+<p>There&rsquo; plenty to write about, so tell people what you think and know.</p>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2016/08/17/font-pairings/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2016/08/17/font-pairings/">Font Pairings</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2016/08/26/whats-the-deal-with-flash-sales/">What&#39;s the Deal with Flash Sales?</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2016/08/26/whats-the-deal-with-flash-sales/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

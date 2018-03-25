@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>Re-sizing an Interface in JavaFX and Clojure &middot; Yo-Dave</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/clajburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <a class="pure-menu-heading" href="https://yo-dave.com/">Yo-Dave</a>
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2018, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Clajburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Re-sizing an Interface in JavaFX and Clojure</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Feb 2013 9:48:11 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/javafx">javafx</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/swing">swing</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Since <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="JavaFX overview">JavaFX</a> is the <a href="http://www.oracle.com/technetwork/java/javafx/overview/faq-1446554.html#6" title="JavaFX FAQ">future of the user interface for Java</a>, I&rsquo;ve started trying to learn it. Since I&rsquo;m also learning <a href="http://clojure.org/" title="Clojure home page">Clojure</a>, I&rsquo;m doing the work in that language.</p>
+
+<p>One of the things I&rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</p>
+
+<p>Well, one of the tasks I&rsquo;ve set for myself recently was the creation of an interface for the game of tic-tac-toe. Such an interface should look something like the following:</p>
+
+<p>(<strong>NOTE</strong>: The original image and the original program have been lost. The following image is a reasonable facsimile.)</p>
+
+<p><a href="https://github.com/clartaq/yo-dave/raw/master/images/2013-05-08-PlaySnip.png"><img src="https://github.com/clartaq/yo-dave/raw/master/images/2013-05-08-PlaySnip.png" alt="The startup screen for the tic-tac-toe application." /><br><small>The startup screen for the tic-tac-toe application.</small></a></p>
+
+<p>When the window is re-sized, all of the requirements listed above are met.</p>
+
+<p>Here&rsquo;s the listing of the program that produces the interface shown above. There is no logic for actually playing the game, just re-sizing and re-drawing the board (with some hard-wired symbols).</p>
+
+<pre><code class="language-clojure">(ns titato.core
+  (:gen-class
+   :extends javafx.application.Application)
+  (:import
+   [ javafx.application Application ]
+   [ javafx.beans.value ChangeListener ]
+   [ javafx.scene Scene ]
+   [ javafx.scene.canvas Canvas ]
+   [ javafx.scene.layout Pane ]
+   [ javafx.scene.paint Color ]))
+
+;; define the board with some &quot;hard-wired&quot; symbols for demo only
+(def board (hash-map 1 &quot;1&quot; 2 &quot;2&quot; 3 &quot;o&quot; 4 &quot;4&quot; 5 &quot;x&quot; 6 &quot;6&quot; 7 &quot;7&quot; 8 &quot;o&quot; 9 &quot;9&quot;))
+
+(def window-width 400)
+(def window-height 300)
+
+(def o-color (Color. 0.75 1.0 0.75 1.0))
+(def x-color (Color. 0.65 0.75 1.0 1.0))
+(def board-color (Color. 1.0 1.0 0.8 1.0))
+(def line-color (Color/SLATEGRAY))
+
+(defn draw-o [canvas x y radius stroke-width]
+  (let [gc (.getGraphicsContext2D canvas)]
+    (doto gc
+      (.setStroke o-color)
+      (.setLineWidth stroke-width)
+      (.strokeOval (- x radius) (- y radius) (+ 1 (* 2 radius)) (+ 1 (* 2 radius))))))
+
+(defn draw-x [canvas x y radius stroke-width]
+  (let [gc (.getGraphicsContext2D canvas)]
+    (doto gc
+      (.setStroke x-color)
+      (.setLineWidth stroke-width)
+      (.strokeLine (- x radius) (- y radius) (+ x radius) (+ y radius))
+      (.strokeLine (- x radius) (+ y radius) (+ x radius) (- y radius)))))
+
+(defn filled-spaces
+  &quot;Return a map of those board positions containing x's or o's.&quot;
+  [board]
+  (select-keys board (for [[k v] board :when (or (= v &quot;o&quot;) ( = v &quot;x&quot;))] k)))
+
+(defn board-to-col-row
+  &quot;Convert board position to zero-based column and row positions. Return
+   a vector or the column and row. Valid input consists of the integers from
+   1 to 0 inclusive.&quot;
+  [pos]
+  (let [pm1 (dec pos)
+        col (mod pm1 3)
+        row (quot pm1 3)]
+    [col row]))
+
+(defn redraw-board [canvas]
+  (let [gc (.getGraphicsContext2D canvas)
+        w (.getWidth canvas)
+        h (.getHeight canvas)
+        board-size (* 0.8 (min w h))
+        cell-size (/ board-size 3)
+        half-cell (/ board-size 6)
+        sym-size (* 0.6 cell-size)
+        sym-radius (/ sym-size 2)
+        sym-stroke-width (* 0.15 cell-size)
+        x-off (/ (- w board-size) 2)
+        y-off (/ (- h board-size) 2)]
+
+    ;; draw the game board
+    (doto gc
+      (.setFill board-color)
+      (.fillRect 0 0 w h)
+      (.setStroke line-color)
+      (.setLineWidth 5)
+
+      (.strokeLine x-off (+ y-off cell-size) (- w x-off) (+ y-off cell-size))
+      (.strokeLine x-off (- h (+ y-off cell-size)) (- w x-off) (- h ( + y-off cell-size)))
+      (.strokeLine (+ x-off cell-size) y-off (+ x-off cell-size) (- h y-off))
+      (.strokeLine (- w (+ x-off cell-size)) y-off (- w (+ x-off cell-size)) (- h y-off)))
+
+    ;; draw symbols from game board map
+    (let [filled (filled-spaces board)]
+      (doall
+       (for [[pos sym] filled
+             :let [[col row] (board-to-col-row pos)
+                   x (+ x-off half-cell (* col cell-size))
+                   y (+ y-off half-cell (* row cell-size))]]
+           (if (= sym &quot;x&quot;)
+             (draw-x canvas x y sym-radius sym-stroke-width)
+             (draw-o canvas x y sym-radius sym-stroke-width)))))))
+
+(defn -start [this stage]
+  (let [root (Pane.)
+        scene (Scene. root window-width window-height)
+        canvas (Canvas.)]
+
+    (doto (.widthProperty canvas)
+      (.bind (.widthProperty root))
+      (.addListener
+       (proxy [ChangeListener] []
+         (changed [ov old-state new-state]
+           (redraw-board canvas)))))
+    (doto (.heightProperty canvas)
+      (.bind (.heightProperty root))
+      (.addListener
+       (proxy [ChangeListener] []
+         (changed [ov old-state new-state]
+           (redraw-board canvas)))))
+
+    (.add (.getChildren root) canvas)
+    (doto stage
+      (.setTitle &quot;Tic Tac Toe&quot;)
+      (.setScene scene)
+      (.setMinHeight window-height)
+      (.setMinWidth window-width)
+      (.show))
+    (redraw-board canvas)))
+
+(defn -main [&amp;amp; args]
+  (Application/launch titato.core args))
+
+</code></pre>
+
+<p>And here&rsquo;s the project file.</p>
+
+<pre><code class="language-clojure">(defproject titato &quot;0.1.0-SNAPSHOT&quot;
+  :description &quot;Demo of a resizable JavaFX tic-tac-toe interface&quot;
+  :url &quot;http://example.com/FIXME&quot;
+  :license {:name &quot;Eclipse Public License&quot;
+            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
+  :dependencies [[org.clojure/clojure &quot;1.4.0&quot;]]
+  :resource-paths [&quot;c:\\Program Files\\Java\\jdk1.7.0_13\\jre\\lib\\jfxrt.jar&quot;]
+  :main titato.core)
+</code></pre>
+
+<p>Note the use of the <code>resource-path</code> in the project file. That&rsquo;s how <a href="https://github.com/technomancy/leiningen" title="Leiningen home page">leiningen</a> finds JavaFX.</p>
+
+<p>The magic begins in the <code>-start</code> function. That&rsquo;s the function in your program that JavaFX calls to start things up. The first thing required is that your root node is actually re-sizable. Hence the use of a <code>Pane</code>. See <a href="http://amyfowlersblog.wordpress.com/2011/06/02/javafx2-0-layout-a-class-tour/" title="Amy Fowler">Amy Fowler&rsquo;s blog</a> for a nice description of the layout classes. Many JavaFX examples use a <code>Group</code> object. That won&rsquo;t work here because it is not re-sizable.</p>
+
+<p>The next important thing that happens in <code>-start</code> is to bind the width and height properties of the <code>Canvas</code> to the width and height properties of the root <code>Pane</code>. This was new to me. It isn&rsquo;t the same mechanism as is used in <a href="http://en.wikipedia.org/wiki/Swing_%28Java%29" title="Description of Java Swing on Wikipedia">Swing</a>. By binding the width and height properties, the canvas gets notified any time they change. The <code>ChangeListener</code>s added to the two properties get called when the properties change providing the opportunity to re-draw the interface. The re-draw occurs by calling the <code>redraw-board</code> function on the canvas whenever the size changes.</p>
+
+<p>At first I thought that re-drawing the board on every change during a drag might be too slow. However, I can&rsquo;t seem to outrun the program no matter how fast I move the mouse. So, this method seems to work for a program with an interface as simple as this one.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/">Back to a Real Keyboard</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2013/05/08/styled-dialogs-in-javafx-with-jfxtras-monologfx/">Styled Dialogs in JavaFX with JFXtras MonologFX</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2013/05/08/styled-dialogs-in-javafx-with-jfxtras-monologfx/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

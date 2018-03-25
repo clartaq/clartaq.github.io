@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/configuration/</link>
+    <description>Recent content in Configuration on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 26 Jan 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dropbox Can Break Windows 10 Start Menu</title>
+      <link>https://yo-dave.com/2016/01/26/dropbox-can-break-windows-10-start-menu/</link>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/01/26/dropbox-can-break-windows-10-start-menu/</guid>
+      <description>The first time I tried to install Windows 10, I had to revert to 7 because the Start Menu started producing Critical Errors.
+Naturally, I searched the web for solutions. None worked, including the suggestions made by Microsoft about using a particular sequence of logins, checking system files for corruption, and creating a new user and transferring all my data to the new user account.
+Eventually, I came across this link to a post of possible solutions containing the usual stuff, but someone also mentioned that their system started working correctly once they removed Dropbox.</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s Broken Today</title>
+      <link>https://yo-dave.com/2015/12/30/whats-broken-today/</link>
+      <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/12/30/whats-broken-today/</guid>
+      <description>Like most days, I got up ready to tackle a bunch of problems and features on some of the software I work on. But, as is often the case, I was stymied by technical problems and got almost nothing done. The problems?
+ None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
+    </item>
+    
+    <item>
+      <title>How this Blog Disappeared (and Reappeared) Again</title>
+      <link>https://yo-dave.com/2015/05/06/how-this-blog-disappeared-and-reappeared-again/</link>
+      <pubDate>Wed, 06 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/05/06/how-this-blog-disappeared-and-reappeared-again/</guid>
+      <description>Some of you may have noticed that this blog disappeared again for awhile. It was on purpose this time.
+As I noted in an earlier post, getting WordPress to work on this host has been a bit of a chore. I got tired of doing updates and installs of plugins and such manually. It was not particularly hard, just tiresome.
+And then some warnings about particularly nasty XSS bugs appeared. At that time, I took the blog offline until I had some time to deal with things.</description>
+    </item>
+    
+    <item>
+      <title>WordPress</title>
+      <link>https://yo-dave.com/2014/10/16/wordpress/</link>
+      <pubDate>Thu, 16 Oct 2014 08:10:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/10/16/wordpress/</guid>
+      <description>Now, I love WordPress. It’s easy to use and easy to administer. Except when it isn’t.
+I run multiple sites on multiple servers. For the most part, they are trouble free. Except one site. This site. (Update 16 Aug 2017: This was referring to my site on CloudAtCost.)
+You see, I can’t seem to load plugins or new themes or updates for some reason.
+I run the same OS (Ubuntu 14.</description>
+    </item>
+    
+  </channel>
+</rss>

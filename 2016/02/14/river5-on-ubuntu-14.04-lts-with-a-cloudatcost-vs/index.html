@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>River5 on Ubuntu 14.04 LTS with a CloudAtCost VS &middot; Yo-Dave</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/clajburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <a class="pure-menu-heading" href="https://yo-dave.com/">Yo-Dave</a>
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2018, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Clajburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>River5 on Ubuntu 14.04 LTS with a CloudAtCost VS</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Feb 2016 12:00:00 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/nodejs">nodejs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/servers">servers</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p><a href="https://github.com/scripting/river5">River5</a> is the latest in a series of <a href="https://en.wikipedia.org/wiki/RSS">RSS</a> News Aggretators written by <a href="https://en.wikipedia.org/wiki/Dave_Winer">Dave Winer</a>. You can read his announcement <a href="http://scripting.com/liveblog/users/davewiner/2016/02/09/0995.html">here</a>. These notes describe how to set up a River of News on a Virtual Server (VS) purchased or rented from <a href="http://cloudatcost.com/">CloudAtCost</a> and freshly imaged with <a href="http://www.ubuntu.com/">Ubuntu</a> 14.04.</p>
+
+<p>These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look <a href="https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/">here</a>.</p>
+
+<p></p>
+
+<p>VS&rsquo;s don&rsquo;t have graphical displays. Everything needs to be done from the command line. You can execute these commands from the the console provided by the CloudAtCost <a href="https://panel.cloudatcost.com">panel</a>. However, I find the response to be slow. An SSH client tends to work better for me. If you are running from Windows, I find the <a href="http://www.putty.org/">PuTTY SSH client</a> to be very good.</p>
+
+<p>In the command examples below, the input you would type is preceded by the command prompt. On my system, this is set up to show what directory I am in, followed by a dollar sign ($) and a space. When there is output displayed by a program, it follows a command and is not preceded by the prompt with the dollar sign.</p>
+
+<h2 id="installing-node-js">Installing Node.js</h2>
+
+<p>The version of <a href="https://nodejs.org/en/">node.js</a> available from the package manager on Ubuntu is typically woefully behind the current mature, stable release available from nodejs.org. But it&rsquo;s easy to install a current version without the package manager. Execute these commands to download the current version. Note that in my case, the current version was v4.3.0. Vist the Node.js download page to determine the appropriate version number when you install.</p>
+
+<pre><code class="language-shell">~$ mkdir downloads
+~$ cd downloads
+~/downloads$ wget https://nodejs.org/dist/v4.3.0/node-v4.3.0-linux-x64.tar.gz
+</code></pre>
+
+<p>This retrieves the package of pre-compiled binaries. If you want to compile the version from source, well, that&rsquo;s a subject for another article.</p>
+
+<p>There is some controversy over where to place the contents of the package in the file system. I&rsquo;ve used several locations with success, but the consensus seems to be that Node.js should reside in <code>/usr/local</code>`. To unpack the package there, execute:</p>
+
+<pre><code class="language-shell">~$ cd /usr/local
+/usr/local$ sudo tar --strip-components 1 -xzf ~/downloads/node-v4.3.0-linux-x64.tar.gz
+</code></pre>
+
+<p>and supply the <code>sudo</code> password when prompted. After a few seconds, the command prompt should return with no additional messages displayed.</p>
+
+<p>To assure that Node is in place and ready to run try:</p>
+
+<pre><code class="language-shell">/usr/local$ cd ~
+~$ which node
+/usr/local/bin/node
+~$ node -v
+v4.3.0
+</code></pre>
+
+<p>This shows that Node is indeed installed in the <code>/usr/local</code> directory tree and that it has the expected version number.</p>
+
+<p>Likewise, to assure that <code>npm</code>, the Node package manager, is present and working run:</p>
+
+<pre><code class="language-shell">~$ which npm
+/usr/local/bin/npm
+~$ npm version
+{ npm: '2.14.12',
+ares: '1.10.1-DEV',
+http_parser: '2.5.1',
+icu: '56.1',
+modules: '46',
+node: '4.3.0',
+openssl: '1.0.2f',
+uv: '1.8.0',
+v8: '4.5.103.35',
+zlib: '1.2.8' }
+</code></pre>
+
+<p>Remember that these version numbers are those that were produced on my system when I wrote these notes. The values that you see might be different.</p>
+
+<h2 id="install-river5">Install River5</h2>
+
+<p>Installing River5 is even easier. First install the <code>git</code> version control tool.</p>
+
+<pre><code class="language-shell">~$ sudo apt-get install git
+</code></pre>
+
+<p>Then use <code>git</code> to retrieve River5 from its repository.</p>
+
+<pre><code class="language-shell">~$ git clone https://github.com/scripting/river5
+</code></pre>
+
+<p>To install other packages needed by the program:</p>
+
+<pre><code class="language-shell">~$ cd river5
+~/river5$ npm install
+</code></pre>
+
+<p>This will display a relatively long list of packages needed by the program.</p>
+
+<p>To start it up:</p>
+
+<pre><code class="language-shell">~/river5$ node river5.js
+</code></pre>
+
+<p>You should see a list of feeds and article titles go scrolling by. After a few minutes point a browser at <code>your_domain:1337</code> where <code>your_domain</code> is a domain name that points to your server. If you have not obtained a domain name (or the DNS has not updated to the new IP address obtained when you imaged your server), you can also use the IP address provided when you imaged your VS.</p>
+
+<h2 id="letting-it-flow">Letting It Flow</h2>
+
+<p>If you log off of your server now, River5 will also stop operating. Go ahead and try it now. Just close the command shell on the server and try to refresh the web page. It won&rsquo;t work.</p>
+
+<p>In order to keep the river flowing, even when you aren&rsquo;t logged in, you need to do a little additional work.</p>
+
+<p>There are a few ways to keep processes running when you aren&rsquo;t logged in, but my favorite is <a href="https://github.com/foreverjs/forever">Forever</a>. This is a package that is installed with <code>npm</code>.</p>
+
+<pre><code class="language-shell">~$ sudo npm install forever -g
+</code></pre>
+
+<p>On my system, I got a message about an optional dependency failing. (It was for an event handling package for Macs &ndash; not needed on Ubuntu.) You can safely ignore it.</p>
+
+<p>Then use Forever to start River5.</p>
+
+<pre><code class="language-shell">~$ cd river5
+~/river5$ forever start river5.js
+</code></pre>
+
+<p>Again, you may see a few warnings that can be safely ignored. (They relate to some advanced configuration options for Forever, which we don&rsquo;t need.)</p>
+
+<p>That should do it. Within moments, you should be able to refresh you browser and see the web page again. It may take a few more minutes for new content to appear.</p>
+
+<h2 id="miscellaneous-stuff">Miscellaneous Stuff</h2>
+
+<p>I have exercised these notes on different VS&rsquo;s with differing levels of resources. The minimum system I have used is 1 CPU, 512 MB RAM, and 10 GB disk. (That&rsquo;s the smallest system supported by CloudAtCost too.) I have also tried it on servers with 4 CPUs, 3 GB RAM and 40 GB of disk space. Seems to work fine.</p>
+
+<p>When you look at your server on the panel at CloudAtCost, you may be alarmed to see memory usage at 80% or above, even if you are on a VS that is rather well equipped with RAM. Don&rsquo;t panic, you aren&rsquo;t really running out of memory. Log in to your server and run:</p>
+
+<pre><code class="language-shell">~$ free -m
+</code></pre>
+
+<p>to show how your memory is really being used. For example, on a system with only 512 MB, I received the following output.</p>
+
+<pre><code class="language-text">             total       used       free     shared    buffers     cached
+Mem:           490        405         84          0         26        251
+-/+ buffers/cache:        127        362
+Swap:          953          0        953
+</code></pre>
+
+<p>As you can see, a large portion of the memory is cached and the system is not even using any swap space. (For additional information on interpreting the output of <code>free</code>, see this <a href="http://corlewsolutions.com/articles/article-6-understanding-the-free-command-in-ubuntu-and-linux">link</a>.)</p>
+
+<p>I have only tested this on VS&rsquo;s purchased from CloudAtCost. However, these instructions will probably work on similar systems rented from other providers like <a href="https://www.digitalocean.com/">DigitalOcean</a> and <a href="https://www.linode.com/">linode</a>.</p>
+
+<p>Version 14.04 LTS 64-bit is the only version of Ubuntu supported by CloudAtCost. However, there don&rsquo;t seem to be any instructions in these notes that would prevent them from being used with another recent LTS release. Untested though.</p>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/">CloudAtCost Setup Notes</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2016/02/22/river5-on-windows/">River5 on Windows</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2016/02/22/river5-on-windows/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/linux/</link>
+    <description>Recent content in Linux on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 31 Dec 2016 10:10:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows, rsync and permissions</title>
+      <link>https://yo-dave.com/2016/12/31/windows-rsync-and-permissions/</link>
+      <pubDate>Sat, 31 Dec 2016 10:10:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/12/31/windows-rsync-and-permissions/</guid>
+      <description>Just a short note on mixing Linux utilities with Windows. I wanted to set up a single button deployment of updates to a static web site. I had been using an rsync script, but it required me to manually enter authentication credentials every time it was used to send updates to a remote Ubuntu server.
+I set up public key authentication, but it would not work with the permissions of the key files on the Windows machine where the updates were coming from.</description>
+    </item>
+    
+    <item>
+      <title>An Email Server on Ubuntu 14.04</title>
+      <link>https://yo-dave.com/2016/08/26/an-email-server-on-ubuntu-14.04/</link>
+      <pubDate>Fri, 26 Aug 2016 09:59:54 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/08/26/an-email-server-on-ubuntu-14.04/</guid>
+      <description>Email is pretty old. It is older than the Internet. Despite the perennial claims that email is &amp;ldquo;dead&amp;rdquo;, it is still going strong. It&amp;rsquo;s also a bit complicated, which is why most folks set up an account with someone else (Yahoo!, Gmail, HotMail, ProtonMail, FastMail, etc.) who can take care of it for them.
+However, if you want to host your own server, it can be done. If you are running Ubuntu 14.</description>
+    </item>
+    
+    <item>
+      <title>My Server Setup Process</title>
+      <link>https://yo-dave.com/2016/08/10/my-server-setup-process/</link>
+      <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/08/10/my-server-setup-process/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://yo-dave.com/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Linux Desktop</title>
+      <link>https://yo-dave.com/2016/07/06/the-linux-desktop/</link>
+      <pubDate>Wed, 06 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/07/06/the-linux-desktop/</guid>
+      <description>The &amp;ldquo;Linux Desktop&amp;rdquo; failing to gain traction is a perennial topic of blogs and musings by people smarter than me. But I&amp;rsquo;m going to offer my two cents worth of opinion anyway.
+My Own Experience I use Linux on the desktop myself rather frequently, but it is not the OS my system boots to by default. Why is that?
+Legacy Windows Programs It used to be that there was a large amount of inertia that kept me from making the switch completely because of legacy apps on Windows.</description>
+    </item>
+    
+    <item>
+      <title>CloudAtCost Setup Notes</title>
+      <link>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
+      <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/08/10/2016-08-10-my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ssh Cleverness</title>
+      <link>https://yo-dave.com/2015/05/12/ssh-cleverness/</link>
+      <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/05/12/ssh-cleverness/</guid>
+      <description>Just a quick note about using SSH. Recently I had to wipe and re-install Ubuntu. (More on that later.) That meant my ssh private key was wiped as well. In order to replace it, I copied the file from a Windows machine onto my newly installed Linux partition.
+When I tried to log into some of my other servers, ssh gave me a warning about lax permissions and refused to log in without my password.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.04 Upgrade: Not So Excellent</title>
+      <link>https://yo-dave.com/2011/05/15/ubuntu-11.04-upgrade-not-so-excellent/</link>
+      <pubDate>Sun, 15 May 2011 17:03:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/05/15/ubuntu-11.04-upgrade-not-so-excellent/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://www.ubuntu.com&#34; title=&#34;Link to Ubuntu Linux home page&#34;&gt;Ubuntu&lt;/a&gt; &lt;a href=&#34;http://www.linux.com&#34; title=&#34;Link to Linux home page&#34;&gt;Linux&lt;/a&gt; distribution came out with version 11.04 a few days ago. These upgrades very seldom go smoothly on my systems. This was not an exception.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tidying up the Ubuntu Grub2 Boot Menu</title>
+      <link>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</link>
+      <pubDate>Sun, 13 Mar 2011 01:27:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</guid>
+      <description>&lt;p&gt;My wife and I share a computer that dual boots Ubuntu Linux and Windows. Too, when we upgrade computers, I tend to take the hard drive(s) from the old computer to the new computer. The boot menus created by the grub2 program can be a bit confusing for the uninitiated. As kernel updates are added, the list gets longer. The old Windows drive appears in the list, as well as the recovery partitions that manufacturers often put on Windows drives. In the normal course of things the Windows menu items can get pushed out of view at the bottom of the screen.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Where&amp;rsquo;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Not a happy situation.&lt;/p&gt;
+
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

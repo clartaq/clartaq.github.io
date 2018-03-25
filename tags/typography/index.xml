@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typography on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/typography/</link>
+    <description>Recent content in Typography on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 17 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/typography/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Font Pairings</title>
+      <link>https://yo-dave.com/2016/08/17/font-pairings/</link>
+      <pubDate>Wed, 17 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/08/17/font-pairings/</guid>
+      <description>As you may have guessed, I like to fiddle with things until they seem to be just perfect. One of those fiddly things is font pairing. (Changed them just today as a matter of fact.) I can never seem to get the perfect pairing of headline and body fonts.
+In order to get a little more professional perspective, I follow the TypeWolf blog. Jeremiah Shoaf is a great design resource. I have even spent actual money to buy his &amp;ldquo;The Definitive Guide to Free Fonts&amp;rdquo;, which he updates monthly.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/</link>
+    <description>Recent content in Tags on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 08 Mar 2011 15:58:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Antlr</title>
+      <link>https://yo-dave.com/tags/antlr/</link>
+      <pubDate>Tue, 08 Mar 2011 15:58:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/antlr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Appliances</title>
+      <link>https://yo-dave.com/tags/appliances/</link>
+      <pubDate>Sun, 03 Apr 2011 20:07:59 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/appliances/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://yo-dave.com/tags/blogging/</link>
+      <pubDate>Sat, 17 Mar 2018 13:24:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Business</title>
+      <link>https://yo-dave.com/tags/business/</link>
+      <pubDate>Sat, 04 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/business/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Caddy</title>
+      <link>https://yo-dave.com/tags/caddy/</link>
+      <pubDate>Fri, 19 Aug 2016 18:02:38 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/caddy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clojure</title>
+      <link>https://yo-dave.com/tags/clojure/</link>
+      <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clojurescript</title>
+      <link>https://yo-dave.com/tags/clojurescript/</link>
+      <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojurescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Closures</title>
+      <link>https://yo-dave.com/tags/closures/</link>
+      <pubDate>Sat, 29 Jan 2011 23:53:30 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/closures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://yo-dave.com/tags/cloud/</link>
+      <pubDate>Tue, 04 Mar 2014 13:26:26 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coffee</title>
+      <link>https://yo-dave.com/tags/coffee/</link>
+      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/coffee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Commenting</title>
+      <link>https://yo-dave.com/tags/commenting/</link>
+      <pubDate>Fri, 15 May 2015 17:09:14 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/commenting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
+      <link>https://yo-dave.com/tags/concurrency/</link>
+      <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://yo-dave.com/tags/configuration/</link>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuring</title>
+      <link>https://yo-dave.com/tags/configuring/</link>
+      <pubDate>Thu, 16 Oct 2014 13:10:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/configuring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cryogen</title>
+      <link>https://yo-dave.com/tags/cryogen/</link>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/cryogen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cursive</title>
+      <link>https://yo-dave.com/tags/cursive/</link>
+      <pubDate>Thu, 31 Aug 2017 14:16:24 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/cursive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://yo-dave.com/tags/design/</link>
+      <pubDate>Wed, 30 Apr 2014 09:59:36 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://yo-dave.com/tags/development/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drivers</title>
+      <link>https://yo-dave.com/tags/drivers/</link>
+      <pubDate>Tue, 22 Feb 2011 01:26:47 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/drivers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Editors</title>
+      <link>https://yo-dave.com/tags/editors/</link>
+      <pubDate>Thu, 31 Aug 2017 14:16:24 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/editors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Education</title>
+      <link>https://yo-dave.com/tags/education/</link>
+      <pubDate>Fri, 16 Sep 2011 01:14:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elm Lang</title>
+      <link>https://yo-dave.com/tags/elm-lang/</link>
+      <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/elm-lang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>https://yo-dave.com/tags/emacs/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Email</title>
+      <link>https://yo-dave.com/tags/email/</link>
+      <pubDate>Fri, 26 Aug 2016 09:59:54 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/email/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enclojure</title>
+      <link>https://yo-dave.com/tags/enclojure/</link>
+      <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/enclojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Figwheel</title>
+      <link>https://yo-dave.com/tags/figwheel/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/figwheel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional Programming</title>
+      <link>https://yo-dave.com/tags/functional-programming/</link>
+      <pubDate>Thu, 01 Dec 2011 09:25:53 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://yo-dave.com/tags/go/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://yo-dave.com/tags/golang/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grub2</title>
+      <link>https://yo-dave.com/tags/grub2/</link>
+      <pubDate>Sun, 13 Mar 2011 01:27:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/grub2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardware</title>
+      <link>https://yo-dave.com/tags/hardware/</link>
+      <pubDate>Thu, 24 Jan 2013 22:00:12 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>https://yo-dave.com/tags/hexo/</link>
+      <pubDate>Sun, 20 Aug 2017 13:55:37 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Highlighting</title>
+      <link>https://yo-dave.com/tags/highlighting/</link>
+      <pubDate>Sun, 30 Jan 2011 01:11:28 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/highlighting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hosting</title>
+      <link>https://yo-dave.com/tags/hosting/</link>
+      <pubDate>Wed, 16 Aug 2017 13:10:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://yo-dave.com/tags/hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improvement</title>
+      <link>https://yo-dave.com/tags/improvement/</link>
+      <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/improvement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intellij Idea</title>
+      <link>https://yo-dave.com/tags/intellij-idea/</link>
+      <pubDate>Thu, 31 Aug 2017 14:16:24 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/intellij-idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interop</title>
+      <link>https://yo-dave.com/tags/interop/</link>
+      <pubDate>Tue, 25 Jun 2013 18:16:04 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/interop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interviewing</title>
+      <link>https://yo-dave.com/tags/interviewing/</link>
+      <pubDate>Thu, 29 Mar 2012 08:48:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/interviewing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://yo-dave.com/tags/java/</link>
+      <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javafx</title>
+      <link>https://yo-dave.com/tags/javafx/</link>
+      <pubDate>Wed, 13 Sep 2017 17:18:01 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/javafx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://yo-dave.com/tags/javascript/</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leiningen</title>
+      <link>https://yo-dave.com/tags/leiningen/</link>
+      <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/leiningen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://yo-dave.com/tags/linux/</link>
+      <pubDate>Sat, 31 Dec 2016 10:10:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lisp</title>
+      <link>https://yo-dave.com/tags/lisp/</link>
+      <pubDate>Thu, 01 Dec 2011 11:16:22 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/lisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Literate Programming</title>
+      <link>https://yo-dave.com/tags/literate-programming/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/literate-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://yo-dave.com/tags/markdown/</link>
+      <pubDate>Sun, 20 Aug 2017 13:55:37 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marketing</title>
+      <link>https://yo-dave.com/tags/marketing/</link>
+      <pubDate>Sat, 04 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/marketing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mathematica</title>
+      <link>https://yo-dave.com/tags/mathematica/</link>
+      <pubDate>Wed, 14 Sep 2011 20:04:19 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/mathematica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matlab</title>
+      <link>https://yo-dave.com/tags/matlab/</link>
+      <pubDate>Fri, 11 Feb 2011 01:38:38 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Medicine</title>
+      <link>https://yo-dave.com/tags/medicine/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/medicine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meteor</title>
+      <link>https://yo-dave.com/tags/meteor/</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/meteor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netbeans</title>
+      <link>https://yo-dave.com/tags/netbeans/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/netbeans/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://yo-dave.com/tags/nodejs/</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Note Taking</title>
+      <link>https://yo-dave.com/tags/note-taking/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/note-taking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parsing</title>
+      <link>https://yo-dave.com/tags/parsing/</link>
+      <pubDate>Tue, 08 Mar 2011 15:58:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/parsing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pcs and Macs</title>
+      <link>https://yo-dave.com/tags/pcs-and-macs/</link>
+      <pubDate>Sat, 31 Dec 2016 10:10:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/pcs-and-macs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perfectionism</title>
+      <link>https://yo-dave.com/tags/perfectionism/</link>
+      <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/perfectionism/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photo Credit</title>
+      <link>https://yo-dave.com/tags/photo-credit/</link>
+      <pubDate>Sun, 03 Apr 2011 16:45:52 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/photo-credit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Platforms</title>
+      <link>https://yo-dave.com/tags/platforms/</link>
+      <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/platforms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plugins</title>
+      <link>https://yo-dave.com/tags/plugins/</link>
+      <pubDate>Sat, 10 Feb 2018 10:16:57 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/plugins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://yo-dave.com/tags/programming/</link>
+      <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quality</title>
+      <link>https://yo-dave.com/tags/quality/</link>
+      <pubDate>Fri, 25 Aug 2017 14:15:45 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rant</title>
+      <link>https://yo-dave.com/tags/rant/</link>
+      <pubDate>Sat, 22 Apr 2017 14:30:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/rant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberrypi</title>
+      <link>https://yo-dave.com/tags/raspberrypi/</link>
+      <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reagent</title>
+      <link>https://yo-dave.com/tags/reagent/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/reagent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://yo-dave.com/tags/security/</link>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Servers</title>
+      <link>https://yo-dave.com/tags/servers/</link>
+      <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/servers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speculation</title>
+      <link>https://yo-dave.com/tags/speculation/</link>
+      <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/speculation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://yo-dave.com/tags/statistics/</link>
+      <pubDate>Wed, 13 Sep 2017 17:18:01 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strange</title>
+      <link>https://yo-dave.com/tags/strange/</link>
+      <pubDate>Sun, 27 Feb 2011 19:22:31 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/strange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sublime Text</title>
+      <link>https://yo-dave.com/tags/sublime-text/</link>
+      <pubDate>Sat, 10 Feb 2018 10:16:57 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/sublime-text/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swing</title>
+      <link>https://yo-dave.com/tags/swing/</link>
+      <pubDate>Tue, 06 Jan 2015 09:47:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/swing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tablet</title>
+      <link>https://yo-dave.com/tags/tablet/</link>
+      <pubDate>Thu, 24 Jan 2013 22:00:12 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/tablet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technology</title>
+      <link>https://yo-dave.com/tags/technology/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Templates</title>
+      <link>https://yo-dave.com/tags/templates/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/templates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Themes</title>
+      <link>https://yo-dave.com/tags/themes/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Timestamp</title>
+      <link>https://yo-dave.com/tags/timestamp/</link>
+      <pubDate>Sat, 10 Feb 2018 10:16:57 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/timestamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typography</title>
+      <link>https://yo-dave.com/tags/typography/</link>
+      <pubDate>Wed, 17 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/typography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://yo-dave.com/tags/ubuntu/</link>
+      <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Upgrading</title>
+      <link>https://yo-dave.com/tags/upgrading/</link>
+      <pubDate>Sat, 17 Mar 2018 13:24:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/upgrading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utility</title>
+      <link>https://yo-dave.com/tags/utility/</link>
+      <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/utility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Voice</title>
+      <link>https://yo-dave.com/tags/voice/</link>
+      <pubDate>Sun, 17 Jul 2016 12:35:08 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/voice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://yo-dave.com/tags/web-development/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://yo-dave.com/tags/windows/</link>
+      <pubDate>Sat, 31 Dec 2016 10:10:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>https://yo-dave.com/tags/wordpress/</link>
+      <pubDate>Fri, 19 Aug 2016 18:02:38 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Writing</title>
+      <link>https://yo-dave.com/tags/writing/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lisp on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/lisp/</link>
+    <description>Recent content in Lisp on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 01 Dec 2011 11:16:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Favorite Programming Books</title>
+      <link>https://yo-dave.com/2011/12/01/favorite-programming-books/</link>
+      <pubDate>Thu, 01 Dec 2011 11:16:22 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/12/01/favorite-programming-books/</guid>
+      <description>&lt;p&gt;Every programmer seems to have their own list of favorite programming books. The lists are very personal and seem to be influenced by the age of the programmer, their training, and their field of endeavor. My own list follows.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Lisp/Scheme/Clojure</title>
+      <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</link>
+      <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
+      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
+    </item>
+    
+    <item>
+      <title>Ideas for Simulated Evolution</title>
+      <link>https://yo-dave.com/2011/01/25/ideas-for-simulated-evolution/</link>
+      <pubDate>Tue, 25 Jan 2011 00:30:34 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/25/ideas-for-simulated-evolution/</guid>
+      <description>Note: This is a re-post of an earlier entry recovered from a different blogging system.
+After entering and running the evolution.lisp example from Land of Lisp, I have some ideas for additional traits.
+Here are a few.
+ Size, Carnivorous Animals. Add a feature to allow the animals to be of different sizes. Larger animals would expend energy faster. When two animals occupy, the same cell, the larger would try to eat the smaller, taking it&amp;rsquo;s energy.</description>
+    </item>
+    
+  </channel>
+</rss>

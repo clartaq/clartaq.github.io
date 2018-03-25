@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functional Programming on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/functional-programming/</link>
+    <description>Recent content in Functional Programming on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 01 Dec 2011 09:25:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Functional Programming: A Paradox?</title>
+      <link>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</link>
+      <pubDate>Thu, 01 Dec 2011 09:25:53 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</guid>
+      <description>I like the idea of Functional Programming. It just appeals to my own mathematical bent I think. A few of the central tenets include immutability of data and creating functions that always produce the same results given the same arguments by avoiding side effects. All this to minimize generation of unpredictable results (errors). But wait a minute. There is another field of study with a long and deep history of research, random number generation, that says it is virtually impossible to generate truly random (unpredictable) results on a computer.</description>
+    </item>
+    
+  </channel>
+</rss>

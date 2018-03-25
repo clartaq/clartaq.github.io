@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contacts on Yo-Dave</title>
+    <link>https://yo-dave.com/contact/</link>
+    <description>Recent content in Contacts on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 07 Mar 2018 17:32:57 -0500</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/contact/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contact Information</title>
+      <link>https://yo-dave.com/contact/contact-information/</link>
+      <pubDate>Wed, 07 Mar 2018 17:32:57 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/contact/contact-information/</guid>
+      <description>This is some contact information.</description>
+    </item>
+    
+    <item>
+      <title>Contact Information</title>
+      <link>https://yo-dave.com/contact/contact/</link>
+      <pubDate>Wed, 07 Mar 2018 17:32:57 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/contact/contact/</guid>
+      <description>If you are trying to contact me, you will have a hard time at the moment. I don&amp;rsquo;t use social media. And I&amp;rsquo;m fiddling with different email services right now. And I don&amp;rsquo;t usually check my email very often. May clear this up later.</description>
+    </item>
+    
+  </channel>
+</rss>

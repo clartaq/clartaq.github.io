@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grub2 on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/grub2/</link>
+    <description>Recent content in Grub2 on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 13 Mar 2011 01:27:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/grub2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tidying up the Ubuntu Grub2 Boot Menu</title>
+      <link>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</link>
+      <pubDate>Sun, 13 Mar 2011 01:27:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</guid>
+      <description>&lt;p&gt;My wife and I share a computer that dual boots Ubuntu Linux and Windows. Too, when we upgrade computers, I tend to take the hard drive(s) from the old computer to the new computer. The boot menus created by the grub2 program can be a bit confusing for the uninitiated. As kernel updates are added, the list gets longer. The old Windows drive appears in the list, as well as the recovery partitions that manufacturers often put on Windows drives. In the normal course of things the Windows menu items can get pushed out of view at the bottom of the screen.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Where&amp;rsquo;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Not a happy situation.&lt;/p&gt;
+
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

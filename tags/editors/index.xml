@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Editors on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/editors/</link>
+    <description>Recent content in Editors on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 31 Aug 2017 14:16:24 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/editors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spell Checking in the Editor Changes the Way I Name Things</title>
+      <link>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</link>
+      <pubDate>Thu, 31 Aug 2017 14:16:24 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</guid>
+      <description>While editing some program text recently, I noticed myself doing something weird. I do most of my programming in Clojure these days. I mostly use IntelliJ IDEA with the Cursive plugin for Clojure. This turns out to be a great way to develop.
+One of the (many) things I love about IntelliJ IDEA is that it does spell checking in my code. Stops me looking (so much) like an idiot when I misspell stuff in comments.</description>
+    </item>
+    
+    <item>
+      <title>Editor Productivity</title>
+      <link>https://yo-dave.com/2014/12/21/editor-productivity/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Clojure Development Toolchain</title>
+      <link>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</link>
+      <pubDate>Tue, 21 May 2013 21:58:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</guid>
+      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting enclojure 1.4 to work</title>
+      <link>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</link>
+      <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt; (&lt;strong&gt;Update 12 Mar 2018&lt;/strong&gt;: The link is now dead.) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

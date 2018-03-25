@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>A Timestamp Plugin for Sublime Text 3 &middot; Yo-Dave</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/clajburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <a class="pure-menu-heading" href="https://yo-dave.com/">Yo-Dave</a>
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2018, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Clajburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>A Timestamp Plugin for Sublime Text 3</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Feb 2018 10:16:57 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/sublime-text">sublime text</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/plugins">plugins</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/timestamp">timestamp</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Since switching from Windows to a Mac in the middle of developing a new wiki, I lost access to the <a href="http://markdownpad.com">MarkdownPad</a> <a href="https://daringfireball.net/projects/markdown/">Markdown</a> editor &ndash; it&rsquo;s Windows only. One of the nice features of MarkdownPad was the ability to insert a timestamp easily. It&rsquo;s what I used to insert the creation date and the time of the last modification.</p>
+
+<p>Since the switch, I&rsquo;ve been using <a href="http://plaintext-productivity.net/2-04-how-to-set-up-sublime-text-for-markdown-editing.html">Sublime Text 3 as my editor for Markdown</a> files. I wanted to recreate the ability to insert timestamps with a keystroke.</p>
+
+<p>I found this <a href="https://stackoverflow.com/questions/11879481/can-i-add-date-time-for-sublime-snippet#13882791">answer</a> to a similar question on StackOverflow.</p>
+
+<p>Getting a timestamp worked, but it was in the wrong format. (Not really wrong, just an old version that I used based on the MarkdownPad editor.) I wanted to make the the output of the <code>Export</code> function of CWiki as compatible as possible with the input expected by the <a href="https://gohugo.io">Hugo</a> static blog generator. That required a different format. For example, as I write this, the ISO 8601 version of the current instant is <code>2018-03-09T10:26:35.249840-05:00</code>.</p>
+
+<p>Based on that, I added the following little snippet as a plugin for Sublime Text (Tools/Developer/New Plugin&hellip;).</p>
+
+<pre><code class="language-python">import datetime, time, getpass
+import sublime, sublime_plugin
+
+from time import gmtime, strftime
+from datetime import datetime, timezone
+
+class AddDateCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  datetime.now().strftime(&quot;%d %B %Y (%A)&quot;) } )
+
+class AddTimeCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  datetime.now().strftime(&quot;%H:%M&quot;) } )
+
+class AddOldTimestampCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  datetime.now().strftime(&quot;%m/%d/%Y %I:%M:%S %p&quot;) } )
+
+class AddTimestampCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  (datetime.now(timezone.utc).astimezone().isoformat() )} )
+</code></pre>
+
+<p>The <code>AddOldTimestampCommand</code> produces timestamp formatting that is almost exactly the same as that used by MarkdownPad.</p>
+
+<p>The <code>AddTimestampCommand</code> produces the ISO format used by the export function and Hugo.</p>
+
+<p>Then I added the following code to my key preferences (Sublime Text/Preferences/Key Bindings)</p>
+
+<pre><code>[
+   { &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: {&quot;target&quot;: &quot;browser&quot;, &quot;parser&quot;:&quot;markdown&quot;} },
+   { &quot;keys&quot;: [&quot;ctrl+shift+,&quot;], &quot;command&quot;: &quot;add_date&quot; },
+   { &quot;keys&quot;: [&quot;ctrl+shift+.&quot;], &quot;command&quot;: &quot;add_time&quot; },
+   { &quot;keys&quot;: [&quot;alt+shift+t&quot;], &quot;command&quot;: &quot;add_old_timestamp&quot; },
+   { &quot;keys&quot;: [&quot;alt+t&quot;], &quot;command&quot;: &quot;add_timestamp&quot; }
+]
+</code></pre>
+
+<p><em>Viola!</em> Now I can insert timestamps into my front matter to my heart&rsquo;s content.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/">Another Useful Function -- convert-seq-to-comma-separated-string</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2018/03/16/bit-rot/">Bit Rot</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2018/03/16/bit-rot/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

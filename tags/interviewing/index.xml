@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interviewing on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/interviewing/</link>
+    <description>Recent content in Interviewing on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 29 Mar 2012 08:48:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/interviewing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Developer Interview Questions</title>
+      <link>https://yo-dave.com/2012/03/29/developer-interview-questions/</link>
+      <pubDate>Thu, 29 Mar 2012 08:48:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2012/03/29/developer-interview-questions/</guid>
+      <description>Picking the right people to expand an organization is one of the most important things you can do. In my career, I&amp;rsquo;ve participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks.</description>
+    </item>
+    
+  </channel>
+</rss>

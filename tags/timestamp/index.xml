@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Timestamp on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/timestamp/</link>
+    <description>Recent content in Timestamp on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Feb 2018 10:16:57 -0500</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/timestamp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Timestamp Plugin for Sublime Text 3</title>
+      <link>https://yo-dave.com/2018/02/10/a-timestamp-plugin-for-sublime-text-3/</link>
+      <pubDate>Sat, 10 Feb 2018 10:16:57 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2018/02/10/a-timestamp-plugin-for-sublime-text-3/</guid>
+      <description>Since switching from Windows to a Mac in the middle of developing a new wiki, I lost access to the MarkdownPad Markdown editor &amp;ndash; it&amp;rsquo;s Windows only. One of the nice features of MarkdownPad was the ability to insert a timestamp easily. It&amp;rsquo;s what I used to insert the creation date and the time of the last modification.
+Since the switch, I&amp;rsquo;ve been using Sublime Text 3 as my editor for Markdown files.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematica on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/mathematica/</link>
+    <description>Recent content in Mathematica on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 14 Sep 2011 20:04:19 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Color Deconvolution</title>
+      <link>https://yo-dave.com/2011/09/14/color-deconvolution/</link>
+      <pubDate>Wed, 14 Sep 2011 20:04:19 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/14/color-deconvolution/</guid>
+      <description>&lt;p&gt;One method I&amp;rsquo;ve used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mathematica and MATLAB</title>
+      <link>https://yo-dave.com/2011/02/11/mathematica-and-matlab/</link>
+      <pubDate>Fri, 11 Feb 2011 01:38:38 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/11/mathematica-and-matlab/</guid>
+      <description>In some ways there are many similarities between Mathematica® and MATLAB®. From the simplest point of view, both are computer mathematics systems. I use both at work and, thus, am a wizard at neither. Let me expose my biases up front though. I like Mathematica enough that I have paid actual money to have a copy at home. With that bias in mind, let&amp;rsquo;s look at some of the differences.</description>
+    </item>
+    
+    <item>
+      <title>Literate Programming</title>
+      <link>https://yo-dave.com/2011/02/06/literate-programming/</link>
+      <pubDate>Sun, 06 Feb 2011 01:38:36 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/06/literate-programming/</guid>
+      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

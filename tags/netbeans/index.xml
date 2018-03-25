@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netbeans on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/netbeans/</link>
+    <description>Recent content in Netbeans on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 21 Dec 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Editor Productivity</title>
+      <link>https://yo-dave.com/2014/12/21/editor-productivity/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Updating to Java 8 and NetBeans 8 on Ubuntu</title>
+      <link>https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/</link>
+      <pubDate>Sun, 30 Mar 2014 13:42:07 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/</guid>
+      <description>&lt;p&gt;Just some notes on how I updated to the recent releases of Java 8 and NetBeans 8 on Ubuntu 13.10 (64 bit) running the Xfce desktop environment (Xubuntu).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Default JavaFX Platform in NetBeans</title>
+      <link>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</link>
+      <pubDate>Wed, 19 Jun 2013 16:26:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</guid>
+      <description>Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&amp;rsquo;t work. Here&amp;rsquo;s how I do it.
+ In NetBeans (7.3 as of this writing), select the &amp;ldquo;Tools&amp;rdquo; menu and the &amp;ldquo;Java Platforms&amp;rdquo; drop-down menu.</description>
+    </item>
+    
+    <item>
+      <title>The Sign Test</title>
+      <link>https://yo-dave.com/2011/07/09/the-sign-test/</link>
+      <pubDate>Sat, 09 Jul 2011 22:37:26 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
+      <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+    </item>
+    
+  </channel>
+</rss>

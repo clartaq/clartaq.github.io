@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coffee on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/coffee/</link>
+    <description>Recent content in Coffee on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 12 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coffee Storage</title>
+      <link>https://yo-dave.com/2016/09/12/coffee-storage/</link>
+      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/09/12/coffee-storage/</guid>
+      <description>I know, this is quite a &amp;ldquo;First World&amp;rdquo; kind of problem isn&amp;rsquo;t it. Nevertheless&amp;hellip;
+As I&amp;rsquo;ve written before, I like coffee. I probably spend too much on the beans as well. So, there is a need to store them correctly to maintain the best flavor for as long as possible.
+The Problem Coffee has three major enemies:
+ Light Air (specifically, the oxygen in the air) Moisture  There&amp;rsquo;s also one more wrinkle to deal with.</description>
+    </item>
+    
+    <item>
+      <title>I Drink Coffee Because it Tastes Good</title>
+      <link>https://yo-dave.com/2015/05/10/i-drink-coffee-because-it-tastes-good/</link>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/05/10/i-drink-coffee-because-it-tastes-good/</guid>
+      <description>Seems like there have been a lot of posts recently about folks using coffee to optimize their energy or alertness levels. That’s just trying to use coffee as some sort of mind-altering drug. That’s wrong. You should drink coffee because you think it tastes good. That’s why I drink it.
+How I Got Here Like most people, I was introduced to coffee by my parents. They drank it and I watched.</description>
+    </item>
+    
+  </channel>
+</rss>

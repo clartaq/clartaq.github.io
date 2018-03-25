@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Photo Credit on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/photo-credit/</link>
+    <description>Recent content in Photo Credit on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 03 Apr 2011 16:45:52 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/photo-credit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dark Theme Background Image</title>
+      <link>https://yo-dave.com/2011/04/03/dark-theme-background-image/</link>
+      <pubDate>Sun, 03 Apr 2011 16:45:52 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/04/03/dark-theme-background-image/</guid>
+      <description>As has been noted before, Arizona contains enough photogenic scenery that even I get a nice photo now and then. Here&amp;rsquo;s one that has been manipulated a bit into a nice abstract background for blogs or program windows.
+This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn of 2010. The photo originated as a snapshot of a rock covered with a bluish-gray lichen and a rather bright green moss.</description>
+    </item>
+    
+    <item>
+      <title>Light Theme Background Image</title>
+      <link>https://yo-dave.com/2011/01/30/light-theme-background-image/</link>
+      <pubDate>Sun, 30 Jan 2011 01:28:12 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/30/light-theme-background-image/</guid>
+      <description>&lt;p&gt;Arizona, where I live, has a lot of very photogenic scenery. I am by no means a very talented photographer, but with all the opportunities around here, every once in a while, even I manage to snap a nice image.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

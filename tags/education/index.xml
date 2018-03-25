@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Education on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/education/</link>
+    <description>Recent content in Education on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 16 Sep 2011 01:14:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/education/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>In Praise of the Self-Taught Programmer</title>
+      <link>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</link>
+      <pubDate>Fri, 16 Sep 2011 01:14:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</guid>
+      <description>Programming is one of the few professions where you regularly see self-taught practitioners. They have little or no formal education in the subject, but they often do quite well. In some cases, I&amp;rsquo;ve worked with some who were considered outstanding in their area of focus, like machine control or real-time.
+Granted, early in their careers, these folks often produce nasty messes that happen to work well enough but are simply not maintainable or not extendable.</description>
+    </item>
+    
+  </channel>
+</rss>

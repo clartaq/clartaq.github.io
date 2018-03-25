@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rant on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/rant/</link>
+    <description>Recent content in Rant on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 22 Apr 2017 14:30:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/rant/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rant About JavaFX Ecosystem</title>
+      <link>https://yo-dave.com/2017/04/22/rant-about-javafx-ecosystem/</link>
+      <pubDate>Sat, 22 Apr 2017 14:30:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/04/22/rant-about-javafx-ecosystem/</guid>
+      <description>Feeling a bit frustrated today, so I thought I would just vent a bit.
+I&amp;#8217;ve been working on some personal tools. I see some things in other tools that I would like to include in my own. I keep finding that those features that I like are written in JavaScript with that whole mess of an ecosystem. When I look for something similar in Java/JavaFX I find next to nothing.</description>
+    </item>
+    
+    <item>
+      <title>De-Activating My Evernote Account</title>
+      <link>https://yo-dave.com/2016/12/16/de-activating-my-evernote-account/</link>
+      <pubDate>Fri, 16 Dec 2016 16:29:30 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/12/16/de-activating-my-evernote-account/</guid>
+      <description>It was very unpleasant for me. I&amp;rsquo;ve been a user of Evernote almost from the beginning, and a Premium user for almost as long. But today I erased all of my notes and deactivated my account. &amp;ldquo;Why?&amp;rdquo; you might ask. Let me tell you.
+ The price increase. Earlier in the Autumn, Evernote announced a price increase. It was pretty substantial, at least for me. At about the same time, they announced that they were moving our data to Google&amp;rsquo;s infrastructure in order to take advantage of improved economies of scale among other reasons.</description>
+    </item>
+    
+    <item>
+      <title>JavaFX Still Not Ready?</title>
+      <link>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</guid>
+      <description>Just a short rant about JavaFX because I&amp;rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.</description>
+    </item>
+    
+  </channel>
+</rss>

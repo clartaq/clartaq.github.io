@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Speculation on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/speculation/</link>
+    <description>Recent content in Speculation on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 04 Jan 2012 18:02:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/speculation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2012 - The Year We All Unplug?</title>
+      <link>https://yo-dave.com/2012/01/04/2012---the-year-we-all-unplug/</link>
+      <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2012/01/04/2012---the-year-we-all-unplug/</guid>
+      <description>Well, Happy New Year everyone.
+It seems like I&amp;rsquo;ve been hearing a lot of buzz about getting unconnected. Everything from hotels offering special deals on stays where you are forced to turn off (or turn in) all your gizmos, to advice to disconnect to improve your productivity. Could it be that the pendulum has started to swing in the other direction?
+Sit back and enjoy the quiet.</description>
+    </item>
+    
+    <item>
+      <title>Functional Programming: A Paradox?</title>
+      <link>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</link>
+      <pubDate>Thu, 01 Dec 2011 09:25:53 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</guid>
+      <description>I like the idea of Functional Programming. It just appeals to my own mathematical bent I think. A few of the central tenets include immutability of data and creating functions that always produce the same results given the same arguments by avoiding side effects. All this to minimize generation of unpredictable results (errors). But wait a minute. There is another field of study with a long and deep history of research, random number generation, that says it is virtually impossible to generate truly random (unpredictable) results on a computer.</description>
+    </item>
+    
+  </channel>
+</rss>

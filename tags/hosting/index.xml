@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hosting on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/hosting/</link>
+    <description>Recent content in Hosting on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 16 Aug 2017 13:10:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Turns Out My Hosting Company **was** a Scam</title>
+      <link>https://yo-dave.com/2017/08/16/turns-out-my-hosting-company-was-a-scam/</link>
+      <pubDate>Wed, 16 Aug 2017 13:10:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/08/16/turns-out-my-hosting-company-was-a-scam/</guid>
+      <description>Way back in 2014, I wrote a post asking whether my new hosting company, CloudAtCost was a scam. Back then, I concluded that they were not.
+Fast forward to now, and it turns out they were a scam after all.
+Back in June they started sending me notices about not having paid a fee for &amp;ldquo;Maintenance&amp;rdquo;. They threatened to shut down and erase all my stuff at some unspecified time in the near future if I didn&amp;rsquo;t pay up.</description>
+    </item>
+    
+    <item>
+      <title>More Whinging about CloudAtCost</title>
+      <link>https://yo-dave.com/2017/02/01/more-whinging-about-cloudatcost/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/02/01/more-whinging-about-cloudatcost/</guid>
+      <description>I&amp;rsquo;ve written about my love/hate relationship with CloudAtCost before here and here. In essence, I like the low cost but hate the poor reliability.
+At one time I had seven web sites up and running on servers bought from CloudAtCost, including this one. But over a period of weeks and months they all failed for one reason or another. Some of the failures could be fixed with a ticket to tech support.</description>
+    </item>
+    
+    <item>
+      <title>Removing CDNs</title>
+      <link>https://yo-dave.com/2016/12/10/removing-cdns/</link>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/12/10/removing-cdns/</guid>
+      <description>Everyone wants their web site to load quickly using as few resources as possible. Content Delivery Networks (CDNs) are a very attractive way to achieve this. You can put parts of your web site on someone else&amp;rsquo;s servers. Those servers can contain commonly used resources like code libraries, CSS libraries, fonts, and icons. The hardware at the CDN may be faster than your own and might have multiple copies scattered around the world.</description>
+    </item>
+    
+    <item>
+      <title>Why This Blog Disappeared for a Few Days</title>
+      <link>https://yo-dave.com/2016/12/08/why-this-blog-disappeared-for-a-few-days/</link>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/12/08/why-this-blog-disappeared-for-a-few-days/</guid>
+      <description>Those of you who visit this site regularly may have noticed that is has been down for a few days. Here&amp;rsquo;s why.
+About a week ago, I attempted to reboot the server after applying a few updates. It wouldn&amp;rsquo;t come back up. As I&amp;rsquo;ve written before, this site is hosted on CloudAtCost. Sorry to say that it is a regular occurrence for servers not to reboot.
+Usually, I can just file a ticket and get help in a day or so.</description>
+    </item>
+    
+    <item>
+      <title>Caddy Server and Let&#39;s Encrypt</title>
+      <link>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</link>
+      <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</guid>
+      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
+Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
+    </item>
+    
+    <item>
+      <title>Is My Hosting Service a Scam</title>
+      <link>https://yo-dave.com/2014/10/14/is-my-hosting-service-a-scam/</link>
+      <pubDate>Tue, 14 Oct 2014 08:01:02 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/10/14/is-my-hosting-service-a-scam/</guid>
+      <description>As this is written, this blog is hosted on a server I bought from CloudAtCost. (Update 16 Aug 2017 This site is no longer hosted there.) This site sells or rents cloud servers for very low prices. As you might guess, a lot of people have jumped on, including many people (like myself) who just wanted to experiment with their own server for such a low cost.
+With such a high number of newbies, there was a lot of need for support, as you would expect.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upgrading on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/upgrading/</link>
+    <description>Recent content in Upgrading on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 17 Mar 2018 13:24:20 -0400</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/upgrading/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>So Many Broken Links</title>
+      <link>https://yo-dave.com/2018/03/17/so-many-broken-links/</link>
+      <pubDate>Sat, 17 Mar 2018 13:24:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/03/17/so-many-broken-links/</guid>
+      <description>As noted in yesterday&amp;rsquo;s blog, I&amp;rsquo;m making a sweep through my previous posts trying to fix links that have broken over the years. This is in preparation for switching to another blogging platform.
+I find that the rot even creeps into the README.md files in my own code repositories. Many of them refer back to descriptions of the repositories posted to no longer existing versions of the blog.
+I&amp;rsquo;ll fix those as soon as I can.</description>
+    </item>
+    
+    <item>
+      <title>Java JDK Install Fails on Windows 10</title>
+      <link>https://yo-dave.com/2016/01/30/java-jdk-install-fails-on-windows-10/</link>
+      <pubDate>Sat, 30 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/01/30/java-jdk-install-fails-on-windows-10/</guid>
+      <description>An update to the Java JDK is always a good thing. I look forward to seeing all the new stuff. But my recent attempt to update to 1.8.0_72 only partially succeeded. I attempted to install the new updates, both update 71 and 72, and both failed to finish installing the JRE. The rest of the JDK seemed to install correctly and I have been able to use it successfully, but the local JRE failed to install, returning error code 1603.</description>
+    </item>
+    
+    <item>
+      <title>Dropbox Can Break Windows 10 Start Menu</title>
+      <link>https://yo-dave.com/2016/01/26/dropbox-can-break-windows-10-start-menu/</link>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/01/26/dropbox-can-break-windows-10-start-menu/</guid>
+      <description>The first time I tried to install Windows 10, I had to revert to 7 because the Start Menu started producing Critical Errors.
+Naturally, I searched the web for solutions. None worked, including the suggestions made by Microsoft about using a particular sequence of logins, checking system files for corruption, and creating a new user and transferring all my data to the new user account.
+Eventually, I came across this link to a post of possible solutions containing the usual stuff, but someone also mentioned that their system started working correctly once they removed Dropbox.</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s Broken Today</title>
+      <link>https://yo-dave.com/2015/12/30/whats-broken-today/</link>
+      <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/12/30/whats-broken-today/</guid>
+      <description>Like most days, I got up ready to tackle a bunch of problems and features on some of the software I work on. But, as is often the case, I was stymied by technical problems and got almost nothing done. The problems?
+ None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
+    </item>
+    
+    <item>
+      <title>The Best Thing About Upgrading to Windows 10...</title>
+      <link>https://yo-dave.com/2015/12/23/the-best-thing-about-upgrading-to-windows-10.../</link>
+      <pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/12/23/the-best-thing-about-upgrading-to-windows-10.../</guid>
+      <description>Is that it shuts up the continual nagging to upgrade to Windows 10.
+I tried to upgrade earlier this year but it was a miserable failure. Buggy, slow, missing device drivers, nosy, nosy, nosy.
+It was a bit improved this time. A Windows 10 version of the driver for my Fujitsu ScanSnap S1500 finally appeared, so I thought I would try it again. The upgrade process was pretty smooth and the new driver works just fine.</description>
+    </item>
+    
+    <item>
+      <title>OS Updates</title>
+      <link>https://yo-dave.com/2014/10/16/os-updates/</link>
+      <pubDate>Thu, 16 Oct 2014 13:10:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/10/16/os-updates/</guid>
+      <description>I’ll admit it — I’m afraid of updates to the operating system. I fear them on Linux. I loathe them on Windows. iOS messes with basic behavior like battery life and network access. I don’t use OS X at the moment, so won’t comment on it here.
+I am currently using Window 7 Pro, 64-bit. It’s been a few months since an update has bitten me, but that hasn’t always been the case.</description>
+    </item>
+    
+    <item>
+      <title>How This Blog Disappeared</title>
+      <link>https://yo-dave.com/2014/10/14/how-this-blog-disappeared/</link>
+      <pubDate>Tue, 14 Oct 2014 08:03:02 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/10/14/how-this-blog-disappeared/</guid>
+      <description>A few days, and a few posts, after setting up this blog, it disappeared. All I did was a distribution update on the system being used as the web server — Ubuntu 12.04 to 14.04.
+The upgrade appeared to go well. Everything worked as I tested the newly upgraded system — except my blog directory was gone. No explanation. Nothing in the logs. Gone. My domains were pointing to empty space.</description>
+    </item>
+    
+    <item>
+      <title>About this Blog</title>
+      <link>https://yo-dave.com/2014/10/13/about-this-blog/</link>
+      <pubDate>Mon, 13 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/10/13/about-this-blog/</guid>
+      <description>(Note: This is the introductory post to a blog that was merged into this one. The original no longer exists.)
+Hi.
+Welcome to my new blog.
+This is just a place for me to vent about problems with technology. Despite the name of the blog, I’m a technologist myself. I’ve spent decades developing medical technology. It’s likely that every reader in the States (and probably beyond) has been touched by technology I have worked on.</description>
+    </item>
+    
+  </channel>
+</rss>

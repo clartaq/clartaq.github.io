@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commenting on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/commenting/</link>
+    <description>Recent content in Commenting on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 15 May 2015 17:09:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/commenting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>No More Disqus</title>
+      <link>https://yo-dave.com/2015/05/15/no-more-disqus/</link>
+      <pubDate>Fri, 15 May 2015 17:09:14 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/05/15/no-more-disqus/</guid>
+      <description>Man, I am so fed up with companies that insist on tracking me. Disqus has a great commenting system. Great features. Widely used.
+But they track you, building a pretty detailed profile, which they sell. They do it me and you if you comment on this site. Without telling either of us. So, Disqus is out.</description>
+    </item>
+    
+    <item>
+      <title>Something New. Comments!</title>
+      <link>https://yo-dave.com/2014/03/26/something-new.-comments/</link>
+      <pubDate>Wed, 26 Mar 2014 13:33:45 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/03/26/something-new.-comments/</guid>
+      <description>Well, it&amp;rsquo;s been a long time coming and I&amp;rsquo;m still a little unsure about it, but starting now, this site will allow comments. I&amp;rsquo;ve explained why I didn&amp;rsquo;t allow them before, but I&amp;rsquo;m adding Disqus-powered discussions to the blog. We&amp;rsquo;ll see how that goes.
+If everything that comes in is just spam, I&amp;rsquo;ll disable comments again. If comments are useful, civil and on topic, they will remain.
+And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.</description>
+    </item>
+    
+    <item>
+      <title>Why No Comments?</title>
+      <link>https://yo-dave.com/2011/03/18/why-no-comments/</link>
+      <pubDate>Fri, 18 Mar 2011 17:29:47 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/03/18/why-no-comments/</guid>
+      <description>There are two primary reasons that comments are not enabled on this site.
+ These are just notes I write to myself. They don&amp;rsquo;t get much attention other than when I want to remind myself of something. It wouldn&amp;rsquo;t be fair to solicit comments and then just ignore them. Comment spam. Related to the above, I just don&amp;rsquo;t check in often enough and would not effectively moderate and eliminate spam.  This does not mean that the site will never be opened up to comments.</description>
+    </item>
+    
+  </channel>
+</rss>

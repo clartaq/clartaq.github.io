@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swing on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/swing/</link>
+    <description>Recent content in Swing on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 06 Jan 2015 09:47:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/swing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Overwhelming Java&#39;s Swing</title>
+      <link>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</link>
+      <pubDate>Tue, 06 Jan 2015 09:47:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</guid>
+      <description>&lt;p&gt;An odd thing happened recently. I have been working on a simulation that produces graphical and text updates as it progresses. That involves drawing a picture of the system and updating some textual elements of the user interface.&lt;/p&gt;
+
+&lt;p&gt;Things seemed to work fine when the simulation was run with &amp;ldquo;normal&amp;rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Keyboard Shortcuts for JavaFX Buttons</title>
+      <link>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</link>
+      <pubDate>Tue, 04 Jun 2013 04:24:09 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</guid>
+      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&amp;rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
+    </item>
+    
+    <item>
+      <title>Re-sizing an Interface in JavaFX and Clojure</title>
+      <link>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</link>
+      <pubDate>Mon, 18 Feb 2013 21:48:11 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</guid>
+      <description>Since JavaFX is the future of the user interface for Java, I&amp;rsquo;ve started trying to learn it. Since I&amp;rsquo;m also learning Clojure, I&amp;rsquo;m doing the work in that language.
+One of the things I&amp;rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
+    </item>
+    
+    <item>
+      <title>Java Data Grid Component -- A Personal Failing</title>
+      <link>https://yo-dave.com/2011/09/22/java-data-grid-component----a-personal-failing/</link>
+      <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component----a-personal-failing/</guid>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Re-sizing an Icon in Java for Swing</title>
+      <link>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</link>
+      <pubDate>Sun, 23 Jan 2011 01:41:21 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</guid>
+      <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&amp;rsquo;s the code I came up with that actually worked.
+import javax.swing.*; import java.awt.*; public class CornerButton extends JFrame { public CornerButton() { JTextArea area = new JTextArea(20, 20); JScrollPane scroll = new JScrollPane(area); Icon icn = UIManager.</description>
+    </item>
+    
+  </channel>
+</rss>

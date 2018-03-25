@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utility on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/utility/</link>
+    <description>Recent content in Utility on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 19 Jan 2018 14:32:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/utility/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Another Useful Function -- convert-seq-to-comma-separated-string</title>
+      <link>https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/</link>
+      <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/</guid>
+      <description>This is a little note about a function I find myself using frequently in Clojure.
+User interface code often needs to display a list of things as a comma-separated list, e.g. &amp;ldquo;a, b, c, d&amp;rdquo;.
+If all of the things are strings, you can use the built-in string/join function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use string/join.</description>
+    </item>
+    
+    <item>
+      <title>Windows, rsync and permissions</title>
+      <link>https://yo-dave.com/2016/12/31/windows-rsync-and-permissions/</link>
+      <pubDate>Sat, 31 Dec 2016 10:10:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/12/31/windows-rsync-and-permissions/</guid>
+      <description>Just a short note on mixing Linux utilities with Windows. I wanted to set up a single button deployment of updates to a static web site. I had been using an rsync script, but it required me to manually enter authentication credentials every time it was used to send updates to a remote Ubuntu server.
+I set up public key authentication, but it would not work with the permissions of the key files on the Windows machine where the updates were coming from.</description>
+    </item>
+    
+    <item>
+      <title>Another Program I&#39;d Like to Find or Write</title>
+      <link>https://yo-dave.com/2014/03/04/another-program-id-like-to-find-or-write/</link>
+      <pubDate>Tue, 04 Mar 2014 13:26:26 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/03/04/another-program-id-like-to-find-or-write/</guid>
+      <description>As I&amp;rsquo;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.</description>
+    </item>
+    
+    <item>
+      <title>Binomial Confidence Intervals -- BinomConf</title>
+      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/</link>
+      <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/</guid>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

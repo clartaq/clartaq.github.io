@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intellij Idea on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/intellij-idea/</link>
+    <description>Recent content in Intellij Idea on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 31 Aug 2017 14:16:24 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/intellij-idea/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spell Checking in the Editor Changes the Way I Name Things</title>
+      <link>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</link>
+      <pubDate>Thu, 31 Aug 2017 14:16:24 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</guid>
+      <description>While editing some program text recently, I noticed myself doing something weird. I do most of my programming in Clojure these days. I mostly use IntelliJ IDEA with the Cursive plugin for Clojure. This turns out to be a great way to develop.
+One of the (many) things I love about IntelliJ IDEA is that it does spell checking in my code. Stops me looking (so much) like an idiot when I misspell stuff in comments.</description>
+    </item>
+    
+  </channel>
+</rss>

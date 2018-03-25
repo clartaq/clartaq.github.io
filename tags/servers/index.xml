@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Servers on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/servers/</link>
+    <description>Recent content in Servers on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 10 Aug 2016 15:58:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/servers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Server Setup Process</title>
+      <link>https://yo-dave.com/2016/08/10/my-server-setup-process/</link>
+      <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/08/10/my-server-setup-process/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://yo-dave.com/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hardening an ngnx Server</title>
+      <link>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</link>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</guid>
+      <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&amp;rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
+
+&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>River5 on Windows</title>
+      <link>https://yo-dave.com/2016/02/22/river5-on-windows/</link>
+      <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/02/22/river5-on-windows/</guid>
+      <description>&lt;p&gt;As you know, I&amp;rsquo;m a big fan of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt; and his &lt;a href=&#34;http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html&#34;&gt;River of News&lt;/a&gt; aggregators. His recent &lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is particularly nice.&lt;/p&gt;
+
+&lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>River5 on Ubuntu 14.04 LTS with a CloudAtCost VS</title>
+      <link>https://yo-dave.com/2016/02/14/river5-on-ubuntu-14.04-lts-with-a-cloudatcost-vs/</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/02/14/river5-on-ubuntu-14.04-lts-with-a-cloudatcost-vs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is the latest in a series of &lt;a href=&#34;https://en.wikipedia.org/wiki/RSS&#34;&gt;RSS&lt;/a&gt; News Aggretators written by &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt;. You can read his announcement &lt;a href=&#34;http://scripting.com/liveblog/users/davewiner/2016/02/09/0995.html&#34;&gt;here&lt;/a&gt;. These notes describe how to set up a River of News on a Virtual Server (VS) purchased or rented from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; and freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04.&lt;/p&gt;
+
+&lt;p&gt;These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CloudAtCost Setup Notes</title>
+      <link>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
+      <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/08/10/2016-08-10-my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

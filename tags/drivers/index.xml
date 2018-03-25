@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drivers on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/drivers/</link>
+    <description>Recent content in Drivers on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 22 Feb 2011 01:26:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/drivers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unknown USB Device</title>
+      <link>https://yo-dave.com/2011/02/22/unknown-usb-device/</link>
+      <pubDate>Tue, 22 Feb 2011 01:26:47 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/22/unknown-usb-device/</guid>
+      <description>After my many re-installations of Windows 7, I often have an &amp;ldquo;Unknown Device&amp;rdquo; in the list of USB devices shown by the Windows Device Manager. It is almost always because of my LogiTech G110 keyboard. It works as a USB keyboard with no additional setup after these re-installations, but its extra functionality (like the cool lighted key caps) require that the device driver be installed. Doing so invariably removes the last &amp;ldquo;Unknown Device&amp;rdquo; warning from the device list.</description>
+    </item>
+    
+    <item>
+      <title>Windows Update Trashed My Computer -- AGAIN!</title>
+      <link>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer----again/</link>
+      <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer----again/</guid>
+      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

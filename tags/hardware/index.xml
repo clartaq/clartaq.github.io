@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/hardware/</link>
+    <description>Recent content in Hardware on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 24 Jan 2013 22:00:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Back to a Real Keyboard</title>
+      <link>https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/</link>
+      <pubDate>Thu, 24 Jan 2013 22:00:12 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/</guid>
+      <description>As some of you know, we&amp;rsquo;ve spent the last several months moving around looking for a nice place to settle down. That&amp;rsquo;s finished. We&amp;rsquo;re now in Salem, Virginia.
+Before starting that search, we bought a laptop to take over the duties of the desktop. On the night before we left Tucson, I dumped a cup of water on it and fried the keyboard and other parts. It turns out the model was too new to get replacement parts.</description>
+    </item>
+    
+    <item>
+      <title>Friendly Incompetence or Evil Conspiracy</title>
+      <link>https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/</link>
+      <pubDate>Sun, 12 Jun 2011 01:50:44 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/</guid>
+      <description>As regular readers know, there have been &amp;ldquo;issues&amp;rdquo; with my computer, a relatively new Falcon Northwest Talon. Their service representatives were never able to solve a relatively simple problem. Were they actually unable to do so or did they choose not to?
+This computer has generally been excellent. But there have been issues with it regularly. I believe the first was precipitated by Microsoft Update and was not at all the fault of the computer.</description>
+    </item>
+    
+    <item>
+      <title>Elise&#39;s Rule</title>
+      <link>https://yo-dave.com/2011/04/17/elises-rule/</link>
+      <pubDate>Sun, 17 Apr 2011 01:09:53 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/04/17/elises-rule/</guid>
+      <description>&lt;p&gt;Based on repeated observations, my wife, Elise, has formed a simple rule:
+&amp;gt; When Dave has any extra time off, the computer will be broken &amp;ndash; big time.
+It&amp;rsquo;s &lt;em&gt;freaking uncanny&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Me2 iPad2</title>
+      <link>https://yo-dave.com/2011/04/09/me2-ipad2/</link>
+      <pubDate>Sat, 09 Apr 2011 00:09:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/04/09/me2-ipad2/</guid>
+      <description>My wife and I have birthdays that are just a few days apart. This year we ended up getting each other an iPad 2. We have an iMac but have never bought into the whole iPod, iPhone, iThis&amp;rsquo;nThat thing.
+We were really excited to get started playing with our new toys. They came in nice boxes with the needed accessories, but little else including any guide on how to get started.</description>
+    </item>
+    
+    <item>
+      <title>Unknown USB Device</title>
+      <link>https://yo-dave.com/2011/02/22/unknown-usb-device/</link>
+      <pubDate>Tue, 22 Feb 2011 01:26:47 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/22/unknown-usb-device/</guid>
+      <description>After my many re-installations of Windows 7, I often have an &amp;ldquo;Unknown Device&amp;rdquo; in the list of USB devices shown by the Windows Device Manager. It is almost always because of my LogiTech G110 keyboard. It works as a USB keyboard with no additional setup after these re-installations, but its extra functionality (like the cool lighted key caps) require that the device driver be installed. Doing so invariably removes the last &amp;ldquo;Unknown Device&amp;rdquo; warning from the device list.</description>
+    </item>
+    
+  </channel>
+</rss>

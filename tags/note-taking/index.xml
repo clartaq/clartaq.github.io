@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note Taking on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/note-taking/</link>
+    <description>Recent content in Note Taking on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/note-taking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>More Note-Taking Goodness - Collate</title>
+      <link>https://yo-dave.com/2017/05/16/more-note-taking-goodness---collate/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/05/16/more-note-taking-goodness---collate/</guid>
+      <description>Last time, I wrote about some of the really nice note-taking apps available nowadays. Since then, I&amp;rsquo;ve come across another great one I just had to tell you about: Collate.
+It has just about everything I could want. I&amp;rsquo;ll let you read about all of its features on its web site, but some of the things I like most include:
+ It&amp;rsquo;s cross-platform, capable of running on Windows, MacOS, and Linux.</description>
+    </item>
+    
+    <item>
+      <title>An Embarrassment of Riches for Note-Taking</title>
+      <link>https://yo-dave.com/2017/04/03/an-embarrassment-of-riches-for-note-taking/</link>
+      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/04/03/an-embarrassment-of-riches-for-note-taking/</guid>
+      <description>Ever since dumping Evernote, I&amp;rsquo;ve been looking at alternative note-taking apps. I&amp;rsquo;ve been usingtiddlywiki, but, surprisingly, it has grown a bit slow. Probably from the sheer volume of notes that I&amp;rsquo;ve imported from Evernote. Maybe time to look some more?
+I&amp;rsquo;ve also been writing a lot of program documentation in Markdown. I like the wiki format just fine, but it seems like Markdown can do more. Both markup languages have a plethora of dialects, usually incompatible.</description>
+    </item>
+    
+    <item>
+      <title>De-Activating My Evernote Account</title>
+      <link>https://yo-dave.com/2016/12/15/de-activating-my-evernote-account/</link>
+      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/12/15/de-activating-my-evernote-account/</guid>
+      <description>I&amp;rsquo;m kind of sad today. I erased all of my notes from Evernote and then de-activated my account.
+I had been a Premium user for years and had thousands of notes. I used it on the web (when using Linux), on the desktop under Windows, and on my iPhone and iPads. I liked that the data was available on all of those devices. I really liked the web clipper. But the killer feature that got me started on it in the first place was the ability to search in images.</description>
+    </item>
+    
+    <item>
+      <title>My Favorite Pens</title>
+      <link>https://yo-dave.com/2016/08/13/my-favorite-pens/</link>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/08/13/my-favorite-pens/</guid>
+      <description>Sure, this is a technology site, but sometimes you have to get a little retro. That is the case for my preferences in note-taking. I tend to do a fair amount of writing into paper notebooks. To do that, I use a pen.
+Fountain pens are pretty pieces of art, but too messy and fiddly. Ballpoints are OK, but feel a little harsh as you write. Roller balls are OK too, except the quality of the ink is a bit &amp;ldquo;smeary&amp;rdquo; for my tastes.</description>
+    </item>
+    
+  </channel>
+</rss>
