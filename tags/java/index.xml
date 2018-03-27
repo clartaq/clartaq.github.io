@@ -89,7 +89,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
 
 &lt;p&gt;The application looks something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34; /&gt;&lt;br&gt;&lt;small&gt;The document manager main screen&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34; /&gt;&lt;br&gt;&lt;small&gt;The document manager main screen&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The user selects the document they wish to view or edit by selecting it from the large &lt;code&gt;TableView&lt;/code&gt; in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)&lt;/p&gt;
 

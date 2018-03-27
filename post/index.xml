@@ -270,7 +270,8 @@ I had been a Premium user for years and had thousands of notes. I used it on the
       <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/10/removing-cdns/</guid>
-      <description>Everyone wants their web site to load quickly using as few resources as possible. Content Delivery Networks (CDNs) are a very attractive way to achieve this. You can put parts of your web site on someone else&amp;rsquo;s servers. Those servers can contain commonly used resources like code libraries, CSS libraries, fonts, and icons. The hardware at the CDN may be faster than your own and might have multiple copies scattered around the world.</description>
+      <description>(Update: 27 Mar 2018, Despite what the rest of this blog post says, I have reinstated CDNs. This site now uses the Cloudflare CDN due to the inability of raw GitHub Pages to serve sites with custom domain names over HTTPS. See this)
+Everyone wants their web site to load quickly using as few resources as possible. Content Delivery Networks (CDNs) are a very attractive way to achieve this. You can put parts of your web site on someone else&amp;rsquo;s servers.</description>
     </item>
     
     <item>
@@ -279,8 +280,8 @@ I had been a Premium user for years and had thousands of notes. I used it on the
       <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/09/advertising-at-the-movies/</guid>
-      <description>A few weeks ago, my wife and I went to the movies, something we don&amp;rsquo;t do very often. (Arrival
-We arrived at the theatre, one of those multi-screen megaplexes, about 15 to 20 minutes before the advertised start time for the feature. Of course, while waiting, we were exposed to the various advertisements shown before the start of the film. At the advertised start time, there were some previews for other movies, pretty much as we had come to expect.</description>
+      <description>A few weeks ago, my wife and I went to the movies, something we don&amp;rsquo;t do very often. (Arrival, which I highly recommend, just like the short story it is derived from.)
+We arrived at the theatre, one of those multi-screen megaplexes, about 15 to 20 minutes before the advertised start time for the feature. Of course, while waiting, we were exposed to the various advertisements shown before the start of the film.</description>
     </item>
     
     <item>
@@ -558,7 +559,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
       <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
 
-&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/08/10/2016-08-10-my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -736,7 +737,7 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
 
 &lt;p&gt;The application looks something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34; /&gt;&lt;br&gt;&lt;small&gt;The document manager main screen&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34; /&gt;&lt;br&gt;&lt;small&gt;The document manager main screen&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The user selects the document they wish to view or edit by selecting it from the large &lt;code&gt;TableView&lt;/code&gt; in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)&lt;/p&gt;
 
