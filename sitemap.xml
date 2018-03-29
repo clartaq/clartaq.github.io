@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</loc>
+    <lastmod>2018-03-29T13:35:26-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/03/26/new-blogging-setup/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
   </url>
@@ -1134,8 +1139,14 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/pm2/</loc>
+    <lastmod>2018-03-29T13:35:26-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-03-27T11:53:34-04:00</lastmod>
+    <lastmod>2018-03-29T13:35:26-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1158,6 +1169,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/raspberry-pi/</loc>
+    <lastmod>2018-03-29T13:35:26-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/raspberrypi/</loc>
     <lastmod>2018-03-17T09:43:06-04:00</lastmod>
     <priority>0</priority>
@@ -1166,6 +1183,12 @@
   <url>
     <loc>https://yo-dave.com/tags/reagent/</loc>
     <lastmod>2018-03-17T09:54:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/river5/</loc>
+    <lastmod>2018-03-29T13:35:26-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1303,7 +1326,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-03-27T11:53:34-04:00</lastmod>
+    <lastmod>2018-03-29T13:35:26-04:00</lastmod>
     <priority>0</priority>
   </url>
   

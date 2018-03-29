@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pm2 on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/pm2/</link>
+    <description>Recent content in Pm2 on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 28 Mar 2018 10:06:21 -0400</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/pm2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Restart River5 after Reboot with PM2</title>
+      <link>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</link>
+      <pubDate>Wed, 28 Mar 2018 10:06:21 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</guid>
+      <description>I run a River5 &amp;ldquo;River of News&amp;rdquo; on a Raspberry Pi wirelessly connected to my internal home network. Sometimes, the power fluctuates and the Pi reboots. I want to have River5 restart when the system comes back up.
+There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linux 8.0.) The process manager I use is PM2 &amp;ndash; mostly because it has knowledge of Nodejs, which River5 is written for.</description>
+    </item>
+    
+  </channel>
+</rss>
