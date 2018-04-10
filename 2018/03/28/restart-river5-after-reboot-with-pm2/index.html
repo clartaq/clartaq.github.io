@@ -261,9 +261,10 @@
 
   
 
-<p>I run a <a href="https://github.com/scripting/river5">River5</a> &ldquo;<a href="http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html">River of News</a>&rdquo; on a <a href="https://www.raspberrypi.org">Raspberry Pi</a> wirelessly connected to my internal home network. Sometimes, the power fluctuates and the Pi reboots. I want to have River5 restart when the system comes back up.</p>
+<p>I run a <a href="https://github.com/scripting/river5">River5</a> &ldquo;<a href="http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html">River of News</a>&rdquo; on a <a href="https://www.raspberrypi.org">Raspberry Pi</a> wirelessly connected to my internal home network. Sometimes, the power fluctuates, and the Pi reboots. I want to have River5 restart when the system comes back up.</p>
 
-<p>There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linux 8.0.) The process manager I use is <a href="http://pm2.keymetrics.io">PM2</a> &ndash; mostly because it has knowledge of Nodejs, which River5 is written for.</p>
+<p>There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linux 8.0.) The process manager I use is <a href="http://pm2.keymetrics.io">PM2</a> &ndash; mostly because it knows Nodejs.
+River5 is written for Node.</p>
 
 <h2 id="install-pm2">Install PM2</h2>
 
@@ -278,7 +279,7 @@
 
 <p>Depending on how you installed River5, you may need to do some fiddling to get it running in PM2.</p>
 
-<p>In the simplest case, you could just run it from you home directory:</p>
+<p>In the simplest case, you could just run it from your home directory:</p>
 
 <pre><code class="language-shell">node river5.js
 </code></pre>
@@ -288,31 +289,31 @@
 <pre><code class="language-shell">cd river5
 </code></pre>
 
-<p>Then I can start the river flowing with:</p>
+<p>Then I can start the river flowing by:</p>
 
 <pre><code class="language-shell">node river5.js
 </code></pre>
 
-<p>Once you get it working, shut it down (Ctrl-C) and change back to your home directory. Then use a command like the following to start the River5 server from your home directory.</p>
+<p>Once you get it working, shut it down (Ctrl-C) and change back to your home directory. Then, use a command like the following to start the River5 server from your home directory.</p>
 
 <pre><code class="language-shell">pm2 start /home/david/river5/river5.js --cwd /home/david/river5
 </code></pre>
 
-<p>In this case, my user name is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don&rsquo;t</em></strong> use relative paths for this.</p>
+<p>In this case, my username is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don&rsquo;t</em></strong> use relative paths for this.</p>
 
 <p>Assure that you can repeatedly start the River5 server using your command line. Once you are confident that you command line works, from your home directory, run:</p>
 
 <pre><code class="language-shell">pm2 save
 </code></pre>
 
-<p>This will save a set of information related to how PM2 is running you application. The file is in <code>~/.pm2/dump.pm2</code>. Have a look at it if you like.</p>
+<p>The command above will save a set of information related to how PM2 is running your application. The file is in <code>~/.pm2/dump.pm2</code>. Have a look at it if you like.</p>
 
 <p>Now we can finally set up the system to restart River5 whenever the system reboots. From your home directory, execute the following command:</p>
 
 <pre><code class="language-shell">pm2 startup
 </code></pre>
 
-<p>This command will examine you system and figure out what information it needs to restart your app. Once executed you should see something like:</p>
+<p>This command will examine your system and figure out what information it needs to restart your app. Once executed you should see something like:</p>
 
 <pre><code class="language-shell">[PM2] Init System found: systemd
 [PM2] You have to run this command as root. Execute the following command:
@@ -321,7 +322,7 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 
 <p>The important thing is that last line. You should run it exactly as written. You may have to supply your password.</p>
 
-<p>Once the command completes, your system should be setup to restart River5 whenever it reboots. You can test it by entering the command:</p>
+<p>Once the command completes, your system should be set up to restart River5 whenever it reboots. You can test it by entering the command:</p>
 
 <pre><code class="language-shell">sudo reboot now
 </code></pre>
