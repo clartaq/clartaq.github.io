@@ -69,7 +69,7 @@
     <item>
       <title>Clojure</title>
       <link>https://yo-dave.com/tags/clojure/</link>
-      <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
+      <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/clojure/</guid>
       <description></description>
@@ -78,7 +78,7 @@
     <item>
       <title>Clojurescript</title>
       <link>https://yo-dave.com/tags/clojurescript/</link>
-      <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
+      <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/clojurescript/</guid>
       <description></description>
@@ -454,6 +454,15 @@
     </item>
     
     <item>
+      <title>Macro</title>
+      <link>https://yo-dave.com/tags/macro/</link>
+      <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/macro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Markdown</title>
       <link>https://yo-dave.com/tags/markdown/</link>
       <pubDate>Sun, 20 Aug 2017 13:55:37 +0000</pubDate>
@@ -756,6 +765,15 @@
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thrush</title>
+      <link>https://yo-dave.com/tags/thrush/</link>
+      <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/thrush/</guid>
       <description></description>
     </item>
     

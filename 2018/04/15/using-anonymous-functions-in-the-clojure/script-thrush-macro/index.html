@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37.1" />
 
-  <title>Restart River5 after Reboot with PM2 &middot; Yo-Dave</title>
+  <title>Using Anonymous Functions in the Clojure/Script Thrush Macro &middot; Yo-Dave</title>
 
   
   
@@ -225,7 +225,7 @@
 
 
 <div class="header">
-  <h1>Restart River5 after Reboot with PM2</h1>
+  <h1>Using Anonymous Functions in the Clojure/Script Thrush Macro</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -234,7 +234,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>28 Mar 2018 10:06:21 AM</time>
+    <time>15 Apr 2018 11:48:25 AM</time>
   </div>
 
   
@@ -247,11 +247,13 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/river5">river5</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">Clojure</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/pm2">pm2</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojurescript">ClojureScript</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/raspberry-pi">raspberry pi</a>
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/macro">Macro</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/thrush">Thrush</a>
     
   </div>
   
@@ -259,88 +261,46 @@
 
 </div>
 
-  
+  <p>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.</p>
 
-<p>I run a <a href="https://github.com/scripting/river5">River5</a> &ldquo;<a href="http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html">River of News</a>&rdquo; on a <a href="https://www.raspberrypi.org">Raspberry Pi</a> wirelessly connected to my internal home network. Sometimes, the power fluctuates, and the Pi reboots. I want to have River5 restart when the system comes back up.</p>
+<p>What could be more natural than to string those pieces of code together with one of Clojure&rsquo;s threading macros: &lsquo;-&gt;&rsquo; or &lsquo;-&gt;&gt;.&rsquo; What I initially put together was something like:</p>
 
-<p>There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linux 8.0.) The process manager I use is <a href="http://pm2.keymetrics.io">PM2</a> &ndash; mostly because it knows Nodejs.
-River5 is written for Node.</p>
-
-<h2 id="install-pm2">Install PM2</h2>
-
-<p>I assume you already have <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://www.npmjs.com">npm</a> installed. If not, get them now.</p>
-
-<p>Once you have <code>npm</code>, you can install <code>PM2</code> with the following command line:</p>
-
-<pre><code class="language-shell">npm install pm2 -g
+<pre><code class="language-clojure">    (-&gt; some-text
+        (some-operation)
+        (some-other-operation)
+        #(some-simple-inline-function)
+        (another-function-call)
+        ...
 </code></pre>
 
-<h2 id="experiment-with-running-river5">Experiment with Running River5</h2>
+<p>But ClojureScript choked on the anonymous function. &ldquo;Weird,&rdquo; I thought since I had just used it in the REPL to test it and it had worked fine.</p>
 
-<p>Depending on how you installed River5, you may need to do some fiddling to get it running in PM2.</p>
+<p>It&rsquo;s all entirely explained <a href="https://stackoverflow.com/questions/10757743/are-clojure-macros-always-leaky/10757945#10757945">here</a>.</p>
 
-<p>In the simplest case, you could just run it from your home directory:</p>
+<p>Long story short, when used in the threading macro like this, you need to set it up like this instead.</p>
 
-<pre><code class="language-shell">node river5.js
+<pre><code class="language-clojure">    (-&gt; some-text
+        (some-operation)
+        (some-other-operation)
+        (#(some-simple-inline-function))
+        (another-function-call)
+        ...
 </code></pre>
 
-<p>If you installed it somewhere else, you must change your active directory to the same location where the <code>river5.js</code> script is stored. In my case, that means I run the following command.</p>
-
-<pre><code class="language-shell">cd river5
-</code></pre>
-
-<p>Then I can start the river flowing by:</p>
-
-<pre><code class="language-shell">node river5.js
-</code></pre>
-
-<p>Once you get it working, shut it down (Ctrl-C) and change back to your home directory. Then, use a command like the following to start the River5 server from your home directory.</p>
-
-<pre><code class="language-shell">pm2 start /home/david/river5/river5.js --cwd /home/david/river5
-</code></pre>
-
-<p>In this case, my username is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don&rsquo;t</em></strong> use relative paths for this.</p>
-
-<p>Assure that you can repeatedly start the River5 server using your command line. Once you are confident that you command line works, from your home directory, run:</p>
-
-<pre><code class="language-shell">pm2 save
-</code></pre>
-
-<p>The command above will save a set of information related to how PM2 is running your application. The file is in <code>~/.pm2/dump.pm2</code>. Have a look at it if you like.</p>
-
-<p>Now we can finally set up the system to restart River5 whenever the system reboots. From your home directory, execute the following command:</p>
-
-<pre><code class="language-shell">pm2 startup
-</code></pre>
-
-<p>This command will examine your system and figure out what information it needs to restart your app. Once executed you should see something like:</p>
-
-<pre><code class="language-shell">[PM2] Init System found: systemd
-[PM2] You have to run this command as root. Execute the following command:
-sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u david --hp /home/david
-</code></pre>
-
-<p>The important thing is that last line. You should run it exactly as written. You may have to supply your password.</p>
-
-<p>Once the command completes, your system should be set up to restart River5 whenever it reboots. You can test it by entering the command:</p>
-
-<pre><code class="language-shell">sudo reboot now
-</code></pre>
-
-<p>Then wait a few minutes and see if you can connect to your River5 server in a browser. It should render and be serving new stories for you.</p>
+<p>Note the extra set of parentheses.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2018/03/26/new-blogging-setup/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2018/03/26/new-blogging-setup/">New Blogging Setup</a>
+      <a href="https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/">Restart River5 after Reboot with PM2</a>
     </nav>
     
   </div>
@@ -349,14 +309,8 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/">Using Anonymous Functions in the Clojure/Script Thrush Macro</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

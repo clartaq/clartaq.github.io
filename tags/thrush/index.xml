@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thrush on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/thrush/</link>
+    <description>Recent content in Thrush on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 15 Apr 2018 11:48:25 -0400</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/thrush/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Anonymous Functions in the Clojure/Script Thrush Macro</title>
+      <link>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</link>
+      <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</guid>
+      <description>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
+What could be more natural than to string those pieces of code together with one of Clojure&amp;rsquo;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;gt;&amp;gt;.</description>
+    </item>
+    
+  </channel>
+</rss>
