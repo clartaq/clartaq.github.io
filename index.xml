@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 15 Apr 2018 11:48:25 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 10:14:36 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes on ClojureScript Regular Expressions</title>
+      <link>https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/</link>
+      <pubDate>Fri, 20 Apr 2018 10:14:36 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/</guid>
+      <description>There&amp;rsquo;s an old saying about regular expressions &amp;ndash; paraphrasing: &amp;ldquo;If you try to solve a problem with regular expressions, you then have two problems.&amp;rdquo;
+Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&amp;rsquo;s version of regular expressions are different.</description>
+    </item>
     
     <item>
       <title>Using Anonymous Functions in the Clojure/Script Thrush Macro</title>
