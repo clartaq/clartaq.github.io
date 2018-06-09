@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/05/01/cwiki-next/</loc>
+    <lastmod>2018-05-01T09:38:50-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/</loc>
     <lastmod>2018-04-20T14:04:24-04:00</lastmod>
   </url>
@@ -796,13 +801,13 @@
   
   <url>
     <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2018-04-20T14:04:24-04:00</lastmod>
+    <lastmod>2018-05-01T09:38:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/clojurescript/</loc>
-    <lastmod>2018-04-15T12:03:23-04:00</lastmod>
+    <lastmod>2018-05-01T09:38:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1162,7 +1167,7 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-04-20T14:04:24-04:00</lastmod>
+    <lastmod>2018-05-01T09:38:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1348,7 +1353,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-04-20T14:04:24-04:00</lastmod>
+    <lastmod>2018-05-01T09:38:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
