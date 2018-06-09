@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.41" />
 
-  <title>CWiki-Next &middot; Yo-Dave</title>
+  <title>Mathjax &middot; Yo-Dave</title>
 
   
   
@@ -41,6 +41,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Yo-Dave" href="https://yo-dave.com/tags/mathjax/index.xml" />
   
 
   
@@ -118,6 +120,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://yo-dave.com/tags/mathjax/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -225,12 +231,16 @@
 
 
 <div class="header">
-  <h1>CWiki-Next</h1>
-  <h2></h2>
+  <h1>Mathjax</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2018/05/01/cwiki-next/">CWiki-Next</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -261,50 +271,22 @@
 
 </div>
 
-  <p>For the past few months, I&rsquo;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using <a href="https://www.clojure.org">Clojure</a>.</p>
+  </header>
 
-<p>It actually works pretty well. I&rsquo;ve been using it for personal information for months now. It works well except for one aspect, arguably the <em>most</em> important &ndash; editing new or existing content is not that pleasant.</p>
-
-<p>It&rsquo;s all a variation of <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, which is nice. It&rsquo;s slightly modified to handle mathematics <em>via</em> <a href="https://www.mathjax.org">MathJax</a>, and since it&rsquo;s a wiki, it needs to handle wiki links. I use the MediaWiki style. It all works. Except there is no live preview as you type. Right now, you have to save the file and load it into the wiki to see what it will look like. It&rsquo;s a matter of seconds, but still a break in the flow.</p>
-
-<p>So, I&rsquo;ve decide to just bite the bullet and split the application into a client-server configuration. The server will remain in Clojure, handling all the database stuff. The user interface will render on the client side using <a href="https://clojurescript.org">ClojureScript</a>.</p>
-
-<p>I got inspiration from Carmen La&rsquo;s Live Markdown Editor. That&rsquo;s pretty much what I want with a toolbar added. I also saw a couple of articles on how to use AJAX (web newbie here) and something finally clicked.</p>
-
-<p>Luckily, I will be able to use a lot of what I already have. The database stuff will remain largely unchanged. The page layout stuff is almost all done with Hiccup and should transfer to Hiccups easily. We&rsquo;ll see.</p>
-
-<p>Progress reports to follow.</p>
-
+  <p>
+  For the past few months, I&rsquo;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
+It actually works pretty well. I&rsquo;ve been using it for personal information for months now. It works well except for one aspect, arguably the most important &ndash; editing new or existing content is not that pleasant.
+It&rsquo;s all a variation of Markdown, which is nice.
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/">Notes on ClojureScript Regular Expressions</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="https://yo-dave.com/2018/05/01/cwiki-next/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-
 </div>
 
 </div>
@@ -318,4 +300,3 @@
 
 </body>
 </html>
-
