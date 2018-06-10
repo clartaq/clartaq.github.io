@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/06/09/closing-branches-in-mercurial/</loc>
+    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/05/01/cwiki-next/</loc>
     <lastmod>2018-06-09T11:11:20-04:00</lastmod>
   </url>
@@ -1106,6 +1111,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/mercurial/</loc>
+    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/meteor/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1173,7 +1184,7 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-06-09T11:11:20-04:00</lastmod>
+    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1228,6 +1239,12 @@
   <url>
     <loc>https://yo-dave.com/tags/servers/</loc>
     <lastmod>2018-03-17T10:40:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/source-control/</loc>
+    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1358,6 +1375,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/workflow/</loc>
+    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/writing/</loc>
     <lastmod>2018-03-27T11:04:24-04:00</lastmod>
     <priority>0</priority>
@@ -1365,7 +1388,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-06-09T11:11:20-04:00</lastmod>
+    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
     <priority>0</priority>
   </url>
   
