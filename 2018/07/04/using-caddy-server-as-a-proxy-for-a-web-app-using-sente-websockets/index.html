@@ -281,7 +281,7 @@
 <li>How many visitors have viewed the page.</li>
 </ul>
 
-<p>All of the information, except the current time, is sent from the server to the client. The current time and server uptime update every second.</p>
+<p>All of the information, except for the current time, is sent from the server to the client. The current time and server uptime update every second.</p>
 
 <p>The program works as expected when executed on <em>via</em> REPL, from terminals, and compiling and running an uberjar.</p>
 
@@ -298,7 +298,7 @@
 
 <ul>
 <li>The program correctly worked when running locally and accessed on <code>localhost</code>.</li>
-<li>WebSocket messages from the server to the client failed when the app was deployed to a virtual server.
+<li>WebSocket messages from the server to the client failed when deploying the app to a virtual server.
 
 <ul>
 <li>Only the initial, default values were shown for the fields that were to be populated by data from the WebSocket messages.</li>
@@ -324,6 +324,8 @@
 
 <p>There are no obvious errors in the log files <code>clajistan.log</code> or <code>error.log</code>, Caddy&rsquo;s log file. Caddy&rsquo;s access log, <code>access.log</code> <em>does</em> contain messages indicating that WebSocket messages were returning the unexpected return codes.</p>
 
+<h3 id="the-fix">The Fix</h3>
+
 <p>After a day of &ldquo;googling&rdquo; (really &ldquo;duck-duck-going&rdquo;),​ I couldn&rsquo;t find anything that seemed relevant but finally did find something interesting. As usual, it was a configuration problem due to my general ignorance. As a result, I made a small change to the <code>Caddyfile</code>.</p>
 
 <pre><code class="language-bash">clajistan.com {
@@ -343,7 +345,7 @@
 
 <h3 id="remaining-issues">Remaining Issues</h3>
 
-<p>It seems like the socket connection will not remain active for a single session for more than a few hours. After that, Sente starts throwing errors and the display stops updating. I have no idea why but the connection can be re-established by reloading the page.</p>
+<p>It seems like the socket connection will not remain active for a single session for more than a few hours. After that, Sente starts throwing errors, ​and the display stops updating. I have no idea why but the connection can be re-established by reloading the page.</p>
 
 
   
