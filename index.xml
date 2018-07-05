@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 09 Jun 2018 16:47:43 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 04 Jul 2018 09:49:16 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Caddy Server as a Proxy for a Web App using Sente WebSockets</title>
+      <link>https://yo-dave.com/2018/07/04/using-caddy-server-as-a-proxy-for-a-web-app-using-sente-websockets/</link>
+      <pubDate>Wed, 04 Jul 2018 09:49:16 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/07/04/using-caddy-server-as-a-proxy-for-a-web-app-using-sente-websockets/</guid>
+      <description>I created a simple web app, called clajistan.
+Purpose The purpose of creating the app was two-fold.
+ I wanted to have a little app to act as a &amp;ldquo;placeholder&amp;rdquo; on a very lightly used virtual server. To learn how to use WebSockets (sente) behind a proxy server (Caddy).  Desired Performance The program displays a simple web page, written in ClojureScript, with a few statistics about the server, written in Clojure:</description>
+    </item>
     
     <item>
       <title>Closing Branches in Mercurial</title>
