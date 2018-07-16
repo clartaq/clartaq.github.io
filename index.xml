@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Jul 2018 09:49:16 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jul 2018 16:47:36 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Note-Taking</title>
+      <link>https://yo-dave.com/2018/07/15/note-taking/</link>
+      <pubDate>Sun, 15 Jul 2018 16:47:36 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/07/15/note-taking/</guid>
+      <description>Changing jobs in 2005 caused me to switch from taking notes on paper to doing it electronically.
+My new employer provided a tablet PC with a stylus running Windows and OneNote. Taking notes on that system with excellent handwriting recognition was a revelation. The tablet was pretty clunky by today&amp;rsquo;s standards, but it worked well. It was particularly useful for generating meeting notes in real time and projecting them during meetings.</description>
+    </item>
     
     <item>
       <title>Using Caddy Server as a Proxy for a Web App using Sente WebSockets</title>
