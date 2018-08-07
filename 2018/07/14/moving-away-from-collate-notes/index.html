@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.46" />
 
-  <title>Note-Taking &middot; Yo-Dave</title>
+  <title>Moving Away from Collate Notes &middot; Yo-Dave</title>
 
   
   
@@ -225,7 +225,7 @@
 
 
 <div class="header">
-  <h1>Note-Taking</h1>
+  <h1>Moving Away from Collate Notes</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -234,7 +234,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>15 Jul 2018 4:47:36 PM</time>
+    <time>14 Jul 2018 10:07:00 AM</time>
   </div>
 
   
@@ -255,62 +255,39 @@
 
 </div>
 
-  <p>Changing jobs in 2005 caused me to switch from taking notes on paper to doing it electronically.</p>
+  <p><a href="https://collatenotes.com">Collate Notes</a> has received <a href="https://yo-dave.com/2017/05/16/more-note-taking-goodness---collate/">my praise</a> in the past. I even <em>paid</em> for it. Shortly after that unusual event, development seems to have stopped. And it still has numerous shortcomings. The most annoying problem is that periodically, it says my trial period has run out, and I need to enter the activation code (again). And since it&rsquo;s closed-source, I have no recourse but to submit bugs and make feature requests to a developer who seems to have gone silent.</p>
 
-<p>My new employer provided a tablet PC with a stylus running Windows and <a href="https://products.office.com/en-US/onenote">OneNote</a>. Taking notes on that system with excellent handwriting recognition was a revelation. The tablet was pretty clunky by today&rsquo;s standards, but it worked well. It was particularly useful for generating meeting notes in real time and projecting them during meetings.</p>
+<p>So, what to do?</p>
 
-<p>After moving to another employer, I no longer had access to such a tablet but used <a href="https://tiddlywiki.com">TiddlyWiki</a> to keep my notes. It was great until the number of notes became large (in the thousands).</p>
-
-<p>After that, I became an early adopter of <a href="https://evernote.com">Evernote</a>. It was an adequate note-taking app, but the killer feature for me was searching for text in images. At that time, we put meeting notes up on a whiteboard. After the meeting, I could take a picture of the whiteboard, insert it in Evernote, and search it any time after that. I maintained a subscription to Evernote until the end of 2016 until they got squirrely about their subscriptions and some privacy issues.</p>
-
-<p>After several years absence, I went back to TiddlyWiki. It was very much improved. But after importing thousands of notes, it became too slow at editing. The search was on for another system.</p>
-
-<p>I looked at several open-source tools under active development:</p>
+<p>After some research, I&rsquo;ve decided to move to <a href="https://github.com/lau​rent22/joplin">Joplin</a>.</p>
 
 <ul>
-<li><a href="http://strlen.com/treesheets/">TreeSheets</a> has been around a long time and has some unique features for organizing your information.</li>
-<li><a href="https://www.giuspen.com/cherrytree/">CherryTree</a> it has been around for quite some time. Very long feature list. Very long wishlist too.</li>
-<li><a href="https://github.com/BoostIO/Boostnote">BoostNote</a> bills itself as a note-taking app for programmers. It has clients for lots of platforms and can keep them all in sync.</li>
-<li><a href="https://ia.net/writer">iA Writer</a> is very focused on writing.</li>
+<li>It&rsquo;s open source. (Icky JavaScript of course.)</li>
+<li>It uses Markdown for formatting.</li>
+<li>It does math typesetting. (Just like CWiki.)</li>
+<li>It does a flawless import of Evernote notes.</li>
+<li>There is an excellent web clipper.</li>
 </ul>
 
-<p>I committed to <a href="https://collatenotes.com">Collate</a> for awhile, even bought a license, but development seemed to stop shortly after I paid for it. And it keeps asking me to re-enter my license key. So, slowly moving off of it. And no more closed-source apps.</p>
-
-<p>These days, my notes usually start short and then get longer and more detailed over time. Often they include mathematics, so typesetting math is crucial to me. Joplin fills the bill very well. It&rsquo;s almost perfect for me. But linking to other notes is a bit clumsy.</p>
-
-<p>I set up a self-hosted <a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>. It did everything I wanted (and way more) but was more cumbersome to administer than I wanted to deal with.</p>
-
-<p>What I finally ended up doing was writing my own wiki.</p>
+<p>The only problems I can come up with are:</p>
 
 <ul>
-<li>It uses a version of Markdown that can typeset math (<em>via</em> <a href="https://www.mathjax.org">MathJax</a>) and accepts wikilink syntax as well.</li>
-<li>Syntax highlighting for program snippets.</li>
-<li>It seems to be cross-platform. (I started development on Windows, now do it on macOS, and can (but shouldn&rsquo;t) self-host it on a Linux server.</li>
-<li>It runs on a desktop. (I can&rsquo;t read long notes with math on a phone and tablets are pushing it a bit with my poor vision.)</li>
-<li>It&rsquo;s written in Clojure and ClojureScript, languages I enjoy working with.</li>
-<li>The editor I wrote has a real-time preview (but the scroll bars don&rsquo;t&rsquo; sync yet.)</li>
-<li>The editor is compatible with Grammarly, so I get some help with my atrocious spelling and grammar.</li>
-<li>All data is stored locally in a SQL database but can be exported to Markdown files with one keystroke.</li>
-<li>Pages can be exported with YAML so that​ they can be imported directly to my blog.</li>
-<li>and on and on.</li>
+<li>The use mentioned above of JavaScript and that whole ecosystem.</li>
+<li>It can&rsquo;t seem to generate a table of contents using the typical methods available in Markdown. See [[How to Make a Table of Contents]] for example.​</li>
 </ul>
-
-<p>Another option that might be useful is a <a href="http://jupyter.org">Jupyter</a> notebook. It looks interesting, but I don&rsquo;t really have much experience with it. There&rsquo;s even a <a href="https://github.com/clojupyter/clojupyter">kernel for Clojure</a> that I want to check out.</p>
-
-<p>If you have the interest and the desire, I encourage you to look into writing your own tool. It isn&rsquo;t as hard as you might imagine just to get something working. It is incredibly hard to polish things to just the shininess you might want, but that&rsquo;s part of the fun.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2018/07/14/moving-away-from-collate-notes/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2018/07/14/the-best-coffee-roasters/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2018/07/14/moving-away-from-collate-notes/">Moving Away from Collate Notes</a>
+      <a href="https://yo-dave.com/2018/07/14/the-best-coffee-roasters/">The Best Coffee Roasters</a>
     </nav>
     
   </div>
@@ -320,13 +297,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/">Autosave Functionality in ClojureScript</a>
+      <a href="https://yo-dave.com/2018/07/15/note-taking/">Note-Taking</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://yo-dave.com/2018/07/15/note-taking/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
