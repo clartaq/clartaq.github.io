@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 14 May 2017 09:54:13 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Aug 2018 13:36:36 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>De-Tabifying</title>
+      <link>https://yo-dave.com/2018/08/12/de-tabifying/</link>
+      <pubDate>Sun, 12 Aug 2018 13:36:36 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/08/12/de-tabifying/</guid>
+      <description>There is probably no more boring task in programming that processing a file to replace tabs with spaces or doing the reverse and replacing spaces with tabs. And yet it has started religious wars that have raged for years in various programming communities.
+This &amp;ldquo;tabifying&amp;rdquo; or &amp;ldquo;de-tabifying&amp;rdquo; is not something I have to do frequently, but every once in a while, I need to convert tabs to spaces in some text.</description>
+    </item>
     
     <item>
       <title>Leiningen passing Invalid Flags to Java Compiler</title>

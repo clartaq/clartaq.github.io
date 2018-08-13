@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.46" />
 
-  <title>Autosave Functionality in ClojureScript &middot; Yo-Dave</title>
+  <title>De-Tabifying &middot; Yo-Dave</title>
 
   
   
@@ -225,7 +225,7 @@
 
 
 <div class="header">
-  <h1>Autosave Functionality in ClojureScript</h1>
+  <h1>De-Tabifying</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -234,7 +234,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>1 Aug 2018 3:56:32 PM</time>
+    <time>12 Aug 2018 1:36:36 PM</time>
   </div>
 
   
@@ -247,9 +247,11 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojurescript">ClojureScript</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/memoization">memoization</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/concurrency">concurrency</a>
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/programming">programming</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/text-processing">text processing</a>
     
   </div>
   
@@ -257,47 +259,70 @@
 
 </div>
 
-  <p>Most programs provide an &ldquo;Autosave&rdquo; feature these days. The feature gives the user a chance to minimize the amount of work lost due to some unforeseen mishap, like a sudden power outage.</p>
+  <p>There is probably no more boring task in programming that processing a file to replace tabs with spaces or doing the reverse and replacing spaces with tabs. And yet it has started religious wars that have raged for years in various programming communities.</p>
 
-<p>When I write a program in Clojure that requires such a feature, I have the entire Java library at my disposal. I usually create something based on a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html"><code>ScheduledExecutorService</code></a> &ndash; something that watches for a change in the document then allows a certain amount of user inactivity to pass before automatically saving the document. If the user makes another revision before the executor is triggered, the executor timer is reset to trigger after another period of inactivity.</p>
+<p>This &ldquo;tabifying&rdquo; or &ldquo;de-tabifying&rdquo; is not something I have to do frequently, but every once in a while, I need to convert tabs to spaces in some text. Sometimes I need to do it repeatedly and quickly. For example, in a Markdown editor, I basically need to do a de-tabify on every keystroke. It can&rsquo;t take long regardless of how long the input text is. Here&rsquo;s what I came up with.</p>
 
-<p>When programming in ClojureScript, those concurrency facilities​ are not available. Instead, I came up with something like the following.</p>
+<pre><code class="language-clojure">(defn- blanks
+  &quot;Return a string consisting of the number of spaces requested.&quot;
+  [how-many]
+  (str/join (repeat how-many \space)))
 
-<pre><code class="language-clojure">(def delay-handle (atom nil))
+(defn- make-blank-array
+  &quot;Return a vector of strings containing only blank characters. The vector
+  consists of strings of blanks of size 'most' down to one.&quot;
+  [most]
+  (loop [cnt most out []]
+    (if (zero? cnt)
+      out
+      (recur (dec cnt) (conj out (blanks cnt))))))
 
-(defn clear-autosave-delay! []
-  (.clearTimeout js/window @delay-handle))
+; Memoize so that we don't regenerate on every keystroke​.
+(def ^:private memoized-blank-array (memoize make-blank-array))
 
-(defn start-autosave-delay!
-  [doc-save-fn delay-ms page-map-atom]
-  (reset! delay-handle (.setTimeout js/window doc-save-fn delay-ms page-map-atom)))
+(defn detab
+  &quot;Replace any tabs in the input text with spaces. If no tab spacing is
+  set in the options, a default value of 4 is used.&quot;
+  ([text]
+   (detab text {:tab-spacing 4}))
+  ([text options]
+   (let [tab-spacing (or (:tab-spacing options) 4)]
+     (if-not (or (nil? text)
+                 (empty? text)
+                 (str/includes? text \tab))
+       text
+       ; otherwise
+       (let [spcs (memoized-blank-array tab-spacing)]
+         (loop [in text out &quot;&quot; offset 0]
+           (if (empty? in)
+             out
+             (let [nc (first in)
+                   rnc (if (= nc \tab)
+                         (get spcs offset)
+                         nc)
+                   ofs (if (= nc \newline)
+                         0
+                         (mod (+ offset (count rnc)) tab-spacing))]
+               (recur (rest in) (str out rnc) ofs)))))))))
 
-(defn change-watcher!
-  [doc-save-fn page-map-atom]
-  (let [delay (* 1000 (get-in @page-map-atom [:options :editor_autosave_interval]))]
-    (when (pos? delay)
-      (clear-autosave-delay!)
-      (start-autosave-delay! doc-save-fn delay page-map-atom))))
 </code></pre>
 
-<p>I put the <code>change-watcher!</code> function in the <code>:on-ch​ange</code> handler for a control (or multiple controls). Whenever a change occurs, it resets the delay. If the delay expires, the <code>doc-save-fn</code> is called to do the save.</p>
+<p>It&rsquo;s pretty straightforward. Assuming the text needs to be de-tabified at all, just run through the text character-by-character keeping track of where the current character is relative to the beginning of the line. If a tab occurs​, determine the number of spaces to insert based on the offset from the beginning of the line. Get a pre-computed string of spaces by doing a little table lookup and replace the tab. Then just keep going.</p>
 
-<p>It isn&rsquo;t very &ldquo;Clojuresque,&ldquo;​ but it does seem to work ok.</p>
-
-<p>Trying to find a more idiomatic solution, I posted <a href="https://stackoverflow.com/questions/51661320/autosave-functionality-in-clojurescript">this question</a> on StackOverflow. It generated very little interest, but the single commenter did say that this seems to be a common practice &ndash; putting a thin wrapper around some ugly JavaScript.​</p>
+<p>The only tricky thing in the above implementation is &ldquo;memoizing&rdquo; the table of pre-computed replacement strings.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2018/07/15/note-taking/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2018/07/15/note-taking/">Note-Taking</a>
+      <a href="https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/">Autosave Functionality in ClojureScript</a>
     </nav>
     
   </div>
@@ -306,14 +331,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://yo-dave.com/2018/08/12/de-tabifying/">De-Tabifying</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://yo-dave.com/2018/08/12/de-tabifying/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

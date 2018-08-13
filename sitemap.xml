@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/08/12/de-tabifying/</loc>
+    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/</loc>
     <lastmod>2018-08-07T10:56:03-04:00</lastmod>
   </url>
@@ -1148,6 +1153,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/memoization/</loc>
+    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/mercurial/</loc>
     <lastmod>2018-06-09T16:47:56-04:00</lastmod>
     <priority>0</priority>
@@ -1221,13 +1232,13 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-08-07T10:56:03-04:00</lastmod>
+    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/programming/</loc>
-    <lastmod>2017-05-14T09:54:13+00:00</lastmod>
+    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1340,6 +1351,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/text-processing/</loc>
+    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1425,7 +1442,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-08-07T10:56:03-04:00</lastmod>
+    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
     <priority>0</priority>
   </url>
   
