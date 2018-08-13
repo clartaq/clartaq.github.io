@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 12 Aug 2018 13:36:36 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Aug 2018 15:34:09 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stuart Sierras Component System</title>
+      <link>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</link>
+      <pubDate>Mon, 13 Aug 2018 15:34:09 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</guid>
+      <description>Starting the implementation of user options (preferences) in CWiki (a personal wiki program) got me thinking about refactoring the project into a shape that is more compatible with Stuart Sierras reloaded workflow. Naturally, that led to thinking about his component architecture. Here are some more resources related to the component architecture.
+ Stuart has a blog post about his reloaded workflow, linked above. The component code repository is on Github here.</description>
+    </item>
     
     <item>
       <title>De-Tabifying</title>
@@ -30,16 +40,6 @@ This &amp;ldquo;tabifying&amp;rdquo; or &amp;ldquo;de-tabifying&amp;rdquo; is no
       <guid>https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/</guid>
       <description>Most programs provide an &amp;ldquo;Autosave&amp;rdquo; feature these days. The feature gives the user a chance to minimize the amount of work lost due to some unforeseen mishap, like a sudden power outage.
 When I write a program in Clojure that requires such a feature, I have the entire Java library at my disposal. I usually create something based on a ScheduledExecutorService &amp;ndash; something that watches for a change in the document then allows a certain amount of user inactivity to pass before automatically saving the document.</description>
-    </item>
-    
-    <item>
-      <title>Stuart Sierras Component System</title>
-      <link>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</link>
-      <pubDate>Thu, 19 Jul 2018 16:16:38 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</guid>
-      <description>Starting the implementation of user options (preferences) in CWiki (a personal wiki program) got me thinking about refactoring the project into a shape that is more compatible with Stuart Sierras reloaded workflow. Naturally, that led to thinking about his component architecture. Here are some more resources related to the component architecture.
- Stuart has a blog post about his reloaded workflow, linked above. The component code repository is on Github here.</description>
     </item>
     
     <item>

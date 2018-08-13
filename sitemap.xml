@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</loc>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/08/12/de-tabifying/</loc>
     <lastmod>2018-08-13T14:59:37-04:00</lastmod>
   </url>
@@ -10,11 +15,6 @@
   <url>
     <loc>https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/</loc>
     <lastmod>2018-08-07T10:56:03-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</loc>
-    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
   </url>
   
   <url>
@@ -847,7 +847,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -889,7 +889,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/components/</loc>
-    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1243,7 +1243,7 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1285,7 +1285,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/reloaded-workflow/</loc>
-    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1321,7 +1321,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/state-management/</loc>
-    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1363,7 +1363,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/technical-note/</loc>
-    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1471,7 +1471,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-08-13T14:59:37-04:00</lastmod>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 19 Jul 2018 16:16:38 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Aug 2018 15:34:09 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/reloaded-workflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stuart Sierras Component System</title>
-      <link>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</link>
-      <pubDate>Thu, 19 Jul 2018 16:16:38 -0400</pubDate>
+      <link>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</link>
+      <pubDate>Mon, 13 Aug 2018 15:34:09 -0400</pubDate>
       
-      <guid>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</guid>
+      <guid>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</guid>
       <description>Starting the implementation of user options (preferences) in CWiki (a personal wiki program) got me thinking about refactoring the project into a shape that is more compatible with Stuart Sierras reloaded workflow. Naturally, that led to thinking about his component architecture. Here are some more resources related to the component architecture.
  Stuart has a blog post about his reloaded workflow, linked above. The component code repository is on Github here.</description>
     </item>
