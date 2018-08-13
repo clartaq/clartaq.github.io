@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</loc>
+    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/07/15/note-taking/</loc>
     <lastmod>2018-07-15T18:01:42-04:00</lastmod>
   </url>
@@ -842,7 +847,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2018-06-09T11:11:20-04:00</lastmod>
+    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -879,6 +884,12 @@
   <url>
     <loc>https://yo-dave.com/tags/commenting/</loc>
     <lastmod>2015-05-15T17:09:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/components/</loc>
+    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1273,6 +1284,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/reloaded-workflow/</loc>
+    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/river5/</loc>
     <lastmod>2018-04-10T10:08:46-04:00</lastmod>
     <priority>0</priority>
@@ -1299,6 +1316,12 @@
   <url>
     <loc>https://yo-dave.com/tags/speculation/</loc>
     <lastmod>2012-01-04T18:02:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/state-management/</loc>
+    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1335,6 +1358,12 @@
   <url>
     <loc>https://yo-dave.com/tags/</loc>
     <lastmod>2018-03-15T17:46:32-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/technical-note/</loc>
+    <lastmod>2018-08-13T15:28:51-04:00</lastmod>
     <priority>0</priority>
   </url>
   

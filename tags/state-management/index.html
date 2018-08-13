@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.46" />
 
-  <title>Autosave Functionality in ClojureScript &middot; Yo-Dave</title>
+  <title>State Management &middot; Yo-Dave</title>
 
   
   
@@ -41,6 +41,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Yo-Dave" href="https://yo-dave.com/tags/state-management/index.xml" />
   
 
   
@@ -118,6 +120,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://yo-dave.com/tags/state-management/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -225,16 +231,20 @@
 
 
 <div class="header">
-  <h1>Autosave Functionality in ClojureScript</h1>
-  <h2></h2>
+  <h1>State Management</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2018/07/19/stuart-sierras-component-system/">Stuart Sierras Component System</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>1 Aug 2018 3:56:32 PM</time>
+    <time>19 Jul 2018 4:16:38 PM</time>
   </div>
 
   
@@ -247,9 +257,15 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojurescript">ClojureScript</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/concurrency">concurrency</a>
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/components">components</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/reloaded-workflow">reloaded workflow</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/state-management">state management</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/technical-note">technical note</a>
     
   </div>
   
@@ -257,71 +273,21 @@
 
 </div>
 
-  <p>Most programs provide an &ldquo;Autosave&rdquo; feature these days. The feature gives the user a chance to minimize the amount of work lost due to some unforeseen mishap, like a sudden power outage.</p>
+  </header>
 
-<p>When I write a program in Clojure that requires such a feature, I have the entire Java library at my disposal. I usually create something based on a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html"><code>ScheduledExecutorService</code></a> &ndash; something that watches for a change in the document then allows a certain amount of user inactivity to pass before automatically saving the document. If the user makes another revision before the executor is triggered, the executor timer is reset to trigger after another period of inactivity.</p>
-
-<p>When programming in ClojureScript, those concurrency facilities​ are not available. Instead, I came up with something like the following.</p>
-
-<pre><code class="language-clojure">(def delay-handle (atom nil))
-
-(defn clear-autosave-delay! []
-  (.clearTimeout js/window @delay-handle))
-
-(defn start-autosave-delay!
-  [doc-save-fn delay-ms page-map-atom]
-  (reset! delay-handle (.setTimeout js/window doc-save-fn delay-ms page-map-atom)))
-
-(defn change-watcher!
-  [doc-save-fn page-map-atom]
-  (let [delay (* 1000 (get-in @page-map-atom [:options :editor_autosave_interval]))]
-    (when (pos? delay)
-      (clear-autosave-delay!)
-      (start-autosave-delay! doc-save-fn delay page-map-atom))))
-</code></pre>
-
-<p>I put the <code>change-watcher!</code> function in the <code>:on-ch​ange</code> handler for a control (or multiple controls). Whenever a change occurs, it resets the delay. If the delay expires, the <code>doc-save-fn</code> is called to do the save.</p>
-
-<p>It isn&rsquo;t very &ldquo;Clojuresque,&ldquo;​ but it does seem to work ok.</p>
-
-<p>Trying to find a more idiomatic solution, I posted <a href="https://stackoverflow.com/questions/51661320/autosave-functionality-in-clojurescript">this question</a> on StackOverflow. It generated very little interest, but the single commenter did say that this seems to be a common practice &ndash; putting a thin wrapper around some ugly JavaScript.​</p>
-
+  <p>
+  Starting the implementation of user options (preferences) in CWiki (a personal wiki program) got me thinking about refactoring the project into a shape that is more compatible with Stuart Sierras reloaded workflow. Naturally, that led to thinking about his component architecture. Here are some more resources related to the component architecture.
+ Stuart has a blog post about his reloaded workflow, linked above. The component code repository is on Github here.
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://yo-dave.com/2018/07/19/stuart-sierras-component-system/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://yo-dave.com/2018/07/19/stuart-sierras-component-system/">Stuart Sierras Component System</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://yo-dave.com/2018/08/12/de-tabifying/">De-Tabifying</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://yo-dave.com/2018/08/12/de-tabifying/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="https://yo-dave.com/2018/07/19/stuart-sierras-component-system/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-
 </div>
 
 </div>
@@ -335,4 +301,3 @@
 
 </body>
 </html>
-

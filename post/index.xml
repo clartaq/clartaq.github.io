@@ -33,6 +33,16 @@ When I write a program in Clojure that requires such a feature, I have the entir
     </item>
     
     <item>
+      <title>Stuart Sierras Component System</title>
+      <link>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</link>
+      <pubDate>Thu, 19 Jul 2018 16:16:38 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/07/19/stuart-sierras-component-system/</guid>
+      <description>Starting the implementation of user options (preferences) in CWiki (a personal wiki program) got me thinking about refactoring the project into a shape that is more compatible with Stuart Sierras reloaded workflow. Naturally, that led to thinking about his component architecture. Here are some more resources related to the component architecture.
+ Stuart has a blog post about his reloaded workflow, linked above. The component code repository is on Github here.</description>
+    </item>
+    
+    <item>
       <title>Note-Taking</title>
       <link>https://yo-dave.com/2018/07/15/note-taking/</link>
       <pubDate>Sun, 15 Jul 2018 16:47:36 -0400</pubDate>
