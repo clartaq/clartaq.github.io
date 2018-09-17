@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/09/16/writing-a-flexmark-extension-in-clojure/</loc>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</loc>
     <lastmod>2018-08-13T15:34:15-04:00</lastmod>
   </url>
@@ -847,7 +852,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -996,6 +1001,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/flexmark/</loc>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/functional-programming/</loc>
     <lastmod>2011-12-01T09:25:53+00:00</lastmod>
     <priority>0</priority>
@@ -1129,7 +1140,7 @@
   
   <url>
     <loc>https://yo-dave.com/tags/markdown/</loc>
-    <lastmod>2018-03-27T11:32:00-04:00</lastmod>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1243,7 +1254,7 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1471,7 +1482,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
     <priority>0</priority>
   </url>
   
