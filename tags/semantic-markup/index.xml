@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Semantic Markup on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/semantic-markup/</link>
+    <description>Recent content in Semantic Markup on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Sep 2018 13:20:23 -0400</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/semantic-markup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wiki Layout for Reading</title>
+      <link>https://yo-dave.com/2018/09/23/wiki-layout-for-reading/</link>
+      <pubDate>Sun, 23 Sep 2018 13:20:23 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/09/23/wiki-layout-for-reading/</guid>
+      <description>​As many of you know, I&amp;rsquo;ve been working on a personal wiki for some time now. (See the CWiki repository.) In fact, I&amp;rsquo;m using it to write this post. It&amp;rsquo;s very comfortable for me.
+One of the things I have been trying to get absolutely right (for me at least) is the layout. There are really only two layouts; one is for the &amp;ldquo;reading&amp;rdquo; view, the other for the &amp;ldquo;editing&amp;rdquo; view.</description>
+    </item>
+    
+  </channel>
+</rss>

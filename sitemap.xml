@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/09/23/wiki-layout-for-reading/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/09/16/writing-a-flexmark-extension-in-clojure/</loc>
     <lastmod>2018-09-17T10:23:41-04:00</lastmod>
   </url>
@@ -929,6 +934,12 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/css/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/cursive/</loc>
     <lastmod>2018-03-17T13:14:27-04:00</lastmod>
     <priority>0</priority>
@@ -997,6 +1008,18 @@
   <url>
     <loc>https://yo-dave.com/tags/figwheel/</loc>
     <lastmod>2018-03-17T09:54:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/flex-box/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/flexbox/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1105,6 +1128,12 @@
   <url>
     <loc>https://yo-dave.com/tags/javascript/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/layout/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1254,7 +1283,7 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1309,6 +1338,12 @@
   <url>
     <loc>https://yo-dave.com/tags/security/</loc>
     <lastmod>2018-03-17T10:10:16-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/semantic-markup/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1482,7 +1517,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
     <priority>0</priority>
   </url>
   
