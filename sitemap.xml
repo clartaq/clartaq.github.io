@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/2018/10/23/wiki-layout-for-editing/</loc>
+    <lastmod>2018-10-23T16:29:31-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/09/23/wiki-layout-for-reading/</loc>
     <lastmod>2018-09-28T14:09:11-04:00</lastmod>
   </url>
@@ -1283,7 +1288,7 @@
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
+    <lastmod>2018-10-23T16:29:31-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1517,7 +1522,7 @@
   
   <url>
     <loc>https://yo-dave.com/</loc>
-    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
+    <lastmod>2018-10-23T16:29:31-04:00</lastmod>
     <priority>0</priority>
   </url>
   

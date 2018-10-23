@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.49" />
+  <meta name="generator" content="Hugo 0.49.2" />
 
   <title>Yo-Dave</title>
 
@@ -236,6 +236,65 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2015/04/18/focus-behavior-change-between-javafx-2-and-javafx-8-when-selecting-rows-in-a-tableview/">Focus Behavior Change between JavaFX 2 and JavaFX 8 when Selecting Rows in a TableView</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Apr 2015 12:00:00 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/javafx">javafx</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/perfectionism">perfectionism</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  <p>For a little while now, I&rsquo;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.</p>
+
+<p>The application looks something like this:</p>
+
+<p><a href="https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG"><img src="https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG" alt="Image of the document manager main screen" title="The document manager main screen" /><br><small>The document manager main screen</small></a></p>
+
+<p>The user selects the document they wish to view or edit by selecting it from the large <code>TableView</code> in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)</p>
+
+<p>Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&rsquo;t have to do anything to save their work. It just happened.</p>
+
+<p>This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)</p>
+
+<p></p>
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2015/04/18/focus-behavior-change-between-javafx-2-and-javafx-8-when-selecting-rows-in-a-tableview/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
   
     <article>
   <header>
@@ -640,40 +699,6 @@ We&rsquo;ll start with creating a new site with a very basic template.
   
   <footer>
     <a href="https://yo-dave.com/2014/09/28/creating-a-new-theme/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://yo-dave.com/2014/07/16/moving-to-web-apps-or-not/">Moving to Web Apps (or not)</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>16 Jul 2014 12:00:00 AM</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  I&rsquo;m a desktop kind of guy. I prefer desktop PCs, desktop programs, desktop programming. But I am also a cross-platform guy. Hence my interest in Java, and by extension, Clojure. But I would like those things to run on my tablet and (other people&rsquo;s) phone. Doing that with Java seems to be more work than it is worth.
-Hence, I&rsquo;ve been considering web apps as a possible future direction. (Seems everyone else has figured this out already.
-  </p>
-
-  
-  <footer>
-    <a href="https://yo-dave.com/2014/07/16/moving-to-web-apps-or-not/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

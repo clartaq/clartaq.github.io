@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 23 Sep 2018 13:20:23 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 23 Oct 2018 16:05:29 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wiki Layout for Editing</title>
+      <link>https://yo-dave.com/2018/10/23/wiki-layout-for-editing/</link>
+      <pubDate>Tue, 23 Oct 2018 16:05:29 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/10/23/wiki-layout-for-editing/</guid>
+      <description>A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.
+In this post, I describe a layout for editing. Just like last time, I created a simple project to experiment with.</description>
+    </item>
     
     <item>
       <title>Wiki Layout for Reading</title>
