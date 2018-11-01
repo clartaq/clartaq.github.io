@@ -25,10 +25,10 @@
     
     <item>
       <title>Getting Started with Lisp/Scheme/Clojure</title>
-      <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</link>
+      <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp-scheme-clojure/</link>
       <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
+      <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp-scheme-clojure/</guid>
       <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
     </item>
     

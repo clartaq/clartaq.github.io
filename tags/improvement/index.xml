@@ -14,10 +14,10 @@
     
     <item>
       <title>Java Data Grid Component -- A Personal Failing</title>
-      <link>https://yo-dave.com/2011/09/22/java-data-grid-component----a-personal-failing/</link>
+      <link>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</link>
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component----a-personal-failing/</guid>
+      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
       <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

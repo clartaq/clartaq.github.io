@@ -147,10 +147,10 @@ Even though regular expressions are present in most programming languages, I hav
     
     <item>
       <title>Using Anonymous Functions in the Clojure/Script Thrush Macro</title>
-      <link>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</link>
+      <link>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure-script-thrush-macro/</link>
       <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
       
-      <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</guid>
+      <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure-script-thrush-macro/</guid>
       <description>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
 What could be more natural than to string those pieces of code together with one of Clojure&amp;rsquo;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;gt;&amp;gt;.</description>
     </item>
@@ -210,10 +210,10 @@ Since the switch, I&amp;rsquo;ve been using Sublime Text 3 as my editor for Mark
     
     <item>
       <title>Another Useful Function -- convert-seq-to-comma-separated-string</title>
-      <link>https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/</link>
+      <link>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</link>
       <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/</guid>
+      <guid>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</guid>
       <description>This is a little note about a function I find myself using frequently in Clojure.
 User interface code often needs to display a list of things as a comma-separated list, e.g. &amp;ldquo;a, b, c, d&amp;rdquo;.
 If all of the things are strings, you can use the built-in string/join function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use string/join.</description>
@@ -317,10 +317,10 @@ So, I&amp;rsquo;m looking into hosting my blog for free on GitHub Pages. It even
     
     <item>
       <title>More Note-Taking Goodness - Collate</title>
-      <link>https://yo-dave.com/2017/05/16/more-note-taking-goodness---collate/</link>
+      <link>https://yo-dave.com/2017/05/16/more-note-taking-goodness-collate/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2017/05/16/more-note-taking-goodness---collate/</guid>
+      <guid>https://yo-dave.com/2017/05/16/more-note-taking-goodness-collate/</guid>
       <description>Last time, I wrote about some of the really nice note-taking apps available nowadays. Since then, I&amp;rsquo;ve come across another great one I just had to tell you about: Collate.
 It has just about everything I could want. I&amp;rsquo;ll let you read about all of its features on its web site, but some of the things I like most include:
  It&amp;rsquo;s cross-platform, capable of running on Windows, MacOS, and Linux.</description>
@@ -450,10 +450,10 @@ Usually, I can just file a ticket and get help in a day or so.</description>
     
     <item>
       <title>Clojure/Script has Ruined Me for Other Languages</title>
-      <link>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</link>
+      <link>https://yo-dave.com/2016/10/17/clojure-script-has-ruined-me-for-other-languages/</link>
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
+      <guid>https://yo-dave.com/2016/10/17/clojure-script-has-ruined-me-for-other-languages/</guid>
       <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
 But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
@@ -1277,10 +1277,10 @@ Before starting that search, we bought a laptop to take over the duties of the d
     
     <item>
       <title>2012 - The Year We All Unplug?</title>
-      <link>https://yo-dave.com/2012/01/04/2012---the-year-we-all-unplug/</link>
+      <link>https://yo-dave.com/2012/01/04/2012-the-year-we-all-unplug/</link>
       <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2012/01/04/2012---the-year-we-all-unplug/</guid>
+      <guid>https://yo-dave.com/2012/01/04/2012-the-year-we-all-unplug/</guid>
       <description>Well, Happy New Year everyone.
 It seems like I&amp;rsquo;ve been hearing a lot of buzz about getting unconnected. Everything from hotels offering special deals on stays where you are forced to turn off (or turn in) all your gizmos, to advice to disconnect to improve your productivity. Could it be that the pendulum has started to swing in the other direction?
 Sit back and enjoy the quiet.</description>
@@ -1338,10 +1338,10 @@ On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems 
     
     <item>
       <title>Java Data Grid Component -- A Personal Failing</title>
-      <link>https://yo-dave.com/2011/09/22/java-data-grid-component----a-personal-failing/</link>
+      <link>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</link>
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component----a-personal-failing/</guid>
+      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
       <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -1458,10 +1458,10 @@ It&amp;rsquo;s a constant reminder not to fall prey to something I&amp;rsquo;ve 
     
     <item>
       <title>Binomial Confidence Intervals -- BinomConf</title>
-      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/</link>
+      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</link>
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/</guid>
+      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
       <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -1511,10 +1511,10 @@ We were really excited to get started playing with our new toys. They came in ni
     
     <item>
       <title>Vacuum Cleaners - A Rant</title>
-      <link>https://yo-dave.com/2011/04/03/vacuum-cleaners---a-rant/</link>
+      <link>https://yo-dave.com/2011/04/03/vacuum-cleaners-a-rant/</link>
       <pubDate>Sun, 03 Apr 2011 20:07:59 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/04/03/vacuum-cleaners---a-rant/</guid>
+      <guid>https://yo-dave.com/2011/04/03/vacuum-cleaners-a-rant/</guid>
       <description>&lt;p&gt;This is really something unrelated to most of the content here, but I have to get something off my chest. You would think that after more than a century of engineering effort vacuums cleaners would be a solved problem. Sadly, that is not the case.&lt;/p&gt;</description>
     </item>
     
@@ -1578,10 +1578,10 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
     
     <item>
       <title>Getting Started with Lisp/Scheme/Clojure</title>
-      <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</link>
+      <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp-scheme-clojure/</link>
       <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
+      <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp-scheme-clojure/</guid>
       <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
     </item>
     
@@ -1596,10 +1596,10 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
     
     <item>
       <title>Windows Update Trashed My Computer -- AGAIN!</title>
-      <link>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer----again/</link>
+      <link>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</link>
       <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer----again/</guid>
+      <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</guid>
       <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

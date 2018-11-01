@@ -14,10 +14,10 @@
     
     <item>
       <title>Another Useful Function -- convert-seq-to-comma-separated-string</title>
-      <link>https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/</link>
+      <link>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</link>
       <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2018/01/19/another-useful-function----convert-seq-to-comma-separated-string/</guid>
+      <guid>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</guid>
       <description>This is a little note about a function I find myself using frequently in Clojure.
 User interface code often needs to display a list of things as a comma-separated list, e.g. &amp;ldquo;a, b, c, d&amp;rdquo;.
 If all of the things are strings, you can use the built-in string/join function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use string/join.</description>
@@ -44,10 +44,10 @@ I set up public key authentication, but it would not work with the permissions o
     
     <item>
       <title>Binomial Confidence Intervals -- BinomConf</title>
-      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/</link>
+      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</link>
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/</guid>
+      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
       <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
