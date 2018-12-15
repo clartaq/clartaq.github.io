@@ -32,9 +32,7 @@ I set up public key authentication, but it would not work with the permissions o
 
 &lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,9 +49,7 @@ I set up public key authentication, but it would not work with the permissions o
 &lt;li&gt;Too buggy&lt;/li&gt;
 &lt;li&gt;Too slow&lt;/li&gt;
 &lt;li&gt;Too nosy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -68,9 +64,7 @@ I set up public key authentication, but it would not work with the permissions o
 
 &lt;p&gt;Not a happy situation.&lt;/p&gt;
 
-&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,9 +73,7 @@ I set up public key authentication, but it would not work with the permissions o
       <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</guid>
-      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;</description>
     </item>
     
   </channel>

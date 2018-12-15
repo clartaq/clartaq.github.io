@@ -18,9 +18,7 @@
       <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/03/07/clojurescript-with-reagent-and-figwheel/</guid>
-      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;</description>
     </item>
     
   </channel>

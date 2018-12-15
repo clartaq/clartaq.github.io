@@ -147,9 +147,7 @@ But when I started looking at examples, I often found myself thinking things lik
 
 &lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -158,9 +156,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</guid>
-      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -169,9 +165,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -182,9 +176,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <guid>https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/</guid>
       <description>&lt;p&gt;I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.&lt;/p&gt;
 
-&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -236,9 +228,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <guid>https://yo-dave.com/2013/08/06/n-queens/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&amp;rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&amp;rsquo;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;lsquo;70s.&lt;/p&gt;
 
-&lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -275,9 +265,7 @@ As this is written, the tools used include:</description>
       <pubDate>Tue, 21 May 2013 21:58:27 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</guid>
-      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -286,9 +274,7 @@ As this is written, the tools used include:</description>
       <pubDate>Wed, 08 May 2013 17:20:37 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/08/clojure-javafx-and-tic-tac-toe/</guid>
-      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -307,9 +293,7 @@ One of the things I&amp;rsquo;ve been looking into is how the interface responds
       <pubDate>Thu, 01 Dec 2011 11:16:22 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/12/01/favorite-programming-books/</guid>
-      <description>&lt;p&gt;Every programmer seems to have their own list of favorite programming books. The lists are very personal and seem to be influenced by the age of the programmer, their training, and their field of endeavor. My own list follows.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Every programmer seems to have their own list of favorite programming books. The lists are very personal and seem to be influenced by the age of the programmer, their training, and their field of endeavor. My own list follows.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -328,9 +312,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -348,9 +330,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Sun, 13 Feb 2011 02:10:46 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</guid>
-      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -361,9 +341,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <guid>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</guid>
       <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&amp;rsquo;t quite that simple.&lt;/p&gt;
 
-&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -372,9 +350,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt; (&lt;strong&gt;Update 12 Mar 2018&lt;/strong&gt;: The link is now dead.) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt; (&lt;strong&gt;Update 12 Mar 2018&lt;/strong&gt;: The link is now dead.) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
     </item>
     
   </channel>

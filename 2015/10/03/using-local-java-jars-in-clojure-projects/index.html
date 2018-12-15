@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.50" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>Using Local Java JARS in Clojure Projects &middot; Yo-Dave</title>
 
@@ -264,8 +264,6 @@
 <p>Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &ndash; the <a href="https://github.com/attractivechaos/plb/tree/master/sudoku">Kudoku solver written in Java</a> from <a href="https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/">attractive chaos</a>.</p>
 
 <p>But how does one use a local jar file in a Clojure Project? Read on&hellip;</p>
-
-<p></p>
 
 <p>Usually when you pull in a dependency for a Clojure program, you would grab it from <a href="https://clojars.org/">Clojars</a> or some other repository. But this time, I wanted to use a JAR that exists on my local machine and nowhere else that I know of.</p>
 

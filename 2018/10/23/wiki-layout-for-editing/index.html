@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.50" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>Wiki Layout for Editing &middot; Yo-Dave</title>
 
@@ -242,75 +242,100 @@
   
 
   
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/css">CSS</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/editor">editor</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/layout">layout</a>
+    
+  </div>
+  
+  
 
 </div>
 
   
 
+<p><strong>Update: 2018-12-15</strong> This post substantially updates the original. The most significant changes are that the layout now works as expected - no partial success.</p>
+
+<hr />
+
 <p>A few weeks ago, I wrote a <a href="https://yo-dave.com/2018/09/23/wiki-layout-for-reading/">post about a wiki layout for reading</a>. I used that project to experiment with improvements to the reading view of <a href="https://bitbucket.org/David_Clark/cwiki/src/default/">CWiki</a>, a personal wiki that I am writing. I used the lessons learned in the <a href="https://bitbucket.org/David_Clark/wiki-layout/src/default/">project</a> described in that post to make some changes to CWiki.</p>
 
-<p>In this post, I describe a layout for editing. Just like last time, I created a <a href="https://bitbucket.org/David_Clark/wiki-editor-layout/src/default/">simple project</a> to experiment with. The page is layed out like this:</p>
+<p>In this post, I describe a layout for editing. Just like last time, I created a <a href="https://bitbucket.org/David_Clark/wiki-editor-layout/src/default/">simple project</a> to experiment with. The page is laid out like this:</p>
 
-<pre><code>+----------------------------------------------+
-| Window Header                            Nav |
-+-------+--------------------------------------+
-| Aside | +----------------------------------+ | 
-|       | | Outer Editor Container           | |
-|       | | +------------------------------+ | |
-|       | | | Inner Editor Container       | | |
-|       | | | +--------------------------+ | | |
-|       | | | | Editor Header            | | | |
-|       | | | +-------------+------------+ | | |
-|       | | | | Editor      | Preview    | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | |             |            | | | |
-|       | | | +-------------+------------+ | | |
-|       | | +------------------------------+ | |
-|       | +----------------------------------+ | 
-+-------+-----------------+--------------------+
+<pre><code>+----------------------------------------------------------------+
+| Window Header                                              Nav |
++-------+--------------------------------------------------------+
+| Aside | +----------------------------------------------------+ | 
+|       | | Outer Editor Container                             | |
+|       | | +------------------------------------------------+ | |
+|       | | | Inner Editor Container                         | | |
+|       | | | +--------------------------------------------+ | | |
+|       | | | | Editor Header (Title and Tags)             | | | |
+|       | | | +--------------------------------------------+ | | |
+|       | | | | Editor and Preview Section                 | | | |
+|       | | | | +----------------------------------------+ | | | |
+|       | | | | | Editor Button Bar                      | | | | | 
+|       | | | | +-------------------+--------------------+ | | | |
+|       | | | | | Editor Container | Preview Container   | | | | |
+|       | | | | | +----------------+-------------------+ | | | | |
+|       | | | | | | &quot;Markdown&quot; Label | &quot;Preview&quot; Label | | | | | |
+|       | | | | | +------------------+-----------------| | | | | |
+|       | | | | | | Editor Pane      | Preview Pane    | | | | | |
+|       | | | | | |                  |                 | | | | | |
+|       | | | | | |                  |                 | | | | | |
+|       | | | | | |                  |                 | | | | | |
+|       | | | | | |                  |                 | | | | | |
+|       | | | | | +------------------|-----------------+ | | | | |
+|       | | | | +----------------------------------------+ | | | |
+|       | | | | Bottom Button Bar                          | | | |  
+|       | | | +--------------------------------------------+ | | |
+|       | | +------------------------------------------------+ | |
+|       | +----------------------------------------------------+ | 
++-------+--------------------------------------------------------+
 </code></pre>
 
-<p>The &ldquo;Window Header&rdquo;, &ldquo;Nav&rdquo;, and &ldquo;Aside&rdquo; are identical to the those used in the wiki-layout; the &ldquo;Article Content&rdquo; has been replaced with the &ldquo;Outer Editor Container.&rdquo; These sections should continue to perform just as in the wiki layout. The &ldquo;Outer Editor Container&rdquo; is part of the Clojure layout of the page.</p>
+<p>This diagram is simplified​ but shows the important parts. Of course, refer to the actual CSS and HTML files.</p>
 
-<p>Within the &ldquo;Outer Editor Container&rdquo; is another container, the &ldquo;Inner Editor Container&rdquo;, that is created by the ClojureScript editor functionality when the user elects to edit or create a page.</p>
+<p>The &ldquo;Window Header,&rdquo; &ldquo;Nav,&rdquo; and &ldquo;Aside&rdquo; are identical to the those used in the wiki-layout; the &ldquo;Article Content&rdquo; has been replaced with the &ldquo;Outer Editor Container.&rdquo; These sections should continue to perform just as in the wiki layout. The &ldquo;Outer Editor Container&rdquo; is part of the Clojure layout of the page.</p>
+
+<p>Within the &ldquo;Outer Editor Container&rdquo; is another container, the &ldquo;Inner Editor Container,&rdquo; that is created by the ClojureScript editor functionality when the user elects to edit or create a page.</p>
 
 <p>Within the &ldquo;Inner Editor Container&rdquo; there is a:</p>
 
 <ul>
-<li><strong>Editor Header</strong> that contains an editable title, editable tags, a button bar and perhaps some other information.</li>
-<li><strong>Editor</strong> where editing of the main content occurs.</li>
-<li><strong>Preview</strong> that shows a real-time preview of the main content as it is entered and modified.</li>
+<li><strong>Editor Header</strong> that contains an editable title and editable tags and perhaps, in the future, some other information.</li>
+<li><strong>Editor and Preview Section</strong> holding an <strong>Editor Button Bar</strong>, <strong>Editor Container</strong> and <strong>Preview Container</strong>. The &ldquo;Editor Button Bar&rdquo; contains buttons to perform some simple formatting.
+The &ldquo;Editor Container&rdquo; and &ldquo;Preview Container&rdquo; each contain a label at the top and a &ldquo;Pane&rdquo; of information.</li>
+<li><strong>Editor Pane</strong> where editing of the main content occurs.</li>
+<li><strong>Preview Pane</strong> that shows a real-time preview of the main content as it is entered and modified.</li>
+<li>At the bottom is another button bar, similar to that used in other parts of the program. It contains a single button: &ldquo;Done&rdquo; used to exit the editor and return to the main page view.</li>
 </ul>
 
-<p>The &ldquo;Editor Header&rdquo; should never scroll no matter how long the contents of the &ldquo;Editor&rdquo; or &ldquo;Preview&rdquo; sections are.</p>
+<p>The &ldquo;Editor Pane&rdquo; and &ldquo;Preview Pane&rdquo; should expand to fill all of the remaining vertical space not taken up by the other components.
+Once laid out, the &ldquo;Editor Pane&rdquo; section should not be re-sizeable.</p>
 
-<p>The &ldquo;Editor&rdquo; section should occupy the full verical distance between the &ldquo;Editor Header&rdquo; and the bottom of the view port. When it is too long to display all at once, it should scroll in the &ldquo;y&rdquo; direction.</p>
+<p>The &ldquo;Editor Header&rdquo; should never scroll no matter how long the contents of the &ldquo;Editor Pane&rdquo; or &ldquo;Preview Pane&rdquo; are.</p>
 
-<p>Once laid out, the &ldquo;Editor&rdquo; section should not be re-sizeable.</p>
+<p>The &ldquo;Preview Pane&rdquo; is similar to the &ldquo;Editor Pane&rdquo; but is not editable. It may be of different length since the layout of the final contents of the preview may be longer or shorter than the &ldquo;Editor Pane.&rdquo;</p>
 
-<p>The &ldquo;Preview&rdquo; section is similar to the &ldquo;Editor&rdquo; but is not editable. It may be of different length since the layout of the final contents of the preview may be longer or shorter than the &ldquo;Editor.&rdquo;</p>
+<p>With this page layout​, it should only be possible to scroll the &ldquo;Aside,&rdquo; &ldquo;Editor Pane&rdquo; and &ldquo;Preview Pane&rdquo; if their content is too long to fit in the space laid out for them. None of the other parts of the page should be scrollable.</p>
 
-<p>The &ldquo;Editor&rdquo; and &ldquo;Preview&rdquo; should scroll independently. Perhaps some day the scrolling between these two sections will by sychronized programattically.</p>
+<p>The &ldquo;Editor Pane&rdquo; and &ldquo;Preview Pane&rdquo; should scroll independently. Perhaps someday the scrolling between these two sections will by synchronized programmatically.</p>
 
 <p>The layout has been tested to perform as explained on <a href="https://www.apple.com/safari/">Safari</a>, <a href="https://www.mozilla.org/en-US/firefox/">Firefox</a>, <a href="https://www.opera.com">Opera</a>, and <a href="https://brave.com">Brave</a> browsers.</p>
 
 <h2 id="implementation-in-cwiki">Implementation in CWiki</h2>
 
-<p>Although the experimental project works as desired, copying its operation to CWiki has been problematic. At the moment, the layout <em>mostly</em> works as intended. However, for some reason, it is still possible for the &ldquo;Window Header&rdquo; to scroll out of view when editing long posts.</p>
+<p>The initial transfer of the CSS governing this layout to CWiki was not entirely successful. It was possible to &ldquo;pull&rdquo; and &ldquo;push&rdquo; things such that part of the &ldquo;Window Header&rdquo; would scroll out of view and it was never possible to get the bottom button entirely​ in the viewport.</p>
 
-<p>Even though transfer of behavior to another program has not yet been successull, I thought it would be a good idea to just go ahead and publish the experimental project since it <em>does</em> work.</p>
-
-<p>I will post an update when I get CWiki to work as desired.</p>
-
-<h2 id="update-1-nov-2018">Update - 1 Nov 2018</h2>
-
-<p>Turns out that not allow of the CSS for the layout was included when building up the layout for the editor. It was split across two selectors in CWiki &ndash; a relic from earlier development &ndash; and one of the selectors was not included for the editor. The two CSS selectors have now been combined. The layouts work correctly for the reading view and the editor across all of the browsers tests. Whew!</p>
+<p>It turned out that the <code>box-sizing</code> attribute of some components​ was not set correctly. Setting it to <code>box-sizing: box-border</code> was the last piece of the puzzle. Since making the change, things have been working flawlessly.</p>
 
 
   

@@ -61,9 +61,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <guid>https://yo-dave.com/2016/07/17/speech-synthesis-in-clojurescript/</guid>
       <description>&lt;p&gt;Just like everyone else, it seems, I&amp;rsquo;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this &lt;a href=&#34;https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0&#34;&gt;one&lt;/a&gt; and &lt;a href=&#34;https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper&#34;&gt;this one&lt;/a&gt; and &lt;a href=&#34;http://www.instructables.com/id/Raspberri-Personal-Assistant/&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&amp;rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&amp;rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -72,9 +70,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/03/07/clojurescript-with-reagent-and-figwheel/</guid>
-      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;</description>
     </item>
     
   </channel>

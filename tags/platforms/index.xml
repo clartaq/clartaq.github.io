@@ -22,9 +22,7 @@
 
 &lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;</description>
     </item>
     
     <item>

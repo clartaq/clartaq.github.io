@@ -18,8 +18,8 @@
       <pubDate>Tue, 23 Oct 2018 16:05:29 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/10/23/wiki-layout-for-editing/</guid>
-      <description>A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.
-In this post, I describe a layout for editing. Just like last time, I created a simple project to experiment with.</description>
+      <description>Update: 2018-12-15 This post substantially updates the original. The most significant changes are that the layout now works as expected - no partial success.
+A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.</description>
     </item>
     
     <item>
@@ -509,9 +509,7 @@ I have never understood the allure of such things. It seems that people who have
       <guid>https://yo-dave.com/2016/08/19/serving-wordpress-over-https-with-caddy-server/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; server is a relatively new, easy-to-use server written in the &lt;a href=&#34;https://golang.org/&#34;&gt;Go programming language&lt;/a&gt;. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (&lt;a href=&#34;http://info.ssl.com/article.aspx?id=10241&#34;&gt;Secure Sockets Layer&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/Transport_Layer_Security&#34;&gt;Transport Layer Security&lt;/a&gt;) certificates automatically from &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; to let you serve a site with&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTPS&#34;&gt; HTTPS&lt;/a&gt; by default. The project is open source and the certificates are free.&lt;/p&gt;
 
-&lt;p&gt;Of course, &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt; is a very popular blogging platform. Caddy provides some &lt;a href=&#34;https://github.com/caddyserver/examples/tree/master/wordpress&#34;&gt;guidance&lt;/a&gt; on getting WordPress up and running on the server. However, it wasn&amp;rsquo;t enough for me. Here&amp;rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Of course, &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt; is a very popular blogging platform. Caddy provides some &lt;a href=&#34;https://github.com/caddyserver/examples/tree/master/wordpress&#34;&gt;guidance&lt;/a&gt; on getting WordPress up and running on the server. However, it wasn&amp;rsquo;t enough for me. Here&amp;rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -540,9 +538,7 @@ Fountain pens are pretty pieces of art, but too messy and fiddly. Ballpoints are
       <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/10/my-server-setup-process/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://yo-dave.com/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://yo-dave.com/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -563,9 +559,7 @@ Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to
       <guid>https://yo-dave.com/2016/07/17/speech-synthesis-in-clojurescript/</guid>
       <description>&lt;p&gt;Just like everyone else, it seems, I&amp;rsquo;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this &lt;a href=&#34;https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0&#34;&gt;one&lt;/a&gt; and &lt;a href=&#34;https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper&#34;&gt;this one&lt;/a&gt; and &lt;a href=&#34;http://www.instructables.com/id/Raspberri-Personal-Assistant/&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&amp;rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&amp;rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -629,9 +623,7 @@ Just sayin&amp;rsquo;.</description>
       <guid>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</guid>
       <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&amp;rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
 
-&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -671,9 +663,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/03/07/clojurescript-with-reagent-and-figwheel/</guid>
-      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -686,9 +676,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
 
 &lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -699,9 +687,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       <guid>https://yo-dave.com/2016/02/14/river5-on-ubuntu-14.04-lts-with-a-cloudatcost-vs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is the latest in a series of &lt;a href=&#34;https://en.wikipedia.org/wiki/RSS&#34;&gt;RSS&lt;/a&gt; News Aggretators written by &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt;. You can read his announcement &lt;a href=&#34;http://scripting.com/liveblog/users/davewiner/2016/02/09/0995.html&#34;&gt;here&lt;/a&gt;. These notes describe how to set up a River of News on a Virtual Server (VS) purchased or rented from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; and freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04.&lt;/p&gt;
 
-&lt;p&gt;These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -716,9 +702,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
 
 &lt;hr /&gt;
 
-&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -772,9 +756,7 @@ It was a bit improved this time. A Windows 10 version of the driver for my Fujit
 
 &lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -791,9 +773,7 @@ It was a bit improved this time. A Windows 10 version of the driver for my Fujit
 &lt;li&gt;Too buggy&lt;/li&gt;
 &lt;li&gt;Too slow&lt;/li&gt;
 &lt;li&gt;Too nosy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -812,9 +792,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/06/30/tasks-and-ui-updates-in-javafx/</guid>
-      <description>&lt;p&gt;Recently, I answered a &lt;a href=&#34;http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188&#34;&gt;question&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt; related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I answered a &lt;a href=&#34;http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188&#34;&gt;question&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt; related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -823,9 +801,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</guid>
-      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -896,9 +872,7 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
 
 &lt;p&gt;Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&amp;rsquo;t have to do anything to save their work. It just happened.&lt;/p&gt;
 
-&lt;p&gt;This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -909,9 +883,7 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
       <guid>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</guid>
       <description>&lt;p&gt;An odd thing happened recently. I have been working on a simulation that produces graphical and text updates as it progresses. That involves drawing a picture of the system and updating some textual elements of the user interface.&lt;/p&gt;
 
-&lt;p&gt;Things seemed to work fine when the simulation was run with &amp;ldquo;normal&amp;rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Things seemed to work fine when the simulation was run with &amp;ldquo;normal&amp;rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -920,9 +892,7 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1025,9 +995,7 @@ There are a zillion WordPress themes out there. Some awful, but many quite good.
       <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1060,9 +1028,7 @@ Follow the following steps:
       <pubDate>Sun, 30 Mar 2014 13:42:07 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/</guid>
-      <description>&lt;p&gt;Just some notes on how I updated to the recent releases of Java 8 and NetBeans 8 on Ubuntu 13.10 (64 bit) running the Xfce desktop environment (Xubuntu).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Just some notes on how I updated to the recent releases of Java 8 and NetBeans 8 on Ubuntu 13.10 (64 bit) running the Xfce desktop environment (Xubuntu).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1104,9 +1070,7 @@ And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough
       <guid>https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/</guid>
       <description>&lt;p&gt;I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.&lt;/p&gt;
 
-&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1158,9 +1122,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <guid>https://yo-dave.com/2013/08/06/n-queens/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&amp;rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&amp;rsquo;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;lsquo;70s.&lt;/p&gt;
 
-&lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1219,9 +1181,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Tue, 21 May 2013 21:58:27 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</guid>
-      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1230,9 +1190,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Wed, 08 May 2013 17:20:37 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/08/clojure-javafx-and-tic-tac-toe/</guid>
-      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1292,9 +1250,7 @@ Sit back and enjoy the quiet.</description>
       <pubDate>Thu, 01 Dec 2011 11:16:22 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/12/01/favorite-programming-books/</guid>
-      <description>&lt;p&gt;Every programmer seems to have their own list of favorite programming books. The lists are very personal and seem to be influenced by the age of the programmer, their training, and their field of endeavor. My own list follows.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Every programmer seems to have their own list of favorite programming books. The lists are very personal and seem to be influenced by the age of the programmer, their training, and their field of endeavor. My own list follows.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1312,9 +1268,7 @@ Sit back and enjoy the quiet.</description>
       <pubDate>Thu, 01 Dec 2011 08:55:07 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/12/01/twitter-a-lack-of-communication/</guid>
-      <description>&lt;p&gt;This is a rant that I just have to get off my chest.Twitter just doesn&amp;rsquo;t provide any meaningful communication and I can&amp;rsquo;t understand the appeal. Imagine a newspaper consisting of just the headlines or a magazine containing only the article titles &amp;ndash; that is essentially Twitter.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is a rant that I just have to get off my chest.Twitter just doesn&amp;rsquo;t provide any meaningful communication and I can&amp;rsquo;t understand the appeal. Imagine a newspaper consisting of just the headlines or a magazine containing only the article titles &amp;ndash; that is essentially Twitter.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1342,9 +1296,7 @@ On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems 
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
-      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1431,9 +1383,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1462,9 +1412,7 @@ It&amp;rsquo;s a constant reminder not to fall prey to something I&amp;rsquo;ve 
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
-      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1483,9 +1431,7 @@ This computer has generally been excellent. But there have been issues with it r
       <pubDate>Sun, 15 May 2011 17:03:17 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/05/15/ubuntu-11.04-upgrade-not-so-excellent/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://www.ubuntu.com&#34; title=&#34;Link to Ubuntu Linux home page&#34;&gt;Ubuntu&lt;/a&gt; &lt;a href=&#34;http://www.linux.com&#34; title=&#34;Link to Linux home page&#34;&gt;Linux&lt;/a&gt; distribution came out with version 11.04 a few days ago. These upgrades very seldom go smoothly on my systems. This was not an exception.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://www.ubuntu.com&#34; title=&#34;Link to Ubuntu Linux home page&#34;&gt;Ubuntu&lt;/a&gt; &lt;a href=&#34;http://www.linux.com&#34; title=&#34;Link to Linux home page&#34;&gt;Linux&lt;/a&gt; distribution came out with version 11.04 a few days ago. These upgrades very seldom go smoothly on my systems. This was not an exception.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1550,9 +1496,7 @@ This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn
 
 &lt;p&gt;Not a happy situation.&lt;/p&gt;
 
-&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1600,9 +1544,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</guid>
-      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1611,9 +1553,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Sun, 13 Feb 2011 02:10:46 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</guid>
-      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1631,9 +1571,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Sun, 06 Feb 2011 01:38:36 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/06/literate-programming/</guid>
-      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1642,9 +1580,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Sun, 30 Jan 2011 01:28:12 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/30/light-theme-background-image/</guid>
-      <description>&lt;p&gt;Arizona, where I live, has a lot of very photogenic scenery. I am by no means a very talented photographer, but with all the opportunities around here, every once in a while, even I manage to snap a nice image.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Arizona, where I live, has a lot of very photogenic scenery. I am by no means a very talented photographer, but with all the opportunities around here, every once in a while, even I manage to snap a nice image.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1666,9 +1602,7 @@ Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript
       <guid>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</guid>
       <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&amp;rsquo;t quite that simple.&lt;/p&gt;
 
-&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1677,9 +1611,7 @@ Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt; (&lt;strong&gt;Update 12 Mar 2018&lt;/strong&gt;: The link is now dead.) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt; (&lt;strong&gt;Update 12 Mar 2018&lt;/strong&gt;: The link is now dead.) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
     </item>
     
     <item>

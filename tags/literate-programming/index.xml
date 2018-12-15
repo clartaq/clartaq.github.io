@@ -28,9 +28,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
-      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +46,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <pubDate>Sun, 06 Feb 2011 01:38:36 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/06/literate-programming/</guid>
-      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;</description>
     </item>
     
   </channel>

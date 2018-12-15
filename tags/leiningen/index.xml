@@ -32,9 +32,7 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
 
 &lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,9 +41,7 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
       <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -64,9 +60,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <pubDate>Tue, 21 May 2013 21:58:27 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</guid>
-      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;</description>
     </item>
     
   </channel>

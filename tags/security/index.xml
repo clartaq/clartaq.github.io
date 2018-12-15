@@ -20,9 +20,7 @@
       <guid>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</guid>
       <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&amp;rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
 
-&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
     </item>
     
   </channel>

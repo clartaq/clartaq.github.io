@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.50" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>Javafx &middot; Yo-Dave</title>
 
@@ -557,8 +557,6 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
 
   <p>
   <p>Recently, I answered a <a href="http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188">question</a> on <a href="http://stackoverflow.com/">StackOverflow</a> related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.</p>
-
-<p></p>
   </p>
 
   
@@ -616,8 +614,6 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
 <p>Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&rsquo;t have to do anything to save their work. It just happened.</p>
 
 <p>This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)</p>
-
-<p></p>
   </p>
 
   
@@ -665,8 +661,6 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
   <p>I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.</p>
 
 <p>For some time, I&rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
-
-<p></p>
   </p>
 
   
@@ -953,8 +947,6 @@ That&rsquo;s a handy facility to have, even on Windows, which can have different
 
   <p>
   <p>Recently, I have been experimenting with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html" title="Link to JavaFX developer">JavaFX</a> in <a href="http://clojure.org/" title="Link to the Clojure language home page.">Clojure</a>. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&rsquo;s containing window was re-sized. In the past I&rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The <a href="https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/">initial experiment</a> was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.</p>
-
-<p></p>
   </p>
 
   

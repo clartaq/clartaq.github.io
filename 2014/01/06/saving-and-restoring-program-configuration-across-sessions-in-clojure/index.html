@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.50" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>Saving and Restoring Program Configuration across Sessions in Clojure &middot; Yo-Dave</title>
 
@@ -260,8 +260,6 @@
   <p>I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.</p>
 
 <p>For some time, I&rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
-
-<p></p>
 
 <p>Simple configuration data usually consists of key/value pairs. In Clojure, the natural data structure to use is the map. For example, the size and position of a program window might be encoded as something like this:</p>
 

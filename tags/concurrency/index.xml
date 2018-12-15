@@ -28,9 +28,7 @@ When I write a program in Clojure that requires such a feature, I have the entir
       <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/06/30/tasks-and-ui-updates-in-javafx/</guid>
-      <description>&lt;p&gt;Recently, I answered a &lt;a href=&#34;http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188&#34;&gt;question&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt; related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I answered a &lt;a href=&#34;http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188&#34;&gt;question&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt; related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -38,9 +38,7 @@ However, if you want to host your own server, it can be done. If you are running
       <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/10/my-server-setup-process/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://yo-dave.com/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://yo-dave.com/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -66,9 +64,7 @@ Legacy Windows Programs It used to be that there was a large amount of inertia t
 
 &lt;hr /&gt;
 
-&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -87,9 +83,7 @@ When I tried to log into some of my other servers, ssh gave me a warning about l
       <pubDate>Sun, 15 May 2011 17:03:17 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/05/15/ubuntu-11.04-upgrade-not-so-excellent/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://www.ubuntu.com&#34; title=&#34;Link to Ubuntu Linux home page&#34;&gt;Ubuntu&lt;/a&gt; &lt;a href=&#34;http://www.linux.com&#34; title=&#34;Link to Linux home page&#34;&gt;Linux&lt;/a&gt; distribution came out with version 11.04 a few days ago. These upgrades very seldom go smoothly on my systems. This was not an exception.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://www.ubuntu.com&#34; title=&#34;Link to Ubuntu Linux home page&#34;&gt;Ubuntu&lt;/a&gt; &lt;a href=&#34;http://www.linux.com&#34; title=&#34;Link to Linux home page&#34;&gt;Linux&lt;/a&gt; distribution came out with version 11.04 a few days ago. These upgrades very seldom go smoothly on my systems. This was not an exception.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -104,9 +98,7 @@ When I tried to log into some of my other servers, ssh gave me a warning about l
 
 &lt;p&gt;Not a happy situation.&lt;/p&gt;
 
-&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
     </item>
     
   </channel>

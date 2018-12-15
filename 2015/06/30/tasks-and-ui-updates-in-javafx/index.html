@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.50" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>Tasks and UI Updates in JavaFX &middot; Yo-Dave</title>
 
@@ -260,8 +260,6 @@
 </div>
 
   <p>Recently, I answered a <a href="http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188">question</a> on <a href="http://stackoverflow.com/">StackOverflow</a> related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.</p>
-
-<p></p>
 
 <p>It wasn&rsquo;t a very good question by the <a href="http://stackoverflow.com/tour">standards of the forum</a>, with little research or explanation. In fact, it had been down-voted. But it piqued my interest because of a similar problem I had recently. In a program that I have been working on, at start up, there is a check for the presence of a database. If the database is not found, the program needs to write a &ldquo;seed&rdquo; version. I wanted this to happen before the main UI came up, but with a window showing progress on the task. I asked a <a href="http://stackoverflow.com/questions/30917285/javafx-splash-screen-message-and-progress-not-updating">similar question</a> on StackOverflow. (Things weren&rsquo;t working for me because of an embarrassing little bit of stupidity.)</p>
 
