@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.52" />
+  <meta name="generator" content="Hugo 0.55.5" />
 
   <title>Getting enclojure 1.4 to work &middot; Yo-Dave</title>
 
@@ -302,21 +302,21 @@
     
 (defn -main []
   (counter-app))
-</code></pre></li>
+</code></pre>
 
-<li><p>In the project view, right-click on the project name, then select &ldquo;Properties&rdquo; from the drop-down menu.</p></li>
-
-<li><p>In the &ldquo;Run&rdquo; branch, in the &ldquo;Main Class:&rdquo; edit box, type &ldquo;net.dneclark.JFrameDemo&rdquo;.</p></li>
-
-<li><p>Edited project pom.xml to include 2.0.2 under the maven compiler plugin as suggested by <a href="http://groups.google.com/group/enclojure/browse_thread/thread/785bde127d006b8a/a5446ddf6e869dea?#a5446ddf6e869dea">this thread</a> from the enclojure discussion group.
-For one of my systems, this is all it took. On another system, there was something funky in the Maven repository. Deleting the repository and re-building got things working.</p></li>
+<ul>
+<li>In the project view, right-click on the project name, then select &ldquo;Properties&rdquo; from the drop-down menu.</li>
+<li>In the &ldquo;Run&rdquo; branch, in the &ldquo;Main Class:&rdquo; edit box, type &ldquo;net.dneclark.JFrameDemo&rdquo;.</li>
+<li>Edited project pom.xml to include 2.0.2 under the maven compiler plugin as suggested by <a href="http://groups.google.com/group/enclojure/browse_thread/thread/785bde127d006b8a/a5446ddf6e869dea?#a5446ddf6e869dea">this thread</a> from the enclojure discussion group.
+For one of my systems, this is all it took. On another system, there was something funky in the Maven repository. Deleting the repository and re-building got things working.</li>
 </ul>
 
 <h2 id="other-tricks">Other Tricks</h2>
 
 <p>At this point, the executable jar is called &ldquo;sample-0.0.1.jar&rdquo;, to rename it, open the project properties, change the Artifact Id to &ldquo;JFrameDemo&rdquo;. Executable jar is named &ldquo;JFrameDemo-0.0.1.jar&rdquo;.</p>
 
-<p>This jar is not a stand-alone executable as it is typically created by NetBeans. It does not contain any of the libraries, such as the Clojure libraries.</p>
+<p>This jar is not a stand-alone executable as it is typically created by NetBeans. It does not contain any of the libraries, such as the Clojure libraries.</p></li>
+</ul>
 
   
 <div class="prev-next-post pure-g">

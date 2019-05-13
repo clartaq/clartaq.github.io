@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clojurescript on Yo-Dave</title>
+    <title>clojurescript on Yo-Dave</title>
     <link>https://yo-dave.com/tags/clojurescript/</link>
-    <description>Recent content in Clojurescript on Yo-Dave</description>
+    <description>Recent content in clojurescript on Yo-Dave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 01 Aug 2018 15:56:32 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 08:22:29 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/clojurescript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Displaying Video from a Webcam using Clojurescript and Reagent</title>
+      <link>https://yo-dave.com/2019/05/13/displaying-video-from-a-webcam-using-clojurescript-and-reagent/</link>
+      <pubDate>Mon, 13 May 2019 08:22:29 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2019/05/13/displaying-video-from-a-webcam-using-clojurescript-and-reagent/</guid>
+      <description>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan ISBN (International Standard Book Number) numbers from the jackets of physical books. This isn&amp;rsquo;t quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I&amp;rsquo;m told. I really don&amp;rsquo;t know much about it yet.</description>
+    </item>
     
     <item>
       <title>Autosave Functionality in ClojureScript</title>
@@ -35,20 +44,20 @@ It&amp;rsquo;s all a variation of Markdown, which is nice.</description>
     
     <item>
       <title>Using Anonymous Functions in the Clojure/Script Thrush Macro</title>
-      <link>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure-script-thrush-macro/</link>
+      <link>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</link>
       <pubDate>Sun, 15 Apr 2018 11:48:25 -0400</pubDate>
       
-      <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure-script-thrush-macro/</guid>
+      <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</guid>
       <description>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
 What could be more natural than to string those pieces of code together with one of Clojure&amp;rsquo;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;gt;&amp;gt;.</description>
     </item>
     
     <item>
       <title>Clojure/Script has Ruined Me for Other Languages</title>
-      <link>https://yo-dave.com/2016/10/17/clojure-script-has-ruined-me-for-other-languages/</link>
+      <link>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</link>
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2016/10/17/clojure-script-has-ruined-me-for-other-languages/</guid>
+      <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
       <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
 But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>

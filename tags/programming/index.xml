@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on Yo-Dave</title>
+    <title>programming on Yo-Dave</title>
     <link>https://yo-dave.com/tags/programming/</link>
-    <description>Recent content in Programming on Yo-Dave</description>
+    <description>Recent content in programming on Yo-Dave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
@@ -44,10 +44,10 @@ Recently, I&amp;rsquo;ve been working on a program that can spend a lot of time 
     
     <item>
       <title>Clojure/Script has Ruined Me for Other Languages</title>
-      <link>https://yo-dave.com/2016/10/17/clojure-script-has-ruined-me-for-other-languages/</link>
+      <link>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</link>
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2016/10/17/clojure-script-has-ruined-me-for-other-languages/</guid>
+      <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
       <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
 But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
