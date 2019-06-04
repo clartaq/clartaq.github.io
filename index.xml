@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 13 May 2019 08:22:29 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 17:31:32 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Detecting from a Web Client Whether a Particular Font is Installed</title>
+      <link>https://yo-dave.com/2019/06/03/detecting-from-a-web-client-whether-a-particular-font-is-installed/</link>
+      <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2019/06/03/detecting-from-a-web-client-whether-a-particular-font-is-installed/</guid>
+      <description>Sometimes, a web client just needs to know what font it is using. The use cases may vary, but when you need it, you need it.
+In my own case, I have a tag editing component for my personal wiki. The component allows entry of any number of tags. It also changes the size of the input as the user types in the text, getting smaller when characters are deleted or larger when new characters are entered.</description>
+    </item>
     
     <item>
       <title>Displaying Video from a Webcam using Clojurescript and Reagent</title>

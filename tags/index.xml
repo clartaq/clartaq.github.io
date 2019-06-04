@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 13 May 2019 08:22:29 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 17:31:32 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS</title>
+      <link>https://yo-dave.com/tags/css/</link>
+      <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>client-side</title>
+      <link>https://yo-dave.com/tags/client-side/</link>
+      <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/client-side/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>detection</title>
+      <link>https://yo-dave.com/tags/detection/</link>
+      <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/detection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>font</title>
+      <link>https://yo-dave.com/tags/font/</link>
+      <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/font/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>clojurescript</title>
@@ -45,15 +81,6 @@
       <pubDate>Mon, 13 May 2019 08:22:29 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/webcam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSS</title>
-      <link>https://yo-dave.com/tags/css/</link>
-      <pubDate>Tue, 23 Oct 2018 16:05:29 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/css/</guid>
       <description></description>
     </item>
     
