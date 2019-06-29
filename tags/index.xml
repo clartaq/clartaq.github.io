@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 03 Jun 2019 17:31:32 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2019 16:51:20 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,54 @@
     <item>
       <title>CSS</title>
       <link>https://yo-dave.com/tags/css/</link>
-      <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://yo-dave.com/tags/html/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojure</title>
+      <link>https://yo-dave.com/tags/clojure/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojurescript</title>
+      <link>https://yo-dave.com/tags/clojurescript/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojurescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sidebar</title>
+      <link>https://yo-dave.com/tags/sidebar/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/sidebar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technical note</title>
+      <link>https://yo-dave.com/tags/technical-note/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/technical-note/</guid>
       <description></description>
     </item>
     
@@ -45,15 +90,6 @@
       <pubDate>Mon, 03 Jun 2019 17:31:32 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/font/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojurescript</title>
-      <link>https://yo-dave.com/tags/clojurescript/</link>
-      <pubDate>Mon, 13 May 2019 08:22:29 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/clojurescript/</guid>
       <description></description>
     </item>
     
@@ -139,15 +175,6 @@
     </item>
     
     <item>
-      <title>clojure</title>
-      <link>https://yo-dave.com/tags/clojure/</link>
-      <pubDate>Sun, 16 Sep 2018 10:10:08 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>flexmark</title>
       <link>https://yo-dave.com/tags/flexmark/</link>
       <pubDate>Sun, 16 Sep 2018 10:10:08 -0400</pubDate>
@@ -180,15 +207,6 @@
       <pubDate>Mon, 13 Aug 2018 15:34:09 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/state-management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>technical note</title>
-      <link>https://yo-dave.com/tags/technical-note/</link>
-      <pubDate>Mon, 13 Aug 2018 15:34:09 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/technical-note/</guid>
       <description></description>
     </item>
     

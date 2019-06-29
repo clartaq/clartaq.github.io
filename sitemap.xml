@@ -4,31 +4,66 @@
   
   <url>
     <loc>https://yo-dave.com/tags/css/</loc>
-    <lastmod>2019-06-04T13:44:24-04:00</lastmod>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/html/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2019/06/27/letting-the-user-change-the-sidebar-width/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/clojure/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/clojurescript/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/sidebar/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/technical-note/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/2019/06/03/detecting-from-a-web-client-whether-a-particular-font-is-installed/</loc>
     <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
-    <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -52,12 +87,6 @@
   <url>
     <loc>https://yo-dave.com/2019/05/13/displaying-video-from-a-webcam-using-clojurescript-and-reagent/</loc>
     <lastmod>2019-05-13T16:24:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/clojurescript/</loc>
-    <lastmod>2019-05-13T16:24:11-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -130,12 +159,6 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/flexmark/</loc>
     <lastmod>2018-09-17T10:23:41-04:00</lastmod>
     <priority>0</priority>
@@ -160,12 +183,6 @@
   
   <url>
     <loc>https://yo-dave.com/tags/state-management/</loc>
-    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/technical-note/</loc>
     <lastmod>2018-08-13T15:34:15-04:00</lastmod>
     <priority>0</priority>
   </url>

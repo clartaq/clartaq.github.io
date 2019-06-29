@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>technical note on Yo-Dave</title>
-    <link>https://yo-dave.com/tags/technical-note/</link>
-    <description>Recent content in technical note on Yo-Dave</description>
+    <title>sidebar on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/sidebar/</link>
+    <description>Recent content in sidebar on Yo-Dave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
     <lastBuildDate>Thu, 27 Jun 2019 16:51:20 -0400</lastBuildDate>
     
-	<atom:link href="https://yo-dave.com/tags/technical-note/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yo-dave.com/tags/sidebar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,16 +22,6 @@
 There were two ways the user could do it.
 First, they could set it manually in the [[preferences|Preferences]] page.
 Second, and more naturally in my opinion, they could use the mouse to drag the separator between the sidebar and the main article area to the location they wanted it.</description>
-    </item>
-    
-    <item>
-      <title>Stuart Sierras Component System</title>
-      <link>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</link>
-      <pubDate>Mon, 13 Aug 2018 15:34:09 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</guid>
-      <description>Starting the implementation of user options (preferences) in CWiki (a personal wiki program) got me thinking about refactoring the project into a shape that is more compatible with Stuart Sierras reloaded workflow. Naturally, that led to thinking about his component architecture. Here are some more resources related to the component architecture.
- Stuart has a blog post about his reloaded workflow, linked above. The component code repository is on Github here.</description>
     </item>
     
   </channel>
