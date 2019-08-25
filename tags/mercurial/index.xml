@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 09 Jun 2018 16:47:43 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 12:10:31 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/mercurial/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setting Up Remote Repositories for Mercurial</title>
+      <link>https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/</link>
+      <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/</guid>
+      <description>With the recent announcement that Bitbucket is &amp;ldquo;sunsetting&amp;rdquo; Mercurial support, I&amp;rsquo;ve been looking at ways of hosting remote copies of my repositories on my own.
+In the short term, I have just cloned my repositories from Bitbucket onto a Raspberry Pi 4 sitting behind my home desktop. I use Pi to run a River of News aggregator for my family. It has plenty of capacity for a task like this.</description>
+    </item>
     
     <item>
       <title>Closing Branches in Mercurial</title>

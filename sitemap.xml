@@ -3,15 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/tags/hg/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/mercurial/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/remote/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/repositories/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/clojure/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/clojurescript/</loc>
+    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/css/</loc>
     <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/html/</loc>
     <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -20,45 +68,18 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/clojurescript/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/sidebar/</loc>
     <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/technical-note/</loc>
     <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/client-side/</loc>
+    <lastmod>2019-06-04T13:44:24-04:00</lastmod>
   </url>
   
   <url>
@@ -67,21 +88,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/client-side/</loc>
-    <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/detection/</loc>
     <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/font/</loc>
     <lastmod>2019-06-04T13:44:24-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -92,19 +105,26 @@
   <url>
     <loc>https://yo-dave.com/tags/reagent/</loc>
     <lastmod>2019-05-13T16:24:11-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/video/</loc>
     <lastmod>2019-05-13T16:24:11-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/webcam/</loc>
     <lastmod>2019-05-13T16:24:11-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/editor/</loc>
+    <lastmod>2018-12-15T10:36:05-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/layout/</loc>
+    <lastmod>2018-12-15T10:36:05-05:00</lastmod>
   </url>
   
   <url>
@@ -113,15 +133,18 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/editor/</loc>
-    <lastmod>2018-12-15T10:36:05-05:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/flex-box/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/layout/</loc>
-    <lastmod>2018-12-15T10:36:05-05:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/flexbox/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/semantic-markup/</loc>
+    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
   </url>
   
   <url>
@@ -130,27 +153,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/flex-box/</loc>
-    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/flexbox/</loc>
-    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/semantic-markup/</loc>
-    <lastmod>2018-09-28T14:09:11-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/flexmark/</loc>
+    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/markdown/</loc>
     <lastmod>2018-09-17T10:23:41-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -159,32 +168,23 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/flexmark/</loc>
-    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</loc>
-    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/components/</loc>
     <lastmod>2018-08-13T15:34:15-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/reloaded-workflow/</loc>
     <lastmod>2018-08-13T15:34:15-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/state-management/</loc>
     <lastmod>2018-08-13T15:34:15-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2018/08/13/stuart-sierras-component-system/</loc>
+    <lastmod>2018-08-13T15:34:15-04:00</lastmod>
   </url>
   
   <url>
@@ -195,19 +195,16 @@
   <url>
     <loc>https://yo-dave.com/tags/memoization/</loc>
     <lastmod>2018-08-13T14:59:37-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/programming/</loc>
     <lastmod>2018-08-13T14:59:37-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/text-processing/</loc>
     <lastmod>2018-08-13T14:59:37-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -218,7 +215,6 @@
   <url>
     <loc>https://yo-dave.com/tags/concurrency/</loc>
     <lastmod>2018-08-07T10:56:03-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -229,7 +225,6 @@
   <url>
     <loc>https://yo-dave.com/tags/note-taking/</loc>
     <lastmod>2018-07-15T18:01:42-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -238,14 +233,23 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/coffee/</loc>
+    <lastmod>2018-07-19T15:51:44-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2018/07/14/the-best-coffee-roasters/</loc>
     <lastmod>2018-07-19T15:51:44-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/coffee/</loc>
-    <lastmod>2018-07-19T15:51:44-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/bugs/</loc>
+    <lastmod>2018-07-05T16:07:02-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/debugging/</loc>
+    <lastmod>2018-07-05T16:07:02-04:00</lastmod>
   </url>
   
   <url>
@@ -254,38 +258,18 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/bugs/</loc>
-    <lastmod>2018-07-05T16:07:02-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/debugging/</loc>
-    <lastmod>2018-07-05T16:07:02-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/2018/06/09/closing-branches-in-mercurial/</loc>
     <lastmod>2018-06-09T16:47:56-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/mercurial/</loc>
-    <lastmod>2018-06-09T16:47:56-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/source-control/</loc>
     <lastmod>2018-06-09T16:47:56-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/workflow/</loc>
     <lastmod>2018-06-09T16:47:56-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -296,13 +280,11 @@
   <url>
     <loc>https://yo-dave.com/tags/mathjax/</loc>
     <lastmod>2018-06-09T11:11:20-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/wiki/</loc>
     <lastmod>2018-06-09T11:11:20-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -313,13 +295,11 @@
   <url>
     <loc>https://yo-dave.com/tags/macro/</loc>
     <lastmod>2018-04-15T12:03:23-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/thrush/</loc>
     <lastmod>2018-04-15T12:03:23-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -328,61 +308,53 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</loc>
-    <lastmod>2018-04-10T10:08:46-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/pm2/</loc>
     <lastmod>2018-04-10T10:08:46-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/raspberry-pi/</loc>
     <lastmod>2018-04-10T10:08:46-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</loc>
+    <lastmod>2018-04-10T10:08:46-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/river5/</loc>
     <lastmod>2018-04-10T10:08:46-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2018/03/26/new-blogging-setup/</loc>
-    <lastmod>2018-03-27T11:53:34-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/blogging/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/cdns/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/cloudflare/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/github-pages/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/hugo/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2018/03/26/new-blogging-setup/</loc>
+    <lastmod>2018-03-27T11:53:34-04:00</lastmod>
   </url>
   
   <url>
@@ -393,7 +365,6 @@
   <url>
     <loc>https://yo-dave.com/tags/upgrading/</loc>
     <lastmod>2018-03-17T13:29:27-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -414,7 +385,6 @@
   <url>
     <loc>https://yo-dave.com/contact/</loc>
     <lastmod>2018-03-15T10:07:50-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -425,7 +395,6 @@
   <url>
     <loc>https://yo-dave.com/about/</loc>
     <lastmod>2018-03-15T10:01:09-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -436,19 +405,16 @@
   <url>
     <loc>https://yo-dave.com/tags/plugins/</loc>
     <lastmod>2018-03-12T17:30:11-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/sublime-text/</loc>
     <lastmod>2018-03-12T17:30:11-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/timestamp/</loc>
     <lastmod>2018-03-12T17:30:11-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -459,7 +425,6 @@
   <url>
     <loc>https://yo-dave.com/tags/utility/</loc>
     <lastmod>2018-03-25T15:37:06-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -475,36 +440,31 @@
   <url>
     <loc>https://yo-dave.com/tags/javafx/</loc>
     <lastmod>2018-03-27T11:45:13-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/statistics/</loc>
     <lastmod>2018-03-27T11:45:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</loc>
-    <lastmod>2018-03-17T13:14:27-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/cursive/</loc>
     <lastmod>2018-03-17T13:14:27-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/editors/</loc>
     <lastmod>2018-03-17T13:14:27-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/intellij-idea/</loc>
     <lastmod>2018-03-17T13:14:27-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</loc>
+    <lastmod>2018-03-17T13:14:27-04:00</lastmod>
   </url>
   
   <url>
@@ -525,7 +485,6 @@
   <url>
     <loc>https://yo-dave.com/tags/quality/</loc>
     <lastmod>2017-08-25T14:15:45+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -536,18 +495,16 @@
   <url>
     <loc>https://yo-dave.com/tags/hexo/</loc>
     <lastmod>2018-03-27T11:32:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2017/08/16/turns-out-my-hosting-company-was-a-scam/</loc>
-    <lastmod>2018-03-27T11:06:09-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/hosting/</loc>
     <lastmod>2018-03-27T11:06:09-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2017/08/16/turns-out-my-hosting-company-was-a-scam/</loc>
+    <lastmod>2018-03-27T11:06:09-04:00</lastmod>
   </url>
   
   <url>
@@ -563,7 +520,16 @@
   <url>
     <loc>https://yo-dave.com/tags/writing/</loc>
     <lastmod>2018-03-27T11:04:24-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/java/</loc>
+    <lastmod>2018-03-27T10:12:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/leiningen/</loc>
+    <lastmod>2018-03-16T16:33:45-04:00</lastmod>
   </url>
   
   <url>
@@ -572,15 +538,8 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/java/</loc>
-    <lastmod>2018-03-27T10:12:47-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/leiningen/</loc>
-    <lastmod>2018-03-16T16:33:45-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/rant/</loc>
+    <lastmod>2018-03-16T16:53:44-04:00</lastmod>
   </url>
   
   <url>
@@ -589,31 +548,23 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/rant/</loc>
-    <lastmod>2018-03-16T16:53:44-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/2017/04/03/an-embarrassment-of-riches-for-note-taking/</loc>
     <lastmod>2018-03-27T10:59:50-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2017/03/04/vendor-games-with-subscriptions/</loc>
-    <lastmod>2017-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/business/</loc>
     <lastmod>2017-03-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/marketing/</loc>
     <lastmod>2018-03-27T10:50:43-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2017/03/04/vendor-games-with-subscriptions/</loc>
+    <lastmod>2017-03-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -624,7 +575,6 @@
   <url>
     <loc>https://yo-dave.com/tags/technology/</loc>
     <lastmod>2018-03-27T10:58:03-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -633,26 +583,23 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2016/12/31/windows-rsync-and-permissions/</loc>
-    <lastmod>2016-12-31T10:10:20+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/linux/</loc>
     <lastmod>2018-03-27T10:22:41-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/pcs-and-macs/</loc>
     <lastmod>2018-03-17T10:40:37-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/windows/</loc>
     <lastmod>2018-03-17T09:43:06-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2016/12/31/windows-rsync-and-permissions/</loc>
+    <lastmod>2016-12-31T10:10:20+00:00</lastmod>
   </url>
   
   <url>
@@ -688,13 +635,11 @@
   <url>
     <loc>https://yo-dave.com/tags/elm-lang/</loc>
     <lastmod>2016-10-17T10:57:40+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/perfectionism/</loc>
     <lastmod>2018-03-27T10:12:47-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -715,7 +660,6 @@
   <url>
     <loc>https://yo-dave.com/tags/email/</loc>
     <lastmod>2016-08-26T09:59:54+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -724,20 +668,18 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/caddy/</loc>
+    <lastmod>2018-03-17T12:25:41-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2016/08/19/serving-wordpress-over-https-with-caddy-server/</loc>
     <lastmod>2018-03-17T12:25:41-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/caddy/</loc>
-    <lastmod>2018-03-17T12:25:41-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/wordpress/</loc>
     <lastmod>2018-03-17T12:25:41-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -748,7 +690,6 @@
   <url>
     <loc>https://yo-dave.com/tags/typography/</loc>
     <lastmod>2016-08-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -764,13 +705,11 @@
   <url>
     <loc>https://yo-dave.com/tags/servers/</loc>
     <lastmod>2018-03-27T10:22:41-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/ubuntu/</loc>
     <lastmod>2018-03-17T10:40:37-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -786,7 +725,6 @@
   <url>
     <loc>https://yo-dave.com/tags/voice/</loc>
     <lastmod>2018-03-25T16:01:06-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -820,14 +758,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2016/04/28/three-reasons-to-dislike-blogs-of-lists/</loc>
-    <lastmod>2016-04-28T00:00:00+00:00</lastmod>
+    <loc>https://yo-dave.com/tags/security/</loc>
+    <lastmod>2018-03-17T10:10:16-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/security/</loc>
-    <lastmod>2018-03-17T10:10:16-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/2016/04/28/three-reasons-to-dislike-blogs-of-lists/</loc>
+    <lastmod>2016-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -838,7 +775,6 @@
   <url>
     <loc>https://yo-dave.com/tags/medicine/</loc>
     <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -849,7 +785,6 @@
   <url>
     <loc>https://yo-dave.com/tags/cryogen/</loc>
     <lastmod>2018-03-12T16:35:58-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -860,13 +795,21 @@
   <url>
     <loc>https://yo-dave.com/tags/figwheel/</loc>
     <lastmod>2018-03-17T09:54:48-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/web-development/</loc>
     <lastmod>2018-03-17T09:54:48-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/platforms/</loc>
+    <lastmod>2018-03-17T09:43:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/raspberrypi/</loc>
+    <lastmod>2018-03-17T09:43:06-04:00</lastmod>
   </url>
   
   <url>
@@ -875,26 +818,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/platforms/</loc>
-    <lastmod>2018-03-17T09:43:06-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/raspberrypi/</loc>
-    <lastmod>2018-03-17T09:43:06-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/nodejs/</loc>
+    <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/2016/02/14/river5-on-ubuntu-14.04-lts-with-a-cloudatcost-vs/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/nodejs/</loc>
-    <lastmod>2016-02-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -908,14 +838,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2016/01/26/dropbox-can-break-windows-10-start-menu/</loc>
+    <loc>https://yo-dave.com/tags/configuration/</loc>
     <lastmod>2016-01-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/configuration/</loc>
+    <loc>https://yo-dave.com/2016/01/26/dropbox-can-break-windows-10-start-menu/</loc>
     <lastmod>2016-01-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -949,31 +878,28 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</loc>
-    <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/javascript/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/meteor/</loc>
     <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2015/05/15/no-more-disqus/</loc>
-    <lastmod>2015-05-15T17:09:14+00:00</lastmod>
+    <loc>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</loc>
+    <lastmod>2015-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/commenting/</loc>
     <lastmod>2015-05-15T17:09:14+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2015/05/15/no-more-disqus/</loc>
+    <lastmod>2015-05-15T17:09:14+00:00</lastmod>
   </url>
   
   <url>
@@ -1009,7 +935,6 @@
   <url>
     <loc>https://yo-dave.com/tags/swing/</loc>
     <lastmod>2018-03-25T15:49:58-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1020,24 +945,21 @@
   <url>
     <loc>https://yo-dave.com/tags/emacs/</loc>
     <lastmod>2018-03-16T16:33:45-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/netbeans/</loc>
     <lastmod>2018-03-25T15:40:35-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2014/10/16/os-updates/</loc>
-    <lastmod>2014-10-16T13:10:49+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/configuring/</loc>
     <lastmod>2014-10-16T13:10:49+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2014/10/16/os-updates/</loc>
+    <lastmod>2014-10-16T13:10:49+00:00</lastmod>
   </url>
   
   <url>
@@ -1083,7 +1005,6 @@
   <url>
     <loc>https://yo-dave.com/tags/design/</loc>
     <lastmod>2018-03-16T17:38:48-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1097,38 +1018,33 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2014/04/02/getting-started-with-hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/go/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/templates/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1154,7 +1070,6 @@
   <url>
     <loc>https://yo-dave.com/tags/cloud/</loc>
     <lastmod>2014-03-04T13:26:26+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1170,7 +1085,6 @@
   <url>
     <loc>https://yo-dave.com/tags/literate-programming/</loc>
     <lastmod>2018-03-27T09:45:01-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1199,14 +1113,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</loc>
+    <loc>https://yo-dave.com/tags/interop/</loc>
     <lastmod>2018-03-16T16:42:36-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/interop/</loc>
+    <loc>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</loc>
     <lastmod>2018-03-16T16:42:36-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1252,13 +1165,11 @@
   <url>
     <loc>https://yo-dave.com/tags/hardware/</loc>
     <lastmod>2013-01-24T22:00:12+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/tablet/</loc>
     <lastmod>2013-01-24T22:00:12+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1269,7 +1180,6 @@
   <url>
     <loc>https://yo-dave.com/tags/interviewing/</loc>
     <lastmod>2012-03-29T08:48:17+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1280,7 +1190,6 @@
   <url>
     <loc>https://yo-dave.com/tags/speculation/</loc>
     <lastmod>2012-01-04T18:02:27+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1291,18 +1200,16 @@
   <url>
     <loc>https://yo-dave.com/tags/lisp/</loc>
     <lastmod>2018-03-15T17:41:06-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</loc>
-    <lastmod>2011-12-01T09:25:53+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/functional-programming/</loc>
     <lastmod>2011-12-01T09:25:53+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</loc>
+    <lastmod>2011-12-01T09:25:53+00:00</lastmod>
   </url>
   
   <url>
@@ -1321,14 +1228,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</loc>
+    <loc>https://yo-dave.com/tags/improvement/</loc>
     <lastmod>2018-03-25T15:45:34-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/improvement/</loc>
+    <loc>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</loc>
     <lastmod>2018-03-25T15:45:34-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1337,14 +1243,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</loc>
+    <loc>https://yo-dave.com/tags/education/</loc>
     <lastmod>2011-09-16T01:14:20+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/education/</loc>
+    <loc>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</loc>
     <lastmod>2011-09-16T01:14:20+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1355,7 +1260,6 @@
   <url>
     <loc>https://yo-dave.com/tags/mathematica/</loc>
     <lastmod>2018-03-27T09:45:01-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1424,14 +1328,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2011/04/03/vacuum-cleaners-a-rant/</loc>
+    <loc>https://yo-dave.com/tags/appliances/</loc>
     <lastmod>2011-04-03T20:07:59+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/appliances/</loc>
+    <loc>https://yo-dave.com/2011/04/03/vacuum-cleaners-a-rant/</loc>
     <lastmod>2011-04-03T20:07:59+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1442,7 +1345,6 @@
   <url>
     <loc>https://yo-dave.com/tags/photo-credit/</loc>
     <lastmod>2018-03-27T09:51:20-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1451,31 +1353,28 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/grub2/</loc>
+    <lastmod>2011-03-13T01:27:27+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</loc>
     <lastmod>2011-03-13T01:27:27+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/grub2/</loc>
-    <lastmod>2011-03-13T01:27:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</loc>
-    <lastmod>2018-03-15T17:46:32-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/antlr/</loc>
     <lastmod>2018-03-15T17:46:32-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/parsing/</loc>
     <lastmod>2018-03-15T17:46:32-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</loc>
+    <lastmod>2018-03-15T17:46:32-04:00</lastmod>
   </url>
   
   <url>
@@ -1486,7 +1385,11 @@
   <url>
     <loc>https://yo-dave.com/tags/strange/</loc>
     <lastmod>2018-03-25T15:33:28-04:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/enclojure/</loc>
+    <lastmod>2018-03-15T17:41:06-04:00</lastmod>
   </url>
   
   <url>
@@ -1495,20 +1398,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/enclojure/</loc>
-    <lastmod>2018-03-15T17:41:06-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://yo-dave.com/tags/drivers/</loc>
+    <lastmod>2011-02-22T01:26:47+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/2011/02/22/unknown-usb-device/</loc>
     <lastmod>2011-02-22T01:26:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/drivers/</loc>
-    <lastmod>2011-02-22T01:26:47+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1529,7 +1425,6 @@
   <url>
     <loc>https://yo-dave.com/tags/matlab/</loc>
     <lastmod>2011-02-11T01:38:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1543,14 +1438,13 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2011/01/30/syntax-highlighting/</loc>
+    <loc>https://yo-dave.com/tags/highlighting/</loc>
     <lastmod>2018-03-15T16:41:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/highlighting/</loc>
+    <loc>https://yo-dave.com/2011/01/30/syntax-highlighting/</loc>
     <lastmod>2018-03-15T16:41:00-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1561,7 +1455,6 @@
   <url>
     <loc>https://yo-dave.com/tags/closures/</loc>
     <lastmod>2018-03-15T10:30:36-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

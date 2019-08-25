@@ -7,26 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 27 Jun 2019 16:51:20 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 12:10:31 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CSS</title>
-      <link>https://yo-dave.com/tags/css/</link>
-      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      <title>hg</title>
+      <link>https://yo-dave.com/tags/hg/</link>
+      <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
       
-      <guid>https://yo-dave.com/tags/css/</guid>
+      <guid>https://yo-dave.com/tags/hg/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>HTML</title>
-      <link>https://yo-dave.com/tags/html/</link>
-      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      <title>Mercurial</title>
+      <link>https://yo-dave.com/tags/mercurial/</link>
+      <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
       
-      <guid>https://yo-dave.com/tags/html/</guid>
+      <guid>https://yo-dave.com/tags/mercurial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote</title>
+      <link>https://yo-dave.com/tags/remote/</link>
+      <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/remote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>repositories</title>
+      <link>https://yo-dave.com/tags/repositories/</link>
+      <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/repositories/</guid>
       <description></description>
     </item>
     
@@ -45,6 +63,24 @@
       <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/clojurescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://yo-dave.com/tags/css/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://yo-dave.com/tags/html/</link>
+      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/html/</guid>
       <description></description>
     </item>
     
@@ -166,20 +202,20 @@
     </item>
     
     <item>
-      <title>Markdown</title>
-      <link>https://yo-dave.com/tags/markdown/</link>
-      <pubDate>Sun, 16 Sep 2018 10:10:08 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>flexmark</title>
       <link>https://yo-dave.com/tags/flexmark/</link>
       <pubDate>Sun, 16 Sep 2018 10:10:08 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/flexmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://yo-dave.com/tags/markdown/</link>
+      <pubDate>Sun, 16 Sep 2018 10:10:08 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/markdown/</guid>
       <description></description>
     </item>
     
@@ -279,15 +315,6 @@
       <pubDate>Wed, 04 Jul 2018 09:49:16 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/debugging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mercurial</title>
-      <link>https://yo-dave.com/tags/mercurial/</link>
-      <pubDate>Sat, 09 Jun 2018 16:47:43 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/mercurial/</guid>
       <description></description>
     </item>
     
@@ -472,7 +499,7 @@
     </item>
     
     <item>
-      <title>statistics</title>
+      <title>Statistics</title>
       <link>https://yo-dave.com/tags/statistics/</link>
       <pubDate>Wed, 13 Sep 2017 17:18:01 +0000</pubDate>
       
@@ -958,7 +985,7 @@
     </item>
     
     <item>
-      <title>Speculation</title>
+      <title>speculation</title>
       <link>https://yo-dave.com/tags/speculation/</link>
       <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
       

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.57.2" />
 
   <title>The Clojure Development Toolchain &middot; Yo-Dave</title>
 
@@ -318,24 +318,25 @@
 <li>Second, I like the Ctrl-C/Ctrl-X/Ctrl-V keys for copy, cut and paste. From the menu, select <strong>Options&gt;Use CUA Keys (Cut/Paste with C-x/C-c/C-v)</strong>.</li>
 <li>Third, I find editing lisp is easier when matching parentheses are highlighted as you pass over the other parenthesis in a pair. Select <strong>Options&gt;Highlight Matching Parentheses</strong> to enable this operation.</li>
 <li>Fourth, I prefer to use Consolas as the typeface when editing programs. Again, from the <strong>Options</strong> menu select the <strong>Set Default Font&hellip;</strong> dialog. Pick the typeface you prefer.</li>
-<li>Fifth, I don&rsquo;t really care for the default color scheme, especially when writing Clojure code. Emacs has many ways to change the color scheme. Fortunately, as of version 24, it has some built-in support for changing themes. From the menu, choose <strong>Options&gt;Customize Emacs&gt;Custom Themes</strong>. In the dialog that appears, choose a theme you like and click the <strong>Save Theme Settings</strong> button. Finally, select <strong>Options&gt;Save Options</strong> and quit Emacs (C-x C-c). If you check your home directory, you should see two changes. There should be a new directory named <code>.emacs.d</code> and a new file named <code>.emacs</code>. Much of the customization information for Emacs is stored in the <code>.emacs</code> file. Here&rsquo;s what mine looked like at this stage in the customization:</li>
-</ul>
 
-<pre><code class="language-lisp"> ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (wombat)))
- '(show-paren-mode t)
- '(tool-bar-mode nil))
+<li><p>Fifth, I don&rsquo;t really care for the default color scheme, especially when writing Clojure code. Emacs has many ways to change the color scheme. Fortunately, as of version 24, it has some built-in support for changing themes. From the menu, choose <strong>Options&gt;Customize Emacs&gt;Custom Themes</strong>. In the dialog that appears, choose a theme you like and click the <strong>Save Theme Settings</strong> button. Finally, select <strong>Options&gt;Save Options</strong> and quit Emacs (C-x C-c). If you check your home directory, you should see two changes. There should be a new directory named <code>.emacs.d</code> and a new file named <code>.emacs</code>. Much of the customization information for Emacs is stored in the <code>.emacs</code> file. Here&rsquo;s what mine looked like at this stage in the customization:</p>
+
+<pre><code class="language-lisp">;; custom-set-variables was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+'(cua-mode t nil (cua-base))
+'(custom-enabled-themes (quote (wombat)))
+'(show-paren-mode t)
+'(tool-bar-mode nil))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family &quot;Consolas&quot; :foundry &quot;outline&quot; :slant normal :weight normal :height 120 :width normal)))))
-</code></pre>
+;; custom-set-faces was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+'(default ((t (:family &quot;Consolas&quot; :foundry &quot;outline&quot; :slant normal :weight normal :height 120 :width normal)))))
+</code></pre></li>
+</ul>
 
 <h4 id="adding-customizations-with-packages">Adding Customizations with Packages</h4>
 
