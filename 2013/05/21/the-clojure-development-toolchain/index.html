@@ -267,11 +267,11 @@
 
 <p>Of course, some readers would argue that you can do Clojure development with NotePad and a command line. While that is true, it is also tedious to the extreme, just as it would be with most other languages. That is what IDEs were developed for &ndash; to take some of the tedium out of development of more complex projects.</p>
 
-<p>In fact, there are some plugins for the <a href="http://www.eclipse.org/">Eclipse</a> and <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a> IDEs, they don&rsquo;t seem to get the job done well. There was also the <a href="http://enclojure.wikispaces.com/">enclojure</a>(Broken Link) plugin for my favorite IDE, <a href="https://netbeans.org/">NetBeans</a>, although it is no longer maintained.</p>
+<p>In fact, there are some plugins for the <a href="http://www.eclipse.org/">Eclipse</a> and <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a> IDEs, they don&rsquo;t seem to get the job done well. There was also the <del><a href="http://enclojure.wikispaces.com/">enclojure</a></del> (<strong>Broken Link</strong>) plugin for my favorite IDE, <a href="https://netbeans.org/">NetBeans</a>, although it is no longer maintained.</p>
 
 <p>At a minimum, a developer needs a good editor and a good build/dependency tool. A good editor &ldquo;knows&rdquo; the language. For Lisp-based languages, there is nothing better than Emacs, despite the steep learning curve. (Good arguments have been made for the <a href="http://www.vim.org/">Vim</a> editor as well.)</p>
 
-<p>The one system that I have found that gets closest to the &ldquo;one button&rdquo; install is <a href="http://lispcabinet.sourceforge.net/">Lisp Cabinet</a>. I&rsquo;ve written about it before <a href="http://yo-dave.com/2011/02/25/2011-02-25-getting-started-with-lispschemeclojure/">here</a>. It is a terrific piece of work that has served me well.</p>
+<p>The one system that I have found that gets closest to the &ldquo;one button&rdquo; install is <del><a href="http://lispcabinet.sourceforge.net/">Lisp Cabinet</a></del>. (**This project appears to be abandoned.) I&rsquo;ve written about it before [here](<a href="https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/">https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</a>. It is a terrific piece of work that has served me well.</p>
 
 <p>That said, it has not been without problems for me. I have been using version 0.34 and earlier for some time. The problem was that I could not get <a href="https://github.com/technomancy/swank-clojure">Swank</a> to work when a version of Clojure later than 1.4 was used in a Leiningen project file. Don&rsquo;t know why. Couldn&rsquo;t figure it out. Gave up trying. (Swank is used to create a Clojure <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> within Emacs that can be used for interactive development. It makes available a number of helpful commands through a facility called <a href="http://common-lisp.net/project/slime/">SLIME</a>, the Superior Lisp Interaction Mode for Emacs.)</p>
 
@@ -284,7 +284,7 @@
 <ul>
 <li>My development system is Windows 7, 64 bit.</li>
 <li>As this is written, I am running JDK 1.7.0 Update 21, 64 bit.</li>
-<li>I am running Windows Powershell 1.0. You can download it free <a href="http://www.microsoft.com/en-us/download/details.aspx?id=7217">here</a>.</li>
+<li>I am running Windows Powershell 1.0. You can download it free <del><a href="http://www.microsoft.com/en-us/download/details.aspx?id=7217">here</a></del>. (**This download is no longer available.)</li>
 </ul>
 
 <h2 id="the-build-system-leiningen">The Build System, Leiningen</h2>
@@ -302,8 +302,7 @@
 
 <h2 id="the-editor-emacs">The Editor, Emacs</h2>
 
-<p>I picked up a pre-compiled binary of Emacs 24.3 for Windows (emacs-24.3-bin-i386.zip) <a href="http://ftp.gnu.org/gnu/emacs/windows/">here</a>. I unzipped the file into my <code>C:\tools</code> directory. (I use this directory rather than the more traditional <code>Program Files</code> directory because, even after all these years, many programs cannot handle directory names with spaces in them.) This creates and fills a directory named <code>emacs-24.3</code>. I renamed mine to be simply <code>emacs</code>. Within <code>C:\tools\emacs\bin</code> find the <code>addpm.exe</code> file and execute it. This will create a desktop shortcut. Start up Emacs and review the tutorial material, if needed. There are tons of helpful information on using Emacs right within the program itself.**
-**</p>
+<p>I picked up a pre-compiled binary of Emacs 24.3 for Windows (emacs-24.3-bin-i386.zip) <a href="http://ftp.gnu.org/gnu/emacs/windows/">here</a>. I unzipped the file into my <code>C:\tools</code> directory. (I use this directory rather than the more traditional <code>Program Files</code> directory because, even after all these years, many programs cannot handle directory names with spaces in them.) This creates and fills a directory named <code>emacs-24.3</code>. I renamed mine to be simply <code>emacs</code>. Within <code>C:\tools\emacs\bin</code> find the <code>addpm.exe</code> file and execute it. This will create a desktop shortcut. Start up Emacs and review the tutorial material, if needed. There are tons of helpful information on using Emacs right within the program itself.</p>
 
 <h3 id="configuration">Configuration</h3>
 
