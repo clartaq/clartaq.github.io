@@ -1212,7 +1212,7 @@ This morning, I&amp;rsquo;ve been playing with a new service called Copy. It is 
       <pubDate>Tue, 25 Jun 2013 18:16:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</guid>
-      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure, have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
+      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure (Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
 As this is written, the tools used include:</description>
     </item>
     
