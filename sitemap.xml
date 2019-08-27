@@ -988,11 +988,6 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2014/09/28/creating-a-new-theme/</loc>
-    <lastmod>2018-03-16T10:04:53-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/2014/07/16/moving-to-web-apps-or-not/</loc>
     <lastmod>2014-07-16T00:00:00+00:00</lastmod>
   </url>
@@ -1013,41 +1008,6 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/2014/04/02/hugo-template-primer/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2014/04/02/getting-started-with-hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/</loc>
     <lastmod>2014-03-30T13:42:07+00:00</lastmod>
   </url>
@@ -1055,11 +1015,6 @@
   <url>
     <loc>https://yo-dave.com/2014/03/26/something-new.-comments/</loc>
     <lastmod>2014-03-26T13:33:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/2014/03/10/migrate-to-hugo-from-jekyll/</loc>
-    <lastmod>2018-03-16T10:05:20-04:00</lastmod>
   </url>
   
   <url>

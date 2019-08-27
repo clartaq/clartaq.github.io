@@ -49,7 +49,7 @@
     </item>
     
     <item>
-      <title>Clojure</title>
+      <title>clojure</title>
       <link>https://yo-dave.com/tags/clojure/</link>
       <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
       
@@ -499,7 +499,7 @@
     </item>
     
     <item>
-      <title>Statistics</title>
+      <title>statistics</title>
       <link>https://yo-dave.com/tags/statistics/</link>
       <pubDate>Wed, 13 Sep 2017 17:18:01 +0000</pubDate>
       
@@ -571,7 +571,7 @@
     </item>
     
     <item>
-      <title>Java</title>
+      <title>java</title>
       <link>https://yo-dave.com/tags/java/</link>
       <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
       
@@ -882,51 +882,6 @@
       <pubDate>Wed, 30 Apr 2014 09:59:36 +0000</pubDate>
       
       <guid>https://yo-dave.com/tags/design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>https://yo-dave.com/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://yo-dave.com/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://yo-dave.com/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://yo-dave.com/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://yo-dave.com/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://yo-dave.com/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>templates</title>
-      <link>https://yo-dave.com/tags/templates/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://yo-dave.com/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>themes</title>
-      <link>https://yo-dave.com/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://yo-dave.com/tags/themes/</guid>
       <description></description>
     </item>
     
