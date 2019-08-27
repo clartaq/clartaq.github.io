@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>clojure on Yo-Dave</title>
+    <title>Clojure on Yo-Dave</title>
     <link>https://yo-dave.com/tags/clojure/</link>
-    <description>Recent content in clojure on Yo-Dave</description>
+    <description>Recent content in Clojure on Yo-Dave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
@@ -362,7 +362,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Dead Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
     </item>
     
   </channel>

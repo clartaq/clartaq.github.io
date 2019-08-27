@@ -1681,7 +1681,7 @@ Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Dead Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1721,7 +1721,7 @@ import javax.swing.*; import java.awt.*; public class CornerButton extends JFram
       <pubDate>Sat, 22 Jan 2011 23:31:31 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/22/so-dr.-clark.-we-meet-again/</guid>
-      <description>Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&amp;rsquo;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper. But I just keep coming back here. Why do I ever leave?
+      <description>Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&amp;rsquo;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper (Broken Link). But I just keep coming back here. Why do I ever leave?
 There are really a couple of reasons. I do this a lot because of hardware and backup failures.</description>
     </item>
     
