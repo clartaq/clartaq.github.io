@@ -5,9 +5,11 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Yo-Dave</title>
+
+    
 
   
   
@@ -27,22 +29,21 @@
   <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
   <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://yo-dave.com/css/clajburn.css">
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
   
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> 
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="Yo-Dave" href="https://yo-dave.com/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Yo-Dave"
+    href='https://yo-dave.com/index.xml' />
   
 
   
@@ -81,7 +82,6 @@
   
 
   <div class="pure-menu">
-    <a class="pure-menu-heading" href="https://yo-dave.com/">Yo-Dave</a>
     <ul class="pure-menu-list">
       
       
@@ -122,7 +122,8 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://yo-dave.com/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href='https://yo-dave.com/index.xml'><i
+          class="fas fa-rss"></i>RSS</a>
     </li>
     
 
@@ -174,7 +175,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/clartaq" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
     </li>
     
 
@@ -182,13 +183,13 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
     </li>
     
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" target="_blank"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
     </li>
     
 
@@ -216,11 +217,11 @@
 
   <div>
   <div class="small-print">
-    <small>&copy; 2011-2018, David D. Clark. All rights reserved.</small>
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Clajburn</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
   </div>
 </div>
 
@@ -236,6 +237,52 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/">Autosave Functionality in ClojureScript</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>1 Aug 2018 3:56:32 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojurescript">ClojureScript</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/concurrency">concurrency</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Most programs provide an &ldquo;Autosave&rdquo; feature these days. The feature gives the user a chance to minimize the amount of work lost due to some unforeseen mishap, like a sudden power outage.
+When I write a program in Clojure that requires such a feature, I have the entire Java library at my disposal. I usually create something based on a ScheduledExecutorService &ndash; something that watches for a change in the document then allows a certain amount of user inactivity to pass before automatically saving the document.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2018/08/01/autosave-functionality-in-clojurescript/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
   
     <article>
   <header>
@@ -270,7 +317,7 @@
 
   <p>
   Changing jobs in 2005 caused me to switch from taking notes on paper to doing it electronically.
-My new employer provided a tablet PC with a stylus running Windows and OneNote. Taking notes on that system with excellent handwriting recognition was a revelation. The tablet was pretty clunky by today&rsquo;s standards, but it worked well. It was particularly useful for generating meeting notes in real time and projecting them during meetings.
+My new employer provided a tablet PC with a stylus running Windows and OneNote. Taking notes on that system with excellent handwriting recognition was a revelation. The tablet was pretty clunky by today's standards, but it worked well. It was particularly useful for generating meeting notes in real time and projecting them during meetings.
   </p>
 
   
@@ -313,7 +360,7 @@ My new employer provided a tablet PC with a stylus running Windows and OneNote. 
   </header>
 
   <p>
-  Collate Notes has received my praise in the past. I even paid for it. Shortly after that unusual event, development seems to have stopped. And it still has numerous shortcomings. The most annoying problem is that periodically, it says my trial period has run out, and I need to enter the activation code (again). And since it&rsquo;s closed-source, I have no recourse but to submit bugs and make feature requests to a developer who seems to have gone silent.
+  Collate Notes has received my praise in the past. I even paid for it. Shortly after that unusual event, development seems to have stopped. And it still has numerous shortcomings. The most annoying problem is that periodically, it says my trial period has run out, and I need to enter the activation code (again). And since it's closed-source, I have no recourse but to submit bugs and make feature requests to a developer who seems to have gone silent.
   </p>
 
   
@@ -452,7 +499,7 @@ Purpose The purpose of creating the app was two-fold.
 
   <p>
   As a lone developer, I have a workflow that I believe is pretty typical.
-Most of my development work happens on the &ldquo;tip&rdquo; of the &ldquo;default&rdquo; branch. It&rsquo;s just easier to do work on fixing small bugs or adding minor features there.
+Most of my development work happens on the &ldquo;tip&rdquo; of the &ldquo;default&rdquo; branch. It's just easier to do work on fixing small bugs or adding minor features there.
 For more significant, more difficult pieces of work, I usually create a &ldquo;feature branch.&rdquo; I do this with the expectation that if things get messed up too badly, I can delete the branch and start over without affecting the readiness of the default branch.
   </p>
 
@@ -502,9 +549,9 @@ For more significant, more difficult pieces of work, I usually create a &ldquo;f
   </header>
 
   <p>
-  For the past few months, I&rsquo;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
-It actually works pretty well. I&rsquo;ve been using it for personal information for months now. It works well except for one aspect, arguably the most important &ndash; editing new or existing content is not that pleasant.
-It&rsquo;s all a variation of Markdown, which is nice.
+  For the past few months, I've been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
+It actually works pretty well. I've been using it for personal information for months now. It works well except for one aspect, arguably the most important &ndash; editing new or existing content is not that pleasant.
+It's all a variation of Markdown, which is nice.
   </p>
 
   
@@ -547,8 +594,8 @@ It&rsquo;s all a variation of Markdown, which is nice.
   </header>
 
   <p>
-  There&rsquo;s an old saying about regular expressions &ndash; paraphrasing: &ldquo;If you try to solve a problem with regular expressions, you then have two problems.&rdquo;
-Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&rsquo;s version of regular expressions are different.
+  There's an old saying about regular expressions &ndash; paraphrasing: &ldquo;If you try to solve a problem with regular expressions, you then have two problems.&rdquo;
+Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it's version of regular expressions are different.
   </p>
 
   
@@ -598,7 +645,7 @@ Even though regular expressions are present in most programming languages, I hav
 
   <p>
   The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
-What could be more natural than to string those pieces of code together with one of Clojure&rsquo;s threading macros: &lsquo;-&gt;&rsquo; or &lsquo;-&gt;&gt;.
+What could be more natural than to string those pieces of code together with one of Clojure's threading macros: &lsquo;-&gt;&rsquo; or &lsquo;-&raquo;.
   </p>
 
   
@@ -657,59 +704,6 @@ There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linu
 </article>
 
   
-    <article>
-  <header>
-    <h2><a href="https://yo-dave.com/2018/03/26/new-blogging-setup/">New Blogging Setup</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Mar 2018 10:09:24 AM</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/hugo">hugo</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/blogging">blogging</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/github-pages">github pages</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/cdns">cdns</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/cloudflare">cloudflare</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  It&rsquo;s been a bit of a slog, but things should be up and running again. The transition was a bit harder than expected.
-Here are some things you should know:
- The site is generated by the Hugo static site generator. The site uses a trivial modification of the very pleasant Blackburn theme. There are still some kinks I want to work out, but it is very useful overall. The repository for the site is on GitHub here and is generated from the information in the repository here.
-  </p>
-
-  
-  <footer>
-    <a href="https://yo-dave.com/2018/03/26/new-blogging-setup/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
 
   
 
@@ -731,6 +725,9 @@ Here are some things you should know:
 </div>
 </div>
 <script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
 
 
 
