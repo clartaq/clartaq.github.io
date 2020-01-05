@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 25 Aug 2019 12:10:31 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 09:39:38 -0500</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>clojure</title>
+      <link>https://yo-dave.com/tags/clojure/</link>
+      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojurescript</title>
+      <link>https://yo-dave.com/tags/clojurescript/</link>
+      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojurescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>figwheel-main</title>
+      <link>https://yo-dave.com/tags/figwheel-main/</link>
+      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/figwheel-main/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>note-taking</title>
+      <link>https://yo-dave.com/tags/note-taking/</link>
+      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/note-taking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outliner</title>
+      <link>https://yo-dave.com/tags/outliner/</link>
+      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/outliner/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hg</title>
@@ -45,24 +90,6 @@
       <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/repositories/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojure</title>
-      <link>https://yo-dave.com/tags/clojure/</link>
-      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojurescript</title>
-      <link>https://yo-dave.com/tags/clojurescript/</link>
-      <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/clojurescript/</guid>
       <description></description>
     </item>
     
@@ -153,15 +180,6 @@
       <pubDate>Mon, 13 May 2019 08:22:29 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/webcam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>note-taking</title>
-      <link>https://yo-dave.com/tags/note-taking/</link>
-      <pubDate>Sun, 06 Jan 2019 14:55:42 -0500</pubDate>
-      
-      <guid>https://yo-dave.com/tags/note-taking/</guid>
       <description></description>
     </item>
     
@@ -499,7 +517,7 @@
     </item>
     
     <item>
-      <title>statistics</title>
+      <title>Statistics</title>
       <link>https://yo-dave.com/tags/statistics/</link>
       <pubDate>Wed, 13 Sep 2017 17:18:01 +0000</pubDate>
       

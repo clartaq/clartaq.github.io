@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 27 Jun 2019 16:51:20 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 09:39:38 -0500</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>clown -- A Clojure/Script Outliner with Notes</title>
+      <link>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</link>
+      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</guid>
+      <description>Questions about note-taking are very popular on Hacker News. I am always interested in the responses. It seems like developers are always interested in the best tools and methodologies. Me too.
+I&#39;ve been researching and using different approaches for decades. Over all that time, I&#39;ve written thousands of notes, both short and long. Most notes become uninteresting after awhile and are just erased. But thousands have persisted for many years because I still refer to them.</description>
+    </item>
     
     <item>
       <title>Letting the User Change the Sidebar Width in CWiki</title>

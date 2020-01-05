@@ -3,17 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/tags/clojure/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/clojurescript/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/figwheel-main/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/note-taking/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/outliner/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/hg/</loc>
     <lastmod>2019-08-25T15:20:36-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/mercurial/</loc>
-    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/post/</loc>
     <lastmod>2019-08-25T15:20:36-04:00</lastmod>
   </url>
   
@@ -30,26 +70,6 @@
   <url>
     <loc>https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/</loc>
     <lastmod>2019-08-25T15:20:36-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
-    <lastmod>2019-08-25T15:20:36-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/clojurescript/</loc>
-    <lastmod>2019-06-29T16:46:30-04:00</lastmod>
   </url>
   
   <url>
@@ -119,11 +139,6 @@
   
   <url>
     <loc>https://yo-dave.com/2019/01/06/my-note-taking-journey/</loc>
-    <lastmod>2019-01-07T12:52:58-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/note-taking/</loc>
     <lastmod>2019-01-07T12:52:58-05:00</lastmod>
   </url>
   
