@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>A Closure in Clojure &middot; Yo-Dave</title>
 
@@ -257,44 +257,38 @@
 
 </div>
 
-  <p>Back when closures were first explained to me, a long time ago, I thought &ldquo;sounds like a language with pass-by-reference semantics like Pascal.&rdquo; Of course, it isn&rsquo;t quite that simple.</p>
+  <p>Back when closures were first explained to me, a long time ago, I thought &ldquo;sounds like a language with pass-by-reference semantics like Pascal.&rdquo; Of course, it isn't quite that simple.</p>
+<p>Clojure has a lot of nice features that work naturally to give you a &ldquo;better Java than Java&rdquo;. Here's an example of using a closure that is not at all easy in Java.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>net.dneclark.JFrameAndTimerDemo
+  (<span style="color:#e6db74">:import</span> (<span style="color:#a6e22e">javax.swing</span> JLabel JButton JPanel JFrame Timer))
+  (<span style="color:#e6db74">:gen-class</span>))
 
-<p>Clojure has a lot of nice features that work naturally to give you a &ldquo;better Java than Java&rdquo;. Here&rsquo;s an example of using a closure that is not at all easy in Java.</p>
-
-<pre><code class="language-clojure">(ns net.dneclark.JFrameAndTimerDemo
-  (:import (javax.swing JLabel JButton JPanel JFrame Timer))
-  (:gen-class))
-
-(defn timer-action [label counter]
+(<span style="color:#66d9ef">defn </span>timer-action [label counter]
    (proxy [java.awt.event.ActionListener] []
-     (actionPerformed
+     (<span style="color:#a6e22e">actionPerformed</span>
       [e]
-       (.setText label (str &quot;Counter: &quot; (swap! counter inc))))))
+       (<span style="color:#a6e22e">.setText</span> label (str <span style="color:#e6db74">&#34;Counter: &#34;</span> (<span style="color:#a6e22e">swap!</span> counter inc))))))
 
-(defn timer-fn []
-  (let [counter (atom 0)
-        label (JLabel. &quot;Counter: 0&quot;)
-        timer (Timer. 1000 (timer-action label counter))
-        panel (doto (JPanel.)
-                (.add label))]
-    (.start timer)
-    (doto (JFrame. &quot;Timer App&quot;)
-      (.setContentPane panel)
-      (.setDefaultCloseOperation JFrame/EXIT_ON_CLOSE)
-      (.setLocation 300 300)
-      (.setSize 200 200)
-      (.setVisible true)))
-  (println &quot;exit timer-fn&quot;))
+(<span style="color:#66d9ef">defn </span>timer-fn []
+  (<span style="color:#66d9ef">let </span>[counter (<span style="color:#a6e22e">atom</span> <span style="color:#ae81ff">0</span>)
+        label (<span style="color:#a6e22e">JLabel.</span> <span style="color:#e6db74">&#34;Counter: 0&#34;</span>)
+        timer (<span style="color:#a6e22e">Timer.</span> <span style="color:#ae81ff">1000</span> (<span style="color:#a6e22e">timer-action</span> label counter))
+        panel (doto (<span style="color:#a6e22e">JPanel.</span>)
+                (<span style="color:#a6e22e">.add</span> label))]
+    (<span style="color:#a6e22e">.start</span> timer)
+    (doto (<span style="color:#a6e22e">JFrame.</span> <span style="color:#e6db74">&#34;Timer App&#34;</span>)
+      (<span style="color:#a6e22e">.setContentPane</span> panel)
+      (<span style="color:#a6e22e">.setDefaultCloseOperation</span> JFrame/EXIT_ON_CLOSE)
+      (<span style="color:#a6e22e">.setLocation</span> <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">300</span>)
+      (<span style="color:#a6e22e">.setSize</span> <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">200</span>)
+      (<span style="color:#a6e22e">.setVisible</span> true)))
+  (println <span style="color:#e6db74">&#34;exit timer-fn&#34;</span>))
 
-(defn -main []
-  (timer-fn))
-</code></pre>
-
-<p>If you compile and run the program, you will see a small window with a counter than increments every second. You will also see a message displayed that the function <code>timer-fn</code> has exited. Big deal, huh?</p>
-
-<p>But look at the declaration of the counter. It&rsquo;s in the definition of the <code>timer-fn</code>. It isn&rsquo;t a global. But the action listener, <code>timer-action</code>, still has access to the variable and continues to increment it &ndash; even though the function that declared the variable has completed execution. The lexical context of that variable is maintained and the action listener has access to it. Very neat.</p>
-
-<p>I don&rsquo;t know if Java will ever get closures, but it sure is simple to use them in Clojure.</p>
+(<span style="color:#66d9ef">defn </span>-main []
+  (<span style="color:#a6e22e">timer-fn</span>))
+</code></pre></div><p>If you compile and run the program, you will see a small window with a counter than increments every second. You will also see a message displayed that the function <code>timer-fn</code> has exited. Big deal, huh?</p>
+<p>But look at the declaration of the counter. It's in the definition of the <code>timer-fn</code>. It isn't a global. But the action listener, <code>timer-action</code>, still has access to the variable and continues to increment it &ndash; even though the function that declared the variable has completed execution. The lexical context of that variable is maintained and the action listener has access to it. Very neat.</p>
+<p>I don't know if Java will ever get closures, but it sure is simple to use them in Clojure.</p>
 
   
 <div class="prev-next-post pure-g">

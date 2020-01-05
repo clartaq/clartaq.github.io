@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statistics on Yo-Dave</title>
@@ -30,8 +30,8 @@ Another of the simple ones calculates the confidence interval around the proport
       <guid>https://yo-dave.com/2017/08/31/an-updated-sign-test-program/</guid>
       <description>Long ago, I wrote a post about a small program to calculate the probabilities of a sign test.
 A lot has happened since then.
-The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&amp;rsquo;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
-So I&amp;rsquo;ve updated the program a bit.</description>
+The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&#39;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
+So I&#39;ve updated the program a bit.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ So I&amp;rsquo;ve updated the program a bit.</description>
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
-      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&#39;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&#39;t seem to be such a thing and I haven&#39;t created one that I&#39;m satisfied with.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ So I&amp;rsquo;ve updated the program a bit.</description>
       
       <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
       <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
-Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&#39;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
-      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&#39;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
     </item>
     
   </channel>

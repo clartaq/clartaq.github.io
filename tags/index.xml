@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yo-Dave</title>
@@ -157,6 +157,15 @@
     </item>
     
     <item>
+      <title>note-taking</title>
+      <link>https://yo-dave.com/tags/note-taking/</link>
+      <pubDate>Sun, 06 Jan 2019 14:55:42 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/note-taking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>editor</title>
       <link>https://yo-dave.com/tags/editor/</link>
       <pubDate>Tue, 23 Oct 2018 16:05:29 -0400</pubDate>
@@ -279,15 +288,6 @@
       <pubDate>Wed, 01 Aug 2018 15:56:32 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/concurrency/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>note-taking</title>
-      <link>https://yo-dave.com/tags/note-taking/</link>
-      <pubDate>Sun, 15 Jul 2018 16:47:36 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/note-taking/</guid>
       <description></description>
     </item>
     
@@ -571,7 +571,7 @@
     </item>
     
     <item>
-      <title>Java</title>
+      <title>java</title>
       <link>https://yo-dave.com/tags/java/</link>
       <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
       
@@ -940,7 +940,7 @@
     </item>
     
     <item>
-      <title>speculation</title>
+      <title>Speculation</title>
       <link>https://yo-dave.com/tags/speculation/</link>
       <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
       

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>netbeans on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been away awhile, working on a new project. It&#39;s part of an educational effort about molecular dynamics simulation. Although I&#39;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&#39;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@
       
       <guid>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</guid>
       <description>Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
-Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&amp;rsquo;t work. Here&amp;rsquo;s how I do it.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&#39;t work. Here&#39;s how I do it.
  In NetBeans (7.3 as of this writing), select the &amp;ldquo;Tools&amp;rdquo; menu and the &amp;ldquo;Java Platforms&amp;rdquo; drop-down menu.</description>
     </item>
     
@@ -48,7 +48,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       
       <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
       <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
-Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&#39;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
     </item>
     
   </channel>

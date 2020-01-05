@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>editors on Yo-Dave</title>
@@ -28,7 +28,7 @@ One of the (many) things I love about IntelliJ IDEA is that it does spell checki
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been away awhile, working on a new project. It&#39;s part of an educational effort about molecular dynamics simulation. Although I&#39;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&#39;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ One of the (many) things I love about IntelliJ IDEA is that it does spell checki
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve used &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&#39;s what I had to do.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elm-lang on Yo-Dave</title>
@@ -18,8 +18,8 @@
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
-      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
-But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
+      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&#39;s friendly and extremely helpful error messages. It&#39;s really attractive in many ways.
+But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;quot;. And it finally occurred to me that I&#39;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
     
   </channel>

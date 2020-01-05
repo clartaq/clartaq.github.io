@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Yo-Dave</title>
@@ -20,7 +20,7 @@
       <guid>https://yo-dave.com/about/about/</guid>
       <description>Hi! My name is David Clark (one of many, I’m afraid.)
 This site is just a place for me to write down things I find interesting or to capture notes about things I’m likely to forget.
-I&amp;rsquo;ve been blogging for awhile. I&amp;rsquo;ve used a lot of blogging software and hosted things in many places. This site consolidates those posts back to 2011. Since things came here from multiple other blogs, you might see multiple posts talking about the same thing.</description>
+I&#39;ve been blogging for awhile. I&#39;ve used a lot of blogging software and hosted things in many places. This site consolidates those posts back to 2011. Since things came here from multiple other blogs, you might see multiple posts talking about the same thing.</description>
     </item>
     
   </channel>

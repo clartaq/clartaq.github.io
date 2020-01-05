@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -118,6 +118,16 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/2019/01/06/my-note-taking-journey/</loc>
+    <lastmod>2019-01-07T12:52:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/note-taking/</loc>
+    <lastmod>2019-01-07T12:52:58-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/editor/</loc>
     <lastmod>2018-12-15T10:36:05-05:00</lastmod>
   </url>
@@ -219,11 +229,6 @@
   
   <url>
     <loc>https://yo-dave.com/2018/07/15/note-taking/</loc>
-    <lastmod>2018-07-15T18:01:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/note-taking/</loc>
     <lastmod>2018-07-15T18:01:42-04:00</lastmod>
   </url>
   

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Saving and Restoring Program Configuration across Sessions in Clojure &middot; Yo-Dave</title>
 
@@ -258,38 +258,27 @@
 </div>
 
   <p>I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.</p>
-
-<p>For some time, I&rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
-
+<p>For some time, I've been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
 <p>Simple configuration data usually consists of key/value pairs. In Clojure, the natural data structure to use is the map. For example, the size and position of a program window might be encoded as something like this:</p>
-
-<pre><code class="language-clojure">{:x-pos 364.0, :y-pos 341.0, :width 440.0, :height 330.0}
-</code></pre>
-
-<p>The structure of the values can actually be arbitrarily complex. They can hold just about anything.</p>
-
-<p>It turns out that Clojure has facilities built in that can store and retrieve such information from disk files easily. The following is a demonstration of how saving and restoring such information can be done. First, here&rsquo;s a project file:</p>
-
-<pre><code class="language-clojure">(defproject cnfdemo &quot;0.1.0-SNAPSHOT&quot;
-  :description &quot;Demonstration of saving/restoring configuration info in Clojure&quot;
-  :url &quot;https:/bitbucket.org/David_Clark/cnfdemo/overview&quot;
-  :license {:name &quot;Eclipse Public License&quot;
-            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
-  :dependencies [[org.clojure/clojure &quot;1.5.1&quot;]]
-  :resource-paths [&quot;c:\\Program Files\\Java\\jdk1.7.0_45\\jre\\lib\\jfxrt.jar&quot;]
-  :aot :all
-  :main cnfdemo.core)
-</code></pre>
-
-<p>Nothing tricky here except making sure that the <code>:resource-paths</code> point to the location of the JavaFX runtime jar.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#e6db74">:x-pos</span> <span style="color:#ae81ff">364.0</span>, <span style="color:#e6db74">:y-pos</span> <span style="color:#ae81ff">341.0</span>, <span style="color:#e6db74">:width</span> <span style="color:#ae81ff">440.0</span>, <span style="color:#e6db74">:height</span> <span style="color:#ae81ff">330.0</span>}
+</code></pre></div><p>The structure of the values can actually be arbitrarily complex. They can hold just about anything.</p>
+<p>It turns out that Clojure has facilities built in that can store and retrieve such information from disk files easily. The following is a demonstration of how saving and restoring such information can be done. First, here's a project file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>cnfdemo <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+  <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demonstration of saving/restoring configuration info in Clojure&#34;</span>
+  <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;https:/bitbucket.org/David_Clark/cnfdemo/overview&#34;</span>
+  <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Eclipse Public License&#34;</span>
+            <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
+  <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.5.1&#34;</span>]]
+  <span style="color:#e6db74">:resource-paths</span> [<span style="color:#e6db74">&#34;c:\\Program Files\\Java\\jdk1.7.0_45\\jre\\lib\\jfxrt.jar&#34;</span>]
+  <span style="color:#e6db74">:aot</span> <span style="color:#e6db74">:all</span>
+  <span style="color:#e6db74">:main</span> cnfdemo.core)
+</code></pre></div><p>Nothing tricky here except making sure that the <!-- raw HTML omitted -->:resource-paths<!-- raw HTML omitted --> point to the location of the JavaFX runtime jar.</p>
 <p>The progam itself:</p>
-
-<pre><code class="language-clojure">(ns cnfdemo.core
-  (:gen-class
-   :extends javafx.application.Application)
-  (:require [clojure.edn :as edn])
-  (:import
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>cnfdemo.core
+  (<span style="color:#e6db74">:gen-class</span>
+   <span style="color:#e6db74">:extends</span> javafx.application.Application)
+  (<span style="color:#e6db74">:require</span> [clojure.edn <span style="color:#e6db74">:as</span> edn])
+  (<span style="color:#e6db74">:import</span>
    [ java.awt Dimension Toolkit]
    [ javafx.application Application Platform]
    [ javafx.event EventHandler]
@@ -297,92 +286,84 @@
    [ javafx.scene.control TextArea]
    [ javafx.scene.layout StackPane VBox]))
 
-(def default-width 300)
-(def default-height 150)
+(<span style="color:#66d9ef">def </span>default-width <span style="color:#ae81ff">300</span>)
+(<span style="color:#66d9ef">def </span>default-height <span style="color:#ae81ff">150</span>)
 
-(defn default-config
-  &quot;Create a reasonable default configuration. To be used on the
-   first execution of the program or if any error occurs when
-   trying to restore an existing configuration.&quot;
+(<span style="color:#66d9ef">defn </span>default-config
+  <span style="color:#e6db74">&#34;Create a reasonable default configuration. To be used on the
+</span><span style="color:#e6db74">   first execution of the program or if any error occurs when
+</span><span style="color:#e6db74">   trying to restore an existing configuration.&#34;</span>
   []
-  (let [tk (. Toolkit getDefaultToolkit)
-        screensize (Dimension. (.getScreenSize tk))]
-    {:x-pos (/ (- (.getWidth screensize) default-width) 2)
-     :y-pos (/ (- (.getHeight screensize) default-height) 2)
-     :width default-width
-     :height default-height})
+  (<span style="color:#66d9ef">let </span>[tk (<span style="color:#66d9ef">. </span>Toolkit getDefaultToolkit)
+        screensize (<span style="color:#a6e22e">Dimension.</span> (<span style="color:#a6e22e">.getScreenSize</span> tk))]
+    {<span style="color:#e6db74">:x-pos</span> (/ (- (<span style="color:#a6e22e">.getWidth</span> screensize) default-width) <span style="color:#ae81ff">2</span>)
+     <span style="color:#e6db74">:y-pos</span> (/ (- (<span style="color:#a6e22e">.getHeight</span> screensize) default-height) <span style="color:#ae81ff">2</span>)
+     <span style="color:#e6db74">:width</span> default-width
+     <span style="color:#e6db74">:height</span> default-height})
 
-(defn read-config
-  &quot;Read configuration data back from disk&quot;
+(<span style="color:#66d9ef">defn </span>read-config
+  <span style="color:#e6db74">&#34;Read configuration data back from disk&#34;</span>
   []
-  (try
-    (edn/read-string (slurp &quot;config.clj&quot;))
-    (catch Exception e (default-config)))
+  (<span style="color:#a6e22e">try</span>
+    (<span style="color:#a6e22e">edn/read-string</span> (slurp <span style="color:#e6db74">&#34;config.clj&#34;</span>))
+    (<span style="color:#a6e22e">catch</span> Exception e (<span style="color:#a6e22e">default-config</span>)))
 
-(defn write-config
-  &quot;Writes configuration data (actually _any_ map) to disk.&quot;
+(<span style="color:#66d9ef">defn </span>write-config
+  <span style="color:#e6db74">&#34;Writes configuration data (actually _any_ map) to disk.&#34;</span>
   [config]
-  (spit &quot;config.clj&quot; config))
+  (<span style="color:#a6e22e">spit</span> <span style="color:#e6db74">&#34;config.clj&#34;</span> config))
 
-(defn update-config [stage]
-  {:x-pos (.getX stage)
-   :y-pos (.getY stage)
-   :width (.getWidth stage)
-   :height (.getHeight stage)})
+(<span style="color:#66d9ef">defn </span>update-config [stage]
+  {<span style="color:#e6db74">:x-pos</span> (<span style="color:#a6e22e">.getX</span> stage)
+   <span style="color:#e6db74">:y-pos</span> (<span style="color:#a6e22e">.getY</span> stage)
+   <span style="color:#e6db74">:width</span> (<span style="color:#a6e22e">.getWidth</span> stage)
+   <span style="color:#e6db74">:height</span> (<span style="color:#a6e22e">.getHeight</span> stage)})
 
-(defn handle-close-request [stage]
-  (reify EventHandler
-    (handle [this event]
-      (let [config (update-config stage)]
-        (write-config config)))))
+(<span style="color:#66d9ef">defn </span>handle-close-request [stage]
+  (<span style="color:#a6e22e">reify</span> EventHandler
+    (<span style="color:#a6e22e">handle</span> [this event]
+      (<span style="color:#66d9ef">let </span>[config (<span style="color:#a6e22e">update-config</span> stage)]
+        (<span style="color:#a6e22e">write-config</span> config)))))
 
-(defn restore-config [stage config]
+(<span style="color:#66d9ef">defn </span>restore-config [stage config]
   (doto stage
-    (.setX (:x-pos config))
-    (.setY (:y-pos config))
-    (.setWidth (:width config))
-    (.setHeight (:height config))))
+    (<span style="color:#a6e22e">.setX</span> (<span style="color:#e6db74">:x-pos</span> config))
+    (<span style="color:#a6e22e">.setY</span> (<span style="color:#e6db74">:y-pos</span> config))
+    (<span style="color:#a6e22e">.setWidth</span> (<span style="color:#e6db74">:width</span> config))
+    (<span style="color:#a6e22e">.setHeight</span> (<span style="color:#e6db74">:height</span> config))))
 
-(defn handle-show-request [stage]
-  (reify EventHandler
-    (handle [this event]
-      (let [config (read-config)]
-        (restore-config stage config)))))
+(<span style="color:#66d9ef">defn </span>handle-show-request [stage]
+  (<span style="color:#a6e22e">reify</span> EventHandler
+    (<span style="color:#a6e22e">handle</span> [this event]
+      (<span style="color:#66d9ef">let </span>[config (<span style="color:#a6e22e">read-config</span>)]
+        (<span style="color:#a6e22e">restore-config</span> stage config)))))
 
-(defn -start
-  &quot;Build the application interface and start it up.&quot;
+(<span style="color:#66d9ef">defn </span>-start
+  <span style="color:#e6db74">&#34;Build the application interface and start it up.&#34;</span>
   [this stage]
-  (let [root (StackPane.)
-        ta (TextArea. &quot;Saving and Restoring configuration data in Clojure&quot;)
-        vb (VBox.)
-        scene (Scene. root)]
+  (<span style="color:#66d9ef">let </span>[root (<span style="color:#a6e22e">StackPane.</span>)
+        ta (<span style="color:#a6e22e">TextArea.</span> <span style="color:#e6db74">&#34;Saving and Restoring configuration data in Clojure&#34;</span>)
+        vb (<span style="color:#a6e22e">VBox.</span>)
+        scene (<span style="color:#a6e22e">Scene.</span> root)]
 
-    (.add (.getChildren vb) ta)
-    (.add (.getChildren root) vb)
+    (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getChildren</span> vb) ta)
+    (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getChildren</span> root) vb)
 
     (doto stage
-      (.setOnShowing (handle-show-request stage))
-      (.setOnCloseRequest (handle-close-request stage))
-      (.setTitle &quot;Config Demo&quot;)
-      (.setScene scene)
-      (.show))))
+      (<span style="color:#a6e22e">.setOnShowing</span> (<span style="color:#a6e22e">handle-show-request</span> stage))
+      (<span style="color:#a6e22e">.setOnCloseRequest</span> (<span style="color:#a6e22e">handle-close-request</span> stage))
+      (<span style="color:#a6e22e">.setTitle</span> <span style="color:#e6db74">&#34;Config Demo&#34;</span>)
+      (<span style="color:#a6e22e">.setScene</span> scene)
+      (<span style="color:#a6e22e">.show</span>))))
 
-(defn -main [&amp; args]
-  (Application/launch cnfdemo.core args))
-</code></pre>
-
-<p>The demo works by linking into the program start-up and shutdown processes. Since this is a JavaFX program, the hooks can be inserted with the <code>.setOnShowing</code> and <code>.setOnCloseRequest</code> methods of the stage object. The <code>handle-show-request</code> and <code>handle-close-request</code> functions return <code>EventHandler</code>s for these two notifications respectively.</p>
-
+(<span style="color:#66d9ef">defn </span>-main [<span style="color:#f92672">&amp;</span> args]
+  (<span style="color:#a6e22e">Application/launch</span> cnfdemo.core args))
+</code></pre></div><p>The demo works by linking into the program start-up and shutdown processes. Since this is a JavaFX program, the hooks can be inserted with the <code>.setOnShowing</code> and <code>.setOnCloseRequest</code> methods of the stage object. The <code>handle-show-request</code> and <code>handle-close-request</code> functions return <code>EventHandler</code>s for these two notifications respectively.</p>
 <p>The operation of the program is straightforward. On closing the program, the relevant configuration information is updated by the <code>update-config</code> function and written to a file in the project directory, <code>config.clj</code>, by the <code>write-config</code> function.</p>
-
 <p>When the program starts, the <code>config.clj</code> file is read by the <code>read-config</code> function and the configuration information is restored before the program window is displayed. There are two things to note about the <code>read-config</code> function. First, on the very first execution of the program, there is no configuration file on disk. In that case the program throws and catches an exception. When the exception is caught, the <code>default-config</code> function is called to create a reasonable group of default settings that the program should use.</p>
-
 <p>Note that the program can still crash if the configuration file is present but contains bogus values, like an x position of &ldquo;bogus&rdquo;, example.</p>
-
 <p>The second interesting thing about read-config is that it uses <code>clojure.edn/read-string</code> instead of <code>clojure.core/read-string</code>. Since in Clojure, like all Lisps, program code is just data, and data can be program code, the use of the <code>clojure.core/read-string</code> could allow execution of arbitrary code from a malicious configuration file. This is true even if the Clojure global variable <code>*read-eval*</code> is set to false, since earlier versions of Clojure could still be tricked into running Java constructors through this path. See the discussion of <code>clojure.core/read</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/read">here</a>.</p>
-
 <p>Granted, it is pretty unlikely that a user would sabotage their own machine this way for this use case, but why not get into the habit of using <code>clojure.edn/read-string</code> anyway? It is a drop-in replacement for <code>clojure.core/readstring</code> for this purpose.</p>
-
 <p>If you would like to try this yourself, you can download a project repository from <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/cnfdemo/tree/default">here</a>.</p>
 
   

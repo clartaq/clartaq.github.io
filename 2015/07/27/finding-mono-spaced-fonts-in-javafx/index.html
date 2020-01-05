@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Finding Mono-Spaced Fonts in JavaFX &middot; Yo-Dave</title>
 
@@ -257,46 +257,40 @@
 
 </div>
 
-  <p>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&rsquo;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.</p>
+  <p>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn't seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.</p>
+<p>Back in the days of <a href="https://en.wikipedia.org/wiki/Swing_%28Java%29">Swing</a>, you usually had to grab a list of font families (e.g. Arial, Times New Roman, <em>etc</em>.) from <a href="https://en.wikipedia.org/wiki/Abstract_Window_Toolkit">AWT</a> and then create a <code>BufferedImage</code> to print the font to and check layout widths. In <a href="https://en.wikipedia.org/wiki/JavaFX">JavaFX</a>, it seems a bit easier. Here's one way to do it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e">* Return a list of all the mono-spaced fonts on the system.
+</span><span style="color:#75715e">*
+</span><span style="color:#75715e">* @return An observable list of all of the mono-spaced fonts on the system.
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">private</span> ObservableList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getMonoFontFamilyNames</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<p>Back in the days of <a href="https://en.wikipedia.org/wiki/Swing_%28Java%29">Swing</a>, you usually had to grab a list of font families (e.g. Arial, Times New Roman, <em>etc</em>.) from <a href="https://en.wikipedia.org/wiki/Abstract_Window_Toolkit">AWT</a> and then create a <code>BufferedImage</code> to print the font to and check layout widths. In <a href="https://en.wikipedia.org/wiki/JavaFX">JavaFX</a>, it seems a bit easier. Here&rsquo;s one way to do it.</p>
+    <span style="color:#75715e">// Compare the layout widths of two strings. One string is composed
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// of &#34;thin&#34; characters, the other of &#34;wide&#34; characters. In mono-spaced
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// fonts the widths should be the same.
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">final</span> Text thinTxt <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Text<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;1 l&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span> <span style="color:#75715e">// note the space
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> Text thikTxt <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Text<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;MWX&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">/**
-* Return a list of all the mono-spaced fonts on the system.
-*
-* @return An observable list of all of the mono-spaced fonts on the system.
-*/
-private ObservableList&lt;String&gt; getMonoFontFamilyNames() {
+    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> fontFamilyList <span style="color:#f92672">=</span> Font<span style="color:#f92672">.</span><span style="color:#a6e22e">getFamilies</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> monoFamilyList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    // Compare the layout widths of two strings. One string is composed
-    // of &quot;thin&quot; characters, the other of &quot;wide&quot; characters. In mono-spaced
-    // fonts the widths should be the same.
+    Font font<span style="color:#f92672">;</span>
 
-    final Text thinTxt = new Text(&quot;1 l&quot;); // note the space
-    final Text thikTxt = new Text(&quot;MWX&quot;);
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String fontFamilyName <span style="color:#f92672">:</span> fontFamilyList<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        font <span style="color:#f92672">=</span> Font<span style="color:#f92672">.</span><span style="color:#a6e22e">font</span><span style="color:#f92672">(</span>fontFamilyName<span style="color:#f92672">,</span> FontWeight<span style="color:#f92672">.</span><span style="color:#a6e22e">NORMAL</span><span style="color:#f92672">,</span> FontPosture<span style="color:#f92672">.</span><span style="color:#a6e22e">REGULAR</span><span style="color:#f92672">,</span> 14<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        thinTxt<span style="color:#f92672">.</span><span style="color:#a6e22e">setFont</span><span style="color:#f92672">(</span>font<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        thikTxt<span style="color:#f92672">.</span><span style="color:#a6e22e">setFont</span><span style="color:#f92672">(</span>font<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>thinTxt<span style="color:#f92672">.</span><span style="color:#a6e22e">getLayoutBounds</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getWidth</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> thikTxt<span style="color:#f92672">.</span><span style="color:#a6e22e">getLayoutBounds</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getWidth</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            monoFamilyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>fontFamilyName<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    List&lt;String&gt; fontFamilyList = Font.getFamilies();
-    List&lt;String&gt; monoFamilyList = new ArrayList&lt;&gt;();
-
-    Font font;
-
-    for (String fontFamilyName : fontFamilyList) {
-        font = Font.font(fontFamilyName, FontWeight.NORMAL, FontPosture.REGULAR, 14.0d);
-        thinTxt.setFont(font);
-        thikTxt.setFont(font);
-        if (thinTxt.getLayoutBounds().getWidth() == thikTxt.getLayoutBounds().getWidth()) {
-            monoFamilyList.add(fontFamilyName);
-        }
-    }
-
-    return FXCollections.observableArrayList(monoFamilyList);
-}
-</code></pre>
-
-<p>It seems a little less complicated in that all of the needed functionality is available right in JavaFX. One thing that hasn&rsquo;t changed is that it can still be slow. For example, if you want to populate a <code>ComboBox</code> with all of the mono-spaced fonts at the start of program execution, it can add a small but noticeable delay.</p>
-
+    <span style="color:#66d9ef">return</span> FXCollections<span style="color:#f92672">.</span><span style="color:#a6e22e">observableArrayList</span><span style="color:#f92672">(</span>monoFamilyList<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>It seems a little less complicated in that all of the needed functionality is available right in JavaFX. One thing that hasn't changed is that it can still be slow. For example, if you want to populate a <code>ComboBox</code> with all of the mono-spaced fonts at the start of program execution, it can add a small but noticeable delay.</p>
 <p>In my own case, on Windows, I have about 370 fonts on the system. Twenty-seven of those tested as mono-spaced, including quite a few that I never use, mostly non-English character sets that get installed somehow.</p>
-
 <p>Still, good to know.</p>
 
 

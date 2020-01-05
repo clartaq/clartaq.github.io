@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Overwhelming Java&#39;s Swing &middot; Yo-Dave</title>
 
@@ -258,68 +258,55 @@
 </div>
 
   <p>An odd thing happened recently. I have been working on a simulation that produces graphical and text updates as it progresses. That involves drawing a picture of the system and updating some textual elements of the user interface.</p>
-
 <p>Things seemed to work fine when the simulation was run with &ldquo;normal&rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.</p>
-
-<p>In my experience, this typically happens when the program tries to update the UI on the Swing Event Dispatch Thread (EDT) or when too much work is being done on the EDT. Well, the simpler simulation didn&rsquo;t seem to be doing more work than one of typical complexity. So, I got out my tools to investigate if I was misusing the EDT somehow. Those investigations turned up nothing.</p>
-
-<p>I started up the profiler in NetBeans to see where the program was spending its time.  Nothing. Then I adjusted some profile settings to include classes beyond just those in my project. Bang. The program was spending most of its time trying to update a <code>JTextField</code>. It turned out that when running the simple simulation, the program was attempting to update a text field over 40,000 times per second. When the request rate decreased to about 30,000 per second or slower, things started working normally. The simulation of the simpler system was just overwhelming Swing&rsquo;s ability to update on my system. (Your mileage may vary.)</p>
-
+<p>In my experience, this typically happens when the program tries to update the UI on the Swing Event Dispatch Thread (EDT) or when too much work is being done on the EDT. Well, the simpler simulation didn't seem to be doing more work than one of typical complexity. So, I got out my tools to investigate if I was misusing the EDT somehow. Those investigations turned up nothing.</p>
+<p>I started up the profiler in NetBeans to see where the program was spending its time.  Nothing. Then I adjusted some profile settings to include classes beyond just those in my project. Bang. The program was spending most of its time trying to update a <code>JTextField</code>. It turned out that when running the simple simulation, the program was attempting to update a text field over 40,000 times per second. When the request rate decreased to about 30,000 per second or slower, things started working normally. The simulation of the simpler system was just overwhelming Swing's ability to update on my system. (Your mileage may vary.)</p>
 <p>My first solution was to set a number of simulation iterations that had to be completed before calling for the UI update. That worked but was unsatisfying because more complicated simulations could take much longer to iterate. In those cases, I wanted the UI to be updated as quickly as possible, on every iteration.</p>
-
 <p>What I really wanted was to update the UI as fast as possible up to a certain maximum rate. But what was that rate? How should it be determined?</p>
-
-<p>Well, the answer for me is that is doesn&rsquo;t make much sense to update the UI any faster than my display can update. My monitor has a refresh rate of about 60 Hz. That should be the limit on my system. But what should it be on the other systems where my program was running. Turns out, it isn&rsquo;t too hard to figure out and implement, but it was something new to me.</p>
-
+<p>Well, the answer for me is that is doesn't make much sense to update the UI any faster than my display can update. My monitor has a refresh rate of about 60 Hz. That should be the limit on my system. But what should it be on the other systems where my program was running. Turns out, it isn't too hard to figure out and implement, but it was something new to me.</p>
 <p>In the main frame for my program (a <code>JFrame</code>), the constructor examines the graphics environment to determine the frame rate parameters from the monitor refresh rate.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">import</span> java.awt.GraphicsDevice<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.awt.GraphicsEnvironment<span style="color:#f92672">;</span>
+<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainFrame</span> <span style="color:#66d9ef">extends</span> javax<span style="color:#f92672">.</span><span style="color:#a6e22e">swing</span><span style="color:#f92672">.</span><span style="color:#a6e22e">JFrame</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MainFrame</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Frame Title&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">...
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-...
-public class MainFrame extends javax.swing.JFrame;
-...
-public MainFrame()  {
-        super(&quot;Frame Title&quot;);
+        GraphicsEnvironment ge <span style="color:#f92672">=</span> GraphicsEnvironment<span style="color:#f92672">.</span><span style="color:#a6e22e">getLocalGraphicsEnvironment</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        GraphicsDevice<span style="color:#f92672">[</span><span style="color:#f92672">]</span> gs <span style="color:#f92672">=</span> ge<span style="color:#f92672">.</span><span style="color:#a6e22e">getScreenDevices</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice[] gs = ge.getScreenDevices();
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>gs<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;More than one graphics device.&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>GraphicsDevice g <span style="color:#f92672">:</span> gs<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            DisplayMode dm <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span><span style="color:#a6e22e">getDisplayMode</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">int</span> refreshRate <span style="color:#f92672">=</span> dm<span style="color:#f92672">.</span><span style="color:#a6e22e">getRefreshRate</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>refreshRate <span style="color:#f92672">!</span><span style="color:#f92672">=</span> DisplayMode<span style="color:#f92672">.</span><span style="color:#a6e22e">REFRESH_RATE_UNKNOWN</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                frameNanos <span style="color:#f92672">=</span> 1000000000L<span style="color:#f92672">/</span>refreshRate<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+</code></pre></div><p>In the code above, the global variable <code>frameNanos</code> is calculated such that it corresponds to the number of nanoseconds between frame refreshes on the monitor. Later in the program, that value is used to throttle the number of calls to update the graphics.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> lastTime<span style="color:#f92672">;</span>
+<span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initGraphics</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+    lastTime <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+<span style="color:#f92672">}</span>
 
-        if (gs.length &gt; 1) {
-            LOGGER.error(&quot;More than one graphics device.&quot;);
-        }
-        for (GraphicsDevice g : gs) {
-            DisplayMode dm = g.getDisplayMode();
-            int refreshRate = dm.getRefreshRate();
-            if (refreshRate != DisplayMode.REFRESH_RATE_UNKNOWN) {
-                frameNanos = 1000000000L/refreshRate;
-            }
-        }
-    }
-...
-</code></pre>
-
-<p>In the code above, the global variable <code>frameNanos</code> is calculated such that it corresponds to the number of nanoseconds between frame refreshes on the monitor. Later in the program, that value is used to throttle the number of calls to update the graphics.</p>
-
-<pre><code class="language-java">...
-static long lastTime;
-...
-public void initGraphics() {
-    ...
-    lastTime = System.nanoTime();
-    ...
-}
-
-public void doOutputUpdates(SimModel2D simSoFar) {
-    if ((System.nanoTime() - lastTime) &gt; frameNanos) {
-        lastTime = System.nanoTime();
-        ...
-        displayPanel.updateDisplay(simSoFar);
-    }
-}
-</code></pre>
-
-<p>Now I have a method to update the user interface at a reasonable rate regardless of the speed of the underlying simulation. No more overwhelming Swing.</p>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doOutputUpdates</span><span style="color:#f92672">(</span>SimModel2D simSoFar<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">-</span> lastTime<span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> frameNanos<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        lastTime <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+        displayPanel<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDisplay</span><span style="color:#f92672">(</span>simSoFar<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Now I have a method to update the user interface at a reasonable rate regardless of the speed of the underlying simulation. No more overwhelming Swing.</p>
 
   
 <div class="prev-next-post pure-g">

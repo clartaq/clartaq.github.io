@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Setting Up Remote Repositories for Mercurial &middot; Yo-Dave</title>
 
@@ -261,53 +261,33 @@
 
 </div>
 
-  
-
-<p>With the recent <a href="https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket">announcement</a> that Bitbucket is &ldquo;sunsetting&rdquo; <a href="https://www.mercurial-scm.org">Mercurial</a> support, I&rsquo;ve been looking at ways of hosting remote copies of my repositories on my own.</p>
-
+  <p>With the recent <a href="https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket">announcement</a> that Bitbucket is &ldquo;sunsetting&rdquo; <a href="https://www.mercurial-scm.org">Mercurial</a> support, I've been looking at ways of hosting remote copies of my repositories on my own.</p>
 <p>In the short term, I have just cloned my repositories from Bitbucket onto a <a href="https://www.raspberrypi.org">Raspberry Pi</a> 4 sitting behind my home desktop. I use Pi to run a <a href="http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html">River of News</a> aggregator for my family. It has plenty of capacity for a task like this.</p>
-
 <p>The steps described below are simple but assume that you have <a href="https://www.ssh.com/ssh/">SSH</a> access to the remote system.</p>
-
 <p>Starting in my home directories on both machines:</p>
-
 <h4 id="on-the-remote">On the Remote</h4>
-
 <p>Initialize a repository where you want to place your clone.</p>
-
 <pre><code>mkdir projects/my-project-repository
 cd projects/my-project-repository
 hg init
 </code></pre>
-
 <h4 id="on-the-local">On the Local</h4>
-
 <pre><code>cd projects/my-project-repository
 </code></pre>
-
 <p>If there is an <code>hgrc</code> file in the <code>.hgrc</code> subdirectory, add/change the <code>default</code> line in the <code>[paths]</code> section:</p>
-
 <pre><code>[paths]
 default = ssh://user@server.com:1234//home/user/projects/my-project-repository
 </code></pre>
-
 <p>where <code>1234</code> is the port number you use for <code>SSH</code> access if it is different from the default value of 22.</p>
-
 <p>Then:</p>
-
 <pre><code>hg push ssh://user@server.com:1234//home/user/projects/my-project-repository
 </code></pre>
-
 <p>You could actually just do an <code>hg push</code> if you updated the <code>default</code> path in your <code>hgrc</code> file.</p>
-
 <h4 id="on-the-remote-1">On the Remote</h4>
-
 <pre><code>hg update tip
 </code></pre>
-
 <p>Rinse and repeat.</p>
-
-<p>For now, I&rsquo;ve moved all of my repositories to the Pi and deleted the private ones from Bitbucket. I&rsquo;ll leave the public ones in place until Bitbucket decides to delete them.</p>
+<p>For now, I've moved all of my repositories to the Pi and deleted the private ones from Bitbucket. I'll leave the public ones in place until Bitbucket decides to delete them.</p>
 
 
   

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wordpress on Yo-Dave</title>
@@ -18,9 +18,8 @@
       <pubDate>Fri, 19 Aug 2016 18:02:38 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/19/serving-wordpress-over-https-with-caddy-server/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; server is a relatively new, easy-to-use server written in the &lt;a href=&#34;https://golang.org/&#34;&gt;Go programming language&lt;/a&gt;. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (&lt;a href=&#34;http://info.ssl.com/article.aspx?id=10241&#34;&gt;Secure Sockets Layer&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/Transport_Layer_Security&#34;&gt;Transport Layer Security&lt;/a&gt;) certificates automatically from &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; to let you serve a site with&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTPS&#34;&gt; HTTPS&lt;/a&gt; by default. The project is open source and the certificates are free.&lt;/p&gt;
-
-&lt;p&gt;Of course, &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt; is a very popular blogging platform. Caddy provides some &lt;a href=&#34;https://github.com/caddyserver/examples/tree/master/wordpress&#34;&gt;guidance&lt;/a&gt; on getting WordPress up and running on the server. However, it wasn&amp;rsquo;t enough for me. Here&amp;rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; server is a relatively new, easy-to-use server written in the &lt;a href=&#34;https://golang.org/&#34;&gt;Go programming language&lt;/a&gt;. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (&lt;a href=&#34;http://info.ssl.com/article.aspx?id=10241&#34;&gt;Secure Sockets Layer&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/Transport_Layer_Security&#34;&gt;Transport Layer Security&lt;/a&gt;) certificates automatically from &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&#39;s Encrypt&lt;/a&gt; to let you serve a site with&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTPS&#34;&gt; HTTPS&lt;/a&gt; by default. The project is open source and the certificates are free.&lt;/p&gt;
+&lt;p&gt;Of course, &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt; is a very popular blogging platform. Caddy provides some &lt;a href=&#34;https://github.com/caddyserver/examples/tree/master/wordpress&#34;&gt;guidance&lt;/a&gt; on getting WordPress up and running on the server. However, it wasn&#39;t enough for me. Here&#39;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -52,7 +51,7 @@ I run the same OS (Ubuntu 14.</description>
       <pubDate>Wed, 30 Apr 2014 09:59:36 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/30/a-new-theme/</guid>
-      <description>This probably has no interest to anyone but me, but you may notice a change in the blog theme today. I&amp;rsquo;ve been dissatisfied with the typography of the blog for quite some time. Today I set out to try to find a theme that had better typography. Man, what a mess!
+      <description>This probably has no interest to anyone but me, but you may notice a change in the blog theme today. I&#39;ve been dissatisfied with the typography of the blog for quite some time. Today I set out to try to find a theme that had better typography. Man, what a mess!
 There are a zillion WordPress themes out there. Some awful, but many quite good. However, finding a minimalist theme intended for writing and reading is surprisingly difficult.</description>
     </item>
     
@@ -62,9 +61,9 @@ There are a zillion WordPress themes out there. Some awful, but many quite good.
       <pubDate>Wed, 26 Mar 2014 13:33:45 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/03/26/something-new.-comments/</guid>
-      <description>Well, it&amp;rsquo;s been a long time coming and I&amp;rsquo;m still a little unsure about it, but starting now, this site will allow comments. I&amp;rsquo;ve explained why I didn&amp;rsquo;t allow them before, but I&amp;rsquo;m adding Disqus-powered discussions to the blog. We&amp;rsquo;ll see how that goes.
-If everything that comes in is just spam, I&amp;rsquo;ll disable comments again. If comments are useful, civil and on topic, they will remain.
-And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.</description>
+      <description>Well, it&#39;s been a long time coming and I&#39;m still a little unsure about it, but starting now, this site will allow comments. I&#39;ve explained why I didn&#39;t allow them before, but I&#39;m adding Disqus-powered discussions to the blog. We&#39;ll see how that goes.
+If everything that comes in is just spam, I&#39;ll disable comments again. If comments are useful, civil and on topic, they will remain.
+And we&#39;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.</description>
     </item>
     
     <item>
@@ -73,7 +72,7 @@ And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough
       <pubDate>Sun, 23 Jan 2011 00:56:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/23/moving-old-posts/</guid>
-      <description>Since I&amp;rsquo;m going through the setup again, I thought I would start out with some older posts from other systems (the few that remain). Don&amp;rsquo;t pay much attention to the dates.</description>
+      <description>Since I&#39;m going through the setup again, I thought I would start out with some older posts from other systems (the few that remain). Don&#39;t pay much attention to the dates.</description>
     </item>
     
     <item>
@@ -82,7 +81,7 @@ And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough
       <pubDate>Sat, 22 Jan 2011 23:31:31 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/22/so-dr.-clark.-we-meet-again/</guid>
-      <description>Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&amp;rsquo;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper (Broken Link). But I just keep coming back here. Why do I ever leave?
+      <description>Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&#39;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper(Broken Link). But I just keep coming back here. Why do I ever leave?
 There are really a couple of reasons. I do this a lot because of hardware and backup failures.</description>
     </item>
     

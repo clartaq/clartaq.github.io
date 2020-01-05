@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Re-sizing an Interface in JavaFX and Clojure &middot; Yo-Dave</title>
 
@@ -261,24 +261,17 @@
 
 </div>
 
-  <p>Since <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="JavaFX overview">JavaFX</a> is the <a href="http://www.oracle.com/technetwork/java/javafx/overview/faq-1446554.html#6" title="JavaFX FAQ">future of the user interface for Java</a>, I&rsquo;ve started trying to learn it. Since I&rsquo;m also learning <a href="http://clojure.org/" title="Clojure home page">Clojure</a>, I&rsquo;m doing the work in that language.</p>
-
-<p>One of the things I&rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</p>
-
-<p>Well, one of the tasks I&rsquo;ve set for myself recently was the creation of an interface for the game of tic-tac-toe. Such an interface should look something like the following:</p>
-
+  <p>Since <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="JavaFX overview">JavaFX</a> is the <a href="http://www.oracle.com/technetwork/java/javafx/overview/faq-1446554.html#6" title="JavaFX FAQ">future of the user interface for Java</a>, I've started trying to learn it. Since I'm also learning <a href="http://clojure.org/" title="Clojure home page">Clojure</a>, I'm doing the work in that language.</p>
+<p>One of the things I've been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</p>
+<p>Well, one of the tasks I've set for myself recently was the creation of an interface for the game of tic-tac-toe. Such an interface should look something like the following:</p>
 <p>(<strong>NOTE</strong>: The original image and the original program have been lost. The following image is a reasonable facsimile.)</p>
-
-<p><a href="https://yo-dave.com/static/img/2013-05-08-PlaySnip.png"><img src="https://yo-dave.com/static/img/2013-05-08-PlaySnip.png" alt="The startup screen for the tic-tac-toe application." /><br><small>The startup screen for the tic-tac-toe application.</small></a></p>
-
+<p><a href="https://yo-dave.com/static/img/2013-05-08-PlaySnip.png"><img src="https://yo-dave.com/static/img/2013-05-08-PlaySnip.png" alt="The startup screen for the tic-tac-toe application."><!-- raw HTML omitted --><!-- raw HTML omitted -->The startup screen for the tic-tac-toe application.<!-- raw HTML omitted --></a></p>
 <p>When the window is re-sized, all of the requirements listed above are met.</p>
-
-<p>Here&rsquo;s the listing of the program that produces the interface shown above. There is no logic for actually playing the game, just re-sizing and re-drawing the board (with some hard-wired symbols).</p>
-
-<pre><code class="language-clojure">(ns titato.core
-  (:gen-class
-   :extends javafx.application.Application)
-  (:import
+<p>Here's the listing of the program that produces the interface shown above. There is no logic for actually playing the game, just re-sizing and re-drawing the board (with some hard-wired symbols).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>titato.core
+  (<span style="color:#e6db74">:gen-class</span>
+   <span style="color:#e6db74">:extends</span> javafx.application.Application)
+  (<span style="color:#e6db74">:import</span>
    [ javafx.application Application ]
    [ javafx.beans.value ChangeListener ]
    [ javafx.scene Scene ]
@@ -286,134 +279,126 @@
    [ javafx.scene.layout Pane ]
    [ javafx.scene.paint Color ]))
 
-;; define the board with some &quot;hard-wired&quot; symbols for demo only
-(def board (hash-map 1 &quot;1&quot; 2 &quot;2&quot; 3 &quot;o&quot; 4 &quot;4&quot; 5 &quot;x&quot; 6 &quot;6&quot; 7 &quot;7&quot; 8 &quot;o&quot; 9 &quot;9&quot;))
+<span style="color:#75715e">;; define the board with some &#34;hard-wired&#34; symbols for demo only</span>
+(<span style="color:#66d9ef">def </span>board (hash-map <span style="color:#ae81ff">1</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#ae81ff">2</span> <span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#ae81ff">3</span> <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#ae81ff">4</span> <span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#ae81ff">5</span> <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#ae81ff">6</span> <span style="color:#e6db74">&#34;6&#34;</span> <span style="color:#ae81ff">7</span> <span style="color:#e6db74">&#34;7&#34;</span> <span style="color:#ae81ff">8</span> <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#ae81ff">9</span> <span style="color:#e6db74">&#34;9&#34;</span>))
 
-(def window-width 400)
-(def window-height 300)
+(<span style="color:#66d9ef">def </span>window-width <span style="color:#ae81ff">400</span>)
+(<span style="color:#66d9ef">def </span>window-height <span style="color:#ae81ff">300</span>)
 
-(def o-color (Color. 0.75 1.0 0.75 1.0))
-(def x-color (Color. 0.65 0.75 1.0 1.0))
-(def board-color (Color. 1.0 1.0 0.8 1.0))
-(def line-color (Color/SLATEGRAY))
+(<span style="color:#66d9ef">def </span>o-color (<span style="color:#a6e22e">Color.</span> <span style="color:#ae81ff">0.75</span> <span style="color:#ae81ff">1.0</span> <span style="color:#ae81ff">0.75</span> <span style="color:#ae81ff">1.0</span>))
+(<span style="color:#66d9ef">def </span>x-color (<span style="color:#a6e22e">Color.</span> <span style="color:#ae81ff">0.65</span> <span style="color:#ae81ff">0.75</span> <span style="color:#ae81ff">1.0</span> <span style="color:#ae81ff">1.0</span>))
+(<span style="color:#66d9ef">def </span>board-color (<span style="color:#a6e22e">Color.</span> <span style="color:#ae81ff">1.0</span> <span style="color:#ae81ff">1.0</span> <span style="color:#ae81ff">0.8</span> <span style="color:#ae81ff">1.0</span>))
+(<span style="color:#66d9ef">def </span>line-color (<span style="color:#a6e22e">Color/SLATEGRAY</span>))
 
-(defn draw-o [canvas x y radius stroke-width]
-  (let [gc (.getGraphicsContext2D canvas)]
+(<span style="color:#66d9ef">defn </span>draw-o [canvas x y radius stroke-width]
+  (<span style="color:#66d9ef">let </span>[gc (<span style="color:#a6e22e">.getGraphicsContext2D</span> canvas)]
     (doto gc
-      (.setStroke o-color)
-      (.setLineWidth stroke-width)
-      (.strokeOval (- x radius) (- y radius) (+ 1 (* 2 radius)) (+ 1 (* 2 radius))))))
+      (<span style="color:#a6e22e">.setStroke</span> o-color)
+      (<span style="color:#a6e22e">.setLineWidth</span> stroke-width)
+      (<span style="color:#a6e22e">.strokeOval</span> (- x radius) (- y radius) (+ <span style="color:#ae81ff">1</span> (* <span style="color:#ae81ff">2</span> radius)) (+ <span style="color:#ae81ff">1</span> (* <span style="color:#ae81ff">2</span> radius))))))
 
-(defn draw-x [canvas x y radius stroke-width]
-  (let [gc (.getGraphicsContext2D canvas)]
+(<span style="color:#66d9ef">defn </span>draw-x [canvas x y radius stroke-width]
+  (<span style="color:#66d9ef">let </span>[gc (<span style="color:#a6e22e">.getGraphicsContext2D</span> canvas)]
     (doto gc
-      (.setStroke x-color)
-      (.setLineWidth stroke-width)
-      (.strokeLine (- x radius) (- y radius) (+ x radius) (+ y radius))
-      (.strokeLine (- x radius) (+ y radius) (+ x radius) (- y radius)))))
+      (<span style="color:#a6e22e">.setStroke</span> x-color)
+      (<span style="color:#a6e22e">.setLineWidth</span> stroke-width)
+      (<span style="color:#a6e22e">.strokeLine</span> (- x radius) (- y radius) (+ x radius) (+ y radius))
+      (<span style="color:#a6e22e">.strokeLine</span> (- x radius) (+ y radius) (+ x radius) (- y radius)))))
 
-(defn filled-spaces
-  &quot;Return a map of those board positions containing x's or o's.&quot;
+(<span style="color:#66d9ef">defn </span>filled-spaces
+  <span style="color:#e6db74">&#34;Return a map of those board positions containing x&#39;s or o&#39;s.&#34;</span>
   [board]
-  (select-keys board (for [[k v] board :when (or (= v &quot;o&quot;) ( = v &quot;x&quot;))] k)))
+  (select-keys board (for [[k v] board <span style="color:#e6db74">:when</span> (or (= v <span style="color:#e6db74">&#34;o&#34;</span>) ( = v <span style="color:#e6db74">&#34;x&#34;</span>))] k)))
 
-(defn board-to-col-row
-  &quot;Convert board position to zero-based column and row positions. Return
-   a vector or the column and row. Valid input consists of the integers from
-   1 to 0 inclusive.&quot;
+(<span style="color:#66d9ef">defn </span>board-to-col-row
+  <span style="color:#e6db74">&#34;Convert board position to zero-based column and row positions. Return
+</span><span style="color:#e6db74">   a vector or the column and row. Valid input consists of the integers from
+</span><span style="color:#e6db74">   1 to 0 inclusive.&#34;</span>
   [pos]
-  (let [pm1 (dec pos)
-        col (mod pm1 3)
-        row (quot pm1 3)]
+  (<span style="color:#66d9ef">let </span>[pm1 (dec pos)
+        col (<span style="color:#a6e22e">mod</span> pm1 <span style="color:#ae81ff">3</span>)
+        row (quot pm1 <span style="color:#ae81ff">3</span>)]
     [col row]))
 
-(defn redraw-board [canvas]
-  (let [gc (.getGraphicsContext2D canvas)
-        w (.getWidth canvas)
-        h (.getHeight canvas)
-        board-size (* 0.8 (min w h))
-        cell-size (/ board-size 3)
-        half-cell (/ board-size 6)
-        sym-size (* 0.6 cell-size)
-        sym-radius (/ sym-size 2)
-        sym-stroke-width (* 0.15 cell-size)
-        x-off (/ (- w board-size) 2)
-        y-off (/ (- h board-size) 2)]
+(<span style="color:#66d9ef">defn </span>redraw-board [canvas]
+  (<span style="color:#66d9ef">let </span>[gc (<span style="color:#a6e22e">.getGraphicsContext2D</span> canvas)
+        w (<span style="color:#a6e22e">.getWidth</span> canvas)
+        h (<span style="color:#a6e22e">.getHeight</span> canvas)
+        board-size (* <span style="color:#ae81ff">0.8</span> (min w h))
+        cell-size (/ board-size <span style="color:#ae81ff">3</span>)
+        half-cell (/ board-size <span style="color:#ae81ff">6</span>)
+        sym-size (* <span style="color:#ae81ff">0.6</span> cell-size)
+        sym-radius (/ sym-size <span style="color:#ae81ff">2</span>)
+        sym-stroke-width (* <span style="color:#ae81ff">0.15</span> cell-size)
+        x-off (/ (- w board-size) <span style="color:#ae81ff">2</span>)
+        y-off (/ (- h board-size) <span style="color:#ae81ff">2</span>)]
 
-    ;; draw the game board
+    <span style="color:#75715e">;; draw the game board</span>
     (doto gc
-      (.setFill board-color)
-      (.fillRect 0 0 w h)
-      (.setStroke line-color)
-      (.setLineWidth 5)
+      (<span style="color:#a6e22e">.setFill</span> board-color)
+      (<span style="color:#a6e22e">.fillRect</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> w h)
+      (<span style="color:#a6e22e">.setStroke</span> line-color)
+      (<span style="color:#a6e22e">.setLineWidth</span> <span style="color:#ae81ff">5</span>)
 
-      (.strokeLine x-off (+ y-off cell-size) (- w x-off) (+ y-off cell-size))
-      (.strokeLine x-off (- h (+ y-off cell-size)) (- w x-off) (- h ( + y-off cell-size)))
-      (.strokeLine (+ x-off cell-size) y-off (+ x-off cell-size) (- h y-off))
-      (.strokeLine (- w (+ x-off cell-size)) y-off (- w (+ x-off cell-size)) (- h y-off)))
+      (<span style="color:#a6e22e">.strokeLine</span> x-off (+ y-off cell-size) (- w x-off) (+ y-off cell-size))
+      (<span style="color:#a6e22e">.strokeLine</span> x-off (- h (+ y-off cell-size)) (- w x-off) (- h ( + y-off cell-size)))
+      (<span style="color:#a6e22e">.strokeLine</span> (+ x-off cell-size) y-off (+ x-off cell-size) (- h y-off))
+      (<span style="color:#a6e22e">.strokeLine</span> (- w (+ x-off cell-size)) y-off (- w (+ x-off cell-size)) (- h y-off)))
 
-    ;; draw symbols from game board map
-    (let [filled (filled-spaces board)]
-      (doall
+    <span style="color:#75715e">;; draw symbols from game board map</span>
+    (<span style="color:#66d9ef">let </span>[filled (<span style="color:#a6e22e">filled-spaces</span> board)]
+      (<span style="color:#a6e22e">doall</span>
        (for [[pos sym] filled
-             :let [[col row] (board-to-col-row pos)
+             <span style="color:#e6db74">:let</span> [[col row] (<span style="color:#a6e22e">board-to-col-row</span> pos)
                    x (+ x-off half-cell (* col cell-size))
                    y (+ y-off half-cell (* row cell-size))]]
-           (if (= sym &quot;x&quot;)
-             (draw-x canvas x y sym-radius sym-stroke-width)
-             (draw-o canvas x y sym-radius sym-stroke-width)))))))
+           (<span style="color:#66d9ef">if </span>(= sym <span style="color:#e6db74">&#34;x&#34;</span>)
+             (<span style="color:#a6e22e">draw-x</span> canvas x y sym-radius sym-stroke-width)
+             (<span style="color:#a6e22e">draw-o</span> canvas x y sym-radius sym-stroke-width)))))))
 
-(defn -start [this stage]
-  (let [root (Pane.)
-        scene (Scene. root window-width window-height)
-        canvas (Canvas.)]
+(<span style="color:#66d9ef">defn </span>-start [this stage]
+  (<span style="color:#66d9ef">let </span>[root (<span style="color:#a6e22e">Pane.</span>)
+        scene (<span style="color:#a6e22e">Scene.</span> root window-width window-height)
+        canvas (<span style="color:#a6e22e">Canvas.</span>)]
 
-    (doto (.widthProperty canvas)
-      (.bind (.widthProperty root))
-      (.addListener
+    (doto (<span style="color:#a6e22e">.widthProperty</span> canvas)
+      (<span style="color:#a6e22e">.bind</span> (<span style="color:#a6e22e">.widthProperty</span> root))
+      (<span style="color:#a6e22e">.addListener</span>
        (proxy [ChangeListener] []
-         (changed [ov old-state new-state]
-           (redraw-board canvas)))))
-    (doto (.heightProperty canvas)
-      (.bind (.heightProperty root))
-      (.addListener
+         (<span style="color:#a6e22e">changed</span> [ov old-state new-state]
+           (<span style="color:#a6e22e">redraw-board</span> canvas)))))
+    (doto (<span style="color:#a6e22e">.heightProperty</span> canvas)
+      (<span style="color:#a6e22e">.bind</span> (<span style="color:#a6e22e">.heightProperty</span> root))
+      (<span style="color:#a6e22e">.addListener</span>
        (proxy [ChangeListener] []
-         (changed [ov old-state new-state]
-           (redraw-board canvas)))))
+         (<span style="color:#a6e22e">changed</span> [ov old-state new-state]
+           (<span style="color:#a6e22e">redraw-board</span> canvas)))))
 
-    (.add (.getChildren root) canvas)
+    (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getChildren</span> root) canvas)
     (doto stage
-      (.setTitle &quot;Tic Tac Toe&quot;)
-      (.setScene scene)
-      (.setMinHeight window-height)
-      (.setMinWidth window-width)
-      (.show))
-    (redraw-board canvas)))
+      (<span style="color:#a6e22e">.setTitle</span> <span style="color:#e6db74">&#34;Tic Tac Toe&#34;</span>)
+      (<span style="color:#a6e22e">.setScene</span> scene)
+      (<span style="color:#a6e22e">.setMinHeight</span> window-height)
+      (<span style="color:#a6e22e">.setMinWidth</span> window-width)
+      (<span style="color:#a6e22e">.show</span>))
+    (<span style="color:#a6e22e">redraw-board</span> canvas)))
 
-(defn -main [&amp;amp; args]
-  (Application/launch titato.core args))
+(<span style="color:#66d9ef">defn </span>-main [<span style="color:#f92672">&amp;</span>amp<span style="color:#75715e">; args]</span>
+  (<span style="color:#a6e22e">Application/launch</span> titato.core args))
 
-</code></pre>
-
-<p>And here&rsquo;s the project file.</p>
-
-<pre><code class="language-clojure">(defproject titato &quot;0.1.0-SNAPSHOT&quot;
-  :description &quot;Demo of a resizable JavaFX tic-tac-toe interface&quot;
-  :url &quot;http://example.com/FIXME&quot;
-  :license {:name &quot;Eclipse Public License&quot;
-            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
-  :dependencies [[org.clojure/clojure &quot;1.4.0&quot;]]
-  :resource-paths [&quot;c:\\Program Files\\Java\\jdk1.7.0_13\\jre\\lib\\jfxrt.jar&quot;]
-  :main titato.core)
-</code></pre>
-
-<p>Note the use of the <code>resource-path</code> in the project file. That&rsquo;s how <a href="https://github.com/technomancy/leiningen" title="Leiningen home page">leiningen</a> finds JavaFX.</p>
-
-<p>The magic begins in the <code>-start</code> function. That&rsquo;s the function in your program that JavaFX calls to start things up. The first thing required is that your root node is actually re-sizable. Hence the use of a <code>Pane</code>. See <a href="http://amyfowlersblog.wordpress.com/2011/06/02/javafx2-0-layout-a-class-tour/" title="Amy Fowler">Amy Fowler&rsquo;s blog</a> for a nice description of the layout classes. Many JavaFX examples use a <code>Group</code> object. That won&rsquo;t work here because it is not re-sizable.</p>
-
-<p>The next important thing that happens in <code>-start</code> is to bind the width and height properties of the <code>Canvas</code> to the width and height properties of the root <code>Pane</code>. This was new to me. It isn&rsquo;t the same mechanism as is used in <a href="http://en.wikipedia.org/wiki/Swing_%28Java%29" title="Description of Java Swing on Wikipedia">Swing</a>. By binding the width and height properties, the canvas gets notified any time they change. The <code>ChangeListener</code>s added to the two properties get called when the properties change providing the opportunity to re-draw the interface. The re-draw occurs by calling the <code>redraw-board</code> function on the canvas whenever the size changes.</p>
-
-<p>At first I thought that re-drawing the board on every change during a drag might be too slow. However, I can&rsquo;t seem to outrun the program no matter how fast I move the mouse. So, this method seems to work for a program with an interface as simple as this one.</p>
+</code></pre></div><p>And here's the project file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>titato <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+  <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demo of a resizable JavaFX tic-tac-toe interface&#34;</span>
+  <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://example.com/FIXME&#34;</span>
+  <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Eclipse Public License&#34;</span>
+            <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
+  <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.4.0&#34;</span>]]
+  <span style="color:#e6db74">:resource-paths</span> [<span style="color:#e6db74">&#34;c:\\Program Files\\Java\\jdk1.7.0_13\\jre\\lib\\jfxrt.jar&#34;</span>]
+  <span style="color:#e6db74">:main</span> titato.core)
+</code></pre></div><p>Note the use of the <code>resource-path</code> in the project file. That's how <a href="https://github.com/technomancy/leiningen" title="Leiningen home page">leiningen</a> finds JavaFX.</p>
+<p>The magic begins in the <code>-start</code> function. That's the function in your program that JavaFX calls to start things up. The first thing required is that your root node is actually re-sizable. Hence the use of a <code>Pane</code>. See <a href="http://amyfowlersblog.wordpress.com/2011/06/02/javafx2-0-layout-a-class-tour/" title="Amy Fowler">Amy Fowler's blog</a> for a nice description of the layout classes. Many JavaFX examples use a <code>Group</code> object. That won't work here because it is not re-sizable.</p>
+<p>The next important thing that happens in <code>-start</code> is to bind the width and height properties of the <code>Canvas</code> to the width and height properties of the root <code>Pane</code>. This was new to me. It isn't the same mechanism as is used in <a href="http://en.wikipedia.org/wiki/Swing_%28Java%29" title="Description of Java Swing on Wikipedia">Swing</a>. By binding the width and height properties, the canvas gets notified any time they change. The <code>ChangeListener</code>s added to the two properties get called when the properties change providing the opportunity to re-draw the interface. The re-draw occurs by calling the <code>redraw-board</code> function on the canvas whenever the size changes.</p>
+<p>At first I thought that re-drawing the board on every change during a drag might be too slow. However, I can't seem to outrun the program no matter how fast I move the mouse. So, this method seems to work for a program with an interface as simple as this one.</p>
 
 
   

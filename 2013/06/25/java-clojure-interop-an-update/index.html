@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Java-Clojure Interop: An Update &middot; Yo-Dave</title>
 
@@ -259,142 +259,92 @@
 
 </div>
 
-  
-
-<p>My most popular answer on <a href="http://stackoverflow.com/">Stack Overflow</a> has to do with <a href="http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427">Clojure-Java interop</a>. Since that answer was written, some of the tools used in the answer, specifically <del><a href="http://enclojure.wikispaces.com/">enclojure</a></del> (<strong>Broken Link</strong>), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.</p>
-
+  <p>My most popular answer on <a href="http://stackoverflow.com/">Stack Overflow</a> has to do with <a href="http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427">Clojure-Java interop</a>. Since that answer was written, some of the tools used in the answer, specifically <!-- raw HTML omitted --><a href="http://enclojure.wikispaces.com/">enclojure</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.</p>
 <p>As this is written, the tools used include:</p>
-
 <ul>
 <li><a href="http://clojure.org/">Clojure</a> 1.5.1</li>
 <li><a href="https://github.com/technomancy/leiningen">Leiningen</a> 2.1.3</li>
 <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java JDK</a> 1.7.0 Update 25</li>
 </ul>
-
-<p>These instructions are for Windows 7 64-bit. Instructions for other OS&rsquo;s are similar.</p>
-
+<p>These instructions are for Windows 7 64-bit. Instructions for other OS's are similar.</p>
 <h1 id="the-clojure-part">The Clojure Part</h1>
-
 <p>First create a project and associated directory structure using Leiningen:</p>
-
-<pre><code class="language-dos">    C:\projects&gt;lein new com.domain.tiny
-</code></pre>
-
-<p>Now, change to the project directory.</p>
-
-<pre><code class="language-dos">    C:\projects&gt;cd com.domain.tiny
-</code></pre>
-
-<p>In the project directory, open the project.clj file and edit it such that the contents are as shown below.</p>
-
-<pre><code class="language-clojure">    (defproject com.domain.tiny &quot;0.1.0-SNAPSHOT&quot;
-      :description &quot;An example of stand alone Clojure-Java interop&quot;
-      :url &quot;http://clarkonium.net/2013/06/java-clojure-interop-an-update&quot;
-      :license {:name &quot;Eclipse Public License&quot;
-      :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
-      :dependencies [[org.clojure/clojure &quot;1.5.1&quot;]]
-      :aot :all
-      :main com.domain.tiny)
-</code></pre>
-
-<p>Now, make sure all of the dependencies (Clojure) are available.</p>
-
-<pre><code class="language-dos">    C:\projects\com.domain.tiny&gt;lein deps
-</code></pre>
-
-<p>You may see a message about downloading the Clojure jar at this point.</p>
-
+<pre><code class="language-dos" data-lang="dos">    C:\projects&gt;lein new com.domain.tiny
+</code></pre><p>Now, change to the project directory.</p>
+<pre><code class="language-dos" data-lang="dos">    C:\projects&gt;cd com.domain.tiny
+</code></pre><p>In the project directory, open the project.clj file and edit it such that the contents are as shown below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">defproject </span>com.domain.tiny <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+      <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;An example of stand alone Clojure-Java interop&#34;</span>
+      <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://clarkonium.net/2013/06/java-clojure-interop-an-update&#34;</span>
+      <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Eclipse Public License&#34;</span>
+      <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
+      <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.5.1&#34;</span>]]
+      <span style="color:#e6db74">:aot</span> <span style="color:#e6db74">:all</span>
+      <span style="color:#e6db74">:main</span> com.domain.tiny)
+</code></pre></div><p>Now, make sure all of the dependencies (Clojure) are available.</p>
+<pre><code class="language-dos" data-lang="dos">    C:\projects\com.domain.tiny&gt;lein deps
+</code></pre><p>You may see a message about downloading the Clojure jar at this point.</p>
 <p>Now edit the Clojure file <code>C:\projects\com.domain.tiny\src\com\domain\tiny.clj</code> such that it contains the following contents. (This file was created when Leiningen created the project.)</p>
-
-<pre><code class="language-clojure">    (ns com.domain.tiny
-      (:gen-class
-        :name com.domain.tiny
-        :methods [#^{:static true} [binomial [int int] double]]))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">ns </span>com.domain.tiny
+      (<span style="color:#e6db74">:gen-class</span>
+        <span style="color:#e6db74">:name</span> com.domain.tiny
+        <span style="color:#e6db74">:methods</span> [<span style="color:#f92672">#</span><span style="color:#f92672">^</span>{<span style="color:#e6db74">:static</span> true} [binomial [int int] double]]))
     
-    (defn binomial
-      &quot;Calculate the binomial coefficient.&quot;
+    (<span style="color:#66d9ef">defn </span>binomial
+      <span style="color:#e6db74">&#34;Calculate the binomial coefficient.&#34;</span>
       [n k]
-      (let [a (inc n)]
-        (loop [b 1
-               c 1]
-          (if (&gt; b k)
+      (<span style="color:#66d9ef">let </span>[a (inc n)]
+        (<span style="color:#66d9ef">loop </span>[b <span style="color:#ae81ff">1</span>
+               c <span style="color:#ae81ff">1</span>]
+          (<span style="color:#66d9ef">if </span>(&gt; b k)
             c
-            (recur (inc b) (* (/ (- a b) b) c))))))
+            (<span style="color:#a6e22e">recur</span> (inc b) (* (/ (- a b) b) c))))))
     
-    (defn -binomial
-      &quot;A Java-callable wrapper around the 'binomial' function.&quot;
+    (<span style="color:#66d9ef">defn </span>-binomial
+      <span style="color:#e6db74">&#34;A Java-callable wrapper around the &#39;binomial&#39; function.&#34;</span>
       [n k]
-      (binomial n k))
+      (<span style="color:#a6e22e">binomial</span> n k))
 
-    (defn -main []
-      (println (str &quot;(binomial 5 3): &quot; (binomial 5 3)))
-      (println (str &quot;(binomial 10042 111): &quot; (binomial 10042 111))))
-</code></pre>
-
-<p>Much of the magic here is in the namespace declaration. The <code>:gen-class</code> tells the system to create a class named <code>com.domain.tiny</code> with a single static method called <code>binomial</code>, a function taking two integer arguments and returning a double. There are two similarly named functions <code>binomial</code>, a traditional Clojure function, and <code>-binomial</code> and wrapper accessible from Java. Note the hyphen in the function name <code>-binomial</code>. The default prefix is a hyphen, but it can be changed to something else if desired. The<code>-main</code> function just makes a couple of calls to the binomial function to assure that we are getting the correct results. To do that, compile the class and run the program.</p>
-
-<pre><code class="language-dos">    C:\projects\com.domain.tiny&gt;lein run
-</code></pre>
-
-<p>You should see output similar to the following:</p>
-
-<pre><code class="language-dos">    Compiling com.domain.tiny
+    (<span style="color:#66d9ef">defn </span>-main []
+      (println (str <span style="color:#e6db74">&#34;(binomial 5 3): &#34;</span> (<span style="color:#a6e22e">binomial</span> <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">3</span>)))
+      (println (str <span style="color:#e6db74">&#34;(binomial 10042 111): &#34;</span> (<span style="color:#a6e22e">binomial</span> <span style="color:#ae81ff">10042</span> <span style="color:#ae81ff">111</span>))))
+</code></pre></div><p>Much of the magic here is in the namespace declaration. The <code>:gen-class</code> tells the system to create a class named <code>com.domain.tiny</code> with a single static method called <code>binomial</code>, a function taking two integer arguments and returning a double. There are two similarly named functions <code>binomial</code>, a traditional Clojure function, and <code>-binomial</code> and wrapper accessible from Java. Note the hyphen in the function name <code>-binomial</code>. The default prefix is a hyphen, but it can be changed to something else if desired. The<code> -main</code> function just makes a couple of calls to the binomial function to assure that we are getting the correct results. To do that, compile the class and run the program.</p>
+<pre><code class="language-dos" data-lang="dos">    C:\projects\com.domain.tiny&gt;lein run
+</code></pre><p>You should see output similar to the following:</p>
+<pre><code class="language-dos" data-lang="dos">    Compiling com.domain.tiny
      (binomial 5 3): 10
      (binomial 10042 111): 4906838957506814494...
-</code></pre>
-
-<p>Now package it up in a jar and put it someplace convenient. Copy the Clojure jar there too.</p>
-
-<pre><code class="language-dos">    C:\projects\com.domain.tiny&gt;lein jar
+</code></pre><p>Now package it up in a jar and put it someplace convenient. Copy the Clojure jar there too.</p>
+<pre><code class="language-dos" data-lang="dos">    C:\projects\com.domain.tiny&gt;lein jar
     Created C:\projects\com.domain.tiny\target\com.domain.tiny-0.1.0-SNAPSHOT.jar
     C:\projects\com.domain.tiny&gt;mkdir \target\lib
     C:\projects\com.domain.tiny&gt;copy target\com.domain.tiny-0.1.0-SNAPSHOT.jar target\lib\
             1 file(s) copied.
     C:\projects\com.domain.tiny&gt;copy &quot;C:&lt;path to clojure jar&gt;\clojure-1.5.1.jar&quot; target\lib\
             1 file(s) copied.
-</code></pre>
-
-<h1 id="the-java-part">The Java Part</h1>
-
-<p>Leiningen has a built-in task, <code>lein-javac</code>, that should be able to help with the Java compilation. Unfortunately, it seems to be broken in version 2.1.3. It can&rsquo;t find the installed JDK and it can&rsquo;t find the Maven repository. The paths to both have embedded spaces on my system. I assume that is the problem. Any Java IDE could handle the compilation and packaging too. But for this post, we&rsquo;re going old school and doing it at the command line.</p>
-
+</code></pre><h1 id="the-java-part">The Java Part</h1>
+<p>Leiningen has a built-in task, <code>lein-javac</code>, that should be able to help with the Java compilation. Unfortunately, it seems to be broken in version 2.1.3. It can't find the installed JDK and it can't find the Maven repository. The paths to both have embedded spaces on my system. I assume that is the problem. Any Java IDE could handle the compilation and packaging too. But for this post, we're going old school and doing it at the command line.</p>
 <p>First create the file <code>Main.java</code> with the following contents.</p>
-
-<pre><code class="language-java">    import com.domain.tiny;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#f92672">import</span> com.domain.tiny<span style="color:#f92672">;</span>
     
-    public class Main {
-        public static void main(String[] args) {
-            System.out.println(&quot;(binomial 5 3): &quot; + tiny.binomial(5, 3));
-            System.out.println(&quot;(binomial 10042, 111): &quot; + tiny.binomial(10042, 111));
-        }
-    }
-</code></pre>
-
-<p>To compile java part</p>
-
-<pre><code class="language-dos">    javac -g -cp target\com.domain.tiny-0.1.0-SNAPSHOT.jar -d target\src\com\domain\Main.java
-</code></pre>
-
-<p>Now create a file with some meta-information to add to the jar we want to build. In <code>Manifest.txt</code>, add the following text</p>
-
-<pre><code class="language-dos">    Class-Path: lib\com.domain.tiny-0.1.0-SNAPSHOT.jar lib\clojure-1.5.1.jar
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;(binomial 5 3): &#34;</span> <span style="color:#f92672">+</span> tiny<span style="color:#f92672">.</span><span style="color:#a6e22e">binomial</span><span style="color:#f92672">(</span>5<span style="color:#f92672">,</span> 3<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;(binomial 10042, 111): &#34;</span> <span style="color:#f92672">+</span> tiny<span style="color:#f92672">.</span><span style="color:#a6e22e">binomial</span><span style="color:#f92672">(</span>10042<span style="color:#f92672">,</span> 111<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>To compile java part</p>
+<pre><code class="language-dos" data-lang="dos">    javac -g -cp target\com.domain.tiny-0.1.0-SNAPSHOT.jar -d target\src\com\domain\Main.java
+</code></pre><p>Now create a file with some meta-information to add to the jar we want to build. In <code>Manifest.txt</code>, add the following text</p>
+<pre><code class="language-dos" data-lang="dos">    Class-Path: lib\com.domain.tiny-0.1.0-SNAPSHOT.jar lib\clojure-1.5.1.jar
     Main-Class: Main
-</code></pre>
-
-<p>Now package it all up into one big jar file.</p>
-
-<pre><code class="language-dos">    C:\projects\com.domain.tiny\target&gt;jar cfm Interop.jar Manifest.txt Main.class lib\com.domain.tiny-0.1.0-SNAPSHOT.jar lib\clojure-1.5.1.jar
-</code></pre>
-
-<p>To run the program:</p>
-
-<pre><code class="language-dos">    C:\projects\com.domain.tiny\target&gt;java -jar Interop.jar
+</code></pre><p>Now package it all up into one big jar file.</p>
+<pre><code class="language-dos" data-lang="dos">    C:\projects\com.domain.tiny\target&gt;jar cfm Interop.jar Manifest.txt Main.class lib\com.domain.tiny-0.1.0-SNAPSHOT.jar lib\clojure-1.5.1.jar
+</code></pre><p>To run the program:</p>
+<pre><code class="language-dos" data-lang="dos">    C:\projects\com.domain.tiny\target&gt;java -jar Interop.jar
     (binomial 5 3): 10.0
     (binomial 10042, 111): 4.9068389575068143E263
-</code></pre>
-
-<p>The output is essentially identical to that produced by Clojure alone, but the result has been converted to a Java double.</p>
-
+</code></pre><p>The output is essentially identical to that produced by Clojure alone, but the result has been converted to a Java double.</p>
 <p>As mentioned, a Java IDE will probably take care of the messy compilation arguments and the packaging.</p>
 
 

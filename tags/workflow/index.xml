@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>workflow on Yo-Dave</title>
@@ -19,7 +19,7 @@
       
       <guid>https://yo-dave.com/2018/06/09/closing-branches-in-mercurial/</guid>
       <description>As a lone developer, I have a workflow that I believe is pretty typical.
-Most of my development work happens on the &amp;ldquo;tip&amp;rdquo; of the &amp;ldquo;default&amp;rdquo; branch. It&amp;rsquo;s just easier to do work on fixing small bugs or adding minor features there.
+Most of my development work happens on the &amp;ldquo;tip&amp;rdquo; of the &amp;ldquo;default&amp;rdquo; branch. It&#39;s just easier to do work on fixing small bugs or adding minor features there.
 For more significant, more difficult pieces of work, I usually create a &amp;ldquo;feature branch.&amp;rdquo; I do this with the expectation that if things get messed up too badly, I can delete the branch and start over without affecting the readiness of the default branch.</description>
     </item>
     

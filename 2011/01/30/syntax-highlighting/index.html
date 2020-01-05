@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Syntax Highlighting &middot; Yo-Dave</title>
 
@@ -255,35 +255,26 @@
 
 </div>
 
-  <p><strong>Update 2017-08-19</strong>: This post refers to a time when the blog was hosted in WordPress. It isn&rsquo;t really applicable anymore. But it may provide some guidance to someone who happens to come across it.</p>
-
+  <p><strong>Update 2017-08-19</strong>: This post refers to a time when the blog was hosted in WordPress. It isn't really applicable anymore. But it may provide some guidance to someone who happens to come across it.</p>
 <p>Since this blog is mostly about programming, there are a lot of code listings. To make those listings more easily readable, highlighting syntax in the listings is a good thing.</p>
-
 <p>Of all of the syntax highlighters I have tried, the <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a> JavaScript tool by Alex Gorbachev is the one I most prefer. The <a href="https://wordpress.org/plugins/syntaxhighlighter/">SyntaxHighlighter Evolved</a> is a nice WordPress plugin wrapped around the Gorbachev package. Setting things up in WordPress is trivial and just works.</p>
-
-<p>Although the plugin comes with many &ldquo;brushes&rdquo; for different languages, the one for Clojure is a bit simplistic. However, Brian Carper has taken the time to create <del><a href="http://briancarper.net/blog/556/">a more sophisticated highlighter for Clojure</a></del> (<strong>Broken Link</strong>). He has even supplied a tweaked theme. The theme doesn&rsquo;t suit my tastes, but it looks good on his site.</p>
-
-<p>Brian&rsquo;s Clojure brush even seems to work well with Lisp</p>
-
-<pre><code class="language-clojure">(defun verbose-sum (x y)
-  &amp;quot;Sum any two numbers after printing a message.&amp;quot;
-  (format t &quot;Summing ~d and ~d.~%&quot; x y)
+<p>Although the plugin comes with many &ldquo;brushes&rdquo; for different languages, the one for Clojure is a bit simplistic. However, Brian Carper has taken the time to create <!-- raw HTML omitted --><a href="http://briancarper.net/blog/556/">a more sophisticated highlighter for Clojure</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>). He has even supplied a tweaked theme. The theme doesn't suit my tastes, but it looks good on his site.</p>
+<p>Brian's Clojure brush even seems to work well with Lisp</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">defun</span> verbose-sum (<span style="color:#a6e22e">x</span> y)
+  <span style="color:#f92672">&amp;</span>quot<span style="color:#75715e">;Sum any two numbers after printing a message.&amp;quot;</span>
+  (<span style="color:#a6e22e">format</span> t <span style="color:#e6db74">&#34;Summing ~d and ~d.~%&#34;</span> x y)
   (+ x y))
-</code></pre>
-
-<p>and Scheme</p>
-
-<pre><code class="language-clojure">(define product
-  (lambda (ls)
-    (call/cc
-     (lambda (break)
-       (let f ([ls ls])
-         (cond
-           [(null? ls) 1]
-           [(= (car ls) 0) (break 0)]
-           [else (* (car ls) (f (cdr ls)))]))))))
-</code></pre>
-
+</code></pre></div><p>and Scheme</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">define</span> product
+  (<span style="color:#a6e22e">lambda</span> (<span style="color:#a6e22e">ls</span>)
+    (<span style="color:#a6e22e">call/cc</span>
+     (<span style="color:#a6e22e">lambda</span> (<span style="color:#a6e22e">break</span>)
+       (<span style="color:#66d9ef">let </span>f ([ls ls])
+         (<span style="color:#a6e22e">cond</span>
+           [(<span style="color:#a6e22e">null?</span> ls) <span style="color:#ae81ff">1</span>]
+           [(= (<span style="color:#a6e22e">car</span> ls) <span style="color:#ae81ff">0</span>) (<span style="color:#a6e22e">break</span> <span style="color:#ae81ff">0</span>)]
+           [else (* (<span style="color:#a6e22e">car</span> ls) (<span style="color:#a6e22e">f</span> (<span style="color:#a6e22e">cdr</span> ls)))]))))))
+</code></pre></div>
 
   
 <div class="prev-next-post pure-g">

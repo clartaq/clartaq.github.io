@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Hardening an ngnx Server &middot; Yo-Dave</title>
 
@@ -257,92 +257,46 @@
 
 </div>
 
-  <p>Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &ldquo;play&rdquo; sites that use <a href="http://nginx.org">nginx</a> as the server component?</p>
-
-<p>Like I said, I&rsquo;m no expert, but these are some of the things I have done to my own sites.</p>
-
+  <p>Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It's something I want to do better. What better place to start than by evaluating security settings on some of my &ldquo;play&rdquo; sites that use <a href="http://nginx.org">nginx</a> as the server component?</p>
+<p>Like I said, I'm no expert, but these are some of the things I have done to my own sites.</p>
 <h3 id="start-by-updating-the-version-of-nginx">Start by Updating the Version of nginx</h3>
-
 <p>Many (most?) Linux distros install a version that is quite out of date and contains known vulnerabilities. Generally, newer versions have improved security. For example, as I write this, Ubuntu typically installs a version that is quite out of date and contains known vulnerabilities.</p>
-
-<p>To fix this, download the latest <em>stable</em> version from the <a href="http://nginx.org/en/download.html">nginx download site</a> and install it.</p>
-
+<p>To fix this, download the latest <!-- raw HTML omitted -->stable<!-- raw HTML omitted --> version from the <a href="http://nginx.org/en/download.html">nginx download site</a> and install it.</p>
 <h3 id="use-a-tool-to-check-security-settings-of-the-server">Use a Tool to Check Security Settings of the Server</h3>
-
-<p>There&rsquo;s a <a href="https://www.htbridge.com/websec">free service</a> that will check the security of any web server. For example, if you check the email service <a href="https://runbox.com/">RunBox</a>, you will find that it receives a grade of A+. If you install nginx on Ubuntu (14.04 LTS), even the current version, out of the box it will receive a grade of F. What can you do to improve the results? Here are some suggestions.</p>
-
+<p>There's a <a href="https://www.htbridge.com/websec">free service</a> that will check the security of any web server. For example, if you check the email service <a href="https://runbox.com/">RunBox</a>, you will find that it receives a grade of A+. If you install nginx on Ubuntu (14.04 LTS), even the current version, out of the box it will receive a grade of F. What can you do to improve the results? Here are some suggestions.</p>
 <h4 id="hide-the-server-version-number">Hide the Server Version Number</h4>
-
 <p>This is related to updating the version of the server. Sending the version number can help an attacker use known vulnerabilities in that version. It also gives a skilled hacker the chance to develop a new attack specific to that version since they can study a specific version of the source code for the server.</p>
-
 <p>You can tell nginx to stop sending version information by editing the <code>/etc/nginx/nginx.conf</code> file. (Depending on your distro, the configuration file might be in a different location.) In that file, find or add a line that says:</p>
-
-<pre><code class="language-shell">server_tokens off;
-</code></pre>
-
-<p>Then, back at the command line, re-start the server.</p>
-
-<pre><code class="language-shell">sudo service nginx restart
-</code></pre>
-
-<h4 id="send-appropriate-headers">Send Appropriate Headers</h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">server_tokens off;
+</code></pre></div><p>Then, back at the command line, re-start the server.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service nginx restart
+</code></pre></div><h4 id="send-appropriate-headers">Send Appropriate Headers</h4>
 <p>A lot of the recommendations are related to the information sent from the server in the headers.</p>
-
 <h5 id="x-frame-options">X-Frame-Options</h5>
-
 <p>This setting determines if a web page can be &ldquo;framed&rdquo; or not. Setting this option to one of the available settings can allow the server to defend against <a href="https://www.owasp.org/index.php/Clickjacking">clickjacking</a>.</p>
-
 <p>Again, this can be controlled by simply editing the <code>/etc/nginx/nginx.conf</code> file. You can add the following line right below the <code>server_tokens</code> line added in the previous section.</p>
-
-<pre><code class="language-shell">add_header X-Frame-Options &quot;SAMEORIGIN&quot;;
-</code></pre>
-
-<p>This setting will allow the page to be displayed in a frame with the same origin as the page.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header X-Frame-Options <span style="color:#e6db74">&#34;SAMEORIGIN&#34;</span>;
+</code></pre></div><p>This setting will allow the page to be displayed in a frame with the same origin as the page.</p>
 <h5 id="x-xss-protection">X-XSS-Protection</h5>
-
 <p>Cross site scripting attacks are fairly common. A simple way to increase protection against them is to include an additional header item:</p>
-
-<pre><code class="language-shell">add_header X-Xss-Protection &quot;1; mode=block&quot;
-</code></pre>
-
-<p>The <code>1</code> tells the browser to use it&rsquo;s built-in cross site scripting protection heuristics. Most browsers these days have built-in defenses that can be activated this way. The <code>mode=block</code> part tells the browser to block the servers response if the heuristics have detected an XSS.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header X-Xss-Protection <span style="color:#e6db74">&#34;1; mode=block&#34;</span>
+</code></pre></div><p>The <code>1</code> tells the browser to use it's built-in cross site scripting protection heuristics. Most browsers these days have built-in defenses that can be activated this way. The <code>mode=block</code> part tells the browser to block the servers response if the heuristics have detected an XSS.</p>
 <h5 id="x-content-type-options">X-Content-Type-Options</h5>
-
 <p>It is possible for some browsers to &ldquo;sniff&rdquo; the content type. This setting can disable that type of detection and force the browser to use the declared content type. This can reduce exposure to drive-by download attacks on sites that serve user-uploaded content, like blog comments for example.</p>
-
-<pre><code class="language-shell">add_header X-Content-Type-Options nosniff;
-</code></pre>
-
-<h5 id="content-security-policy">Content-Security-Policy</h5>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header X-Content-Type-Options nosniff;
+</code></pre></div><h5 id="content-security-policy">Content-Security-Policy</h5>
 <p>Content-Security-Policy (CSP) settings let you specify explicitly the only sources that the server can download resources from, like scripts, styles, fonts and images. This setting can be rather complicated and may require some re-working of the web site. A good introduction can be found at <a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">An Introduction to Content Security Policy</a>. I urge you to review that post or a similar one since they explain it much better than me.</p>
-
 <p>Before you move to a strict policy, you can use a <code>Content-Security-Policy-Report</code> header to examine how a proposed policy is violated by an existing site. For example, you might include the following directive in the nginx configuration file.</p>
-
-<pre><code class="language-shell">add_header Content-Security-Policy-Report-Only &quot;default-src 'self'&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header Content-Security-Policy-Report-Only <span style="color:#e6db74">&#34;default-src &#39;self&#39;&#34;</span>
 add_header report-uri /my_base_reporting_page;
-</code></pre>
-
-<p>The <code>default-src 'self'</code> directive specifies that most resources must be loaded from the server. Note however that some resources do not fall back to the <code>default-src</code> and can be loaded from anywhere unless explicitly limited elsewhere. See the above mentioned article for a list of these resource types.</p>
-
+</code></pre></div><p>The <code>default-src 'self'</code> directive specifies that most resources must be loaded from the server. Note however that some resources do not fall back to the <code>default-src</code> and can be loaded from anywhere unless explicitly limited elsewhere. See the above mentioned article for a list of these resource types.</p>
 <p>The version that I eventually used for my site was:</p>
-
-<pre><code class="language-shell">add_header Content-Security-Policy &quot;default-src 'self'; script-src 'self' maxcdn.bootstrapcdn.com code.jquery.com; img-src 'self' data:; style-src 'self' https://themes.googleusercontent.com http://fonts.googleapis.com maxcdn.bootstrapcdn.com cdnjs.cloudflare.com; font-src 'self' http://fonts.gstatic.com data:; child-src 'self'; connect-src 'self' https://apis.google.com; object-src 'none' &quot;;
-</code></pre>
-
-<p>You should read the post mentioned above for details, but this long line does several things <strong>for my specific site</strong>. First it only allows scripts to be loaded from the sites specified and from the site the server is running on. It <em>does not</em> allow scripts to be embedded in the HTML served up by the site. Likewise, embedded styles are not allowed in the HTML &ndash; they must be loaded from a CSS file, whether internal or from one of the external sites listed.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header Content-Security-Policy <span style="color:#e6db74">&#34;default-src &#39;self&#39;; script-src &#39;self&#39; maxcdn.bootstrapcdn.com code.jquery.com; img-src &#39;self&#39; data:; style-src &#39;self&#39; https://themes.googleusercontent.com http://fonts.googleapis.com maxcdn.bootstrapcdn.com cdnjs.cloudflare.com; font-src &#39;self&#39; http://fonts.gstatic.com data:; child-src &#39;self&#39;; connect-src &#39;self&#39; https://apis.google.com; object-src &#39;none&#39; &#34;</span>;
+</code></pre></div><p>You should read the post mentioned above for details, but this long line does several things <strong>for my specific site</strong>. First it only allows scripts to be loaded from the sites specified and from the site the server is running on. It <em>does not</em> allow scripts to be embedded in the HTML served up by the site. Likewise, embedded styles are not allowed in the HTML &ndash; they must be loaded from a CSS file, whether internal or from one of the external sites listed.</p>
 <p>Fonts were a little tricky for me. The site uses two <a href="https://www.google.com/fonts">Google fonts</a>. The <code>head</code> section of the page HTML loads them like this:</p>
-
-<pre><code class="language-html">&lt;link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'&gt;
-&lt;link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic,700italic,400,700' rel='stylesheet' type='text/css'&gt;
-</code></pre>
-
-<p>But, in addition to the reference to <code>fonts.googleapis.com</code> in the <code>style-src</code> section of the CSP, the references to <code>themes.googleusercontent.com</code> was required in the <code>style-src</code> and the reference to <code>fonts.gstatic.com</code> was required in the <code>font-src</code> section. I don&rsquo;t really know why. I just fiddled around based on the error messages in the Firefox developer console until I got it to work.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&#39;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;stylesheet&#39;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;text/css&#39;</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic,700italic,400,700&#39;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;stylesheet&#39;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;text/css&#39;</span>&gt;
+</code></pre></div><p>But, in addition to the reference to <code>fonts.googleapis.com</code> in the <code>style-src</code> section of the CSP, the references to <code>themes.googleusercontent.com</code> was required in the <code>style-src</code> and the reference to <code>fonts.gstatic.com</code> was required in the <code>font-src</code> section. I don't really know why. I just fiddled around based on the error messages in the Firefox developer console until I got it to work.</p>
 <p>So there you have it. The way one guy fiddled with his site content and configuration in an effort to improve security. When analyzed by the <a href="https://www.htbridge.com/websec/">High-Tech Bridge Free Web Server Security Test</a>, the analysis now comes back with an A+ and no warnings. I know there is more to do, but this is a start.</p>
 
   

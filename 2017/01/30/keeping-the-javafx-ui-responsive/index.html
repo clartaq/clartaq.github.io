@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Keeping the JavaFX UI Responsive &middot; Yo-Dave</title>
 
@@ -259,227 +259,190 @@
 
 </div>
 
-  
-
-<p>It&rsquo;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.</p>
-
-<p>Recently, I&rsquo;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds. I also want to provide the opportunity for the user to cancel the background task at any time. I thought I would provide a couple of examples of how I did that in the program.</p>
-
-<!--"more"-->
-
+  <p>It's common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.</p>
+<p>Recently, I've been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds. I also want to provide the opportunity for the user to cancel the background task at any time. I thought I would provide a couple of examples of how I did that in the program.</p>
+<!-- raw HTML omitted -->
 <p>The program basically translates the contents of one file into many others. You can think of the three phases as importing a file of unknown size, summarizing the contents (and doing real-time UI updates), and then writing out the translated files. To be specific, the program translates <a href="https://evernote.com/">Evernote</a> notes and notebooks into <a href="http://tiddlywiki.com/">TiddlyWiki</a> tiddler files.</p>
-
 <p>In the first phase the program reads a file in the Evernote <a href="https://blog.evernote.com/tech/2013/08/08/evernote-export-format-enex/">ENEX</a> format. These types of files can range in size from a few kilobytes to hundreds of megabytes. Until the file is parsed, the program has no notion of how much work has to be done. But it can take a significant amount of time. During that time I want the user to be able to cancel at any time, thus the need for a responsive UI with a cancel button. A JavaFX progress dialog and a background Task are just right.</p>
+<p>Here's an example of the progress dialog class that I used.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e">* A dialog to provide some progress feedback as the notes file is parsed.
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImportProgressDialog</span> <span style="color:#f92672">{</span>
 
-<p>Here&rsquo;s an example of the progress dialog class that I used.</p>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Stage dlgStage<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ProgressIndicator pi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressIndicator<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Button cancelBtn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#f92672">&amp;</span>quot<span style="color:#f92672">;</span>Cancel<span style="color:#f92672">&amp;</span>quot<span style="color:#f92672">;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">/**
-* A dialog to provide some progress feedback as the notes file is parsed.
-*/
-private class ImportProgressDialog {
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ImportProgressDialog</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        dlgStage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stage<span style="color:#f92672">(</span>StageStyle<span style="color:#f92672">.</span><span style="color:#a6e22e">UTILITY</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setResizable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">initModality</span><span style="color:#f92672">(</span>Modality<span style="color:#f92672">.</span><span style="color:#a6e22e">NONE</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Parsing...&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    private final Stage dlgStage;
-    private final ProgressIndicator pi = new ProgressIndicator();
-    private final Button cancelBtn = new Button(&amp;quot;Cancel&amp;quot;);
+        pi<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#f92672">-</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public ImportProgressDialog() {
-        dlgStage = new Stage(StageStyle.UTILITY);
-        dlgStage.setResizable(false);
-        dlgStage.initModality(Modality.NONE);
-        dlgStage.setTitle(&quot;Parsing...&quot;);
+        <span style="color:#66d9ef">final</span> VBox dlgVBox <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VBox<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgVBox<span style="color:#f92672">.</span><span style="color:#a6e22e">setSpacing</span><span style="color:#f92672">(</span>15<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgVBox<span style="color:#f92672">.</span><span style="color:#a6e22e">setPadding</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span>11<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">,</span> 50<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">,</span> 15<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">,</span> 50<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgVBox<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>pi<span style="color:#f92672">,</span> cancelBtn<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        pi.setProgress(-1.0d);
+        Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>dlgVBox<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-        final VBox dlgVBox = new VBox();
-        dlgVBox.setSpacing(15.0d);
-        dlgVBox.setPadding(new Insets(11.0d, 50.0d, 15.0d, 50.0d));
-        dlgVBox.getChildren().addAll(pi, cancelBtn);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bindToTask</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Task<span style="color:#f92672">&lt;</span><span style="color:#f92672">?</span><span style="color:#f92672">&gt;</span> task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        cancelBtn<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span><span style="color:#f92672">(</span>ActionEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+            enableGuiItems<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            task<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        cancelBtn<span style="color:#f92672">.</span><span style="color:#a6e22e">disableProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>Bindings<span style="color:#f92672">.</span><span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">runningProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnCloseRequest</span><span style="color:#f92672">(</span><span style="color:#f92672">(</span>WindowEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+            enableGuiItems<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            task<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-        Scene scene = new Scene(dlgVBox);
-        dlgStage.setScene(scene);
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public void bindToTask(final Task&lt;?&gt; task) {
-        cancelBtn.setOnAction((ActionEvent event) -&gt; {
-            enableGuiItems();
-            task.cancel();
-            dlgStage.close();
-        });
-        cancelBtn.disableProperty().bind(Bindings.not(task.runningProperty()));
-        dlgStage.setOnCloseRequest((WindowEvent event) -&gt; {
-            enableGuiItems();
-            task.cancel();
-        });
-    }
-
-    public void show() {
-        dlgStage.show();
-    }
-
-    public void close() {
-        dlgStage.close();
-    }
-}
-</code></pre>
-
-<p>There are a few interesting things happening here. The dialog is just a window (<code>Stage</code>). Unlike most dialogs, this one is not modal (<code>dlgStage.initModality(Modality.NONE)</code>) since we want the user to be able to use parts of the interface while the dialog updates them on progress. And since we don&rsquo;t know how much work there is to do, we use a <code>ProgressIndicator</code> that just shows some spinning dots (<code>pi.setProgress(-1.0d)</code>). The rest of the construct just lays out the visual components of the dialog.</p>
-
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>There are a few interesting things happening here. The dialog is just a window (<code>Stage</code>). Unlike most dialogs, this one is not modal (<code>dlgStage.initModality(Modality.NONE)</code>) since we want the user to be able to use parts of the interface while the dialog updates them on progress. And since we don't know how much work there is to do, we use a <code>ProgressIndicator</code> that just shows some spinning dots (<code>pi.setProgress(-1.0d)</code>). The rest of the construct just lays out the visual components of the dialog.</p>
 <p>The <code>bindToTask</code> method lets the process dialog shut down the task if the user presses the cancel button or the close decoration on the dialog. (The <code>disableGuiItems()</code> and <code>enableGuiItems()</code> methods disable and enable some parts of the GUI that should not be active while the task is running, like buttons that start the import, <em>etc</em>.)</p>
-
 <p>The <code>Task</code> that the program uses with this dialog is quite simple. Leaving out the Javadocs:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParseNotesTask</span> <span style="color:#66d9ef">extends</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">private static class ParseNotesTask extends Task&lt;Void&gt; {
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> EnexParser p<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> File f<span style="color:#f92672">;</span>
 
-    private final EnexParser p;
-    private final File f;
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ParseNotesTask</span><span style="color:#f92672">(</span>EnexParser ep<span style="color:#f92672">,</span> File noteFile<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        p <span style="color:#f92672">=</span> ep<span style="color:#f92672">;</span>
+        f <span style="color:#f92672">=</span> noteFile<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public ParseNotesTask(EnexParser ep, File noteFile) {
-        p = ep;
-        f = noteFile;
-    }
-
-    @Override
-    public Void call() throws InterruptedException, JDOMException,
-                              IOException, EnexInvalidFileException {
-        p.parse(f);
-        return null;
-    }
-}
-</code></pre>
-
-<p>The constructor just saves some variables for later. The real work is done in the <code>parse()</code> method of the <code>EnexParser p</code> (not shown) that is invoked by the task&rsquo;s <code>call()</code> method.</p>
-
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException<span style="color:#f92672">,</span> JDOMException<span style="color:#f92672">,</span>
+                              IOException<span style="color:#f92672">,</span> EnexInvalidFileException <span style="color:#f92672">{</span>
+        p<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>f<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>The constructor just saves some variables for later. The real work is done in the <code>parse()</code> method of the <code>EnexParser p</code> (not shown) that is invoked by the task's <code>call()</code> method.</p>
 <p>These two classes are used in the main body of the program as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">populateUI</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> File noteFile<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">private void populateUI(final File noteFile) {
+    disableGuiItems<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    tGui<span style="color:#f92672">.</span><span style="color:#a6e22e">clear</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    disableGuiItems();
-    tGui.clear();
+    EnexParser ep <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EnexParser<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    ParseNotesTask parseNotesTask <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ParseNotesTask<span style="color:#f92672">(</span>ep<span style="color:#f92672">,</span> noteFile<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    ImportProgressDialog pd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ImportProgressDialog<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    pd<span style="color:#f92672">.</span><span style="color:#a6e22e">bindToTask</span><span style="color:#f92672">(</span>parseNotesTask<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    EnexParser ep = new EnexParser();
-    ParseNotesTask parseNotesTask = new ParseNotesTask(ep, noteFile);
-    ImportProgressDialog pd = new ImportProgressDialog();
-    pd.bindToTask(parseNotesTask);
+    <span style="color:#75715e">// Make sure to close the progress dialog when done.
+</span><span style="color:#75715e"></span>    parseNotesTask<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnSucceeded</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+        pd<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        tGui<span style="color:#f92672">.</span><span style="color:#a6e22e">populateTreeViewGui</span><span style="color:#f92672">(</span>noteFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span> ep<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        enableGuiItems<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    parseNotesTask<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnFailed</span><span style="color:#f92672">(</span><span style="color:#f92672">(</span>WorkerStateEvent arg0<span style="color:#f92672">)</span> <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+        pd<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">new</span> ExceptionDialog<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;While parsing the notes...&#34;</span><span style="color:#f92672">,</span>
+        parseNotesTask<span style="color:#f92672">.</span><span style="color:#a6e22e">getException</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        enableGuiItems<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    // Make sure to close the progress dialog when done.
-    parseNotesTask.setOnSucceeded(event -&gt; {
-        pd.close();
-        tGui.populateTreeViewGui(noteFile.getName(), ep);
-        enableGuiItems();
-    });
-    parseNotesTask.setOnFailed((WorkerStateEvent arg0) -&gt; {
-        pd.close();
-        new ExceptionDialog(&quot;While parsing the notes...&quot;,
-        parseNotesTask.getException()).show();
-        enableGuiItems();
-    });
-
-    pd.show();
-    Thread thread = new Thread(parseNotesTask);
-    thread.start();
-}
-</code></pre>
-
-<p>So, the method creates the <code>ImportProgressDialog</code> and <code>ParseNotesTask</code> and binds them together. It also sets up two event handlers. On successfully parsing the file, the dialog is closed and the next phase of the program is started with <code>tGui.populateTreeViewGui()</code>. If parsing fails, the progress dialog is still closed, but a new dialog reporting the cause of the exception is displayed. After all of the setup, the progress dialog is displayed and the file parsing task is started.</p>
-
+    pd<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>parseNotesTask<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>So, the method creates the <code>ImportProgressDialog</code> and <code>ParseNotesTask</code> and binds them together. It also sets up two event handlers. On successfully parsing the file, the dialog is closed and the next phase of the program is started with <code>tGui.populateTreeViewGui()</code>. If parsing fails, the progress dialog is still closed, but a new dialog reporting the cause of the exception is displayed. After all of the setup, the progress dialog is displayed and the file parsing task is started.</p>
 <p>As mentioned above, once the file is parsed, the GUI can be updated with a summary of the results. In this case, a <code>TreeView</code> is created containing metadata about the ENEX file and nodes summarizing the content of each of the notes. There can be thousands of notes in a file, requiring significant additional computation. As the summary of each note becomes available, the GUI is updated.</p>
-
 <p>So we have a similar yet distinct need here. We want to show progress, allow the user to cancel ongoing work on the summaries, and update the GUI with summary information as it becomes available. This work differs slightly in that we know at the outset how many notes must be summarized. The progress dialog can show how far along the process is as it proceeds.</p>
-
 <p>Here is the progress dialog class for this phase of the program.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProgressDialog</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">    private static class ProgressDialog {
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Stage dlgStage<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ProgressIndicator pi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressIndicator<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Button cancelBtn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Cancel&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        private final Stage dlgStage;
-        private final ProgressIndicator pi = new ProgressIndicator();
-        private final Button cancelBtn = new Button(&quot;Cancel&quot;);
+        <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProgressDialog</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            dlgStage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stage<span style="color:#f92672">(</span>StageStyle<span style="color:#f92672">.</span><span style="color:#a6e22e">UTILITY</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setResizable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">initModality</span><span style="color:#f92672">(</span>Modality<span style="color:#f92672">.</span><span style="color:#a6e22e">NONE</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Summarizing...&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        public ProgressDialog() {
-            dlgStage = new Stage(StageStyle.UTILITY);
-            dlgStage.setResizable(false);
-            dlgStage.initModality(Modality.NONE);
-            dlgStage.setTitle(&quot;Summarizing...&quot;);
+            pi<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span><span style="color:#f92672">-</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-            pi.setProgress(-1.0d);
+            <span style="color:#66d9ef">final</span> VBox dlgVBox <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VBox<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgVBox<span style="color:#f92672">.</span><span style="color:#a6e22e">setSpacing</span><span style="color:#f92672">(</span>15<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgVBox<span style="color:#f92672">.</span><span style="color:#a6e22e">setPadding</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span>11<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">,</span> 50<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">,</span> 15<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">,</span> 50<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgVBox<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>pi<span style="color:#f92672">,</span> cancelBtn<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-            final VBox dlgVBox = new VBox();
-            dlgVBox.setSpacing(15.0d);
-            dlgVBox.setPadding(new Insets(11.0d, 50.0d, 15.0d, 50.0d));
-            dlgVBox.getChildren().addAll(pi, cancelBtn);
+            Scene scene <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>dlgVBox<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span>scene<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
 
-            Scene scene = new Scene(dlgVBox);
-            dlgStage.setScene(scene);
-        }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bindToTask</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Task<span style="color:#f92672">&lt;</span><span style="color:#f92672">?</span><span style="color:#f92672">&gt;</span> task<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            pi<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            cancelBtn<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span><span style="color:#f92672">(</span>ActionEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+                task<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                pi<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">unbind</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            cancelBtn<span style="color:#f92672">.</span><span style="color:#a6e22e">disableProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>Bindings<span style="color:#f92672">.</span><span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">runningProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnCloseRequest</span><span style="color:#f92672">(</span><span style="color:#f92672">(</span>WindowEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+                task<span style="color:#f92672">.</span><span style="color:#a6e22e">cancel</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
 
-        public void bindToTask(final Task&lt;?&gt; task) {
-            pi.progressProperty().bind(task.progressProperty());
-            cancelBtn.setOnAction((ActionEvent event) -&gt; {
-                task.cancel();
-                pi.progressProperty().unbind();
-            });
-            cancelBtn.disableProperty().bind(Bindings.not(task.runningProperty()));
-            dlgStage.setOnCloseRequest((WindowEvent event) -&gt; {
-                task.cancel();
-            });
-        }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
 
-        public void show() {
-            dlgStage.show();
-        }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            dlgStage<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>This class is nearly identical to the progress dialog class above with the exception of one very important line in the <code>bindToTask()</code> method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    pi<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><p>This statement provides a line of communication between the <code>Task</code> that we bind to this dialog, allowing it to report back a more quantitative estimate of the work completed.</p>
+<p>In this case, the <code>Task</code> is actually simpler since it does not require a constructor to pass in information required to operate. So, this time I've created the <code>Task</code> inline. Here's how that code looks:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        <span style="color:#66d9ef">int</span> numNotes <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">getNoteCount</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        public void close() {
-            dlgStage.close();
-        }
-    }
-</code></pre>
+        Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> addNotesTask <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&amp;</span>lt<span style="color:#f92672">;</span> numNotes<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> finalI <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+                    TreeItem<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> tis <span style="color:#f92672">=</span> nextNote<span style="color:#f92672">(</span>finalI<span style="color:#f92672">,</span> p<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                    Platform<span style="color:#f92672">.</span><span style="color:#a6e22e">runLater</span><span style="color:#f92672">(</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> rootItem<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>tis<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                    updateProgress<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> numNotes<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+                updateProgress<span style="color:#f92672">(</span>numNotes<span style="color:#f92672">,</span> numNotes<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">;</span>
 
-<p>This class is nearly identical to the progress dialog class above with the exception of one very important line in the <code>bindToTask()</code> method:</p>
+        ProgressDialog pd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressDialog<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        pd<span style="color:#f92672">.</span><span style="color:#a6e22e">bindToTask</span><span style="color:#f92672">(</span>addNotesTask<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">    pi.progressProperty().bind(task.progressProperty());
-</code></pre>
+        addNotesTask<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnSucceeded</span><span style="color:#f92672">(</span>event <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+            pd<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<p>This statement provides a line of communication between the <code>Task</code> that we bind to this dialog, allowing it to report back a more quantitative estimate of the work completed.</p>
-
-<p>In this case, the <code>Task</code> is actually simpler since it does not require a constructor to pass in information required to operate. So, this time I&rsquo;ve created the <code>Task</code> inline. Here&rsquo;s how that code looks:</p>
-
-<pre><code class="language-java">        int numNotes = p.getNoteCount();
-
-        Task&lt;Void&gt; addNotesTask = new Task&lt;Void&gt;() {
-            @Override
-            public Void call() throws InterruptedException {
-                for (int i = 0; i &amp;lt; numNotes; i++) {
-                    final int finalI = i;
-                    TreeItem&lt;String&gt; tis = nextNote(finalI, p);
-                    Platform.runLater(() -&gt; rootItem.getChildren().add(tis));
-                    updateProgress(i, numNotes);
-                }
-                updateProgress(numNotes, numNotes);
-                return null;
-            }
-        };
-
-        ProgressDialog pd = new ProgressDialog();
-        pd.bindToTask(addNotesTask);
-
-        addNotesTask.setOnSucceeded(event -&gt; {
-            pd.close();
-        });
-
-        pd.show();
-        Thread thread = new Thread(addNotesTask);
-        thread.start();
-</code></pre>
-
-<p>The calls to <code>updateProgress()</code> in the <code>addNotesTask</code> updates the number of notes completed. That information gets passed out to the <code>ProgressDialog</code>, which updates it&rsquo;s display.</p>
-
-<p>The hard work within the Task is being done by the <code>nextNote()</code> method to create information for the GUI. Since the <code>addNotesTask</code> is updating the GUI, it has to do that back on the JavaFX GUI thread. That&rsquo;s why it&rsquo;s being called via <code>Platform.runLater()</code>. Another interesting note is the use of the <code>finalI</code> variable. Since variables used in a lambda expression must be final or effectively final, you can&rsquo;t just use <code>i</code>.</p>
-
+        pd<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        Thread thread <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>addNotesTask<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        thread<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><p>The calls to <code>updateProgress()</code> in the <code>addNotesTask</code> updates the number of notes completed. That information gets passed out to the <code>ProgressDialog</code>, which updates it's display.</p>
+<p>The hard work within the Task is being done by the <code>nextNote()</code> method to create information for the GUI. Since the <code>addNotesTask</code> is updating the GUI, it has to do that back on the JavaFX GUI thread. That's why it's being called via <code>Platform.runLater()</code>. Another interesting note is the use of the <code>finalI</code> variable. Since variables used in a lambda expression must be final or effectively final, you can't just use <code>i</code>.</p>
 <p>One final thing you might notice is that there is no handler for a failure of the <code>addNotesTask</code>. The methods called do not produce any checked exceptions other than the <code>InterruptedException</code>. In this case, I prefer not to check or respond.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
-<p>It&rsquo;s pretty easy to keep your JavaFX GUI responsive even while doing substantial computational work in the background. A combination of background <code>Task</code>s and progress dialogs allows a user to see how such long computations are proceeding while incrementally updating the GUI as the results become available.</p>
-
+<p>It's pretty easy to keep your JavaFX GUI responsive even while doing substantial computational work in the background. A combination of background <code>Task</code>s and progress dialogs allows a user to see how such long computations are proceeding while incrementally updating the GUI as the results become available.</p>
 <p>This methodology works, but still feels a little rough. In particular, I have configuration of the dialog and task scattered about a bit. I probably need to do a little more noodling to make that a bit cleaner.</p>
 
 

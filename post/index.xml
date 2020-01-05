@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/</guid>
-      <description>With the recent announcement that Bitbucket is &amp;ldquo;sunsetting&amp;rdquo; Mercurial support, I&amp;rsquo;ve been looking at ways of hosting remote copies of my repositories on my own.
+      <description>With the recent announcement that Bitbucket is &amp;ldquo;sunsetting&amp;rdquo; Mercurial support, I&#39;ve been looking at ways of hosting remote copies of my repositories on my own.
 In the short term, I have just cloned my repositories from Bitbucket onto a Raspberry Pi 4 sitting behind my home desktop. I use Pi to run a River of News aggregator for my family. It has plenty of capacity for a task like this.</description>
     </item>
     
@@ -28,7 +28,7 @@ In the short term, I have just cloned my repositories from Bitbucket onto a Rasp
       <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/06/27/letting-the-user-change-the-sidebar-width-in-cwiki/</guid>
-      <description>Recently, I&amp;rsquo;ve been working on what I thought was a simple feature &amp;ndash; changing the width of the sidebar in the CWiki wiki program.
+      <description>Recently, I&#39;ve been working on what I thought was a simple feature &amp;ndash; changing the width of the sidebar in the CWiki wiki program.
 There were two ways the user could do it.
 First, they could set it manually in the &amp;ldquo;Preferences&amp;rdquo; page.
 Second, and more naturally in my opinion, they could use the mouse to drag the separator between the sidebar and the main article area to the location they wanted it.</description>
@@ -50,7 +50,18 @@ In my own case, I have a tag editing component for my personal wiki. The compone
       <pubDate>Mon, 13 May 2019 08:22:29 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/05/13/displaying-video-from-a-webcam-using-clojurescript-and-reagent/</guid>
-      <description>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan ISBN (International Standard Book Number) numbers from the jackets of physical books. This isn&amp;rsquo;t quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I&amp;rsquo;m told. I really don&amp;rsquo;t know much about it yet.</description>
+      <description>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan ISBN (International Standard Book Number) numbers from the jackets of physical books. This isn&#39;t quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I&#39;m told. I really don&#39;t know much about it yet.</description>
+    </item>
+    
+    <item>
+      <title>My Note-Taking Journey</title>
+      <link>https://yo-dave.com/2019/01/06/my-note-taking-journey/</link>
+      <pubDate>Sun, 06 Jan 2019 14:55:42 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2019/01/06/my-note-taking-journey/</guid>
+      <description>I&#39;m surprised by how often questions like this come up on HN, but I always find the responses interesting and educational.
+What I Want Non-negotiable items include:
+ Low Friction: A little initial setup is ok, but just taking a note should require no more than a click or two (whether clicking a mouse or a pen). Open source. Aesthetically Pleasing: I&#39;m tired of looking at ugly stuff. Has to handle LaTex.</description>
     </item>
     
     <item>
@@ -60,7 +71,7 @@ In my own case, I have a tag editing component for my personal wiki. The compone
       
       <guid>https://yo-dave.com/2018/10/23/wiki-layout-for-editing/</guid>
       <description>Update: 2018-12-15 This post substantially updates the original. The most significant changes are that the layout now works as expected - no partial success.
-A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.</description>
+ A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.</description>
     </item>
     
     <item>
@@ -69,7 +80,7 @@ A few weeks ago, I wrote a post about a wiki layout for reading. I used that pro
       <pubDate>Sun, 23 Sep 2018 13:20:23 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/09/23/wiki-layout-for-reading/</guid>
-      <description>​As many of you know, I&amp;rsquo;ve been working on a personal wiki for some time now. (See the CWiki repository.) In fact, I&amp;rsquo;m using it to write this post. It&amp;rsquo;s very comfortable for me.
+      <description>​As many of you know, I&#39;ve been working on a personal wiki for some time now. (See the CWiki repository.) In fact, I&#39;m using it to write this post. It&#39;s very comfortable for me.
 One of the things I have been trying to get absolutely right (for me at least) is the layout. There are really only two layouts; one is for the &amp;ldquo;reading&amp;rdquo; view, the other for the &amp;ldquo;editing&amp;rdquo; view.</description>
     </item>
     
@@ -81,7 +92,7 @@ One of the things I have been trying to get absolutely right (for me at least) i
       <guid>https://yo-dave.com/2018/09/16/writing-a-flexmark-extension-in-clojure/</guid>
       <description>Writing wiki pages using Markdown is a great way to do things because it is simple, well-known, and capable.
 One of the annoyances of using Markdown is that it has no default syntax to create wikilinks, a type of hyperlink that links one page in a wiki to another.
-I&amp;rsquo;ve been working on a home-grown, personal wiki, CWiki, for almost a year now off and on. It&amp;rsquo;s written in the Clojure programming language, which is a pleasure to use.</description>
+I&#39;ve been working on a home-grown, personal wiki, CWiki, for almost a year now off and on. It&#39;s written in the Clojure programming language, which is a pleasure to use.</description>
     </item>
     
     <item>
@@ -121,7 +132,7 @@ When I write a program in Clojure that requires such a feature, I have the entir
       
       <guid>https://yo-dave.com/2018/07/15/note-taking/</guid>
       <description>Changing jobs in 2005 caused me to switch from taking notes on paper to doing it electronically.
-My new employer provided a tablet PC with a stylus running Windows and OneNote. Taking notes on that system with excellent handwriting recognition was a revelation. The tablet was pretty clunky by today&amp;rsquo;s standards, but it worked well. It was particularly useful for generating meeting notes in real time and projecting them during meetings.</description>
+My new employer provided a tablet PC with a stylus running Windows and OneNote. Taking notes on that system with excellent handwriting recognition was a revelation. The tablet was pretty clunky by today&#39;s standards, but it worked well. It was particularly useful for generating meeting notes in real time and projecting them during meetings.</description>
     </item>
     
     <item>
@@ -130,7 +141,7 @@ My new employer provided a tablet PC with a stylus running Windows and OneNote. 
       <pubDate>Sat, 14 Jul 2018 10:07:00 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/07/14/moving-away-from-collate-notes/</guid>
-      <description>Collate Notes has received my praise in the past. I even paid for it. Shortly after that unusual event, development seems to have stopped. And it still has numerous shortcomings. The most annoying problem is that periodically, it says my trial period has run out, and I need to enter the activation code (again). And since it&amp;rsquo;s closed-source, I have no recourse but to submit bugs and make feature requests to a developer who seems to have gone silent.</description>
+      <description>Collate Notes has received my praise in the past. I even paid for it. Shortly after that unusual event, development seems to have stopped. And it still has numerous shortcomings. The most annoying problem is that periodically, it says my trial period has run out, and I need to enter the activation code (again). And since it&#39;s closed-source, I have no recourse but to submit bugs and make feature requests to a developer who seems to have gone silent.</description>
     </item>
     
     <item>
@@ -161,7 +172,7 @@ Purpose The purpose of creating the app was two-fold.
       
       <guid>https://yo-dave.com/2018/06/09/closing-branches-in-mercurial/</guid>
       <description>As a lone developer, I have a workflow that I believe is pretty typical.
-Most of my development work happens on the &amp;ldquo;tip&amp;rdquo; of the &amp;ldquo;default&amp;rdquo; branch. It&amp;rsquo;s just easier to do work on fixing small bugs or adding minor features there.
+Most of my development work happens on the &amp;ldquo;tip&amp;rdquo; of the &amp;ldquo;default&amp;rdquo; branch. It&#39;s just easier to do work on fixing small bugs or adding minor features there.
 For more significant, more difficult pieces of work, I usually create a &amp;ldquo;feature branch.&amp;rdquo; I do this with the expectation that if things get messed up too badly, I can delete the branch and start over without affecting the readiness of the default branch.</description>
     </item>
     
@@ -171,9 +182,9 @@ For more significant, more difficult pieces of work, I usually create a &amp;ldq
       <pubDate>Tue, 01 May 2018 09:38:50 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/05/01/cwiki-next/</guid>
-      <description>For the past few months, I&amp;rsquo;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
-It actually works pretty well. I&amp;rsquo;ve been using it for personal information for months now. It works well except for one aspect, arguably the most important &amp;ndash; editing new or existing content is not that pleasant.
-It&amp;rsquo;s all a variation of Markdown, which is nice.</description>
+      <description>For the past few months, I&#39;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
+It actually works pretty well. I&#39;ve been using it for personal information for months now. It works well except for one aspect, arguably the most important &amp;ndash; editing new or existing content is not that pleasant.
+It&#39;s all a variation of Markdown, which is nice.</description>
     </item>
     
     <item>
@@ -182,8 +193,8 @@ It&amp;rsquo;s all a variation of Markdown, which is nice.</description>
       <pubDate>Fri, 20 Apr 2018 10:14:36 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/</guid>
-      <description>There&amp;rsquo;s an old saying about regular expressions &amp;ndash; paraphrasing: &amp;ldquo;If you try to solve a problem with regular expressions, you then have two problems.&amp;rdquo;
-Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&amp;rsquo;s version of regular expressions are different.</description>
+      <description>There&#39;s an old saying about regular expressions &amp;ndash; paraphrasing: &amp;ldquo;If you try to solve a problem with regular expressions, you then have two problems.&amp;rdquo;
+Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&#39;s version of regular expressions are different.</description>
     </item>
     
     <item>
@@ -193,7 +204,7 @@ Even though regular expressions are present in most programming languages, I hav
       
       <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</guid>
       <description>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
-What could be more natural than to string those pieces of code together with one of Clojure&amp;rsquo;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;gt;&amp;gt;.</description>
+What could be more natural than to string those pieces of code together with one of Clojure&#39;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;raquo;.</description>
     </item>
     
     <item>
@@ -212,7 +223,7 @@ There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linu
       <pubDate>Mon, 26 Mar 2018 10:09:24 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/03/26/new-blogging-setup/</guid>
-      <description>It&amp;rsquo;s been a bit of a slog, but things should be up and running again. The transition was a bit harder than expected.
+      <description>It&#39;s been a bit of a slog, but things should be up and running again. The transition was a bit harder than expected.
 Here are some things you should know:
  The site is generated by the Hugo static site generator. The site uses a trivial modification of the very pleasant Blackburn theme. There are still some kinks I want to work out, but it is very useful overall. The repository for the site is on GitHub here and is generated from the information in the repository here.</description>
     </item>
@@ -223,9 +234,9 @@ Here are some things you should know:
       <pubDate>Sat, 17 Mar 2018 13:24:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/03/17/so-many-broken-links/</guid>
-      <description>As noted in yesterday&amp;rsquo;s blog, I&amp;rsquo;m making a sweep through my previous posts trying to fix links that have broken over the years. This is in preparation for switching to another blogging platform.
+      <description>As noted in yesterday&#39;s blog, I&#39;m making a sweep through my previous posts trying to fix links that have broken over the years. This is in preparation for switching to another blogging platform.
 I find that the rot even creeps into the README.md files in my own code repositories. Many of them refer back to descriptions of the repositories posted to no longer existing versions of the blog.
-I&amp;rsquo;ll fix those as soon as I can.</description>
+I&#39;ll fix those as soon as I can.</description>
     </item>
     
     <item>
@@ -236,7 +247,7 @@ I&amp;rsquo;ll fix those as soon as I can.</description>
       <guid>https://yo-dave.com/2018/03/16/bit-rot/</guid>
       <description>Every once in awhile, I change blogging platforms. Recently I have been working on a switch to Hugo. Whenever I go through this exercise, I religiously check for broken links. There are always plenty.
 Most of the time, when broken links are found, I can find a replacement. Sometimes not though. Sometimes something is just gone. No new address. No record in the Internet Archive Wayback Machine. Just gone.
-I know I&amp;rsquo;m contributing to this myself by changing hosts and blogging platforms.</description>
+I know I&#39;m contributing to this myself by changing hosts and blogging platforms.</description>
     </item>
     
     <item>
@@ -245,8 +256,8 @@ I know I&amp;rsquo;m contributing to this myself by changing hosts and blogging 
       <pubDate>Sat, 10 Feb 2018 10:16:57 -0500</pubDate>
       
       <guid>https://yo-dave.com/2018/02/10/a-timestamp-plugin-for-sublime-text-3/</guid>
-      <description>Since switching from Windows to a Mac in the middle of developing a new wiki, I lost access to the MarkdownPad Markdown editor &amp;ndash; it&amp;rsquo;s Windows only. One of the nice features of MarkdownPad was the ability to insert a timestamp easily. It&amp;rsquo;s what I used to insert the creation date and the time of the last modification.
-Since the switch, I&amp;rsquo;ve been using Sublime Text 3 as my editor for Markdown files.</description>
+      <description>Since switching from Windows to a Mac in the middle of developing a new wiki, I lost access to the MarkdownPad Markdown editor &amp;ndash; it&#39;s Windows only. One of the nice features of MarkdownPad was the ability to insert a timestamp easily. It&#39;s what I used to insert the creation date and the time of the last modification.
+Since the switch, I&#39;ve been using Sublime Text 3 as my editor for Markdown files.</description>
     </item>
     
     <item>
@@ -267,7 +278,7 @@ If all of the things are strings, you can use the built-in string/join function 
       
       <guid>https://yo-dave.com/2018/01/19/sorted-set-by/</guid>
       <description>This is just a little note about one of my favorite datatypes in Clojure.
-Like most Lisps, Clojure has a very useful group of datatypes built in including some set types. I use sorted-set a lot. Until recently, I hadn&amp;rsquo;t noticed sorted-set-by, a function that returns a sorted set using a comparator you specify. I found myself needing to create a sorted set of strings where the sorting was case-insensitive. The sorted-set-by function was exactly what I needed.</description>
+Like most Lisps, Clojure has a very useful group of datatypes built in including some set types. I use sorted-set a lot. Until recently, I hadn&#39;t noticed sorted-set-by, a function that returns a sorted set using a comparator you specify. I found myself needing to create a sorted set of strings where the sorting was case-insensitive. The sorted-set-by function was exactly what I needed.</description>
     </item>
     
     <item>
@@ -308,8 +319,8 @@ Making the transition from Swing to JavaFX was relatively painless because the p
       <guid>https://yo-dave.com/2017/08/31/an-updated-sign-test-program/</guid>
       <description>Long ago, I wrote a post about a small program to calculate the probabilities of a sign test.
 A lot has happened since then.
-The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&amp;rsquo;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
-So I&amp;rsquo;ve updated the program a bit.</description>
+The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&#39;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
+So I&#39;ve updated the program a bit.</description>
     </item>
     
     <item>
@@ -319,7 +330,7 @@ So I&amp;rsquo;ve updated the program a bit.</description>
       
       <guid>https://yo-dave.com/2017/08/25/proofreading-i-am-humbled/</guid>
       <description>Often, when reading blogs, I am struck by the number of misspellings, incorrect word usages, bad grammar, and so on.
-But the experience of transferring this blog from other systems to it&amp;rsquo;s current home has been an eye opener. I proofread my posts, usually multiple times. However, in doing so I was struck by the number of misspellings, incorrect word usages, bad grammar, and so on.
+But the experience of transferring this blog from other systems to it&#39;s current home has been an eye opener. I proofread my posts, usually multiple times. However, in doing so I was struck by the number of misspellings, incorrect word usages, bad grammar, and so on.
 I am humbled (in the real sense of the word.</description>
     </item>
     
@@ -342,7 +353,7 @@ There are basically two recommended ways to access images in Hexo.
       <guid>https://yo-dave.com/2017/08/16/turns-out-my-hosting-company-was-a-scam/</guid>
       <description>Way back in 2014, I wrote a post asking whether my new hosting company, CloudAtCost was a scam. Back then, I concluded that they were not.
 Fast forward to now, and it turns out they were a scam after all.
-Back in June they started sending me notices about not having paid a fee for &amp;ldquo;Maintenance&amp;rdquo;. They threatened to shut down and erase all my stuff at some unspecified time in the near future if I didn&amp;rsquo;t pay up.</description>
+Back in June they started sending me notices about not having paid a fee for &amp;ldquo;Maintenance&amp;rdquo;. They threatened to shut down and erase all my stuff at some unspecified time in the near future if I didn&#39;t pay up.</description>
     </item>
     
     <item>
@@ -353,7 +364,7 @@ Back in June they started sending me notices about not having paid a fee for &am
       <guid>https://yo-dave.com/2017/08/15/first-light/</guid>
       <description>First light with a new blogging platform.
 My hosting vendors have been playing games with me. They offer terrific prices to new customers to start using them. But the loyal folks who have been using them for years get nothing &amp;ndash; except maybe a price increase. Not cool.
-So, I&amp;rsquo;m looking into hosting my blog for free on GitHub Pages. It even provides HTTPS out of the box. No configuring certificates or any of that stuff.</description>
+So, I&#39;m looking into hosting my blog for free on GitHub Pages. It even provides HTTPS out of the box. No configuring certificates or any of that stuff.</description>
     </item>
     
     <item>
@@ -362,9 +373,9 @@ So, I&amp;rsquo;m looking into hosting my blog for free on GitHub Pages. It even
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/05/16/more-note-taking-goodness-collate/</guid>
-      <description>Last time, I wrote about some of the really nice note-taking apps available nowadays. Since then, I&amp;rsquo;ve come across another great one I just had to tell you about: Collate.
-It has just about everything I could want. I&amp;rsquo;ll let you read about all of its features on its web site, but some of the things I like most include:
- It&amp;rsquo;s cross-platform, capable of running on Windows, MacOS, and Linux.</description>
+      <description>Last time, I wrote about some of the really nice note-taking apps available nowadays. Since then, I&#39;ve come across another great one I just had to tell you about: Collate.
+It has just about everything I could want. I&#39;ll let you read about all of its features on its web site, but some of the things I like most include:
+ It&#39;s cross-platform, capable of running on Windows, MacOS, and Linux.</description>
     </item>
     
     <item>
@@ -373,7 +384,7 @@ It has just about everything I could want. I&amp;rsquo;ll let you read about all
       <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/05/14/leiningen-passing-invalid-flags-to-java-compiler/</guid>
-      <description>Just a note about some weirdness in my work process and it&amp;#8217;s solution.
+      <description>Just a note about some weirdness in my work process and it’s solution.
 A few weeks ago, I started noticing some weirdness in trying to use some tools with Leiningen while developing a program in Clojure. When running tools like kibit, lein would fail with an error from javac about an invalid flag. Initially these flags were for attempts to set the file encoding. And the file encoding kept changing.</description>
     </item>
     
@@ -384,7 +395,7 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
       
       <guid>https://yo-dave.com/2017/04/22/rant-about-javafx-ecosystem/</guid>
       <description>Feeling a bit frustrated today, so I thought I would just vent a bit.
-I&amp;#8217;ve been working on some personal tools. I see some things in other tools that I would like to include in my own. I keep finding that those features that I like are written in JavaScript with that whole mess of an ecosystem. When I look for something similar in Java/JavaFX I find next to nothing.</description>
+I’ve been working on some personal tools. I see some things in other tools that I would like to include in my own. I keep finding that those features that I like are written in JavaScript with that whole mess of an ecosystem. When I look for something similar in Java/JavaFX I find next to nothing.</description>
     </item>
     
     <item>
@@ -393,8 +404,8 @@ I&amp;#8217;ve been working on some personal tools. I see some things in other t
       <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/04/03/an-embarrassment-of-riches-for-note-taking/</guid>
-      <description>Ever since dumping Evernote, I&amp;rsquo;ve been looking at alternative note-taking apps. I&amp;rsquo;ve been usingtiddlywiki, but, surprisingly, it has grown a bit slow. Probably from the sheer volume of notes that I&amp;rsquo;ve imported from Evernote. Maybe time to look some more?
-I&amp;rsquo;ve also been writing a lot of program documentation in Markdown. I like the wiki format just fine, but it seems like Markdown can do more. Both markup languages have a plethora of dialects, usually incompatible.</description>
+      <description>Ever since dumping Evernote, I&#39;ve been looking at alternative note-taking apps. I&#39;ve been usingtiddlywiki, but, surprisingly, it has grown a bit slow. Probably from the sheer volume of notes that I&#39;ve imported from Evernote. Maybe time to look some more?
+I&#39;ve also been writing a lot of program documentation in Markdown. I like the wiki format just fine, but it seems like Markdown can do more. Both markup languages have a plethora of dialects, usually incompatible.</description>
     </item>
     
     <item>
@@ -403,7 +414,7 @@ I&amp;rsquo;ve also been writing a lot of program documentation in Markdown. I l
       <pubDate>Sat, 04 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/03/04/vendor-games-with-subscriptions/</guid>
-      <description>I have subscriptions to a number of services, not just magazines. These include things like computer programs, hosting services, home supplies, groceries and so on. I&amp;rsquo;m sure vendors love this.
+      <description>I have subscriptions to a number of services, not just magazines. These include things like computer programs, hosting services, home supplies, groceries and so on. I&#39;m sure vendors love this.
 Within the past two weeks though, I have canceled three subscriptions when the vendor started playing games at renewal time. It usually went down like this:
  I get notification of a renewal at an (often substantially) increased price. Increases of 30%+ are not uncommon.</description>
     </item>
@@ -414,7 +425,7 @@ Within the past two weeks though, I have canceled three subscriptions when the v
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/02/01/more-whinging-about-cloudatcost/</guid>
-      <description>I&amp;rsquo;ve written about my love/hate relationship with CloudAtCost before here and here. In essence, I like the low cost but hate the poor reliability.
+      <description>I&#39;ve written about my love/hate relationship with CloudAtCost before here and here. In essence, I like the low cost but hate the poor reliability.
 At one time I had seven web sites up and running on servers bought from CloudAtCost, including this one. But over a period of weeks and months they all failed for one reason or another. Some of the failures could be fixed with a ticket to tech support.</description>
     </item>
     
@@ -424,8 +435,8 @@ At one time I had seven web sites up and running on servers bought from CloudAtC
       <pubDate>Mon, 30 Jan 2017 16:45:26 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/01/30/keeping-the-javafx-ui-responsive/</guid>
-      <description>It&amp;rsquo;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
-Recently, I&amp;rsquo;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.</description>
+      <description>It&#39;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
+Recently, I&#39;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.</description>
     </item>
     
     <item>
@@ -444,8 +455,8 @@ I set up public key authentication, but it would not work with the permissions o
       <pubDate>Fri, 16 Dec 2016 16:29:30 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/16/de-activating-my-evernote-account/</guid>
-      <description>It was very unpleasant for me. I&amp;rsquo;ve been a user of Evernote almost from the beginning, and a Premium user for almost as long. But today I erased all of my notes and deactivated my account. &amp;ldquo;Why?&amp;rdquo; you might ask. Let me tell you.
- The price increase. Earlier in the Autumn, Evernote announced a price increase. It was pretty substantial, at least for me. At about the same time, they announced that they were moving our data to Google&amp;rsquo;s infrastructure in order to take advantage of improved economies of scale among other reasons.</description>
+      <description>It was very unpleasant for me. I&#39;ve been a user of Evernote almost from the beginning, and a Premium user for almost as long. But today I erased all of my notes and deactivated my account. &amp;ldquo;Why?&amp;rdquo; you might ask. Let me tell you.
+ The price increase. Earlier in the Autumn, Evernote announced a price increase. It was pretty substantial, at least for me. At about the same time, they announced that they were moving our data to Google&#39;s infrastructure in order to take advantage of improved economies of scale among other reasons.</description>
     </item>
     
     <item>
@@ -454,7 +465,7 @@ I set up public key authentication, but it would not work with the permissions o
       <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/15/de-activating-my-evernote-account/</guid>
-      <description>I&amp;rsquo;m kind of sad today. I erased all of my notes from Evernote and then de-activated my account.
+      <description>I&#39;m kind of sad today. I erased all of my notes from Evernote and then de-activated my account.
 I had been a Premium user for years and had thousands of notes. I used it on the web (when using Linux), on the desktop under Windows, and on my iPhone and iPads. I liked that the data was available on all of those devices. I really liked the web clipper. But the killer feature that got me started on it in the first place was the ability to search in images.</description>
     </item>
     
@@ -465,7 +476,7 @@ I had been a Premium user for years and had thousands of notes. I used it on the
       
       <guid>https://yo-dave.com/2016/12/10/removing-cdns/</guid>
       <description>(Update: 27 Mar 2018, Despite what the rest of this blog post says, I have reinstated CDNs. This site now uses the Cloudflare CDN due to the inability of raw GitHub Pages to serve sites with custom domain names over HTTPS. See this)
-Everyone wants their web site to load quickly using as few resources as possible. Content Delivery Networks (CDNs) are a very attractive way to achieve this. You can put parts of your web site on someone else&amp;rsquo;s servers.</description>
+Everyone wants their web site to load quickly using as few resources as possible. Content Delivery Networks (CDNs) are a very attractive way to achieve this. You can put parts of your web site on someone else&#39;s servers.</description>
     </item>
     
     <item>
@@ -474,7 +485,7 @@ Everyone wants their web site to load quickly using as few resources as possible
       <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/09/advertising-at-the-movies/</guid>
-      <description>A few weeks ago, my wife and I went to the movies, something we don&amp;rsquo;t do very often. (Arrival, which I highly recommend, just like the short story it is derived from.)
+      <description>A few weeks ago, my wife and I went to the movies, something we don&#39;t do very often. (Arrival, which I highly recommend, just like the short story it is derived from.)
 We arrived at the theatre, one of those multi-screen megaplexes, about 15 to 20 minutes before the advertised start time for the feature. Of course, while waiting, we were exposed to the various advertisements shown before the start of the film.</description>
     </item>
     
@@ -484,8 +495,8 @@ We arrived at the theatre, one of those multi-screen megaplexes, about 15 to 20 
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/08/why-this-blog-disappeared-for-a-few-days/</guid>
-      <description>Those of you who visit this site regularly may have noticed that is has been down for a few days. Here&amp;rsquo;s why.
-About a week ago, I attempted to reboot the server after applying a few updates. It wouldn&amp;rsquo;t come back up. As I&amp;rsquo;ve written before, this site is hosted on CloudAtCost. Sorry to say that it is a regular occurrence for servers not to reboot.
+      <description>Those of you who visit this site regularly may have noticed that is has been down for a few days. Here&#39;s why.
+About a week ago, I attempted to reboot the server after applying a few updates. It wouldn&#39;t come back up. As I&#39;ve written before, this site is hosted on CloudAtCost. Sorry to say that it is a regular occurrence for servers not to reboot.
 Usually, I can just file a ticket and get help in a day or so.</description>
     </item>
     
@@ -495,8 +506,8 @@ Usually, I can just file a ticket and get help in a day or so.</description>
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
-      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
-But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
+      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&#39;s friendly and extremely helpful error messages. It&#39;s really attractive in many ways.
+But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;quot;. And it finally occurred to me that I&#39;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
     
     <item>
@@ -505,9 +516,9 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/02/i-am-so-over-hd/</guid>
-      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;rdquo;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
+      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;quot;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
 I thought I was set forever.
-Since then, I&amp;rsquo;ve purchased a few Apple products with Retina displays.</description>
+Since then, I&#39;ve purchased a few Apple products with Retina displays.</description>
     </item>
     
     <item>
@@ -516,10 +527,10 @@ Since then, I&amp;rsquo;ve purchased a few Apple products with Retina displays.<
       <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/09/12/coffee-storage/</guid>
-      <description>I know, this is quite a &amp;ldquo;First World&amp;rdquo; kind of problem isn&amp;rsquo;t it. Nevertheless&amp;hellip;
-As I&amp;rsquo;ve written before, I like coffee. I probably spend too much on the beans as well. So, there is a need to store them correctly to maintain the best flavor for as long as possible.
+      <description>I know, this is quite a &amp;ldquo;First World&amp;rdquo; kind of problem isn&#39;t it. Nevertheless&amp;hellip;
+As I&#39;ve written before, I like coffee. I probably spend too much on the beans as well. So, there is a need to store them correctly to maintain the best flavor for as long as possible.
 The Problem Coffee has three major enemies:
- Light Air (specifically, the oxygen in the air) Moisture  There&amp;rsquo;s also one more wrinkle to deal with.</description>
+ Light Air (specifically, the oxygen in the air) Moisture  There&#39;s also one more wrinkle to deal with.</description>
     </item>
     
     <item>
@@ -528,7 +539,7 @@ The Problem Coffee has three major enemies:
       <pubDate>Fri, 26 Aug 2016 09:59:54 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/26/an-email-server-on-ubuntu-14.04/</guid>
-      <description>Email is pretty old. It is older than the Internet. Despite the perennial claims that email is &amp;ldquo;dead&amp;rdquo;, it is still going strong. It&amp;rsquo;s also a bit complicated, which is why most folks set up an account with someone else (Yahoo!, Gmail, HotMail, ProtonMail, FastMail, etc.) who can take care of it for them.
+      <description>Email is pretty old. It is older than the Internet. Despite the perennial claims that email is &amp;ldquo;dead&amp;rdquo;, it is still going strong. It&#39;s also a bit complicated, which is why most folks set up an account with someone else (Yahoo!, Gmail, HotMail, ProtonMail, FastMail, etc.) who can take care of it for them.
 However, if you want to host your own server, it can be done. If you are running Ubuntu 14.</description>
     </item>
     
@@ -538,7 +549,7 @@ However, if you want to host your own server, it can be done. If you are running
       <pubDate>Fri, 26 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/26/whats-the-deal-with-flash-sales/</guid>
-      <description>We have some pretty amazing communications technology these days. One way we seem to be wasting it is on the phenomenon of &amp;ldquo;Flash Sales&amp;rdquo; &amp;ndash; offering items on sale for a very short time. That&amp;rsquo;s all we need &amp;ndash; more advertising &amp;ndash; often for trivial discounts &amp;ndash; with deadline pressure.
+      <description>We have some pretty amazing communications technology these days. One way we seem to be wasting it is on the phenomenon of &amp;ldquo;Flash Sales&amp;rdquo; &amp;ndash; offering items on sale for a very short time. That&#39;s all we need &amp;ndash; more advertising &amp;ndash; often for trivial discounts &amp;ndash; with deadline pressure.
 I have never understood the allure of such things. It seems that people who have a &amp;ldquo;Fear of Missing Out&amp;rdquo; (FOMO) are most susceptible to this stuff.</description>
     </item>
     
@@ -548,9 +559,8 @@ I have never understood the allure of such things. It seems that people who have
       <pubDate>Fri, 19 Aug 2016 18:02:38 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/19/serving-wordpress-over-https-with-caddy-server/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; server is a relatively new, easy-to-use server written in the &lt;a href=&#34;https://golang.org/&#34;&gt;Go programming language&lt;/a&gt;. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (&lt;a href=&#34;http://info.ssl.com/article.aspx?id=10241&#34;&gt;Secure Sockets Layer&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/Transport_Layer_Security&#34;&gt;Transport Layer Security&lt;/a&gt;) certificates automatically from &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; to let you serve a site with&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTPS&#34;&gt; HTTPS&lt;/a&gt; by default. The project is open source and the certificates are free.&lt;/p&gt;
-
-&lt;p&gt;Of course, &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt; is a very popular blogging platform. Caddy provides some &lt;a href=&#34;https://github.com/caddyserver/examples/tree/master/wordpress&#34;&gt;guidance&lt;/a&gt; on getting WordPress up and running on the server. However, it wasn&amp;rsquo;t enough for me. Here&amp;rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://caddyserver.com/&#34;&gt;Caddy&lt;/a&gt; server is a relatively new, easy-to-use server written in the &lt;a href=&#34;https://golang.org/&#34;&gt;Go programming language&lt;/a&gt;. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (&lt;a href=&#34;http://info.ssl.com/article.aspx?id=10241&#34;&gt;Secure Sockets Layer&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/Transport_Layer_Security&#34;&gt;Transport Layer Security&lt;/a&gt;) certificates automatically from &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&#39;s Encrypt&lt;/a&gt; to let you serve a site with&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTPS&#34;&gt; HTTPS&lt;/a&gt; by default. The project is open source and the certificates are free.&lt;/p&gt;
+&lt;p&gt;Of course, &lt;a href=&#34;https://wordpress.org/&#34;&gt;WordPress&lt;/a&gt; is a very popular blogging platform. Caddy provides some &lt;a href=&#34;https://github.com/caddyserver/examples/tree/master/wordpress&#34;&gt;guidance&lt;/a&gt; on getting WordPress up and running on the server. However, it wasn&#39;t enough for me. Here&#39;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -579,7 +589,7 @@ Fountain pens are pretty pieces of art, but too messy and fiddly. Ballpoints are
       <pubDate>Wed, 10 Aug 2016 15:58:09 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/10/my-server-setup-process/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here&amp;#8217;s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/&#34;&gt;Earlier&lt;/a&gt;, I posted about how I set up servers hosted at &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. There have been a few changes to that process. Rather than continually patching that post, here’s a new description. Again, this is for &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 which gets upgraded to 16.04 as part of the setup.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -588,8 +598,8 @@ Fountain pens are pretty pieces of art, but too messy and fiddly. Ballpoints are
       <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</guid>
-      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
-Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
+      <description>The observant among you may have noticed a small change in the blog. It&#39;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
+Ever since hearing about it, I&#39;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
     </item>
     
     <item>
@@ -598,9 +608,8 @@ Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to
       <pubDate>Sun, 17 Jul 2016 12:35:08 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/07/17/speech-synthesis-in-clojurescript/</guid>
-      <description>&lt;p&gt;Just like everyone else, it seems, I&amp;rsquo;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this &lt;a href=&#34;https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0&#34;&gt;one&lt;/a&gt; and &lt;a href=&#34;https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper&#34;&gt;this one&lt;/a&gt; and &lt;a href=&#34;http://www.instructables.com/id/Raspberri-Personal-Assistant/&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&amp;rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Just like everyone else, it seems, I&#39;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this &lt;a href=&#34;https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0&#34;&gt;one&lt;/a&gt; and &lt;a href=&#34;https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper&#34;&gt;this one&lt;/a&gt; and &lt;a href=&#34;http://www.instructables.com/id/Raspberri-Personal-Assistant/&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&#39;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -609,7 +618,7 @@ Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to
       <pubDate>Wed, 06 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/07/06/the-linux-desktop/</guid>
-      <description>The &amp;ldquo;Linux Desktop&amp;rdquo; failing to gain traction is a perennial topic of blogs and musings by people smarter than me. But I&amp;rsquo;m going to offer my two cents worth of opinion anyway.
+      <description>The &amp;ldquo;Linux Desktop&amp;rdquo; failing to gain traction is a perennial topic of blogs and musings by people smarter than me. But I&#39;m going to offer my two cents worth of opinion anyway.
 My Own Experience I use Linux on the desktop myself rather frequently, but it is not the OS my system boots to by default. Why is that?
 Legacy Windows Programs It used to be that there was a large amount of inertia that kept me from making the switch completely because of legacy apps on Windows.</description>
     </item>
@@ -621,7 +630,7 @@ Legacy Windows Programs It used to be that there was a large amount of inertia t
       
       <guid>https://yo-dave.com/2016/06/05/my-experience-with-1999-blogging-software/</guid>
       <description>tldr; This long post contains my impressions of setting up and using the 1999.io blogging platform on a remote Ubuntu server.
-Blogging is a great thing. It lets anybody say what they want to whatever audience is interested. It&amp;rsquo;s relatively simple for anyone to set up. (Me setting up this blog for example.) But it&amp;rsquo;s not dead simple. Particularly if you want to self-host your site rather than putting it on someone else&amp;rsquo;s machine, for example WordPress.</description>
+Blogging is a great thing. It lets anybody say what they want to whatever audience is interested. It&#39;s relatively simple for anyone to set up. (Me setting up this blog for example.) But it&#39;s not dead simple. Particularly if you want to self-host your site rather than putting it on someone else&#39;s machine, for example WordPress.</description>
     </item>
     
     <item>
@@ -630,8 +639,8 @@ Blogging is a great thing. It lets anybody say what they want to whatever audien
       <pubDate>Thu, 12 May 2016 08:50:53 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/05/12/amazons-non-prime-shipping/</guid>
-      <description>Since I&amp;rsquo;ve taken it upon myself to rail about Amazon&amp;rsquo;s behavior, here&amp;rsquo;s another thing.
-Does Amazon actually delay delivery for it&amp;rsquo;s non-Prime customers? In the times I have not had a Prime account, it seems that orders are delayed in being filled on purpose. It seems like they make an effort to delay picking and filling the order, not really changing the shipping method itself.
+      <description>Since I&#39;ve taken it upon myself to rail about Amazon&#39;s behavior, here&#39;s another thing.
+Does Amazon actually delay delivery for it&#39;s non-Prime customers? In the times I have not had a Prime account, it seems that orders are delayed in being filled on purpose. It seems like they make an effort to delay picking and filling the order, not really changing the shipping method itself.
 This statement is based on two (unscientific) observations.</description>
     </item>
     
@@ -642,7 +651,7 @@ This statement is based on two (unscientific) observations.</description>
       
       <guid>https://yo-dave.com/2016/05/12/two-day-shipping/</guid>
       <description>Is it just me or does it seem like the &amp;ldquo;FREE Two-Day Shipping&amp;rdquo; promised by Amazon Prime never actually occurs?
-Sometimes I actually get things after one business day. But more often its three or four or five. Sometimes there&amp;rsquo;s an excuse like &amp;ldquo;Extreme Weather Conditions&amp;rdquo;. Sometimes things actually get here when promised.
+Sometimes I actually get things after one business day. But more often its three or four or five. Sometimes there&#39;s an excuse like &amp;ldquo;Extreme Weather Conditions&amp;rdquo;. Sometimes things actually get here when promised.
 If Amazon is paying extra for two day shipping, they are getting robbed.
 Just sayin&amp;rsquo;.</description>
     </item>
@@ -653,7 +662,7 @@ Just sayin&amp;rsquo;.</description>
       <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/05/05/reflections-on-nih-syndrome/</guid>
-      <description>During the past few weeks, I&amp;rsquo;ve been thinking about &amp;ldquo;To Do&amp;rdquo; lists &amp;ndash; specifically how I wanted one. It was my plan to write my own, despite the fact that I have been using Evernote for years and that there are literally thousands already out there already. For the longest time, it never even occurred to me to use a manager that already existed. Or even just to use pen and paper for the simple lists I needed.</description>
+      <description>During the past few weeks, I&#39;ve been thinking about &amp;ldquo;To Do&amp;rdquo; lists &amp;ndash; specifically how I wanted one. It was my plan to write my own, despite the fact that I have been using Evernote for years and that there are literally thousands already out there already. For the longest time, it never even occurred to me to use a manager that already existed. Or even just to use pen and paper for the simple lists I needed.</description>
     </item>
     
     <item>
@@ -662,9 +671,8 @@ Just sayin&amp;rsquo;.</description>
       <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</guid>
-      <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&amp;rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
-
-&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&#39;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
+&lt;p&gt;Like I said, I&#39;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -673,9 +681,9 @@ Just sayin&amp;rsquo;.</description>
       <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/04/28/three-reasons-to-dislike-blogs-of-lists/</guid>
-      <description>Over the past few years, a lot of blogs or news articles have been written that are lists of items related to a larger topic, like &amp;ldquo;50 Ways to Leave Your Lover&amp;rdquo; or &amp;ldquo;10 Things You Didn&amp;rsquo;t Know about this Big Star&amp;rdquo; and so on.
+      <description>Over the past few years, a lot of blogs or news articles have been written that are lists of items related to a larger topic, like &amp;ldquo;50 Ways to Leave Your Lover&amp;rdquo; or &amp;ldquo;10 Things You Didn&#39;t Know about this Big Star&amp;rdquo; and so on.
 I generally dislike these for three reasons.
- Lack of Speed. A lot of these articles are set up such that you have to load a sequence of pages to read each of the items.</description>
+  Lack of Speed. A lot of these articles are set up such that you have to load a sequence of pages to read each of the items.</description>
     </item>
     
     <item>
@@ -685,7 +693,7 @@ I generally dislike these for three reasons.
       
       <guid>https://yo-dave.com/2016/04/20/cataract-surgery/</guid>
       <description>Medical procedures are not always completely satisfactory. However, from my own experience, cataract surgery can be extremely beneficial.
-Last year, vision in one of my eyes was becoming quite blurry. Vision in the other eye was deteriorating as well. I&amp;rsquo;ve known for years that I had small cataracts in one eye even though I am relatively young. (I blame chemotherapy several years ago, but who really knows.)
+Last year, vision in one of my eyes was becoming quite blurry. Vision in the other eye was deteriorating as well. I&#39;ve known for years that I had small cataracts in one eye even though I am relatively young. (I blame chemotherapy several years ago, but who really knows.)
 A visit to the ophthalmologist confirmed that my cataracts were growing rather quickly.</description>
     </item>
     
@@ -695,7 +703,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/04/12/a-new-blogging-platform/</guid>
-      <description>The &amp;ldquo;Lou the Luddite&amp;rdquo; blog was originally created as a self-hosted WordPress blog. But this blog was always a bit problematic for some reason. At first, I couldn&amp;rsquo;t get automatic WordPress updates to work. Then I found EasyEngine, which did the install for me and got things running. But it&amp;rsquo;s just a big black box of a script. I don&amp;rsquo;t know all of the details of what it does. That isn&amp;rsquo;t something I&amp;rsquo;m really comfortable with.</description>
+      <description>The &amp;ldquo;Lou the Luddite&amp;rdquo; blog was originally created as a self-hosted WordPress blog. But this blog was always a bit problematic for some reason. At first, I couldn&#39;t get automatic WordPress updates to work. Then I found EasyEngine, which did the install for me and got things running. But it&#39;s just a big black box of a script. I don&#39;t know all of the details of what it does. That isn&#39;t something I&#39;m really comfortable with.</description>
     </item>
     
     <item>
@@ -713,11 +721,9 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/02/22/river5-on-windows/</guid>
-      <description>&lt;p&gt;As you know, I&amp;rsquo;m a big fan of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt; and his &lt;a href=&#34;http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html&#34;&gt;River of News&lt;/a&gt; aggregators. His recent &lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is particularly nice.&lt;/p&gt;
-
-&lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;</description>
+      <description>&lt;p&gt;As you know, I&#39;m a big fan of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt; and his &lt;a href=&#34;http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html&#34;&gt;River of News&lt;/a&gt; aggregators. His recent &lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is particularly nice.&lt;/p&gt;
+&lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&#39;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
+&lt;p&gt;I&#39;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&#39;s easy and works like a dream. Here&#39;s how.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -727,7 +733,6 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       
       <guid>https://yo-dave.com/2016/02/14/river5-on-ubuntu-14.04-lts-with-a-cloudatcost-vs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is the latest in a series of &lt;a href=&#34;https://en.wikipedia.org/wiki/RSS&#34;&gt;RSS&lt;/a&gt; News Aggretators written by &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt;. You can read his announcement &lt;a href=&#34;http://scripting.com/liveblog/users/davewiner/2016/02/09/0995.html&#34;&gt;here&lt;/a&gt;. These notes describe how to set up a River of News on a Virtual Server (VS) purchased or rented from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; and freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04.&lt;/p&gt;
-
 &lt;p&gt;These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
@@ -738,12 +743,9 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       
       <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
       <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
-
-&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
+&lt;p&gt;There&#39;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I&#39;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -773,7 +775,7 @@ Eventually, I came across this link to a post of possible solutions containing t
       
       <guid>https://yo-dave.com/2015/12/30/whats-broken-today/</guid>
       <description>Like most days, I got up ready to tackle a bunch of problems and features on some of the software I work on. But, as is often the case, I was stymied by technical problems and got almost nothing done. The problems?
- None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
+  None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
     </item>
     
     <item>
@@ -793,10 +795,8 @@ It was a bit improved this time. A Windows 10 version of the driver for my Fujit
       <pubDate>Sat, 03 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/10/03/using-local-java-jars-in-clojure-projects/</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
-
+      <description>&lt;p&gt;Recently, I&#39;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
 &lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
     </item>
     
@@ -807,9 +807,7 @@ It was a bit improved this time. A Windows 10 version of the driver for my Fujit
       
       <guid>https://yo-dave.com/2015/08/29/my-windows-10-update-experience/</guid>
       <description>&lt;p&gt;Just like millions of others, I tried the free upgrade to Windows 10. I waited a few weeks after it was available before trying it, just to see what the early fallout was before committing myself. It was pretty much a disaster.&lt;/p&gt;
-
 &lt;p&gt;On my system it was&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Too buggy&lt;/li&gt;
 &lt;li&gt;Too slow&lt;/li&gt;
@@ -823,7 +821,7 @@ It was a bit improved this time. A Windows 10 version of the driver for my Fujit
       <pubDate>Mon, 27 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/07/27/finding-mono-spaced-fonts-in-javafx/</guid>
-      <description>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&amp;rsquo;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
+      <description>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&#39;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
 Back in the days of Swing, you usually had to grab a list of font families (e.g. Arial, Times New Roman, etc.) from AWT and then create a BufferedImage to print the font to and check layout widths.</description>
     </item>
     
@@ -842,7 +840,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</guid>
-      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&#39;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -903,16 +901,11 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
       <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/04/18/focus-behavior-change-between-javafx-2-and-javafx-8-when-selecting-rows-in-a-tableview/</guid>
-      <description>&lt;p&gt;For a little while now, I&amp;rsquo;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.&lt;/p&gt;
-
+      <description>&lt;p&gt;For a little while now, I&#39;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.&lt;/p&gt;
 &lt;p&gt;The application looks something like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34; /&gt;&lt;br&gt;&lt;small&gt;The document manager main screen&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;The document manager main screen&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The user selects the document they wish to view or edit by selecting it from the large &lt;code&gt;TableView&lt;/code&gt; in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)&lt;/p&gt;
-
-&lt;p&gt;Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&amp;rsquo;t have to do anything to save their work. It just happened.&lt;/p&gt;
-
+&lt;p&gt;Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&#39;t have to do anything to save their work. It just happened.&lt;/p&gt;
 &lt;p&gt;This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)&lt;/p&gt;</description>
     </item>
     
@@ -923,7 +916,6 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
       
       <guid>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</guid>
       <description>&lt;p&gt;An odd thing happened recently. I have been working on a simulation that produces graphical and text updates as it progresses. That involves drawing a picture of the system and updating some textual elements of the user interface.&lt;/p&gt;
-
 &lt;p&gt;Things seemed to work fine when the simulation was run with &amp;ldquo;normal&amp;rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.&lt;/p&gt;</description>
     </item>
     
@@ -933,7 +925,7 @@ And then some warnings about particularly nasty XSS bugs appeared. At that time,
       <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been away awhile, working on a new project. It&#39;s part of an educational effort about molecular dynamics simulation. Although I&#39;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&#39;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1006,8 +998,8 @@ This is just a place for me to vent about problems with technology. Despite the 
       <pubDate>Wed, 16 Jul 2014 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/07/16/moving-to-web-apps-or-not/</guid>
-      <description>I&amp;rsquo;m a desktop kind of guy. I prefer desktop PCs, desktop programs, desktop programming. But I am also a cross-platform guy. Hence my interest in Java, and by extension, Clojure. But I would like those things to run on my tablet and (other people&amp;rsquo;s) phone. Doing that with Java seems to be more work than it is worth.
-Hence, I&amp;rsquo;ve been considering web apps as a possible future direction. (Seems everyone else has figured this out already.</description>
+      <description>I&#39;m a desktop kind of guy. I prefer desktop PCs, desktop programs, desktop programming. But I am also a cross-platform guy. Hence my interest in Java, and by extension, Clojure. But I would like those things to run on my tablet and (other people&#39;s) phone. Doing that with Java seems to be more work than it is worth.
+Hence, I&#39;ve been considering web apps as a possible future direction. (Seems everyone else has figured this out already.</description>
     </item>
     
     <item>
@@ -1016,7 +1008,7 @@ Hence, I&amp;rsquo;ve been considering web apps as a possible future direction. 
       <pubDate>Wed, 30 Apr 2014 09:59:36 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/30/a-new-theme/</guid>
-      <description>This probably has no interest to anyone but me, but you may notice a change in the blog theme today. I&amp;rsquo;ve been dissatisfied with the typography of the blog for quite some time. Today I set out to try to find a theme that had better typography. Man, what a mess!
+      <description>This probably has no interest to anyone but me, but you may notice a change in the blog theme today. I&#39;ve been dissatisfied with the typography of the blog for quite some time. Today I set out to try to find a theme that had better typography. Man, what a mess!
 There are a zillion WordPress themes out there. Some awful, but many quite good. However, finding a minimalist theme intended for writing and reading is surprisingly difficult.</description>
     </item>
     
@@ -1026,7 +1018,7 @@ There are a zillion WordPress themes out there. Some awful, but many quite good.
       <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1044,9 +1036,9 @@ There are a zillion WordPress themes out there. Some awful, but many quite good.
       <pubDate>Wed, 26 Mar 2014 13:33:45 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/03/26/something-new.-comments/</guid>
-      <description>Well, it&amp;rsquo;s been a long time coming and I&amp;rsquo;m still a little unsure about it, but starting now, this site will allow comments. I&amp;rsquo;ve explained why I didn&amp;rsquo;t allow them before, but I&amp;rsquo;m adding Disqus-powered discussions to the blog. We&amp;rsquo;ll see how that goes.
-If everything that comes in is just spam, I&amp;rsquo;ll disable comments again. If comments are useful, civil and on topic, they will remain.
-And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.</description>
+      <description>Well, it&#39;s been a long time coming and I&#39;m still a little unsure about it, but starting now, this site will allow comments. I&#39;ve explained why I didn&#39;t allow them before, but I&#39;m adding Disqus-powered discussions to the blog. We&#39;ll see how that goes.
+If everything that comes in is just spam, I&#39;ll disable comments again. If comments are useful, civil and on topic, they will remain.
+And we&#39;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.</description>
     </item>
     
     <item>
@@ -1055,7 +1047,7 @@ And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough
       <pubDate>Tue, 04 Mar 2014 13:26:26 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/03/04/another-program-id-like-to-find-or-write/</guid>
-      <description>As I&amp;rsquo;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.</description>
+      <description>As I&#39;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.</description>
     </item>
     
     <item>
@@ -1065,8 +1057,7 @@ And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough
       
       <guid>https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/</guid>
       <description>&lt;p&gt;I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.&lt;/p&gt;
-
-&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
+&lt;p&gt;For some time, I&#39;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1075,7 +1066,7 @@ And we&amp;rsquo;ll see if anyone thinks any of this stuff is interesting enough
       <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</guid>
-      <description>Just a short rant about JavaFX because I&amp;rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+      <description>Just a short rant about JavaFX because I&#39;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
 This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.</description>
     </item>
     
@@ -1085,9 +1076,9 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</guid>
-      <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&amp;rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
-Here&amp;rsquo;s the new snippet.
-(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.</description>
+      <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&#39;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
+Here&#39;s the new snippet.
+(ns clojure_font_loading.core(:gen-class:extends javafx.application.Application)(:import[javafx.application Application][javafx.event EventHandler][javafx.scene Scene][avafx.scene.control Button][javafx.scene.layout StackPane VBox][javafx.</description>
     </item>
     
     <item>
@@ -1096,8 +1087,8 @@ Here&amp;rsquo;s the new snippet.
       <pubDate>Sat, 10 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/10/loading-fonts-like-css/</guid>
-      <description>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &amp;ldquo;preferred&amp;rdquo; font through a series of less ideal typefaces depending on what&amp;rsquo;s available on the machine doing the display.
-That&amp;rsquo;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</description>
+      <description>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &amp;ldquo;preferred&amp;rdquo; font through a series of less ideal typefaces depending on what&#39;s available on the machine doing the display.
+That&#39;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</description>
     </item>
     
     <item>
@@ -1106,8 +1097,8 @@ That&amp;rsquo;s a handy facility to have, even on Windows, which can have diffe
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
-      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;rdquo;C:\Users\David Clark&amp;rdquo; on my system.)
-My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
+      <description>I&#39;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&#39;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;ldquo;C:\Users\David Clark&amp;rdquo; on my system.)
+My user profile name is &amp;ldquo;david&amp;rdquo;. That&#39;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
     </item>
     
     <item>
@@ -1116,8 +1107,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/06/n-queens/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&amp;rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&amp;rsquo;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;lsquo;70s.&lt;/p&gt;
-
+      <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&#39;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&#39;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;lsquo;70s.&lt;/p&gt;
 &lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;</description>
     </item>
     
@@ -1128,8 +1118,8 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       
       <guid>https://yo-dave.com/2013/08/03/cloud-storage-at-copy/</guid>
       <description>Update Copy was discontinued on 1 May 2016.
-I use the Cloud very simply, nothing elaborate. I use BitBucket (Now I use HelixTeamHub cloud.) to keep track of my repositories. I use DropBox to store copies of scientific publications and Fargo outlines. For important stuff, I use SpiderOak because of its great security model. I think I have an iCloud account somewhere. That&amp;rsquo;s it.
-This morning, I&amp;rsquo;ve been playing with a new service called Copy.</description>
+I use the Cloud very simply, nothing elaborate. I use BitBucket(Now I use HelixTeamHub cloud.) to keep track of my repositories. I use DropBox to store copies of scientific publications and Fargo outlines. For important stuff, I use SpiderOak because of its great security model. I think I have an iCloud account somewhere. That&#39;s it.
+This morning, I&#39;ve been playing with a new service called Copy.</description>
     </item>
     
     <item>
@@ -1138,7 +1128,7 @@ This morning, I&amp;rsquo;ve been playing with a new service called Copy.</descr
       <pubDate>Tue, 25 Jun 2013 18:16:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</guid>
-      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure (Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
+      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure(Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
 As this is written, the tools used include:</description>
     </item>
     
@@ -1149,7 +1139,7 @@ As this is written, the tools used include:</description>
       
       <guid>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</guid>
       <description>Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
-Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&amp;rsquo;t work. Here&amp;rsquo;s how I do it.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&#39;t work. Here&#39;s how I do it.
  In NetBeans (7.3 as of this writing), select the &amp;ldquo;Tools&amp;rdquo; menu and the &amp;ldquo;Java Platforms&amp;rdquo; drop-down menu.</description>
     </item>
     
@@ -1159,7 +1149,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Tue, 04 Jun 2013 04:24:09 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</guid>
-      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&amp;rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
+      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&#39;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
     </item>
     
     <item>
@@ -1168,7 +1158,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Sat, 01 Jun 2013 22:26:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&amp;rsquo;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;del&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&#39;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1186,7 +1176,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Wed, 08 May 2013 17:20:37 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/08/clojure-javafx-and-tic-tac-toe/</guid>
-      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&#39;s containing window was re-sized. In the past I&#39;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1195,9 +1185,8 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Wed, 08 May 2013 14:14:30 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/08/styled-dialogs-in-javafx-with-jfxtras-monologfx/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been having a lot of fun learning &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt;, even after many years of using the Java Swing framework.&lt;/p&gt;
-
-&lt;p&gt;One thing about JavaFX that I still don&amp;rsquo;t understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the &lt;a href=&#34;http://jfxtras.org/&#34; title=&#34;Link to the JFXtras home page.&#34;&gt;JFXtras&lt;/a&gt; project, &lt;a href=&#34;https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for&#34; title=&#34;Link to MonologFX introduction blog.&#34;&gt;MonologFX&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been having a lot of fun learning &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt;, even after many years of using the Java Swing framework.&lt;/p&gt;
+&lt;p&gt;One thing about JavaFX that I still don&#39;t understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the &lt;a href=&#34;http://jfxtras.org/&#34; title=&#34;Link to the JFXtras home page.&#34;&gt;JFXtras&lt;/a&gt; project, &lt;a href=&#34;https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for&#34; title=&#34;Link to MonologFX introduction blog.&#34;&gt;MonologFX&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1206,8 +1195,8 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Mon, 18 Feb 2013 21:48:11 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</guid>
-      <description>Since JavaFX is the future of the user interface for Java, I&amp;rsquo;ve started trying to learn it. Since I&amp;rsquo;m also learning Clojure, I&amp;rsquo;m doing the work in that language.
-One of the things I&amp;rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
+      <description>Since JavaFX is the future of the user interface for Java, I&#39;ve started trying to learn it. Since I&#39;m also learning Clojure, I&#39;m doing the work in that language.
+One of the things I&#39;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
     </item>
     
     <item>
@@ -1216,7 +1205,7 @@ One of the things I&amp;rsquo;ve been looking into is how the interface responds
       <pubDate>Thu, 24 Jan 2013 22:00:12 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/</guid>
-      <description>As some of you know, we&amp;rsquo;ve spent the last several months moving around looking for a nice place to settle down. That&amp;rsquo;s finished. We&amp;rsquo;re now in Salem, Virginia.
+      <description>As some of you know, we&#39;ve spent the last several months moving around looking for a nice place to settle down. That&#39;s finished. We&#39;re now in Salem, Virginia.
 Before starting that search, we bought a laptop to take over the duties of the desktop. On the night before we left Tucson, I dumped a cup of water on it and fried the keyboard and other parts. It turns out the model was too new to get replacement parts.</description>
     </item>
     
@@ -1226,7 +1215,7 @@ Before starting that search, we bought a laptop to take over the duties of the d
       <pubDate>Thu, 29 Mar 2012 08:48:17 +0000</pubDate>
       
       <guid>https://yo-dave.com/2012/03/29/developer-interview-questions/</guid>
-      <description>Picking the right people to expand an organization is one of the most important things you can do. In my career, I&amp;rsquo;ve participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks.</description>
+      <description>Picking the right people to expand an organization is one of the most important things you can do. In my career, I&#39;ve participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks.</description>
     </item>
     
     <item>
@@ -1236,7 +1225,7 @@ Before starting that search, we bought a laptop to take over the duties of the d
       
       <guid>https://yo-dave.com/2012/01/04/2012-the-year-we-all-unplug/</guid>
       <description>Well, Happy New Year everyone.
-It seems like I&amp;rsquo;ve been hearing a lot of buzz about getting unconnected. Everything from hotels offering special deals on stays where you are forced to turn off (or turn in) all your gizmos, to advice to disconnect to improve your productivity. Could it be that the pendulum has started to swing in the other direction?
+It seems like I&#39;ve been hearing a lot of buzz about getting unconnected. Everything from hotels offering special deals on stays where you are forced to turn off (or turn in) all your gizmos, to advice to disconnect to improve your productivity. Could it be that the pendulum has started to swing in the other direction?
 Sit back and enjoy the quiet.</description>
     </item>
     
@@ -1264,7 +1253,7 @@ Sit back and enjoy the quiet.</description>
       <pubDate>Thu, 01 Dec 2011 08:55:07 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/12/01/twitter-a-lack-of-communication/</guid>
-      <description>&lt;p&gt;This is a rant that I just have to get off my chest.Twitter just doesn&amp;rsquo;t provide any meaningful communication and I can&amp;rsquo;t understand the appeal. Imagine a newspaper consisting of just the headlines or a magazine containing only the article titles &amp;ndash; that is essentially Twitter.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is a rant that I just have to get off my chest.Twitter just doesn&#39;t provide any meaningful communication and I can&#39;t understand the appeal. Imagine a newspaper consisting of just the headlines or a magazine containing only the article titles &amp;ndash; that is essentially Twitter.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1283,7 +1272,7 @@ Sit back and enjoy the quiet.</description>
       
       <guid>https://yo-dave.com/2011/10/27/unconnected/</guid>
       <description>My wife and I just returned from a long cruise to Hawaii and back. During that time, we were just about completely disconnected from the mobile world &amp;ndash; no access to email, cell phone, fax. There was sporadic television available.
-On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems in my head, looking forward to the chance to get back to work on them when we returned.</description>
+On balance I didn&#39;t miss it too much. I continued to work on problems in my head, looking forward to the chance to get back to work on them when we returned.</description>
     </item>
     
     <item>
@@ -1292,7 +1281,7 @@ On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems 
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
-      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&#39;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&#39;t seem to be such a thing and I haven&#39;t created one that I&#39;m satisfied with.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1301,8 +1290,8 @@ On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems 
       <pubDate>Sat, 17 Sep 2011 00:11:21 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/17/spare-time-projects-part-2/</guid>
-      <description>A few weeks ago, I wrote a post about &amp;ldquo;spare time&amp;rdquo; projects &amp;ndash; programming projects undertaken to learn something new, try something out, see how something works. These are activities undertaken to improve your skills and, maybe, scratch an itch that&amp;rsquo;s been bothering you. These projects aren&amp;rsquo;t typically related to work.
-In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expressing the opinion that if you don&amp;rsquo;t do such projects, he probably doesn&amp;rsquo;t want to hire you.</description>
+      <description>A few weeks ago, I wrote a post about &amp;ldquo;spare time&amp;rdquo; projects &amp;ndash; programming projects undertaken to learn something new, try something out, see how something works. These are activities undertaken to improve your skills and, maybe, scratch an itch that&#39;s been bothering you. These projects aren&#39;t typically related to work.
+In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expressing the opinion that if you don&#39;t do such projects, he probably doesn&#39;t want to hire you.</description>
     </item>
     
     <item>
@@ -1311,7 +1300,7 @@ In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expr
       <pubDate>Fri, 16 Sep 2011 01:14:20 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</guid>
-      <description>Programming is one of the few professions where you regularly see self-taught practitioners. They have little or no formal education in the subject, but they often do quite well. In some cases, I&amp;rsquo;ve worked with some who were considered outstanding in their area of focus, like machine control or real-time.
+      <description>Programming is one of the few professions where you regularly see self-taught practitioners. They have little or no formal education in the subject, but they often do quite well. In some cases, I&#39;ve worked with some who were considered outstanding in their area of focus, like machine control or real-time.
 Granted, early in their careers, these folks often produce nasty messes that happen to work well enough but are simply not maintainable or not extendable.</description>
     </item>
     
@@ -1321,7 +1310,7 @@ Granted, early in their careers, these folks often produce nasty messes that hap
       <pubDate>Wed, 14 Sep 2011 20:04:19 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/14/color-deconvolution/</guid>
-      <description>&lt;p&gt;One method I&amp;rsquo;ve used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One method I&#39;ve used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1339,7 +1328,7 @@ Granted, early in their careers, these folks often produce nasty messes that hap
       <pubDate>Mon, 22 Aug 2011 10:13:25 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/08/22/whats-cross-platform-now/</guid>
-      <description>It used to be that &amp;ldquo;cross-platform&amp;rdquo; meant making a program that could be run on Windows, Macs, and Linux PCs. To create a program that worked on all three platforms, you could write it in Java, or maybe Python or C depending on what the program needed to do. That&amp;rsquo;s not really the case anymore.
+      <description>It used to be that &amp;ldquo;cross-platform&amp;rdquo; meant making a program that could be run on Windows, Macs, and Linux PCs. To create a program that worked on all three platforms, you could write it in Java, or maybe Python or C depending on what the program needed to do. That&#39;s not really the case anymore.
 First there were smart-phones. In that case you could still fall back on Java ME for some phones, but not all.</description>
     </item>
     
@@ -1349,7 +1338,7 @@ First there were smart-phones. In that case you could still fall back on Java ME
       <pubDate>Sat, 13 Aug 2011 10:19:02 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/08/13/old-programmers/</guid>
-      <description>Seems like I&amp;rsquo;ve been reading a lot of conversation about when you become too old to be a good programmer. I&amp;rsquo;ve even seen someone ask, with apparent sincerity, if 26 was too old. Of course anyone with any sense realizes that the answer is &amp;ldquo;Never!&amp;rdquo; As I&amp;rsquo;ve watched how my own performance has changed over the years, there have been a few obvious changes.
+      <description>Seems like I&#39;ve been reading a lot of conversation about when you become too old to be a good programmer. I&#39;ve even seen someone ask, with apparent sincerity, if 26 was too old. Of course anyone with any sense realizes that the answer is &amp;ldquo;Never!&amp;rdquo; As I&#39;ve watched how my own performance has changed over the years, there have been a few obvious changes.
  I am way less likely to chase after the &amp;ldquo;shiny new thing&amp;rdquo;.</description>
     </item>
     
@@ -1360,7 +1349,7 @@ First there were smart-phones. In that case you could still fall back on Java ME
       
       <guid>https://yo-dave.com/2011/07/15/process-versus-experience/</guid>
       <description>Today I came across a blog that describes a sentiment that comes up periodically. It describes a development group that does not believe it needs to follow the agile development process. The team is composed of experienced developers with a track record of delivering the goods.
-I&amp;rsquo;m not much of a fan of agile myself, but I believe in process as part of software development. I think the real sentiment being expressed is that experience trumps process.</description>
+I&#39;m not much of a fan of agile myself, but I believe in process as part of software development. I think the real sentiment being expressed is that experience trumps process.</description>
     </item>
     
     <item>
@@ -1370,7 +1359,7 @@ I&amp;rsquo;m not much of a fan of agile myself, but I believe in process as par
       
       <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
       <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
-Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&#39;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
     </item>
     
     <item>
@@ -1379,7 +1368,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&#39;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1388,8 +1377,8 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Sun, 26 Jun 2011 23:28:16 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/26/go-away-it-isnt-perfect-yet/</guid>
-      <description>Not a very inviting byline, I admit. People have asked what it means. It&amp;rsquo;s a joke of course.
-It&amp;rsquo;s a constant reminder not to fall prey to something I&amp;rsquo;ve seen block people from getting things done and out there time and time again. People (myself included) are afraid to put something in front of their peers or the public because it isn&amp;rsquo;t quite perfect yet. There&amp;rsquo;s just a little more fiddling needed to get it just right.</description>
+      <description>Not a very inviting byline, I admit. People have asked what it means. It&#39;s a joke of course.
+It&#39;s a constant reminder not to fall prey to something I&#39;ve seen block people from getting things done and out there time and time again. People (myself included) are afraid to put something in front of their peers or the public because it isn&#39;t quite perfect yet. There&#39;s just a little more fiddling needed to get it just right.</description>
     </item>
     
     <item>
@@ -1408,7 +1397,7 @@ It&amp;rsquo;s a constant reminder not to fall prey to something I&amp;rsquo;ve 
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
-      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&#39;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1436,9 +1425,11 @@ This computer has generally been excellent. But there have been issues with it r
       <pubDate>Sun, 17 Apr 2011 01:09:53 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/04/17/elises-rule/</guid>
-      <description>&lt;p&gt;Based on repeated observations, my wife, Elise, has formed a simple rule:
-&amp;gt; When Dave has any extra time off, the computer will be broken &amp;ndash; big time.
-It&amp;rsquo;s &lt;em&gt;freaking uncanny&lt;/em&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Based on repeated observations, my wife, Elise, has formed a simple rule:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When Dave has any extra time off, the computer will be broken &amp;ndash; big time.
+It&#39;s &lt;em&gt;freaking uncanny&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -1447,7 +1438,7 @@ It&amp;rsquo;s &lt;em&gt;freaking uncanny&lt;/em&gt;.&lt;/p&gt;</description>
       <pubDate>Sat, 09 Apr 2011 00:09:20 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/04/09/me2-ipad2/</guid>
-      <description>My wife and I have birthdays that are just a few days apart. This year we ended up getting each other an iPad 2. We have an iMac but have never bought into the whole iPod, iPhone, iThis&amp;rsquo;nThat thing.
+      <description>My wife and I have birthdays that are just a few days apart. This year we ended up getting each other an iPad 2. We have an iMac but have never bought into the whole iPod, iPhone, iThis&#39;nThat thing.
 We were really excited to get started playing with our new toys. They came in nice boxes with the needed accessories, but little else including any guide on how to get started.</description>
     </item>
     
@@ -1466,7 +1457,7 @@ We were really excited to get started playing with our new toys. They came in ni
       <pubDate>Sun, 03 Apr 2011 16:45:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/04/03/dark-theme-background-image/</guid>
-      <description>As has been noted before, Arizona contains enough photogenic scenery that even I get a nice photo now and then. Here&amp;rsquo;s one that has been manipulated a bit into a nice abstract background for blogs or program windows.
+      <description>As has been noted before, Arizona contains enough photogenic scenery that even I get a nice photo now and then. Here&#39;s one that has been manipulated a bit into a nice abstract background for blogs or program windows.
 This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn of 2010. The photo originated as a snapshot of a rock covered with a bluish-gray lichen and a rather bright green moss.</description>
     </item>
     
@@ -1477,7 +1468,7 @@ This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn
       
       <guid>https://yo-dave.com/2011/03/18/why-no-comments/</guid>
       <description>There are two primary reasons that comments are not enabled on this site.
- These are just notes I write to myself. They don&amp;rsquo;t get much attention other than when I want to remind myself of something. It wouldn&amp;rsquo;t be fair to solicit comments and then just ignore them. Comment spam. Related to the above, I just don&amp;rsquo;t check in often enough and would not effectively moderate and eliminate spam.  This does not mean that the site will never be opened up to comments.</description>
+ These are just notes I write to myself. They don&#39;t get much attention other than when I want to remind myself of something. It wouldn&#39;t be fair to solicit comments and then just ignore them. Comment spam. Related to the above, I just don&#39;t check in often enough and would not effectively moderate and eliminate spam.  This does not mean that the site will never be opened up to comments.</description>
     </item>
     
     <item>
@@ -1487,11 +1478,8 @@ This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn
       
       <guid>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</guid>
       <description>&lt;p&gt;My wife and I share a computer that dual boots Ubuntu Linux and Windows. Too, when we upgrade computers, I tend to take the hard drive(s) from the old computer to the new computer. The boot menus created by the grub2 program can be a bit confusing for the uninitiated. As kernel updates are added, the list gets longer. The old Windows drive appears in the list, as well as the recovery partitions that manufacturers often put on Windows drives. In the normal course of things the Windows menu items can get pushed out of view at the bottom of the screen.&lt;/p&gt;
-
-&lt;p&gt;&amp;ldquo;Where&amp;rsquo;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
-
+&lt;p&gt;&amp;ldquo;Where&#39;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;Not a happy situation.&lt;/p&gt;
-
 &lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
     </item>
     
@@ -1501,7 +1489,7 @@ This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn
       <pubDate>Tue, 08 Mar 2011 15:58:17 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</guid>
-      <description>&lt;p&gt;One of the more interesting things I&amp;rsquo;ve been working on lately is a scripting language to drive a simulation system. It describes nominal values of key parameters, how to vary them, do an analysis, gather the results and present those results. &lt;a href=&#34;http://www.antlr.org/&#34; title=&#34;ANTLR Home Page&#34;&gt;ANTLR&lt;/a&gt; and &lt;a href=&#34;http://www.antlr3.org/works/&#34; title=&#34;ANTLRWorks Home Page&#34;&gt;ANTLRWorks&lt;/a&gt; are usually great tools to create the lexer and parser of such a scripting language. That&amp;rsquo;s how I started out this time too. Since I thought it would be trivial, I left parsing signed numbers to nearly the end of the project. It was a bit of a surprise how difficult this was.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the more interesting things I&#39;ve been working on lately is a scripting language to drive a simulation system. It describes nominal values of key parameters, how to vary them, do an analysis, gather the results and present those results. &lt;a href=&#34;http://www.antlr.org/&#34; title=&#34;ANTLR Home Page&#34;&gt;ANTLR&lt;/a&gt; and &lt;a href=&#34;http://www.antlr3.org/works/&#34; title=&#34;ANTLRWorks Home Page&#34;&gt;ANTLRWorks&lt;/a&gt; are usually great tools to create the lexer and parser of such a scripting language. That&#39;s how I started out this time too. Since I thought it would be trivial, I left parsing signed numbers to nearly the end of the project. It was a bit of a surprise how difficult this was.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1510,10 +1498,10 @@ This was taken at the Bryce-Thompson Arboretum in Florence Arizona in the Autumn
       <pubDate>Sun, 27 Feb 2011 19:22:31 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/27/snow-in-tucson/</guid>
-      <description>It&amp;rsquo;s pretty rare for photos to be included on this blog. But it&amp;rsquo;s even rarer to see snow here in Tucson. So here are a few pics of what we woke up to this morning.
+      <description>It&#39;s pretty rare for photos to be included on this blog. But it&#39;s even rarer to see snow here in Tucson. So here are a few pics of what we woke up to this morning.
 Snow-Covered Palms at the Side of our House
 Our palm trees are not really used to this!
-If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf Tournament is being played here. This is a view over toward the town of Marana.</description>
+If you&#39;re a golf fan, you are probably aware that the Accenture Golf Tournament is being played here. This is a view over toward the town of Marana.</description>
     </item>
     
     <item>
@@ -1522,7 +1510,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
-      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
+      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&#39;t stop trying to use Lisp because they don&#39;t like the language. A lot of people stop because they don&#39;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
     </item>
     
     <item>
@@ -1540,7 +1528,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</guid>
-      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&#39;s all the fault of Windows Update.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1549,7 +1537,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Sun, 13 Feb 2011 02:10:46 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</guid>
-      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&#39;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1558,7 +1546,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Fri, 11 Feb 2011 01:38:38 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/11/mathematica-and-matlab/</guid>
-      <description>In some ways there are many similarities between Mathematica® and MATLAB®. From the simplest point of view, both are computer mathematics systems. I use both at work and, thus, am a wizard at neither. Let me expose my biases up front though. I like Mathematica enough that I have paid actual money to have a copy at home. With that bias in mind, let&amp;rsquo;s look at some of the differences.</description>
+      <description>In some ways there are many similarities between Mathematica® and MATLAB®. From the simplest point of view, both are computer mathematics systems. I use both at work and, thus, am a wizard at neither. Let me expose my biases up front though. I like Mathematica enough that I have paid actual money to have a copy at home. With that bias in mind, let&#39;s look at some of the differences.</description>
     </item>
     
     <item>
@@ -1567,7 +1555,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Sun, 06 Feb 2011 01:38:36 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/06/literate-programming/</guid>
-      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&#39;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1585,7 +1573,7 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
       <pubDate>Sun, 30 Jan 2011 01:11:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/30/syntax-highlighting/</guid>
-      <description>Update 2017-08-19: This post refers to a time when the blog was hosted in WordPress. It isn&amp;rsquo;t really applicable anymore. But it may provide some guidance to someone who happens to come across it.
+      <description>Update 2017-08-19: This post refers to a time when the blog was hosted in WordPress. It isn&#39;t really applicable anymore. But it may provide some guidance to someone who happens to come across it.
 Since this blog is mostly about programming, there are a lot of code listings. To make those listings more easily readable, highlighting syntax in the listings is a good thing.
 Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript tool by Alex Gorbachev is the one I most prefer.</description>
     </item>
@@ -1596,9 +1584,8 @@ Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript
       <pubDate>Sat, 29 Jan 2011 23:53:30 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</guid>
-      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&amp;rsquo;t quite that simple.&lt;/p&gt;
-
-&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&#39;t quite that simple.&lt;/p&gt;
+&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&#39;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1607,7 +1594,7 @@ Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve used &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&#39;s what I had to do.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1619,7 +1606,7 @@ Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript
       <description>Note: This is a re-post of an earlier entry recovered from a different blogging system.
 After entering and running the evolution.lisp example from Land of Lisp, I have some ideas for additional traits.
 Here are a few.
- Size, Carnivorous Animals. Add a feature to allow the animals to be of different sizes. Larger animals would expend energy faster. When two animals occupy, the same cell, the larger would try to eat the smaller, taking it&amp;rsquo;s energy.</description>
+ Size, Carnivorous Animals. Add a feature to allow the animals to be of different sizes. Larger animals would expend energy faster. When two animals occupy, the same cell, the larger would try to eat the smaller, taking it&#39;s energy.</description>
     </item>
     
     <item>
@@ -1628,7 +1615,7 @@ Here are a few.
       <pubDate>Sun, 23 Jan 2011 01:41:21 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</guid>
-      <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&amp;rsquo;s the code I came up with that actually worked.
+      <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&#39;s the code I came up with that actually worked.
 import javax.swing.*; import java.awt.*; public class CornerButton extends JFrame { public CornerButton() { JTextArea area = new JTextArea(20, 20); JScrollPane scroll = new JScrollPane(area); Icon icn = UIManager.</description>
     </item>
     
@@ -1638,7 +1625,7 @@ import javax.swing.*; import java.awt.*; public class CornerButton extends JFram
       <pubDate>Sun, 23 Jan 2011 00:56:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/23/moving-old-posts/</guid>
-      <description>Since I&amp;rsquo;m going through the setup again, I thought I would start out with some older posts from other systems (the few that remain). Don&amp;rsquo;t pay much attention to the dates.</description>
+      <description>Since I&#39;m going through the setup again, I thought I would start out with some older posts from other systems (the few that remain). Don&#39;t pay much attention to the dates.</description>
     </item>
     
     <item>
@@ -1647,7 +1634,7 @@ import javax.swing.*; import java.awt.*; public class CornerButton extends JFram
       <pubDate>Sat, 22 Jan 2011 23:31:31 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/22/so-dr.-clark.-we-meet-again/</guid>
-      <description>Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&amp;rsquo;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper (Broken Link). But I just keep coming back here. Why do I ever leave?
+      <description>Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&#39;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper(Broken Link). But I just keep coming back here. Why do I ever leave?
 There are really a couple of reasons. I do this a lot because of hardware and backup failures.</description>
     </item>
     

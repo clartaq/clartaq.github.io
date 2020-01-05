@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>An Updated Sign Test Program &middot; Yo-Dave</title>
 
@@ -260,24 +260,17 @@
 </div>
 
   <p>Long ago, I wrote a <a href="https://yo-dave.com/2011/07/09/the-sign-test/">post</a> about a small program to calculate the probabilities of a sign test.</p>
-
 <p>A lot has happened since then.</p>
-
-<p>The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&rsquo;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.</p>
-
-<p>So I&rsquo;ve updated the program a bit. Here&rsquo;s what it looks like now.</p>
-
-<p><a href="https://yo-dave.com/static/img/2017-08-32-new-sign-test-program.PNG"><img src="https://yo-dave.com/static/img/2017-08-32-new-sign-test-program.PNG" alt="A New Version of the Sign Test Program" title="A New Version of the Sign Test Program" /><br><small>A New Version of the Sign Test Program</small></a></p>
-
+<p>The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java's Swing framework for the GUI. The new official GUI framework for Java is JavaFX.</p>
+<p>So I've updated the program a bit. Here's what it looks like now.</p>
+<p><a href="https://yo-dave.com/static/img/2017-08-32-new-sign-test-program.PNG"><img src="https://yo-dave.com/static/img/2017-08-32-new-sign-test-program.PNG" alt="A New Version of the Sign Test Program" title="A New Version of the Sign Test Program"><!-- raw HTML omitted --><!-- raw HTML omitted -->A New Version of the Sign Test Program<!-- raw HTML omitted --></a></p>
 <p>It looks similar and produces exactly the same results, but</p>
-
 <ul>
 <li>It is now completely written in Clojure. The original was an experiment in Java/Clojure interop.</li>
 <li>It uses JavaFX for the GUI.</li>
 <li>It uses a different build tool, Leiningen.</li>
 <li>It has different dependencies, a couple of other libraries I have written.</li>
 </ul>
-
 <p>The old repository has been completely removed, but the <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/signtest/tree/default">new one</a> has the same name, so all the old links should now point to the new library.</p>
 
 

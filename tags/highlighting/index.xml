@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>highlighting on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 30 Jan 2011 01:11:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/30/syntax-highlighting/</guid>
-      <description>Update 2017-08-19: This post refers to a time when the blog was hosted in WordPress. It isn&amp;rsquo;t really applicable anymore. But it may provide some guidance to someone who happens to come across it.
+      <description>Update 2017-08-19: This post refers to a time when the blog was hosted in WordPress. It isn&#39;t really applicable anymore. But it may provide some guidance to someone who happens to come across it.
 Since this blog is mostly about programming, there are a lot of code listings. To make those listings more easily readable, highlighting syntax in the listings is a good thing.
 Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript tool by Alex Gorbachev is the one I most prefer.</description>
     </item>

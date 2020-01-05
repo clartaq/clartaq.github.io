@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Displaying Video from a Webcam using Clojurescript and Reagent &middot; Yo-Dave</title>
 
@@ -261,98 +261,82 @@
 
 </div>
 
-  
-
-<p>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan <a href="http://isbn.org/about_ISBN_standard">ISBN</a> (International Standard Book Number) numbers from the jackets of physical books. This isn&rsquo;t quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I&rsquo;m told. I really don&rsquo;t know much about it yet.)</p>
-
+  <p>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan <a href="http://isbn.org/about_ISBN_standard">ISBN</a> (International Standard Book Number) numbers from the jackets of physical books. This isn't quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I'm told. I really don't know much about it yet.)</p>
 <p>But before you can scan barcodes, you need to be able to get video from the webcam in the first place. And because of my fondness for all things Clojure, I want to do this with Clojurescript and <a href="https://reagent-project.github.io">Reagent</a>.</p>
-
-<p>It turns out that it isn&rsquo;t hard at all. But the relevant APIs for using the camera keep changing every few years. The most difficult part was filtering through all of the out-of-date information to come up with a working demonstration. There is a very nice article explaining how to make it work <a href="https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm">here</a>, but it is in JavaScript and doesn&rsquo;t use React.</p>
-
+<p>It turns out that it isn't hard at all. But the relevant APIs for using the camera keep changing every few years. The most difficult part was filtering through all of the out-of-date information to come up with a working demonstration. There is a very nice article explaining how to make it work <a href="https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm">here</a>, but it is in JavaScript and doesn't use React.</p>
 <p>Here is what I came up with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>cljs-webcam-demo.core
+  (<span style="color:#e6db74">:require</span> [reagent.core <span style="color:#e6db74">:as</span> r <span style="color:#e6db74">:refer</span> [atom]]))
 
-<pre><code class="language-clojure">(ns cljs-webcam-demo.core
-  (:require [reagent.core :as r :refer [atom]]))
+(<span style="color:#a6e22e">enable-console-print!</span>)
 
-(enable-console-print!)
+(<span style="color:#66d9ef">def </span>app-state (<span style="color:#a6e22e">r/atom</span> {<span style="color:#e6db74">:video-element-id</span>    <span style="color:#e6db74">&#34;live-video&#34;</span>
+                        <span style="color:#e6db74">:video-stream-object</span> nil}))
 
-(def app-state (r/atom {:video-element-id    &quot;live-video&quot;
-                        :video-stream-object nil}))
-
-(defn handle-video-success
+(<span style="color:#66d9ef">defn </span>handle-video-success
   [stream]
-  (let [video-element (.getElementById js/document
-                                       (:video-element-id @app-state))]
-    (swap! app-state assoc :video-stream-object stream)
-    (set! (.-srcObject video-element) stream)))
+  (<span style="color:#66d9ef">let </span>[video-element (<span style="color:#a6e22e">.getElementById</span> js/document
+                                       (<span style="color:#e6db74">:video-element-id</span> <span style="color:#f92672">@</span>app-state))]
+    (<span style="color:#a6e22e">swap!</span> app-state assoc <span style="color:#e6db74">:video-stream-object</span> stream)
+    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-srcObject</span> video-element) stream)))
 
-(defn handle-video-error
+(<span style="color:#66d9ef">defn </span>handle-video-error
   [error]
-  (println &quot;Error getting video: &quot; (.-message error)))
+  (println <span style="color:#e6db74">&#34;Error getting video: &#34;</span> (<span style="color:#a6e22e">.-message</span> error)))
 
-(defn start-streaming
+(<span style="color:#66d9ef">defn </span>start-streaming
   [_]
   (-&gt; js/navigator
       .-mediaDevices
-      (.getUserMedia #js {:video true :audio false})
-      (.then handle-video-success)
-      (.catch handle-video-error)))
+      (<span style="color:#a6e22e">.getUserMedia</span> <span style="color:#f92672">#</span>js {<span style="color:#e6db74">:video</span> true <span style="color:#e6db74">:audio</span> false})
+      (<span style="color:#a6e22e">.then</span> handle-video-success)
+      (<span style="color:#a6e22e">.catch</span> handle-video-error)))
 
-(defn stop-streaming
+(<span style="color:#66d9ef">defn </span>stop-streaming
   [_]
-  (when-let [v-stream (:video-stream-object @app-state)]
-    (doseq [t (.getTracks v-stream)]
-      (.stop t))
-    (swap! app-state assoc :video-stream-object nil)))
+  (when-let [v-stream (<span style="color:#e6db74">:video-stream-object</span> <span style="color:#f92672">@</span>app-state)]
+    (doseq [t (<span style="color:#a6e22e">.getTracks</span> v-stream)]
+      (<span style="color:#a6e22e">.stop</span> t))
+    (<span style="color:#a6e22e">swap!</span> app-state assoc <span style="color:#e6db74">:video-stream-object</span> nil)))
 
-(defn video-component
+(<span style="color:#66d9ef">defn </span>video-component
   [app-state-ratom]
-  (fn [app-state-ratom]
-    [:div.video-input {:style {:border &quot;1px solid blue&quot;}}
-     [:video {:id       (:video-element-id @app-state-ratom)
-              :autoPlay &quot;true&quot;}]]))
+  (<span style="color:#66d9ef">fn </span>[app-state-ratom]
+    [<span style="color:#e6db74">:div.video-input</span> {<span style="color:#e6db74">:style</span> {<span style="color:#e6db74">:border</span> <span style="color:#e6db74">&#34;1px solid blue&#34;</span>}}
+     [<span style="color:#e6db74">:video</span> {<span style="color:#e6db74">:id</span>       (<span style="color:#e6db74">:video-element-id</span> <span style="color:#f92672">@</span>app-state-ratom)
+              <span style="color:#e6db74">:autoPlay</span> <span style="color:#e6db74">&#34;true&#34;</span>}]]))
 
-(defn home-page [app-state-ratom]
-  [:div
+(<span style="color:#66d9ef">defn </span>home-page [app-state-ratom]
+  [<span style="color:#e6db74">:div</span>
    [video-component app-state-ratom]
-   [:div
-    [:button {:onClick start-streaming} &quot;Start&quot;]
-    [:button {:onClick stop-streaming} &quot;Stop&quot;]]])
+   [<span style="color:#e6db74">:div</span>
+    [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:onClick</span> start-streaming} <span style="color:#e6db74">&#34;Start&#34;</span>]
+    [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:onClick</span> stop-streaming} <span style="color:#e6db74">&#34;Stop&#34;</span>]]])
 
-(r/render-component [home-page app-state]
-                    (. js/document (getElementById &quot;app&quot;)))
-</code></pre>
-
-<p>This is so simple that I haven&rsquo;t even created a repository for it.</p>
-
+(<span style="color:#a6e22e">r/render-component</span> [home-page app-state]
+                    (<span style="color:#66d9ef">. </span>js/document (<span style="color:#a6e22e">getElementById</span> <span style="color:#e6db74">&#34;app&#34;</span>)))
+</code></pre></div><p>This is so simple that I haven't even created a repository for it.</p>
 <p>I created the project using the <a href="https://github.com/bhauman/figwheel-template"><code>figwheel</code> project template</a> for <a href="https://github.com/technomancy/leiningen">leiningen</a>.</p>
-
 <p>After putting the text above into the <code>cljs-webcam-demo.core.cljs</code> file, you can run it by starting a leiningen REPL (<code>lein repl</code>) and executing the function <code>(fig-start)</code>.</p>
-
 <p>The project should compile, and your default web browser should open to the page created by the program.</p>
-
 <h2 id="browser-compatibility">Browser Compatibility</h2>
-
 <p>With <strong>Safari</strong>, it just worked. When the start button was clicked, Safari asked permission to use the camera. When given permission, it started displaying video. You can click the <code>start</code> and <code>stop</code> buttons to begin and end camera capture and display.</p>
-
-<p>With <strong>Firefox</strong>, <strong>Opera</strong>, and <strong>Brave</strong>, things were a little more complicated. In each case,​ I had to do some browser-specific fiddling to get it to display the video. All of the fiddling was related to granting required privacy permissions. I don&rsquo;t remember the details &ndash; I&rsquo;m just glad it&rsquo;s done.</p>
-
+<p>With <strong>Firefox</strong>, <strong>Opera</strong>, and <strong>Brave</strong>, things were a little more complicated. In each case,​ I had to do some browser-specific fiddling to get it to display the video. All of the fiddling was related to granting required privacy permissions. I don't remember the details &ndash; I'm just glad it's done.</p>
 <h2 id="other-caveats">Other Caveats</h2>
-
-<p>If you run this on a server, you will have to be using HTTPS. It just won&rsquo;t work with HTTP. Since I&rsquo;m running under <code>figwheel</code> server from <code>localhost</code>, it works Ok. If I switch to running the program on a server from one of my local Raspberry Pis, I&rsquo;ll have to take care of setting up all the TLS security stuff. I&rsquo;m just too lazy to do it now. I want to get on to reading barcodes!</p>
+<p>If you run this on a server, you will have to be using HTTPS. It just won't work with HTTP. Since I'm running under <code>figwheel</code> server from <code>localhost</code>, it works Ok. If I switch to running the program on a server from one of my local Raspberry Pis, I'll have to take care of setting up all the TLS security stuff. I'm just too lazy to do it now. I want to get on to reading barcodes!</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2018/10/23/wiki-layout-for-editing/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2019/01/06/my-note-taking-journey/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2018/10/23/wiki-layout-for-editing/">Wiki Layout for Editing</a>
+      <a href="https://yo-dave.com/2019/01/06/my-note-taking-journey/">My Note-Taking Journey</a>
     </nav>
     
   </div>

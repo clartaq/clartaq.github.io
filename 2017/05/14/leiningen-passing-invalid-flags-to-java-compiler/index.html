@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Leiningen passing Invalid Flags to Java Compiler &middot; Yo-Dave</title>
 
@@ -261,16 +261,11 @@
 
 </div>
 
-  <p>Just a note about some weirdness in my work process and it&#8217;s solution.</p>
-
+  <p>Just a note about some weirdness in my work process and it’s solution.</p>
 <p>A few weeks ago, I started noticing some weirdness in trying to use some tools with <a href="https://leiningen.org/">Leiningen</a> while developing a program in <a href="https://clojure.org/">Clojure</a>. When running tools like <a href="https://github.com/jonase/kibit"><code>kibit</code></a>, <code>lein</code> would fail with an error from <code>javac</code> about an invalid flag. Initially these flags were for attempts to set the file encoding. And the file encoding kept changing.</p>
-
 <p>Over time, these failures became more frequent. Always about passing an invalid flag to the java compiler. Finally, I was unable to run a REPL, run a program, or build an uberjar.</p>
-
-<p>Long story short, it looks like it was related to the <code>JAVA_CMD</code> environment variable. That had been set a loooong time ago and in fact pointed to the java compiler, not the VM. Simply removing the variable fixed things. Might have worked just by setting it to <code>java</code> rather than <code>javac</code> but I didn&rsquo;t try it and so far nothing else has broken.</p>
-
-<p>Still don&rsquo;t know what caused things to get flaky in the first place since this variable was set so long ago.</p>
-
+<p>Long story short, it looks like it was related to the <code>JAVA_CMD</code> environment variable. That had been set a loooong time ago and in fact pointed to the java compiler, not the VM. Simply removing the variable fixed things. Might have worked just by setting it to <code>java</code> rather than <code>javac</code> but I didn't try it and so far nothing else has broken.</p>
+<p>Still don't know what caused things to get flaky in the first place since this variable was set so long ago.</p>
 <p><strong>Update 2017-08-21</strong>: Eventually, I found that I needed to set the <code>JAVA_CMD</code> environment variable again to get something working. (I forget what.) This time, I pointed it to <code>java.exe</code> rather than the compiler <code>javac.exe</code>, and everything works.</p>
 
 

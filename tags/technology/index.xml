@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>technology on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/02/01/more-whinging-about-cloudatcost/</guid>
-      <description>I&amp;rsquo;ve written about my love/hate relationship with CloudAtCost before here and here. In essence, I like the low cost but hate the poor reliability.
+      <description>I&#39;ve written about my love/hate relationship with CloudAtCost before here and here. In essence, I like the low cost but hate the poor reliability.
 At one time I had seven web sites up and running on servers bought from CloudAtCost, including this one. But over a period of weeks and months they all failed for one reason or another. Some of the failures could be fixed with a ticket to tech support.</description>
     </item>
     
@@ -28,8 +28,8 @@ At one time I had seven web sites up and running on servers bought from CloudAtC
       <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/12/08/why-this-blog-disappeared-for-a-few-days/</guid>
-      <description>Those of you who visit this site regularly may have noticed that is has been down for a few days. Here&amp;rsquo;s why.
-About a week ago, I attempted to reboot the server after applying a few updates. It wouldn&amp;rsquo;t come back up. As I&amp;rsquo;ve written before, this site is hosted on CloudAtCost. Sorry to say that it is a regular occurrence for servers not to reboot.
+      <description>Those of you who visit this site regularly may have noticed that is has been down for a few days. Here&#39;s why.
+About a week ago, I attempted to reboot the server after applying a few updates. It wouldn&#39;t come back up. As I&#39;ve written before, this site is hosted on CloudAtCost. Sorry to say that it is a regular occurrence for servers not to reboot.
 Usually, I can just file a ticket and get help in a day or so.</description>
     </item>
     
@@ -39,9 +39,9 @@ Usually, I can just file a ticket and get help in a day or so.</description>
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/02/i-am-so-over-hd/</guid>
-      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;rdquo;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
+      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;quot;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
 I thought I was set forever.
-Since then, I&amp;rsquo;ve purchased a few Apple products with Retina displays.</description>
+Since then, I&#39;ve purchased a few Apple products with Retina displays.</description>
     </item>
     
   </channel>

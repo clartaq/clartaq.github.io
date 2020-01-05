@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on Yo-Dave</title>
+    <title>java on Yo-Dave</title>
     <link>https://yo-dave.com/tags/java/</link>
-    <description>Recent content in Java on Yo-Dave</description>
+    <description>Recent content in java on Yo-Dave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2018, David D. Clark. All rights reserved.</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/05/14/leiningen-passing-invalid-flags-to-java-compiler/</guid>
-      <description>Just a note about some weirdness in my work process and it&amp;#8217;s solution.
+      <description>Just a note about some weirdness in my work process and it’s solution.
 A few weeks ago, I started noticing some weirdness in trying to use some tools with Leiningen while developing a program in Clojure. When running tools like kibit, lein would fail with an error from javac about an invalid flag. Initially these flags were for attempts to set the file encoding. And the file encoding kept changing.</description>
     </item>
     
@@ -28,8 +28,8 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
       <pubDate>Mon, 30 Jan 2017 16:45:26 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/01/30/keeping-the-javafx-ui-responsive/</guid>
-      <description>It&amp;rsquo;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
-Recently, I&amp;rsquo;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.</description>
+      <description>It&#39;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
+Recently, I&#39;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.</description>
     </item>
     
     <item>
@@ -38,10 +38,8 @@ Recently, I&amp;rsquo;ve been working on a program that can spend a lot of time 
       <pubDate>Sat, 03 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/10/03/using-local-java-jars-in-clojure-projects/</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
-
+      <description>&lt;p&gt;Recently, I&#39;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
 &lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
     </item>
     
@@ -51,7 +49,7 @@ Recently, I&amp;rsquo;ve been working on a program that can spend a lot of time 
       <pubDate>Mon, 27 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/07/27/finding-mono-spaced-fonts-in-javafx/</guid>
-      <description>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&amp;rsquo;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
+      <description>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&#39;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
 Back in the days of Swing, you usually had to grab a list of font families (e.g. Arial, Times New Roman, etc.) from AWT and then create a BufferedImage to print the font to and check layout widths.</description>
     </item>
     
@@ -70,7 +68,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</guid>
-      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&#39;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,16 +77,11 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/04/18/focus-behavior-change-between-javafx-2-and-javafx-8-when-selecting-rows-in-a-tableview/</guid>
-      <description>&lt;p&gt;For a little while now, I&amp;rsquo;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.&lt;/p&gt;
-
+      <description>&lt;p&gt;For a little while now, I&#39;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.&lt;/p&gt;
 &lt;p&gt;The application looks something like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34; /&gt;&lt;br&gt;&lt;small&gt;The document manager main screen&lt;/small&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;The document manager main screen&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The user selects the document they wish to view or edit by selecting it from the large &lt;code&gt;TableView&lt;/code&gt; in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)&lt;/p&gt;
-
-&lt;p&gt;Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&amp;rsquo;t have to do anything to save their work. It just happened.&lt;/p&gt;
-
+&lt;p&gt;Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&#39;t have to do anything to save their work. It just happened.&lt;/p&gt;
 &lt;p&gt;This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)&lt;/p&gt;</description>
     </item>
     
@@ -99,7 +92,6 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       
       <guid>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</guid>
       <description>&lt;p&gt;An odd thing happened recently. I have been working on a simulation that produces graphical and text updates as it progresses. That involves drawing a picture of the system and updating some textual elements of the user interface.&lt;/p&gt;
-
 &lt;p&gt;Things seemed to work fine when the simulation was run with &amp;ldquo;normal&amp;rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.&lt;/p&gt;</description>
     </item>
     
@@ -109,7 +101,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -127,7 +119,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
       <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</guid>
-      <description>Just a short rant about JavaFX because I&amp;rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+      <description>Just a short rant about JavaFX because I&#39;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
 This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.</description>
     </item>
     
@@ -137,8 +129,8 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
-      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;rdquo;C:\Users\David Clark&amp;rdquo; on my system.)
-My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
+      <description>I&#39;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&#39;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;ldquo;C:\Users\David Clark&amp;rdquo; on my system.)
+My user profile name is &amp;ldquo;david&amp;rdquo;. That&#39;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
     </item>
     
     <item>
@@ -147,7 +139,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <pubDate>Tue, 25 Jun 2013 18:16:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</guid>
-      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure (Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
+      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure(Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
 As this is written, the tools used include:</description>
     </item>
     
@@ -158,7 +150,7 @@ As this is written, the tools used include:</description>
       
       <guid>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</guid>
       <description>Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
-Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&amp;rsquo;t work. Here&amp;rsquo;s how I do it.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&#39;t work. Here&#39;s how I do it.
  In NetBeans (7.3 as of this writing), select the &amp;ldquo;Tools&amp;rdquo; menu and the &amp;ldquo;Java Platforms&amp;rdquo; drop-down menu.</description>
     </item>
     
@@ -168,7 +160,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Tue, 04 Jun 2013 04:24:09 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</guid>
-      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&amp;rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
+      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&#39;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
     </item>
     
     <item>
@@ -177,7 +169,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Sat, 01 Jun 2013 22:26:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&amp;rsquo;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;del&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&#39;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -186,8 +178,8 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
       <pubDate>Mon, 18 Feb 2013 21:48:11 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</guid>
-      <description>Since JavaFX is the future of the user interface for Java, I&amp;rsquo;ve started trying to learn it. Since I&amp;rsquo;m also learning Clojure, I&amp;rsquo;m doing the work in that language.
-One of the things I&amp;rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
+      <description>Since JavaFX is the future of the user interface for Java, I&#39;ve started trying to learn it. Since I&#39;m also learning Clojure, I&#39;m doing the work in that language.
+One of the things I&#39;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
     </item>
     
     <item>
@@ -214,7 +206,7 @@ One of the things I&amp;rsquo;ve been looking into is how the interface responds
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
-      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&#39;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&#39;t seem to be such a thing and I haven&#39;t created one that I&#39;m satisfied with.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -224,7 +216,7 @@ One of the things I&amp;rsquo;ve been looking into is how the interface responds
       
       <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
       <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
-Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&#39;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
     </item>
     
     <item>
@@ -243,7 +235,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
-      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&#39;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -252,7 +244,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Sun, 13 Feb 2011 02:10:46 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</guid>
-      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&#39;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -261,7 +253,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Sun, 23 Jan 2011 01:41:21 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</guid>
-      <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&amp;rsquo;s the code I came up with that actually worked.
+      <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&#39;s the code I came up with that actually worked.
 import javax.swing.*; import java.awt.*; public class CornerButton extends JFrame { public CornerButton() { JTextArea area = new JTextArea(20, 20); JScrollPane scroll = new JScrollPane(area); Icon icn = UIManager.</description>
     </item>
     

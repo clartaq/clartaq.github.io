@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>What&#39;s Broken Today &middot; Yo-Dave</title>
 
@@ -258,19 +258,23 @@
 </div>
 
   <p>Like most days, I got up ready to tackle a bunch of problems and features on some of the software I work on. But, as is often the case, I was stymied by technical problems and got almost nothing done. The problems?</p>
-
 <ul>
-<li><p>None of the <a href="https://www.jetbrains.com/">JetBrains IDEs</a> that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast. This is related to my recent upgrade to Windows 10. It was fixed once, but is broken again because of a new build of Windows 10.</p></li>
-
-<li><p>One of my servers had just stopped working without any indication as to why. Nothing unusual in the logs. Just had to start it back up. Now it’s acting like nothing ever happened at all.</p></li>
-
-<li><p><a href="https://www.gnu.org/software/emacs/">Emacs</a> will no longer launch a <a href="https://github.com/clojure-emacs/cider">CIDER repl</a>. Emacs is another of the editors I use for development. You can do just about anything with it — eventually. CIDER lets me run a Clojure REPL in emacs. Except today.</p></li>
-
-<li><p><a href="http://tortoisehg.bitbucket.io/">TortoiseHg</a> no longer shows file status icon overlays in Explorer. I use TortoiseHg as a Windows shell extension for the <a href="https://www.mercurial-scm.org/">Mercurial</a> distributed version control system. It lets me do quick checks to assure myself that files have been changed, committed, <em>etc</em>. as expected. Now I’m back to doing it by hand. (In my opinion, NetBeans has the best integration with Mercurial. Unfortunately, the project in question was not in a language that NetBeans can work with. Must be one of the two or three left. ;-)</p></li>
-
-<li><p>I wanted to try something new and have one of my server programs show some pretty-printed Clojure maps in the browser. I’ve done pretty-printing in Clojure before. This time it was <a href="https://github.com/clojure/clojurescript">ClojureScript</a>. Alas, nothing worked. The examples I was able to find didn’t even compile. The official documentation seemed to be talking about a completely different piece of software. My IDE was able to find and display online documentation for the functions I was using, but the compiler said the namespace didn’t even exist.</p></li>
+<li>
+<p>None of the <a href="https://www.jetbrains.com/">JetBrains IDEs</a> that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast. This is related to my recent upgrade to Windows 10. It was fixed once, but is broken again because of a new build of Windows 10.</p>
+</li>
+<li>
+<p>One of my servers had just stopped working without any indication as to why. Nothing unusual in the logs. Just had to start it back up. Now it’s acting like nothing ever happened at all.</p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/emacs/">Emacs</a> will no longer launch a <a href="https://github.com/clojure-emacs/cider">CIDER repl</a>. Emacs is another of the editors I use for development. You can do just about anything with it — eventually. CIDER lets me run a Clojure REPL in emacs. Except today.</p>
+</li>
+<li>
+<p><a href="http://tortoisehg.bitbucket.io/">TortoiseHg</a> no longer shows file status icon overlays in Explorer. I use TortoiseHg as a Windows shell extension for the <a href="https://www.mercurial-scm.org/">Mercurial</a> distributed version control system. It lets me do quick checks to assure myself that files have been changed, committed, <em>etc</em>. as expected. Now I’m back to doing it by hand. (In my opinion, NetBeans has the best integration with Mercurial. Unfortunately, the project in question was not in a language that NetBeans can work with. Must be one of the two or three left. ;-)</p>
+</li>
+<li>
+<p>I wanted to try something new and have one of my server programs show some pretty-printed Clojure maps in the browser. I’ve done pretty-printing in Clojure before. This time it was <a href="https://github.com/clojure/clojurescript">ClojureScript</a>. Alas, nothing worked. The examples I was able to find didn’t even compile. The official documentation seemed to be talking about a completely different piece of software. My IDE was able to find and display online documentation for the functions I was using, but the compiler said the namespace didn’t even exist.</p>
+</li>
 </ul>
-
 <p>So I spent hours tracking down the causes of these failures (and very few fixes.) It just makes me sad that we have to waste so much time on stuff like this.</p>
 
 

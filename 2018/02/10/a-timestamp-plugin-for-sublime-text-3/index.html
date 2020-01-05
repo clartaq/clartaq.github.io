@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>A Timestamp Plugin for Sublime Text 3 &middot; Yo-Dave</title>
 
@@ -259,55 +259,43 @@
 
 </div>
 
-  <p>Since switching from Windows to a Mac in the middle of developing a new wiki, I lost access to the <a href="http://markdownpad.com">MarkdownPad</a> <a href="https://daringfireball.net/projects/markdown/">Markdown</a> editor &ndash; it&rsquo;s Windows only. One of the nice features of MarkdownPad was the ability to insert a timestamp easily. It&rsquo;s what I used to insert the creation date and the time of the last modification.</p>
-
-<p>Since the switch, I&rsquo;ve been using <a href="http://plaintext-productivity.net/2-04-how-to-set-up-sublime-text-for-markdown-editing.html">Sublime Text 3 as my editor for Markdown</a> files. I wanted to recreate the ability to insert timestamps with a keystroke.</p>
-
+  <p>Since switching from Windows to a Mac in the middle of developing a new wiki, I lost access to the <a href="http://markdownpad.com">MarkdownPad</a> <a href="https://daringfireball.net/projects/markdown/">Markdown</a> editor &ndash; it's Windows only. One of the nice features of MarkdownPad was the ability to insert a timestamp easily. It's what I used to insert the creation date and the time of the last modification.</p>
+<p>Since the switch, I've been using <a href="http://plaintext-productivity.net/2-04-how-to-set-up-sublime-text-for-markdown-editing.html">Sublime Text 3 as my editor for Markdown</a> files. I wanted to recreate the ability to insert timestamps with a keystroke.</p>
 <p>I found this <a href="https://stackoverflow.com/questions/11879481/can-i-add-date-time-for-sublime-snippet#13882791">answer</a> to a similar question on StackOverflow.</p>
-
 <p>Getting a timestamp worked, but it was in the wrong format. (Not really wrong, just an old version that I used based on the MarkdownPad editor.) I wanted to make the the output of the <code>Export</code> function of CWiki as compatible as possible with the input expected by the <a href="https://gohugo.io">Hugo</a> static blog generator. That required a different format. For example, as I write this, the ISO 8601 version of the current instant is <code>2018-03-09T10:26:35.249840-05:00</code>.</p>
-
 <p>Based on that, I added the following little snippet as a plugin for Sublime Text (Tools/Developer/New Plugin&hellip;).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> datetime<span style="color:#f92672">,</span> time<span style="color:#f92672">,</span> getpass
+<span style="color:#f92672">import</span> sublime<span style="color:#f92672">,</span> sublime_plugin
 
-<pre><code class="language-python">import datetime, time, getpass
-import sublime, sublime_plugin
+<span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> gmtime, strftime
+<span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timezone
 
-from time import gmtime, strftime
-from datetime import datetime, timezone
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddDateCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">insert_snippet</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">contents</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%</span><span style="color:#e6db74">B </span><span style="color:#e6db74">%</span><span style="color:#e6db74">Y (</span><span style="color:#e6db74">%</span><span style="color:#e6db74">A)</span><span style="color:#e6db74">&#34;</span>) } )
 
-class AddDateCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  datetime.now().strftime(&quot;%d %B %Y (%A)&quot;) } )
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTimeCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">insert_snippet</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">contents</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">H:</span><span style="color:#e6db74">%</span><span style="color:#e6db74">M</span><span style="color:#e6db74">&#34;</span>) } )
 
-class AddTimeCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  datetime.now().strftime(&quot;%H:%M&quot;) } )
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddOldTimestampCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">insert_snippet</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">contents</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%</span><span style="color:#e6db74">m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%</span><span style="color:#e6db74">Y </span><span style="color:#e6db74">%</span><span style="color:#e6db74">I:</span><span style="color:#e6db74">%</span><span style="color:#e6db74">M:</span><span style="color:#e6db74">%</span><span style="color:#e6db74">S </span><span style="color:#e6db74">%</span><span style="color:#e6db74">p</span><span style="color:#e6db74">&#34;</span>) } )
 
-class AddOldTimestampCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  datetime.now().strftime(&quot;%m/%d/%Y %I:%M:%S %p&quot;) } )
-
-class AddTimestampCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        self.view.run_command(&quot;insert_snippet&quot;, { &quot;contents&quot;: &quot;%s&quot; %  (datetime.now(timezone.utc).astimezone().isoformat() )} )
-</code></pre>
-
-<p>The <code>AddOldTimestampCommand</code> produces timestamp formatting that is almost exactly the same as that used by MarkdownPad.</p>
-
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTimestampCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">insert_snippet</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">contents</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  (datetime<span style="color:#f92672">.</span>now(timezone<span style="color:#f92672">.</span>utc)<span style="color:#f92672">.</span>astimezone()<span style="color:#f92672">.</span>isoformat() )} )
+</code></pre></div><p>The <code>AddOldTimestampCommand</code> produces timestamp formatting that is almost exactly the same as that used by MarkdownPad.</p>
 <p>The <code>AddTimestampCommand</code> produces the ISO format used by the export function and Hugo.</p>
-
 <p>Then I added the following code to my key preferences (Sublime Text/Preferences/Key Bindings)</p>
-
 <pre><code>[
-   { &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: {&quot;target&quot;: &quot;browser&quot;, &quot;parser&quot;:&quot;markdown&quot;} },
-   { &quot;keys&quot;: [&quot;ctrl+shift+,&quot;], &quot;command&quot;: &quot;add_date&quot; },
-   { &quot;keys&quot;: [&quot;ctrl+shift+.&quot;], &quot;command&quot;: &quot;add_time&quot; },
-   { &quot;keys&quot;: [&quot;alt+shift+t&quot;], &quot;command&quot;: &quot;add_old_timestamp&quot; },
-   { &quot;keys&quot;: [&quot;alt+t&quot;], &quot;command&quot;: &quot;add_timestamp&quot; }
+  { &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: {&quot;target&quot;: &quot;browser&quot;, &quot;parser&quot;:&quot;markdown&quot;} },
+  { &quot;keys&quot;: [&quot;ctrl+shift+,&quot;], &quot;command&quot;: &quot;add_date&quot; },
+  { &quot;keys&quot;: [&quot;ctrl+shift+.&quot;], &quot;command&quot;: &quot;add_time&quot; },
+  { &quot;keys&quot;: [&quot;alt+shift+t&quot;], &quot;command&quot;: &quot;add_old_timestamp&quot; },
+  { &quot;keys&quot;: [&quot;alt+t&quot;], &quot;command&quot;: &quot;add_timestamp&quot; }
 ]
-</code></pre>
-
-<p><em>Viola!</em> Now I can insert timestamps into my front matter to my heart&rsquo;s content.</p>
+</code></pre><p><em>Viola!</em> Now I can insert timestamps into my front matter to my heart's content.</p>
 
 
   

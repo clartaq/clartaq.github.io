@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>configuration on Yo-Dave</title>
@@ -30,7 +30,7 @@ Eventually, I came across this link to a post of possible solutions containing t
       
       <guid>https://yo-dave.com/2015/12/30/whats-broken-today/</guid>
       <description>Like most days, I got up ready to tackle a bunch of problems and features on some of the software I work on. But, as is often the case, I was stymied by technical problems and got almost nothing done. The problems?
- None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
+  None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
     </item>
     
     <item>

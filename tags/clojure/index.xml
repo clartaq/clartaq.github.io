@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>clojure on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/06/27/letting-the-user-change-the-sidebar-width-in-cwiki/</guid>
-      <description>Recently, I&amp;rsquo;ve been working on what I thought was a simple feature &amp;ndash; changing the width of the sidebar in the CWiki wiki program.
+      <description>Recently, I&#39;ve been working on what I thought was a simple feature &amp;ndash; changing the width of the sidebar in the CWiki wiki program.
 There were two ways the user could do it.
 First, they could set it manually in the &amp;ldquo;Preferences&amp;rdquo; page.
 Second, and more naturally in my opinion, they could use the mouse to drag the separator between the sidebar and the main article area to the location they wanted it.</description>
@@ -32,7 +32,7 @@ Second, and more naturally in my opinion, they could use the mouse to drag the s
       <guid>https://yo-dave.com/2018/09/16/writing-a-flexmark-extension-in-clojure/</guid>
       <description>Writing wiki pages using Markdown is a great way to do things because it is simple, well-known, and capable.
 One of the annoyances of using Markdown is that it has no default syntax to create wikilinks, a type of hyperlink that links one page in a wiki to another.
-I&amp;rsquo;ve been working on a home-grown, personal wiki, CWiki, for almost a year now off and on. It&amp;rsquo;s written in the Clojure programming language, which is a pleasure to use.</description>
+I&#39;ve been working on a home-grown, personal wiki, CWiki, for almost a year now off and on. It&#39;s written in the Clojure programming language, which is a pleasure to use.</description>
     </item>
     
     <item>
@@ -51,9 +51,9 @@ I&amp;rsquo;ve been working on a home-grown, personal wiki, CWiki, for almost a 
       <pubDate>Tue, 01 May 2018 09:38:50 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/05/01/cwiki-next/</guid>
-      <description>For the past few months, I&amp;rsquo;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
-It actually works pretty well. I&amp;rsquo;ve been using it for personal information for months now. It works well except for one aspect, arguably the most important &amp;ndash; editing new or existing content is not that pleasant.
-It&amp;rsquo;s all a variation of Markdown, which is nice.</description>
+      <description>For the past few months, I&#39;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using Clojure.
+It actually works pretty well. I&#39;ve been using it for personal information for months now. It works well except for one aspect, arguably the most important &amp;ndash; editing new or existing content is not that pleasant.
+It&#39;s all a variation of Markdown, which is nice.</description>
     </item>
     
     <item>
@@ -62,8 +62,8 @@ It&amp;rsquo;s all a variation of Markdown, which is nice.</description>
       <pubDate>Fri, 20 Apr 2018 10:14:36 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/04/20/notes-on-clojurescript-regular-expressions/</guid>
-      <description>There&amp;rsquo;s an old saying about regular expressions &amp;ndash; paraphrasing: &amp;ldquo;If you try to solve a problem with regular expressions, you then have two problems.&amp;rdquo;
-Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&amp;rsquo;s version of regular expressions are different.</description>
+      <description>There&#39;s an old saying about regular expressions &amp;ndash; paraphrasing: &amp;ldquo;If you try to solve a problem with regular expressions, you then have two problems.&amp;rdquo;
+Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&#39;s version of regular expressions are different.</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ Even though regular expressions are present in most programming languages, I hav
       
       <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</guid>
       <description>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
-What could be more natural than to string those pieces of code together with one of Clojure&amp;rsquo;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;gt;&amp;gt;.</description>
+What could be more natural than to string those pieces of code together with one of Clojure&#39;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;raquo;.</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ If all of the things are strings, you can use the built-in string/join function 
       
       <guid>https://yo-dave.com/2018/01/19/sorted-set-by/</guid>
       <description>This is just a little note about one of my favorite datatypes in Clojure.
-Like most Lisps, Clojure has a very useful group of datatypes built in including some set types. I use sorted-set a lot. Until recently, I hadn&amp;rsquo;t noticed sorted-set-by, a function that returns a sorted set using a comparator you specify. I found myself needing to create a sorted set of strings where the sorting was case-insensitive. The sorted-set-by function was exactly what I needed.</description>
+Like most Lisps, Clojure has a very useful group of datatypes built in including some set types. I use sorted-set a lot. Until recently, I hadn&#39;t noticed sorted-set-by, a function that returns a sorted set using a comparator you specify. I found myself needing to create a sorted set of strings where the sorting was case-insensitive. The sorted-set-by function was exactly what I needed.</description>
     </item>
     
     <item>
@@ -125,8 +125,8 @@ Making the transition from Swing to JavaFX was relatively painless because the p
       <guid>https://yo-dave.com/2017/08/31/an-updated-sign-test-program/</guid>
       <description>Long ago, I wrote a post about a small program to calculate the probabilities of a sign test.
 A lot has happened since then.
-The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&amp;rsquo;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
-So I&amp;rsquo;ve updated the program a bit.</description>
+The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&#39;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
+So I&#39;ve updated the program a bit.</description>
     </item>
     
     <item>
@@ -135,7 +135,7 @@ So I&amp;rsquo;ve updated the program a bit.</description>
       <pubDate>Sun, 14 May 2017 09:54:13 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/05/14/leiningen-passing-invalid-flags-to-java-compiler/</guid>
-      <description>Just a note about some weirdness in my work process and it&amp;#8217;s solution.
+      <description>Just a note about some weirdness in my work process and it’s solution.
 A few weeks ago, I started noticing some weirdness in trying to use some tools with Leiningen while developing a program in Clojure. When running tools like kibit, lein would fail with an error from javac about an invalid flag. Initially these flags were for attempts to set the file encoding. And the file encoding kept changing.</description>
     </item>
     
@@ -145,8 +145,8 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
-      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
-But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
+      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&#39;s friendly and extremely helpful error messages. It&#39;s really attractive in many ways.
+But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;quot;. And it finally occurred to me that I&#39;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
     
     <item>
@@ -155,10 +155,8 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Sat, 03 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/10/03/using-local-java-jars-in-clojure-projects/</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
-
+      <description>&lt;p&gt;Recently, I&#39;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
 &lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
     </item>
     
@@ -168,7 +166,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</guid>
-      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
+      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&#39;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -177,7 +175,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -187,8 +185,7 @@ But when I started looking at examples, I often found myself thinking things lik
       
       <guid>https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/</guid>
       <description>&lt;p&gt;I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.&lt;/p&gt;
-
-&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
+&lt;p&gt;For some time, I&#39;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -197,7 +194,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</guid>
-      <description>Just a short rant about JavaFX because I&amp;rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+      <description>Just a short rant about JavaFX because I&#39;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
 This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.</description>
     </item>
     
@@ -207,9 +204,9 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</guid>
-      <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&amp;rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
-Here&amp;rsquo;s the new snippet.
-(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.</description>
+      <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&#39;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
+Here&#39;s the new snippet.
+(ns clojure_font_loading.core(:gen-class:extends javafx.application.Application)(:import[javafx.application Application][javafx.event EventHandler][javafx.scene Scene][avafx.scene.control Button][javafx.scene.layout StackPane VBox][javafx.</description>
     </item>
     
     <item>
@@ -218,8 +215,8 @@ Here&amp;rsquo;s the new snippet.
       <pubDate>Sat, 10 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/10/loading-fonts-like-css/</guid>
-      <description>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &amp;ldquo;preferred&amp;rdquo; font through a series of less ideal typefaces depending on what&amp;rsquo;s available on the machine doing the display.
-That&amp;rsquo;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</description>
+      <description>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &amp;ldquo;preferred&amp;rdquo; font through a series of less ideal typefaces depending on what&#39;s available on the machine doing the display.
+That&#39;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</description>
     </item>
     
     <item>
@@ -228,8 +225,8 @@ That&amp;rsquo;s a handy facility to have, even on Windows, which can have diffe
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
-      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;rdquo;C:\Users\David Clark&amp;rdquo; on my system.)
-My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
+      <description>I&#39;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&#39;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;ldquo;C:\Users\David Clark&amp;rdquo; on my system.)
+My user profile name is &amp;ldquo;david&amp;rdquo;. That&#39;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
     </item>
     
     <item>
@@ -238,8 +235,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/06/n-queens/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&amp;rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&amp;rsquo;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;lsquo;70s.&lt;/p&gt;
-
+      <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&#39;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&#39;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;lsquo;70s.&lt;/p&gt;
 &lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;</description>
     </item>
     
@@ -249,7 +245,7 @@ My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use
       <pubDate>Tue, 25 Jun 2013 18:16:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</guid>
-      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure (Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
+      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure(Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
 As this is written, the tools used include:</description>
     </item>
     
@@ -259,7 +255,7 @@ As this is written, the tools used include:</description>
       <pubDate>Tue, 04 Jun 2013 04:24:09 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</guid>
-      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&amp;rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
+      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&#39;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
     </item>
     
     <item>
@@ -268,7 +264,7 @@ As this is written, the tools used include:</description>
       <pubDate>Sat, 01 Jun 2013 22:26:04 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&amp;rsquo;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;del&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&#39;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -286,7 +282,7 @@ As this is written, the tools used include:</description>
       <pubDate>Wed, 08 May 2013 17:20:37 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/05/08/clojure-javafx-and-tic-tac-toe/</guid>
-      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&#39;s containing window was re-sized. In the past I&#39;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -295,8 +291,8 @@ As this is written, the tools used include:</description>
       <pubDate>Mon, 18 Feb 2013 21:48:11 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</guid>
-      <description>Since JavaFX is the future of the user interface for Java, I&amp;rsquo;ve started trying to learn it. Since I&amp;rsquo;m also learning Clojure, I&amp;rsquo;m doing the work in that language.
-One of the things I&amp;rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
+      <description>Since JavaFX is the future of the user interface for Java, I&#39;ve started trying to learn it. Since I&#39;m also learning Clojure, I&#39;m doing the work in that language.
+One of the things I&#39;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
     </item>
     
     <item>
@@ -315,7 +311,7 @@ One of the things I&amp;rsquo;ve been looking into is how the interface responds
       
       <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
       <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
-Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&#39;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
     </item>
     
     <item>
@@ -324,7 +320,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&#39;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -333,7 +329,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
-      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
+      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&#39;t stop trying to use Lisp because they don&#39;t like the language. A lot of people stop because they don&#39;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
     </item>
     
     <item>
@@ -342,7 +338,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Sun, 13 Feb 2011 02:10:46 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</guid>
-      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&#39;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -351,9 +347,8 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Sat, 29 Jan 2011 23:53:30 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</guid>
-      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&amp;rsquo;t quite that simple.&lt;/p&gt;
-
-&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&#39;t quite that simple.&lt;/p&gt;
+&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&#39;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -362,7 +357,7 @@ Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a sta
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve used &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&#39;s what I had to do.&lt;/p&gt;</description>
     </item>
     
   </channel>

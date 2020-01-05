@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>upgrading on Yo-Dave</title>
@@ -18,9 +18,9 @@
       <pubDate>Sat, 17 Mar 2018 13:24:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/03/17/so-many-broken-links/</guid>
-      <description>As noted in yesterday&amp;rsquo;s blog, I&amp;rsquo;m making a sweep through my previous posts trying to fix links that have broken over the years. This is in preparation for switching to another blogging platform.
+      <description>As noted in yesterday&#39;s blog, I&#39;m making a sweep through my previous posts trying to fix links that have broken over the years. This is in preparation for switching to another blogging platform.
 I find that the rot even creeps into the README.md files in my own code repositories. Many of them refer back to descriptions of the repositories posted to no longer existing versions of the blog.
-I&amp;rsquo;ll fix those as soon as I can.</description>
+I&#39;ll fix those as soon as I can.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ Eventually, I came across this link to a post of possible solutions containing t
       
       <guid>https://yo-dave.com/2015/12/30/whats-broken-today/</guid>
       <description>Like most days, I got up ready to tackle a bunch of problems and features on some of the software I work on. But, as is often the case, I was stymied by technical problems and got almost nothing done. The problems?
- None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
+  None of the JetBrains IDEs that I use could open a working terminal window. For most work, these are my tools of choice for programming tasks. Without a terminal, I can get by, but it isn’t as convenient or fast.</description>
     </item>
     
     <item>

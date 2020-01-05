@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nodejs on Yo-Dave</title>
@@ -19,7 +19,6 @@
       
       <guid>https://yo-dave.com/2016/02/14/river5-on-ubuntu-14.04-lts-with-a-cloudatcost-vs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is the latest in a series of &lt;a href=&#34;https://en.wikipedia.org/wiki/RSS&#34;&gt;RSS&lt;/a&gt; News Aggretators written by &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt;. You can read his announcement &lt;a href=&#34;http://scripting.com/liveblog/users/davewiner/2016/02/09/0995.html&#34;&gt;here&lt;/a&gt;. These notes describe how to set up a River of News on a Virtual Server (VS) purchased or rented from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; and freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04.&lt;/p&gt;
-
 &lt;p&gt;These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     

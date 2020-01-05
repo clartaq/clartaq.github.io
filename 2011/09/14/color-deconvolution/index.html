@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Color Deconvolution &middot; Yo-Dave</title>
 
@@ -255,25 +255,16 @@
 
 </div>
 
-  <p>One method I&rsquo;ve used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.</p>
-
-<p>In my previous work, I&rsquo;ve used this technique to analyze and quantify the amount of dye in a histologically stained tissue sample. For example, you may want to know how much eosin (a bright pinkish-red dye) and hematoxylin (purplish-blue dye) are present in a region of stained tissue.</p>
-
-<p>Here&rsquo;s a magnified image of a piece of tissue stained with hematoxylin and eosin. Those are red blood cells near the top. The dark purple structures near the bottom are nuclei. The rest of the pink stuff is stained mostly with eosin.</p>
-
-<p><a href="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg"><img src="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg" alt="Example of H&amp;E Stained Tissue" title="Example of H&amp;E Stained Tissue" /> <br><small>Example of H&amp;E Stained Tissue</small></a></p>
-
+  <p>One method I've used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.</p>
+<p>In my previous work, I've used this technique to analyze and quantify the amount of dye in a histologically stained tissue sample. For example, you may want to know how much eosin (a bright pinkish-red dye) and hematoxylin (purplish-blue dye) are present in a region of stained tissue.</p>
+<p>Here's a magnified image of a piece of tissue stained with hematoxylin and eosin. Those are red blood cells near the top. The dark purple structures near the bottom are nuclei. The rest of the pink stuff is stained mostly with eosin.</p>
+<p><a href="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg"><img src="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg" alt="Example of H&E Stained Tissue" title="Example of H&amp;E Stained Tissue"> <!-- raw HTML omitted --><!-- raw HTML omitted -->Example of H&amp;E Stained Tissue<!-- raw HTML omitted --></a></p>
 <p>What if you want to know how much of each dye is staining a particular structure. Color deconvolution is the technique to use to find out. In addition to a big pile of numbers, the output can be shown visually to give an impression of the relative intensities. Below is an example of such output</p>
-
-<p><a href="https://yo-dave.com/static/img/2011-09-14-DeconvSnip.PNG"><img src="https://yo-dave.com/static/img/2011-09-14-DeconvSnip.PNG" alt="Three Channels of Deconvolved Image" title="Three Channels of Deconvolved Image" /><br><small>Three Channels of Deconvolved Image</small></a></p>
-
-<p>The left sub-image represents the intensity of hematoxylin and is shown in roughly the color of the dye itself. The middle image shows how eosin is distributed through the tissue. The right image is what&rsquo;s &ldquo;left over&rdquo;, neither hematoxylin or eosin.</p>
-
+<p><a href="https://yo-dave.com/static/img/2011-09-14-DeconvSnip.PNG"><img src="https://yo-dave.com/static/img/2011-09-14-DeconvSnip.PNG" alt="Three Channels of Deconvolved Image" title="Three Channels of Deconvolved Image"><!-- raw HTML omitted --><!-- raw HTML omitted -->Three Channels of Deconvolved Image<!-- raw HTML omitted --></a></p>
+<p>The left sub-image represents the intensity of hematoxylin and is shown in roughly the color of the dye itself. The middle image shows how eosin is distributed through the tissue. The right image is what's &ldquo;left over&rdquo;, neither hematoxylin or eosin.</p>
 <p>There are a number of ways to do these calculations. The canonical way is the method first presented by Ruifrok and Johnston in their 2001 paper &ldquo;Quantification of Histochemical Staining by Color Deconvolution&rdquo;. This is a supervised method where the user must provide a color basis for the dyes based on a manual calibration process.</p>
-
-<p>A more helpful method might be some unsupervised calculation such as that provided by Macenko <em>et al</em>. in their 2009 paper &ldquo;A Method for Normalizing Histology Slides for Quantitative Analysis&rdquo;. However, I haven&rsquo;t found any unsupervised method that reliably gives results as good as a supervised method.</p>
-
-<p>I&rsquo;ve put some of my work on the implementation of these calculations up in a GitHub respository at <a href="https://github.com/clartaq/Color-Deconvolution">https://github.com/clartaq/Color-Deconvolution</a>. The files there consist of annotated worked examples and code in <a href="http://www.wolfram.com/mathematica/"><em>Mathematica</em></a> notebooks. The original papers referred to here are also available in the repository. To alter the files you will need a full copy of <em>Mathematica</em> 8. If you would just like to view them, you can use the free <a href="http://www.wolfram.com/products/player/"><em>Mathematica</em> CDF Player</a>.</p>
+<p>A more helpful method might be some unsupervised calculation such as that provided by Macenko <em>et al</em>. in their 2009 paper &ldquo;A Method for Normalizing Histology Slides for Quantitative Analysis&rdquo;. However, I haven't found any unsupervised method that reliably gives results as good as a supervised method.</p>
+<p>I've put some of my work on the implementation of these calculations up in a GitHub respository at <a href="https://github.com/clartaq/Color-Deconvolution">https://github.com/clartaq/Color-Deconvolution</a>. The files there consist of annotated worked examples and code in <a href="http://www.wolfram.com/mathematica/"><em>Mathematica</em></a> notebooks. The original papers referred to here are also available in the repository. To alter the files you will need a full copy of <em>Mathematica</em> 8. If you would just like to view them, you can use the free <a href="http://www.wolfram.com/products/player/"><em>Mathematica</em> CDF Player</a>.</p>
 
   
 <div class="prev-next-post pure-g">

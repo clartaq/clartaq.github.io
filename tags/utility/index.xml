@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>utility on Yo-Dave</title>
@@ -39,7 +39,7 @@ I set up public key authentication, but it would not work with the permissions o
       <pubDate>Tue, 04 Mar 2014 13:26:26 +0000</pubDate>
       
       <guid>https://yo-dave.com/2014/03/04/another-program-id-like-to-find-or-write/</guid>
-      <description>As I&amp;rsquo;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.</description>
+      <description>As I&#39;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ I set up public key authentication, but it would not work with the permissions o
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
-      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&#39;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
     </item>
     
   </channel>

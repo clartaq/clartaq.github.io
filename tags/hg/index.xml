@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hg on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 25 Aug 2019 12:10:31 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/</guid>
-      <description>With the recent announcement that Bitbucket is &amp;ldquo;sunsetting&amp;rdquo; Mercurial support, I&amp;rsquo;ve been looking at ways of hosting remote copies of my repositories on my own.
+      <description>With the recent announcement that Bitbucket is &amp;ldquo;sunsetting&amp;rdquo; Mercurial support, I&#39;ve been looking at ways of hosting remote copies of my repositories on my own.
 In the short term, I have just cloned my repositories from Bitbucket onto a Raspberry Pi 4 sitting behind my home desktop. I use Pi to run a River of News aggregator for my family. It has plenty of capacity for a task like this.</description>
     </item>
     

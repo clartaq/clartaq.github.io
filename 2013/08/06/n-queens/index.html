@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>N-Queens &middot; Yo-Dave</title>
 
@@ -255,17 +255,12 @@
 
 </div>
 
-  <p>The <a href="http://en.wikipedia.org/wiki/Eight_queens_puzzle">N-Queens</a> puzzle is a classic computer science problem. In fact, it&rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to <a href="http://en.wikipedia.org/wiki/Backtracking">backtracking algorithms</a> in computer science. I was first introduced to the problem in Niklaus Wirth&rsquo;s <em><a href="http://www.amazon.com/dp/0130224189">Algorithms + Data Structures = Programs</a></em> back in the &lsquo;70s.</p>
-
+  <p>The <a href="http://en.wikipedia.org/wiki/Eight_queens_puzzle">N-Queens</a> puzzle is a classic computer science problem. In fact, it's much older than discipline of computer science. It is usually used as a problem to introduce students to <a href="http://en.wikipedia.org/wiki/Backtracking">backtracking algorithms</a> in computer science. I was first introduced to the problem in Niklaus Wirth's <em><a href="http://www.amazon.com/dp/0130224189">Algorithms + Data Structures = Programs</a></em> back in the &lsquo;70s.</p>
 <p>I thought it might be interesting to write an updated version in my continuing effort to become proficient in <a href="http://clojure.org/">Clojure</a>.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.</p>
-
 <p>Instead, I came across some interesting existing examples in the language. In researching the problem, I first came across the <a href="http://rosettacode.org/wiki/N-queens_problem#Clojure">version</a> at <a href="http://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>. The code seems concise and straightforward. I also came across a <a href="http://blog.mired.org/2011/03/easy-parallel-processing-in-clojure.html">version</a> at the <a href="http://blog.mired.org/">Mired in Code</a> blog. Again, the code seems clean.</p>
-
-<p>Imagine my surprise when I benchmarked the two versions and found that the implementation at Mired in Code was 40 (serial version) to 100 (parallel version) times faster than the solution presented at Rosetta Code. I&rsquo;m not expert enough at Clojure to discover the reason for the difference just by inspecting the code. And I&rsquo;m not expert enough with profiling Clojure to have discovered the difference by analysis yet.</p>
-
+<p>Imagine my surprise when I benchmarked the two versions and found that the implementation at Mired in Code was 40 (serial version) to 100 (parallel version) times faster than the solution presented at Rosetta Code. I'm not expert enough at Clojure to discover the reason for the difference just by inspecting the code. And I'm not expert enough with profiling Clojure to have discovered the difference by analysis yet.</p>
 <p>But I thought I would post a repository containing a simple benchmarking project illustrating the differences <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/n-queens/tree/default">here</a> for anyone interested.</p>
-
-<p>One more interesting thing. Professor Wirth once wrote that his solution took about one second to run back in the 70&rsquo;s on a rather powerful mainframe of the time. It&rsquo;s pretty gratifying to see that the slow version of the solutions runs that fast on a desktop today. It is even more gratifying to see that a faster version is up to 100x quicker.</p>
+<p>One more interesting thing. Professor Wirth once wrote that his solution took about one second to run back in the 70's on a rather powerful mainframe of the time. It's pretty gratifying to see that the slow version of the solutions runs that fast on a desktop today. It is even more gratifying to see that a faster version is up to 100x quicker.</p>
 
   
 <div class="prev-next-post pure-g">

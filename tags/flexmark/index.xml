@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>flexmark on Yo-Dave</title>
@@ -20,7 +20,7 @@
       <guid>https://yo-dave.com/2018/09/16/writing-a-flexmark-extension-in-clojure/</guid>
       <description>Writing wiki pages using Markdown is a great way to do things because it is simple, well-known, and capable.
 One of the annoyances of using Markdown is that it has no default syntax to create wikilinks, a type of hyperlink that links one page in a wiki to another.
-I&amp;rsquo;ve been working on a home-grown, personal wiki, CWiki, for almost a year now off and on. It&amp;rsquo;s written in the Clojure programming language, which is a pleasure to use.</description>
+I&#39;ve been working on a home-grown, personal wiki, CWiki, for almost a year now off and on. It&#39;s written in the Clojure programming language, which is a pleasure to use.</description>
     </item>
     
   </channel>

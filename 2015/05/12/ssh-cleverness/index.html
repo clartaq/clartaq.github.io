@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>ssh Cleverness &middot; Yo-Dave</title>
 
@@ -256,15 +256,10 @@
 </div>
 
   <p>Just a quick note about using SSH. Recently I had to wipe and re-install Ubuntu. (More on that later.) That meant my ssh private key was wiped as well. In order to replace it, I copied the file from a Windows machine onto my newly installed Linux partition.</p>
-
 <p>When I tried to log into some of my other servers, ssh gave me a warning about lax permissions and refused to log in without my password. Very clever. I never even thought to check the permissions of the file I copied over.</p>
-
 <p>Setting the correct permissions:</p>
-
-<pre><code class="language-shell">chmod 600 ~/.ssh/id_rsa
-</code></pre>
-
-<p>fixed the problem.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">chmod <span style="color:#ae81ff">600</span> ~/.ssh/id_rsa
+</code></pre></div><p>fixed the problem.</p>
 
 
   

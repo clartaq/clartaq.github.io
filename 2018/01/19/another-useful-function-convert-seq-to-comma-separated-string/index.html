@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Another Useful Function -- convert-seq-to-comma-separated-string &middot; Yo-Dave</title>
 
@@ -258,38 +258,32 @@
 </div>
 
   <p>This is a little note about a function I find myself using frequently in <a href="https://clojure.org/">Clojure</a>.</p>
-
 <p>User interface code often needs to display a list of things as a comma-separated list, e.g. &ldquo;a, b, c, d&rdquo;.</p>
-
 <p>If all of the things are strings, you can use the built-in <code>string/join</code> function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use <code>string/join</code>. Or you could build your own. I like the function presented below, <code>convert-seq-to-comma-separated-string</code>. (Ok, the name needs some work.)</p>
-
-<p>Here&rsquo;s an example of usage.</p>
-
-<pre><code class="language-Clojure">(defn convert-seq-to-comma-separated-string
-  &quot;Return a string containing the members of the sequence separated by commas.&quot;
+<p>Here's an example of usage.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Clojure" data-lang="Clojure">(<span style="color:#66d9ef">defn </span>convert-seq-to-comma-separated-string
+  <span style="color:#e6db74">&#34;Return a string containing the members of the sequence separated by commas.&#34;</span>
   [the-seq]
-  (let [but-last-comma-mapped (map #(str % &quot;, &quot;) (butlast the-seq))]
+  (<span style="color:#66d9ef">let </span>[but-last-comma-mapped (map <span style="color:#f92672">#</span>(str % <span style="color:#e6db74">&#34;, &#34;</span>) (butlast the-seq))]
         (apply str (concat but-last-comma-mapped (str (last the-seq))))))
 
-(defn get-tag-names-for-page
-  &quot;Returns a case-insensitive sorted-set of tag names associated with the page.
-  If ther are no such tags (it's nil or an empy seq), returns a sorted set
-  containing the word 'None'.&quot;
+(<span style="color:#66d9ef">defn </span>get-tag-names-for-page
+  <span style="color:#e6db74">&#34;Returns a case-insensitive sorted-set of tag names associated with the page.
+</span><span style="color:#e6db74">  If ther are no such tags (it&#39;s nil or an empy seq), returns a sorted set
+</span><span style="color:#e6db74">  containing the word &#39;None&#39;.&#34;</span>
   ([page-id]
-   (get-tag-names-for-page page-id h2-db))
+   (<span style="color:#a6e22e">get-tag-names-for-page</span> page-id h2-db))
   ([page-id db]
-   (let [tag-ids (get-tag-ids-for-page page-id)]
-     (if (or (nil? tag-ids) (empty? tag-ids))
-       (into (sorted-set-by case-insensitive-comparator) [&quot;None&quot;])
-       (let [tag-ids-as-string (convert-seq-to-comma-separated-string tag-ids)
-             sql (str &quot;select tag_name from tags where tag_id in (&quot;
-                      tag-ids-as-string &quot;);&quot;)
-             rs (jdbc/query db [sql])]
-         (reduce #(conj %1 (:tag_name %2))
-                 (sorted-set-by case-insensitive-comparator) rs))))))
-</code></pre>
-
-<p>In this case, I wanted to build a SQL command that included a list of identifiers, integers in this case. The function has come in very handy for things like this.</p>
+   (<span style="color:#66d9ef">let </span>[tag-ids (<span style="color:#a6e22e">get-tag-ids-for-page</span> page-id)]
+     (<span style="color:#66d9ef">if </span>(or (nil? tag-ids) (<span style="color:#a6e22e">empty?</span> tag-ids))
+       (into (<span style="color:#a6e22e">sorted-set-by</span> case-insensitive-comparator) [<span style="color:#e6db74">&#34;None&#34;</span>])
+       (<span style="color:#66d9ef">let </span>[tag-ids-as-string (<span style="color:#a6e22e">convert-seq-to-comma-separated-string</span> tag-ids)
+             sql (str <span style="color:#e6db74">&#34;select tag_name from tags where tag_id in (&#34;</span>
+                      tag-ids-as-string <span style="color:#e6db74">&#34;);&#34;</span>)
+             rs (<span style="color:#a6e22e">jdbc/query</span> db [sql])]
+         (reduce <span style="color:#f92672">#</span>(conj %1 (<span style="color:#e6db74">:tag_name</span> %2))
+                 (<span style="color:#a6e22e">sorted-set-by</span> case-insensitive-comparator) rs))))))
+</code></pre></div><p>In this case, I wanted to build a SQL command that included a list of identifiers, integers in this case. The function has come in very handy for things like this.</p>
 
 
   

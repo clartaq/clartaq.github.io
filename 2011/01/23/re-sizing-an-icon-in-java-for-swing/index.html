@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Re-sizing an Icon in Java for Swing &middot; Yo-Dave</title>
 
@@ -257,46 +257,39 @@
 
 </div>
 
-  <p>Sometimes you have a resource like an icon or image that <em>almost</em> works, but not quite. For example, there was <a href="http://stackoverflow.com/questions/1946631/resizing-an-icon-to-correctly-fit-in-a-scrollpane-corner-button/1947371#1947371">a question on StackOverflow</a> about how to re-size an existing icon to fit in the smaller location at the lower right corner of a <code>JScrollPane</code>. The original poster was close. Here&rsquo;s the code I came up with that actually worked.</p>
+  <p>Sometimes you have a resource like an icon or image that <em>almost</em> works, but not quite. For example, there was <a href="http://stackoverflow.com/questions/1946631/resizing-an-icon-to-correctly-fit-in-a-scrollpane-corner-button/1947371#1947371">a question on StackOverflow</a> about how to re-size an existing icon to fit in the smaller location at the lower right corner of a <code>JScrollPane</code>. The original poster was close. Here's the code I came up with that actually worked.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javax.swing.*<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.awt.*<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">import javax.swing.*;
-import java.awt.*;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CornerButton</span> <span style="color:#66d9ef">extends</span> JFrame
+<span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CornerButton</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">{</span>
+        JTextArea area <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JTextArea<span style="color:#f92672">(</span>20<span style="color:#f92672">,</span> 20<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        JScrollPane scroll <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JScrollPane<span style="color:#f92672">(</span>area<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        Icon icn <span style="color:#f92672">=</span> UIManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getIcon</span><span style="color:#f92672">(</span><span style="color:#f92672">&amp;</span>quot<span style="color:#f92672">;</span>OptionPane<span style="color:#f92672">.</span><span style="color:#a6e22e">questionIcon</span><span style="color:#f92672">&amp;</span>quot<span style="color:#f92672">;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> neededWidth <span style="color:#f92672">=</span> scroll<span style="color:#f92672">.</span><span style="color:#a6e22e">getVerticalScrollBar</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getPreferredSize</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">width</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> neededHeight <span style="color:#f92672">=</span> scroll<span style="color:#f92672">.</span><span style="color:#a6e22e">getHorizontalScrollBar</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getPreferredSize</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">height</span><span style="color:#f92672">;</span>
+        Image img <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#f92672">(</span>ImageIcon<span style="color:#f92672">)</span> icn<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getImage</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        ImageIcon icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ImageIcon<span style="color:#f92672">(</span>img<span style="color:#f92672">.</span><span style="color:#a6e22e">getScaledInstance</span><span style="color:#f92672">(</span>neededWidth<span style="color:#f92672">,</span> neededHeight<span style="color:#f92672">,</span> Image<span style="color:#f92672">.</span><span style="color:#a6e22e">SCALE_AREA_AVERAGING</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        JButton smallBtn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JButton<span style="color:#f92672">(</span>icon<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        scroll<span style="color:#f92672">.</span><span style="color:#a6e22e">setCorner</span><span style="color:#f92672">(</span>ScrollPaneConstants<span style="color:#f92672">.</span><span style="color:#a6e22e">LOWER_RIGHT_CORNER</span><span style="color:#f92672">,</span> smallBtn<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>scroll<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-public class CornerButton extends JFrame
-{
-    public CornerButton()
-    {
-        JTextArea area = new JTextArea(20, 20);
-        JScrollPane scroll = new JScrollPane(area);
-        Icon icn = UIManager.getIcon(&amp;quot;OptionPane.questionIcon&amp;quot;);
-        int neededWidth = scroll.getVerticalScrollBar().getPreferredSize().width;
-        int neededHeight = scroll.getHorizontalScrollBar().getPreferredSize().height;
-        Image img = ((ImageIcon) icn).getImage();
-        ImageIcon icon = new ImageIcon(img.getScaledInstance(neededWidth, neededHeight, Image.SCALE_AREA_AVERAGING));
-        JButton smallBtn = new JButton(icon);
-        scroll.setCorner(ScrollPaneConstants.LOWER_RIGHT_CORNER, smallBtn);
-        this.add(scroll);
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span>
+    <span style="color:#f92672">{</span>
+        CornerButton mainFrame <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CornerButton<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public static void main(String[] args)
-    {
-        CornerButton mainFrame = new CornerButton();
-
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setVisible(true);
-        mainFrame.setSize(200,200);
-    }
-}
-</code></pre>
-
-<p>This produces the following result:</p>
-
-<p><a href="https://yo-dave.com/static/img/2011-01-23-WindowWithResizedIcon.PNG"><img src="https://yo-dave.com/static/img/2011-01-23-WindowWithResizedIcon.PNG" alt="A Program Window with the Resized Icon" title="A Program Window with the Resized Icon" /><br><small>A Program Window with the Resized Icon</small></a></p>
-
-<p>See that little green question mark in the corner? That is the standard Java Swing icon used in <code>JOptionPane</code>s shrunk down to the size needed. Here&rsquo;s a blow up.</p>
-
-<p><a href="https://yo-dave.com/static/img/2011-01-23-CloseUpOfResizedIcon.PNG"><img src="https://yo-dave.com/static/img/2011-01-23-CloseUpOfResizedIcon.PNG" alt="A Blowup of the Resized Corner Icon" title="A Blowup of the Resized Corner Icon" /><br><small>A Blowup of the Resized Icon</small></a></p>
-
+        mainFrame<span style="color:#f92672">.</span><span style="color:#a6e22e">setDefaultCloseOperation</span><span style="color:#f92672">(</span>JFrame<span style="color:#f92672">.</span><span style="color:#a6e22e">EXIT_ON_CLOSE</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        mainFrame<span style="color:#f92672">.</span><span style="color:#a6e22e">setVisible</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        mainFrame<span style="color:#f92672">.</span><span style="color:#a6e22e">setSize</span><span style="color:#f92672">(</span>200<span style="color:#f92672">,</span>200<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>This produces the following result:</p>
+<p><a href="https://yo-dave.com/static/img/2011-01-23-WindowWithResizedIcon.PNG"><img src="https://yo-dave.com/static/img/2011-01-23-WindowWithResizedIcon.PNG" alt="A Program Window with the Resized Icon" title="A Program Window with the Resized Icon"><!-- raw HTML omitted --><!-- raw HTML omitted -->A Program Window with the Resized Icon<!-- raw HTML omitted --></a></p>
+<p>See that little green question mark in the corner? That is the standard Java Swing icon used in <code>JOptionPane</code>s shrunk down to the size needed. Here's a blow up.</p>
+<p><a href="https://yo-dave.com/static/img/2011-01-23-CloseUpOfResizedIcon.PNG"><img src="https://yo-dave.com/static/img/2011-01-23-CloseUpOfResizedIcon.PNG" alt="A Blowup of the Resized Corner Icon" title="A Blowup of the Resized Corner Icon"><!-- raw HTML omitted --><!-- raw HTML omitted -->A Blowup of the Resized Icon<!-- raw HTML omitted --></a></p>
 <p>Seems to work pretty well.</p>
 
 

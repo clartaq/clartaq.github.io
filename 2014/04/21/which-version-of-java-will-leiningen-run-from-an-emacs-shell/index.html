@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Which Version of Java will Leiningen Run from an Emacs Shell &middot; Yo-Dave</title>
 
@@ -261,74 +261,42 @@
 
 </div>
 
-  <p>I&rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &ldquo;flow of consciousness&rdquo; debugging notes.</p>
-
+  <p>I've been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &ldquo;flow of consciousness&rdquo; debugging notes.</p>
 <p>Under Linux, things work as expected. Things are not so straightforward under Windows.</p>
-
 <p>At a command prompt, <code>lein version</code> produces the following output, as expected:</p>
-
-<pre><code class="language-shell">Leiningen 2.3.4 on Java 1.8.0 Java HotSpot(TM) 64-Bit Server VM
-</code></pre>
-
-<p>When I run <code>lein version</code> as an Emacs shell command, the output is:</p>
-
-<pre><code class="language-shell">Leiningen 2.3.4 on Java 1.7.0_40 Java HotSpot(TM) Client VM
-</code></pre>
-
-<p>Running in a Clojure REPL under Emacs produces the similar:</p>
-
-<pre><code class="language-clojure">;nREPL 0.1.8-preview
-user&gt; (System/getProperty &quot;java.version&quot;)
-&quot;1.7.0_40&quot;
-</code></pre>
-
-<p>What&rsquo;s going on?</p>
-
-<p>The Leiningen sample project file at <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">https://github.com/technomancy/leiningen/blob/master/sample.project.clj</a> says that Leiningen&rsquo;s own JVM is set with the <code>LEIN_JAVA_CMD</code> environment variable. In my case, no such variable is set. As I interpret the <code>lein.bat</code> file, that means that the java used defaults to simple &ldquo;java&rdquo;. I would think that means the same Java used by the Windows command prompt. Apparently not.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Leiningen 2.3.4 on Java 1.8.0 Java HotSpot<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> 64-Bit Server VM
+</code></pre></div><p>When I run <code>lein version</code> as an Emacs shell command, the output is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Leiningen 2.3.4 on Java 1.7.0_40 Java HotSpot<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> Client VM
+</code></pre></div><p>Running in a Clojure REPL under Emacs produces the similar:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;nREPL 0.1.8-preview</span>
+user&gt; (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;java.version&#34;</span>)
+<span style="color:#e6db74">&#34;1.7.0_40&#34;</span>
+</code></pre></div><p>What's going on?</p>
+<p>The Leiningen sample project file at <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">https://github.com/technomancy/leiningen/blob/master/sample.project.clj</a> says that Leiningen's own JVM is set with the <code>LEIN_JAVA_CMD</code> environment variable. In my case, no such variable is set. As I interpret the <code>lein.bat</code> file, that means that the java used defaults to simple &ldquo;java&rdquo;. I would think that means the same Java used by the Windows command prompt. Apparently not.</p>
 <p>Creating the Windows environment variable <code>LEIN_JAVA_CMD</code> and setting it to <code>C:\Program Files\Java\jdk1.8.0\bin\java</code> gets the desired effect when we ask Leiningen for its version number in an Emacs shell command.</p>
-
 <p>However, things are even weirder at the REPL.</p>
-
-<pre><code class="language-clojure">; nREPL 0.1.8-preview
-user&gt; (System/getProperty &quot;java.version&quot;)
-&quot;1.7.0_25&quot;
-</code></pre>
-
-<p>Where did that come from?</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">; nREPL 0.1.8-preview</span>
+user&gt; (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;java.version&#34;</span>)
+<span style="color:#e6db74">&#34;1.7.0_25&#34;</span>
+</code></pre></div><p>Where did that come from?</p>
 <p>I have JDK versions 1.7.0_17, _21, _25, _40, _45, _51, and 1.8.0 installed on my system. How are these choices being made?</p>
-
 <p>Tried updating to <a href="https://github.com/clojure-emacs/cider">CIDER</a>. Same results.</p>
-
-<pre><code class="language-clojure">; CIDER 0.6.0alpha (package: 20140322.332) (Clojure 1.6.0, nREPL 0.2.3)
-eight-queens.core&gt; (System/getProperty &quot;java.version&quot;)
-&quot;1.7.0_25&quot;
-</code></pre>
-
-<p>Running LightTable (version 0.6.5) and starting an InstaRepl also produces the same result</p>
-
-<pre><code class="language-clojure">;; Anything you type in here will be executed
-;; immediately with the results shown on the
-;; right.
-(System/getProperty &quot;java.version&quot;)
-</code></pre>
-
-<p>Running the Clojure REPL directly from the command line give the expected result:</p>
-
-<pre><code class="language-clojure">C:\Users\david\.m2\repository\org\clojure\clojure\1.5.1&gt;java -cp clojure-1.5.1.jar clojure.main
-Clojure 1.5.1
-user=&gt; (System/getProperty &quot;java.version&quot;)
-&quot;1.8.0&quot;
-</code></pre>
-
-<p>Turns out there is a line in the user profile, <code>C:\Users\david\.lein\users.clj</code>, that seems to be messing things up.</p>
-
-<pre><code class="language-clojure">  :java-cmd &quot;C:\\Program Files\\Java\\jdk1.7.0_25\\bin\\java.exe&quot;
-</code></pre>
-
-<p>Not sure why that was in there. Removing that line also lets me remove the environment variable and the results from the emacs shell gives the correct result. However, the REPLs report version 1.7.0_40.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">; CIDER 0.6.0alpha (package: 20140322.332) (Clojure 1.6.0, nREPL 0.2.3)</span>
+eight-queens.core&gt; (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;java.version&#34;</span>)
+<span style="color:#e6db74">&#34;1.7.0_25&#34;</span>
+</code></pre></div><p>Running LightTable (version 0.6.5) and starting an InstaRepl also produces the same result</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; Anything you type in here will be executed</span>
+<span style="color:#75715e">;; immediately with the results shown on the</span>
+<span style="color:#75715e">;; right.</span>
+(<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;java.version&#34;</span>)
+</code></pre></div><p>Running the Clojure REPL directly from the command line give the expected result:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">C<span style="color:#960050;background-color:#1e0010">:</span><span style="color:#e6db74">\U</span>sers<span style="color:#e6db74">\d</span>avid<span style="color:#e6db74">\.</span>m2<span style="color:#e6db74">\r</span>epository<span style="color:#e6db74">\o</span>rg<span style="color:#e6db74">\c</span>lojure<span style="color:#e6db74">\c</span>lojure<span style="color:#e6db74">\1</span>.5.1&gt;java -cp clojure-1.5.1.jar clojure.main
+Clojure <span style="color:#ae81ff">1.5</span>.1
+user=&gt; (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;java.version&#34;</span>)
+<span style="color:#e6db74">&#34;1.8.0&#34;</span>
+</code></pre></div><p>Turns out there is a line in the user profile, <code>C:\Users\david\.lein\users.clj</code>, that seems to be messing things up.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  <span style="color:#e6db74">:java-cmd</span> <span style="color:#e6db74">&#34;C:\\Program Files\\Java\\jdk1.7.0_25\\bin\\java.exe&#34;</span>
+</code></pre></div><p>Not sure why that was in there. Removing that line also lets me remove the environment variable and the results from the emacs shell gives the correct result. However, the REPLs report version 1.7.0_40.</p>
 <p>Giving up, I remove versions _17, _21, _25, _40, and _45 (leaving _51 in place). Now everything works as desired, all REPLs and shell commands reporting the correct version. Sheesh.</p>
 
   

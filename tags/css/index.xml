@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Thu, 27 Jun 2019 16:51:20 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/06/27/letting-the-user-change-the-sidebar-width-in-cwiki/</guid>
-      <description>Recently, I&amp;rsquo;ve been working on what I thought was a simple feature &amp;ndash; changing the width of the sidebar in the CWiki wiki program.
+      <description>Recently, I&#39;ve been working on what I thought was a simple feature &amp;ndash; changing the width of the sidebar in the CWiki wiki program.
 There were two ways the user could do it.
 First, they could set it manually in the &amp;ldquo;Preferences&amp;rdquo; page.
 Second, and more naturally in my opinion, they could use the mouse to drag the separator between the sidebar and the main article area to the location they wanted it.</description>
@@ -41,7 +41,7 @@ In my own case, I have a tag editing component for my personal wiki. The compone
       
       <guid>https://yo-dave.com/2018/10/23/wiki-layout-for-editing/</guid>
       <description>Update: 2018-12-15 This post substantially updates the original. The most significant changes are that the layout now works as expected - no partial success.
-A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.</description>
+ A few weeks ago, I wrote a post about a wiki layout for reading. I used that project to experiment with improvements to the reading view of CWiki, a personal wiki that I am writing. I used the lessons learned in the project described in that post to make some changes to CWiki.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ A few weeks ago, I wrote a post about a wiki layout for reading. I used that pro
       <pubDate>Sun, 23 Sep 2018 13:20:23 -0400</pubDate>
       
       <guid>https://yo-dave.com/2018/09/23/wiki-layout-for-reading/</guid>
-      <description>​As many of you know, I&amp;rsquo;ve been working on a personal wiki for some time now. (See the CWiki repository.) In fact, I&amp;rsquo;m using it to write this post. It&amp;rsquo;s very comfortable for me.
+      <description>​As many of you know, I&#39;ve been working on a personal wiki for some time now. (See the CWiki repository.) In fact, I&#39;m using it to write this post. It&#39;s very comfortable for me.
 One of the things I have been trying to get absolutely right (for me at least) is the layout. There are really only two layouts; one is for the &amp;ldquo;reading&amp;rdquo; view, the other for the &amp;ldquo;editing&amp;rdquo; view.</description>
     </item>
     

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Styled Dialogs in JavaFX with JFXtras MonologFX &middot; Yo-Dave</title>
 
@@ -255,23 +255,15 @@
 
 </div>
 
-  <p>I&rsquo;ve been having a lot of fun learning <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="Link to JavaFX developer">JavaFX</a>, even after many years of using the Java Swing framework.</p>
-
-<p>One thing about JavaFX that I still don&rsquo;t understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the <a href="http://jfxtras.org/" title="Link to the JFXtras home page.">JFXtras</a> project, <a href="https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for" title="Link to MonologFX introduction blog.">MonologFX</a>.</p>
-
+  <p>I've been having a lot of fun learning <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="Link to JavaFX developer">JavaFX</a>, even after many years of using the Java Swing framework.</p>
+<p>One thing about JavaFX that I still don't understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the <a href="http://jfxtras.org/" title="Link to the JFXtras home page.">JFXtras</a> project, <a href="https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for" title="Link to MonologFX introduction blog.">MonologFX</a>.</p>
 <p>I had been experimenting with some of the capabilities for styling a JavaFX interface, including flat buttons as in Windows 8. Flat interfaces seem to be all the rage now. MonologFX includes the ability to set a CSS style sheet to use for the dialogs it creates <em>via</em> the <code>addStyleSheet()</code> method.</p>
-
 <p>However, when I tried to specify the same style sheet I was using for the rest of the project, I kept getting errors about not finding the resource.</p>
-
-<p>After some exchanges with the package author, the very helpful Mark Heckler, I finally understood that the style sheet had to reside in a directory within the source for the MonologFX package itself &ndash; you could add the style sheet and rebuild the package and things would work as expected. Well, that didn&rsquo;t seem to be very useful. Who wants to rebuild the dialog package with a new style sheet for every different style in every different project?</p>
-
-<p>Then it finally occurred to me. The important thing is the path to the resource. All you need to do is add a path to the resource in your program that mirrors the path to the resources in the MonologFX package. In this case that is <code>src\jfxtras\labs\dialogs</code>. With that directory in my project and my style sheet in that directory, things work as expected. For example, here&rsquo;s a screen capture of a tic-tac-toe program.</p>
-
-<p><a href="https://yo-dave.com/static/img/2013-05-08-DialogSnip.png"><img src="https://yo-dave.com/static/img/2013-05-08-DialogSnip.png" alt="Styled Tic-Tac-Toe Application with JavaFX and MonologFX" /><br><small>Styled Tic-Tac-Toe Application with JavaFX and MonologFX</small></a></p>
-
+<p>After some exchanges with the package author, the very helpful Mark Heckler, I finally understood that the style sheet had to reside in a directory within the source for the MonologFX package itself &ndash; you could add the style sheet and rebuild the package and things would work as expected. Well, that didn't seem to be very useful. Who wants to rebuild the dialog package with a new style sheet for every different style in every different project?</p>
+<p>Then it finally occurred to me. The important thing is the path to the resource. All you need to do is add a path to the resource in your program that mirrors the path to the resources in the MonologFX package. In this case that is <code>src\jfxtras\labs\dialogs</code>. With that directory in my project and my style sheet in that directory, things work as expected. For example, here's a screen capture of a tic-tac-toe program.</p>
+<p><a href="https://yo-dave.com/static/img/2013-05-08-DialogSnip.png"><img src="https://yo-dave.com/static/img/2013-05-08-DialogSnip.png" alt="Styled Tic-Tac-Toe Application with JavaFX and MonologFX"><!-- raw HTML omitted --><!-- raw HTML omitted -->Styled Tic-Tac-Toe Application with JavaFX and MonologFX<!-- raw HTML omitted --></a></p>
 <p>The lower button, labeled &ldquo;Reset&rdquo; is styled and created in the main program. The dialog is created and styled with MonologFX.</p>
-
-<p>The only annoyance now is having the same style sheet in two places: the main project directory and the MonologFX directory. It&rsquo;s easy to get them out of sync. There is probably a way to get <a href="https://github.com/technomancy/leiningen" title="Link to the Leiningen home page">Leiningen</a>, the build tool I use for <a href="http://clojure.org/" title="Link to the Clojure language home page.">Clojure</a> programs, to copy the one in the main directory to the MonologFX directory. Just have to find it.</p>
+<p>The only annoyance now is having the same style sheet in two places: the main project directory and the MonologFX directory. It's easy to get them out of sync. There is probably a way to get <a href="https://github.com/technomancy/leiningen" title="Link to the Leiningen home page">Leiningen</a>, the build tool I use for <a href="http://clojure.org/" title="Link to the Clojure language home page.">Clojure</a> programs, to copy the one in the main directory to the MonologFX directory. Just have to find it.</p>
 
   
 <div class="prev-next-post pure-g">

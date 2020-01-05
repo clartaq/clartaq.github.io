@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>The Clojure Development Toolchain &middot; Yo-Dave</title>
 
@@ -262,166 +262,112 @@
 </div>
 
   <p>One of the things about <a href="http://clojure.org/">Clojure</a> that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &ldquo;one-button&rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.</p>
-
 <p><strong>Update 30 Mar 2014</strong>: nREPL has been superceded by <a href="https://github.com/clojure-emacs/cider">CIDER</a>. These instructions now include modifications to install CIDER.</p>
-
 <p>Of course, some readers would argue that you can do Clojure development with NotePad and a command line. While that is true, it is also tedious to the extreme, just as it would be with most other languages. That is what IDEs were developed for &ndash; to take some of the tedium out of development of more complex projects.</p>
-
-<p>In fact, there are some plugins for the <a href="http://www.eclipse.org/">Eclipse</a> and <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a> IDEs, they don&rsquo;t seem to get the job done well. There was also the <del><a href="http://enclojure.wikispaces.com/">enclojure</a></del> (<strong>Broken Link</strong>) plugin for my favorite IDE, <a href="https://netbeans.org/">NetBeans</a>, although it is no longer maintained.</p>
-
+<p>In fact, there are some plugins for the <a href="http://www.eclipse.org/">Eclipse</a> and <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a> IDEs, they don't seem to get the job done well. There was also the <!-- raw HTML omitted --><a href="http://enclojure.wikispaces.com/">enclojure</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) plugin for my favorite IDE, <a href="https://netbeans.org/">NetBeans</a>, although it is no longer maintained.</p>
 <p>At a minimum, a developer needs a good editor and a good build/dependency tool. A good editor &ldquo;knows&rdquo; the language. For Lisp-based languages, there is nothing better than Emacs, despite the steep learning curve. (Good arguments have been made for the <a href="http://www.vim.org/">Vim</a> editor as well.)</p>
-
-<p>The one system that I have found that gets closest to the &ldquo;one button&rdquo; install is <del><a href="http://lispcabinet.sourceforge.net/">Lisp Cabinet</a></del>. (**This project appears to be abandoned.) I&rsquo;ve written about it before <a href="https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/">here</a>. It is a terrific piece of work that has served me well.</p>
-
-<p>That said, it has not been without problems for me. I have been using version 0.34 and earlier for some time. The problem was that I could not get <a href="https://github.com/technomancy/swank-clojure">Swank</a> to work when a version of Clojure later than 1.4 was used in a Leiningen project file. Don&rsquo;t know why. Couldn&rsquo;t figure it out. Gave up trying. (Swank is used to create a Clojure <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> within Emacs that can be used for interactive development. It makes available a number of helpful commands through a facility called <a href="http://common-lisp.net/project/slime/">SLIME</a>, the Superior Lisp Interaction Mode for Emacs.)</p>
-
-<p>A new version of Lisp Cabinet, version 0.35, came out recently. It was built to use Clojure 1.5.1. Great! Except once again Swank would not work. Could not quickly figure out why (again.) Did not want to spend time investigating. The thing that pushed me over the edge is that Swank has always seemed a bit fragile and is now deprecated by the author. <del>Instead Clojure development is moving to use <a href="https://github.com/clojure/tools.nrepl">nREPL</a>, a networked Clojure REPL.</del> <strong>Update 30 Mar 2014</strong>: Instead Clojure development is moving to use <a href="https://github.com/clojure-emacs/cider">CIDER</a>, a networked Clojure REPL.</p>
-
-<p>So, I&rsquo;ve decided to just bite the bullet and put together my own system, installing raw Emacs and configuring it to my tastes along with Leiningen. This post is intended to be a record of my notes so I can do it again some time and provide guidance to other interested readers. Maybe someday I&rsquo;ll script it all together and create the &ldquo;one-button&rdquo; installation that I keep whining about.</p>
-
+<p>The one system that I have found that gets closest to the &ldquo;one button&rdquo; install is <!-- raw HTML omitted --><a href="http://lispcabinet.sourceforge.net/">Lisp Cabinet</a><!-- raw HTML omitted -->. (**This project appears to be abandoned.) I've written about it before <a href="https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/">here</a>. It is a terrific piece of work that has served me well.</p>
+<p>That said, it has not been without problems for me. I have been using version 0.34 and earlier for some time. The problem was that I could not get <a href="https://github.com/technomancy/swank-clojure">Swank</a> to work when a version of Clojure later than 1.4 was used in a Leiningen project file. Don't know why. Couldn't figure it out. Gave up trying. (Swank is used to create a Clojure <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> within Emacs that can be used for interactive development. It makes available a number of helpful commands through a facility called <a href="http://common-lisp.net/project/slime/">SLIME</a>, the Superior Lisp Interaction Mode for Emacs.)</p>
+<p>A new version of Lisp Cabinet, version 0.35, came out recently. It was built to use Clojure 1.5.1. Great! Except once again Swank would not work. Could not quickly figure out why (again.) Did not want to spend time investigating. The thing that pushed me over the edge is that Swank has always seemed a bit fragile and is now deprecated by the author. <!-- raw HTML omitted -->Instead Clojure development is moving to use <a href="https://github.com/clojure/tools.nrepl">nREPL</a>, a networked Clojure REPL.<!-- raw HTML omitted --> <strong>Update 30 Mar 2014</strong>: Instead Clojure development is moving to use <a href="https://github.com/clojure-emacs/cider">CIDER</a>, a networked Clojure REPL.</p>
+<p>So, I've decided to just bite the bullet and put together my own system, installing raw Emacs and configuring it to my tastes along with Leiningen. This post is intended to be a record of my notes so I can do it again some time and provide guidance to other interested readers. Maybe someday I'll script it all together and create the &ldquo;one-button&rdquo; installation that I keep whining about.</p>
 <h2 id="my-configuration">My Configuration</h2>
-
 <ul>
 <li>My development system is Windows 7, 64 bit.</li>
 <li>As this is written, I am running JDK 1.7.0 Update 21, 64 bit.</li>
-<li>I am running Windows Powershell 1.0. You can download it free <del><a href="http://www.microsoft.com/en-us/download/details.aspx?id=7217">here</a></del>. (<strong>This download is no longer available.</strong>)</li>
+<li>I am running Windows Powershell 1.0. You can download it free <!-- raw HTML omitted --><a href="http://www.microsoft.com/en-us/download/details.aspx?id=7217">here</a><!-- raw HTML omitted -->. (<strong>This download is no longer available.</strong>)</li>
 </ul>
-
 <h2 id="the-build-system-leiningen">The Build System, Leiningen</h2>
-
-<p>It may be odd to start with the build system, but it&rsquo;s the shorter and simpler of the two tools to set up.</p>
-
+<p>It may be odd to start with the build system, but it's the shorter and simpler of the two tools to set up.</p>
 <ul>
-<li>On Windows, download the batch file <a href="https://github.com/technomancy/leiningen">here</a>. (The link to the download is in the &ldquo;Installation&rdquo; section of the page. Don&rsquo;t use the version of the file in the &ldquo;bin&rdquo; directory.)</li>
+<li>On Windows, download the batch file <a href="https://github.com/technomancy/leiningen">here</a>. (The link to the download is in the &ldquo;Installation&rdquo; section of the page. Don't use the version of the file in the &ldquo;bin&rdquo; directory.)</li>
 <li>I put the batch file in <code>C:\tools\lein</code> on my system and put that directory on the path.</li>
 <li>Then run <code>lein self-install</code> to do the installation.</li>
-<li>Open a command window and enter <span style="font-family: Courier New;"><code>lein version</code></span> to assure that the installation worked and that lein runs correctly. On my system, the program replied <code>Leiningen 2.1.3 on Java 1.7.0_21 Java HotSpot(TM) 64-Bit Server VM</code>.</li>
-<li>If you check your home directory, you should see a new directory, <code>.lein</code>. Within that directory there will be an additional directory, <code>self-installs</code>, which contains the lein jar file. In my case, that file is named <code>leiningen-2.1.3-standalone.jar</code>. That&rsquo;s it. You&rsquo;re done.</li>
+<li>Open a command window and enter <!-- raw HTML omitted --><code>lein version</code><!-- raw HTML omitted --> to assure that the installation worked and that lein runs correctly. On my system, the program replied <code>Leiningen 2.1.3 on Java 1.7.0_21 Java HotSpot(TM) 64-Bit Server VM</code>.</li>
+<li>If you check your home directory, you should see a new directory, <code>.lein</code>. Within that directory there will be an additional directory, <code>self-installs</code>, which contains the lein jar file. In my case, that file is named <code>leiningen-2.1.3-standalone.jar</code>. That's it. You're done.</li>
 <li><strong>Update 30 Mar 2014</strong>: Added the <code>LEIN_JAVA_CMD</code> environment variable as described in the sample Leiningen project <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">here</a>. This lets you specify which JVM Leiningen uses since it does not seem to use the latest version on Windows without setting this variable.</li>
 </ul>
-
 <h2 id="the-editor-emacs">The Editor, Emacs</h2>
-
 <p>I picked up a pre-compiled binary of Emacs 24.3 for Windows (emacs-24.3-bin-i386.zip) <a href="http://ftp.gnu.org/gnu/emacs/windows/">here</a>. I unzipped the file into my <code>C:\tools</code> directory. (I use this directory rather than the more traditional <code>Program Files</code> directory because, even after all these years, many programs cannot handle directory names with spaces in them.) This creates and fills a directory named <code>emacs-24.3</code>. I renamed mine to be simply <code>emacs</code>. Within <code>C:\tools\emacs\bin</code> find the <code>addpm.exe</code> file and execute it. This will create a desktop shortcut. Start up Emacs and review the tutorial material, if needed. There are tons of helpful information on using Emacs right within the program itself.</p>
-
 <h3 id="configuration">Configuration</h3>
-
 <p>The plain vanilla version of Emacs that you have already started is fine by itself but can be customized to any extent you want. There are several types of customizations we will cover on our way to a pleasant setup for Clojure development.</p>
-
 <h4 id="self-contained-customizations">Self-Contained Customizations</h4>
-
 <p>I call one set of customization &ldquo;Self-Contained&rdquo; since they can be accessed from the program itself and require no additional work.</p>
-
 <ul>
-<li>First, I don&rsquo;t care for the toolbar. From the menu, select <strong>Options&gt;Show/Hide&gt;Toolbar</strong> to turn it off.</li>
+<li>First, I don't care for the toolbar. From the menu, select <strong>Options&gt;Show/Hide&gt;Toolbar</strong> to turn it off.</li>
 <li>Second, I like the Ctrl-C/Ctrl-X/Ctrl-V keys for copy, cut and paste. From the menu, select <strong>Options&gt;Use CUA Keys (Cut/Paste with C-x/C-c/C-v)</strong>.</li>
 <li>Third, I find editing lisp is easier when matching parentheses are highlighted as you pass over the other parenthesis in a pair. Select <strong>Options&gt;Highlight Matching Parentheses</strong> to enable this operation.</li>
 <li>Fourth, I prefer to use Consolas as the typeface when editing programs. Again, from the <strong>Options</strong> menu select the <strong>Set Default Font&hellip;</strong> dialog. Pick the typeface you prefer.</li>
-
-<li><p>Fifth, I don&rsquo;t really care for the default color scheme, especially when writing Clojure code. Emacs has many ways to change the color scheme. Fortunately, as of version 24, it has some built-in support for changing themes. From the menu, choose <strong>Options&gt;Customize Emacs&gt;Custom Themes</strong>. In the dialog that appears, choose a theme you like and click the <strong>Save Theme Settings</strong> button. Finally, select <strong>Options&gt;Save Options</strong> and quit Emacs (C-x C-c). If you check your home directory, you should see two changes. There should be a new directory named <code>.emacs.d</code> and a new file named <code>.emacs</code>. Much of the customization information for Emacs is stored in the <code>.emacs</code> file. Here&rsquo;s what mine looked like at this stage in the customization:</p>
-
-<pre><code class="language-lisp">;; custom-set-variables was added by Custom.
-;; If you edit it by hand, you could mess it up, so be careful.
-;; Your init file should contain only one such instance.
-;; If there is more than one, they won't work right.
-'(cua-mode t nil (cua-base))
-'(custom-enabled-themes (quote (wombat)))
-'(show-paren-mode t)
-'(tool-bar-mode nil))
-(custom-set-faces
-;; custom-set-faces was added by Custom.
-;; If you edit it by hand, you could mess it up, so be careful.
-;; Your init file should contain only one such instance.
-;; If there is more than one, they won't work right.
-'(default ((t (:family &quot;Consolas&quot; :foundry &quot;outline&quot; :slant normal :weight normal :height 120 :width normal)))))
-</code></pre></li>
+<li>Fifth, I don't really care for the default color scheme, especially when writing Clojure code. Emacs has many ways to change the color scheme. Fortunately, as of version 24, it has some built-in support for changing themes. From the menu, choose <strong>Options&gt;Customize Emacs&gt;Custom Themes</strong>. In the dialog that appears, choose a theme you like and click the <strong>Save Theme Settings</strong> button. Finally, select <strong>Options&gt;Save Options</strong> and quit Emacs (C-x C-c). If you check your home directory, you should see two changes. There should be a new directory named <code>.emacs.d</code> and a new file named <code>.emacs</code>. Much of the customization information for Emacs is stored in the <code>.emacs</code> file. Here's what mine looked like at this stage in the customization:</li>
 </ul>
-
-<h4 id="adding-customizations-with-packages">Adding Customizations with Packages</h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"> <span style="color:#75715e">;; custom-set-variables was added by Custom.</span>
+ <span style="color:#75715e">;; If you edit it by hand, you could mess it up, so be careful.</span>
+ <span style="color:#75715e">;; Your init file should contain only one such instance.</span>
+ <span style="color:#75715e">;; If there is more than one, they won&#39;t work right.</span>
+ <span style="color:#f92672">&#39;</span>(cua-mode <span style="color:#66d9ef">t</span> <span style="color:#66d9ef">nil</span> (cua-base))
+ <span style="color:#f92672">&#39;</span>(custom-enabled-themes (<span style="color:#66d9ef">quote</span> (wombat)))
+ <span style="color:#f92672">&#39;</span>(show-paren-mode <span style="color:#66d9ef">t</span>)
+ <span style="color:#f92672">&#39;</span>(tool-bar-mode <span style="color:#66d9ef">nil</span>))
+(custom-set-faces
+ <span style="color:#75715e">;; custom-set-faces was added by Custom.</span>
+ <span style="color:#75715e">;; If you edit it by hand, you could mess it up, so be careful.</span>
+ <span style="color:#75715e">;; Your init file should contain only one such instance.</span>
+ <span style="color:#75715e">;; If there is more than one, they won&#39;t work right.</span>
+ <span style="color:#f92672">&#39;</span>(default ((<span style="color:#66d9ef">t</span> (<span style="color:#e6db74">:family</span> <span style="color:#e6db74">&#34;Consolas&#34;</span> <span style="color:#e6db74">:foundry</span> <span style="color:#e6db74">&#34;outline&#34;</span> <span style="color:#e6db74">:slant</span> normal <span style="color:#e6db74">:weight</span> normal <span style="color:#e6db74">:height</span> <span style="color:#ae81ff">120</span> <span style="color:#e6db74">:width</span> normal)))))
+</code></pre></div><h4 id="adding-customizations-with-packages">Adding Customizations with Packages</h4>
 <p>Like many other pieces of software, the operation of Emacs can be modified by loading external packages. To get access to the packages we are interested in, we need to specify a different repository in addition to the one Emacs uses by default. We do that by editing the contents of the <code>.emacs</code> file. (<code>C-x C-f ~\.emacs</code>) To let Emacs gain access to the <a href="http://melpa.milkbox.net/">Melpa</a> repository, add the following to your <code>.emacs</code> file between the two customization sections that are already present. (I put this between the two sections since any changes to the built-in customizations re-write them to the beginning and end of the file.)</p>
-
-<pre><code class="language-lisp">;; Customize emacs package handling with the melpa repository
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Customize emacs package handling with the melpa repository</span>
 (package-initialize)
-(add-to-list 'package-archives
-             '(&quot;melpa&quot; . &quot;http://melpa.milkbox.net/packages/&quot;) t)
-</code></pre>
-
-<p>Place the cursor at the end of each of the two expressions and press <code>C-x C-e</code> to evaluate the expressions. Now, if you execute the command <code>M-x package-list-packages</code> you will see a long list of additional packages that are available. In that list, put your cursor in the line listing the following packages and press &ldquo;i&rdquo; (for install) on each of the package names. For our purposes, select the following list of packages:</p>
-
+(add-to-list <span style="color:#e6db74">&#39;package-archives</span>
+             <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;melpa&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;http://melpa.milkbox.net/packages/&#34;</span>) <span style="color:#66d9ef">t</span>)
+</code></pre></div><p>Place the cursor at the end of each of the two expressions and press <code>C-x C-e</code> to evaluate the expressions. Now, if you execute the command <code>M-x package-list-packages</code> you will see a long list of additional packages that are available. In that list, put your cursor in the line listing the following packages and press &ldquo;i&rdquo; (for install) on each of the package names. For our purposes, select the following list of packages:</p>
 <ul>
-<li><strong>Update 30 Mar 2014</strong>: <del>ac-nrepl</del> Do not install this. We will be using CIDER instead. If it is already installed, remove it.</li>
+<li><strong>Update 30 Mar 2014</strong>: <!-- raw HTML omitted -->ac-nrepl<!-- raw HTML omitted --> Do not install this. We will be using CIDER instead. If it is already installed, remove it.</li>
 <li>auto-complete</li>
 <li>clojure-mode</li>
 <li>popup</li>
 <li>rainbow-delimiters
-(There is an additional package you might want to check out some time, paredit. Some folks swear by it. In my experience, it causes nothing but trouble. I&rsquo;ve lost count of the number of failed compiles due to paredit thinking it knows what I wanted better than I know myself.)</li>
+(There is an additional package you might want to check out some time, paredit. Some folks swear by it. In my experience, it causes nothing but trouble. I've lost count of the number of failed compiles due to paredit thinking it knows what I wanted better than I know myself.)</li>
 </ul>
-
 <p>Confirm that you want the selected packages by typing &ldquo;x&rdquo; and installation will start.</p>
-
 <p><strong>Clojure Mode</strong>. Clojure mode should &ldquo;just work&rdquo;. To confirm this, open or create a file of Clojure code. When you do, you should see Clojure appear in the Emacs menu bar. Explore the menu for useful shortcuts you should memorize.</p>
-
-<p>Even though the packages are installed at this point, most are not configured to do anything yet. They each need a little push from some additional code in the <code>.emacs</code> file. So, open the file and let&rsquo;s do some editing.</p>
-
-<p><strong>Rainbow-Delimiters.</strong> Every Lisp programmer needs some way to keep track of how parentheses and similar characters (like brackets, braces, <em>etc</em>.) match up. That&rsquo;s what the rainbow-delimiters package is for. It colors matching delimiters at the same level in the same color. Enter the following in your <code>.emacs</code> file.</p>
-
-<pre><code class="language-lisp">;; rainbow delimiters parentheses matching
+<p>Even though the packages are installed at this point, most are not configured to do anything yet. They each need a little push from some additional code in the <code>.emacs</code> file. So, open the file and let's do some editing.</p>
+<p><strong>Rainbow-Delimiters.</strong> Every Lisp programmer needs some way to keep track of how parentheses and similar characters (like brackets, braces, <em>etc</em>.) match up. That's what the rainbow-delimiters package is for. It colors matching delimiters at the same level in the same color. Enter the following in your <code>.emacs</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; rainbow delimiters parentheses matching</span>
 (global-rainbow-delimiters-mode)
-</code></pre>
-
-<p>Type <code>C-x C-e</code> and you should immediately see a change in your <code>.emacs</code> file. Parentheses at different levels should be colored differently.</p>
-
+</code></pre></div><p>Type <code>C-x C-e</code> and you should immediately see a change in your <code>.emacs</code> file. Parentheses at different levels should be colored differently.</p>
 <p><strong>Update 30 Mar 2014</strong></p>
-
-<p><del><strong>nREPL</strong>. The nREPL package adds the ability to run a Clojure REPL within Emacs. Add the following to your <code>.emacs</code> file.</del></p>
-
-<pre><code class="language-lisp">;;; Enable nrepl and bind it to a key
-(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
-(setq nrepl-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names &quot;*nrepl*&quot;)
-;(global-set-key [f2] 'nrepl-jack-in
-</code></pre>
-
-<p><strong>CIDER.</strong> The CIDER package adds the ability to run a Clojure REPL within Emacs. Add the following to your <code>.emacs</code> file.</p>
-
-<pre><code class="language-lisp">;; Enable cider and bind it to a key
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(setq nrepl-hide-special-buffers t)
-(setq cider-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names &quot;*cider-repl*&quot;)
-(global-set-key [f2] 'cider-jack-in)
-</code></pre>
-
-<p>Use the F2 key as a shortcut to start up the REPL. Note that you can start multiple REPLs in the same session.</p>
-
-<p><strong>Popup and auto-complete<del>, and ac-nrepl</del></strong>. The <code>popup</code> package provides a nice API to pop up windows over an Emacs buffer while editing. The <code>auto-complete</code> package lets Emacs pop up possible completions as you edit Clojure code.<del> The <code>ac-nrepl</code> package provides similar functionality when working in the REPL.</del></p>
-
-<pre><code class="language-lisp">;; Auto complete
-(require 'auto-complete-config)
+<p><!-- raw HTML omitted --><strong>nREPL</strong>. The nREPL package adds the ability to run a Clojure REPL within Emacs. Add the following to your <code>.emacs</code> file.<!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;;; Enable nrepl and bind it to a key</span>
+(add-hook <span style="color:#e6db74">&#39;nrepl-interaction-mode-hook</span> <span style="color:#e6db74">&#39;nrepl-turn-on-eldoc-mode</span>)
+(<span style="color:#66d9ef">setq</span> nrepl-popup-stacktraces <span style="color:#66d9ef">nil</span>)
+(add-to-list <span style="color:#e6db74">&#39;same-window-buffer-names</span> <span style="color:#e6db74">&#34;*nrepl*&#34;</span>)
+<span style="color:#75715e">;(global-set-key [f2] &#39;nrepl-jack-in</span>
+</code></pre></div><p><strong>CIDER.</strong> The CIDER package adds the ability to run a Clojure REPL within Emacs. Add the following to your <code>.emacs</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Enable cider and bind it to a key</span>
+(add-hook <span style="color:#e6db74">&#39;cider-mode-hook</span> <span style="color:#e6db74">&#39;cider-turn-on-eldoc-mode</span>)
+(<span style="color:#66d9ef">setq</span> nrepl-hide-special-buffers <span style="color:#66d9ef">t</span>)
+(<span style="color:#66d9ef">setq</span> cider-popup-stacktraces <span style="color:#66d9ef">nil</span>)
+(add-to-list <span style="color:#e6db74">&#39;same-window-buffer-names</span> <span style="color:#e6db74">&#34;*cider-repl*&#34;</span>)
+(global-set-key [f2] <span style="color:#e6db74">&#39;cider-jack-in</span>)
+</code></pre></div><p>Use the F2 key as a shortcut to start up the REPL. Note that you can start multiple REPLs in the same session.</p>
+<p><strong>Popup and auto-complete<!-- raw HTML omitted -->, and ac-nrepl<!-- raw HTML omitted --></strong>. The <code>popup</code> package provides a nice API to pop up windows over an Emacs buffer while editing. The <code>auto-complete</code> package lets Emacs pop up possible completions as you edit Clojure code.<!-- raw HTML omitted --> The <code>ac-nrepl</code> package provides similar functionality when working in the REPL.<!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Auto complete</span>
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;auto-complete-config</span>)
 (ac-config-default)
-(define-key ac-completing-map &quot;\M-/&quot; 'ac-stop) ; use M-/ to stop completion
+(define-key ac-completing-map <span style="color:#e6db74">&#34;\M-/&#34;</span> <span style="color:#e6db74">&#39;ac-stop</span>) <span style="color:#75715e">; use M-/ to stop completion</span>
 
-&lt;del&gt;;; ac-nrepl&lt;/del&gt;
-&lt;del&gt;(require 'ac-nrepl)&lt;/del&gt;
-&lt;del&gt;(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)&lt;/del&gt;
-&lt;del&gt;(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)&lt;/del&gt;
-&lt;del&gt;(eval-after-load &quot;auto-complete&quot; '(add-to-list 'ac-modes 'nrepl-mode))&lt;/del&gt;
-</code></pre>
-
-<p>Whether editing source or working in the REPL, when the window of choices pops up, you use <code>M-n</code> to move to the next choice, <code>M-p</code> to move to the previous choice. Sometimes auto-completion can be a bit annoying. You can turn it off with <code>M-/</code>.</p>
-
+&lt;del&gt;<span style="color:#75715e">;; ac-nrepl&lt;/del&gt;</span>
+&lt;del&gt;(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;ac-nrepl</span>)&lt;/del&gt;
+&lt;del&gt;(add-hook <span style="color:#e6db74">&#39;nrepl-mode-hook</span> <span style="color:#e6db74">&#39;ac-nrepl-setup</span>)&lt;/del&gt;
+&lt;del&gt;(add-hook <span style="color:#e6db74">&#39;nrepl-interaction-mode-hook</span> <span style="color:#e6db74">&#39;ac-nrepl-setup</span>)&lt;/del&gt;
+&lt;del&gt;(eval-after-load <span style="color:#e6db74">&#34;auto-complete&#34;</span> <span style="color:#f92672">&#39;</span>(add-to-list <span style="color:#e6db74">&#39;ac-modes</span> <span style="color:#e6db74">&#39;nrepl-mode</span>))&lt;/del&gt;
+</code></pre></div><p>Whether editing source or working in the REPL, when the window of choices pops up, you use <code>M-n</code> to move to the next choice, <code>M-p</code> to move to the previous choice. Sometimes auto-completion can be a bit annoying. You can turn it off with <code>M-/</code>.</p>
 <p>Your Own Customizations</p>
-
 <p>In addition to all the built-in modifications and those you can make by adding packages, there is nothing to stop you from creating your own changes to the <code>.emacs</code> file. One thing I like when editing Clojure or any other Lisp is automatic indentation. You can get Emacs to do the indentation for you by adding the following lines to <code>.emacs</code>.</p>
-
-<pre><code class="language-lisp">;; automatic indentation for clojure
-(add-hook 'clojure-mode-hook '(lambda ()
-(local-set-key (kbd &quot;RET&quot;) 'newline-and-indent)))
-</code></pre>
-
-<p>As has often been commented, it seems like Emacs is infinitely configurable. There are lots of areas to changes that might make you work easier. I encourage you to explore additional configurations options. One thing you might consider before doing too much experimentation is backing up your <code>.emacs</code> file in an online code repository or paste heap. That way if you screw it up somehow, it will always be possible to go back to a working version.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; automatic indentation for clojure</span>
+(add-hook <span style="color:#e6db74">&#39;clojure-mode-hook</span> <span style="color:#f92672">&#39;</span>(lambda ()
+(local-set-key (kbd <span style="color:#e6db74">&#34;RET&#34;</span>) <span style="color:#e6db74">&#39;newline-and-indent</span>)))
+</code></pre></div><p>As has often been commented, it seems like Emacs is infinitely configurable. There are lots of areas to changes that might make you work easier. I encourage you to explore additional configurations options. One thing you might consider before doing too much experimentation is backing up your <code>.emacs</code> file in an online code repository or paste heap. That way if you screw it up somehow, it will always be possible to go back to a working version.</p>
 <p>With these changes, you now have a pleasant development environment for that most pleasant of development languages, Clojure.</p>
 
   

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>antlr on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 08 Mar 2011 15:58:17 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</guid>
-      <description>&lt;p&gt;One of the more interesting things I&amp;rsquo;ve been working on lately is a scripting language to drive a simulation system. It describes nominal values of key parameters, how to vary them, do an analysis, gather the results and present those results. &lt;a href=&#34;http://www.antlr.org/&#34; title=&#34;ANTLR Home Page&#34;&gt;ANTLR&lt;/a&gt; and &lt;a href=&#34;http://www.antlr3.org/works/&#34; title=&#34;ANTLRWorks Home Page&#34;&gt;ANTLRWorks&lt;/a&gt; are usually great tools to create the lexer and parser of such a scripting language. That&amp;rsquo;s how I started out this time too. Since I thought it would be trivial, I left parsing signed numbers to nearly the end of the project. It was a bit of a surprise how difficult this was.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the more interesting things I&#39;ve been working on lately is a scripting language to drive a simulation system. It describes nominal values of key parameters, how to vary them, do an analysis, gather the results and present those results. &lt;a href=&#34;http://www.antlr.org/&#34; title=&#34;ANTLR Home Page&#34;&gt;ANTLR&lt;/a&gt; and &lt;a href=&#34;http://www.antlr3.org/works/&#34; title=&#34;ANTLRWorks Home Page&#34;&gt;ANTLRWorks&lt;/a&gt; are usually great tools to create the lexer and parser of such a scripting language. That&#39;s how I started out this time too. Since I thought it would be trivial, I left parsing signed numbers to nearly the end of the project. It was a bit of a surprise how difficult this was.&lt;/p&gt;</description>
     </item>
     
   </channel>

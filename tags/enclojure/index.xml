@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>enclojure on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
-      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
+      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&#39;t stop trying to use Lisp because they don&#39;t like the language. A lot of people stop because they don&#39;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;del&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;/del&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&#39;ve used &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&#39;s what I had to do.&lt;/p&gt;</description>
     </item>
     
   </channel>

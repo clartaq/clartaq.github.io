@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Tasks and UI Updates in JavaFX &middot; Yo-Dave</title>
 
@@ -260,122 +260,115 @@
 </div>
 
   <p>Recently, I answered a <a href="http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188">question</a> on <a href="http://stackoverflow.com/">StackOverflow</a> related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.</p>
-
-<p>It wasn&rsquo;t a very good question by the <a href="http://stackoverflow.com/tour">standards of the forum</a>, with little research or explanation. In fact, it had been down-voted. But it piqued my interest because of a similar problem I had recently. In a program that I have been working on, at start up, there is a check for the presence of a database. If the database is not found, the program needs to write a &ldquo;seed&rdquo; version. I wanted this to happen before the main UI came up, but with a window showing progress on the task. I asked a <a href="http://stackoverflow.com/questions/30917285/javafx-splash-screen-message-and-progress-not-updating">similar question</a> on StackOverflow. (Things weren&rsquo;t working for me because of an embarrassing little bit of stupidity.)</p>
-
+<p>It wasn't a very good question by the <a href="http://stackoverflow.com/tour">standards of the forum</a>, with little research or explanation. In fact, it had been down-voted. But it piqued my interest because of a similar problem I had recently. In a program that I have been working on, at start up, there is a check for the presence of a database. If the database is not found, the program needs to write a &ldquo;seed&rdquo; version. I wanted this to happen before the main UI came up, but with a window showing progress on the task. I asked a <a href="http://stackoverflow.com/questions/30917285/javafx-splash-screen-message-and-progress-not-updating">similar question</a> on StackOverflow. (Things weren't working for me because of an embarrassing little bit of stupidity.)</p>
 <p>An <a href="https://gist.github.com/jewelsea/2305098">example</a> by the amazing <a href="http://stackoverflow.com/users/1155209/jewelsea">JewelSea</a> provided the hint I needed. Since that time I have found myself using similar solutions for all kinds of problems.</p>
+<p>Here's the answer I provided.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> Demo<span style="color:#f92672">;</span>
 
-<p>Here&rsquo;s the answer I provided.</p>
+<span style="color:#f92672">import</span> javafx.application.Application<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.concurrent.Task<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.concurrent.WorkerStateEvent<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.event.ActionEvent<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.event.EventHandler<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.geometry.Insets<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.Scene<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.Button<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.Label<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.control.ProgressBar<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.scene.layout.VBox<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.stage.Stage<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javafx.stage.StageStyle<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package Demo;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BackgroundWorkerDemo</span> <span style="color:#66d9ef">extends</span> Application <span style="color:#f92672">{</span>
 
-import javafx.application.Application;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> String CNTR_LBL_STR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Counter: &#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> counter<span style="color:#f92672">;</span>
 
-public class BackgroundWorkerDemo extends Application {
+    Label counterLabel<span style="color:#f92672">;</span>
+    Button counterButton<span style="color:#f92672">;</span>
+    Button taskButton<span style="color:#f92672">;</span>
 
-    private final static String CNTR_LBL_STR = &quot;Counter: &quot;;
-    private int counter;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        counter <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        counterLabel <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Label<span style="color:#f92672">(</span>CNTR_LBL_STR <span style="color:#f92672">+</span> counter<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        counterButton <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Increment Counter&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        counterButton<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> EventHandler<span style="color:#f92672">&lt;</span>ActionEvent<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                counter<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">;</span>
+                counterLabel<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>CNTR_LBL_STR <span style="color:#f92672">+</span> counter<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        taskButton <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Button<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Long Running Task&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        taskButton<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnAction</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> EventHandler<span style="color:#f92672">&lt;</span>ActionEvent<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>ActionEvent e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+               runTask<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    Label counterLabel;
-    Button counterButton;
-    Button taskButton;
+        VBox mainPane <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VBox<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        mainPane<span style="color:#f92672">.</span><span style="color:#a6e22e">setPadding</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span>10<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        mainPane<span style="color:#f92672">.</span><span style="color:#a6e22e">setSpacing</span><span style="color:#f92672">(</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        mainPane<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>counterLabel<span style="color:#f92672">,</span> counterButton<span style="color:#f92672">,</span> taskButton<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>mainPane<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public void start(Stage primaryStage) {
-        counter = 0;
-        counterLabel = new Label(CNTR_LBL_STR + counter);
-        counterButton = new Button(&quot;Increment Counter&quot;);
-        counterButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
-            @Override
-            public void handle(ActionEvent e) {
-                counter++;
-                counterLabel.setText(CNTR_LBL_STR + counter);
-            }
-        });
-        taskButton = new Button(&quot;Long Running Task&quot;);
-        taskButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
-            @Override
-            public void handle(ActionEvent e) {
-               runTask();
-            }
-        });
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">runTask</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        VBox mainPane = new VBox();
-        mainPane.setPadding(new Insets(10));
-        mainPane.setSpacing(5.0d);
-        mainPane.getChildren().addAll(counterLabel, counterButton, taskButton);
-        primaryStage.setScene(new Scene(mainPane));
-        primaryStage.show();
-    }
+        <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">double</span> wndwWidth <span style="color:#f92672">=</span> 300<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">;</span>
+        Label updateLabel <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Label<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Running tasks...&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        updateLabel<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefWidth</span><span style="color:#f92672">(</span>wndwWidth<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        ProgressBar progress <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressBar<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        progress<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefWidth</span><span style="color:#f92672">(</span>wndwWidth<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    private void runTask() {
+        VBox updatePane <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VBox<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        updatePane<span style="color:#f92672">.</span><span style="color:#a6e22e">setPadding</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Insets<span style="color:#f92672">(</span>10<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        updatePane<span style="color:#f92672">.</span><span style="color:#a6e22e">setSpacing</span><span style="color:#f92672">(</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        updatePane<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>updateLabel<span style="color:#f92672">,</span> progress<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        final double wndwWidth = 300.0d;
-        Label updateLabel = new Label(&quot;Running tasks...&quot;);
-        updateLabel.setPrefWidth(wndwWidth);
-        ProgressBar progress = new ProgressBar();
-        progress.setPrefWidth(wndwWidth);
+        Stage taskUpdateStage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stage<span style="color:#f92672">(</span>StageStyle<span style="color:#f92672">.</span><span style="color:#a6e22e">UTILITY</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        taskUpdateStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>updatePane<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        taskUpdateStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        VBox updatePane = new VBox();
-        updatePane.setPadding(new Insets(10));
-        updatePane.setSpacing(5.0d);
-        updatePane.getChildren().addAll(updateLabel, progress);
+        Task longTask <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Task<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">protected</span> Void <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">int</span> max <span style="color:#f92672">=</span> 50<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> max<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>isCancelled<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                    <span style="color:#f92672">}</span>
+                    updateProgress<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> max<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                    updateMessage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Task part &#34;</span> <span style="color:#f92672">+</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; complete&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-        Stage taskUpdateStage = new Stage(StageStyle.UTILITY);
-        taskUpdateStage.setScene(new Scene(updatePane));
-        taskUpdateStage.show();
+                    Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>100<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">;</span>
 
-        Task longTask = new Task&lt;Void&gt;() {
-            @Override
-            protected Void call() throws Exception {
-                int max = 50;
-                for (int i = 1; i &lt;= max; i++) {
-                    if (isCancelled()) {
-                        break;
-                    }
-                    updateProgress(i, max);
-                    updateMessage(&quot;Task part &quot; + String.valueOf(i) + &quot; complete&quot;);
+        longTask<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnSucceeded</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> EventHandler<span style="color:#f92672">&lt;</span>WorkerStateEvent<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>WorkerStateEvent t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                taskUpdateStage<span style="color:#f92672">.</span><span style="color:#a6e22e">hide</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        progress<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>longTask<span style="color:#f92672">.</span><span style="color:#a6e22e">progressProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        updateLabel<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">(</span>longTask<span style="color:#f92672">.</span><span style="color:#a6e22e">messageProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-                    Thread.sleep(100);
-                }
-                return null;
-            }
-        };
+        taskUpdateStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>longTask<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-        longTask.setOnSucceeded(new EventHandler&lt;WorkerStateEvent&gt;() {
-            @Override
-            public void handle(WorkerStateEvent t) {
-                taskUpdateStage.hide();
-            }
-        });
-        progress.progressProperty().bind(longTask.progressProperty());
-        updateLabel.textProperty().bind(longTask.messageProperty());
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        launch<span style="color:#f92672">(</span>args<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-        taskUpdateStage.show();
-        new Thread(longTask).start();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-}
-</code></pre>
-
-<p>The program puts up a little window with a counter, a button to increment the counter, and a button to start a long-running background task. Once the background task is started, another window is displayed that shows the progress of the task. The window is hidden when the task is completed.</p>
-
+<span style="color:#f92672">}</span>
+</code></pre></div><p>The program puts up a little window with a counter, a button to increment the counter, and a button to start a long-running background task. Once the background task is started, another window is displayed that shows the progress of the task. The window is hidden when the task is completed.</p>
 <p>While the task is running, the user can increment the counter any number of times by pressing the button. The user also can start multiple versions of the long-running task. All-in-all, a very general solution.</p>
 
   

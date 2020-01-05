@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.57.2" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   <title>Getting Images to Load and Preview in Hexo &middot; Yo-Dave</title>
 
@@ -260,35 +260,25 @@
 </div>
 
   <p>As part of the work of transferring old blog posts from other systems (mostly <a href="https://wordpress.com/">WordPress</a>) to <a href="https://hexo.io/">Hexo</a>, I hit a bump when trying to use images in the new posts.</p>
-
 <p>There are basically two recommended ways to access images in Hexo.</p>
-
 <ol>
-<li>Put a new sub-directory, say <code>images</code> in your Hexo source directory. Put your images in your new directory. In your posts, use the usual <a href="https://daringfireball.net/projects/markdown/syntax#img">Markdown method of linking to images</a>, that is something like <code>![Alt text for image](/images/MyImage.png)</code>. But that doesn&rsquo;t work for me, no matter what I try. Generating and deploying appears to copy the image files to the right place, but I can&rsquo;t seem to load them.</li>
+<li>Put a new sub-directory, say <code>images</code> in your Hexo source directory. Put your images in your new directory. In your posts, use the usual <a href="https://daringfireball.net/projects/markdown/syntax#img">Markdown method of linking to images</a>, that is something like <code>![Alt text for image](/images/MyImage.png)</code>. But that doesn't work for me, no matter what I try. Generating and deploying appears to copy the image files to the right place, but I can't seem to load them.</li>
 <li>Use a &ldquo;Resource&rdquo; directory and some special templating in the post. (See the actual documentation <a href="https://hexo.io/docs/asset-folders.html">here</a>.) Going this route does not let me preview the images (and captions, <em>etc</em>.) as I type the post.</li>
 </ol>
-
 <p>So, I finally got things working to my satisfaction by using a third method. The steps I describe are specific to hosting on <a href="https://pages.github.com/">GitHub Pages</a>, but something similar might work for a different hosting method too. It basically involves deploying the image to the GitHub repository, then grabbing the link from the repository to use in your post.</p>
-
 <ol>
-<li>If you haven&rsquo;t already, go ahead and create an <code>images</code> sub-directory inside your <code>source</code> directory.</li>
+<li>If you haven't already, go ahead and create an <code>images</code> sub-directory inside your <code>source</code> directory.</li>
 <li>Copy an image that you want to appear in your post into the <code>images</code> sub-directory.</li>
 <li>Run <code>hexo generate -d</code> to regenerate and deploy your blog. This will copy the image into the <code>public\images</code> directory in the blog site. It will also put the new image into the GitHub repository for the site.</li>
 <li>Now, just write your post. When you want to link to the image, go to the GitHub repository for the site and find the image file in the repository.</li>
 <li>Copy the link to the image. In my case, using Mozilla, I right-click on the image file name in the repository and select &ldquo;Copy Link Location&rdquo; to copy the URL to the clipboard.</li>
 <li>Back in your Markdown for the post, create a new link and paste the URL into it. Something like this: <code>![](https://github.com/clartaq/yo-dave/blob/master/images/2017-08-20-HappyFaceWink.png)</code>.</li>
-<li>We are almost there, but this won&rsquo;t quite work either. Notice where the link refers to <code>.../blob/...</code>? Change that to <code>.../raw/...</code>. That should do it.</li>
+<li>We are almost there, but this won't quite work either. Notice where the link refers to <code>.../blob/...</code>? Change that to <code>.../raw/...</code>. That should do it.</li>
 </ol>
-
-<p>In most of the Markdown editors that I have used, referencing the image with a link in this form will show the image in the preview of the Markdown. It will also show the image in the published post. Here&rsquo;s an example including some extra stuff to use as a hover message, caption, and link to load the image alone.</p>
-
-<p><code>[![Happy Face Winking](https://github.com/clartaq/yo-dave/raw/master/images/2017-08-20-HappyFaceWink.png &quot;An Orange Happy Face Winking&quot;)&lt;br&gt;&lt;small&gt;A Happy Face Winking&lt;/small&gt;](https://github.com/clartaq/yo-dave/raw/master/images/HappyFaceWink.png)
-</code></p>
-
-<p><a href="https://yo-dave.com/static/img/2017-08-20-HappyFaceWink.png" title="An Orange Happy Face Winking"><img src="https://yo-dave.com/static/img/2017-08-20-HappyFaceWink.png" alt="Happy Face Winking" title="An Orange Happy Face Winking" /><br><small>A Happy Face Winking</small></a></p>
-
+<p>In most of the Markdown editors that I have used, referencing the image with a link in this form will show the image in the preview of the Markdown. It will also show the image in the published post. Here's an example including some extra stuff to use as a hover message, caption, and link to load the image alone.</p>
+<p><code>[![Happy Face Winking](https://github.com/clartaq/yo-dave/raw/master/images/2017-08-20-HappyFaceWink.png &quot;An Orange Happy Face Winking&quot;)&lt;br&gt;&lt;small&gt;A Happy Face Winking&lt;/small&gt;](https://github.com/clartaq/yo-dave/raw/master/images/HappyFaceWink.png)</code></p>
+<p><a href="https://yo-dave.com/static/img/2017-08-20-HappyFaceWink.png" title="An Orange Happy Face Winking"><img src="https://yo-dave.com/static/img/2017-08-20-HappyFaceWink.png" alt="Happy Face Winking" title="An Orange Happy Face Winking"><!-- raw HTML omitted --><!-- raw HTML omitted -->A Happy Face Winking<!-- raw HTML omitted --></a></p>
 <p><strong>Update</strong>: 25 March 2018. Since moving the blog to Hugo, the strategy has changed. the image above is actually displayed here using the following:</p>
-
 <p><code>[![Happy Face Winking](/static/img/2017-08-20-HappyFaceWink.png &quot;An Orange Happy Face Winking&quot;)&lt;br&gt;&lt;small&gt;A Happy Face Winking&lt;/small&gt;](/static/img/2017-08-20-HappyFaceWink.png)</code></p>
 
 

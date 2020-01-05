@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>email on Yo-Dave</title>
@@ -18,7 +18,7 @@
       <pubDate>Fri, 26 Aug 2016 09:59:54 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/26/an-email-server-on-ubuntu-14.04/</guid>
-      <description>Email is pretty old. It is older than the Internet. Despite the perennial claims that email is &amp;ldquo;dead&amp;rdquo;, it is still going strong. It&amp;rsquo;s also a bit complicated, which is why most folks set up an account with someone else (Yahoo!, Gmail, HotMail, ProtonMail, FastMail, etc.) who can take care of it for them.
+      <description>Email is pretty old. It is older than the Internet. Despite the perennial claims that email is &amp;ldquo;dead&amp;rdquo;, it is still going strong. It&#39;s also a bit complicated, which is why most folks set up an account with someone else (Yahoo!, Gmail, HotMail, ProtonMail, FastMail, etc.) who can take care of it for them.
 However, if you want to host your own server, it can be done. If you are running Ubuntu 14.</description>
     </item>
     
