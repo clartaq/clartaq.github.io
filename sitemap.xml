@@ -4,7 +4,47 @@
   
   <url>
     <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/memento/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/pattern/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/redo/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/undo/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
   </url>
   
   <url>
@@ -29,21 +69,6 @@
   
   <url>
     <loc>https://yo-dave.com/tags/outliner/</loc>
-    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
     <lastmod>2020-01-05T16:07:50-05:00</lastmod>
   </url>
   

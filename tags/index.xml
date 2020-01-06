@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 Jan 2020 09:39:38 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 17:27:07 -0500</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,45 @@
     <item>
       <title>clojure</title>
       <link>https://yo-dave.com/tags/clojure/</link>
-      <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
+      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
       
       <guid>https://yo-dave.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Memento</title>
+      <link>https://yo-dave.com/tags/memento/</link>
+      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/memento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pattern</title>
+      <link>https://yo-dave.com/tags/pattern/</link>
+      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redo</title>
+      <link>https://yo-dave.com/tags/redo/</link>
+      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/redo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Undo</title>
+      <link>https://yo-dave.com/tags/undo/</link>
+      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/undo/</guid>
       <description></description>
     </item>
     
@@ -958,7 +994,7 @@
     </item>
     
     <item>
-      <title>Speculation</title>
+      <title>speculation</title>
       <link>https://yo-dave.com/tags/speculation/</link>
       <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
       

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.1" />
+  <meta name="generator" content="Hugo 0.62.2" />
 
   <title>Stuart Sierras Component System &middot; Yo-Dave</title>
 
@@ -272,7 +272,7 @@
 <li>A great StackOverflow <a href="https://stackoverflow.com/questions/29070883/how-to-use-stuart-sierras-component-library-in-clojure">answer</a> about how to use the architecture.</li>
 </ul>
 <p>So, starting from these resources, I tried to retrofit the component system into CWiki. After about a week's worth of effort, I just gave up.​ If you have the repository, you can examine my effort in the &ldquo;experimenting&rdquo; branch. I got several subsystems working, like the configuration, database, and server, but it just seemed like one complication after another. I wanted to get back to working on features and bugs, so I abandoned the branch.</p>
-<h5 id="something-i-learned">Something I Learned</h5>
+<h5 id="something-i-learned-">Something I Learned</h5>
 <p>One of the key concepts in working with the component system is the elimination of global state. That's good for functional programming in general too. So it gave me a chance to go through my code and eliminate as much global state as possible.</p>
 <p>The most straightforward technique, and an absolutely obvious one that just never occurred to me was to replace <code>def</code>ed vars with functions that returned the same data. Duh! Now I'm trying to get in the habit of replacing all of my global state data ​with such functions.</p>
 <p>Maybe someday in the future, I'll complete the retrofit. Or, more likely, I'll try it at the beginning of another project.</p>

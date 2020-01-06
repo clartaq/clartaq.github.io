@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.1" />
+  <meta name="generator" content="Hugo 0.62.2" />
 
   <title>Hardening an ngnx Server &middot; Yo-Dave</title>
 
@@ -258,32 +258,32 @@
 
   <p>Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It's something I want to do better. What better place to start than by evaluating security settings on some of my &ldquo;play&rdquo; sites that use <a href="http://nginx.org">nginx</a> as the server component?</p>
 <p>Like I said, I'm no expert, but these are some of the things I have done to my own sites.</p>
-<h3 id="start-by-updating-the-version-of-nginx">Start by Updating the Version of nginx</h3>
+<h3 id="start-by-updating-the-version-of-nginx-">Start by Updating the Version of nginx</h3>
 <p>Many (most?) Linux distros install a version that is quite out of date and contains known vulnerabilities. Generally, newer versions have improved security. For example, as I write this, Ubuntu typically installs a version that is quite out of date and contains known vulnerabilities.</p>
 <p>To fix this, download the latest <!-- raw HTML omitted -->stable<!-- raw HTML omitted --> version from the <a href="http://nginx.org/en/download.html">nginx download site</a> and install it.</p>
-<h3 id="use-a-tool-to-check-security-settings-of-the-server">Use a Tool to Check Security Settings of the Server</h3>
+<h3 id="use-a-tool-to-check-security-settings-of-the-server-">Use a Tool to Check Security Settings of the Server</h3>
 <p>There's a <a href="https://www.htbridge.com/websec">free service</a> that will check the security of any web server. For example, if you check the email service <a href="https://runbox.com/">RunBox</a>, you will find that it receives a grade of A+. If you install nginx on Ubuntu (14.04 LTS), even the current version, out of the box it will receive a grade of F. What can you do to improve the results? Here are some suggestions.</p>
-<h4 id="hide-the-server-version-number">Hide the Server Version Number</h4>
+<h4 id="hide-the-server-version-number-">Hide the Server Version Number</h4>
 <p>This is related to updating the version of the server. Sending the version number can help an attacker use known vulnerabilities in that version. It also gives a skilled hacker the chance to develop a new attack specific to that version since they can study a specific version of the source code for the server.</p>
 <p>You can tell nginx to stop sending version information by editing the <code>/etc/nginx/nginx.conf</code> file. (Depending on your distro, the configuration file might be in a different location.) In that file, find or add a line that says:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">server_tokens off;
 </code></pre></div><p>Then, back at the command line, re-start the server.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service nginx restart
-</code></pre></div><h4 id="send-appropriate-headers">Send Appropriate Headers</h4>
+</code></pre></div><h4 id="send-appropriate-headers-">Send Appropriate Headers</h4>
 <p>A lot of the recommendations are related to the information sent from the server in the headers.</p>
-<h5 id="x-frame-options">X-Frame-Options</h5>
+<h5 id="x-frame-options-">X-Frame-Options</h5>
 <p>This setting determines if a web page can be &ldquo;framed&rdquo; or not. Setting this option to one of the available settings can allow the server to defend against <a href="https://www.owasp.org/index.php/Clickjacking">clickjacking</a>.</p>
 <p>Again, this can be controlled by simply editing the <code>/etc/nginx/nginx.conf</code> file. You can add the following line right below the <code>server_tokens</code> line added in the previous section.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header X-Frame-Options <span style="color:#e6db74">&#34;SAMEORIGIN&#34;</span>;
 </code></pre></div><p>This setting will allow the page to be displayed in a frame with the same origin as the page.</p>
-<h5 id="x-xss-protection">X-XSS-Protection</h5>
+<h5 id="x-xss-protection-">X-XSS-Protection</h5>
 <p>Cross site scripting attacks are fairly common. A simple way to increase protection against them is to include an additional header item:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header X-Xss-Protection <span style="color:#e6db74">&#34;1; mode=block&#34;</span>
 </code></pre></div><p>The <code>1</code> tells the browser to use it's built-in cross site scripting protection heuristics. Most browsers these days have built-in defenses that can be activated this way. The <code>mode=block</code> part tells the browser to block the servers response if the heuristics have detected an XSS.</p>
-<h5 id="x-content-type-options">X-Content-Type-Options</h5>
+<h5 id="x-content-type-options-">X-Content-Type-Options</h5>
 <p>It is possible for some browsers to &ldquo;sniff&rdquo; the content type. This setting can disable that type of detection and force the browser to use the declared content type. This can reduce exposure to drive-by download attacks on sites that serve user-uploaded content, like blog comments for example.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header X-Content-Type-Options nosniff;
-</code></pre></div><h5 id="content-security-policy">Content-Security-Policy</h5>
+</code></pre></div><h5 id="content-security-policy-">Content-Security-Policy</h5>
 <p>Content-Security-Policy (CSP) settings let you specify explicitly the only sources that the server can download resources from, like scripts, styles, fonts and images. This setting can be rather complicated and may require some re-working of the web site. A good introduction can be found at <a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">An Introduction to Content Security Policy</a>. I urge you to review that post or a similar one since they explain it much better than me.</p>
 <p>Before you move to a strict policy, you can use a <code>Content-Security-Policy-Report</code> header to examine how a proposed policy is violated by an existing site. For example, you might include the following directive in the nginx configuration file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">add_header Content-Security-Policy-Report-Only <span style="color:#e6db74">&#34;default-src &#39;self&#39;&#34;</span>

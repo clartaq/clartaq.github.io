@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.1" />
+  <meta name="generator" content="Hugo 0.62.2" />
 
   <title>Restart River5 after Reboot with PM2 &middot; Yo-Dave</title>
 
@@ -261,11 +261,11 @@
   <p>I run a <a href="https://github.com/scripting/river5">River5</a> &ldquo;<a href="http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html">River of News</a>&rdquo; on a <a href="https://www.raspberrypi.org">Raspberry Pi</a> wirelessly connected to my internal home network. Sometimes, the power fluctuates, and the Pi reboots. I want to have River5 restart when the system comes back up.</p>
 <p>There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linux 8.0.) The process manager I use is <a href="http://pm2.keymetrics.io">PM2</a> &ndash; mostly because it knows Nodejs.
 River5 is written for Node.</p>
-<h2 id="install-pm2">Install PM2</h2>
+<h2 id="install-pm2-">Install PM2</h2>
 <p>I assume you already have <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://www.npmjs.com">npm</a> installed. If not, get them now.</p>
 <p>Once you have <code>npm</code>, you can install <code>PM2</code> with the following command line:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install pm2 -g
-</code></pre></div><h2 id="experiment-with-running-river5">Experiment with Running River5</h2>
+</code></pre></div><h2 id="experiment-with-running-river5-">Experiment with Running River5</h2>
 <p>Depending on how you installed River5, you may need to do some fiddling to get it running in PM2.</p>
 <p>In the simplest case, you could just run it from your home directory:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node river5.js

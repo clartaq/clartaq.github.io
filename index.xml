@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 Jan 2020 09:39:38 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 17:27:07 -0500</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Undo/Redo with Clojure using the Memento Pattern</title>
+      <link>https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/</link>
+      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/</guid>
+      <description>Because of the ability to attach &amp;ldquo;watch&amp;rdquo; functions to Clojure atoms, it is very easy to create and use a simple undo/redo mechanism.
+The approach is to create a stack that holds every change to the state of the atom, as detected by a watch function. To undo something you just pop the last state off the stack. You can repeat it until you recover the original state of the atom as it existed when you attached the watch function.</description>
+    </item>
     
     <item>
       <title>clown -- A Clojure/Script Outliner with Notes</title>
@@ -781,7 +791,7 @@ A visit to the ophthalmologist confirmed that my cataracts were growing rather q
       <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
-      <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;update-10-aug-2016-&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
 &lt;p&gt;There&#39;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;I&#39;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>

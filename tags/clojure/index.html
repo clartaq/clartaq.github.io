@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.1" />
+  <meta name="generator" content="Hugo 0.62.2" />
 
   <title>clojure &middot; Yo-Dave</title>
 
@@ -236,6 +236,58 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/">Undo/Redo with Clojure using the Memento Pattern</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>5 Jan 2020 5:27:07 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">Clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/memento">Memento</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/pattern">Pattern</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/redo">Redo</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/undo">Undo</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Because of the ability to attach &ldquo;watch&rdquo; functions to Clojure atoms, it is very easy to create and use a simple undo/redo mechanism.
+The approach is to create a stack that holds every change to the state of the atom, as detected by a watch function. To undo something you just pop the last state off the stack. You can repeat it until you recover the original state of the atom as it existed when you attached the watch function.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
   
     <article>
   <header>

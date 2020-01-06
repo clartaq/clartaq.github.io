@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.62.2" />
+
+  <title>Undo/Redo with Clojure using the Memento Pattern &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Undo/Redo with Clojure using the Memento Pattern</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>5 Jan 2020 5:27:07 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">Clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/memento">Memento</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/pattern">Pattern</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/redo">Redo</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/undo">Undo</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Because of the ability to attach &ldquo;watch&rdquo; functions to Clojure <code>atom</code>s, it is very easy to create and use a simple undo/redo mechanism.</p>
+<p>The approach is to create a stack that holds every change to the state of the atom, as detected by a watch function. To undo something you just pop the last state off the stack. You can repeat it until you recover the original state of the <code>atom</code> as it existed when you attached the watch function.</p>
+<p>Redo is just a variation. You create another stack, the redo stack, where the current state is pushed just before popping the old state on the undo stack. Undo and redo operations can be interleaved until an additional action, not recorded on either stack, modifies the atom. At that point the redo stack is cleared.</p>
+<p>This is an informal implementation of the <a href="https://en.wikipedia.org/wiki/Memento_pattern">Memento Pattern</a>.</p>
+<p>So, how would this be implemented? Well, it just so happens I have one right here.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defprotocol </span>UndoProtocol
+  <span style="color:#e6db74">&#34;A protocol track changes to an atom, allowing undo and redo! operations on that atom.&#34;</span>
+  (<span style="color:#a6e22e">init</span> [this] <span style="color:#e6db74">&#34;Initialize the state of thing implementing this protocol.&#34;</span>)
+  (<span style="color:#a6e22e">num-undos</span> [this] <span style="color:#e6db74">&#34;Return the number of states that can be undone.&#34;</span>)
+  (<span style="color:#a6e22e">num-redos</span> [this] <span style="color:#e6db74">&#34;Return the number of states that can be redone.&#34;</span>)
+  (<span style="color:#a6e22e">can-undo?</span> [this] <span style="color:#e6db74">&#34;Return true if a state change can be undone.&#34;</span>)
+  (<span style="color:#a6e22e">can-redo?</span> [this] <span style="color:#e6db74">&#34;Return true if a state change can be redone.&#34;</span>)
+  (<span style="color:#a6e22e">undo!</span> [this] <span style="color:#e6db74">&#34;Reverse one recorded state change. Return the restored state.&#34;</span>)
+  (<span style="color:#a6e22e">redo!</span> [this] <span style="color:#e6db74">&#34;Re-apply a recorded state change. Return the re-applied state.&#34;</span>)
+  (<span style="color:#a6e22e">clear-undo!</span> [this] <span style="color:#e6db74">&#34;Empty the redo! stack.&#34;</span>)
+  (<span style="color:#a6e22e">clear-redo!</span> [this] <span style="color:#e6db74">&#34;Empty the redo! stack.&#34;</span>)
+  (<span style="color:#a6e22e">pause-tracking!</span> [this] <span style="color:#e6db74">&#34;Pause recording state changes.&#34;</span>)
+  (<span style="color:#a6e22e">resume-tracking!</span> [this] <span style="color:#e6db74">&#34;Resume recording state changes.&#34;</span>)
+  (<span style="color:#a6e22e">stop-tracking!</span> [this] <span style="color:#e6db74">&#34;Stop tracking changes. Disconnect the watching function. Forget all saved state changes.&#34;</span>))
+
+(<span style="color:#66d9ef">defrecord </span>UndoManager [id tracked-atom undo-stack redo-stack paused watch-fn]
+
+  UndoProtocol
+
+  (<span style="color:#a6e22e">init</span> [this]
+    (<span style="color:#a6e22e">swap!</span> undo-stack conj <span style="color:#f92672">@</span>tracked-atom)
+    (<span style="color:#a6e22e">add-watch</span> tracked-atom id watch-fn)
+    this)
+
+  (<span style="color:#a6e22e">num-undos</span> [_] (count <span style="color:#f92672">@</span>undo-stack))
+
+  (<span style="color:#a6e22e">num-redos</span> [_] (count <span style="color:#f92672">@</span>redo-stack))
+
+  (<span style="color:#a6e22e">can-undo?</span> [this] (&gt; (<span style="color:#a6e22e">num-undos</span> this) <span style="color:#ae81ff">1</span>))
+
+  (<span style="color:#a6e22e">can-redo?</span> [this] (pos? (<span style="color:#a6e22e">num-redos</span> this)))
+
+  (<span style="color:#a6e22e">undo!</span> [this]
+    (when (<span style="color:#a6e22e">can-undo?</span> this)
+      (<span style="color:#66d9ef">let </span>[current-state (peek <span style="color:#f92672">@</span>undo-stack)
+            _ (<span style="color:#a6e22e">swap!</span> undo-stack pop)
+            restored-state (peek <span style="color:#f92672">@</span>undo-stack)]
+        (<span style="color:#a6e22e">swap!</span> redo-stack conj current-state)
+        (<span style="color:#a6e22e">pause-tracking!</span> this)
+        (<span style="color:#a6e22e">reset!</span> tracked-atom restored-state)
+        (<span style="color:#a6e22e">resume-tracking!</span> this)
+        restored-state)))
+
+  (<span style="color:#a6e22e">redo!</span> [this]
+    (when (<span style="color:#a6e22e">can-redo?</span> this)
+      (<span style="color:#66d9ef">let </span>[state-to-restore (peek <span style="color:#f92672">@</span>redo-stack)]
+        (<span style="color:#a6e22e">swap!</span> redo-stack pop)
+        (<span style="color:#a6e22e">swap!</span> undo-stack conj state-to-restore)
+        (<span style="color:#a6e22e">pause-tracking!</span> this)
+        (<span style="color:#a6e22e">reset!</span> tracked-atom state-to-restore)
+        (<span style="color:#a6e22e">resume-tracking!</span> this)
+        state-to-restore)))
+
+  (<span style="color:#a6e22e">clear-undo!</span> [_] (<span style="color:#a6e22e">reset!</span> undo-stack []))
+
+  (<span style="color:#a6e22e">clear-redo!</span> [_] (<span style="color:#a6e22e">reset!</span> redo-stack []))
+
+  (<span style="color:#a6e22e">pause-tracking!</span> [_] (<span style="color:#a6e22e">reset!</span> paused true))
+
+  (<span style="color:#a6e22e">resume-tracking!</span> [_] (<span style="color:#a6e22e">reset!</span> paused false))
+
+  (<span style="color:#a6e22e">stop-tracking!</span> [this]
+    (<span style="color:#a6e22e">remove-watch</span> tracked-atom id)
+    (<span style="color:#a6e22e">clear-undo!</span> this)
+    (<span style="color:#a6e22e">clear-redo!</span> this)))
+
+(<span style="color:#66d9ef">defn </span>undo-manager
+  <span style="color:#e6db74">&#34;Return an initialized UndoManager object for the tracked atom.&#34;</span>
+  [tracked-atom]
+  (<span style="color:#66d9ef">let </span>[id (keyword (str <span style="color:#e6db74">&#34;undo-manager-tracker-&#34;</span> (<span style="color:#a6e22e">goog/getUid</span> <span style="color:#f92672">@</span>tracked-atom)))
+        undo-stack (<span style="color:#a6e22e">atom</span> [])
+        redo-stack (<span style="color:#a6e22e">atom</span> [])
+        paused (<span style="color:#a6e22e">atom</span> false)
+        watching-fn (<span style="color:#66d9ef">fn </span>[key atom old-state new-state]
+                      <span style="color:#75715e">;(prn &#34;-- Atom Changed --&#34;)</span>
+                      <span style="color:#75715e">;(prn &#34;key: &#34; key)</span>
+                      <span style="color:#75715e">;(prn &#34;atom: &#34; atom)</span>
+                      <span style="color:#75715e">;(prn &#34;old-state: &#34; old-state)</span>
+                      <span style="color:#75715e">;(prn &#34;new-state: &#34; new-state)</span>
+                      <span style="color:#75715e">;(prn &#34;paused: &#34; @paused)</span>
+                      <span style="color:#75715e">;(let [ae (.-activeElement js/document)]</span>
+                      <span style="color:#75715e">;  (when (= &#34;TEXTAREA&#34; (.-tagName ae))</span>
+                      <span style="color:#75715e">;    (let [sel-start (.-selectionStart ae)</span>
+                      <span style="color:#75715e">;          sel-end (.-selectionEnd ae)]</span>
+                      <span style="color:#75715e">;      (println &#34;sel-start: &#34; sel-start)</span>
+                      <span style="color:#75715e">;      (println &#34;sel-end: &#34; sel-end))))</span>
+                      (when-not <span style="color:#f92672">@</span>paused
+                        (<span style="color:#a6e22e">reset!</span> redo-stack [])
+                        (<span style="color:#a6e22e">reset!</span> paused true)
+                        (<span style="color:#a6e22e">swap!</span> undo-stack conj new-state)
+                        (<span style="color:#a6e22e">reset!</span> paused false)))]
+    (<span style="color:#a6e22e">init</span> (<span style="color:#a6e22e">UndoManager.</span> id tracked-atom undo-stack redo-stack paused watching-fn))))
+</code></pre></div><p>I believe this is my very first use of Clojure's <a href="https://clojure.org/reference/protocols"><code>defprotocol</code></a> and <a href="https://clojure.org/reference/datatypes#_deftype_and_defrecord"><code>defrecord</code></a> facilities.</p>
+<p>You might use it like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[tracked-atom (<span style="color:#a6e22e">atom</span> <span style="color:#e6db74">&#34;Initial State&#34;</span>)
+      ur (<span style="color:#a6e22e">undo-manager</span> tracked-atom)]
+  <span style="color:#75715e">; Make your tracked changes here. Do your</span>
+  <span style="color:#75715e">; undo and redo operations by calling</span>
+  (<span style="color:#a6e22e">ur/undo</span>)
+  <span style="color:#75715e">; or</span>
+  (<span style="color:#a6e22e">ur/redo</span>))
+</code></pre></div><h4 id="what-this-isnt-good-for">What This Isn't Good For</h4>
+<p>I learned these things because they are actually what I built it for and it was totally inadequate.</p>
+<h5 id="text-editing">Text Editing</h5>
+<p>If your text is in an <code>atom</code>, editing the text while using this type of undo manager will make a copy of the complete contents of the atom on every keystroke.</p>
+<p>Surprisingly, I never had problems with speed, probably because of Clojure's structure sharing. Likewise, memory consumption was never a problem either even with relatively large texts &ndash; tens to hundreds of thousands of characters.</p>
+<p>Also, using this simple approach doesn't really store enough information like where was the cursor? Was any text highlighted? And so on.</p>
+<p>Of course, there are optimizations that could be made, like chunking state saves based on pauses in user activity. But if you're going to that much trouble, why not just user the <a href="https://en.wikipedia.org/wiki/Command_pattern">Command Pattern</a>?</p>
+<p>The bottom line is that it is just the wrong approach. Anyway, most text entry controls already do a fine job on their own.</p>
+<h5 id="when-user-visible-changes-consist-of-two-or-more-state-changes">When User-Visible Changes Consist of Two or More State Changes</h5>
+<p>Since this method captures <em>every</em> change to the state of the atom, it can expose the user to previously invisible intermediate states causing confusion and panic. (Believe me I know!).</p>
+<p>For example, I've been working on a simple outliner. One of the commands lets you move the current headline up or down in the outline. Intermediate states in those operations may show duplicate headings or missing headings. Exposing the user to those intermediate states is not a good idea.</p>
+<h4 id="summary">Summary</h4>
+<p>While using the Memento Pattern for undo/redo in Clojure is easy. But it is only applicable in simple situations that are invisible to the user.</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

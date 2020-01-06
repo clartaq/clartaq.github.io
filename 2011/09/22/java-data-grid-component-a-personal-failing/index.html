@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.1" />
+  <meta name="generator" content="Hugo 0.62.2" />
 
   <title>Java Data Grid Component -- A Personal Failing &middot; Yo-Dave</title>
 
@@ -268,19 +268,19 @@
 <p>Most of what you can find on the web is closed source or doesn't really fit the need. It all seems to be based on the <a href="http://download.oracle.com/javase/tutorial/uiswing/components/table.html">JTable</a> component. I tend to go back and forth between getting fed up extending JTable going off to implement something better, which is just too hard, and going back to extending JTable. Rinse, lather, repeat. Aargh!</p>
 <p>It turns out that I'm not the only one to consider this. In a <!-- raw HTML omitted --><a href="http://stuffthathappens.com/blog/2008/01/17/jtable-time-to-rethink-nih/">post</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) back in 2008 Eric Burke considers a similar problem. And yet, three years later the problem persists. <!-- raw HTML omitted --><a href="http://download.java.net/javadesktop/swinglabs/releases/0.8/docs/api/org/jdesktop/swingx/JXTable.html">JXTable</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) addresses some of the issues, but not all.</p>
 <p>The issues with most of the attempts so far seem to fall into two categories: presentation and functionality. Some examples:</p>
-<h1 id="presentation">Presentation</h1>
+<h1 id="presentation-">Presentation</h1>
 <p><strong>Use the active look and feel</strong>. How should the preferences of a look and feel be propagated into the component? There should also be API to allow overriding those settings when needed.</p>
 <p><strong>Component Sizing</strong>. What should the component do if the space available to it is larger than the space needed? For example, suppose the particular application needs only two columns of data. When given more space than needed, the component should enforce its space requirements. Otherwise you are likely to get bit ugly gray areas of no man's land like this:</p>
 <p><a href="https://yo-dave.com/static/img/2011-09-22-DataGrid.PNG"><img src="https://yo-dave.com/static/img/2011-09-22-DataGrid.PNG" alt="Image of a Basic Data Grid with Empty Space" title="A Basic Data Grid with Empty Space"> <!-- raw HTML omitted --><!-- raw HTML omitted -->A Basic Data Grid with Empty Space<!-- raw HTML omitted --></a></p>
 <p>And what's with the insets on the row labels?</p>
-<h1 id="functionality">Functionality</h1>
+<h1 id="functionality-">Functionality</h1>
 <p><strong>Sorting</strong>. Many of the attempts include sorting, but not always a useful type of sorting. Consider a set of data that consists of results from matched pairs of experiments, the control in the first column, the treatment in the second. If you sort on only one of those columns, you have broken the matching. It should be possible to &ldquo;lock&rdquo; columns together when sorting.</p>
 <p><strong>Toolbar</strong>. A data entry grid is not just a rectangular area for entering the data. It should also be associated with a useful toolbar to do numeric and text formatting. The usual undo, cut, copy, paste, and delete operations should be there. What should be in that toolbar and how should it be associated with the grid. Should it be possible to merge it into the toolbar used by the main program somehow? Should the grid have a save operation separate from the main program that saves analysis results? Interesting questions without obvious solutions.</p>
 <p><strong>Data File Format</strong>. Many of the different grid components let the user adjust the appearance of the grid, for example, changing the width of the column header to accommodate a long column title. Some allow changing the border appearance or text justification in a cell. How are those preference adjustments persisted? In many cases, not at all &ndash; reloading the data file will require re-adjustment of the appearance. Full-blown spreadsheet programs like Excel persist those changes in the data file. I don't think the component should be created without also designing a persistent data format.</p>
-<h1 id="what-do-we-really-want">What Do We Really Want?</h1>
+<h1 id="what-do-we-really-want-">What Do We Really Want?</h1>
 <p>Well, Excel is often used as a model, but it isn't really adequate either. I think we want something like the data grids in statistical programs like <a href="http://www.statsoft.com/#">Statistica</a> (Statistica has pretty much vanished through a seris of acquisitions), <a href="http://www.minitab.com/en-US/default.aspx">MiniTab</a>, and others. These are not spreadsheets in the Excel sense (though they have some ability to calculate the contents of some cells based on the values in others.) They are dedicated data entry/editing components. And it seems like every manufacturer has developed their own, all with incompatible data formats.</p>
 <p>I think we need something inspired by JTable, but independent of it. But this is a hard problem. Look at how long it took the SwingLabs team to come up with the changes in JXTable.</p>
-<h1 id="why-am-i-bringing-this-up-now">Why Am I Bringing this Up Now?</h1>
+<h1 id="why-am-i-bringing-this-up-now-">Why Am I Bringing this Up Now?</h1>
 <p>I'm doing some clean up on some statistical tools that include unsatisfactory data grids in the interface. I'll put these up in public repositories and be embarrassed about the quality of data entry. (Basically, you have to load specially formatted CSV data files and can't really do much editing or saving from within the programs.)</p>
 <p>It's just one of those continuing areas of dissatisfaction where I haven't been able to create or steal a good solution.</p>
   
