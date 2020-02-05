@@ -27,8 +27,8 @@
       <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</guid>
-      <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&#39;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
-&lt;p&gt;Like I said, I&#39;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&amp;rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
+&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,9 +37,9 @@
       <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/02/22/river5-on-windows/</guid>
-      <description>&lt;p&gt;As you know, I&#39;m a big fan of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt; and his &lt;a href=&#34;http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html&#34;&gt;River of News&lt;/a&gt; aggregators. His recent &lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is particularly nice.&lt;/p&gt;
-&lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&#39;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
-&lt;p&gt;I&#39;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&#39;s easy and works like a dream. Here&#39;s how.&lt;/p&gt;</description>
+      <description>&lt;p&gt;As you know, I&amp;rsquo;m a big fan of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt; and his &lt;a href=&#34;http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html&#34;&gt;River of News&lt;/a&gt; aggregators. His recent &lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is particularly nice.&lt;/p&gt;
+&lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,9 +59,9 @@
       
       <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
       <description>&lt;h2 id=&#34;update-10-aug-2016-&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
-&lt;p&gt;There&#39;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;I&#39;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
     </item>
     
   </channel>

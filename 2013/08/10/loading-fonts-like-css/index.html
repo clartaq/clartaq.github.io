@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Loading Fonts Like CSS &middot; Yo-Dave</title>
 
@@ -256,9 +256,9 @@
 
 </div>
 
-  <p>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &ldquo;preferred&rdquo; font through a series of less ideal typefaces depending on what's available on the machine doing the display.</p>
-<p>That's a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</p>
-<p>Here's a little program that illustrates the technique.</p>
+  <p>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &ldquo;preferred&rdquo; font through a series of less ideal typefaces depending on what&rsquo;s available on the machine doing the display.</p>
+<p>That&rsquo;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</p>
+<p>Here&rsquo;s a little program that illustrates the technique.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">   (<span style="color:#66d9ef">ns </span>demo.core
       (<span style="color:#e6db74">:gen-class</span> extends javafx.application.Application)
       (<span style="color:#e6db74">:import</span>
@@ -326,7 +326,7 @@
     (<span style="color:#66d9ef">defn </span>-main
       [<span style="color:#f92672">&amp;</span> args]
       (<span style="color:#a6e22e">Application/launch</span> demo.core args))
-</code></pre></div><p>And here's a Leiningen script to build the program.</p>
+</code></pre></div><p>And here&rsquo;s a Leiningen script to build the program.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">defproject </span>demo <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
       <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demo of loading JavaFX fonts in Clojure.&#34;</span>
       <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://example.com/FIXME&#34;</span>
@@ -336,11 +336,11 @@
       <span style="color:#e6db74">:resource-paths</span> [<span style="color:#e6db74">&#34;c:\\Program Files\\Java\\jdk1.7.0_25\\jre\\lib\\jfxrt.jar&#34;</span>]
       <span style="color:#e6db74">:aot</span> <span style="color:#e6db74">:all</span>
       <span style="color:#e6db74">:main</span> demo.core)
-</code></pre></div><p>(I will certainly be glad when Java 8 and JavaFX 8 are out so I won't have to go through this stuff of having to specify where the JavaFX run-time is located.)</p>
+</code></pre></div><p>(I will certainly be glad when Java 8 and JavaFX 8 are out so I won&rsquo;t have to go through this stuff of having to specify where the JavaFX run-time is located.)</p>
 <p>The interesting stuff is in the <code>pref-typeface</code> and <code>get-pref</code> functions. In <code>pref-typeface</code>, you supply a list of potential fonts to use, listing the most preferred first and the least preferred last. (&ldquo;Fantasy&rdquo; and &ldquo;Not Real&rdquo; are not real typefaces. They are only to show that things work when the most preferred fonts are not available.)</p>
 <p>The <code>get-pref</code> function is a bit more general purpose. It finds and returns the first element of <code>prefs</code> that appears in the list of available font families.</p>
 <p>So you end up using the best available font on the system you are running.</p>
-<p>I have not tried this on Linux or Mac, so don't know how universally applicable it is.</p>
+<p>I have not tried this on Linux or Mac, so don&rsquo;t know how universally applicable it is.</p>
 
   
   

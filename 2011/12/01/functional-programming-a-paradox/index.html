@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Functional Programming: A Paradox? &middot; Yo-Dave</title>
 
@@ -257,12 +257,12 @@
 </div>
 
   <p>I like the idea of Functional Programming. It just appeals to my own mathematical bent I think. A few of the central tenets include immutability of data and creating functions that always produce the same results given the same arguments by avoiding side effects. All this to minimize generation of unpredictable results (errors). But wait a minute. There is another field of study with a long and deep history of research, random number generation, that says it is virtually impossible to generate truly random (unpredictable) results on a computer. What gives?</p>
-<p>Much research indicates that the generation of truly random (unpredictable) results has to rely on a random physical process outside of the computer, such a radioactive decay or waiting for cosmic rays to randomly flip bits in a computer's memory, or maybe timing the period between malware attacks on you system. (That's an interesting idea I've never seen explored.)</p>
-<p>If it's so hard to generate truly random results on the computer, why do FP and other programming methodologies have such strict prescriptions for producing more reliable programs?</p>
+<p>Much research indicates that the generation of truly random (unpredictable) results has to rely on a random physical process outside of the computer, such a radioactive decay or waiting for cosmic rays to randomly flip bits in a computer&rsquo;s memory, or maybe timing the period between malware attacks on you system. (That&rsquo;s an interesting idea I&rsquo;ve never seen explored.)</p>
+<p>If it&rsquo;s so hard to generate truly random results on the computer, why do FP and other programming methodologies have such strict prescriptions for producing more reliable programs?</p>
 <p>Well, in my opinion there are a few differences between generating random numbers and writing error-free programs for more traditional programs, but they all seem to boil down to the amount of complexity and detail we can reliably retain in our feeble little brains. Generally when you want to generate random numbers, you want lots of them in very little time. More traditional programs tend to run for longer periods of time and have to deal with much more data that needs to be retained during the execution of the program.</p>
 <p>Avoiding side effects reduces the amount of stuff your unreliable brain has to keep track of. A side effect is just another kind of input that is given to the program. With a given value, the results are entirely predictable. If you can remember them and keep track of all of the possible values of the side effects and assure that you handle them correctly. Without those side effects, you have so much less to keep track of.</p>
-<p>Same thing with mutable state. A computation from a given state will always produce the same result. The problem is our inability to reason completely about all of the interactions and effects of mutable state. We've spent the last 50 years or so proving this inability over and over. Immutable state means less stuff to keep track of.</p>
-<p>On a fundamental level, there is no theoretical issue with side effects, mutable state or all the other bugaboos of FP and other methodologies. It's simply our inability to deal with the immense amount of variation that causes problems.</p>
+<p>Same thing with mutable state. A computation from a given state will always produce the same result. The problem is our inability to reason completely about all of the interactions and effects of mutable state. We&rsquo;ve spent the last 50 years or so proving this inability over and over. Immutable state means less stuff to keep track of.</p>
+<p>On a fundamental level, there is no theoretical issue with side effects, mutable state or all the other bugaboos of FP and other methodologies. It&rsquo;s simply our inability to deal with the immense amount of variation that causes problems.</p>
 <p>Still, it would be interesting to investigate whether the tools used to examine and test the quality of random number generators have any application to testing the quality of other types of programs.</p>
 
   

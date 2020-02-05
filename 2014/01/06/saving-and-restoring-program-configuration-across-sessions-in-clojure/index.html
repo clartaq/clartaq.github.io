@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Saving and Restoring Program Configuration across Sessions in Clojure &middot; Yo-Dave</title>
 
@@ -257,11 +257,11 @@
 </div>
 
   <p>I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.</p>
-<p>For some time, I've been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
+<p>For some time, I&rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
 <p>Simple configuration data usually consists of key/value pairs. In Clojure, the natural data structure to use is the map. For example, the size and position of a program window might be encoded as something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#e6db74">:x-pos</span> <span style="color:#ae81ff">364.0</span>, <span style="color:#e6db74">:y-pos</span> <span style="color:#ae81ff">341.0</span>, <span style="color:#e6db74">:width</span> <span style="color:#ae81ff">440.0</span>, <span style="color:#e6db74">:height</span> <span style="color:#ae81ff">330.0</span>}
 </code></pre></div><p>The structure of the values can actually be arbitrarily complex. They can hold just about anything.</p>
-<p>It turns out that Clojure has facilities built in that can store and retrieve such information from disk files easily. The following is a demonstration of how saving and restoring such information can be done. First, here's a project file:</p>
+<p>It turns out that Clojure has facilities built in that can store and retrieve such information from disk files easily. The following is a demonstration of how saving and restoring such information can be done. First, here&rsquo;s a project file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>cnfdemo <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
   <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demonstration of saving/restoring configuration info in Clojure&#34;</span>
   <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;https:/bitbucket.org/David_Clark/cnfdemo/overview&#34;</span>

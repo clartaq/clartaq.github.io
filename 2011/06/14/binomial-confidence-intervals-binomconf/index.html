@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Binomial Confidence Intervals -- BinomConf &middot; Yo-Dave</title>
 
@@ -258,19 +258,19 @@
 
 </div>
 
-  <p>Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn't seem to handle such large numbers of trials.</p>
+  <p>Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&rsquo;t seem to handle such large numbers of trials.</p>
 <p>For example, how often did a particular chemical reaction produce a positive result even when the conditions to produce a positive were not present (a &ldquo;false positive&rdquo;). If we ran thousands of these simple reactions, we could get an estimate of how frequently it produced a false positive. But that was just a point estimate. Conversations with managers on the program would go something like:</p>
 <p>Mgr: &ldquo;How confident are you that the false positive rate is 0.27%?&rdquo;</p>
 <p>Me: &ldquo;Not at all.&rdquo;</p>
 <p>Mgr: &ldquo;What!? What did you just spend all that time and money doing?&hellip;&rdquo;</p>
-<p>Me: &ldquo;All of these measurements are just estimates. What if I told you that I'm 95% sure that the false positive rate is somewhere between 0.25% and 0.29%?&rdquo;</p>
-<p>Mgr: &ldquo;Oh. Well, that's OK then.&rdquo;</p>
+<p>Me: &ldquo;All of these measurements are just estimates. What if I told you that I&rsquo;m 95% sure that the false positive rate is somewhere between 0.25% and 0.29%?&rdquo;</p>
+<p>Mgr: &ldquo;Oh. Well, that&rsquo;s OK then.&rdquo;</p>
 <p>Since the programs available to me at the time could not handle the level of replication we were using, I wrote my own. As I recall, the first version of the program was written in C and ran at the command line. Later versions were written in Delphi and gained a GUI. The current version is in Java. It looks like this.</p>
 <p><a href="https://yo-dave.com/static/img/2011-06-14-BinomConf.png"><img src="https://yo-dave.com/static/img/2011-06-14-BinomConf.png" alt="Image of binomial confidence interval calculator" title="BinomConf"><!-- raw HTML omitted --><!-- raw HTML omitted -->Screenshot of the Binomial Confidence Calculator<!-- raw HTML omitted --></a></p>
 <p>Although I still use the program for its original purpose, I also use it as a quick reminder of how to do certain things I do over and over. (I have no memory for small configuration details.) Some of these things include validation of user input, unit testing at the GUI level, saving user preference data, writing help, and so on.</p>
-<p>The Java version of the program was written back before IDEs were very good just using a text editor and Ant for the build instructions. It's been updated to a NetBeans project, but the conversion is incomplete. You can build and run the program in NetBeans, but to do unit testing, you have to use the command line and Ant:</p>
+<p>The Java version of the program was written back before IDEs were very good just using a text editor and Ant for the build instructions. It&rsquo;s been updated to a NetBeans project, but the conversion is incomplete. You can build and run the program in NetBeans, but to do unit testing, you have to use the command line and Ant:</p>
 <p><code>c:\ant test</code></p>
-<p>Still, it's a handy little utility and I've made it available on HelixTeamHub at</p>
+<p>Still, it&rsquo;s a handy little utility and I&rsquo;ve made it available on HelixTeamHub at</p>
 <p><a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/binomconf/tree/default" title="Link to BinomConf repository on HelixTeamHub.">https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/binomconf/tree/default</a></p>
 <p>Enjoy!</p>
   

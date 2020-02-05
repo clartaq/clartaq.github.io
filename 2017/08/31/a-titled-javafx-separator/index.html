@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>A Titled JavaFX Separator &middot; Yo-Dave</title>
 
@@ -257,7 +257,7 @@
 </div>
 
   <p>In the process of updating some old programs, I had to change the GUI frameworks used. The old programs were written in Java using the Swing GUI framework and the <a href="http://www.jgoodies.com/">JGoodies</a> <a href="http://www.jgoodies.com/freeware/libraries/forms/">Forms</a> and <a href="http://www.jgoodies.com/freeware/libraries/looks/">Looks</a> libraries. Nowadays, the official GUI framework for Java is JavaFX.</p>
-<p>Making the transition from Swing to JavaFX was relatively painless because the programs were so small. However, one of the things I missed from the JGoodies Forms library was the &ldquo;titled separator&rdquo;, that is a separator with a label in front of it. I really liked the look. Turns out that making my own wasn't that difficult. Here's a program extract that implements my version. (This time it's written in Clojure.)</p>
+<p>Making the transition from Swing to JavaFX was relatively painless because the programs were so small. However, one of the things I missed from the JGoodies Forms library was the &ldquo;titled separator&rdquo;, that is a separator with a label in front of it. I really liked the look. Turns out that making my own wasn&rsquo;t that difficult. Here&rsquo;s a program extract that implements my version. (This time it&rsquo;s written in Clojure.)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Clojure" data-lang="Clojure">(<span style="color:#66d9ef">def </span>sep-color <span style="color:#e6db74">&#34;#4682b4&#34;</span>)                                   <span style="color:#75715e">; steelblue</span>
 (<span style="color:#66d9ef">def </span>sep-style (<span style="color:#a6e22e">str/join</span> <span style="color:#e6db74">&#34;&#34;</span> [<span style="color:#e6db74">&#34;-fx-border-color: &#34;</span>
                              sep-color

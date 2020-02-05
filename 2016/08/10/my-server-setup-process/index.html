@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>My Server Setup Process &middot; Yo-Dave</title>
 
@@ -281,7 +281,7 @@ root@ubuntu:~# apt-get upgrade
 </code></pre></div><p>There may also be a message about the availability of a new Ubuntu release.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">New release <span style="color:#e6db74">&#39;16.04.1 LTS&#39;</span> available.
 Run <span style="color:#e6db74">&#39;do-release-upgrade&#39;</span> to upgrade to it.
-</code></pre></div><p>If your hosting service allows it, just do it. Again, it can be a bit of a long wait. After the system checks on what it needs to remove and install to do the update, it will ask you if you want to proceed. It allows you to cancel or check on details before proceeding. If you want the upgrade, respond with a &ldquo;y&rdquo; to start the upgrade. On my systems, there are a few prompts about updating scripts (or not). Just select the defaults, which don't make changes.</p>
+</code></pre></div><p>If your hosting service allows it, just do it. Again, it can be a bit of a long wait. After the system checks on what it needs to remove and install to do the update, it will ask you if you want to proceed. It allows you to cancel or check on details before proceeding. If you want the upgrade, respond with a &ldquo;y&rdquo; to start the upgrade. On my systems, there are a few prompts about updating scripts (or not). Just select the defaults, which don&rsquo;t make changes.</p>
 <p>At the end of the process, go ahead and reboot again.</p>
 <p>When you log back in, you will be running Ubuntu 16.04. If there is no log on message showing the version, you can check with</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@example:~# lsb_release -a
@@ -315,19 +315,19 @@ root@example:~#
 <p>At this point, we can tell the system to allow the new user root access by adding them to the &ldquo;sudo&rdquo; group.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@example:~# gpasswd -a user-name sudo
 Adding user user-name to group sudo
-</code></pre></div><p>Now, you can log off as root and log back in as your new user. It's important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
+</code></pre></div><p>Now, you can log off as root and log back in as your new user. It&rsquo;s important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
 <h2 id="set-up-public-key-ssh-access">Set Up Public Key SSH Access</h2>
 <p>Public key access is an additional method to authenticate yourself when signing into your server. It is considered to be more secure and flexible, but a little more difficult to set up. I think it is only more difficult in that there are more steps to do, none of which are particularly difficult. Just sayin&rsquo;.</p>
-<p>First off, you need public and private encryption keys. If you don't know what I'm talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it&rsquo; too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
+<p>First off, you need public and private encryption keys. If you don&rsquo;t know what I&rsquo;m talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it&rsquo; too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
 <p>I usually start by changing the permissions of my home directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">user-name@example:~$ chmod <span style="color:#ae81ff">750</span> ~
-</code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no one else at this point) can read and execute, but not write into the directory. Others can't do any of those things.</p>
+</code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no one else at this point) can read and execute, but not write into the directory. Others can&rsquo;t do any of those things.</p>
 <p>Next you need to create a place to save public encryption keys. By convention, this is a sub-directory of your home directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">user-name@example:~$ mkdir .ssh
 user-name@example:~$ chmod <span style="color:#ae81ff">700</span> .ssh
 </code></pre></div><p>These permissions mean that only I can read/write/execute in the <code>.ssh</code> directory.</p>
-<p>Since I do it so often, I have a file on the system that I use to set up the servers called <code>authorized_keys</code>. In that file, I have concatenated all of the public encryption keys that I tend to use on my servers. It's just a text file that I need to be able to send to the new server. <strong>Make sure</strong> that only your <em>public</em> keys go in this file.</p>
-<p>Now you need to be able to transfer that file into the <code>.ssh</code> directory on the server. If you only have PuTTY to work with, it's easy. Open the file in Windows first using whatever text editor you prefer and copy all of it to the clipboard (<code>Ctrl-A</code>, <code>Ctrl-C</code>). Then, on the server create the file, open it for editing, paste the contents of the clipboard (<code>Shift-Ins</code> is the PuTTY keystroke to paste from the clipboard), and finally save and close the file.</p>
+<p>Since I do it so often, I have a file on the system that I use to set up the servers called <code>authorized_keys</code>. In that file, I have concatenated all of the public encryption keys that I tend to use on my servers. It&rsquo;s just a text file that I need to be able to send to the new server. <strong>Make sure</strong> that only your <em>public</em> keys go in this file.</p>
+<p>Now you need to be able to transfer that file into the <code>.ssh</code> directory on the server. If you only have PuTTY to work with, it&rsquo;s easy. Open the file in Windows first using whatever text editor you prefer and copy all of it to the clipboard (<code>Ctrl-A</code>, <code>Ctrl-C</code>). Then, on the server create the file, open it for editing, paste the contents of the clipboard (<code>Shift-Ins</code> is the PuTTY keystroke to paste from the clipboard), and finally save and close the file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">user-name@example:~$ touch .ssh/authorized_keys
 user-name@example:~$ nano .ssh/authorized_keys
 </code></pre></div><p>Next, set the permissions on the new <code>authorized_keys</code> file.</p>
@@ -375,10 +375,10 @@ Command may disrupt existing ssh connections. Proceed with operation <span style
 Firewall is active and enabled on system startup
 user-name@example:~$
 </code></pre></div><h2 id="quarantine-bad-actors-with-fail2ban">Quarantine Bad Actors with Fail2Ban</h2>
-<p><a href="http://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban</a> is daemon that monitors frequent attempts to log into your system, and probing for exploits. It will ban IPs that repeatedly exhibit these suspicious activities. It's easy to set up and is pre-configured to work pretty well. It's &ldquo;set it and forget it.&rdquo;</p>
+<p><a href="http://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban</a> is daemon that monitors frequent attempts to log into your system, and probing for exploits. It will ban IPs that repeatedly exhibit these suspicious activities. It&rsquo;s easy to set up and is pre-configured to work pretty well. It&rsquo;s &ldquo;set it and forget it.&rdquo;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">user-name@example:~$ sudo apt-get install fail2ban
 </code></pre></div><h2 id="automate-security-updates">Automate Security Updates</h2>
-<p>The <code>sudo apt-get update; sudo apt-get upgrade</code> commands are almost reflexive for me now. However, in the event that you forget to do it for awhile or (heaven forbid!) go on an unplugged vacation, you can safely automate some of the update process. Generally, it's OK to automate security updates because of their few dependencies. Two files need to be edited/checked to enable automatic updating of security patches.</p>
+<p>The <code>sudo apt-get update; sudo apt-get upgrade</code> commands are almost reflexive for me now. However, in the event that you forget to do it for awhile or (heaven forbid!) go on an unplugged vacation, you can safely automate some of the update process. Generally, it&rsquo;s OK to automate security updates because of their few dependencies. Two files need to be edited/checked to enable automatic updating of security patches.</p>
 <p>First, set the timing of updates by editing <code>/etc/apt/apt.conf.d/10periodic</code>. Modify it to look like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">APT::Periodic::Update-Package-Lists <span style="color:#e6db74">&#34;1&#34;</span>; 
 APT::Periodic::Download-Upgradeable-Packages <span style="color:#e6db74">&#34;1&#34;</span>; 
@@ -395,7 +395,7 @@ Unattended-Upgrade::Allowed-Origins <span style="color:#f92672">{</span>
 <span style="color:#f92672">}</span>;
 </code></pre></div><p>As the name suggests, this allows security upgrades to run unattended but prevents others.</p>
 <h2 id="time-zones-and-the-network-time-protocol">Time Zones and the Network Time Protocol</h2>
-<p>It's likely that the time zone is already set correctly, but you can check with:</p>
+<p>It&rsquo;s likely that the time zone is already set correctly, but you can check with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">user-name@ubuntu:~$ sudo dpkg-reconfigure tzdata
 ... your local time ...
 ... universal time ...

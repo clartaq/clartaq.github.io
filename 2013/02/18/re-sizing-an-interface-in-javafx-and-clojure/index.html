@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Re-sizing an Interface in JavaFX and Clojure &middot; Yo-Dave</title>
 
@@ -260,13 +260,13 @@
 
 </div>
 
-  <p>Since <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="JavaFX overview">JavaFX</a> is the <a href="http://www.oracle.com/technetwork/java/javafx/overview/faq-1446554.html#6" title="JavaFX FAQ">future of the user interface for Java</a>, I've started trying to learn it. Since I'm also learning <a href="http://clojure.org/" title="Clojure home page">Clojure</a>, I'm doing the work in that language.</p>
-<p>One of the things I've been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</p>
-<p>Well, one of the tasks I've set for myself recently was the creation of an interface for the game of tic-tac-toe. Such an interface should look something like the following:</p>
+  <p>Since <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="JavaFX overview">JavaFX</a> is the <a href="http://www.oracle.com/technetwork/java/javafx/overview/faq-1446554.html#6" title="JavaFX FAQ">future of the user interface for Java</a>, I&rsquo;ve started trying to learn it. Since I&rsquo;m also learning <a href="http://clojure.org/" title="Clojure home page">Clojure</a>, I&rsquo;m doing the work in that language.</p>
+<p>One of the things I&rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</p>
+<p>Well, one of the tasks I&rsquo;ve set for myself recently was the creation of an interface for the game of tic-tac-toe. Such an interface should look something like the following:</p>
 <p>(<strong>NOTE</strong>: The original image and the original program have been lost. The following image is a reasonable facsimile.)</p>
 <p><a href="https://yo-dave.com/static/img/2013-05-08-PlaySnip.png"><img src="https://yo-dave.com/static/img/2013-05-08-PlaySnip.png" alt="The startup screen for the tic-tac-toe application."><!-- raw HTML omitted --><!-- raw HTML omitted -->The startup screen for the tic-tac-toe application.<!-- raw HTML omitted --></a></p>
 <p>When the window is re-sized, all of the requirements listed above are met.</p>
-<p>Here's the listing of the program that produces the interface shown above. There is no logic for actually playing the game, just re-sizing and re-drawing the board (with some hard-wired symbols).</p>
+<p>Here&rsquo;s the listing of the program that produces the interface shown above. There is no logic for actually playing the game, just re-sizing and re-drawing the board (with some hard-wired symbols).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>titato.core
   (<span style="color:#e6db74">:gen-class</span>
    <span style="color:#e6db74">:extends</span> javafx.application.Application)
@@ -385,7 +385,7 @@
 (<span style="color:#66d9ef">defn </span>-main [<span style="color:#f92672">&amp;</span>amp<span style="color:#75715e">; args]</span>
   (<span style="color:#a6e22e">Application/launch</span> titato.core args))
 
-</code></pre></div><p>And here's the project file.</p>
+</code></pre></div><p>And here&rsquo;s the project file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>titato <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
   <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demo of a resizable JavaFX tic-tac-toe interface&#34;</span>
   <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://example.com/FIXME&#34;</span>
@@ -394,10 +394,10 @@
   <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.4.0&#34;</span>]]
   <span style="color:#e6db74">:resource-paths</span> [<span style="color:#e6db74">&#34;c:\\Program Files\\Java\\jdk1.7.0_13\\jre\\lib\\jfxrt.jar&#34;</span>]
   <span style="color:#e6db74">:main</span> titato.core)
-</code></pre></div><p>Note the use of the <code>resource-path</code> in the project file. That's how <a href="https://github.com/technomancy/leiningen" title="Leiningen home page">leiningen</a> finds JavaFX.</p>
-<p>The magic begins in the <code>-start</code> function. That's the function in your program that JavaFX calls to start things up. The first thing required is that your root node is actually re-sizable. Hence the use of a <code>Pane</code>. See <a href="http://amyfowlersblog.wordpress.com/2011/06/02/javafx2-0-layout-a-class-tour/" title="Amy Fowler">Amy Fowler's blog</a> for a nice description of the layout classes. Many JavaFX examples use a <code>Group</code> object. That won't work here because it is not re-sizable.</p>
-<p>The next important thing that happens in <code>-start</code> is to bind the width and height properties of the <code>Canvas</code> to the width and height properties of the root <code>Pane</code>. This was new to me. It isn't the same mechanism as is used in <a href="http://en.wikipedia.org/wiki/Swing_%28Java%29" title="Description of Java Swing on Wikipedia">Swing</a>. By binding the width and height properties, the canvas gets notified any time they change. The <code>ChangeListener</code>s added to the two properties get called when the properties change providing the opportunity to re-draw the interface. The re-draw occurs by calling the <code>redraw-board</code> function on the canvas whenever the size changes.</p>
-<p>At first I thought that re-drawing the board on every change during a drag might be too slow. However, I can't seem to outrun the program no matter how fast I move the mouse. So, this method seems to work for a program with an interface as simple as this one.</p>
+</code></pre></div><p>Note the use of the <code>resource-path</code> in the project file. That&rsquo;s how <a href="https://github.com/technomancy/leiningen" title="Leiningen home page">leiningen</a> finds JavaFX.</p>
+<p>The magic begins in the <code>-start</code> function. That&rsquo;s the function in your program that JavaFX calls to start things up. The first thing required is that your root node is actually re-sizable. Hence the use of a <code>Pane</code>. See <a href="http://amyfowlersblog.wordpress.com/2011/06/02/javafx2-0-layout-a-class-tour/" title="Amy Fowler">Amy Fowler&rsquo;s blog</a> for a nice description of the layout classes. Many JavaFX examples use a <code>Group</code> object. That won&rsquo;t work here because it is not re-sizable.</p>
+<p>The next important thing that happens in <code>-start</code> is to bind the width and height properties of the <code>Canvas</code> to the width and height properties of the root <code>Pane</code>. This was new to me. It isn&rsquo;t the same mechanism as is used in <a href="http://en.wikipedia.org/wiki/Swing_%28Java%29" title="Description of Java Swing on Wikipedia">Swing</a>. By binding the width and height properties, the canvas gets notified any time they change. The <code>ChangeListener</code>s added to the two properties get called when the properties change providing the opportunity to re-draw the interface. The re-draw occurs by calling the <code>redraw-board</code> function on the canvas whenever the size changes.</p>
+<p>At first I thought that re-drawing the board on every change during a drag might be too slow. However, I can&rsquo;t seem to outrun the program no matter how fast I move the mouse. So, this method seems to work for a program with an interface as simple as this one.</p>
 
   
   

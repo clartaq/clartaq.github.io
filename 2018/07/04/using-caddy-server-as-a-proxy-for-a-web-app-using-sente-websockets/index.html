@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Using Caddy Server as a Proxy for a Web App using Sente WebSockets &middot; Yo-Dave</title>
 
@@ -300,9 +300,9 @@
 <span style="color:#f92672">}</span>
 </code></pre></div><p>These are the same contents that were used to proxy a previous version of the program written before WebSockets were added.</p>
 <p>The firewall (ufw) has open ports at address 1357 for TCP.</p>
-<p>There are no obvious errors in the log files <code>clajistan.log</code> or <code>error.log</code>, Caddy's log file. Caddy's access log, <code>access.log</code> <em>does</em> contain messages indicating that WebSocket messages were returning the unexpected return codes.</p>
+<p>There are no obvious errors in the log files <code>clajistan.log</code> or <code>error.log</code>, Caddy&rsquo;s log file. Caddy&rsquo;s access log, <code>access.log</code> <em>does</em> contain messages indicating that WebSocket messages were returning the unexpected return codes.</p>
 <h3 id="the-fix-">The Fix</h3>
-<p>After a day of &ldquo;googling&rdquo; (really &ldquo;duck-duck-going&rdquo;),​ I couldn't find anything that seemed relevant but finally did find something interesting. As usual, it was a configuration problem due to my general ignorance. As a result, I made a small change to the <code>Caddyfile</code>.</p>
+<p>After a day of &ldquo;googling&rdquo; (really &ldquo;duck-duck-going&rdquo;),​ I couldn&rsquo;t find anything that seemed relevant but finally did find something interesting. As usual, it was a configuration problem due to my general ignorance. As a result, I made a small change to the <code>Caddyfile</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clajistan.com <span style="color:#f92672">{</span>
     proxy / http://localhost:1357 <span style="color:#f92672">{</span>
         websocket

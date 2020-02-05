@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Notes on ClojureScript Regular Expressions &middot; Yo-Dave</title>
 
@@ -254,8 +254,8 @@
 
 </div>
 
-  <p>There's an old saying about regular expressions &ndash; paraphrasing: &ldquo;If you try to solve a problem with regular expressions, you then have two problems.&rdquo;</p>
-<p>Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it's version of regular expressions are different.</p>
+  <p>There&rsquo;s an old saying about regular expressions &ndash; paraphrasing: &ldquo;If you try to solve a problem with regular expressions, you then have two problems.&rdquo;</p>
+<p>Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&rsquo;s version of regular expressions are different.</p>
 <p>They are different enough that I had to do a little experimentation to get them to work as needed.</p>
 <h2 id="syntax-">Syntax</h2>
 <p>Consider a snippet of JavaScript to normalize line endings in some text:</p>
@@ -278,8 +278,8 @@
 </code></pre></div><p>Notice that the syntax for a regular expression literal is the same as for Clojure, using the <code>#&quot;xxx&quot;</code> reader macro. The contents are not the same though. JavaScript uses a slash character, <code>/</code>, to indicate the beginning and end of the regular expression; ClojureScript does not.</p>
 <h2 id="modifiers-">Modifiers</h2>
 <p>JavaScript also allows appending modifiers after the regular expression itself. See that &ldquo;g&rdquo; character at the end? As most of you probably know already, that means making the search and replace &ldquo;global.&rdquo; JavaScript also supports the &ldquo;i&rdquo; modifier (to ignore character case when searching) and the &ldquo;m&rdquo; modifier (for multi-line searches).</p>
-<p>But you don't see any modifiers in the ClojureScript version. That's because the library code always appends the &ldquo;g&rdquo; flag when it constructs the JavaScript regex from its arguments. (The source to the ClojureScript version of <code>clojure.string.cljs</code> is <a href="https://github.com/clojure/clojurescript/blob/master/src/main/cljs/clojure/string.cljs">here</a>).</p>
-<p>Great! But how do you add the &ldquo;i&rdquo; and &ldquo;m&rdquo; modifiers when needed? It turns out you can do it simply in the regular expression literal itself by pre-pending a sequence of the form &ldquo;(?xxx)&rdquo; where the &ldquo;xxx&rdquo; part consists of the modifiers you want to apply. For example, here's how you might replace all lines composed of only tabs or spaces with an empty string.</p>
+<p>But you don&rsquo;t see any modifiers in the ClojureScript version. That&rsquo;s because the library code always appends the &ldquo;g&rdquo; flag when it constructs the JavaScript regex from its arguments. (The source to the ClojureScript version of <code>clojure.string.cljs</code> is <a href="https://github.com/clojure/clojurescript/blob/master/src/main/cljs/clojure/string.cljs">here</a>).</p>
+<p>Great! But how do you add the &ldquo;i&rdquo; and &ldquo;m&rdquo; modifiers when needed? It turns out you can do it simply in the regular expression literal itself by pre-pending a sequence of the form &ldquo;(?xxx)&rdquo; where the &ldquo;xxx&rdquo; part consists of the modifiers you want to apply. For example, here&rsquo;s how you might replace all lines composed of only tabs or spaces with an empty string.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">str/replace</span> text <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;(?m)^[ \t]+$&#34;</span> <span style="color:#e6db74">&#34;&#34;</span>)
 </code></pre></div><h2 id="matches-">Matches</h2>
 <p>Both the JavaScript and ClojureScript versions of the replace function let you specify the replacement text as a string or as the return value of a function. When you use a string, both JavaScript and ClojureScript let you put part of the matched string into the replacement using some special characters. The doc-string for <code>string.replace</code> includes the following example to let you translate from English to Pig Latin.</p>
@@ -299,11 +299,11 @@
 <li>ClojureScript regular expressions can be entered as literals similar to the way it is done in JavaScript.
 <ol>
 <li>Use the ClojureScript regular expression literal syntax: #&quot;&quot;.</li>
-<li>Don't include the <code>\</code> characters used to mark the beginning and end of a JavaScript regular expression.</li>
+<li>Don&rsquo;t include the <code>\</code> characters used to mark the beginning and end of a JavaScript regular expression.</li>
 </ol>
 </li>
 <li>You can specify the modifiers to use in ClojureScript by pre-pending them to the regular expression literal.</li>
-<li>The ClojureScript <code>string/replace</code> function always does a global search. You don't need to use the &ldquo;g&rdquo; modifier.</li>
+<li>The ClojureScript <code>string/replace</code> function always does a global search. You don&rsquo;t need to use the &ldquo;g&rdquo; modifier.</li>
 <li>You can use parts of the matched regular expression in the replacement text, whether using a literal string or the result of a function.</li>
 </ol>
 

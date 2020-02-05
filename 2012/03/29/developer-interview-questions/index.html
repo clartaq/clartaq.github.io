@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Developer Interview Questions &middot; Yo-Dave</title>
 
@@ -254,47 +254,47 @@
 
 </div>
 
-  <p>Picking the right people to expand an organization is one of the most important things you can do. In my career, I've participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks. Let's consider those categories and examples and what might be a better way to get the information you want.</p>
+  <p>Picking the right people to expand an organization is one of the most important things you can do. In my career, I&rsquo;ve participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks. Let&rsquo;s consider those categories and examples and what might be a better way to get the information you want.</p>
 <h1 id="college-course-trivia-questions-">&ldquo;College Course Trivia&rdquo; Questions</h1>
 <p>These are questions that go back to some of the fundamental skills and concepts that a candidate should have learned in school. Some of the most justifiable, in my opinion, are intended to find out if the candidate can actually program at all. For example:</p>
 <p><strong>Interviewer</strong>: Write a &ldquo;Hello World&rdquo; program on the whiteboard.</p>
 <p><strong>Candidate</strong>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#ae81ff">10</span> PRINT <span style="color:#e6db74">&#34;Hello World&#34;</span>
 </code></pre></div><p>What does anyone learn from the answer?</p>
-<p>Or you might have a candidate who knows the subject better than you. After you've given the candidate a tour of your facilities:</p>
+<p>Or you might have a candidate who knows the subject better than you. After you&rsquo;ve given the candidate a tour of your facilities:</p>
 <p><strong>Millennial Interviewer</strong>: Write a &ldquo;Hello World&rdquo; program on the whiteboard.</p>
-<p><strong>Baby Boomer Candidate</strong>: Sure. I'll do in it in FORTRAN. What's the LUN for the chain printer I saw in IT?</p>
-<p><strong>Interviewer</strong>: What's an LUN and a chainprinter?</p>
+<p><strong>Baby Boomer Candidate</strong>: Sure. I&rsquo;ll do in it in FORTRAN. What&rsquo;s the LUN for the chain printer I saw in IT?</p>
+<p><strong>Interviewer</strong>: What&rsquo;s an LUN and a chainprinter?</p>
 <p>The candidate flips the bozo bit on the interviewer and proceeds to explain.</p>
 <p>Or maybe a Java Candidate wants to get a little fancy for this boring question:</p>
 <p><strong>Interviewer</strong>: Write a &ldquo;Hello World&rdquo; program on the whiteboard.</p>
-<p><strong>Candidate</strong>: Sure. Here's a graphical version using the raw AWT.</p>
-<p>Although I've been writing Java/Swing programs for more than 10 years, I had to do a little research to be sure I'd recognize a correct answer to this question. Of course, I know how to launch a Swing program without messing up the EDT, but I wasn't sure if any such precautions were needed for AWT. Sure I could check the answer after the interview but would have lost the opportunity for intelligent discussion of the answer with the candidate.</p>
-<p>Or maybe you're a Lisp shop interviewing someone familiar with a different dialect:</p>
+<p><strong>Candidate</strong>: Sure. Here&rsquo;s a graphical version using the raw AWT.</p>
+<p>Although I&rsquo;ve been writing Java/Swing programs for more than 10 years, I had to do a little research to be sure I&rsquo;d recognize a correct answer to this question. Of course, I know how to launch a Swing program without messing up the EDT, but I wasn&rsquo;t sure if any such precautions were needed for AWT. Sure I could check the answer after the interview but would have lost the opportunity for intelligent discussion of the answer with the candidate.</p>
+<p>Or maybe you&rsquo;re a Lisp shop interviewing someone familiar with a different dialect:</p>
 <p><strong>Interviewer</strong>: Show me how to reverse a list.</p>
 <p><strong>Scheme Candidate</strong>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme">    (<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">rev2</span> lst)
         (<span style="color:#a6e22e">foldr</span> cons <span style="color:#f92672">&#39;</span>() lst))
-</code></pre></div><p><strong>CL or Clojure Interviewer</strong>: Oh, good. He knows to use efficient library functions to do the work rather than rolling his own. OR Doesn't he know how to manipulate the nodes in a list on his own?</p>
-<p><strong>Scheme Interviewer</strong>: Oh, that's wrong. Does he really think <code>foldr</code> is the correct function or did he just get it confused with <code>foldl</code>?</p>
-<p>Three very different responses to an almost correct answer. How will they vote in your interview panel? What's the response that you think is appropriate?</p>
+</code></pre></div><p><strong>CL or Clojure Interviewer</strong>: Oh, good. He knows to use efficient library functions to do the work rather than rolling his own. OR Doesn&rsquo;t he know how to manipulate the nodes in a list on his own?</p>
+<p><strong>Scheme Interviewer</strong>: Oh, that&rsquo;s wrong. Does he really think <code>foldr</code> is the correct function or did he just get it confused with <code>foldl</code>?</p>
+<p>Three very different responses to an almost correct answer. How will they vote in your interview panel? What&rsquo;s the response that you think is appropriate?</p>
 <p>There is a tendency to oversimplify these questions because they are &ldquo;so simple&rdquo;. As a result, responses are often meaningless.</p>
 <p>The biggest problem though is that they are usually unrelated to the job you are hiring for. Why not just ask questions directly related to the area where you want work done?</p>
 <h1 id="do-some-of-my-work-questions-">&ldquo;Do Some of My Work&rdquo; Questions</h1>
 <p>These questions are usually non-trivial and ask the candidate to come up with a solution to a problem the team is actually working on. The candidate is often given a significant amount of time to work on the problem, often on the order of days. It can represent a real hardship for the candidate.</p>
 <p>There are two main problems with these types of questions.</p>
 <h3 id="suboptimal-solutions-">Suboptimal Solutions</h3>
-<p>This is by far the largest category of response. Although the problem may be directly related to the work the candidate would carry out, they just don't have enough context at the time the problem is composed and they can't get it while working on the problem. Also the conditions under which they are working on the problem are probably not similar to what they would be on the actual job. Do you do &ldquo;water cooler consultations&rdquo;? Code reviews? Pair programming? As a result, they may come up with a solution, but it is not useful in general.</p>
-<p>I've often heard this type of question justified by some statement like &ldquo;I just want to see how their mind works.&rdquo;</p>
-<p>Well, that won't happen. I can't infer how someone's mind works from such an answer and neither can you. <em>Real psychologists</em> can't do it either from this type of question and a single response. It's a research project, not an interview question.</p>
+<p>This is by far the largest category of response. Although the problem may be directly related to the work the candidate would carry out, they just don&rsquo;t have enough context at the time the problem is composed and they can&rsquo;t get it while working on the problem. Also the conditions under which they are working on the problem are probably not similar to what they would be on the actual job. Do you do &ldquo;water cooler consultations&rdquo;? Code reviews? Pair programming? As a result, they may come up with a solution, but it is not useful in general.</p>
+<p>I&rsquo;ve often heard this type of question justified by some statement like &ldquo;I just want to see how their mind works.&rdquo;</p>
+<p>Well, that won&rsquo;t happen. I can&rsquo;t infer how someone&rsquo;s mind works from such an answer and neither can you. <em>Real psychologists</em> can&rsquo;t do it either from this type of question and a single response. It&rsquo;s a research project, not an interview question.</p>
 <p>If you know how certain psychological characteristics map to success in your organization (do you? really?) do real psychological testing.</p>
 <p>A more useful line of questioning might involve their problem solving <em>process</em>. Do they have one at all? How sophisticated is it? How does it handle contingencies? And so on.</p>
-<h3 id="great-solutions-from-people-you-cant-hire-">Great Solutions from People You Can't Hire</h3>
-<p>This is even worse. On the rare occasion when a candidate comes up with a <em>better</em> solution than your team, what happens if you can't hire the candidate for some other reason like poor cultural fit, failed drug tests, farts in elevators, wears suits, whatever?</p>
-<p>You can't use their solution and not hire them. That's just wrong. As a result, you can't use a superior solution because of a stupid interview question.</p>
+<h3 id="great-solutions-from-people-you-cant-hire-">Great Solutions from People You Can&rsquo;t Hire</h3>
+<p>This is even worse. On the rare occasion when a candidate comes up with a <em>better</em> solution than your team, what happens if you can&rsquo;t hire the candidate for some other reason like poor cultural fit, failed drug tests, farts in elevators, wears suits, whatever?</p>
+<p>You can&rsquo;t use their solution and not hire them. That&rsquo;s just wrong. As a result, you can&rsquo;t use a superior solution because of a stupid interview question.</p>
 <p>Even if you tried to take the high road by signing the candidate up as a paid consultant for the duration of their work on the problem, using their solution without hiring them is at best slimy.</p>
 <h1 id="behavioral-based-questions-">Behavioral-Based Questions</h1>
-<p>Instead of playing games to help you guess the internal operations of someone's mind, why not just ask them about accomplishments? Something along the lines of:</p>
+<p>Instead of playing games to help you guess the internal operations of someone&rsquo;s mind, why not just ask them about accomplishments? Something along the lines of:</p>
 <p>&ldquo;Describe a case where you had to develop an algorithm that could not be handled adequately by a pre-existing library function.&rdquo;</p>
 <p>&ldquo;Tell me about a time when your team could not align on a goal. How was that situation resolved? How did you contribute to the solution?&rdquo;</p>
 <p>&ldquo;Can you give me an example of when you showed integrity even in the face of opposition from your team?&rdquo;</p>
@@ -305,7 +305,7 @@
 <li>&ldquo;How have you applied those lessons?&rdquo;</li>
 <li>&ldquo;Which of your references can verify that?&rdquo;</li>
 </ul>
-<p>Getting objective evidence of performance is always better than asking someone to solve trivial or novel problems under conditions that wouldn't apply in the actual job.</p>
+<p>Getting objective evidence of performance is always better than asking someone to solve trivial or novel problems under conditions that wouldn&rsquo;t apply in the actual job.</p>
 
   
   

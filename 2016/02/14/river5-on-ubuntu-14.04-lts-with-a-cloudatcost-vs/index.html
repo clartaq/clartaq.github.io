@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>River5 on Ubuntu 14.04 LTS with a CloudAtCost VS &middot; Yo-Dave</title>
 
@@ -258,15 +258,15 @@
 
   <p><a href="https://github.com/scripting/river5">River5</a> is the latest in a series of <a href="https://en.wikipedia.org/wiki/RSS">RSS</a> News Aggretators written by <a href="https://en.wikipedia.org/wiki/Dave_Winer">Dave Winer</a>. You can read his announcement <a href="http://scripting.com/liveblog/users/davewiner/2016/02/09/0995.html">here</a>. These notes describe how to set up a River of News on a Virtual Server (VS) purchased or rented from <a href="http://cloudatcost.com/">CloudAtCost</a> and freshly imaged with <a href="http://www.ubuntu.com/">Ubuntu</a> 14.04.</p>
 <p>These notes assume that you have done some work in configuring your VS with a user, other than root, that has super user privileges. If you need help doing the initial setup of your VS, look <a href="https://yo-dave.com/2016/08/10/my-server-setup-process/">here</a>.</p>
-<p>VS's don't have graphical displays. Everything needs to be done from the command line. You can execute these commands from the the console provided by the CloudAtCost <a href="https://panel.cloudatcost.com">panel</a>. However, I find the response to be slow. An SSH client tends to work better for me. If you are running from Windows, I find the <a href="http://www.putty.org/">PuTTY SSH client</a> to be very good.</p>
+<p>VS&rsquo;s don&rsquo;t have graphical displays. Everything needs to be done from the command line. You can execute these commands from the the console provided by the CloudAtCost <a href="https://panel.cloudatcost.com">panel</a>. However, I find the response to be slow. An SSH client tends to work better for me. If you are running from Windows, I find the <a href="http://www.putty.org/">PuTTY SSH client</a> to be very good.</p>
 <p>In the command examples below, the input you would type is preceded by the command prompt. On my system, this is set up to show what directory I am in, followed by a dollar sign ($) and a space. When there is output displayed by a program, it follows a command and is not preceded by the prompt with the dollar sign.</p>
 <h2 id="installing-nodejs-">Installing Node.js</h2>
-<p>The version of <a href="https://nodejs.org/en/">node.js</a> available from the package manager on Ubuntu is typically woefully behind the current mature, stable release available from nodejs.org. But it's easy to install a current version without the package manager. Execute these commands to download the current version. Note that in my case, the current version was v4.3.0. Vist the Node.js download page to determine the appropriate version number when you install.</p>
+<p>The version of <a href="https://nodejs.org/en/">node.js</a> available from the package manager on Ubuntu is typically woefully behind the current mature, stable release available from nodejs.org. But it&rsquo;s easy to install a current version without the package manager. Execute these commands to download the current version. Note that in my case, the current version was v4.3.0. Vist the Node.js download page to determine the appropriate version number when you install.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~$ mkdir downloads
 ~$ cd downloads
 ~/downloads$ wget https://nodejs.org/dist/v4.3.0/node-v4.3.0-linux-x64.tar.gz
-</code></pre></div><p>This retrieves the package of pre-compiled binaries. If you want to compile the version from source, well, that's a subject for another article.</p>
-<p>There is some controversy over where to place the contents of the package in the file system. I've used several locations with success, but the consensus seems to be that Node.js should reside in `/usr/local``. To unpack the package there, execute:</p>
+</code></pre></div><p>This retrieves the package of pre-compiled binaries. If you want to compile the version from source, well, that&rsquo;s a subject for another article.</p>
+<p>There is some controversy over where to place the contents of the package in the file system. I&rsquo;ve used several locations with success, but the consensus seems to be that Node.js should reside in `/usr/local``. To unpack the package there, execute:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~$ cd /usr/local
 /usr/local$ sudo tar --strip-components <span style="color:#ae81ff">1</span> -xzf ~/downloads/node-v4.3.0-linux-x64.tar.gz
 </code></pre></div><p>and supply the <code>sudo</code> password when prompted. After a few seconds, the command prompt should return with no additional messages displayed.</p>
@@ -305,19 +305,19 @@ zlib: <span style="color:#e6db74">&#39;1.2.8&#39;</span> <span style="color:#f92
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~/river5$ node river5.js
 </code></pre></div><p>You should see a list of feeds and article titles go scrolling by. After a few minutes point a browser at <code>your_domain:1337</code> where <code>your_domain</code> is a domain name that points to your server. If you have not obtained a domain name (or the DNS has not updated to the new IP address obtained when you imaged your server), you can also use the IP address provided when you imaged your VS.</p>
 <h2 id="letting-it-flow-">Letting It Flow</h2>
-<p>If you log off of your server now, River5 will also stop operating. Go ahead and try it now. Just close the command shell on the server and try to refresh the web page. It won't work.</p>
-<p>In order to keep the river flowing, even when you aren't logged in, you need to do a little additional work.</p>
-<p>There are a few ways to keep processes running when you aren't logged in, but my favorite is <a href="https://github.com/foreverjs/forever">Forever</a>. This is a package that is installed with <code>npm</code>.</p>
+<p>If you log off of your server now, River5 will also stop operating. Go ahead and try it now. Just close the command shell on the server and try to refresh the web page. It won&rsquo;t work.</p>
+<p>In order to keep the river flowing, even when you aren&rsquo;t logged in, you need to do a little additional work.</p>
+<p>There are a few ways to keep processes running when you aren&rsquo;t logged in, but my favorite is <a href="https://github.com/foreverjs/forever">Forever</a>. This is a package that is installed with <code>npm</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~$ sudo npm install forever -g
 </code></pre></div><p>On my system, I got a message about an optional dependency failing. (It was for an event handling package for Macs &ndash; not needed on Ubuntu.) You can safely ignore it.</p>
 <p>Then use Forever to start River5.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~$ cd river5
 ~/river5$ forever start river5.js
-</code></pre></div><p>Again, you may see a few warnings that can be safely ignored. (They relate to some advanced configuration options for Forever, which we don't need.)</p>
+</code></pre></div><p>Again, you may see a few warnings that can be safely ignored. (They relate to some advanced configuration options for Forever, which we don&rsquo;t need.)</p>
 <p>That should do it. Within moments, you should be able to refresh you browser and see the web page again. It may take a few more minutes for new content to appear.</p>
 <h2 id="miscellaneous-stuff-">Miscellaneous Stuff</h2>
-<p>I have exercised these notes on different VS's with differing levels of resources. The minimum system I have used is 1 CPU, 512 MB RAM, and 10 GB disk. (That's the smallest system supported by CloudAtCost too.) I have also tried it on servers with 4 CPUs, 3 GB RAM and 40 GB of disk space. Seems to work fine.</p>
-<p>When you look at your server on the panel at CloudAtCost, you may be alarmed to see memory usage at 80% or above, even if you are on a VS that is rather well equipped with RAM. Don't panic, you aren't really running out of memory. Log in to your server and run:</p>
+<p>I have exercised these notes on different VS&rsquo;s with differing levels of resources. The minimum system I have used is 1 CPU, 512 MB RAM, and 10 GB disk. (That&rsquo;s the smallest system supported by CloudAtCost too.) I have also tried it on servers with 4 CPUs, 3 GB RAM and 40 GB of disk space. Seems to work fine.</p>
+<p>When you look at your server on the panel at CloudAtCost, you may be alarmed to see memory usage at 80% or above, even if you are on a VS that is rather well equipped with RAM. Don&rsquo;t panic, you aren&rsquo;t really running out of memory. Log in to your server and run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~$ free -m
 </code></pre></div><p>to show how your memory is really being used. For example, on a system with only 512 MB, I received the following output.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">             total       used       free     shared    buffers     cached
@@ -325,8 +325,8 @@ Mem:           490        405         84          0         26        251
 -/+ buffers/cache:        127        362
 Swap:          953          0        953
 </code></pre></div><p>As you can see, a large portion of the memory is cached and the system is not even using any swap space. (For additional information on interpreting the output of <code>free</code>, see this <a href="http://corlewsolutions.com/articles/article-6-understanding-the-free-command-in-ubuntu-and-linux">link</a>.)</p>
-<p>I have only tested this on VS's purchased from CloudAtCost. However, these instructions will probably work on similar systems rented from other providers like <a href="https://www.digitalocean.com/">DigitalOcean</a> and <a href="https://www.linode.com/">linode</a>.</p>
-<p>Version 14.04 LTS 64-bit is the only version of Ubuntu supported by CloudAtCost. However, there don't seem to be any instructions in these notes that would prevent them from being used with another recent LTS release. Untested though.</p>
+<p>I have only tested this on VS&rsquo;s purchased from CloudAtCost. However, these instructions will probably work on similar systems rented from other providers like <a href="https://www.digitalocean.com/">DigitalOcean</a> and <a href="https://www.linode.com/">linode</a>.</p>
+<p>Version 14.04 LTS 64-bit is the only version of Ubuntu supported by CloudAtCost. However, there don&rsquo;t seem to be any instructions in these notes that would prevent them from being used with another recent LTS release. Untested though.</p>
   
   
 

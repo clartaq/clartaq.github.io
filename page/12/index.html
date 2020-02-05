@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Yo-Dave</title>
 
@@ -240,6 +240,54 @@
   
     <article>
   <header>
+    <h2><a href="https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/">Java-Clojure Interop: An Update</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>25 Jun 2013 6:16:04 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/interop">interop</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure(Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
+As this is written, the tools used include:
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/">Default JavaFX Platform in NetBeans</a></h2>
 
     <div class="post-meta">
@@ -273,7 +321,7 @@
 
   <p>
   Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
-Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don't work. Here's how I do it.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&rsquo;t work. Here&rsquo;s how I do it.
  In NetBeans (7.3 as of this writing), select the &ldquo;Tools&rdquo; menu and the &ldquo;Java Platforms&rdquo; drop-down menu.
   </p>
 
@@ -323,7 +371,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I've been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.
+  Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.
   </p>
 
   
@@ -370,7 +418,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  <p>I've been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I've written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
+  <p>I&rsquo;ve been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I&rsquo;ve written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
   </p>
 
   
@@ -464,7 +512,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  <p>Recently, I have been experimenting with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html" title="Link to JavaFX developer">JavaFX</a> in <a href="http://clojure.org/" title="Link to the Clojure language home page.">Clojure</a>. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it's containing window was re-sized. In the past I've had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The <a href="https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/">initial experiment</a> was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.</p>
+  <p>Recently, I have been experimenting with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html" title="Link to JavaFX developer">JavaFX</a> in <a href="http://clojure.org/" title="Link to the Clojure language home page.">Clojure</a>. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&rsquo;s containing window was re-sized. In the past I&rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The <a href="https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/">initial experiment</a> was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.</p>
   </p>
 
   
@@ -507,8 +555,8 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  <p>I've been having a lot of fun learning <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="Link to JavaFX developer">JavaFX</a>, even after many years of using the Java Swing framework.</p>
-<p>One thing about JavaFX that I still don't understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the <a href="http://jfxtras.org/" title="Link to the JFXtras home page.">JFXtras</a> project, <a href="https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for" title="Link to MonologFX introduction blog.">MonologFX</a>.</p>
+  <p>I&rsquo;ve been having a lot of fun learning <a href="http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html" title="Link to JavaFX developer">JavaFX</a>, even after many years of using the Java Swing framework.</p>
+<p>One thing about JavaFX that I still don&rsquo;t understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the <a href="http://jfxtras.org/" title="Link to the JFXtras home page.">JFXtras</a> project, <a href="https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for" title="Link to MonologFX introduction blog.">MonologFX</a>.</p>
   </p>
 
   
@@ -557,8 +605,8 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  Since JavaFX is the future of the user interface for Java, I've started trying to learn it. Since I'm also learning Clojure, I'm doing the work in that language.
-One of the things I've been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?
+  Since JavaFX is the future of the user interface for Java, I&rsquo;ve started trying to learn it. Since I&rsquo;m also learning Clojure, I&rsquo;m doing the work in that language.
+One of the things I&rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?
   </p>
 
   
@@ -603,7 +651,7 @@ One of the things I've been looking into is how the interface responds to resizi
   </header>
 
   <p>
-  As some of you know, we've spent the last several months moving around looking for a nice place to settle down. That's finished. We're now in Salem, Virginia.
+  As some of you know, we&rsquo;ve spent the last several months moving around looking for a nice place to settle down. That&rsquo;s finished. We&rsquo;re now in Salem, Virginia.
 Before starting that search, we bought a laptop to take over the duties of the desktop. On the night before we left Tucson, I dumped a cup of water on it and fried the keyboard and other parts. It turns out the model was too new to get replacement parts.
   </p>
 
@@ -647,54 +695,13 @@ Before starting that search, we bought a laptop to take over the duties of the d
   </header>
 
   <p>
-  Picking the right people to expand an organization is one of the most important things you can do. In my career, I've participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks.
+  Picking the right people to expand an organization is one of the most important things you can do. In my career, I&rsquo;ve participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks.
   </p>
 
   
   <footer>
     <a href="https://yo-dave.com/2012/03/29/developer-interview-questions/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://yo-dave.com/2012/01/04/2012-the-year-we-all-unplug/">2012 - The Year We All Unplug?</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>4 Jan 2012 6:02:27 PM</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/speculation">Speculation</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Well, Happy New Year everyone.
-It seems like I've been hearing a lot of buzz about getting unconnected. Everything from hotels offering special deals on stays where you are forced to turn off (or turn in) all your gizmos, to advice to disconnect to improve your productivity. Could it be that the pendulum has started to swing in the other direction?
-Sit back and enjoy the quiet.
-  </p>
-
   
 </article>
 

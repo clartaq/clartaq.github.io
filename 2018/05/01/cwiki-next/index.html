@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>CWiki-Next &middot; Yo-Dave</title>
 
@@ -260,12 +260,12 @@
 
 </div>
 
-  <p>For the past few months, I've been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using <a href="https://www.clojure.org">Clojure</a>.</p>
-<p>It actually works pretty well. I've been using it for personal information for months now. It works well except for one aspect, arguably the <em>most</em> important &ndash; editing new or existing content is not that pleasant.</p>
-<p>It's all a variation of <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, which is nice. It's slightly modified to handle mathematics <em>via</em> <a href="https://www.mathjax.org">MathJax</a>, and since it's a wiki, it needs to handle wiki links. I use the MediaWiki style. It all works. Except there is no live preview as you type. Right now, you have to save the file and load it into the wiki to see what it will look like. It's a matter of seconds, but still a break in the flow.</p>
-<p>So, I've decide to just bite the bullet and split the application into a client-server configuration. The server will remain in Clojure, handling all the database stuff. The user interface will render on the client side using <a href="https://clojurescript.org">ClojureScript</a>.</p>
-<p>I got inspiration from Carmen La's Live Markdown Editor. That's pretty much what I want with a toolbar added. I also saw a couple of articles on how to use AJAX (web newbie here) and something finally clicked.</p>
-<p>Luckily, I will be able to use a lot of what I already have. The database stuff will remain largely unchanged. The page layout stuff is almost all done with Hiccup and should transfer to Hiccups easily. We'll see.</p>
+  <p>For the past few months, I&rsquo;ve been beating my head against a brick wall. The problem was that I was trying to get an all-server-side wiki built using <a href="https://www.clojure.org">Clojure</a>.</p>
+<p>It actually works pretty well. I&rsquo;ve been using it for personal information for months now. It works well except for one aspect, arguably the <em>most</em> important &ndash; editing new or existing content is not that pleasant.</p>
+<p>It&rsquo;s all a variation of <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, which is nice. It&rsquo;s slightly modified to handle mathematics <em>via</em> <a href="https://www.mathjax.org">MathJax</a>, and since it&rsquo;s a wiki, it needs to handle wiki links. I use the MediaWiki style. It all works. Except there is no live preview as you type. Right now, you have to save the file and load it into the wiki to see what it will look like. It&rsquo;s a matter of seconds, but still a break in the flow.</p>
+<p>So, I&rsquo;ve decide to just bite the bullet and split the application into a client-server configuration. The server will remain in Clojure, handling all the database stuff. The user interface will render on the client side using <a href="https://clojurescript.org">ClojureScript</a>.</p>
+<p>I got inspiration from Carmen La&rsquo;s Live Markdown Editor. That&rsquo;s pretty much what I want with a toolbar added. I also saw a couple of articles on how to use AJAX (web newbie here) and something finally clicked.</p>
+<p>Luckily, I will be able to use a lot of what I already have. The database stuff will remain largely unchanged. The page layout stuff is almost all done with Hiccup and should transfer to Hiccups easily. We&rsquo;ll see.</p>
 <p>Progress reports to follow.</p>
 
   

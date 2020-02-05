@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Elise&#39;s Rule &middot; Yo-Dave</title>
 
@@ -257,29 +257,29 @@
   <p>Based on repeated observations, my wife, Elise, has formed a simple rule:</p>
 <blockquote>
 <p>When Dave has any extra time off, the computer will be broken &ndash; big time.
-It's <em>freaking uncanny</em>.</p>
+It&rsquo;s <em>freaking uncanny</em>.</p>
 </blockquote>
-<p>When my wife says &ldquo;the computer&rdquo;, she means the dual-boot Windows/Linux box she usually works with. It's a relatively new Falcon Northwest system with a slightly overclocked i7 processor with liquid cooling, 16GB of RAM, a fast video card driving a 1920x1200 24&rdquo; monitor, USB 3, a 1TB drive on a SATA III connection, running Windows 7 Professional (64-bit) and Ubuntu 10.10 (64-bit). The keyboard is a Logitech G110 with illuminated keys, which I truly adore. The mouse is a Logitech G500. In addition, because of my paranoia about its stability, it has an additional 2TB of internal drives and 3TB external drives that I use for incessant backups. It's really a very sweet system if it weren't for this continuing problem.</p>
-<p>Let's talk about the most recent episode. While taking a couple days of vacation for my birthday, I was going to install <a href="http://miktex.org/" title="Link to miktex site">MikTeX</a> to create some nice <a href="http://www.latex-project.org/" title="Link to the LaTeX project web page">$\LaTeX$</a> documentation for a molecular dynamics simulation I've been working on.</p>
+<p>When my wife says &ldquo;the computer&rdquo;, she means the dual-boot Windows/Linux box she usually works with. It&rsquo;s a relatively new Falcon Northwest system with a slightly overclocked i7 processor with liquid cooling, 16GB of RAM, a fast video card driving a 1920x1200 24&rdquo; monitor, USB 3, a 1TB drive on a SATA III connection, running Windows 7 Professional (64-bit) and Ubuntu 10.10 (64-bit). The keyboard is a Logitech G110 with illuminated keys, which I truly adore. The mouse is a Logitech G500. In addition, because of my paranoia about its stability, it has an additional 2TB of internal drives and 3TB external drives that I use for incessant backups. It&rsquo;s really a very sweet system if it weren&rsquo;t for this continuing problem.</p>
+<p>Let&rsquo;s talk about the most recent episode. While taking a couple days of vacation for my birthday, I was going to install <a href="http://miktex.org/" title="Link to miktex site">MikTeX</a> to create some nice <a href="http://www.latex-project.org/" title="Link to the LaTeX project web page">$\LaTeX$</a> documentation for a molecular dynamics simulation I&rsquo;ve been working on.</p>
 <h3 id="networking-failure">Networking Failure</h3>
-<p>Boot &lsquo;er up and the network connection fails. Well, Ok. This has been happening on and off for the past few weeks. Sometimes you have to reboot to get it to work. But this time rebooting doesn't help. During start up, the connection light on the network switch (either one of them) goes dark. The connection at the PC has an amber light that flashes occasionally but no connection. And the network monitor gadget on the PC is flat lined. The Windows Device Manager says the device is working properly. I uninstall and re-install the networking drivers just to make sure. No joy.</p>
-<p>Ok, reboot into Linux. Oh oh. No connection, even on Linux. That's never happened. I unplug from the PC, plug it into the Mac and everything works fine. Back to PC - <em>nada</em>. Taking off one of the side panels on the PC allows me to watch the progression through the boot process by following a series of LEDs on the motherboard. It's all good.</p>
+<p>Boot &lsquo;er up and the network connection fails. Well, Ok. This has been happening on and off for the past few weeks. Sometimes you have to reboot to get it to work. But this time rebooting doesn&rsquo;t help. During start up, the connection light on the network switch (either one of them) goes dark. The connection at the PC has an amber light that flashes occasionally but no connection. And the network monitor gadget on the PC is flat lined. The Windows Device Manager says the device is working properly. I uninstall and re-install the networking drivers just to make sure. No joy.</p>
+<p>Ok, reboot into Linux. Oh oh. No connection, even on Linux. That&rsquo;s never happened. I unplug from the PC, plug it into the Mac and everything works fine. Back to PC - <em>nada</em>. Taking off one of the side panels on the PC allows me to watch the progression through the boot process by following a series of LEDs on the motherboard. It&rsquo;s all good.</p>
 <p>I order a new network card and keep watching the boot up while waiting for delivery  until it stops booting at all.</p>
 <h3 id="boot-failure">Boot Failure</h3>
-<p>Now it can't make it through the boot process in either Windows or Linux. Windows blue screens partway through the boot. Linux gets a kernel panic. Well that's new too. Cold boot. Warm boot. All fail.</p>
-<p>Eventually, looking into the BIOS settings reveals that the CPU frequency is <em>way</em> off. Some of the other settings are different from the state that it was delivered in too. I'm not an overclocker. I only got this system overclocked in the first place because of Falcon's reputation for making stable systems. I don't even know <em>how</em> to change the CPU frequency.</p>
+<p>Now it can&rsquo;t make it through the boot process in either Windows or Linux. Windows blue screens partway through the boot. Linux gets a kernel panic. Well that&rsquo;s new too. Cold boot. Warm boot. All fail.</p>
+<p>Eventually, looking into the BIOS settings reveals that the CPU frequency is <em>way</em> off. Some of the other settings are different from the state that it was delivered in too. I&rsquo;m not an overclocker. I only got this system overclocked in the first place because of Falcon&rsquo;s reputation for making stable systems. I don&rsquo;t even know <em>how</em> to change the CPU frequency.</p>
 <h3 id="the-unwind">The Unwind</h3>
 <p>Luckily, the motherboard BIOS has a dead simple way to do some automated overclocking and unclocking, returning the system to &ldquo;stock&rdquo; settings. Then I installed the Intel Extreme Tuning Utility that came on one of the startup disks. That lets me set things back to the original condition listed in the system documentation. Booting seems to work.</p>
-<p>The network card I ordered earlier arrives. I disable the on-board networking stuff, plug in and connect the new card. Install the drivers. Nothing on either Windows or Linux. Move the card to a different PCIe slot. Nothing. This time the light at the network switch continues to show the connection, but it doesn't work. The Windows Device Manager says things are groovy, but obviously lies.</p>
+<p>The network card I ordered earlier arrives. I disable the on-board networking stuff, plug in and connect the new card. Install the drivers. Nothing on either Windows or Linux. Move the card to a different PCIe slot. Nothing. This time the light at the network switch continues to show the connection, but it doesn&rsquo;t work. The Windows Device Manager says things are groovy, but obviously lies.</p>
 <p>I pull the new card out, pack it up for return, re-enable the on-board LAN goodies, plug it in and it works! Who knows why? And it has worked consistently since - about 24 hours now.</p>
 <h3 id="next-up---invisible-drives">Next Up - Invisible Drives</h3>
-<p>Things are working nicely again until Linux does an update. The boot now will not complete. Revert to an old distribution and boot works, but it can't see all of the drives. In particular, the multi-boot does not see the Windows drive. It is visible to the BIOS but not to fdisk. Needless to say, the Grub multi-boot fails to boot into Windows.</p>
-<p>Setting up the BIOS to boot directly to the Windows drive brings Windows up successfully. Linux just can't see it.</p>
+<p>Things are working nicely again until Linux does an update. The boot now will not complete. Revert to an old distribution and boot works, but it can&rsquo;t see all of the drives. In particular, the multi-boot does not see the Windows drive. It is visible to the BIOS but not to fdisk. Needless to say, the Grub multi-boot fails to boot into Windows.</p>
+<p>Setting up the BIOS to boot directly to the Windows drive brings Windows up successfully. Linux just can&rsquo;t see it.</p>
 <h3 id="conclusion">Conclusion</h3>
-<p>And that is the situation as I write this. I don't really know why the networking failed but I suspect a physical problem with the socket on the motherboard. The boot failure and overclocking? No idea at all. The problem with drive recognition probably has something to do with the goofy Ubuntu update, but that's a fix in progress.</p>
-<p>I don't <em>think</em> I'm a complete dufus, but I'm having my doubts.</p>
+<p>And that is the situation as I write this. I don&rsquo;t really know why the networking failed but I suspect a physical problem with the socket on the motherboard. The boot failure and overclocking? No idea at all. The problem with drive recognition probably has something to do with the goofy Ubuntu update, but that&rsquo;s a fix in progress.</p>
+<p>I don&rsquo;t <em>think</em> I&rsquo;m a complete dufus, but I&rsquo;m having my doubts.</p>
 <p>So what now? Oh, yeah. $latex \LaTeX$ and that documentation I wanted to write.</p>
-<p><strong>Update</strong>: My company gave us Good Friday off as a holiday. Like clockwork, we lost networking. Networking. That's a story for another post.</p>
+<p><strong>Update</strong>: My company gave us Good Friday off as a holiday. Like clockwork, we lost networking. Networking. That&rsquo;s a story for another post.</p>
   
   
 

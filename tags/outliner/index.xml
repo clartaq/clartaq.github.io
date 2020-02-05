@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 05 Jan 2020 09:39:38 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 11:09:06 -0500</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/outliner/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why EDN?</title>
+      <link>https://yo-dave.com/2020/02/05/why-edn/</link>
+      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/02/05/why-edn/</guid>
+      <description>Anyone who looks into my experimental outliner with notes, clown, is sure to notice that the native data format is EDN (Extensible Data Notation).
+The canonical data representation for outlines is OPML (Outline Processor Markup Language) and it is well suited for that purpose. It&amp;rsquo;s a dialect of XML especially adapted to outliners.
+So, why use EDN? Rich Hickey gives a good rationale at the link above. But for me it boils down to a few things.</description>
+    </item>
     
     <item>
       <title>clown -- A Clojure/Script Outliner with Notes</title>
@@ -19,7 +30,7 @@
       
       <guid>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</guid>
       <description>Questions about note-taking are very popular on Hacker News. I am always interested in the responses. It seems like developers are always interested in the best tools and methodologies. Me too.
-I&#39;ve been researching and using different approaches for decades. Over all that time, I&#39;ve written thousands of notes, both short and long. Most notes become uninteresting after awhile and are just erased. But thousands have persisted for many years because I still refer to them.</description>
+I&amp;rsquo;ve been researching and using different approaches for decades. Over all that time, I&amp;rsquo;ve written thousands of notes, both short and long. Most notes become uninteresting after awhile and are just erased. But thousands have persisted for many years because I still refer to them.</description>
     </item>
     
   </channel>

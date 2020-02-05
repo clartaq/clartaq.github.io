@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Spell Checking in the Editor Changes the Way I Name Things &middot; Yo-Dave</title>
 
@@ -259,15 +259,15 @@
 </div>
 
   <p>While editing some program text recently, I noticed myself doing something weird. I do most of my programming in Clojure these days. I mostly use <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> with the <a href="https://cursive-ide.com/">Cursive</a> plugin for Clojure. This turns out to be a great way to develop.</p>
-<p>One of the (many) things I love about IntelliJ IDEA is that it does spell checking in my code. Stops me looking (so much) like an idiot when I misspell stuff in comments. As you would expect, it can produce lots of false positives with the strange names programmers use for variables and such. When you misspell a word, it uses a subtle squiggly green underline to mark the offender. It doesn't count misspellings as errors or warnings. And it doesn't put markers for lines with misspelled words in the margins.</p>
-<p>Nevertheless&hellip; little squiggly green lines. Let's call them LSGLs from now on.</p>
-<p>I've found myself changing the way I name things in order to avoid those LSGLs. For example, I might want to <code>require</code> a preference persistence library and alias it as <code>prfs</code> like this:</p>
+<p>One of the (many) things I love about IntelliJ IDEA is that it does spell checking in my code. Stops me looking (so much) like an idiot when I misspell stuff in comments. As you would expect, it can produce lots of false positives with the strange names programmers use for variables and such. When you misspell a word, it uses a subtle squiggly green underline to mark the offender. It doesn&rsquo;t count misspellings as errors or warnings. And it doesn&rsquo;t put markers for lines with misspelled words in the margins.</p>
+<p>Nevertheless&hellip; little squiggly green lines. Let&rsquo;s call them LSGLs from now on.</p>
+<p>I&rsquo;ve found myself changing the way I name things in order to avoid those LSGLs. For example, I might want to <code>require</code> a preference persistence library and alias it as <code>prfs</code> like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>...
   (<span style="color:#e6db74">:require</span>
             ...
             [percettings.core <span style="color:#e6db74">:as</span> prfs]
             ...
-</code></pre></div><p>but that produces an LSGL. Changing <code>prfs</code> to <code>prefs</code> is Ok, but a little long. Changing it to <code>prf</code> works since the spell checker apparently doesn't look at words consisting of three or fewer characters. So, that's what I do.</p>
+</code></pre></div><p>but that produces an LSGL. Changing <code>prfs</code> to <code>prefs</code> is Ok, but a little long. Changing it to <code>prf</code> works since the spell checker apparently doesn&rsquo;t look at words consisting of three or fewer characters. So, that&rsquo;s what I do.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>...
   (<span style="color:#e6db74">:require</span>
             ...

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Re-sizing an Icon in Java for Swing &middot; Yo-Dave</title>
 
@@ -256,7 +256,7 @@
 
 </div>
 
-  <p>Sometimes you have a resource like an icon or image that <em>almost</em> works, but not quite. For example, there was <a href="http://stackoverflow.com/questions/1946631/resizing-an-icon-to-correctly-fit-in-a-scrollpane-corner-button/1947371#1947371">a question on StackOverflow</a> about how to re-size an existing icon to fit in the smaller location at the lower right corner of a <code>JScrollPane</code>. The original poster was close. Here's the code I came up with that actually worked.</p>
+  <p>Sometimes you have a resource like an icon or image that <em>almost</em> works, but not quite. For example, there was <a href="http://stackoverflow.com/questions/1946631/resizing-an-icon-to-correctly-fit-in-a-scrollpane-corner-button/1947371#1947371">a question on StackOverflow</a> about how to re-size an existing icon to fit in the smaller location at the lower right corner of a <code>JScrollPane</code>. The original poster was close. Here&rsquo;s the code I came up with that actually worked.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javax.swing.*<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> java.awt.*<span style="color:#f92672">;</span>
 
@@ -287,7 +287,7 @@
 <span style="color:#f92672">}</span>
 </code></pre></div><p>This produces the following result:</p>
 <p><a href="https://yo-dave.com/static/img/2011-01-23-WindowWithResizedIcon.PNG"><img src="https://yo-dave.com/static/img/2011-01-23-WindowWithResizedIcon.PNG" alt="A Program Window with the Resized Icon" title="A Program Window with the Resized Icon"><!-- raw HTML omitted --><!-- raw HTML omitted -->A Program Window with the Resized Icon<!-- raw HTML omitted --></a></p>
-<p>See that little green question mark in the corner? That is the standard Java Swing icon used in <code>JOptionPane</code>s shrunk down to the size needed. Here's a blow up.</p>
+<p>See that little green question mark in the corner? That is the standard Java Swing icon used in <code>JOptionPane</code>s shrunk down to the size needed. Here&rsquo;s a blow up.</p>
 <p><a href="https://yo-dave.com/static/img/2011-01-23-CloseUpOfResizedIcon.PNG"><img src="https://yo-dave.com/static/img/2011-01-23-CloseUpOfResizedIcon.PNG" alt="A Blowup of the Resized Corner Icon" title="A Blowup of the Resized Corner Icon"><!-- raw HTML omitted --><!-- raw HTML omitted -->A Blowup of the Resized Icon<!-- raw HTML omitted --></a></p>
 <p>Seems to work pretty well.</p>
 

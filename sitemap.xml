@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/tags/clown/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/edn/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/json/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/opml/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/outliner/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2020/02/05/why-edn/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/xmp/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/clojure/</loc>
     <lastmod>2020-01-06T17:53:09-05:00</lastmod>
   </url>
@@ -18,17 +68,7 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/redo/</loc>
-    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
     <lastmod>2020-01-06T17:53:09-05:00</lastmod>
   </url>
   
@@ -39,11 +79,6 @@
   
   <url>
     <loc>https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/</loc>
-    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
     <lastmod>2020-01-06T17:53:09-05:00</lastmod>
   </url>
   
@@ -64,11 +99,6 @@
   
   <url>
     <loc>https://yo-dave.com/tags/note-taking/</loc>
-    <lastmod>2020-01-05T16:07:50-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/outliner/</loc>
     <lastmod>2020-01-05T16:07:50-05:00</lastmod>
   </url>
   

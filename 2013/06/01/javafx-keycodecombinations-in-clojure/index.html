@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>JavaFX KeyCodeCombinations in Clojure &middot; Yo-Dave</title>
 
@@ -258,9 +258,9 @@
 
 </div>
 
-  <p>I've been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I've written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
-<p>It turns out that the constructor for a <code>KeyCodeCombination</code> accepts a variable length argument array. In a few cases, you can get lucky and simply provide a Clojure vector of the arguments. This wasn't one of those happy coincidences. Instead, you need to use the canonical method of packing all of those arguments into a Java array using Clojure's <code>into-array</code> function. You need to do it even if you have only one argument, as was the case for me. That isn't usually so bad, but this time I had a little trouble figuring out the type of array to create. Turns out you have to specify that the list of modifiers expected by the constructor are <code>KeyCombination.Modifier</code> arguments in Java are <code>KeyCombination$Modifier</code> in Clojure.</p>
-<p>Here's the translated program:</p>
+  <p>I&rsquo;ve been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I&rsquo;ve written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
+<p>It turns out that the constructor for a <code>KeyCodeCombination</code> accepts a variable length argument array. In a few cases, you can get lucky and simply provide a Clojure vector of the arguments. This wasn&rsquo;t one of those happy coincidences. Instead, you need to use the canonical method of packing all of those arguments into a Java array using Clojure&rsquo;s <code>into-array</code> function. You need to do it even if you have only one argument, as was the case for me. That isn&rsquo;t usually so bad, but this time I had a little trouble figuring out the type of array to create. Turns out you have to specify that the list of modifiers expected by the constructor are <code>KeyCombination.Modifier</code> arguments in Java are <code>KeyCombination$Modifier</code> in Clojure.</p>
+<p>Here&rsquo;s the translated program:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">ns </span>cljkeycodecombination.core
       (<span style="color:#e6db74">:gen-class</span>
        <span style="color:#e6db74">:extends</span> javafx.application.Application)
@@ -302,7 +302,7 @@
     
     (<span style="color:#66d9ef">defn </span>-main [<span style="color:#f92672">&amp;</span> args]
       (<span style="color:#a6e22e">Application/launch</span> cljkeycodecombination.core args))
-</code></pre></div><p>Looking back, it's a little embarrassing that it took so long to figure out since the clue was right there in the error messages. But at least it's figured out now.</p>
+</code></pre></div><p>Looking back, it&rsquo;s a little embarrassing that it took so long to figure out since the clue was right there in the error messages. But at least it&rsquo;s figured out now.</p>
   
   
 

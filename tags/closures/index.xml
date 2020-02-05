@@ -18,8 +18,8 @@
       <pubDate>Sat, 29 Jan 2011 23:53:30 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</guid>
-      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&#39;t quite that simple.&lt;/p&gt;
-&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&#39;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&amp;rsquo;t quite that simple.&lt;/p&gt;
+&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
     </item>
     
   </channel>

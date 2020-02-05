@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Using Anonymous Functions in the Clojure/Script Thrush Macro &middot; Yo-Dave</title>
 
@@ -261,7 +261,7 @@
 </div>
 
   <p>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.</p>
-<p>What could be more natural than to string those pieces of code together with one of Clojure's threading macros: &lsquo;-&gt;&rsquo; or &lsquo;-&raquo;.&rsquo; What I initially put together was something like:</p>
+<p>What could be more natural than to string those pieces of code together with one of Clojure&rsquo;s threading macros: &lsquo;-&gt;&rsquo; or &lsquo;-&raquo;.&rsquo; What I initially put together was something like:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (-&gt; some-text
         (<span style="color:#a6e22e">some-operation</span>)
         (<span style="color:#a6e22e">some-other-operation</span>)
@@ -269,7 +269,7 @@
         (<span style="color:#a6e22e">another-function-call</span>)
         ...
 </code></pre></div><p>But ClojureScript choked on the anonymous function. &ldquo;Weird,&rdquo; I thought since I had just used it in the REPL to test it and it had worked fine.</p>
-<p>It's all entirely explained <a href="https://stackoverflow.com/questions/10757743/are-clojure-macros-always-leaky/10757945#10757945">here</a>.</p>
+<p>It&rsquo;s all entirely explained <a href="https://stackoverflow.com/questions/10757743/are-clojure-macros-always-leaky/10757945#10757945">here</a>.</p>
 <p>Long story short, when used in the threading macro like this, you need to set it up like this instead.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (-&gt; some-text
         (<span style="color:#a6e22e">some-operation</span>)

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Using Local Java JARS in Clojure Projects &middot; Yo-Dave</title>
 
@@ -258,12 +258,12 @@
 
 </div>
 
-  <p>Recently, I've been working on a <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a> game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.</p>
+  <p>Recently, I&rsquo;ve been working on a <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a> game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.</p>
 <p>Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &ndash; the <a href="https://github.com/attractivechaos/plb/tree/master/sudoku">Kudoku solver written in Java</a> from <a href="https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/">attractive chaos</a>.</p>
 <p>But how does one use a local jar file in a Clojure Project? Read on&hellip;</p>
 <p>Usually when you pull in a dependency for a Clojure program, you would grab it from <a href="https://clojars.org/">Clojars</a> or some other repository. But this time, I wanted to use a JAR that exists on my local machine and nowhere else that I know of.</p>
-<p>After googling for awhile, I found a lot of misleading (or perhaps outdated) stuff that just didn't work. So, this post describes what I did that finally got things working.</p>
-<p>Before we start, here's a description of the system I'm using to make all this happen.</p>
+<p>After googling for awhile, I found a lot of misleading (or perhaps outdated) stuff that just didn&rsquo;t work. So, this post describes what I did that finally got things working.</p>
+<p>Before we start, here&rsquo;s a description of the system I&rsquo;m using to make all this happen.</p>
 <ul>
 <li>Window 7 Pro, 64-bit</li>
 <li>Java 1.8.0 update 60, 64-bit</li>
@@ -276,8 +276,8 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\projects\sudoku<span style="color:#75715e">&gt;mkdir local-repo</span>
 </code></pre></div><p>After copying the JAR into the new directory, the next step was to deploy the JAR to the local Maven repository.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">mvn deploy:deploy-file -DgroupId=local -DartifactId=kudoku -Dversion=2.0.2 -Dpackaging=jar -Dfile=kudoku-2.0.2.jar -Durl=file:local-repo
-</code></pre></div><p>This is the step that was most confusing as there is a lot of advice on the web to use <code>file:file-install</code> rather than <code>deploy:deploy-file</code>. That didn't work for my setup for some reason.</p>
-<p>Next, some modifications to <code>project.clj</code>. Here's what I'm using.</p>
+</code></pre></div><p>This is the step that was most confusing as there is a lot of advice on the web to use <code>file:file-install</code> rather than <code>deploy:deploy-file</code>. That didn&rsquo;t work for my setup for some reason.</p>
+<p>Next, some modifications to <code>project.clj</code>. Here&rsquo;s what I&rsquo;m using.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>sudoku <span style="color:#e6db74">&#34;0.2.10-SNAPSHOT&#34;</span>
   <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;A sudoku game written in Clojure and JavaFX.&#34;</span>
   <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;https:/bitbucket.org/David_Clark/sudoku/overview&#34;</span>

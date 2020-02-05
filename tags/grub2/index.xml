@@ -19,7 +19,7 @@
       
       <guid>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</guid>
       <description>&lt;p&gt;My wife and I share a computer that dual boots Ubuntu Linux and Windows. Too, when we upgrade computers, I tend to take the hard drive(s) from the old computer to the new computer. The boot menus created by the grub2 program can be a bit confusing for the uninitiated. As kernel updates are added, the list gets longer. The old Windows drive appears in the list, as well as the recovery partitions that manufacturers often put on Windows drives. In the normal course of things the Windows menu items can get pushed out of view at the bottom of the screen.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Where&#39;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Where&amp;rsquo;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;Not a happy situation.&lt;/p&gt;
 &lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
     </item>

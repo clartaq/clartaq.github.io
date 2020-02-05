@@ -38,8 +38,8 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
       <pubDate>Mon, 30 Jan 2017 16:45:26 +0000</pubDate>
       
       <guid>https://yo-dave.com/2017/01/30/keeping-the-javafx-ui-responsive/</guid>
-      <description>It&#39;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
-Recently, I&#39;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.</description>
+      <description>It&amp;rsquo;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
+Recently, I&amp;rsquo;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.</description>
     </item>
     
     <item>
@@ -48,8 +48,8 @@ Recently, I&#39;ve been working on a program that can spend a lot of time readin
       <pubDate>Mon, 17 Oct 2016 10:57:40 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
-      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&#39;s friendly and extremely helpful error messages. It&#39;s really attractive in many ways.
-But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;quot;. And it finally occurred to me that I&#39;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
+      <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
+But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;quot;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
     
     <item>
@@ -58,8 +58,8 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Sun, 17 Jul 2016 12:35:08 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/07/17/speech-synthesis-in-clojurescript/</guid>
-      <description>&lt;p&gt;Just like everyone else, it seems, I&#39;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this &lt;a href=&#34;https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0&#34;&gt;one&lt;/a&gt; and &lt;a href=&#34;https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper&#34;&gt;this one&lt;/a&gt; and &lt;a href=&#34;http://www.instructables.com/id/Raspberri-Personal-Assistant/&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&#39;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Just like everyone else, it seems, I&amp;rsquo;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this &lt;a href=&#34;https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0&#34;&gt;one&lt;/a&gt; and &lt;a href=&#34;https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper&#34;&gt;this one&lt;/a&gt; and &lt;a href=&#34;http://www.instructables.com/id/Raspberri-Personal-Assistant/&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&amp;rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/05/05/reflections-on-nih-syndrome/</guid>
-      <description>During the past few weeks, I&#39;ve been thinking about &amp;ldquo;To Do&amp;rdquo; lists &amp;ndash; specifically how I wanted one. It was my plan to write my own, despite the fact that I have been using Evernote for years and that there are literally thousands already out there already. For the longest time, it never even occurred to me to use a manager that already existed. Or even just to use pen and paper for the simple lists I needed.</description>
+      <description>During the past few weeks, I&amp;rsquo;ve been thinking about &amp;ldquo;To Do&amp;rdquo; lists &amp;ndash; specifically how I wanted one. It was my plan to write my own, despite the fact that I have been using Evernote for years and that there are literally thousands already out there already. For the longest time, it never even occurred to me to use a manager that already existed. Or even just to use pen and paper for the simple lists I needed.</description>
     </item>
     
   </channel>

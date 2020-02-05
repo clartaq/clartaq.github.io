@@ -18,7 +18,7 @@
       <pubDate>Mon, 13 May 2019 08:22:29 -0400</pubDate>
       
       <guid>https://yo-dave.com/2019/05/13/displaying-video-from-a-webcam-using-clojurescript-and-reagent/</guid>
-      <description>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan ISBN (International Standard Book Number) numbers from the jackets of physical books. This isn&#39;t quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I&#39;m told. I really don&#39;t know much about it yet.</description>
+      <description>As part of a book cataloging project, I want to be able to use a webcam on a desktop or laptop to scan ISBN (International Standard Book Number) numbers from the jackets of physical books. This isn&amp;rsquo;t quite as easy as scanning barcodes with a phone or tablet because of focus, magnification, and depth of field characteristics of desktop and laptop cameras. (Or so I&amp;rsquo;m told. I really don&amp;rsquo;t know much about it yet.</description>
     </item>
     
   </channel>

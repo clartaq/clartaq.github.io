@@ -19,7 +19,7 @@
       
       <guid>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</guid>
       <description>The other day, I was putting together a sequence of operations to transform one piece of text into another form of that same text. The functions took a text argument, and the result was a slightly tweaked version. Put all those functions together to get the fully transformed result.
-What could be more natural than to string those pieces of code together with one of Clojure&#39;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;raquo;.</description>
+What could be more natural than to string those pieces of code together with one of Clojure&amp;rsquo;s threading macros: &amp;lsquo;-&amp;gt;&amp;rsquo; or &amp;lsquo;-&amp;raquo;.</description>
     </item>
     
   </channel>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>java &middot; Yo-Dave</title>
 
@@ -323,8 +323,8 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
   </header>
 
   <p>
-  It's common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
-Recently, I've been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.
+  It&rsquo;s common knowledge that the JavaFX user interface toolkit is single-threaded. When your JavaFX-based program is doing things that can take some time, you need to run those tasks on a separate thread(s) to keep the interface responsive.
+Recently, I&rsquo;ve been working on a program that can spend a lot of time reading and writing to the disk, but at the same time I want to retain the ability for the user to change views of the UI as the work proceeds.
   </p>
 
   
@@ -371,7 +371,7 @@ Recently, I've been working on a program that can spend a lot of time reading an
   </header>
 
   <p>
-  <p>Recently, I've been working on a <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a> game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.</p>
+  <p>Recently, I&rsquo;ve been working on a <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a> game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.</p>
 <p>Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &ndash; the <a href="https://github.com/attractivechaos/plb/tree/master/sudoku">Kudoku solver written in Java</a> from <a href="https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/">attractive chaos</a>.</p>
 <p>But how does one use a local jar file in a Clojure Project? Read on&hellip;</p>
   </p>
@@ -418,7 +418,7 @@ Recently, I've been working on a program that can spend a lot of time reading an
   </header>
 
   <p>
-  There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn't seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
+  There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&rsquo;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
 Back in the days of Swing, you usually had to grab a list of font families (e.g. Arial, Times New Roman, etc.) from AWT and then create a BufferedImage to print the font to and check layout widths.
   </p>
 
@@ -517,7 +517,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
   </header>
 
   <p>
-  <p>If you have been following along for awhile, you may have noted how conflicted I am about writing web apps <em>vs</em>. native apps. I've been looking into <a href="https://www.meteor.com/">Meteor</a>, which makes the decision even thornier for me.</p>
+  <p>If you have been following along for awhile, you may have noted how conflicted I am about writing web apps <em>vs</em>. native apps. I&rsquo;ve been looking into <a href="https://www.meteor.com/">Meteor</a>, which makes the decision even thornier for me.</p>
   </p>
 
   
@@ -564,11 +564,11 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
   </header>
 
   <p>
-  <p>For a little while now, I've been working on an application that manages a list of documents, providing multiple views that the user can edit.</p>
+  <p>For a little while now, I&rsquo;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.</p>
 <p>The application looks something like this:</p>
 <p><a href="https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG"><img src="https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG" alt="Image of the document manager main screen" title="The document manager main screen"><!-- raw HTML omitted --><!-- raw HTML omitted -->The document manager main screen<!-- raw HTML omitted --></a></p>
 <p>The user selects the document they wish to view or edit by selecting it from the large <code>TableView</code> in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)</p>
-<p>Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn't have to do anything to save their work. It just happened.</p>
+<p>Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&rsquo;t have to do anything to save their work. It just happened.</p>
 <p>This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)</p>
   </p>
 
@@ -664,7 +664,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
   </header>
 
   <p>
-  <p>I've been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &ldquo;flow of consciousness&rdquo; debugging notes.</p>
+  <p>I&rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &ldquo;flow of consciousness&rdquo; debugging notes.</p>
   </p>
 
   
@@ -760,7 +760,7 @@ Back in the days of Swing, you usually had to grab a list of font families (e.g.
   </header>
 
   <p>
-  Just a short rant about JavaFX because I'm pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+  Just a short rant about JavaFX because I&rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
 This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.
   </p>
 
@@ -808,8 +808,8 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
   </header>
 
   <p>
-  I've wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I've written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&ldquo;C:\Users\David Clark&rdquo; on my system.)
-My user profile name is &ldquo;david&rdquo;. That's what I use to sign on with. The fact that my home directory uses &ldquo;David Clark&rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.
+  I&rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&ldquo;C:\Users\David Clark&rdquo; on my system.)
+My user profile name is &ldquo;david&rdquo;. That&rsquo;s what I use to sign on with. The fact that my home directory uses &ldquo;David Clark&rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.
   </p>
 
   
@@ -903,7 +903,7 @@ As this is written, the tools used include:
 
   <p>
   Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
-Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don't work. Here's how I do it.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&rsquo;t work. Here&rsquo;s how I do it.
  In NetBeans (7.3 as of this writing), select the &ldquo;Tools&rdquo; menu and the &ldquo;Java Platforms&rdquo; drop-down menu.
   </p>
 
@@ -953,7 +953,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I've been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.
+  Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.
   </p>
 
   
@@ -1000,7 +1000,7 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  <p>I've been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I've written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
+  <p>I&rsquo;ve been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I&rsquo;ve written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
   </p>
 
   
@@ -1049,8 +1049,8 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   </header>
 
   <p>
-  Since JavaFX is the future of the user interface for Java, I've started trying to learn it. Since I'm also learning Clojure, I'm doing the work in that language.
-One of the things I've been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?
+  Since JavaFX is the future of the user interface for Java, I&rsquo;ve started trying to learn it. Since I&rsquo;m also learning Clojure, I&rsquo;m doing the work in that language.
+One of the things I&rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?
   </p>
 
   
@@ -1197,7 +1197,7 @@ One of the things I've been looking into is how the interface responds to resizi
   </header>
 
   <p>
-  <p>Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn't need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn't seem to be such a thing and I haven't created one that I'm satisfied with.</p>
+  <p>Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&rsquo;t seem to be such a thing and I haven&rsquo;t created one that I&rsquo;m satisfied with.</p>
   </p>
 
   
@@ -1247,7 +1247,7 @@ One of the things I've been looking into is how the interface responds to resizi
 
   <p>
   Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
-Usually when you hear people talk about the &ldquo;power&rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student's t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.
+Usually when you hear people talk about the &ldquo;power&rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.
   </p>
 
   
@@ -1334,7 +1334,7 @@ Usually when you hear people talk about the &ldquo;power&rdquo; of a statistical
   </header>
 
   <p>
-  <p>Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn't seem to handle such large numbers of trials.</p>
+  <p>Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&rsquo;t seem to handle such large numbers of trials.</p>
   </p>
 
   
@@ -1379,7 +1379,7 @@ Usually when you hear people talk about the &ldquo;power&rdquo; of a statistical
   </header>
 
   <p>
-  <p>One of my most-upvoted <a href="http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427">answers</a> on <a href="http://stackoverflow.com/">Stackoverflow</a> is a simple example of how to call <a href="http://clojure.org/">Clojure</a> functions from Java. It doesn't require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods <em>of</em> objects and <em>on</em> objects across the Clojure/Java divide.</p>
+  <p>One of my most-upvoted <a href="http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427">answers</a> on <a href="http://stackoverflow.com/">Stackoverflow</a> is a simple example of how to call <a href="http://clojure.org/">Clojure</a> functions from Java. It doesn&rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods <em>of</em> objects and <em>on</em> objects across the Clojure/Java divide.</p>
   </p>
 
   
@@ -1424,7 +1424,7 @@ Usually when you hear people talk about the &ldquo;power&rdquo; of a statistical
   </header>
 
   <p>
-  Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here's the code I came up with that actually worked.
+  Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&rsquo;s the code I came up with that actually worked.
 import javax.swing.*; import java.awt.*; public class CornerButton extends JFrame { public CornerButton() { JTextArea area = new JTextArea(20, 20); JScrollPane scroll = new JScrollPane(area); Icon icn = UIManager.
   </p>
 

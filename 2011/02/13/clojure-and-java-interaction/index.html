@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Clojure and Java Interaction &middot; Yo-Dave</title>
 
@@ -256,11 +256,11 @@
 
 </div>
 
-  <p>One of my most-upvoted <a href="http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427">answers</a> on <a href="http://stackoverflow.com/">Stackoverflow</a> is a simple example of how to call <a href="http://clojure.org/">Clojure</a> functions from Java. It doesn't require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods <em>of</em> objects and <em>on</em> objects across the Clojure/Java divide.</p>
+  <p>One of my most-upvoted <a href="http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427">answers</a> on <a href="http://stackoverflow.com/">Stackoverflow</a> is a simple example of how to call <a href="http://clojure.org/">Clojure</a> functions from Java. It doesn&rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods <em>of</em> objects and <em>on</em> objects across the Clojure/Java divide.</p>
 <p>Here is the original answer I provided.</p>
 <blockquote>
 <!-- raw HTML omitted -->
-<p>It isn't quite as simple as compiling to a jar  and calling the internal methods. There do seem to be a few tricks to  make it all work though. Here's an example of a simple Clojure file that  can be compiled to a jar:</p>
+<p>It isn&rsquo;t quite as simple as compiling to a jar  and calling the internal methods. There do seem to be a few tricks to  make it all work though. Here&rsquo;s an example of a simple Clojure file that  can be compiled to a jar:</p>
 <pre><code>(ns com.domain.tiny
   (:gen-class
     :name com.domain.tiny
@@ -289,7 +289,7 @@
 <pre><code>(binomial 5 3): 10
 (binomial 10042 111): 49068389575068144946633777...
 </code></pre>
-<p>And here's a Java program that calls the <code>-binomial</code> function in the <code>tiny.jar</code>.</p>
+<p>And here&rsquo;s a Java program that calls the <code>-binomial</code> function in the <code>tiny.jar</code>.</p>
 <pre><code>import com.domain.tiny;
 
 public class Main {
@@ -300,7 +300,7 @@ public class Main {
     }
 }
 </code></pre>
-<p>It's output is:</p>
+<p>It&rsquo;s output is:</p>
 <pre><code>(binomial 5 3): 10.0
 (binomial 10042, 111): 4.9068389575068143E263
 </code></pre>
@@ -309,7 +309,7 @@ public class Main {
 <p>And of course the Clojure jar itself must be on the class path. This example used the Clojure-1.1.0 jar.</p>
 <!-- raw HTML omitted -->
 </blockquote>
-<p>That's all well and good as far as it goes.</p>
+<p>That&rsquo;s all well and good as far as it goes.</p>
 <p>But the example was only intended to call static functions in Clojure code, such as I often do when writing statistics or mathematical programs. When you want to call classes in Clojure or into particular namespaces, it gets a little more complicated (but not much).</p>
 <p><a href="http://stackoverflow.com/questions/4783344/calling-a-very-simple-clojure-function-from-java-does-not-work">This answer</a> shows how to create a class object in Clojure and call a method in that class. It is similar to calling a static function but you have to include a &ldquo;this&rdquo; pointer in the argument list to the clojure function. The &ldquo;this&rdquo; pointer is usually passed invisibly in other object-oriented languages like Java or C++.</p>
   

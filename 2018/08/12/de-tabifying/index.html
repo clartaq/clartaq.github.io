@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>De-Tabifying &middot; Yo-Dave</title>
 
@@ -259,7 +259,7 @@
 </div>
 
   <p>There is probably no more boring task in programming than processing a file to replace tabs with spaces or doing the reverse and replacing spaces with tabs. And yet it has started religious wars that have raged for years in various programming communities.</p>
-<p>This &ldquo;tabifying&rdquo; or &ldquo;de-tabifying&rdquo; is not something I have to do frequently, but every once in a while, I need to convert tabs to spaces in some text. Sometimes I need to do it repeatedly and quickly. For example, in a Markdown editor, I basically need to do a de-tabify on every keystroke. It can't take long regardless of how long the input text is. Here's what I came up with.</p>
+<p>This &ldquo;tabifying&rdquo; or &ldquo;de-tabifying&rdquo; is not something I have to do frequently, but every once in a while, I need to convert tabs to spaces in some text. Sometimes I need to do it repeatedly and quickly. For example, in a Markdown editor, I basically need to do a de-tabify on every keystroke. It can&rsquo;t take long regardless of how long the input text is. Here&rsquo;s what I came up with.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn- </span>blanks
   <span style="color:#e6db74">&#34;Return a string consisting of the number of spaces requested.&#34;</span>
   [how-many]
@@ -302,7 +302,7 @@
                          (<span style="color:#a6e22e">mod</span> (+ offset (count rnc)) tab-spacing))]
                (<span style="color:#a6e22e">recur</span> (rest in) (str out rnc) ofs)))))))))
 
-</code></pre></div><p>It's pretty straightforward. Assuming the text needs to be de-tabified at all, just run through the text character-by-character keeping track of where the current character is relative to the beginning of the line. If a tab occurs​, determine the number of spaces to insert based on the offset from the beginning of the line, <em>i.e.</em> where the next tab stop occurs. Get a pre-computed string of spaces by doing a little table lookup and replace the tab. Then just keep going.</p>
+</code></pre></div><p>It&rsquo;s pretty straightforward. Assuming the text needs to be de-tabified at all, just run through the text character-by-character keeping track of where the current character is relative to the beginning of the line. If a tab occurs​, determine the number of spaces to insert based on the offset from the beginning of the line, <em>i.e.</em> where the next tab stop occurs. Get a pre-computed string of spaces by doing a little table lookup and replace the tab. Then just keep going.</p>
 <p>The only tricky thing in the above implementation is &ldquo;memoizing&rdquo; the table of pre-computed replacement strings.</p>
 
   

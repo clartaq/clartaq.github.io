@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>A New Version of the Confidence Interval Program &middot; Yo-Dave</title>
 
@@ -259,14 +259,14 @@
 </div>
 
   <p>Recently, I <a href="https://yo-dave.com/2017/08/31/an-updated-sign-test-program/">wrote</a> about updating an old program that did the <a href="https://en.wikipedia.org/wiki/Sign_test">Sign Test</a>. Well, I have lots of old programs that could stand a bit of refreshing.</p>
-<p>Another of the simple ones calculates the confidence interval around the proportion of successes in a series of <a href="https://en.wikipedia.org/wiki/Bernoulli_trial">Bernoulli trials</a>. I <a href="https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/">wrote about it</a> way back in 2011. The original was written in Java and Swing many years ago. It is still available in a <a href="https://bitbucket.org/David_Clark/binomconf">repository</a> on Bitbucket. It hasn't been updated in about five years though.</p>
-<p>So, I thought it might be fun to make an updated version. This time it's written in Clojure and uses the JavaFX GUI framework. Here's what it looks like now.</p>
+<p>Another of the simple ones calculates the confidence interval around the proportion of successes in a series of <a href="https://en.wikipedia.org/wiki/Bernoulli_trial">Bernoulli trials</a>. I <a href="https://yo-dave.com/2011/06/14/binomial-confidence-intervals----binomconf/">wrote about it</a> way back in 2011. The original was written in Java and Swing many years ago. It is still available in a <a href="https://bitbucket.org/David_Clark/binomconf">repository</a> on Bitbucket. It hasn&rsquo;t been updated in about five years though.</p>
+<p>So, I thought it might be fun to make an updated version. This time it&rsquo;s written in Clojure and uses the JavaFX GUI framework. Here&rsquo;s what it looks like now.</p>
 <p><a href="https://yo-dave.com/static/img/2017-09-13-new-confidence-limit-program.PNG"><img src="https://yo-dave.com/static/img/2017-09-13-new-confidence-limit-program.PNG" alt="A New Version of the Binomial Confidence Program" title="A New Version of the Binomial Confidence Program"><!-- raw HTML omitted --><!-- raw HTML omitted -->A New Version of the Binomial Confidence Program<!-- raw HTML omitted --></a></p>
-<p>The interface hasn't changed much, but it does display a progress dialog for the second or so that it might take to calculate the results for some input data. That gave me a chance to play with JavaFX <code>Task</code>s and progress dialogs. My usage feels a little clumsy, but it does work.</p>
+<p>The interface hasn&rsquo;t changed much, but it does display a progress dialog for the second or so that it might take to calculate the results for some input data. That gave me a chance to play with JavaFX <code>Task</code>s and progress dialogs. My usage feels a little clumsy, but it does work.</p>
 <p>Also, the statistics calculations have been re-written in Clojure and added to my little library of functions related to the binomial distribution.</p>
 <p>Hope you enjoy it.</p>
 <h2 id="update-3-nov-2017-">Update 3 Nov 2017</h2>
-<p>Noticed that I forgot to include a link to the repository of the new version of the program. It's <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/binomial-conf/tree/default">here</a>.</p>
+<p>Noticed that I forgot to include a link to the repository of the new version of the program. It&rsquo;s <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/binomial-conf/tree/default">here</a>.</p>
 
   
   

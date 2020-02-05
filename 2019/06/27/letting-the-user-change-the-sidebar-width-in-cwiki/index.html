@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Letting the User Change the Sidebar Width in CWiki &middot; Yo-Dave</title>
 
@@ -264,7 +264,7 @@
 
 </div>
 
-  <p>Recently, I've been working on what I thought was a simple feature &ndash; changing the width of the sidebar in the <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/cwiki/tree/default">CWiki</a> wiki program.</p>
+  <p>Recently, I&rsquo;ve been working on what I thought was a simple feature &ndash; changing the width of the sidebar in the <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/cwiki/tree/default">CWiki</a> wiki program.</p>
 <p>There were two ways the user could do it.</p>
 <p>First, they could set it manually in the &ldquo;Preferences&rdquo; page.</p>
 <p>Second, and more naturally in my opinion, they could use the mouse to drag the separator between the sidebar and the main article area to the location they wanted it.</p>
@@ -317,7 +317,7 @@
 </code></pre></div><p>The code to change the width was the hard part. The first part of that puzzle was the event handler shown in the layout code above. For the longest time, I had the click handler as:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#e6db74">&#34;cwiki_mde.dragger.onclick_handler();&#34;</span>
 </code></pre></div><p>And that mostly worked. Note the use of the underscore character &ldquo;_&rdquo; rather than the more idiomatic hyphen. It has to be an underscore.</p>
-<p>However, it didn't work perfectly with Safari. In Safari, the cursor changed shape correctly, but once the mouse moved, the cursor changed back to an &ldquo;I-beam&rdquo; text cursor. That was fixed by changing the call to:</p>
+<p>However, it didn&rsquo;t work perfectly with Safari. In Safari, the cursor changed shape correctly, but once the mouse moved, the cursor changed back to an &ldquo;I-beam&rdquo; text cursor. That was fixed by changing the call to:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#e6db74">&#34;cwiki_mde.dragger.onclick_handler(); return false;&#34;</span>
 </code></pre></div><p>Note the addition of <code>return false;</code> at the end. You need that to make Safari work.</p>
 <p>The code referred to in the event handler is in a new namespace: <code>cwiki-mde.dragger</code>.</p>
@@ -389,10 +389,10 @@
   (<span style="color:#a6e22e">.addEventListener</span> js/window <span style="color:#e6db74">&#34;mousedown&#34;</span> start-tracking)
   (<span style="color:#a6e22e">.addEventListener</span> js/window <span style="color:#e6db74">&#34;mousemove&#34;</span> move)
   (<span style="color:#a6e22e">.addEventListener</span> js/window <span style="color:#e6db74">&#34;mouseup&#34;</span> stop-tracking))
-</code></pre></div><p>I couldn't figure out a way to pass arguments or get data back from a handler that was called from Clojure/Hiccup. In fact, I was surprised that calling ClojureScript from Clojure worked at all. That's why there is an apparently pointless <code>start-tracking</code> function &ndash; I could have done the same thing in the <code>onclick_handler</code>, but I needed the event.</p>
-<p>For the longest time, I couldn't figure out what might be a good way to pass the new width from the ClojureScript client code back to the server running Clojure. There is <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSocket</a> machinery elsewhere in the client to handle communication back and forth between the editor and the server. But that seemed like it could be unreliable and buggy. Eventually, I looked into <a href="https://en.wikipedia.org/wiki/Ajax_%28programming%29">AJAX</a>, something I had never tried before. The <a href="https://github.com/JulianBirch/cljs-ajax"><code>cljs-ajax</code></a> library made it pretty easy though.</p>
+</code></pre></div><p>I couldn&rsquo;t figure out a way to pass arguments or get data back from a handler that was called from Clojure/Hiccup. In fact, I was surprised that calling ClojureScript from Clojure worked at all. That&rsquo;s why there is an apparently pointless <code>start-tracking</code> function &ndash; I could have done the same thing in the <code>onclick_handler</code>, but I needed the event.</p>
+<p>For the longest time, I couldn&rsquo;t figure out what might be a good way to pass the new width from the ClojureScript client code back to the server running Clojure. There is <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSocket</a> machinery elsewhere in the client to handle communication back and forth between the editor and the server. But that seemed like it could be unreliable and buggy. Eventually, I looked into <a href="https://en.wikipedia.org/wiki/Ajax_%28programming%29">AJAX</a>, something I had never tried before. The <a href="https://github.com/JulianBirch/cljs-ajax"><code>cljs-ajax</code></a> library made it pretty easy though.</p>
 <p>So, this code takes care of moving the divider and updating the layout as the mouse is moved. When the user completes the drag operation, if the new position of the divider differs from the original, an AJAX call is made back into the server code in Clojure to persist the data.</p>
-<p>Here's the function in the <code>cwiki.routes.home</code> namespace that saves the new width to the options table in the database.</p>
+<p>Here&rsquo;s the function in the <code>cwiki.routes.home</code> namespace that saves the new width to the options table in the database.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>post-sidebar-basis
   <span style="color:#e6db74">&#34;Persist the sidebar width basis.&#34;</span>
   [req]
@@ -401,7 +401,7 @@
     (<span style="color:#a6e22e">db/set-option-value</span> <span style="color:#e6db74">:sidebar_width</span> new-basis)
     {<span style="color:#e6db74">:status</span>  <span style="color:#ae81ff">200</span>}))
 </code></pre></div><p>All of the page layout functions that put together a view with a sidebar were changed to use the value from the database rather than rely on the value in the CSS file.</p>
-<p>Just for completeness, here's the <code>safe-parse-int</code> function used above.</p>
+<p>Just for completeness, here&rsquo;s the <code>safe-parse-int</code> function used above.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn- </span>safe-parse-int
   <span style="color:#e6db74">&#34;Convert a string to an integer. Return -1 on exception. Parses the first
 </span><span style="color:#e6db74">  (and only the first) contiguous group of digits.&#34;</span>
@@ -409,7 +409,7 @@
   (<span style="color:#a6e22e">try</span> (<span style="color:#a6e22e">Integer/parseInt</span> (re-find  <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;\d+&#34;</span> x))
        (<span style="color:#a6e22e">catch</span> Exception _
          <span style="color:#ae81ff">-1</span>)))
-</code></pre></div><p>It's just a handy little utility function that I use here and there.</p>
+</code></pre></div><p>It&rsquo;s just a handy little utility function that I use here and there.</p>
 <p>Now the user can change the width of the sidebar to whatever is useful/attractive to them.</p>
 
   

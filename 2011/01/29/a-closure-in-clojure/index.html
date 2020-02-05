@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>A Closure in Clojure &middot; Yo-Dave</title>
 
@@ -256,8 +256,8 @@
 
 </div>
 
-  <p>Back when closures were first explained to me, a long time ago, I thought &ldquo;sounds like a language with pass-by-reference semantics like Pascal.&rdquo; Of course, it isn't quite that simple.</p>
-<p>Clojure has a lot of nice features that work naturally to give you a &ldquo;better Java than Java&rdquo;. Here's an example of using a closure that is not at all easy in Java.</p>
+  <p>Back when closures were first explained to me, a long time ago, I thought &ldquo;sounds like a language with pass-by-reference semantics like Pascal.&rdquo; Of course, it isn&rsquo;t quite that simple.</p>
+<p>Clojure has a lot of nice features that work naturally to give you a &ldquo;better Java than Java&rdquo;. Here&rsquo;s an example of using a closure that is not at all easy in Java.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>net.dneclark.JFrameAndTimerDemo
   (<span style="color:#e6db74">:import</span> (<span style="color:#a6e22e">javax.swing</span> JLabel JButton JPanel JFrame Timer))
   (<span style="color:#e6db74">:gen-class</span>))
@@ -286,8 +286,8 @@
 (<span style="color:#66d9ef">defn </span>-main []
   (<span style="color:#a6e22e">timer-fn</span>))
 </code></pre></div><p>If you compile and run the program, you will see a small window with a counter than increments every second. You will also see a message displayed that the function <code>timer-fn</code> has exited. Big deal, huh?</p>
-<p>But look at the declaration of the counter. It's in the definition of the <code>timer-fn</code>. It isn't a global. But the action listener, <code>timer-action</code>, still has access to the variable and continues to increment it &ndash; even though the function that declared the variable has completed execution. The lexical context of that variable is maintained and the action listener has access to it. Very neat.</p>
-<p>I don't know if Java will ever get closures, but it sure is simple to use them in Clojure.</p>
+<p>But look at the declaration of the counter. It&rsquo;s in the definition of the <code>timer-fn</code>. It isn&rsquo;t a global. But the action listener, <code>timer-action</code>, still has access to the variable and continues to increment it &ndash; even though the function that declared the variable has completed execution. The lexical context of that variable is maintained and the action listener has access to it. Very neat.</p>
+<p>I don&rsquo;t know if Java will ever get closures, but it sure is simple to use them in Clojure.</p>
   
   
 

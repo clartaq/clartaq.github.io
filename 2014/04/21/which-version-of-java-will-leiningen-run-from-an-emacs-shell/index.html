@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Which Version of Java will Leiningen Run from an Emacs Shell &middot; Yo-Dave</title>
 
@@ -260,7 +260,7 @@
 
 </div>
 
-  <p>I've been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &ldquo;flow of consciousness&rdquo; debugging notes.</p>
+  <p>I&rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &ldquo;flow of consciousness&rdquo; debugging notes.</p>
 <p>Under Linux, things work as expected. Things are not so straightforward under Windows.</p>
 <p>At a command prompt, <code>lein version</code> produces the following output, as expected:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Leiningen 2.3.4 on Java 1.8.0 Java HotSpot<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> 64-Bit Server VM
@@ -270,8 +270,8 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;nREPL 0.1.8-preview</span>
 user&gt; (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;java.version&#34;</span>)
 <span style="color:#e6db74">&#34;1.7.0_40&#34;</span>
-</code></pre></div><p>What's going on?</p>
-<p>The Leiningen sample project file at <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">https://github.com/technomancy/leiningen/blob/master/sample.project.clj</a> says that Leiningen's own JVM is set with the <code>LEIN_JAVA_CMD</code> environment variable. In my case, no such variable is set. As I interpret the <code>lein.bat</code> file, that means that the java used defaults to simple &ldquo;java&rdquo;. I would think that means the same Java used by the Windows command prompt. Apparently not.</p>
+</code></pre></div><p>What&rsquo;s going on?</p>
+<p>The Leiningen sample project file at <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">https://github.com/technomancy/leiningen/blob/master/sample.project.clj</a> says that Leiningen&rsquo;s own JVM is set with the <code>LEIN_JAVA_CMD</code> environment variable. In my case, no such variable is set. As I interpret the <code>lein.bat</code> file, that means that the java used defaults to simple &ldquo;java&rdquo;. I would think that means the same Java used by the Windows command prompt. Apparently not.</p>
 <p>Creating the Windows environment variable <code>LEIN_JAVA_CMD</code> and setting it to <code>C:\Program Files\Java\jdk1.8.0\bin\java</code> gets the desired effect when we ask Leiningen for its version number in an Emacs shell command.</p>
 <p>However, things are even weirder at the REPL.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">; nREPL 0.1.8-preview</span>

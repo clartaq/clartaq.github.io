@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Detecting from a Web Client Whether a Particular Font is Installed &middot; Yo-Dave</title>
 
@@ -281,7 +281,7 @@
 <p>In the code I use, I test against three generic fonts, <code>serif</code>, <code>sans-serif</code>, and <code>monospace</code>.</p>
 <p>Also, what size should the sample string be and what letters should it consist of? One of the earliest implementations of this method is attributed to one &ldquo;Lalit Patel&rdquo; (<a href="http://www.lalit.org/lab/javascript-css-font-detect">http://www.lalit.org/lab/javascript-css-font-detect</a> (broken link)). They propose a string consisting of wide letters like &ldquo;M&rdquo; and &ldquo;W&rdquo; and thin letters like &ldquo;l&rdquo; and &ldquo;i&rdquo;. They also suggest using a large font size. I have no reason to quibble with these choices. I use M. Patels <a href="https://www.bitbook.io/using-javascript-to-detect-installed-fonts/">suggestions</a> of &ldquo;mmmmmmmmmmlli&rdquo; for the sample string and 72 pixels for the size.</p>
 <h3 id="how-to-render-and-measure-the-sample-string-">How to &ldquo;Render&rdquo; and &ldquo;Measure&rdquo; the Sample String</h3>
-<p>You may have noticed that I have been playing fast and loose with some terminology here. What does it mean to &ldquo;render&rdquo; the string? You don't want to render to the screen; this should all happen invisibly in the background.</p>
+<p>You may have noticed that I have been playing fast and loose with some terminology here. What does it mean to &ldquo;render&rdquo; the string? You don&rsquo;t want to render to the screen; this should all happen invisibly in the background.</p>
 <p>There have been different approaches but the one I prefer is to create an HTML <code>canvas</code> element (unconnected to the DOM), get its 2-dimensional context, set the font size and family, and use the <code>measureText</code> method to get the width.</p>
 <h3 id="which-font-from-a-font-family-declaration-is-actually-being-used-">Which Font from a <code>font-family</code> Declaration is Actually Being Used?</h3>
 <p>The rule is that when a CSS <code>font-family</code> is applied to an element the actual font used is the first one that is found to be installed. For example, if a CSS rule is applied to <code>body</code> like so:</p>
@@ -290,7 +290,7 @@
 }
 </code></pre></div><p>In all likelihood, &ldquo;Helvetica&rdquo; will be the selected font. Writing a function to figure out which font will be applied is trivial.</p>
 <h2 id="some-code-">Some Code</h2>
-<p>Here's my implementation in ClojureScript:</p>
+<p>Here&rsquo;s my implementation in ClojureScript:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;;;;</span>
 <span style="color:#75715e">;;;; Utilities to help with determining what if particulare fonts are</span>
 <span style="color:#75715e">;;;; installed on the client system.</span>

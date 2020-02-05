@@ -18,7 +18,7 @@
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
-      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&#39;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&#39;t seem to be such a thing and I haven&#39;t created one that I&#39;m satisfied with.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@
       <pubDate>Sat, 17 Sep 2011 00:11:21 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/09/17/spare-time-projects-part-2/</guid>
-      <description>A few weeks ago, I wrote a post about &amp;ldquo;spare time&amp;rdquo; projects &amp;ndash; programming projects undertaken to learn something new, try something out, see how something works. These are activities undertaken to improve your skills and, maybe, scratch an itch that&#39;s been bothering you. These projects aren&#39;t typically related to work.
-In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expressing the opinion that if you don&#39;t do such projects, he probably doesn&#39;t want to hire you.</description>
+      <description>A few weeks ago, I wrote a post about &amp;ldquo;spare time&amp;rdquo; projects &amp;ndash; programming projects undertaken to learn something new, try something out, see how something works. These are activities undertaken to improve your skills and, maybe, scratch an itch that&amp;rsquo;s been bothering you. These projects aren&amp;rsquo;t typically related to work.
+In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expressing the opinion that if you don&amp;rsquo;t do such projects, he probably doesn&amp;rsquo;t want to hire you.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expr
       <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
-      <description>&lt;p&gt;It&#39;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
+      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
   </channel>

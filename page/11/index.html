@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Yo-Dave</title>
 
@@ -240,6 +240,51 @@
   
     <article>
   <header>
+    <h2><a href="https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/">Updating to Java 8 and NetBeans 8 on Ubuntu</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Mar 2014 1:42:07 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/netbeans">netbeans</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  <p>Just some notes on how I updated to the recent releases of Java 8 and NetBeans 8 on Ubuntu 13.10 (64 bit) running the Xfce desktop environment (Xubuntu).</p>
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://yo-dave.com/2014/03/26/something-new.-comments/">Something New. Comments!</a></h2>
 
     <div class="post-meta">
@@ -272,9 +317,9 @@
   </header>
 
   <p>
-  Well, it's been a long time coming and I'm still a little unsure about it, but starting now, this site will allow comments. I've explained why I didn't allow them before, but I'm adding Disqus-powered discussions to the blog. We'll see how that goes.
-If everything that comes in is just spam, I'll disable comments again. If comments are useful, civil and on topic, they will remain.
-And we'll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.
+  Well, it&rsquo;s been a long time coming and I&rsquo;m still a little unsure about it, but starting now, this site will allow comments. I&rsquo;ve explained why I didn&rsquo;t allow them before, but I&rsquo;m adding Disqus-powered discussions to the blog. We&rsquo;ll see how that goes.
+If everything that comes in is just spam, I&rsquo;ll disable comments again. If comments are useful, civil and on topic, they will remain.
+And we&rsquo;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.
   </p>
 
   
@@ -319,7 +364,7 @@ And we'll see if anyone thinks any of this stuff is interesting enough to commen
   </header>
 
   <p>
-  As I've mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.
+  As I&rsquo;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.
   </p>
 
   
@@ -365,7 +410,7 @@ And we'll see if anyone thinks any of this stuff is interesting enough to commen
 
   <p>
   <p>I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.</p>
-<p>For some time, I've been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
+<p>For some time, I&rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
   </p>
 
   
@@ -416,7 +461,7 @@ And we'll see if anyone thinks any of this stuff is interesting enough to commen
   </header>
 
   <p>
-  Just a short rant about JavaFX because I'm pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+  Just a short rant about JavaFX because I&rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
 This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.
   </p>
 
@@ -462,8 +507,8 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
   </header>
 
   <p>
-  A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I've extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
-Here's the new snippet.
+  A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
+Here&rsquo;s the new snippet.
 (ns clojure_font_loading.core(:gen-class:extends javafx.application.Application)(:import[javafx.application Application][javafx.event EventHandler][javafx.scene Scene][avafx.scene.control Button][javafx.scene.layout StackPane VBox][javafx.
   </p>
 
@@ -509,8 +554,8 @@ Here's the new snippet.
   </header>
 
   <p>
-  Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &ldquo;preferred&rdquo; font through a series of less ideal typefaces depending on what's available on the machine doing the display.
-That's a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.
+  Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &ldquo;preferred&rdquo; font through a series of less ideal typefaces depending on what&rsquo;s available on the machine doing the display.
+That&rsquo;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.
   </p>
 
   
@@ -557,8 +602,8 @@ That's a handy facility to have, even on Windows, which can have different fonts
   </header>
 
   <p>
-  I've wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I've written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&ldquo;C:\Users\David Clark&rdquo; on my system.)
-My user profile name is &ldquo;david&rdquo;. That's what I use to sign on with. The fact that my home directory uses &ldquo;David Clark&rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.
+  I&rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&ldquo;C:\Users\David Clark&rdquo; on my system.)
+My user profile name is &ldquo;david&rdquo;. That&rsquo;s what I use to sign on with. The fact that my home directory uses &ldquo;David Clark&rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.
   </p>
 
   
@@ -601,7 +646,7 @@ My user profile name is &ldquo;david&rdquo;. That's what I use to sign on with. 
   </header>
 
   <p>
-  <p>The <a href="http://en.wikipedia.org/wiki/Eight_queens_puzzle">N-Queens</a> puzzle is a classic computer science problem. In fact, it's much older than discipline of computer science. It is usually used as a problem to introduce students to <a href="http://en.wikipedia.org/wiki/Backtracking">backtracking algorithms</a> in computer science. I was first introduced to the problem in Niklaus Wirth's <em><a href="http://www.amazon.com/dp/0130224189">Algorithms + Data Structures = Programs</a></em> back in the &lsquo;70s.</p>
+  <p>The <a href="http://en.wikipedia.org/wiki/Eight_queens_puzzle">N-Queens</a> puzzle is a classic computer science problem. In fact, it&rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to <a href="http://en.wikipedia.org/wiki/Backtracking">backtracking algorithms</a> in computer science. I was first introduced to the problem in Niklaus Wirth&rsquo;s <em><a href="http://www.amazon.com/dp/0130224189">Algorithms + Data Structures = Programs</a></em> back in the &rsquo;70s.</p>
 <p>I thought it might be interesting to write an updated version in my continuing effort to become proficient in <a href="http://clojure.org/">Clojure</a>.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.</p>
   </p>
 
@@ -646,61 +691,13 @@ My user profile name is &ldquo;david&rdquo;. That's what I use to sign on with. 
 
   <p>
   Update Copy was discontinued on 1 May 2016.
-I use the Cloud very simply, nothing elaborate. I use BitBucket(Now I use HelixTeamHub cloud.) to keep track of my repositories. I use DropBox to store copies of scientific publications and Fargo outlines. For important stuff, I use SpiderOak because of its great security model. I think I have an iCloud account somewhere. That's it.
-This morning, I've been playing with a new service called Copy.
+I use the Cloud very simply, nothing elaborate. I use BitBucket(Now I use HelixTeamHub cloud.) to keep track of my repositories. I use DropBox to store copies of scientific publications and Fargo outlines. For important stuff, I use SpiderOak because of its great security model. I think I have an iCloud account somewhere. That&rsquo;s it.
+This morning, I&rsquo;ve been playing with a new service called Copy.
   </p>
 
   
   <footer>
     <a href="https://yo-dave.com/2013/08/03/cloud-storage-at-copy/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/">Java-Clojure Interop: An Update</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Jun 2013 6:16:04 PM</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/interop">interop</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure(Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
-As this is written, the tools used include:
-  </p>
-
-  
-  <footer>
-    <a href="https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

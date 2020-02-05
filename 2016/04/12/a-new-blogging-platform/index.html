@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>A New Blogging Platform &middot; Yo-Dave</title>
 
@@ -256,13 +256,13 @@
 
 </div>
 
-  <p>The &ldquo;Lou the Luddite&rdquo; blog was originally created as a self-hosted <a href="https://wordpress.org/">WordPress</a> blog. But this blog was always a bit problematic for some reason. At first, I couldn't get automatic WordPress updates  to work. Then I found <a href="https://easyengine.io/">EasyEngine</a>, which did the install for me and got things running. But it's just a big black box of a script. I don't know all of the details of what it does. That isn't something I'm really comfortable with. So I started looking for some alternatives.</p>
+  <p>The &ldquo;Lou the Luddite&rdquo; blog was originally created as a self-hosted <a href="https://wordpress.org/">WordPress</a> blog. But this blog was always a bit problematic for some reason. At first, I couldn&rsquo;t get automatic WordPress updates  to work. Then I found <a href="https://easyengine.io/">EasyEngine</a>, which did the install for me and got things running. But it&rsquo;s just a big black box of a script. I don&rsquo;t know all of the details of what it does. That isn&rsquo;t something I&rsquo;m really comfortable with. So I started looking for some alternatives.</p>
 <h2 id="static-sites">Static Sites</h2>
-<p>Static sites seemed like a good idea. Just write stuff and send it off to the site. It's been done before. For example, <a href="https://pages.github.com/">GitHub Pages</a> are a very popular way to host static sites.</p>
+<p>Static sites seemed like a good idea. Just write stuff and send it off to the site. It&rsquo;s been done before. For example, <a href="https://pages.github.com/">GitHub Pages</a> are a very popular way to host static sites.</p>
 <p>Then I saw <a href="http://jlongster.com/RIP-Over-Engineered-Blog">this post</a> mentioning the <a href="http://cryogenweb.org/">Cryogen</a> system. Very nice. Very easy. One of the reasons I like it is because it is written in <a href="https://clojure.org/">Clojure</a>, one of my favorite languages. Just create a new project with <a href="http://leiningen.org/">Leiningen</a>, do some configuration and start writing. It creates a site that you can preview locally, then send the changes off to a server.</p>
 <p>Installation is pretty simple. You can deploy a Cryogen site to GitHub Pages if you want. I wanted to put it on one of my self-hosted servers. Basically, you can  copy the Cryogen-created site onto your server, install <a href="http://nginx.org/en/">nginx</a> on your server, then do a little configuration to get nginx to serve up the contents of your site. When you create new posts, Cryogen rebuilds the site and, after previewing locally, you can send the changes off to your server.</p>
-<p>So, I've made the switch. I've moved my (few) existing posts over to <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, built the site, and pointed my domain at it. (I'll keep the old server up for awhile.) I'm pretty satisfied.</p>
-<p>Cryogen isn't perfect. I'll probably fiddle the CSS a bit and make some changes to the way copyrights and tags are displayed. But it seems to work for this site. So far.</p>
+<p>So, I&rsquo;ve made the switch. I&rsquo;ve moved my (few) existing posts over to <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, built the site, and pointed my domain at it. (I&rsquo;ll keep the old server up for awhile.) I&rsquo;m pretty satisfied.</p>
+<p>Cryogen isn&rsquo;t perfect. I&rsquo;ll probably fiddle the CSS a bit and make some changes to the way copyrights and tags are displayed. But it seems to work for this site. So far.</p>
 <p>(<strong>Update 2017-08-23</strong>: This site is no longer created with WordPress or Cryogen. It is written in Markdown and the site is generated with <a href="https://hexo.io/">Hexo</a>.)</p>
 <p>(<strong>Update 2018-03-12</strong>: This site is no longer created with WordPress or Cryogen or Hexo. It is written in Markdown and the site is generated with <a href="https://gohugo.io">Hugo</a>.)</p>
 

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>CloudAtCost Setup Notes &middot; Yo-Dave</title>
 
@@ -257,9 +257,9 @@
 </div>
 
   <h2 id="update-10-aug-2016-">Update: 10 Aug 2016</h2>
-<p>There's a new and improved version of this post <a href="https://yo-dave.com/2016/08/10/my-server-setup-process/">HERE</a>. Look at that instead.</p>
+<p>There&rsquo;s a new and improved version of this post <a href="https://yo-dave.com/2016/08/10/my-server-setup-process/">HERE</a>. Look at that instead.</p>
 <hr>
-<p>I've been experimenting with servers from <a href="http://cloudatcost.com/">CloudAtCost</a>. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with <a href="http://www.ubuntu.com/">Ubuntu</a> 14.04 LTS.</p>
+<p>I&rsquo;ve been experimenting with servers from <a href="http://cloudatcost.com/">CloudAtCost</a>. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with <a href="http://www.ubuntu.com/">Ubuntu</a> 14.04 LTS.</p>
 <p>I generally start out making a copy of the server information from the CloudAtCost <a href="https://panel.cloudatcost.com">panel</a>. This includes things like the IP address and the root password, which you will need shortly.</p>
 <p>I do the configuration over <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>. Since I am running on Windows, there are a few options for SSH clients. I like <a href="http://www.putty.org/">PuTTY</a>, but the <a href="https://www.bitvise.com/ssh-client-download">Bitvise</a> client is nice too.</p>
 <h2 id="update-the-system-">Update the System</h2>
@@ -294,18 +294,18 @@ root@ubuntu:~#
 <p>At this point, we can tell the system to allow the new user root access by adding them to the &ldquo;sudo&rdquo; group.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# gpasswd -a david sudo
 Adding user david to group sudo
-</code></pre></div><p>Now, you can log off as root and log back in as your new user. It's important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
+</code></pre></div><p>Now, you can log off as root and log back in as your new user. It&rsquo;s important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
 <h2 id="set-up-public-key-ssh-access-">Set Up Public Key SSH Access</h2>
 <p>Public key access is an additional method to authenticate yourself when signing into your server. It is considered to be more secure and flexible, but more difficult to set up. I think it is only more difficult in that there are more steps to do, none of which are particularly difficult. Just sayin&rsquo;.</p>
-<p>First off, you need public and private encryption keys. If you don't know what I'm talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it's too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
+<p>First off, you need public and private encryption keys. If you don&rsquo;t know what I&rsquo;m talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it&rsquo;s too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
 <p>I usually start by changing the permissions of my home directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ chmod <span style="color:#ae81ff">750</span> ~
-</code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no else at this point) can read and execute, but not write into the directory. Others can't do any of those things.</p>
+</code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no else at this point) can read and execute, but not write into the directory. Others can&rsquo;t do any of those things.</p>
 <p>Next you need to create a place to save public encryption keys. By convention, this is a sub-directory of your home directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ mkdir .ssh
 user-name@ubuntu:~$ chmod <span style="color:#ae81ff">700</span> .ssh
 </code></pre></div><p>These permissions mean that only I can read/write/execute in the <code>.ssh</code> directory.</p>
-<p>Since I do it so often, I have a file on the system that I use to set up the servers called &ldquo;authorized_keys&rdquo;. In that file, I have concatenated all of the public encryption keys that I tend to use on my servers. It's just a text file that I need to be able to send to the new server. <strong>Make sure</strong> that only your <em>public</em> keys go in this file.</p>
+<p>Since I do it so often, I have a file on the system that I use to set up the servers called &ldquo;authorized_keys&rdquo;. In that file, I have concatenated all of the public encryption keys that I tend to use on my servers. It&rsquo;s just a text file that I need to be able to send to the new server. <strong>Make sure</strong> that only your <em>public</em> keys go in this file.</p>
 <p>Now you need to be able to transfer that file into the <!-- raw HTML omitted -->.ssh<!-- raw HTML omitted --> directory on the server. If you only have PuTTY to work with, it can be a bit of a chore. This is one area where the Bitvise client has an advantage &ndash; it has an SFTP (Secure File Transfer Protocol) client that provides a side-by-side listing of files on the client and the server. Copying the file is a simple matter of dragging the file from one window to the other.</p>
 <p>If you are comfortable typing long command lines in the terminal, you can use plink.exe (one of the programs installed with PuTTY) to complete the transfer in a single line. From the directory where PuTTY is installed, type:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Program<span style="color:#75715e"> Files (x86)\PuTTY&gt;type C:\Users\user-name\.ssh | plink.exe -ssh user-name@host-ip -pw password &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
@@ -333,7 +333,7 @@ ssh start/running, process 1402
 Rules updated
 Rules updated <span style="color:#f92672">(</span>v6<span style="color:#f92672">)</span>
 </code></pre></div><h2 id="time-zones-and-the-network-time-protocol-">Time Zones and the Network Time Protocol</h2>
-<p>It's likely that the time zone is already set correctly, but you can check with:</p>
+<p>It&rsquo;s likely that the time zone is already set correctly, but you can check with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo dpkg-reconfigure tzdata
 ... your local time ...
 ... universal time ...
@@ -341,7 +341,7 @@ Rules updated <span style="color:#f92672">(</span>v6<span style="color:#f92672">
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo apt-get install ntp
 </code></pre></div><p>At this point, you should be set up and ready to go.</p>
 <p>##Update: 17 Mar 2016##</p>
-<p><a href="http://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban</a> is daemon that monitors frequent attempts to log into your system, and probing for exploits. It will ban IPs that repeatedly exhibit these suspicious activities. It's easy to set up and is pre-configured to work pretty well. It's &ldquo;set it and forget it.&rdquo;</p>
+<p><a href="http://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban</a> is daemon that monitors frequent attempts to log into your system, and probing for exploits. It will ban IPs that repeatedly exhibit these suspicious activities. It&rsquo;s easy to set up and is pre-configured to work pretty well. It&rsquo;s &ldquo;set it and forget it.&rdquo;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo apt-get install fail2ban
 </code></pre></div>
   

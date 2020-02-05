@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Restart River5 after Reboot with PM2 &middot; Yo-Dave</title>
 
@@ -275,7 +275,7 @@ River5 is written for Node.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node river5.js
 </code></pre></div><p>Once you get it working, shut it down (Ctrl-C) and change back to your home directory. Then, use a command like the following to start the River5 server from your home directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pm2 start /home/david/river5/river5.js --cwd /home/david/river5
-</code></pre></div><p>In this case, my username is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don't</em></strong> use relative paths for this.</p>
+</code></pre></div><p>In this case, my username is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don&rsquo;t</em></strong> use relative paths for this.</p>
 <p>Assure that you can repeatedly start the River5 server using your command line. Once you are confident that you command line works, from your home directory, run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pm2 save
 </code></pre></div><p>The command above will save a set of information related to how PM2 is running your application. The file is in <code>~/.pm2/dump.pm2</code>. Have a look at it if you like.</p>

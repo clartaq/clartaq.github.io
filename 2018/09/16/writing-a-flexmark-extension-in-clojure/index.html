@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Writing a flexmark Extension in Clojure &middot; Yo-Dave</title>
 
@@ -260,16 +260,16 @@
 
   <p>Writing <a href="https://en.wikipedia.org/wiki/Wiki">wiki</a> pages using <a href="https://daringfireball.net/projects/markdown/">Markdown</a> is a great way to do things because it is simple, well-known, and capable.</p>
 <p>One of the annoyances of using Markdown is that it has no default syntax to create <a href="https://en.wiktionary.org/wiki/wikilink">wikilinks</a>, a type of <a href="https://en.wiktionary.org/wiki/hyperlink">hyperlink</a> that links one page in a wiki to another.</p>
-<p>I've been working on a home-grown, personal wiki, <a href="https://bitbucket.org/David_Clark/cwiki/src/default/">CWiki</a>, for almost a year now off and on. It's written in the <a href="https://clojure.org">Clojure</a> programming language, which is a pleasure to use. One of Clojure's strengths is the excellent interoperability that it has with the <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> ecosystem.</p>
+<p>I&rsquo;ve been working on a home-grown, personal wiki, <a href="https://bitbucket.org/David_Clark/cwiki/src/default/">CWiki</a>, for almost a year now off and on. It&rsquo;s written in the <a href="https://clojure.org">Clojure</a> programming language, which is a pleasure to use. One of Clojure&rsquo;s strengths is the excellent interoperability that it has with the <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> ecosystem.</p>
 <p>The CWiki program translates wiki pages written in the Markdown language and to HTML for display on a web page. It uses a Java library called <a href="https://github.com/vsch/flexmark-java">flexmark-java</a> (or simple &ldquo;flexmark&rdquo;) to do the translation. The flexmark library is very well-organized and fast. It is also extremely configurable; it adheres to the <a href="https://commonmark.org">CommonMark</a> specification by default but is capable of emulating the features of many different version of Markdown, such as <a href="https://github.github.com/gfm/">GFM</a> (GitHub-Flavored Markdown). The flexmark library achieves its flexible configuration with the use of extensions.</p>
 <p>CWiki attempts to emulate the wikilink style of <a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>. Initially, I just scanned documents for wikilinks using a regular expression approach. Whenever the regular expression matched a wikilink, it was converted to an HTML link before the material was converted from Markdown. This naive approach worked well most for most content, but in the case of wikilinks embedded in code listings, it would expand the link within the code listing. That made writing examples of wikilink usage problematic, so I wanted a solution where the Markdown was parsed rather than matched to a regular expression. The parser would know about when it was dealing with a code listing or a real wikilink.</p>
-<p>Thankfully, there is already a flexmark extension to handle wikilinks, but it isn't quite what I want. One of the key features that I want to follow is coloring links to non-existent pages red instead of the standard link color. But the pre-written extension to flexmark doesn't do that.</p>
+<p>Thankfully, there is already a flexmark extension to handle wikilinks, but it isn&rsquo;t quite what I want. One of the key features that I want to follow is coloring links to non-existent pages red instead of the standard link color. But the pre-written extension to flexmark doesn&rsquo;t do that.</p>
 <h2 id="an-attributeprovider-to-style-links-">An AttributeProvider to Style Links</h2>
 <p>Time to write an extension. As I mentioned, flexmark is a very flexible Java library. Creating the extension I want requires writing <em>two</em> additional Java classes. One of the classes will take care of styling the link; the other will handle hooking the extension into the flexmark library.</p>
 <p>Styling links in the manner I want can be accomplished by writing an <a href="https://github.com/vsch/flexmark-java/blob/master/flexmark/src/main/java/com/vladsch/flexmark/html/AttributeProvider.java"><code>AttributeProvider</code></a>. The <code>AttributeProvider</code> is an <code>interface</code> with a single method that must be implemented by any class extending it,</p>
 <pre><code>void setAttributes(Node node, AttributablePart part, Attributes attributes);
 </code></pre>
-<p>Also, the implementing class should provide a static factory method to create one of these things. I called my extension class a <code>WikiLinkAttributeProvider.</code> Here's how it looks.</p>
+<p>Also, the implementing class should provide a static factory method to create one of these things. I called my extension class a <code>WikiLinkAttributeProvider.</code> Here&rsquo;s how it looks.</p>
 <pre><code>;-------------------------------------------------------------------------------
 ; The WikiLinkAttributeProvider is responsible for styling the links
 ; depending on whether the page exists (normal link), doesn't exist (red link),
@@ -296,7 +296,7 @@
     (create [^LinkResolverContext context]
       (cwiki.util.WikiLinkAttributeProvider.))))
 
-</code></pre><p>(I've left out a lot of other code, like the imports and utility functions. A <a href="https://help.github.com/articles/about-gists/">gist</a> with the complete code listing for the two classes in the extension and some test code is <a href="https://gist.github.com/clartaq/18b03db43c04d8956e0410ed6104dd27">here</a> or you can check out the project repository (which might change with further development).)</p>
+</code></pre><p>(I&rsquo;ve left out a lot of other code, like the imports and utility functions. A <a href="https://help.github.com/articles/about-gists/">gist</a> with the complete code listing for the two classes in the extension and some test code is <a href="https://gist.github.com/clartaq/18b03db43c04d8956e0410ed6104dd27">here</a> or you can check out the project repository (which might change with further development).)</p>
 <p>The <code>gen-class</code> macro is used to create the Java class with the given name. The macro states that the class will implement the interface and will provide an additional method, the static factory method.</p>
 <p>The <code>setAttributes</code> method looks at the type of <code>Node</code> that is passed to it and, if the node is a <code>WikiLink</code>, figures out how to style it. The <code>title-&gt;link-style</code> function makes that determination based on whether a page with the given title already exists and, if not, whether the user has a role that allows them to create new pages. (If the page does not exist, a user with sufficient permissions can create it by clicking the link and editing it. Otherwise,​ the link is disabled.)</p>
 <p>The static factory method, <code>create</code>, calls the ​constructor for the class that is automatically generated by the <code>gen-class</code> macro.</p>
@@ -365,10 +365,10 @@
 </code></pre><h3 id="order-of-compiling-things-">Order of Compiling Things</h3>
 <p>I use <a href="https://leiningen.org">Leiningen</a> as the build tool for most of my Clojure projects. In the usual workflow, Leiningen will build Java source files first, then Clojure files. I presume the thinking is that the Clojure files will import the classes produced from any Java files in the project.</p>
 <p>But there are no Java files in the extension and some of the Clojure files still need to import the extension classes. Leiningen provides a simple way to control the order of compilation using the <code>:prep-tasks</code> key in the project file.</p>
-<p>Here's the line I include in my <code>:dev</code> profile.</p>
+<p>Here&rsquo;s the line I include in my <code>:dev</code> profile.</p>
 <pre><code>:prep-tasks [[&quot;compile&quot; &quot;cwiki.util.wikilink-attributes&quot;]]
 </code></pre><h3 id="one-final-rough-edge-to-mention-">One Final Rough Edge to Mention</h3>
-<p>I use the <a href="https://cursive-ide.com">Cursive</a> plugin for <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> to develop in Clojure. I've gotten used to running a REPL in Cursive and using the keyboard shortcuts to run tests while in the editor. However, this is not so automatic for this project. It requires that the extension classes be compiled manually before the tests will run. Not a big thing, but not quite perfect.</p>
+<p>I use the <a href="https://cursive-ide.com">Cursive</a> plugin for <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> to develop in Clojure. I&rsquo;ve gotten used to running a REPL in Cursive and using the keyboard shortcuts to run tests while in the editor. However, this is not so automatic for this project. It requires that the extension classes be compiled manually before the tests will run. Not a big thing, but not quite perfect.</p>
 
   
   

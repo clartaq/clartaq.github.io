@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Java-Clojure Interop: An Update &middot; Yo-Dave</title>
 
@@ -265,7 +265,7 @@
 <li><a href="https://github.com/technomancy/leiningen">Leiningen</a> 2.1.3</li>
 <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java JDK</a> 1.7.0 Update 25</li>
 </ul>
-<p>These instructions are for Windows 7 64-bit. Instructions for other OS's are similar.</p>
+<p>These instructions are for Windows 7 64-bit. Instructions for other OS&rsquo;s are similar.</p>
 <h1 id="the-clojure-part-">The Clojure Part</h1>
 <p>First create a project and associated directory structure using Leiningen:</p>
 <pre><code class="language-dos" data-lang="dos">    C:\projects&gt;lein new com.domain.tiny
@@ -322,7 +322,7 @@
     C:\projects\com.domain.tiny&gt;copy &quot;C:&lt;path to clojure jar&gt;\clojure-1.5.1.jar&quot; target\lib\
             1 file(s) copied.
 </code></pre><h1 id="the-java-part-">The Java Part</h1>
-<p>Leiningen has a built-in task, <code>lein-javac</code>, that should be able to help with the Java compilation. Unfortunately, it seems to be broken in version 2.1.3. It can't find the installed JDK and it can't find the Maven repository. The paths to both have embedded spaces on my system. I assume that is the problem. Any Java IDE could handle the compilation and packaging too. But for this post, we're going old school and doing it at the command line.</p>
+<p>Leiningen has a built-in task, <code>lein-javac</code>, that should be able to help with the Java compilation. Unfortunately, it seems to be broken in version 2.1.3. It can&rsquo;t find the installed JDK and it can&rsquo;t find the Maven repository. The paths to both have embedded spaces on my system. I assume that is the problem. Any Java IDE could handle the compilation and packaging too. But for this post, we&rsquo;re going old school and doing it at the command line.</p>
 <p>First create the file <code>Main.java</code> with the following contents.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#f92672">import</span> com.domain.tiny<span style="color:#f92672">;</span>
     

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Focus Behavior Change between JavaFX 2 and JavaFX 8 when Selecting Rows in a TableView &middot; Yo-Dave</title>
 
@@ -258,15 +258,15 @@
 
 </div>
 
-  <p>For a little while now, I've been working on an application that manages a list of documents, providing multiple views that the user can edit.</p>
+  <p>For a little while now, I&rsquo;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.</p>
 <p>The application looks something like this:</p>
 <p><a href="https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG"><img src="https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG" alt="Image of the document manager main screen" title="The document manager main screen"><!-- raw HTML omitted --><!-- raw HTML omitted -->The document manager main screen<!-- raw HTML omitted --></a></p>
 <p>The user selects the document they wish to view or edit by selecting it from the large <code>TableView</code> in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)</p>
-<p>Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn't have to do anything to save their work. It just happened.</p>
+<p>Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&rsquo;t have to do anything to save their work. It just happened.</p>
 <p>This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)</p>
 <p>I posted a <a href="http://stackoverflow.com/questions/29661714/change-in-focus-behavior-during-tableview-selection-between-javafx-2-and-8">question</a> about this, along with a <a href="http://sscce.org/">SSCCE</a> on <a href="http://stackoverflow.com/">StackOverflow</a>. The gist of the few answers I received was that I was doing the updates wrong. <a href="http://stackoverflow.com/users/203657/kleopatra">Kleopatra</a> informed me that I was probably doing the update wrong since there is no guarantee as to the order of various events and notifications. I had already tried doing the update during the document selection process of the <code>TableView</code> as suggested by <a href="http://stackoverflow.com/users/4219144/eckig">eckig</a>, but doing that left the application vulnerable to lost data if the user did an edit and just closed the program.</p>
 <p>In the end, I <em>did</em> use a listener on the change of selection in the table and did an override of the <code>stop()</code> method of the <code>Application</code> class to catch needed updates before closing.</p>
-<p>But the key was creating a new class <code>MonitoredSimpleStringProperty</code>, derived from <code>SimpleStringProperty</code>, that keeps track of whether it's contents have been altered. With that information, the application can decide if it even needs to update the database as the user selects a different document to view or edit.</p>
+<p>But the key was creating a new class <code>MonitoredSimpleStringProperty</code>, derived from <code>SimpleStringProperty</code>, that keeps track of whether it&rsquo;s contents have been altered. With that information, the application can decide if it even needs to update the database as the user selects a different document to view or edit.</p>
 <p>Another, longer SSCCE illustrates how it works:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> focusproblem<span style="color:#f92672">;</span>
 
@@ -485,7 +485,7 @@
 <span style="color:#f92672">}</span>
 </code></pre></div><p>The actual program is a bit more complicated, but this approach solved my problem. Now on to other things.</p>
 <h2 id="an-aside----how-this-came-about-">An Aside &ndash; How this Came About</h2>
-<p>I started working on this program as a result of something else I was trying to do. I've been working on a book &ndash; &ldquo;Molecular Dynamics Simulation for Beginners&rdquo;. As part of writing that, I need to maintain a list of references to be included for the reader that wants to dig deeper into some areas. The book is being written in LaTeX because of the math involved. Traditionally, LaTeX documents are handled by a program called BibTeX or something similar. There are lots of reference managers. Many are free. Many are open-source. None of them did exactly what I want. So&hellip; down the rabbit hole.</p>
+<p>I started working on this program as a result of something else I was trying to do. I&rsquo;ve been working on a book &ndash; &ldquo;Molecular Dynamics Simulation for Beginners&rdquo;. As part of writing that, I need to maintain a list of references to be included for the reader that wants to dig deeper into some areas. The book is being written in LaTeX because of the math involved. Traditionally, LaTeX documents are handled by a program called BibTeX or something similar. There are lots of reference managers. Many are free. Many are open-source. None of them did exactly what I want. So&hellip; down the rabbit hole.</p>
   
   
 

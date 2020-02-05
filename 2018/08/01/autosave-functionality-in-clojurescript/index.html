@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.62.2" />
+  <meta name="generator" content="Hugo 0.64.0" />
 
   <title>Autosave Functionality in ClojureScript &middot; Yo-Dave</title>
 
@@ -275,7 +275,7 @@
       (<span style="color:#a6e22e">clear-autosave-delay!</span>)
       (<span style="color:#a6e22e">start-autosave-delay!</span> doc-save-fn delay page-map-atom))))
 </code></pre></div><p>I put the <code>change-watcher!</code> function in the <code>:on-ch​ange</code> handler for a control (or multiple controls). Whenever a change occurs, it resets the delay. If the delay expires, the <code>doc-save-fn</code> is called to do the save.</p>
-<p>It isn't very &ldquo;Clojuresque,&ldquo;​ but it does seem to work ok.</p>
+<p>It isn&rsquo;t very &ldquo;Clojuresque,&ldquo;​ but it does seem to work ok.</p>
 <p>Trying to find a more idiomatic solution, I posted <a href="https://stackoverflow.com/questions/51661320/autosave-functionality-in-clojurescript">this question</a> on StackOverflow. It generated very little interest, but the single commenter did say that this seems to be a common practice &ndash; putting a thin wrapper around some ugly JavaScript.​</p>
 
   
