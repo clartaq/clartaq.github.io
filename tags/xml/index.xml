@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XML on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/xml/</link>
+    <description>Recent content in XML on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 05 Feb 2020 11:09:06 -0500</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why EDN?</title>
+      <link>https://yo-dave.com/2020/02/05/why-edn/</link>
+      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/02/05/why-edn/</guid>
+      <description>Anyone who looks into my experimental outliner with notes, clown, is sure to notice that the native data format is EDN (Extensible Data Notation).
+The canonical data representation for outlines is OPML (Outline Processor Markup Language) and it is well suited for that purpose. It&amp;rsquo;s a dialect of XML especially adapted to outliners.
+So, why use EDN? Rich Hickey gives a good rationale at the link above. But for me it boils down to a few things.</description>
+    </item>
+    
+  </channel>
+</rss>
