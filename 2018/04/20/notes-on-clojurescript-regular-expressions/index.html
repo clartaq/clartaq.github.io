@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <title>Notes on ClojureScript Regular Expressions &middot; Yo-Dave</title>
 
@@ -283,7 +283,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">str/replace</span> text <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;(?m)^[ \t]+$&#34;</span> <span style="color:#e6db74">&#34;&#34;</span>)
 </code></pre></div><h2 id="matches-">Matches</h2>
 <p>Both the JavaScript and ClojureScript versions of the replace function let you specify the replacement text as a string or as the return value of a function. When you use a string, both JavaScript and ClojureScript let you put part of the matched string into the replacement using some special characters. The doc-string for <code>string.replace</code> includes the following example to let you translate from English to Pig Latin.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">clojure.string/replace</span> <span style="color:#e6db74">\&#34;</span>Almost Pig Latin<span style="color:#e6db74">\&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">\&#34;</span><span style="color:#e6db74">\\</span>b(<span style="color:#e6db74">\\</span>w)(<span style="color:#e6db74">\\</span>w+)<span style="color:#e6db74">\\</span>b<span style="color:#e6db74">\&#34;</span> <span style="color:#e6db74">\&#34;</span>$2$1ay<span style="color:#e6db74">\&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">clojure.string/replace</span> <span style="color:#e6db74">\&#34;</span>Almost Pig Latin<span style="color:#e6db74">\&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">\&#34;\\</span>b(<span style="color:#e6db74">\\</span>w)(<span style="color:#e6db74">\\</span>w+)<span style="color:#e6db74">\\</span>b<span style="color:#e6db74">\&#34;</span> <span style="color:#e6db74">\&#34;</span>$2$1ay<span style="color:#e6db74">\&#34;</span>)
     -&gt; <span style="color:#e6db74">\&#34;</span>lmostAay igPay atinLay<span style="color:#e6db74">\&#34;</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
 </code></pre></div><p>When you provide a function to produce the replacement text, it gets arguments related to the matched text. In ClojureScript, there is a single argument, a variable length vector. The first element is the entire match. If any parts of the match were captured by parenthesized groups in the regular expression, they appear as following elements in the vector.</p>
 <p>For example, here is a snippet (again, derived from the PageDown editor source) that detects Markdown headers and translates them to HTML.</p>
@@ -298,7 +298,7 @@
 <ol>
 <li>ClojureScript regular expressions can be entered as literals similar to the way it is done in JavaScript.
 <ol>
-<li>Use the ClojureScript regular expression literal syntax: #&quot;&quot;.</li>
+<li>Use the ClojureScript regular expression literal syntax: #&quot;&rdquo;.</li>
 <li>Don&rsquo;t include the <code>\</code> characters used to mark the beginning and end of a JavaScript regular expression.</li>
 </ol>
 </li>

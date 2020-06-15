@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 05 Feb 2020 11:09:06 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 15:50:09 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Counting Words in a Markdown File</title>
+      <link>https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/</link>
+      <pubDate>Mon, 15 Jun 2020 15:50:09 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/</guid>
+      <description>I wanted to add an estimate of words and characters in wiki pages for a program I am writing CWiki There was some guidance on this topic (in Python) here.
+Of course the original Markdown.pl was a good source for matching regular expressions too.
+What follows is a copy of the &amp;ldquo;seed page&amp;rdquo; &amp;ldquo;About the Word Count&amp;rdquo; from the CWiki wiki program:
+Begin Quote
+Up at the top of each page, below the author and creation/modification dates, there is a line showing the number of characters in the page along with an estimate of the number of words in the page.</description>
+    </item>
     
     <item>
       <title>Why EDN?</title>
@@ -567,7 +580,7 @@ Usually, I can just file a ticket and get help in a day or so.</description>
       
       <guid>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</guid>
       <description>The Elm language is often cited as an up-and-comer for web front end development. I was attracted to it largely because of the compiler&amp;rsquo;s friendly and extremely helpful error messages. It&amp;rsquo;s really attractive in many ways.
-But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;quot;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
+But when I started looking at examples, I often found myself thinking things like &amp;ldquo;Why is this so inconsistent?&amp;rdquo; or &amp;ldquo;Why is this syntax so complicated?&amp;rdquo;. And it finally occurred to me that I&amp;rsquo;ve been ruined by the way Clojure/ClojureScript/Lisp/Scheme do things.</description>
     </item>
     
     <item>
@@ -576,7 +589,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/02/i-am-so-over-hd/</guid>
-      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;quot;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
+      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;rdquo;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
 I thought I was set forever.
 Since then, I&amp;rsquo;ve purchased a few Apple products with Retina displays.</description>
     </item>
@@ -1138,7 +1151,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <guid>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</guid>
       <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&amp;rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
 Here&amp;rsquo;s the new snippet.
-(ns clojure_font_loading.core(:gen-class:extends javafx.application.Application)(:import[javafx.application Application][javafx.event EventHandler][javafx.scene Scene][avafx.scene.control Button][javafx.scene.layout StackPane VBox][javafx.</description>
+(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.</description>
     </item>
     
     <item>

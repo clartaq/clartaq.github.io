@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <title>Focus Behavior Change between JavaFX 2 and JavaFX 8 when Selecting Rows in a TableView &middot; Yo-Dave</title>
 
@@ -295,81 +295,81 @@
     <span style="color:#66d9ef">private</span> TableView docTable<span style="color:#f92672">;</span>
     <span style="color:#66d9ef">private</span> ObservableList<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">&gt;</span> docList<span style="color:#f92672">;</span>
 
-    <span style="color:#66d9ef">private</span> ObservableList<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">initDocs</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        docList <span style="color:#f92672">=</span> observableArrayList<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> ObservableList<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">initDocs</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        docList <span style="color:#f92672">=</span> observableArrayList<span style="color:#f92672">();</span>
         docList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Doc<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Harper Lee&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;To Kill a Mockbird&#34;</span><span style="color:#f92672">,</span>
-                <span style="color:#e6db74">&#34;Some notes on mockingbirds&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#e6db74">&#34;Some notes on mockingbirds&#34;</span><span style="color:#f92672">));</span>
         docList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Doc<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;John Steinbeck&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Of Mice and Men&#34;</span><span style="color:#f92672">,</span>
-                <span style="color:#e6db74">&#34;Some notes about mice&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#e6db74">&#34;Some notes about mice&#34;</span><span style="color:#f92672">));</span>
         docList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Doc<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Lewis Carroll&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Jabberwock&#34;</span><span style="color:#f92672">,</span>
-                <span style="color:#e6db74">&#34;Some notes about jabberwocks&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#e6db74">&#34;Some notes about jabberwocks&#34;</span><span style="color:#f92672">));</span>
         <span style="color:#66d9ef">return</span> docList<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#66d9ef">private</span> Parent <span style="color:#a6e22e">initGui</span><span style="color:#f92672">(</span>ObservableList<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">&gt;</span> d<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        notesArea <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextArea<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;notesArea&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">setPromptText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Add notes here&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        notesArea <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextArea<span style="color:#f92672">();</span>
+        notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;notesArea&#34;</span><span style="color:#f92672">);</span>
+        notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">setPromptText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Add notes here&#34;</span><span style="color:#f92672">);</span>
 
-        TableColumn<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> authorCol <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TableColumn<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Author&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        authorCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        authorCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setMinWidth</span><span style="color:#f92672">(</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        TableColumn<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> titleCol <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TableColumn<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Title&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        titleCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        titleCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setMinWidth</span><span style="color:#f92672">(</span>250<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        TableColumn<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> authorCol <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TableColumn<span style="color:#f92672">&lt;&gt;(</span><span style="color:#e6db74">&#34;Author&#34;</span><span style="color:#f92672">);</span>
+        authorCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;(</span><span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">));</span>
+        authorCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setMinWidth</span><span style="color:#f92672">(</span>100<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">);</span>
+        TableColumn<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> titleCol <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TableColumn<span style="color:#f92672">&lt;&gt;(</span><span style="color:#e6db74">&#34;Title&#34;</span><span style="color:#f92672">);</span>
+        titleCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setCellValueFactory</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PropertyValueFactory<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;(</span><span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">));</span>
+        titleCol<span style="color:#f92672">.</span><span style="color:#a6e22e">setMinWidth</span><span style="color:#f92672">(</span>250<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">);</span>
 
-        docTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TableView<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span>d<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">setEditable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefHeight</span><span style="color:#f92672">(</span>200<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumns</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>authorCol<span style="color:#f92672">,</span> titleCol<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">selectedItemProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SelectionChangeListener<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        VBox vb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VBox<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        vb<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>docTable<span style="color:#f92672">,</span> notesArea<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        docTable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TableView<span style="color:#f92672">&lt;&gt;(</span>d<span style="color:#f92672">);</span>
+        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">setEditable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefHeight</span><span style="color:#f92672">(</span>200<span style="color:#f92672">.</span><span style="color:#a6e22e">0d</span><span style="color:#f92672">);</span>
+        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">getColumns</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>authorCol<span style="color:#f92672">,</span> titleCol<span style="color:#f92672">);</span>
+        docTable<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectionModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">selectedItemProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SelectionChangeListener<span style="color:#f92672">());</span>
+        VBox vb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VBox<span style="color:#f92672">();</span>
+        vb<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildren</span><span style="color:#f92672">().</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>docTable<span style="color:#f92672">,</span> notesArea<span style="color:#f92672">);</span>
         <span style="color:#66d9ef">return</span> vb<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDoc</span><span style="color:#f92672">(</span>Doc d<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>SimpleStringProperty ssp <span style="color:#f92672">:</span> d<span style="color:#f92672">.</span><span style="color:#a6e22e">getDirtyFieldList</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Updating field: &#34;</span> <span style="color:#f92672">+</span> ssp<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span>
-                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with &#34;</span> <span style="color:#f92672">+</span> ssp<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            d<span style="color:#f92672">.</span><span style="color:#a6e22e">markClean</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>SimpleStringProperty ssp <span style="color:#f92672">:</span> d<span style="color:#f92672">.</span><span style="color:#a6e22e">getDirtyFieldList</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Updating field: &#34;</span> <span style="color:#f92672">+</span> ssp<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span>
+                    <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with &#34;</span> <span style="color:#f92672">+</span> ssp<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">());</span>
+            d<span style="color:#f92672">.</span><span style="color:#a6e22e">markClean</span><span style="color:#f92672">();</span>
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#a6e22e">@Override</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">(</span>Stage primaryStage<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Focus Problem&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>initGui<span style="color:#f92672">(</span>initDocs<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Focus Problem&#34;</span><span style="color:#f92672">);</span>
+        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">setScene</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Scene<span style="color:#f92672">(</span>initGui<span style="color:#f92672">(</span>initDocs<span style="color:#f92672">())));</span>
+        primaryStage<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stop</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stop</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
         <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Doc d <span style="color:#f92672">:</span> docList<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            updateDoc<span style="color:#f92672">(</span>d<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            updateDoc<span style="color:#f92672">(</span>d<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#75715e">/**
 </span><span style="color:#75715e">     * @param args the command line arguments
 </span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        launch<span style="color:#f92672">(</span>args<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        launch<span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SelectionChangeListener</span> <span style="color:#66d9ef">implements</span> ChangeListener<span style="color:#f92672">&lt;</span>Doc<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
         <span style="color:#a6e22e">@Override</span>
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;</span><span style="color:#f92672">?</span> <span style="color:#66d9ef">extends</span> Doc<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changed</span><span style="color:#f92672">(</span>ObservableValue<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Doc<span style="color:#f92672">&gt;</span> observable<span style="color:#f92672">,</span>
                 Doc oldDoc<span style="color:#f92672">,</span> Doc newDoc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Changing selected row&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>oldDoc <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">unbindBidirectional</span><span style="color:#f92672">(</span>oldDoc<span style="color:#f92672">.</span><span style="color:#a6e22e">notesProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-                updateDoc<span style="color:#f92672">(</span>oldDoc<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Changing selected row&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>oldDoc <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">unbindBidirectional</span><span style="color:#f92672">(</span>oldDoc<span style="color:#f92672">.</span><span style="color:#a6e22e">notesProperty</span><span style="color:#f92672">());</span>
+                updateDoc<span style="color:#f92672">(</span>oldDoc<span style="color:#f92672">);</span>
             <span style="color:#f92672">}</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>newDoc <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>newDoc<span style="color:#f92672">.</span><span style="color:#a6e22e">getNotes</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-                newDoc<span style="color:#f92672">.</span><span style="color:#a6e22e">notesProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">bindBidirectional</span><span style="color:#f92672">(</span>notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>newDoc <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>newDoc<span style="color:#f92672">.</span><span style="color:#a6e22e">getNotes</span><span style="color:#f92672">());</span>
+                newDoc<span style="color:#f92672">.</span><span style="color:#a6e22e">notesProperty</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bindBidirectional</span><span style="color:#f92672">(</span>notesArea<span style="color:#f92672">.</span><span style="color:#a6e22e">textProperty</span><span style="color:#f92672">());</span>
             <span style="color:#f92672">}</span>
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
@@ -381,69 +381,69 @@
         <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> MonitoredSimpleStringProperty notes<span style="color:#f92672">;</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Doc</span><span style="color:#f92672">(</span>String auth<span style="color:#f92672">,</span> String ttl<span style="color:#f92672">,</span> String nts<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            author <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MonitoredSimpleStringProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">,</span> auth<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            title <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MonitoredSimpleStringProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">,</span> ttl<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            notes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MonitoredSimpleStringProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;notes&#34;</span><span style="color:#f92672">,</span> nts<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            author <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MonitoredSimpleStringProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">,</span> auth<span style="color:#f92672">);</span>
+            title <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MonitoredSimpleStringProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">,</span> ttl<span style="color:#f92672">);</span>
+            notes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MonitoredSimpleStringProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;notes&#34;</span><span style="color:#f92672">,</span> nts<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAuthor</span><span style="color:#f92672">(</span>String value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            author<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>value<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            author<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getAuthor</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> author<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getAuthor</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> author<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> MonitoredSimpleStringProperty <span style="color:#a6e22e">authorProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> MonitoredSimpleStringProperty <span style="color:#a6e22e">authorProperty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
             <span style="color:#66d9ef">return</span> author<span style="color:#f92672">;</span>
         <span style="color:#f92672">}</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span>String value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            title<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>value<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            title<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getTitle</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> title<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getTitle</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> title<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> MonitoredSimpleStringProperty <span style="color:#a6e22e">titleProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> MonitoredSimpleStringProperty <span style="color:#a6e22e">titleProperty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
             <span style="color:#66d9ef">return</span> title<span style="color:#f92672">;</span>
         <span style="color:#f92672">}</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setNotes</span><span style="color:#f92672">(</span>String value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            notes<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>value<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            notes<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>value<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getNotes</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> notes<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getNotes</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> notes<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> MonitoredSimpleStringProperty <span style="color:#a6e22e">notesProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> MonitoredSimpleStringProperty <span style="color:#a6e22e">notesProperty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
             <span style="color:#66d9ef">return</span> notes<span style="color:#f92672">;</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>author<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> title<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> notes<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isDirty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>author<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">()</span> <span style="color:#f92672">||</span> title<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">()</span> <span style="color:#f92672">||</span> notes<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">());</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> ObservableList<span style="color:#f92672">&lt;</span>MonitoredSimpleStringProperty<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getDirtyFieldList</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            ObservableList<span style="color:#f92672">&lt;</span>MonitoredSimpleStringProperty<span style="color:#f92672">&gt;</span> dirtyList <span style="color:#f92672">=</span> observableArrayList<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>author<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                dirtyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>author<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> ObservableList<span style="color:#f92672">&lt;</span>MonitoredSimpleStringProperty<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getDirtyFieldList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            ObservableList<span style="color:#f92672">&lt;</span>MonitoredSimpleStringProperty<span style="color:#f92672">&gt;</span> dirtyList <span style="color:#f92672">=</span> observableArrayList<span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>author<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                dirtyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>author<span style="color:#f92672">);</span>
             <span style="color:#f92672">}</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>title<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                dirtyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>title<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>title<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                dirtyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>title<span style="color:#f92672">);</span>
             <span style="color:#f92672">}</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>notes<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                dirtyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>notes<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>notes<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                dirtyList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>notes<span style="color:#f92672">);</span>
             <span style="color:#f92672">}</span>
             <span style="color:#66d9ef">return</span> dirtyList<span style="color:#f92672">;</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">markClean</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            author<span style="color:#f92672">.</span><span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            title<span style="color:#f92672">.</span><span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            notes<span style="color:#f92672">.</span><span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">markClean</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            author<span style="color:#f92672">.</span><span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+            title<span style="color:#f92672">.</span><span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+            notes<span style="color:#f92672">.</span><span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 
@@ -452,34 +452,34 @@
         SimpleBooleanProperty dirty<span style="color:#f92672">;</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MonitoredSimpleStringProperty</span><span style="color:#f92672">(</span>Object bean<span style="color:#f92672">,</span> String name<span style="color:#f92672">,</span> String initValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>bean<span style="color:#f92672">,</span> name<span style="color:#f92672">,</span> initValue<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            dirty <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleBooleanProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InvalidationListener<span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>bean<span style="color:#f92672">,</span> name<span style="color:#f92672">,</span> initValue<span style="color:#f92672">);</span>
+            dirty <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleBooleanProperty<span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">addListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InvalidationListener<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
                 <span style="color:#a6e22e">@Override</span>
                 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">invalidated</span><span style="color:#f92672">(</span>Observable observable<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                    dirty<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                    dirty<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
                 <span style="color:#f92672">}</span>
-            <span style="color:#f92672">}</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">});</span>
         <span style="color:#f92672">}</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MonitoredSimpleStringProperty</span><span style="color:#f92672">(</span>Object bean<span style="color:#f92672">,</span> String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>bean<span style="color:#f92672">,</span> name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>bean<span style="color:#f92672">,</span> name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MonitoredSimpleStringProperty</span><span style="color:#f92672">(</span>String initialValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MonitoredSimpleStringProperty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MonitoredSimpleStringProperty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isDirty</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> dirty<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isDirty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> dirty<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
         <span style="color:#f92672">}</span>
 
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setDirty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">boolean</span> newValue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            dirty<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>newValue<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            dirty<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>newValue<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>

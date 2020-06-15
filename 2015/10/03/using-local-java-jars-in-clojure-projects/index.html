@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <title>Using Local Java JARS in Clojure Projects &middot; Yo-Dave</title>
 
@@ -273,7 +273,7 @@
 </ul>
 <p>So, after making some simple changes to the Kudoku solver (benchmarking tests, simple API, trivial refactorings), I compiled it to a JAR file and gave it a version number in the same form as expected by Leiningen, e.g. <code>kudoku-2.0.2.jar</code>.</p>
 <p>In my main project folder, I created a sub-directory to hold the JAR.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\projects\sudoku<span style="color:#75715e">&gt;mkdir local-repo</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\projects\sudoku<span style="color:#75715e">&gt;mkdir local-repo</span>
 </code></pre></div><p>After copying the JAR into the new directory, the next step was to deploy the JAR to the local Maven repository.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">mvn deploy:deploy-file -DgroupId=local -DartifactId=kudoku -Dversion=2.0.2 -Dpackaging=jar -Dfile=kudoku-2.0.2.jar -Durl=file:local-repo
 </code></pre></div><p>This is the step that was most confusing as there is a lot of advice on the web to use <code>file:file-install</code> rather than <code>deploy:deploy-file</code>. That didn&rsquo;t work for my setup for some reason.</p>

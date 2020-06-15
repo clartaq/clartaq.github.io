@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <title>Tidying up the Ubuntu Grub2 Boot Menu &middot; Yo-Dave</title>
 
@@ -275,10 +275,10 @@
 <h2 id="hiding-unwanted-windows-partitions">Hiding Unwanted Windows Partitions</h2>
 <p>At this point, the grub menu will have the bootable Windows partitions at the top of the menu. To hide any partitions that you don&rsquo;t want to appear, you need to edit the 09_os-prober script. Here&rsquo;s the relevant section of the edited file from my system.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> OS in <span style="color:#e6db74">${</span>OSPROBED<span style="color:#e6db74">}</span> ; <span style="color:#66d9ef">do</span>
-  DEVICE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 1</span><span style="color:#e6db74">&#34;</span>
-  LONGNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 2 | tr &#39;^&#39; &#39; &#39;</span><span style="color:#e6db74">&#34;</span>
-  LABEL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 3 | tr &#39;^&#39; &#39; &#39;</span><span style="color:#e6db74">&#34;</span>
-  BOOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 4</span><span style="color:#e6db74">&#34;</span>
+  DEVICE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 1&#34;</span>
+  LONGNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 2 | tr &#39;^&#39; &#39; &#39;&#34;</span>
+  LABEL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 3 | tr &#39;^&#39; &#39; &#39;&#34;</span>
+  BOOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;echo </span><span style="color:#e6db74">${</span>OS<span style="color:#e6db74">}</span><span style="color:#e6db74"> | cut -d &#39;:&#39; -f 4&#34;</span>
 
   <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
     LONGNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LABEL<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
@@ -286,19 +286,19 @@
 
   <span style="color:#75715e"># Added to remove Windows 7 on HP Drive from boot choices</span>
   <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$LONGNAME<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Windows 7 (loader)&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/dev/sda1&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Skipping </span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> on </span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
+  echo <span style="color:#e6db74">&#34;Skipping </span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> on </span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
   <span style="color:#66d9ef">continue</span>
   <span style="color:#66d9ef">fi</span>
   <span style="color:#75715e"># End Added</span>
 
   <span style="color:#75715e"># Added to remove Windows Vista Recovery on HP Drive from boot choices</span>
   <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span>$LONGNAME<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Windows Vista (loader)&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Skipping </span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> on </span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
+  echo <span style="color:#e6db74">&#34;Skipping </span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> on </span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
   <span style="color:#66d9ef">continue</span>
   <span style="color:#66d9ef">fi</span>
   <span style="color:#75715e"># End Added</span>
 
-  echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Found </span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> on </span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
+  echo <span style="color:#e6db74">&#34;Found </span><span style="color:#e6db74">${</span>LONGNAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> on </span><span style="color:#e6db74">${</span>DEVICE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">2</span>
   found_other_os<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p>On my system, the first line shown here is at line 149 in the script file. The two sections I added are surrounded by comments. In the first case, I have two bootable Windows 7 partitions. The one I <em>don&rsquo;t</em> want to appear in the boot menu is on <code>/dev/sda1</code>. The code checks if the partition it discovers is the Windows 7 loader and is on the specified device. If so, the rest of the code that would add it to the menu is skipped.</p>
 <p>In the second case, the same drive has a Windows Vista recovery partition. Since it is the only Windows Vista bootable partition, I don&rsquo;t have to specify the device &ndash; the script just skips any (and the only) Windows Vista partition.</p>

@@ -125,7 +125,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <guid>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</guid>
       <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&amp;rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
 Here&amp;rsquo;s the new snippet.
-(ns clojure_font_loading.core(:gen-class:extends javafx.application.Application)(:import[javafx.application Application][javafx.event EventHandler][javafx.scene Scene][avafx.scene.control Button][javafx.scene.layout StackPane VBox][javafx.</description>
+(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.</description>
     </item>
     
     <item>

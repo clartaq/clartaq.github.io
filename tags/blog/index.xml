@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/blog/</link>
+    <description>Recent content in blog on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 15 Jun 2020 15:50:09 -0400</lastBuildDate>
+    
+	<atom:link href="https://yo-dave.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Counting Words in a Markdown File</title>
+      <link>https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/</link>
+      <pubDate>Mon, 15 Jun 2020 15:50:09 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/</guid>
+      <description>I wanted to add an estimate of words and characters in wiki pages for a program I am writing CWiki There was some guidance on this topic (in Python) here.
+Of course the original Markdown.pl was a good source for matching regular expressions too.
+What follows is a copy of the &amp;ldquo;seed page&amp;rdquo; &amp;ldquo;About the Word Count&amp;rdquo; from the CWiki wiki program:
+Begin Quote
+Up at the top of each page, below the author and creation/modification dates, there is a line showing the number of characters in the page along with an estimate of the number of words in the page.</description>
+    </item>
+    
+  </channel>
+</rss>

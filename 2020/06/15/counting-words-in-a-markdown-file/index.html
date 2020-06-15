@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.72.0" />
+
+  <title>Counting Words in a Markdown File &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Counting Words in a Markdown File</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 Jun 2020 3:50:09 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/cwiki">CWiki</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/markdown">Markdown</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/statistics">statistics</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/word-count">word count</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/blog">blog</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>I wanted to add an estimate of words and characters in wiki pages for a program I am writing <a href="https://github.com/clartaq/cwiki">CWiki</a>
+There was some guidance on this topic (in Python) <a href="https://github.com/gandreadis/markdown-word-count/blob/master/mwc.py">here</a>.</p>
+<p>Of course the original <a href="https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip">Markdown.pl</a> was a good source for matching regular expressions too.</p>
+<p>What follows is a copy of the &ldquo;seed page&rdquo; &ldquo;About the Word Count&rdquo; from the CWiki wiki program:</p>
+<p><strong>Begin Quote</strong></p>
+<p>Up at the top of each page, below the author and creation/modification dates, there is a line showing the number of characters in the page along with an estimate of the number of words in the page.</p>
+<p>It is only an estimate because, what is a word, really? Do words in links count? Do explicit HTML tags and comments embedded in the Markdown count? How about mathematics? Which parts of a code listing?</p>
+<p>So, here&rsquo;s how it works in [[About CWiki|CWiki]].</p>
+<ol>
+<li>Strip HTML comments. You don&rsquo;t see them, so they shouldn&rsquo;t count.</li>
+<li>Tabs are removed and replaced with a single space. This just eases further processing.</li>
+<li>Images and all included text are removed. This includes &ldquo;alt&rdquo; text and any optional heading. It could be argued that they should be included.</li>
+<li>The words in Markdown headers are included but not the characters used to indicate headings (the &ldquo;#&ldquo;s, &ldquo;=&quot;s, or &ldquo;-&ldquo;s).</li>
+<li>For HTML links, only the &ldquo;display&rdquo; part of the link is counted, not the URL. For example in the link <code>[two words](example.com)</code>, only the &ldquo;two words&rdquo; are counted.</li>
+<li>Similarly, for wikilinks, only the text that is actually displayed is counted.</li>
+<li>For manually embedded HTML tags, nothing is counted. They don&rsquo;t show up when reading, so they don&rsquo;t count.</li>
+<li>For MultiMarkdown-style footnotes (which are not part of the original Markdown), the references are ignoreded, but the text of the footnote is included.</li>
+<li>For mathematics in [[About TeX|$\rm\TeX$]], everything is ignored. Unfortunately, this also has the effect that multiple prices listed in the same paragraph and all text between each pair, will not be counted.</li>
+<li>There is a group of special characters (#, *, `, ~, –, ^, =, &lt;, &gt;, +, |, /, :) that are removed completely wherever they are found.</li>
+<li>Any &ldquo;stand-alone&rdquo; punctuation will not be counted. That is a punctuation mark surrounded by white space will not be counted.</li>
+<li>Likewise, any stand-alone numbers will not be counted.</li>
+<li>As a result of the above operations, things like table borders, horizontal rules, numbered list markers, unordered list bullets, and other miscellanea will not be counted.</li>
+<li>Similarly, only the words in program listings will be counted; none of the special syntax of a programming language is counted.</li>
+</ol>
+<p>Some of these decisions could be reasoned oppositely, but that is the way it is now. Others might make different choices.</p>
+<p>As word counting methods go, this is a pretty expensive way to do it, but it doesn&rsquo;t seem to affect perceived program performance.</p>
+<p><strong>End Quote</strong></p>
+<p>There is a gist <a href="https://gist.github.com/clartaq/c35e75c26bcc068e6d72221a46fd4ca6">here</a> that shows my implementation.</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2020/02/05/why-edn/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2020/02/05/why-edn/">Why EDN?</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+<script src="https://yo-dave.com/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

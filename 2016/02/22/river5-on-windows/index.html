@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <title>River5 on Windows &middot; Yo-Dave</title>
 
@@ -267,9 +267,9 @@
 <h2 id="installing-nodejs-">Installing Node.js</h2>
 <p>If you have not done so already, install nodejs. Binary installers can be downloaded <a href="https://nodejs.org/en/download/">here</a>.</p>
 <p>After running the installer, you can check for correct installation in a Terminal like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Users\david<span style="color:#75715e">&gt;node -v</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Users\david<span style="color:#75715e">&gt;node -v</span>
 v4.3.0
-C:\Users\david<span style="color:#75715e">&gt;npm -version</span>
+C:\Users\david<span style="color:#75715e">&gt;npm -version</span>
 2.14.3
 </code></pre></div><p><strong>Note</strong>: I use the terms &ldquo;Terminal&rdquo; and &ldquo;Command Prompt&rdquo; interchangeably in this post. These both refer to the window displayed by running the <code>cmd.exe</code> program. You can launch the program multiple ways including from the Start Menu or the File Explorer or an icon on the desktop. Probably other ways too. Refer to the help on your system if you don&rsquo;t know how to start the program.</p>
 <h2 id="download-install-and-start-river5-">Download, Install, and Start River5</h2>
@@ -281,14 +281,14 @@ C:\Users\david<span style="color:#75715e">&gt;npm -version</span>
 <p><strong>Note</strong>: This is much simpler if you have <a href="https://git-scm.com/"><code>git</code></a> installed on your system. However, if you use <code>git</code>, you probably don&rsquo;t need any help setting things up.</p>
 <h3 id="run-npm-to-install-">Run NPM to Install</h3>
 <p>Change to the directory with the unzipped software and run NPM to install River5. This step is needed to download additional Nodejs packages required by River5. (Note how the command prompt changes after the <code>cd</code> command is executed.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Users\david<span style="color:#75715e">&gt;cd C:\projects\river5-master</span>
-C:\projects\river5-master<span style="color:#75715e">&gt;npm install</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Users\david<span style="color:#75715e">&gt;cd C:\projects\river5-master</span>
+C:\projects\river5-master<span style="color:#75715e">&gt;npm install</span>
 </code></pre></div><p>This will take a few moments. When completed, a list of installed packages will be displayed.</p>
 <h3 id="start-it-flowing-">Start it Flowing</h3>
 <p>At this point, you can start the River5 software by typing:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\projects\river5-master<span style="color:#75715e">&gt;node river5.js</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\projects\river5-master<span style="color:#75715e">&gt;node river5.js</span>
 </code></pre></div><p>You should see a list of feeds and articles go whizzing by on the terminal.</p>
-<p>Open a browser and navigate to <code>localhost:1337</code>. It will likely tell you that nothing can be displayed just yet. It takes a bit for all those feeds to be sliced and diced into a displayable form. But you can assure yourself that the software is running by going to the very top of the page and pulling down the menu behind &ldquo;Stuff&rdquo;. In that menu, click the very top item that says &ldquo;Dashboard&hellip;&quot;. A new window will open showing various information about what the aggregator is doing, including the second item, &ldquo;Server up:&quot;, which shows how long the server has been running. You should see it update every few seconds.</p>
+<p>Open a browser and navigate to <code>localhost:1337</code>. It will likely tell you that nothing can be displayed just yet. It takes a bit for all those feeds to be sliced and diced into a displayable form. But you can assure yourself that the software is running by going to the very top of the page and pulling down the menu behind &ldquo;Stuff&rdquo;. In that menu, click the very top item that says &ldquo;Dashboard&hellip;&rdquo;. A new window will open showing various information about what the aggregator is doing, including the second item, &ldquo;Server up:&rdquo;, which shows how long the server has been running. You should see it update every few seconds.</p>
 <p>That&rsquo;s it! You&rsquo;re running a copy of River5 ready for you to customize with your own feeds.</p>
 <h2 id="other-stuff-">Other Stuff</h2>
 <p><strong>Keeping River5 Running</strong>: Depending on how you use your system, you will stop River5 from running. If you</p>

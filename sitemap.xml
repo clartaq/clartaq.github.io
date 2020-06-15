@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yo-dave.com/tags/blog/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/cwiki/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/markdown/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/statistics/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/word-count/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2020-06-15T16:03:07-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/clown/</loc>
     <lastmod>2020-02-05T13:36:30-05:00</lastmod>
   </url>
@@ -28,27 +73,12 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/2020/02/05/why-edn/</loc>
     <lastmod>2020-02-05T13:36:30-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/tags/xml/</loc>
-    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
     <lastmod>2020-02-05T13:36:30-05:00</lastmod>
   </url>
   
@@ -234,11 +264,6 @@
   
   <url>
     <loc>https://yo-dave.com/tags/flexmark/</loc>
-    <lastmod>2018-09-17T10:23:41-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/markdown/</loc>
     <lastmod>2018-09-17T10:23:41-04:00</lastmod>
   </url>
   
@@ -514,11 +539,6 @@
   
   <url>
     <loc>https://yo-dave.com/tags/javafx/</loc>
-    <lastmod>2018-03-27T11:45:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/statistics/</loc>
     <lastmod>2018-03-27T11:45:13-04:00</lastmod>
   </url>
   

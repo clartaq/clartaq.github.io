@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <title>CloudAtCost Setup Notes &middot; Yo-Dave</title>
 
@@ -283,11 +283,11 @@ Retype new UNIX password:
 passwd: password updated successfully
 Changing the user information <span style="color:#66d9ef">for</span> user-name
 Enter the new value, or press ENTER <span style="color:#66d9ef">for</span> the default
-        Full Name <span style="color:#f92672">[</span><span style="color:#f92672">]</span>: Super User
-        Room Number <span style="color:#f92672">[</span><span style="color:#f92672">]</span>:
-        Work Phone <span style="color:#f92672">[</span><span style="color:#f92672">]</span>:
-        Home Phone <span style="color:#f92672">[</span><span style="color:#f92672">]</span>:
-        Other <span style="color:#f92672">[</span><span style="color:#f92672">]</span>:
+        Full Name <span style="color:#f92672">[]</span>: Super User
+        Room Number <span style="color:#f92672">[]</span>:
+        Work Phone <span style="color:#f92672">[]</span>:
+        Home Phone <span style="color:#f92672">[]</span>:
+        Other <span style="color:#f92672">[]</span>:
 Is the information correct? <span style="color:#f92672">[</span>Y/n<span style="color:#f92672">]</span>
 root@ubuntu:~# 
 </code></pre></div><p>Of course, the name you use can be anything, not just &ldquo;user-name&rdquo; (or &ldquo;root&rdquo;).</p>
@@ -308,7 +308,7 @@ user-name@ubuntu:~$ chmod <span style="color:#ae81ff">700</span> .ssh
 <p>Since I do it so often, I have a file on the system that I use to set up the servers called &ldquo;authorized_keys&rdquo;. In that file, I have concatenated all of the public encryption keys that I tend to use on my servers. It&rsquo;s just a text file that I need to be able to send to the new server. <strong>Make sure</strong> that only your <em>public</em> keys go in this file.</p>
 <p>Now you need to be able to transfer that file into the <!-- raw HTML omitted -->.ssh<!-- raw HTML omitted --> directory on the server. If you only have PuTTY to work with, it can be a bit of a chore. This is one area where the Bitvise client has an advantage &ndash; it has an SFTP (Secure File Transfer Protocol) client that provides a side-by-side listing of files on the client and the server. Copying the file is a simple matter of dragging the file from one window to the other.</p>
 <p>If you are comfortable typing long command lines in the terminal, you can use plink.exe (one of the programs installed with PuTTY) to complete the transfer in a single line. From the directory where PuTTY is installed, type:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Program<span style="color:#75715e"> Files (x86)\PuTTY&gt;type C:\Users\user-name\.ssh | plink.exe -ssh user-name@host-ip -pw password &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Program<span style="color:#75715e"> Files (x86)\PuTTY&gt;type C:\Users\user-name\.ssh | plink.exe -ssh user-name@host-ip -pw password &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
 </code></pre></div><p>Use the appropriate user name, server IP address and server password for your account. If you have any problems or this looks too intimidating, grab a copy of the Bitvise client and use its&rsquo; SFTP program.</p>
 <p>Next, set the permissions on the newly transferred file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ chmod <span style="color:#ae81ff">600</span> .ssh/authorized_keys
@@ -326,7 +326,7 @@ AllowUsers user-name
 <p>Now, restart the SSH service with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo service ssh restart
 ssh stop/waiting
-ssh start/running, process 1402
+ssh start/running, process <span style="color:#ae81ff">1402</span>
 </code></pre></div><p>The process number you see is likely to be different.</p>
 <p>Now you need the change the firewall configuration a bit to let SSH listen on the port you specified in the <code>sshd_config</code> file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo ufw allow 1935/tcp
