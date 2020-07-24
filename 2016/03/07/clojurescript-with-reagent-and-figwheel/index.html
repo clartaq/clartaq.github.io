@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>ClojureScript with Reagent and figwheel &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -264,11 +260,11 @@
 <p>Reagent is a ClojureScript library wrapped around the <a href="https://facebook.github.io/react/">Reactjs</a> tool from Facebook. As with React, it is intended to handle the creation and rendering of the UI for your applications.</p>
 <p>figwheel is a plugin for the Leiningen build tool used by many Clojure(Script) projects. It automatically updates your browser when you make changes to the source code of the app enabling you to see almost instantly the effects of those changes.</p>
 <p>Here I talk about how easy it is to use ClojureScript with Reagent and figwheel to do some simple web development.</p>
-<h2 id="you-need-to-install-java-">You need to install Java</h2>
+<h2 id="you-need-to-install-java">You need to install Java</h2>
 <p>You need Java to run part of the toolchain. As far as I know, you don’t need it for deploying your application. There are plenty of guides for installing Java. I won’t repeat them here. During the development of the code described here, I used version 1.8.0_74, 64-bit.</p>
-<h2 id="install-leiningen-">Install Leiningen</h2>
+<h2 id="install-leiningen">Install Leiningen</h2>
 <p>If you aren’t already familiar with it, <a href="http://leiningen.org/">Leiningen</a> is the de-facto Clojure(Script) build tool. There are simple installation instructions on the project’s home page. I used version 2.6.1.</p>
-<h2 id="create-a-project-">Create a Project</h2>
+<h2 id="create-a-project">Create a Project</h2>
 <p>That’s pretty much all the installation work you have to do. Leiningen along with your project file will take care of the rest. “Project File?” you ask? Yes, it’s created by Leiningen too. The good folks here have created a project template that can set up a skeleton project for you. Just type the following to move to your project directory (wherever it might be — I have a <code>c:\projects</code> directory on my system) and create a new project.</p>
 <pre><code class="language-dos" data-lang="dos">C:\Users\david&gt;cd \projects
 C:\projects&gt;lein new reagent-figwheel rgt-fw-demo
@@ -302,7 +298,7 @@ cljs.user=&gt;
 </code></pre><p>We’ll talk about some of the details later, but if you open a browser and navigate to <code>http://localhost:3449</code>, you should see this output:</p>
 <p><a href="https://yo-dave.com/static/img/2016-03-07-rgt-fw-hello-snip.PNG"><img src="https://yo-dave.com/static/img/2016-03-07-rgt-fw-hello-snip.PNG" alt=""></a></p>
 <p>And, indeed we shall “FIXME” right now!</p>
-<h2 id="update-and-modify-projectclj-">Update and Modify project.clj</h2>
+<h2 id="update-and-modify-projectclj">Update and Modify project.clj</h2>
 <p>In the editor of your choice, open the project.clj file. On my system, several of the dependencies were out of date, and I included some additional information sections. Make your file look like the following. Take special note of the last line.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>rgt-fw-demo <span style="color:#e6db74">&#34;0.1.1-SNAPSHOT&#34;</span>
     <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;A small demo using Reagent and figwheel in Clojurescript&#34;</span>
@@ -342,7 +338,7 @@ cljs.user=&gt;
 
     <span style="color:#e6db74">:figwheel</span> {<span style="color:#e6db74">:css-dirs</span> [<span style="color:#e6db74">&#34;resources/public/css&#34;</span>]})
 </code></pre></div><p>Normally, figwheel watches the source code files in your project for changes, as it notices changes in you ClojureScript files, the project is rebuilt and any relevant changes are pushed out to the browser without you having to stop the program, re-compile, launch, and refresh the browser. It&rsquo;s a big time saver. It turns out that figwheel can do something similar when the CSS in your project changes too. The content of the last line, <code>:figwheel {:css-dirs [&quot;resources/public/css&quot;]}</code>, tells figwheel where there are CSS files to monitor.</p>
-<h2 id="add-some-css-">Add some CSS</h2>
+<h2 id="add-some-css">Add some CSS</h2>
 <p>By default, the project template doesn&rsquo;t create any CSS, but it&rsquo;s easy to do. First create a directory where we told figwheel to look.</p>
 <pre><code class="language-dos" data-lang="dos">C:\projects\rgt-fw-demo&gt;mkdir resources\public\css
 </code></pre><p>Now, create the file style.css and fill it with the following contents. Save the file.</p>
@@ -393,7 +389,7 @@ cljs.user=&gt;
 </code></pre></div><p>These changes make clear to browsers what language we are using (US English), what character set to use (UTF-8) and provide a link to the CSS style sheet we just added to the project. After saving these changes to HTML and CSS, you can reload the page in the browser and see the following:</p>
 <p><a href="https://yo-dave.com/static/img/2016-03-07-rgt-fw-hello-snip2.PNG"><img src="https://yo-dave.com/static/img/2016-03-07-rgt-fw-hello-snip2.PNG" alt=""></a></p>
 <p>The text is still un-inspiring, but now it is in a snazzy sans-serif font. Woohoo!</p>
-<h2 id="finally-some-interesting-clojurescript-stuff-">Finally, Some Interesting ClojureScript Stuff</h2>
+<h2 id="finally-some-interesting-clojurescript-stuff">Finally, Some Interesting ClojureScript Stuff</h2>
 <p>With all of the preparatory work complete at last, we can do some work in ClojureScript.</p>
 <p>This demo will consist of making changes to a single file, <code>src/cljs/rgt_fw_demo/core.cljs</code>. Initially, it looks like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>rgt-fw-demo.core
@@ -420,7 +416,7 @@ cljs.user=&gt;
    [footer-component]])
 </code></pre></div><p>This function creates a new <code>div</code> and places three additional components in it. Notice that the <code>div</code> and its contents are described with a <a href="https://github.com/weavejester/hiccup">Hiccup</a>-like syntax. This is a way to represent HTML in Clojure(Script). I actually prefer it to HTML.</p>
 <p>Notice that the three sub-components are not included as function calls (although they are created with functions, as we shall see.) Components can be composed of sub-components to any depth.</p>
-<h3 id="create-a-header-component-">Create a Header Component</h3>
+<h3 id="create-a-header-component">Create a Header Component</h3>
 <p>Let&rsquo;s create the first sub-component, <code>header-component</code>, by defining a <code>header-component</code> function.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>header-component []
   [<span style="color:#e6db74">:div</span>
@@ -428,7 +424,7 @@ cljs.user=&gt;
     [<span style="color:#e6db74">:a</span> {<span style="color:#e6db74">:href</span> <span style="color:#e6db74">&#34;https://github.com/reagent-project/reagent&#34;</span>} <span style="color:#e6db74">&#34;Reagent&#34;</span>]]])
 </code></pre></div><p>Again we see the use of Hiccup-like syntax to build up another component. We see a new <code>div</code> and an <code>h1</code> header with text that includes a link to the Reagent project. If we were able to run the project right now, it would look like:</p>
 <p><a href="https://github.com/clartaq/yo-dave/blob/master/images/2016-03-07-rgt-fw-demo-title.PNG"><img src="https://yo-dave.com/static/img/2016-03-07-rgt-fw-demo-title.PNG" alt=""></a></p>
-<h3 id="a-two-column-footer-">A Two-Column Footer</h3>
+<h3 id="a-two-column-footer">A Two-Column Footer</h3>
 <p>Let&rsquo;s try something a little more complicated. Let&rsquo;s create a footer that contains two columns with the right-most column displaying the program version. First, we need the program version. Start by adding the following just below the namespace declaration.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>major-version <span style="color:#ae81ff">0</span>)
 (<span style="color:#66d9ef">def </span>minor-version <span style="color:#ae81ff">1</span>)
@@ -445,7 +441,7 @@ cljs.user=&gt;
     [<span style="color:#e6db74">:p</span> program-version]]])
 </code></pre></div><p>If you could run the program now, you would see a footer on your page that looked like this:</p>
 <p><a href="https://yo-dave.com/static/img/2016-03-07-rgt-fw-demo-footer.PNG"><img src="https://yo-dave.com/static/img/2016-03-07-rgt-fw-demo-footer.PNG" alt=""></a></p>
-<h3 id="create-a-body-component-">Create a Body Component</h3>
+<h3 id="create-a-body-component">Create a Body Component</h3>
 <p>We&rsquo;ve referred to a <code>body</code> component in <code>home-page</code>. Let&rsquo;s create it.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>body-component []
   [<span style="color:#e6db74">:div</span>

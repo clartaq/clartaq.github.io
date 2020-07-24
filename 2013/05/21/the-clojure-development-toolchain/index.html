@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>The Clojure Development Toolchain &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -269,13 +265,13 @@
 <p>That said, it has not been without problems for me. I have been using version 0.34 and earlier for some time. The problem was that I could not get <a href="https://github.com/technomancy/swank-clojure">Swank</a> to work when a version of Clojure later than 1.4 was used in a Leiningen project file. Don&rsquo;t know why. Couldn&rsquo;t figure it out. Gave up trying. (Swank is used to create a Clojure <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> within Emacs that can be used for interactive development. It makes available a number of helpful commands through a facility called <a href="http://common-lisp.net/project/slime/">SLIME</a>, the Superior Lisp Interaction Mode for Emacs.)</p>
 <p>A new version of Lisp Cabinet, version 0.35, came out recently. It was built to use Clojure 1.5.1. Great! Except once again Swank would not work. Could not quickly figure out why (again.) Did not want to spend time investigating. The thing that pushed me over the edge is that Swank has always seemed a bit fragile and is now deprecated by the author. <!-- raw HTML omitted -->Instead Clojure development is moving to use <a href="https://github.com/clojure/tools.nrepl">nREPL</a>, a networked Clojure REPL.<!-- raw HTML omitted --> <strong>Update 30 Mar 2014</strong>: Instead Clojure development is moving to use <a href="https://github.com/clojure-emacs/cider">CIDER</a>, a networked Clojure REPL.</p>
 <p>So, I&rsquo;ve decided to just bite the bullet and put together my own system, installing raw Emacs and configuring it to my tastes along with Leiningen. This post is intended to be a record of my notes so I can do it again some time and provide guidance to other interested readers. Maybe someday I&rsquo;ll script it all together and create the &ldquo;one-button&rdquo; installation that I keep whining about.</p>
-<h2 id="my-configuration-">My Configuration</h2>
+<h2 id="my-configuration">My Configuration</h2>
 <ul>
 <li>My development system is Windows 7, 64 bit.</li>
 <li>As this is written, I am running JDK 1.7.0 Update 21, 64 bit.</li>
 <li>I am running Windows Powershell 1.0. You can download it free <!-- raw HTML omitted --><a href="http://www.microsoft.com/en-us/download/details.aspx?id=7217">here</a><!-- raw HTML omitted -->. (<strong>This download is no longer available.</strong>)</li>
 </ul>
-<h2 id="the-build-system-leiningen-">The Build System, Leiningen</h2>
+<h2 id="the-build-system-leiningen">The Build System, Leiningen</h2>
 <p>It may be odd to start with the build system, but it&rsquo;s the shorter and simpler of the two tools to set up.</p>
 <ul>
 <li>On Windows, download the batch file <a href="https://github.com/technomancy/leiningen">here</a>. (The link to the download is in the &ldquo;Installation&rdquo; section of the page. Don&rsquo;t use the version of the file in the &ldquo;bin&rdquo; directory.)</li>
@@ -285,11 +281,11 @@
 <li>If you check your home directory, you should see a new directory, <code>.lein</code>. Within that directory there will be an additional directory, <code>self-installs</code>, which contains the lein jar file. In my case, that file is named <code>leiningen-2.1.3-standalone.jar</code>. That&rsquo;s it. You&rsquo;re done.</li>
 <li><strong>Update 30 Mar 2014</strong>: Added the <code>LEIN_JAVA_CMD</code> environment variable as described in the sample Leiningen project <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">here</a>. This lets you specify which JVM Leiningen uses since it does not seem to use the latest version on Windows without setting this variable.</li>
 </ul>
-<h2 id="the-editor-emacs-">The Editor, Emacs</h2>
+<h2 id="the-editor-emacs">The Editor, Emacs</h2>
 <p>I picked up a pre-compiled binary of Emacs 24.3 for Windows (emacs-24.3-bin-i386.zip) <a href="http://ftp.gnu.org/gnu/emacs/windows/">here</a>. I unzipped the file into my <code>C:\tools</code> directory. (I use this directory rather than the more traditional <code>Program Files</code> directory because, even after all these years, many programs cannot handle directory names with spaces in them.) This creates and fills a directory named <code>emacs-24.3</code>. I renamed mine to be simply <code>emacs</code>. Within <code>C:\tools\emacs\bin</code> find the <code>addpm.exe</code> file and execute it. This will create a desktop shortcut. Start up Emacs and review the tutorial material, if needed. There are tons of helpful information on using Emacs right within the program itself.</p>
-<h3 id="configuration-">Configuration</h3>
+<h3 id="configuration">Configuration</h3>
 <p>The plain vanilla version of Emacs that you have already started is fine by itself but can be customized to any extent you want. There are several types of customizations we will cover on our way to a pleasant setup for Clojure development.</p>
-<h4 id="self-contained-customizations-">Self-Contained Customizations</h4>
+<h4 id="self-contained-customizations">Self-Contained Customizations</h4>
 <p>I call one set of customization &ldquo;Self-Contained&rdquo; since they can be accessed from the program itself and require no additional work.</p>
 <ul>
 <li>First, I don&rsquo;t care for the toolbar. From the menu, select <strong>Options&gt;Show/Hide&gt;Toolbar</strong> to turn it off.</li>
@@ -312,7 +308,7 @@
  <span style="color:#75715e">;; Your init file should contain only one such instance.</span>
  <span style="color:#75715e">;; If there is more than one, they won&#39;t work right.</span>
  <span style="color:#f92672">&#39;</span>(default ((<span style="color:#66d9ef">t</span> (<span style="color:#e6db74">:family</span> <span style="color:#e6db74">&#34;Consolas&#34;</span> <span style="color:#e6db74">:foundry</span> <span style="color:#e6db74">&#34;outline&#34;</span> <span style="color:#e6db74">:slant</span> normal <span style="color:#e6db74">:weight</span> normal <span style="color:#e6db74">:height</span> <span style="color:#ae81ff">120</span> <span style="color:#e6db74">:width</span> normal)))))
-</code></pre></div><h4 id="adding-customizations-with-packages-">Adding Customizations with Packages</h4>
+</code></pre></div><h4 id="adding-customizations-with-packages">Adding Customizations with Packages</h4>
 <p>Like many other pieces of software, the operation of Emacs can be modified by loading external packages. To get access to the packages we are interested in, we need to specify a different repository in addition to the one Emacs uses by default. We do that by editing the contents of the <code>.emacs</code> file. (<code>C-x C-f ~\.emacs</code>) To let Emacs gain access to the <a href="http://melpa.milkbox.net/">Melpa</a> repository, add the following to your <code>.emacs</code> file between the two customization sections that are already present. (I put this between the two sections since any changes to the built-in customizations re-write them to the beginning and end of the file.)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Customize emacs package handling with the melpa repository</span>
 (package-initialize)

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Wiki Layout for Editing &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -311,7 +307,7 @@ Once laid out, the &ldquo;Editor Pane&rdquo; section should not be re-sizeable.<
 <p>With this page layout​, it should only be possible to scroll the &ldquo;Aside,&rdquo; &ldquo;Editor Pane&rdquo; and &ldquo;Preview Pane&rdquo; if their content is too long to fit in the space laid out for them. None of the other parts of the page should be scrollable.</p>
 <p>The &ldquo;Editor Pane&rdquo; and &ldquo;Preview Pane&rdquo; should scroll independently. Perhaps someday the scrolling between these two sections will by synchronized programmatically.</p>
 <p>The layout has been tested to perform as explained on <a href="https://www.apple.com/safari/">Safari</a>, <a href="https://www.mozilla.org/en-US/firefox/">Firefox</a>, <a href="https://www.opera.com">Opera</a>, and <a href="https://brave.com">Brave</a> browsers.</p>
-<h2 id="implementation-in-cwiki-">Implementation in CWiki</h2>
+<h2 id="implementation-in-cwiki">Implementation in CWiki</h2>
 <p>The initial transfer of the CSS governing this layout to CWiki was not entirely successful. It was possible to &ldquo;pull&rdquo; and &ldquo;push&rdquo; things such that part of the &ldquo;Window Header&rdquo; would scroll out of view and it was never possible to get the bottom button entirely​ in the viewport.</p>
 <p>It turned out that the <code>box-sizing</code> attribute of some components​ was not set correctly. Setting it to <code>box-sizing: box-border</code> was the last piece of the puzzle. Since making the change, things have been working flawlessly.</p>
 

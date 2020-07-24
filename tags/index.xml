@@ -58,6 +58,15 @@
     </item>
     
     <item>
+      <title>clojure</title>
+      <link>https://yo-dave.com/tags/clojure/</link>
+      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>clown</title>
       <link>https://yo-dave.com/tags/clown/</link>
       <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
@@ -103,20 +112,29 @@
     </item>
     
     <item>
+      <title>recursion</title>
+      <link>https://yo-dave.com/tags/recursion/</link>
+      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/recursion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>symlinks</title>
+      <link>https://yo-dave.com/tags/symlinks/</link>
+      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/symlinks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>XML</title>
       <link>https://yo-dave.com/tags/xml/</link>
       <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
       
       <guid>https://yo-dave.com/tags/xml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojure</title>
-      <link>https://yo-dave.com/tags/clojure/</link>
-      <pubDate>Sun, 05 Jan 2020 17:27:07 -0500</pubDate>
-      
-      <guid>https://yo-dave.com/tags/clojure/</guid>
       <description></description>
     </item>
     

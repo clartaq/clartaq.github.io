@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Detecting from a Web Client Whether a Particular Font is Installed &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -267,8 +263,8 @@
 <p>One approach is to specify and use a web font. For various reasons that may not be possible. For example, the user may have turned off the ability of their browser to download web fonts because of a slow internet connection. Or perhaps their employer prohibits such downloads.</p>
 <p>For my use, I typically specify a <code>font-family</code> in the CSS for components in my programs so that I have graceful fallback regardless of which OS and what version I am using. But the browser will not tell you explicitly which font it has selected to use from the suggestions you have provided. And without knowing exactly which font is in use, it is impossible to make accurate measurements of text to be displayed.</p>
 <p>What to do?</p>
-<h2 id="the-testing-concept-">The Testing Concept</h2>
-<h3 id="an-algorithm-">An Algorithm</h3>
+<h2 id="the-testing-concept">The Testing Concept</h2>
+<h3 id="an-algorithm">An Algorithm</h3>
 <p>One idea that has been bouncing around for many years is to:</p>
 <ul>
 <li>Start by measuring the width of a sample string using a generic font. (The last time I <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family">checked</a>, there were nine generic fonts supported: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>, <code>fantasy</code>, <code>system-ui</code>, <code>emoji</code>, <code>math</code>, and <code>fangsong</code>.)</li>
@@ -276,20 +272,20 @@
 <li>Render the same string with the <code>font-family</code>.</li>
 <li>If the font of interest is not installed, the width measurement will be identical to that produced by rendering with the generic font.</li>
 </ul>
-<h3 id="some-finer-points-">Some Finer Points</h3>
+<h3 id="some-finer-points">Some Finer Points</h3>
 <p>In point of fact, you must test against more than one generic font since you might want to ask if a font that is used as a generic is installed. For example, if you want to know if Arial is installed and run this test, you would receive a false negative on a system where Arial is used as the generic <code>sans-serif</code> font.</p>
 <p>In the code I use, I test against three generic fonts, <code>serif</code>, <code>sans-serif</code>, and <code>monospace</code>.</p>
 <p>Also, what size should the sample string be and what letters should it consist of? One of the earliest implementations of this method is attributed to one &ldquo;Lalit Patel&rdquo; (<a href="http://www.lalit.org/lab/javascript-css-font-detect">http://www.lalit.org/lab/javascript-css-font-detect</a> (broken link)). They propose a string consisting of wide letters like &ldquo;M&rdquo; and &ldquo;W&rdquo; and thin letters like &ldquo;l&rdquo; and &ldquo;i&rdquo;. They also suggest using a large font size. I have no reason to quibble with these choices. I use M. Patels <a href="https://www.bitbook.io/using-javascript-to-detect-installed-fonts/">suggestions</a> of &ldquo;mmmmmmmmmmlli&rdquo; for the sample string and 72 pixels for the size.</p>
-<h3 id="how-to-render-and-measure-the-sample-string-">How to &ldquo;Render&rdquo; and &ldquo;Measure&rdquo; the Sample String</h3>
+<h3 id="how-to-render-and-measure-the-sample-string">How to &ldquo;Render&rdquo; and &ldquo;Measure&rdquo; the Sample String</h3>
 <p>You may have noticed that I have been playing fast and loose with some terminology here. What does it mean to &ldquo;render&rdquo; the string? You don&rsquo;t want to render to the screen; this should all happen invisibly in the background.</p>
 <p>There have been different approaches but the one I prefer is to create an HTML <code>canvas</code> element (unconnected to the DOM), get its 2-dimensional context, set the font size and family, and use the <code>measureText</code> method to get the width.</p>
-<h3 id="which-font-from-a-font-family-declaration-is-actually-being-used-">Which Font from a <code>font-family</code> Declaration is Actually Being Used?</h3>
+<h3 id="which-font-from-a-font-family-declaration-is-actually-being-used">Which Font from a <code>font-family</code> Declaration is Actually Being Used?</h3>
 <p>The rule is that when a CSS <code>font-family</code> is applied to an element the actual font used is the first one that is found to be installed. For example, if a CSS rule is applied to <code>body</code> like so:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
     <span style="color:#66d9ef">font-family</span>: Boojum, Woojum, Helvetica, Wanger, Banger, <span style="color:#66d9ef">serif</span>;
 }
 </code></pre></div><p>In all likelihood, &ldquo;Helvetica&rdquo; will be the selected font. Writing a function to figure out which font will be applied is trivial.</p>
-<h2 id="some-code-">Some Code</h2>
+<h2 id="some-code">Some Code</h2>
 <p>Here&rsquo;s my implementation in ClojureScript:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;;;;</span>
 <span style="color:#75715e">;;;; Utilities to help with determining what if particulare fonts are</span>

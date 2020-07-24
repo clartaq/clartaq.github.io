@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Notes on ClojureScript Regular Expressions &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -257,7 +253,7 @@
   <p>There&rsquo;s an old saying about regular expressions &ndash; paraphrasing: &ldquo;If you try to solve a problem with regular expressions, you then have two problems.&rdquo;</p>
 <p>Even though regular expressions are present in most programming languages, I have never become particularly proficient with them. Those that I am most familiar with are the Java version. Since ClojureScript compiles to JavaScript and runs without the Java underpinnings, it&rsquo;s version of regular expressions are different.</p>
 <p>They are different enough that I had to do a little experimentation to get them to work as needed.</p>
-<h2 id="syntax-">Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <p>Consider a snippet of JavaScript to normalize line endings in some text:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">   <span style="color:#75715e">// Converts \r\n and \r to \n.
 </span><span style="color:#75715e"></span>   <span style="color:#a6e22e">fixEolChars</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">text</span>) {
@@ -276,12 +272,12 @@
          (<span style="color:#a6e22e">str/replace</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;\r&#34;</span> <span style="color:#e6db74">&#34;\n&#34;</span>)))
 
 </code></pre></div><p>Notice that the syntax for a regular expression literal is the same as for Clojure, using the <code>#&quot;xxx&quot;</code> reader macro. The contents are not the same though. JavaScript uses a slash character, <code>/</code>, to indicate the beginning and end of the regular expression; ClojureScript does not.</p>
-<h2 id="modifiers-">Modifiers</h2>
+<h2 id="modifiers">Modifiers</h2>
 <p>JavaScript also allows appending modifiers after the regular expression itself. See that &ldquo;g&rdquo; character at the end? As most of you probably know already, that means making the search and replace &ldquo;global.&rdquo; JavaScript also supports the &ldquo;i&rdquo; modifier (to ignore character case when searching) and the &ldquo;m&rdquo; modifier (for multi-line searches).</p>
 <p>But you don&rsquo;t see any modifiers in the ClojureScript version. That&rsquo;s because the library code always appends the &ldquo;g&rdquo; flag when it constructs the JavaScript regex from its arguments. (The source to the ClojureScript version of <code>clojure.string.cljs</code> is <a href="https://github.com/clojure/clojurescript/blob/master/src/main/cljs/clojure/string.cljs">here</a>).</p>
 <p>Great! But how do you add the &ldquo;i&rdquo; and &ldquo;m&rdquo; modifiers when needed? It turns out you can do it simply in the regular expression literal itself by pre-pending a sequence of the form &ldquo;(?xxx)&rdquo; where the &ldquo;xxx&rdquo; part consists of the modifiers you want to apply. For example, here&rsquo;s how you might replace all lines composed of only tabs or spaces with an empty string.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">str/replace</span> text <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;(?m)^[ \t]+$&#34;</span> <span style="color:#e6db74">&#34;&#34;</span>)
-</code></pre></div><h2 id="matches-">Matches</h2>
+</code></pre></div><h2 id="matches">Matches</h2>
 <p>Both the JavaScript and ClojureScript versions of the replace function let you specify the replacement text as a string or as the return value of a function. When you use a string, both JavaScript and ClojureScript let you put part of the matched string into the replacement using some special characters. The doc-string for <code>string.replace</code> includes the following example to let you translate from English to Pig Latin.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">clojure.string/replace</span> <span style="color:#e6db74">\&#34;</span>Almost Pig Latin<span style="color:#e6db74">\&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">\&#34;\\</span>b(<span style="color:#e6db74">\\</span>w)(<span style="color:#e6db74">\\</span>w+)<span style="color:#e6db74">\\</span>b<span style="color:#e6db74">\&#34;</span> <span style="color:#e6db74">\&#34;</span>$2$1ay<span style="color:#e6db74">\&#34;</span>)
     -&gt; <span style="color:#e6db74">\&#34;</span>lmostAay igPay atinLay<span style="color:#e6db74">\&#34;</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
@@ -293,7 +289,7 @@
                          (str <span style="color:#e6db74">&#34;&lt;h&#34;</span> h-level <span style="color:#e6db74">&#34;&gt;&#34;</span> (<span style="color:#a6e22e">third</span> arg-vec)
                               <span style="color:#e6db74">&#34;&lt;/h&#34;</span> h-level <span style="color:#e6db74">&#34;&gt;\n\n&#34;</span>))))
 </code></pre></div><p>In this code, the second element of <code>arg-vec</code>, <em>i.e.</em> the part of the match captured in the first parenthesized group, contains the leading pound signs &ldquo;#&rdquo; that precede a heading in Markdown. The number of pound signs is used to determine the heading level. Further down, the third element contains the content of the header and is pasted between the HTML tags for the header. (<code>third</code> is a function I defined elsewhere as: <code>(defn third [arg-vec] (nth arg-vec 2))</code>)</p>
-<h2 id="conclusion-">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>Finding information about regular expressions in ClojureScript (as opposed to Clojure) was a bit difficult, and some of this was gleaned from trial and error.</p>
 <ol>
 <li>ClojureScript regular expressions can be entered as literals similar to the way it is done in JavaScript.

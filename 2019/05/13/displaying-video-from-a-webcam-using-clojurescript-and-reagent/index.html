@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Displaying Video from a Webcam using Clojurescript and Reagent &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -318,10 +314,10 @@
 <p>I created the project using the <a href="https://github.com/bhauman/figwheel-template"><code>figwheel</code> project template</a> for <a href="https://github.com/technomancy/leiningen">leiningen</a>.</p>
 <p>After putting the text above into the <code>cljs-webcam-demo.core.cljs</code> file, you can run it by starting a leiningen REPL (<code>lein repl</code>) and executing the function <code>(fig-start)</code>.</p>
 <p>The project should compile, and your default web browser should open to the page created by the program.</p>
-<h2 id="browser-compatibility-">Browser Compatibility</h2>
+<h2 id="browser-compatibility">Browser Compatibility</h2>
 <p>With <strong>Safari</strong>, it just worked. When the start button was clicked, Safari asked permission to use the camera. When given permission, it started displaying video. You can click the <code>start</code> and <code>stop</code> buttons to begin and end camera capture and display.</p>
 <p>With <strong>Firefox</strong>, <strong>Opera</strong>, and <strong>Brave</strong>, things were a little more complicated. In each case,​ I had to do some browser-specific fiddling to get it to display the video. All of the fiddling was related to granting required privacy permissions. I don&rsquo;t remember the details &ndash; I&rsquo;m just glad it&rsquo;s done.</p>
-<h2 id="other-caveats-">Other Caveats</h2>
+<h2 id="other-caveats">Other Caveats</h2>
 <p>If you run this on a server, you will have to be using HTTPS. It just won&rsquo;t work with HTTP. Since I&rsquo;m running under <code>figwheel</code> server from <code>localhost</code>, it works Ok. If I switch to running the program on a server from one of my local Raspberry Pis, I&rsquo;ll have to take care of setting up all the TLS security stuff. I&rsquo;m just too lazy to do it now. I want to get on to reading barcodes!</p>
 
   

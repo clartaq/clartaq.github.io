@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>My Experience with 1999 Blogging Software &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -259,22 +255,22 @@
 <p>There is also a fair amount of friction in writing the blog entries themselves. It isn&rsquo;t hard, but it isn&rsquo;t as easy as it could be.</p>
 <p><a href="https://en.wikipedia.org/wiki/Dave_Winer">Dave Winer</a> has been working on these problems for a long time. He has a new project called <a href="http://1999.io/">1999.io</a> that makes writing and posting just about as easy as can be. Here are my impressions of setting up and using that software.</p>
 <p>So, what is it like to setup and use a 1999 blogging system?</p>
-<h2 id="my-experience-and-impressions-">My Experience and Impressions</h2>
-<h3 id="setting-up-the-software-">Setting Up the Software</h3>
+<h2 id="my-experience-and-impressions">My Experience and Impressions</h2>
+<h3 id="setting-up-the-software">Setting Up the Software</h3>
 <p>If you don&rsquo;t have a <a href="https://twitter.com/">twitter</a> account, get one. You will use your twitter credentials to sign in the 1999 system you set up. I had never used twitter up to this point, but their authentication API seems like a useful thing.</p>
 <p>You need a server too. The documentation has a very good description of installing the software on an <a href="http://www.ubuntu.com/">Ubuntu</a> server.</p>
 <p>If you haven&rsquo;t got one, get one and configure it as described <a href="https://yo-dave.com/2016/08/10/my-server-setup-process/">here</a>. I set up a minimal server as a test system on <a href="http://cloudatcost.com/">CloudAtCost</a>.</p>
 <p>After your server is all set up, you can follow the directions in the <a href="https://github.com/scripting/1999-project/blob/master/docs/setup.md">setup instructions</a> for 1999.io. These instructions seem very complete except perhaps for how you configure your firewall to allow access to the appropriate port and websocket for the application. UFW (Uncomplicated Firewall) is easy to use and configure. The folks at <a href="https://www.digitalocean.com/">Digital Ocean</a> have a good walk-through of how to use it on Ubuntu <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04">here</a>.</p>
-<h3 id="using-the-software-">Using the Software</h3>
+<h3 id="using-the-software">Using the Software</h3>
 <p>Starting to use the software consists of pointing a browser at the system you set up. The initial page contains a header with a title and some drop-down menus below which is an area to start typing and a button labeled &ldquo;Post&rdquo;. You type what you want and click the button. That&rsquo;s all there is to it.</p>
 <p>Then, later, if you have something to add or want to make a change, you go to the original and just start typing again. The underlying technology assures that those changes get propagated virtually instantly. That is pretty whizzy!</p>
-<h2 id="pros-">Pros</h2>
+<h2 id="pros">Pros</h2>
 <ul>
 <li>Writing, posting, and revising blog posts is just about as easy as possible.</li>
 <li>The project is open source. The <em>technorati</em> can do whatever they like with the project to modify it to fit their <em>exact</em> needs. It just take some work.</li>
 <li>Ability to write plugins to customize existing behavior or add new capabilities. (See above.)</li>
 </ul>
-<h2 id="cons-">Cons</h2>
+<h2 id="cons">Cons</h2>
 <p>There are a few problems, none of them serious or even all that annoying.</p>
 <ul>
 <li>Written in JavaScript, the language everyone loves to hate.</li>
@@ -283,12 +279,12 @@
 <li>I wish there were an explanation for setting up a server to use https. With Google&rsquo;s misguided guidance that all sites should use it, it&rsquo;s becoming a bit of a requirement if you are interested in being well represented in search results.</li>
 <li>The ease of changing existing posts is one of the goals of the program, but there does not seem to be a way to go back to previously existing versions. That bothers me a little, but no much.</li>
 </ul>
-<h2 id="rough-edges-">Rough Edges</h2>
+<h2 id="rough-edges">Rough Edges</h2>
 <p>I hesitate even to call these &ldquo;cons&rdquo; since this is just the way life is now.</p>
 <ul>
 <li>Requires a twitter account. I list this as a rough edge since, until now, I have never used twitter. However, it is easily available to anyone and probably a better choice than another home-brew authentication scheme.</li>
 </ul>
-<h2 id="so-did-dave-achieve-his-goals-">So, Did Dave Achieve His Goals?</h2>
+<h2 id="so-did-dave-achieve-his-goals">So, Did Dave Achieve His Goals?</h2>
 <p>I think so. I can&rsquo;t imagine how you could make the process of writing any easier. There is still the one-time hassle of setting up a server. But you only need to to it once and you can get someone else to help you if need be.</p>
 <p>After that, it&rsquo;s smooth sailing. Congratulations to Dave Winer!</p>
 

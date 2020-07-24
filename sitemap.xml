@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/clojure/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/tags/clown/</loc>
     <lastmod>2020-02-05T13:36:30-05:00</lastmod>
   </url>
@@ -73,6 +78,21 @@
   </url>
   
   <url>
+    <loc>https://yo-dave.com/tags/recursion/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/symlinks/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2020/02/05/using-clojure-to-delete-directories-containing-symlinks/</loc>
+    <lastmod>2020-02-05T13:36:30-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yo-dave.com/2020/02/05/why-edn/</loc>
     <lastmod>2020-02-05T13:36:30-05:00</lastmod>
   </url>
@@ -80,11 +100,6 @@
   <url>
     <loc>https://yo-dave.com/tags/xml/</loc>
     <lastmod>2020-02-05T13:36:30-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/clojure/</loc>
-    <lastmod>2020-01-06T17:53:09-05:00</lastmod>
   </url>
   
   <url>

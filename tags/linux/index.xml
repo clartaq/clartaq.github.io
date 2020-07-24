@@ -58,7 +58,7 @@ Legacy Windows Programs It used to be that there was a large amount of inertia t
       <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
-      <description>&lt;h2 id=&#34;update-10-aug-2016-&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
 &lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>

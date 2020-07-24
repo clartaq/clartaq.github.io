@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Using Caddy Server as a Proxy for a Web App using Sente WebSockets &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -257,13 +253,13 @@
 </div>
 
   <p>I created a simple web app, called <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/clajistan/tree/default">clajistan</a>.</p>
-<h3 id="purpose-">Purpose</h3>
+<h3 id="purpose">Purpose</h3>
 <p>The purpose of creating the app was two-fold.</p>
 <ul>
 <li>I wanted to have a little app to act as a &ldquo;placeholder&rdquo; on a very lightly used virtual server.</li>
 <li>To learn how to use <a href="https://en.wikipedia.org/wiki/WebSocket">WebSockets</a> (<a href="https://github.com/ptaoussanis/sente">sente</a>) behind a proxy server (<a href="https://caddyserver.com">Caddy</a>).</li>
 </ul>
-<h3 id="desired-performance-">Desired Performance</h3>
+<h3 id="desired-performance">Desired Performance</h3>
 <p>The program displays a simple web page, written in ClojureScript, with a few statistics about the server, written in Clojure:</p>
 <ul>
 <li>The time and date when the server started.</li>
@@ -280,7 +276,7 @@
 <li>When logged into the server, start the app running with <code>java -jar clajistan.jar &gt; clajistan.log &amp;</code>.</li>
 <li>Start the caddy server with <code>caddy &amp;</code>.</li>
 </ol>
-<h3 id="issues-">Issues</h3>
+<h3 id="issues">Issues</h3>
 <ul>
 <li>The program correctly worked when running locally and accessed on <code>localhost</code>.</li>
 <li>WebSocket messages from the server to the client failed when deploying the app to a virtual server.
@@ -290,7 +286,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="other-relevant-facts-">Other Relevant Facts</h3>
+<h3 id="other-relevant-facts">Other Relevant Facts</h3>
 <p>The <code>Caddyfile</code> used to configure the Caddy server contained:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clajistan.com <span style="color:#f92672">{</span>
     proxy / http://localhost:1357
@@ -301,7 +297,7 @@
 </code></pre></div><p>These are the same contents that were used to proxy a previous version of the program written before WebSockets were added.</p>
 <p>The firewall (ufw) has open ports at address 1357 for TCP.</p>
 <p>There are no obvious errors in the log files <code>clajistan.log</code> or <code>error.log</code>, Caddy&rsquo;s log file. Caddy&rsquo;s access log, <code>access.log</code> <em>does</em> contain messages indicating that WebSocket messages were returning the unexpected return codes.</p>
-<h3 id="the-fix-">The Fix</h3>
+<h3 id="the-fix">The Fix</h3>
 <p>After a day of &ldquo;googling&rdquo; (really &ldquo;duck-duck-going&rdquo;),​ I couldn&rsquo;t find anything that seemed relevant but finally did find something interesting. As usual, it was a configuration problem due to my general ignorance. As a result, I made a small change to the <code>Caddyfile</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clajistan.com <span style="color:#f92672">{</span>
     proxy / http://localhost:1357 <span style="color:#f92672">{</span>
@@ -314,7 +310,7 @@
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Note the addition of <code>websocket</code> and <code>transparent</code> to the <code>proxy</code> statement. That seemed to get things working when connecting with Firefox. Eventually, Safari began to work correctly as well.</p>
 <p>That was one of the hardest things about getting this all to work. Safari seems to remember too much stuff. Clearing the cache and reloading the page is not always enough to bring changes into the displayed page. In this regard, Firefox seems to work better.​</p>
-<h3 id="remaining-issues-">Remaining Issues</h3>
+<h3 id="remaining-issues">Remaining Issues</h3>
 <p>It seems like the socket connection will not remain active for a single session for more than a few hours. After that, Sente starts throwing errors, ​and the display stops updating. I have no idea why but the connection can be re-established by reloading the page.</p>
 
   

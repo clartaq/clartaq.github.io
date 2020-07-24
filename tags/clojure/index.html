@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>clojure &middot; Yo-Dave</title>
 
@@ -182,10 +182,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -236,6 +232,54 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2020/02/05/using-clojure-to-delete-directories-containing-symlinks/">Using Clojure to Delete Directories Containing Symlinks</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>5 Feb 2020 11:09:06 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">Clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/recursion">recursion</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/symlinks">symlinks</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  As part of repository maintenance, I often use a script to delete a group of directories, even if those directories are not empty. It looks something like this:
+(require &#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f] &#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&#34; (when (.isDirectory f) (doseq [f2 (.listFiles f)] (delete-children-recursively! f2))) (when (.exists f) (io/delete-file f))) (defn delete-clean-targets!
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2020/02/05/using-clojure-to-delete-directories-containing-symlinks/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
   
     <article>
   <header>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Serving WordPress over HTTPS with Caddy Server &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -260,7 +256,7 @@
 
   <p>The <a href="https://caddyserver.com/">Caddy</a> server is a relatively new, easy-to-use server written in the <a href="https://golang.org/">Go programming language</a>. It is very buzzword compliant. But, the nicest thing about it, in my opinion, is that it sets up SSL/TLS (<a href="http://info.ssl.com/article.aspx?id=10241">Secure Sockets Layer</a>/<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>) certificates automatically from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> to let you serve a site with<a href="https://en.wikipedia.org/wiki/HTTPS"> HTTPS</a> by default. The project is open source and the certificates are free.</p>
 <p>Of course, <a href="https://wordpress.org/">WordPress</a> is a very popular blogging platform. Caddy provides some <a href="https://github.com/caddyserver/examples/tree/master/wordpress">guidance</a> on getting WordPress up and running on the server. However, it wasn&rsquo;t enough for me. Here&rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.</p>
-<h1 id="some-preliminaries-">Some Preliminaries</h1>
+<h1 id="some-preliminaries">Some Preliminaries</h1>
 <p>Starting from a freshly imaged and updated Ubuntu 16.04 installation, do the following.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir downloads
 mkdir wordpress
@@ -270,9 +266,9 @@ mkdir wordpress
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">*   soft    nofile    <span style="color:#ae81ff">8192</span>
 *   hard    nofile    <span style="color:#ae81ff">8192</span>
 </code></pre></div><p>Reboot to make the changes effective.</p>
-<h1 id="install-caddy-">Install Caddy</h1>
+<h1 id="install-caddy">Install Caddy</h1>
 <p>With the preliminaries out of the way, it&rsquo;s time to install Caddy. Caddy can be installed with many optional packages. Read the docs. For our purposes, a &ldquo;plain vanilla&rdquo; install will work fine.</p>
-<h2 id="download-and-install-">Download and Install</h2>
+<h2 id="download-and-install">Download and Install</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https:/getcaddy.com | bash
 </code></pre></div><p>The installation script will figure out the OS and architecture to use then build and download the appropriate version. On my system it looked something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -288,7 +284,7 @@ Successfully installed
 </code></pre></div><p>As you can see, you will need to supply your <code>sudo</code> password near the end of the installation process. You can verify the installation location of the program like this.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">which caddy
 /usr/local/bin/caddy
-</code></pre></div><h2 id="set-up-a-caddyfile-">Set Up a Caddyfile</h2>
+</code></pre></div><h2 id="set-up-a-caddyfile">Set Up a Caddyfile</h2>
 <p>Caddy operation is controlled by a configuration file, just like most other servers. There is plenty of documentation of the options on the Caddy site itself. For now, create a Caddy file in your home directory and edit it.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nano Caddyfile
 </code></pre></div><p>Make it look like this.</p>
@@ -338,7 +334,7 @@ example.com <span style="color:#f92672">{</span>
 <p>The very long, commented out <code>Content-Security-Policy</code> header restricts the source of resources like scripts, images, fonts, etc. that can be used by the site. It is just a starting point that can be altered later. As it is, it will interfere with the normal operation of WordPress. Hence, it is commented out.</p>
 <p><code>The X-Frame-Options</code> header may cause you some issues too, depending on how you use the WordPress dashboard. It prevents contents of your site from being displayed in a frame on another HTML page. Some commands in the WordPress dashboard try to do that. If you have issues, just comment out the line in the Caddyfile.</p>
 <p>The rest hints at things to come that will be discussed later.</p>
-<h2 id="add-a-simple-home-page-">Add a Simple Home Page</h2>
+<h2 id="add-a-simple-home-page">Add a Simple Home Page</h2>
 <p>Create a home page for the site.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nano wordpress/index.html
 </code></pre></div><p>Add the following contents to the file:</p>
@@ -355,7 +351,7 @@ example.com <span style="color:#f92672">{</span>
     &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>We plan to launch WordPress and the server as a &ldquo;normal&rdquo; user, that is, one without root privileges. However, Linux typically does not allow user-level programs to listen to ports below 1024. There are several ways this could be handled, for example, run the server configured to listen to higher ports. That&rsquo;s inconvenient in my opinion. One way to allow a user level program to listen on ports 80 and 443 (HTTP and HTTPS) is to use the <code>setcap</code> program.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo setcap cap_net_bind_service<span style="color:#f92672">=</span>+ep /usr/local/bin/caddy
-</code></pre></div><h1 id="start-it-up-">Start It Up</h1>
+</code></pre></div><h1 id="start-it-up">Start It Up</h1>
 <p>You&rsquo;re now ready to start Caddy and serve your site. When you start Caddy for the first time, you will be asked to enter your email address to aid in account recovery if it is ever needed later.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">caddy
 Activating privacy features...
@@ -373,7 +369,7 @@ http://example.com
 </code></pre></div><p>If you point your browser to your site you should see the little web page we created above. But the exciting part is the little green lock icon that should be present next to the URL indicating you&rsquo;ve successfully generated and retrieved SSL/TLS certificates from Let&rsquo;s Encrypt.</p>
 <p>When I use the Firefox web console to monitor retrieval of the page, there are no errors or warnings. When I shut down the server (<code>Ctrl-C</code>), an new file, <code>access.log</code>, has appeared in my home directory containing details about the recent accesses from my browser. There is no <code>errors.log</code> file, indicating that caddy did not detect any errors. Woohoo!</p>
 <p>So, that should be working. If you experience any errors, fix them before moving on.</p>
-<h1 id="install-mariadb-">Install MariaDB</h1>
+<h1 id="install-mariadb">Install MariaDB</h1>
 <p>WordPress requires a database to operate. The <a href="https://wordpress.org/about/requirements/">requirements page</a> lists two possible choices.</p>
 <ul>
 <li><a href="https://www.mysql.com/">MySQL</a> version 5.6 or greater</li>
@@ -389,7 +385,7 @@ sudo apt install mariadb-server
 </code></pre></div><p>You should use their tool to get the latest stable version for your distro and architecture.</p>
 <p>The installation will take several minutes. During installation, you will be asked to provide a root password for the database. Keep it somewhere safe.</p>
 <p>After installation is complete, you should be able to do a<code> ps aux | grep 'mysql'</code> and see a <code>mysql</code> process somewhere in the list of running processes.</p>
-<h3 id="lets-create-the-wordpress-database-">Let&rsquo;s Create the WordPress Database</h3>
+<h3 id="lets-create-the-wordpress-database">Let&rsquo;s Create the WordPress Database</h3>
 <p>Now is a fine time to create the database that WordPress will use. Log into the MariaDB shell.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
 </code></pre></div><p>You will be prompted to enter the database root password you created when installing MariaDB. Next, enter the following contents at the shell prompt.</p>
@@ -401,7 +397,7 @@ FLUSH PRIVILEGES;
 exit
 </code></pre></div><p>After each entry you will receive a confirmation message that is not shown here. Those messages should start with&quot;<code>Query OK</code>&rdquo;.</p>
 <p>This creates a database named <code>wordpress</code> and a user of that database named <code>wordpressuser</code>. The user will have the password <code>password</code>. Of course, use something unique for your own password. Don&rsquo;t forget, you need to enter it in two places.</p>
-<h1 id="install-php-">Install PHP</h1>
+<h1 id="install-php">Install PHP</h1>
 <p>This is where I had the most difficulty.</p>
 <p>You can show which package will be installed by default by typing</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt policy php

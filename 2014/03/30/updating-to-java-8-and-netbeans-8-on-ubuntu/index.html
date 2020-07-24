@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>Updating to Java 8 and NetBeans 8 on Ubuntu &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -257,7 +253,7 @@
 </div>
 
   <p>Just some notes on how I updated to the recent releases of Java 8 and NetBeans 8 on Ubuntu 13.10 (64 bit) running the Xfce desktop environment (Xubuntu).</p>
-<h2 id="download-and-install-the-new-jdk-">Download and install the new JDK</h2>
+<h2 id="download-and-install-the-new-jdk">Download and install the new JDK</h2>
 <p>As described <a href="http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html">here</a> The gist is to install from a PPA, not the Oracle downloads. At a Linux command prompt, run and complete the following commands (output is elided):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
@@ -272,7 +268,7 @@ Java HotSpot<span style="color:#f92672">(</span>TM<span style="color:#f92672">)<
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">java-7-oracle <span style="color:#ae81ff">1</span> /usr/lib/jvm/java-7-oracle
 java-8-oracle <span style="color:#ae81ff">2</span> /usr/lib/jvm/java-8-oracle
 </code></pre></div><p>You can also set the Java environment variables to default to Java 8 versions with <code>sudo apt-get install oracle-java8-set-default</code>.</p>
-<h2 id="download-and-install-netbeans-">Download and Install NetBeans</h2>
+<h2 id="download-and-install-netbeans">Download and Install NetBeans</h2>
 <p>Download and install from the Oracle <a href="https://netbeans.org/downloads/">download page</a>, then follow the installation instructions.To create a desktop icon (and include NetBeans in your Applications Menu) add a desktop file as described <a href="http://hanynowsky.wordpress.com/2012/04/27/add-an-entry-for-netbeans-ide-in-ubuntu-12-04-unity-launcher/">here</a>. This works for Xubuntu as well as the Unity desktop. The contents of my desktop file are:</p>
 <pre><code class="language-desktop" data-lang="desktop">Encoding=UTF-8
 Name=NetBeans IDE 8.0

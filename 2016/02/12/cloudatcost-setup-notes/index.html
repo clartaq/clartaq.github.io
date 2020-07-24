@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <title>CloudAtCost Setup Notes &middot; Yo-Dave</title>
 
@@ -174,10 +174,6 @@
     
 
     
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/David_Clark" rel="me" target="_blank"><i class="fab fa-bitbucket"></i>Bitbucket</a>
-    </li>
-    
 
     
     <li class="pure-menu-item">
@@ -256,13 +252,13 @@
 
 </div>
 
-  <h2 id="update-10-aug-2016-">Update: 10 Aug 2016</h2>
+  <h2 id="update-10-aug-2016">Update: 10 Aug 2016</h2>
 <p>There&rsquo;s a new and improved version of this post <a href="https://yo-dave.com/2016/08/10/my-server-setup-process/">HERE</a>. Look at that instead.</p>
 <hr>
 <p>I&rsquo;ve been experimenting with servers from <a href="http://cloudatcost.com/">CloudAtCost</a>. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with <a href="http://www.ubuntu.com/">Ubuntu</a> 14.04 LTS.</p>
 <p>I generally start out making a copy of the server information from the CloudAtCost <a href="https://panel.cloudatcost.com">panel</a>. This includes things like the IP address and the root password, which you will need shortly.</p>
 <p>I do the configuration over <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>. Since I am running on Windows, there are a few options for SSH clients. I like <a href="http://www.putty.org/">PuTTY</a>, but the <a href="https://www.bitvise.com/ssh-client-download">Bitvise</a> client is nice too.</p>
-<h2 id="update-the-system-">Update the System</h2>
+<h2 id="update-the-system">Update the System</h2>
 <p>The process starts by logging into the SSH server newly imaged machine as root. The first thing to do is update Ubuntu with the following commands</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# apt-get update
 root@ubuntu:~# apt-get upgrade
@@ -270,7 +266,7 @@ root@ubuntu:~# apt-get upgrade
 <p>After the upgrade is complete, reboot the system.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# reboot
 </code></pre></div><p>This will break the SSH connection of course. So wait a few minutes for the reboot to complete, then log back in.</p>
-<h2 id="create-a-new-user-with-super-powers-">Create a New User with Super Powers</h2>
+<h2 id="create-a-new-user-with-super-powers">Create a New User with Super Powers</h2>
 <p>Next, we want to add a new user who is not root but can have all of the powers of root when needed.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# adduser user-name
 Adding user <span style="color:#e6db74">`</span>user-name<span style="color:#e6db74">&#39; ...
@@ -295,7 +291,7 @@ root@ubuntu:~#
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# gpasswd -a david sudo
 Adding user david to group sudo
 </code></pre></div><p>Now, you can log off as root and log back in as your new user. It&rsquo;s important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
-<h2 id="set-up-public-key-ssh-access-">Set Up Public Key SSH Access</h2>
+<h2 id="set-up-public-key-ssh-access">Set Up Public Key SSH Access</h2>
 <p>Public key access is an additional method to authenticate yourself when signing into your server. It is considered to be more secure and flexible, but more difficult to set up. I think it is only more difficult in that there are more steps to do, none of which are particularly difficult. Just sayin&rsquo;.</p>
 <p>First off, you need public and private encryption keys. If you don&rsquo;t know what I&rsquo;m talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it&rsquo;s too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
 <p>I usually start by changing the permissions of my home directory.</p>
@@ -332,7 +328,7 @@ ssh start/running, process <span style="color:#ae81ff">1402</span>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo ufw allow 1935/tcp
 Rules updated
 Rules updated <span style="color:#f92672">(</span>v6<span style="color:#f92672">)</span>
-</code></pre></div><h2 id="time-zones-and-the-network-time-protocol-">Time Zones and the Network Time Protocol</h2>
+</code></pre></div><h2 id="time-zones-and-the-network-time-protocol">Time Zones and the Network Time Protocol</h2>
 <p>It&rsquo;s likely that the time zone is already set correctly, but you can check with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo dpkg-reconfigure tzdata
 ... your local time ...
