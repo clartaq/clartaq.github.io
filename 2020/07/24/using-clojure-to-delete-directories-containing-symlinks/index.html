@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.74.3" />
 
-  <title>Why EDN? &middot; Yo-Dave</title>
+  <title>Using Clojure to Delete Directories Containing Symlinks &middot; Yo-Dave</title>
 
     
 
@@ -220,7 +220,7 @@
 
 
 <div class="header">
-  <h1>Why EDN?</h1>
+  <h1>Using Clojure to Delete Directories Containing Symlinks</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -229,7 +229,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>5 Feb 2020 11:09:06 AM</time>
+    <time>24 Jul 2020 10:17:45 AM</time>
   </div>
 
   
@@ -242,17 +242,11 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clown">clown</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">Clojure</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/edn">EDN</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/recursion">recursion</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/json">JSON</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/opml">OPML</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/outliner">outliner</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/xml">XML</a>
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/symlinks">symlinks</a>
     
   </div>
   
@@ -260,13 +254,52 @@
 
 </div>
 
-  <p>Anyone who looks into my experimental outliner with notes, <a href="https://github.com/clartaq/clown">clown</a>, is sure to notice that the native data format is <a href="https://github.com/edn-format/edn">EDN</a> (Extensible Data Notation).</p>
-<p>The canonical data representation for outlines is <a href="http://dev.opml.org">OPML</a> (Outline Processor Markup Language) and it is well suited for that purpose. It&rsquo;s a dialect of <a href="https://en.wikipedia.org/wiki/XML">XML</a> especially adapted to outliners.</p>
-<p>So, why use EDN? <a href="https://en.wikipedia.org/wiki/Clojure">Rich Hickey</a> gives a good rationale at the link above. But for me it boils down to a few things.</p>
-<p>You know how people use Node.js to let them use the same language on the server side and client side of an application? Clojure and Clojurescript serve that same purpose. EDN extends that to representing data. It&rsquo;s a subset of the Clojure language well adapted to data.</p>
-<p>It&rsquo;s human readable (most programming languages are). And since it&rsquo;s a smaller version of Clojure, manipulating it is already built into Clojure development tools. Also, parsing it is already built into Clojure/Script. There are no additional libraries to download and figure out.</p>
-<p>After seeing it, some might argue that it is just a &ldquo;Clojurey&rdquo; version of <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> (Javascript Object Notation). Not really. EDN has more base data types built into it. But the key feature is its extensibility. You can extend it to handle essentially data type, including user-defined types by adding some simple functions to do the conversion. There are examples in <a href="https://www.compoundtheory.com/clojure-edn-walkthrough/">this blog post</a></p>
-<p>So, it&rsquo;s all one big happy family &ndash; server, client and data.</p>
+  <p>As part of repository maintenance, I often use a script to delete a group of directories, even if those directories are not empty. It looks something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clojure.java.io <span style="color:#e6db74">:as</span> io])
+.
+.
+.
+(<span style="color:#66d9ef">defn </span>delete-children-recursively! [f]
+  <span style="color:#e6db74">&#34;Given a file, delete it. If the file is a directory delete its
+</span><span style="color:#e6db74">  contents first. This version does not handle symlinks.&#34;</span>
+  (when (<span style="color:#a6e22e">.isDirectory</span> f)
+    (doseq [f2 (<span style="color:#a6e22e">.listFiles</span> f)]
+      (<span style="color:#a6e22e">delete-children-recursively!</span> f2)))
+  (when (<span style="color:#a6e22e">.exists</span> f) (<span style="color:#a6e22e">io/delete-file</span> f)))
+
+(<span style="color:#66d9ef">defn </span>delete-clean-targets! [v]
+  <span style="color:#e6db74">&#34;Given a vector of directory names (strings), delete the directories
+</span><span style="color:#e6db74">   and any files they contain.&#34;</span>
+  (doseq [dir-name v]
+    (<span style="color:#66d9ef">let </span>[dir-file (<span style="color:#a6e22e">io/file</span> dir-name)]
+      (<span style="color:#a6e22e">delete-children-recursively!</span> dir-file))))
+
+(<span style="color:#a6e22e">delete-clean-targets!</span> clean-targets)
+(<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">0</span>)
+</code></pre></div><p>Somewhere, <code>clean-targets</code> is defined as a vector of directory names. When passed to the <code>delete-clean-targets!</code> function, all of those directories and their contents are removed.</p>
+<p>But if any of the directories contain a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlink</a>, it will not be deleted, and the directory where it resides will not be deleted either since it will not be empty.</p>
+<p>The <code>Files</code> class provides a way to handle things such that the file can be deleted even if it is a symlink. The revised function looks something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(import [java.nio.file Files LinkOption Path Paths])
+.
+.
+.
+(<span style="color:#66d9ef">defn </span>delete-children-recursively! [f]
+  <span style="color:#e6db74">&#34;Given a file, delete it. If the file is a directory delete its
+</span><span style="color:#e6db74">  contents first. This version handles symlinks by deleting the link,
+</span><span style="color:#e6db74">  not the file it links to.&#34;</span>
+  (when (<span style="color:#a6e22e">.isDirectory</span> f)
+    (doseq [f2 (<span style="color:#a6e22e">.listFiles</span> f)]
+      (<span style="color:#a6e22e">delete-children-recursively!</span> f2)))
+  (<span style="color:#66d9ef">let </span>[file-name (<span style="color:#a6e22e">.getAbsolutePath</span> f)
+        fp (<span style="color:#a6e22e">Paths/get</span> file-name (into-array String []))]
+    (<span style="color:#a6e22e">try</span>
+      (when (<span style="color:#a6e22e">Files/exists</span> fp (into-array [java.nio.file.LinkOption/NOFOLLOW_LINKS]))
+        (<span style="color:#a6e22e">Files/delete</span> fp))
+      (<span style="color:#a6e22e">catch</span> Exception e
+        (println <span style="color:#e6db74">&#34;Problem trying to delete &#34;</span> fp)
+        (println <span style="color:#e6db74">&#34;e: &#34;</span> e)))))
+</code></pre></div><p>There are a couple of interesting changes here, particularly the handling of optional arguments. For interoperability, those arguments get packed up into a native Java array as shown in the call to <code>Files/exists</code> with the inclusion of the <code>NOFOLLOW_LINKS</code> argument. It is also required when there are no additional argument, such as the call to <code>Paths/get</code>.</p>
+<p>Note that using the <code>NOFOLLOW_LINKS</code> option means that only the symlink will be deleted, not the file that it points at.</p>
 
   
   
@@ -275,13 +308,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/">Undo/Redo with Clojure using the Memento Pattern</a>
+      <a href="https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/">Counting Words in a Markdown File</a>
     </nav>
     
   </div>
@@ -290,14 +323,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/">Counting Words in a Markdown File</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

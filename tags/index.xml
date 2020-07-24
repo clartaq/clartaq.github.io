@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 15 Jun 2020 15:50:09 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 10:17:45 -0400</lastBuildDate>
     
 	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>clojure</title>
+      <link>https://yo-dave.com/tags/clojure/</link>
+      <pubDate>Fri, 24 Jul 2020 10:17:45 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recursion</title>
+      <link>https://yo-dave.com/tags/recursion/</link>
+      <pubDate>Fri, 24 Jul 2020 10:17:45 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/recursion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>symlinks</title>
+      <link>https://yo-dave.com/tags/symlinks/</link>
+      <pubDate>Fri, 24 Jul 2020 10:17:45 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/symlinks/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>blog</title>
@@ -58,15 +85,6 @@
     </item>
     
     <item>
-      <title>clojure</title>
-      <link>https://yo-dave.com/tags/clojure/</link>
-      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
-      
-      <guid>https://yo-dave.com/tags/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>clown</title>
       <link>https://yo-dave.com/tags/clown/</link>
       <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
@@ -108,24 +126,6 @@
       <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
       
       <guid>https://yo-dave.com/tags/outliner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>recursion</title>
-      <link>https://yo-dave.com/tags/recursion/</link>
-      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
-      
-      <guid>https://yo-dave.com/tags/recursion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>symlinks</title>
-      <link>https://yo-dave.com/tags/symlinks/</link>
-      <pubDate>Wed, 05 Feb 2020 11:09:06 -0500</pubDate>
-      
-      <guid>https://yo-dave.com/tags/symlinks/</guid>
       <description></description>
     </item>
     
