@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.79.1" />
+
+  <title>Getting the Terminal Window Size using Scheme &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Getting the Terminal Window Size using Scheme</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>21 Dec 2020 5:40:44 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/scheme">Scheme</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/terminal">terminal</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/low-level">low-level</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Doing some experimenting with the <a href="https://en.wikipedia.org/wiki/Scheme_%28programming_language%29">Scheme</a> programming language recently has been a lot of fun. It&rsquo;s even simpler in most ways than <a href="https://clojure.org">Clojure</a>.</p>
+<p>As part of that experimentation, I&rsquo;ve been looking into implementing a simple, terminal-based text editor along the lines of <a href="https://github.com/antirez/kilo">kilo</a> by following along with the tutorial series <a href="https://viewsourcecode.org/snaptoken/kilo/index.html">&ldquo;Build Your Own Text Editor&rdquo;</a>.</p>
+<p>Working through those tutorials, one of the first things that smacks you in the face is just how low-level the C programming language is and how very different it feels when compared to Scheme or, really, any other Lisp variant.</p>
+<p>And writing a text editor in Scheme is probably not using the best tool for the task. A text editor needs to interact intimately with the keyboard and screen (and maybe the mouse). But it can be done. Look at emacs, a bunch of Lisp wrapped around a small core written in C. Or maybe <a href="https://groups.csail.mit.edu/mac/ftpdir/scheme-7.4/doc-html/user_8.html">Edwin</a>, part of <a href="https://www.gnu.org/software/mit-scheme/">MIT Scheme</a> is a better example. It is virtually entirely written in Scheme.</p>
+<p>So for this little exercise, I&rsquo;m restricting myself to macOS, because that&rsquo;s all that I have handy, and <a href="https://scheme.com">Chez Scheme</a>, just because I like it.</p>
+<p>We will be taking an approach similar to that in the tutorial above, using the multi-purpose <a href="https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/ioctl.htm"><code>ioctl</code></a> function from the underlying C runtime to interrogate and report on the size of the terminal window where the Chez REPL is running. And delving into the C runtime means working with the <strong>FFI</strong> or <strong>F</strong>oreign <strong>F</strong>unction <strong>I</strong>nterface. Every Scheme seems to have one, and it seems every one is different.</p>
+<p>So, here is a complete working example. It is explained in detail below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;;; term-size.ss -- Procedure to return the size (in rows and columns)</span>
+<span style="color:#75715e">;;; of the terminal it is running in.</span>
+
+<span style="color:#75715e">;; Load the C runtime on macOS. Other OSs will require something different.</span>
+(load-shared-object <span style="color:#e6db74">&#34;libc.dylib&#34;</span>)
+
+<span style="color:#75715e">;; Define some file descriptors for stdin/out. Couldn&#39;t find this</span>
+<span style="color:#75715e">;; documented anywhere. These values are from Chez expediter.c.</span>
+(define STDIN_FD <span style="color:#ae81ff">0</span>)
+(define STDOUT_FD <span style="color:#ae81ff">1</span>)
+
+(define TIOCGWINSZ <span style="color:#ae81ff">#x40087468</span>)
+
+(define-ftype win-size
+  (struct
+   [ws-row unsigned-short] <span style="color:#75715e">; number of rows in the window, in characters</span>
+   [ws-col unsigned-short] <span style="color:#75715e">; number of columns in the window, in characters</span>
+   [ws-xpixel unsigned-short] <span style="color:#75715e">; horizontal size of the window, in pixels</span>
+   [ws-ypixel unsigned-short] <span style="color:#75715e">; vertical size of the window, in pixels</span>
+   ))
+
+<span style="color:#75715e">;; int ioctl(int fildes int cmd, ... /* arg */);</span>
+(define ioctl (foreign-procedure <span style="color:#e6db74">&#34;ioctl&#34;</span> (int int (<span style="color:#a6e22e">*</span> win-size)) int))
+
+(define errno (foreign-procedure <span style="color:#e6db74">&#34;(cs)s_errno&#34;</span> () int))
+(define strerror (foreign-procedure <span style="color:#e6db74">&#34;(cs)s_strerror&#34;</span> (int) scheme-object))
+
+(define (window-size)
+  (<span style="color:#66d9ef">let*</span> ((win-size-buf (foreign-alloc (ftype-sizeof win-size)))
+         (win-size-ptr (make-ftype-pointer win-size win-size-buf)))
+    (<span style="color:#66d9ef">let</span> ((the-size (dynamic-wind
+                      (lambda () <span style="color:#960050;background-color:#1e0010">#</span>f)
+                      (lambda () (<span style="color:#66d9ef">let</span> ((ctl-result (ioctl STDOUT_FD TIOCGWINSZ win-size-ptr)))
+                                   (<span style="color:#66d9ef">if</span> (negative? ctl-result)
+                                       (<span style="color:#66d9ef">let</span> ((cep (current-error-port)))
+                                         (display <span style="color:#e6db74">&#34;Error getting display size.\n&#34;</span> cep)
+                                         (display (strerror (errno)) cep)
+                                         (newline cep)
+                                         (<span style="color:#a6e22e">list</span> <span style="color:#ae81ff">-1</span> <span style="color:#ae81ff">-1</span>))
+                                       (begin
+                                         (<span style="color:#a6e22e">list</span> (ftype-ref win-size (ws-row) win-size-ptr)
+                                               (ftype-ref win-size (ws-col) win-size-ptr))))))
+                      (lambda () (foreign-free win-size-buf)))))
+      the-size)))
+
+(display <span style="color:#e6db74">&#34;Result of calling window-size: &#34;</span>)
+(display (window-size))
+(newline)
+</code></pre></div><p>If you want to follow along on the details, I suggest you <a href="https://www.embarcadero.com/starthere/xe5/mobdevsetup/ios/en/installing_the_commandline_tools.html">get</a> the Apple Developer Command Line Tools and the Chez Scheme <a href="https://github.com/cisco/ChezScheme">source code</a>.</p>
+<p>The first thing to do is load the C runtime library into the program. On Mac, that is <code>libc.dylib</code>. The libraries to use vary by operating system and CPU architecture. There is an example of loading the correct library for all supported OS and architectures in the Chez Scheme 9.5.4 file <code>foreign.ms</code> at about line 2700.</p>
+<p>Then the listing <code>define</code>s some symbols. <code>STDIN_FD</code> and <code>STDOUT_FD</code> are the file descriptors for the standard input and standard output. The code assumes that whatever terminal or emulator you are using has the typical values for these special files, 0 and 1, respectively.</p>
+<p>The next symbol, <code>TIOCGWINSZ</code>, was a bit of a puzzler. The <code>ioctl</code> function requires a command code to tell it what you want to do. Since the FFI is no help at importing symbol values, we have to do a little detective work into the header files available as part of the Apple Command Line Tools. <code>TIOCGWINSZ</code> is a symbol defined by a series of C macros. The final definition is in <code>/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/ttycom.h</code>. In that file, we see that the symbol is defined via another C macro, <code>_IOR</code> in the <code>ioccom.h</code> header. And that macro is defined in terms of the <code>_IOC</code> macro in the same header. Whew! Working through all of those macros yields the value you see in the listing. (I actually cheated and wrote a small C program that just prints the value of the symbol and copied it into the listing. Much less error prone.)</p>
+<p>The <code>win-size</code> <code>ftype</code> is just a transliteration of the <code>winsize</code> <code>struct</code> from the <code>ttycom.h</code> header.</p>
+<p>Next comes the import of a few foreign functions. <code>ioctl</code> is imported from the C run time. It expects an integer argument for the file descriptor, the command code, and a buffer to put results in. It returns a negative number if an error occurs or 0 on success, usually.</p>
+<p>The <code>errno</code> and <code>strerror</code> functions are imported from the Chez support library. Although these are written in C, they are aware of Scheme and are easier to use because of it. The function names that start with the <code>(cs)...</code> seem to flag to the FFI routines that the named function exists in the Chez Scheme support library, though I have never seen it documented anywhere. Use with caution. It may change with newer versions of the software.</p>
+<p>Next up comes the <code>window-size</code> procedure itself. First a piece of foreign memory is allocated of the size of the <code>win-size</code> <code>ftype</code> to hold the information returned by <code>ioctl</code> call. Next a pointer to that memory is created in a form that can be used by the foreign library.</p>
+<p>The next bit of code is not strictly necessary as shown, but since we are using foreign memory, not managed by Scheme, we want to make sure it is freed and returned to the foreign library. <code>dynamic-wind</code> is perfect for these types of uses.</p>
+<ul>
+<li>The first <code>lambda</code> is not used in this case.</li>
+<li>The second <code>lambda</code> is where the desired information is retrieved in the call to <code>ioctl</code> using the file descriptor, command, and pointer to the buffer to hold the result. If an error occurs, a notice is sent to standard error and a list containing &ldquo;impossible&rdquo; row and column counts is returned. If the <code>ioctl</code> call is successful, a list containing the number of rows and columns in the terminal display is constructed and returned.</li>
+<li>The third <code>lambda</code> is used to make sure that the foreign memory allocated earlier is returned to the system.</li>
+</ul>
+<p>The last few lines of the listing call the function and display the results.</p>
+<p>Here&rsquo;s an example of running the program a few times in the Chez REPL, changing the size of the terminal window between <code>load</code>s. I tried on <a href="https://iterm2.com">iTerm2</a> (Build 3.4.3) and the Apple Terminal app (version 2.11).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">david@Davids-iMac scheme % chez
+Chez Scheme Version 9.5.4
+Copyright 1984-2020 Cisco Systems, Inc.
+
+&gt; <span style="color:#f92672">(</span>load <span style="color:#e6db74">&#34;term-size.ss&#34;</span><span style="color:#f92672">)</span>
+Result of calling window-size: <span style="color:#f92672">(</span><span style="color:#ae81ff">50</span> 132<span style="color:#f92672">)</span>
+&gt; <span style="color:#f92672">(</span>load <span style="color:#e6db74">&#34;term-size.ss&#34;</span><span style="color:#f92672">)</span>
+Result of calling window-size: <span style="color:#f92672">(</span><span style="color:#ae81ff">55</span> 160<span style="color:#f92672">)</span>
+&gt; <span style="color:#f92672">(</span>load <span style="color:#e6db74">&#34;term-size.ss&#34;</span><span style="color:#f92672">)</span>
+Result of calling window-size: <span style="color:#f92672">(</span><span style="color:#ae81ff">61</span> 113<span style="color:#f92672">)</span>
+</code></pre></div><p>Addendum: Part way through writing this, I found the repository <a href="https://github.com/sindresorhus/macos-term-size">mac-os-termsize</a>, a small C language program to do the same thing. Here is the relevant listing from that library.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;    // strerror</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;errno.h&gt;     // errno</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fcntl.h&gt;     // open(), O_EVTONLY, O_NONBLOCK</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;    // close()</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/ioctl.h&gt; // ioctl()</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">int</span> tty_fd <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;/dev/tty&#34;</span>, O_EVTONLY <span style="color:#f92672">|</span> O_NONBLOCK);
+	<span style="color:#66d9ef">if</span> (tty_fd <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+		fprintf(stderr, <span style="color:#e6db74">&#34;Opening `/dev/tty` failed (%d): %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, errno, strerror(errno));
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+	}
+
+	<span style="color:#66d9ef">struct</span> winsize ws;
+	<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> ioctl(tty_fd, TIOCGWINSZ, <span style="color:#f92672">&amp;</span>ws);
+	close(tty_fd);
+
+	<span style="color:#66d9ef">if</span> (result <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+		fprintf(stderr, <span style="color:#e6db74">&#34;Getting the size failed (%d): %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, errno, strerror(errno));
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+	}
+
+	fprintf(stdout, <span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ws.ws_col, ws.ws_row);
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>That function takes the additional step of identifying the file descriptor for the terminal it is running on. I haven&rsquo;t found that I needed it, but it is something to keep in mind.</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2020/07/24/using-clojure-to-delete-directories-containing-symlinks/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2020/07/24/using-clojure-to-delete-directories-containing-symlinks/">Using Clojure to Delete Directories Containing Symlinks</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+<script src="https://yo-dave.com/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 04 Mar 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/business/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 04 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/business/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vendor Games with Subscriptions</title>
       <link>https://yo-dave.com/2017/03/04/vendor-games-with-subscriptions/</link>
@@ -43,7 +39,7 @@ This statement is based on two (unscientific) observations.</description>
       <description>Is it just me or does it seem like the &amp;ldquo;FREE Two-Day Shipping&amp;rdquo; promised by Amazon Prime never actually occurs?
 Sometimes I actually get things after one business day. But more often its three or four or five. Sometimes there&amp;rsquo;s an excuse like &amp;ldquo;Extreme Weather Conditions&amp;rdquo;. Sometimes things actually get here when promised.
 If Amazon is paying extra for two day shipping, they are getting robbed.
-Just sayin&amp;rsquo;.</description>
+Just sayin&#39;.</description>
     </item>
     
   </channel>

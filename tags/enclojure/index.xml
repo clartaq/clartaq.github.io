@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 25 Feb 2011 16:10:29 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/enclojure/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 25 Feb 2011 16:10:29 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/enclojure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Lisp/Scheme/Clojure</title>
       <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</link>

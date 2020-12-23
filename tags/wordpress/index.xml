@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 19 Aug 2016 18:02:38 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 19 Aug 2016 18:02:38 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Serving WordPress over HTTPS with Caddy Server</title>
       <link>https://yo-dave.com/2016/08/19/serving-wordpress-over-https-with-caddy-server/</link>

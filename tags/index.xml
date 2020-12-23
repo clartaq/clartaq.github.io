@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 24 Jul 2020 10:17:45 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 21 Dec 2020 17:40:44 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>low-level</title>
+      <link>https://yo-dave.com/tags/low-level/</link>
+      <pubDate>Mon, 21 Dec 2020 17:40:44 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/low-level/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scheme</title>
+      <link>https://yo-dave.com/tags/scheme/</link>
+      <pubDate>Mon, 21 Dec 2020 17:40:44 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/scheme/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>terminal</title>
+      <link>https://yo-dave.com/tags/terminal/</link>
+      <pubDate>Mon, 21 Dec 2020 17:40:44 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/terminal/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>clojure</title>

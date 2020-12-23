@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 20 Aug 2017 13:55:37 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 20 Aug 2017 13:55:37 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Images to Load and Preview in Hexo</title>
       <link>https://yo-dave.com/2017/08/20/getting-images-to-load-and-preview-in-hexo/</link>

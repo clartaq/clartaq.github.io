@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 24 Jul 2020 10:17:45 -0400</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/symlinks/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 24 Jul 2020 10:17:45 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/symlinks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Clojure to Delete Directories Containing Symlinks</title>
       <link>https://yo-dave.com/2020/07/24/using-clojure-to-delete-directories-containing-symlinks/</link>

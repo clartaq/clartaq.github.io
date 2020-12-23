@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 17 Oct 2016 10:57:40 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/elm-lang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 17 Oct 2016 10:57:40 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/elm-lang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clojure/Script has Ruined Me for Other Languages</title>
       <link>https://yo-dave.com/2016/10/17/clojure/script-has-ruined-me-for-other-languages/</link>

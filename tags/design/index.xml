@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 30 Apr 2014 09:59:36 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/design/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 30 Apr 2014 09:59:36 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A New Theme</title>
       <link>https://yo-dave.com/2014/04/30/a-new-theme/</link>

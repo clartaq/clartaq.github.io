@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.79.1" />
 
   <title>My Server Setup Process &middot; Yo-Dave</title>
 
@@ -313,8 +313,8 @@ root@example:~#
 Adding user user-name to group sudo
 </code></pre></div><p>Now, you can log off as root and log back in as your new user. It&rsquo;s important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
 <h2 id="set-up-public-key-ssh-access">Set Up Public Key SSH Access</h2>
-<p>Public key access is an additional method to authenticate yourself when signing into your server. It is considered to be more secure and flexible, but a little more difficult to set up. I think it is only more difficult in that there are more steps to do, none of which are particularly difficult. Just sayin&rsquo;.</p>
-<p>First off, you need public and private encryption keys. If you don&rsquo;t know what I&rsquo;m talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it&rsquo; too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
+<p>Public key access is an additional method to authenticate yourself when signing into your server. It is considered to be more secure and flexible, but a little more difficult to set up. I think it is only more difficult in that there are more steps to do, none of which are particularly difficult. Just sayin'.</p>
+<p>First off, you need public and private encryption keys. If you don&rsquo;t know what I&rsquo;m talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it' too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
 <p>I usually start by changing the permissions of my home directory.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">user-name@example:~$ chmod <span style="color:#ae81ff">750</span> ~
 </code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no one else at this point) can read and execute, but not write into the directory. Others can&rsquo;t do any of those things.</p>

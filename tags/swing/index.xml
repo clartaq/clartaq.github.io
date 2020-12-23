@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 06 Jan 2015 09:47:27 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/swing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 06 Jan 2015 09:47:27 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/swing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Overwhelming Java&#39;s Swing</title>
       <link>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</link>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 26 Aug 2016 09:59:54 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/email/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 26 Aug 2016 09:59:54 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/email/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Email Server on Ubuntu 14.04</title>
       <link>https://yo-dave.com/2016/08/26/an-email-server-on-ubuntu-14.04/</link>

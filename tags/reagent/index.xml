@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 13 May 2019 08:22:29 -0400</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/reagent/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 13 May 2019 08:22:29 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/reagent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Displaying Video from a Webcam using Clojurescript and Reagent</title>
       <link>https://yo-dave.com/2019/05/13/displaying-video-from-a-webcam-using-clojurescript-and-reagent/</link>

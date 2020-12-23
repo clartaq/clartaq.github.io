@@ -7,10 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 24 Jul 2020 10:17:45 -0400</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 21 Dec 2020 17:40:44 -0500</lastBuildDate><atom:link href="https://yo-dave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting the Terminal Window Size using Scheme</title>
+      <link>https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/</link>
+      <pubDate>Mon, 21 Dec 2020 17:40:44 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/</guid>
+      <description>Doing some experimenting with the Scheme programming language recently has been a lot of fun. It&amp;rsquo;s even simpler in most ways than Clojure.
+As part of that experimentation, I&amp;rsquo;ve been looking into implementing a simple, terminal-based text editor along the lines of kilo by following along with the tutorial series &amp;ldquo;Build Your Own Text Editor&amp;rdquo;.
+Working through those tutorials, one of the first things that smacks you in the face is just how low-level the C programming language is and how very different it feels when compared to Scheme or, really, any other Lisp variant.</description>
+    </item>
     
     <item>
       <title>Using Clojure to Delete Directories Containing Symlinks</title>
@@ -570,7 +577,7 @@ But when I started looking at examples, I often found myself thinking things lik
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/10/02/i-am-so-over-hd/</guid>
-      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;rdquo;. It was a big 27&amp;rdquo; unit. Easy to view, lots of screen real estate. Very clear text rendering.
+      <description>Many years ago, back in 2009, during an infrequent upgrade of my desktop computer, I finally bought an HD monitor, actually, slightly better than HD at a resolution of 1920x1200 pixels. My reaction was along the lines of &amp;ldquo;Ooooh! Pretty!&amp;rdquo;. It was a big 27&amp;quot; unit. Easy to view, lots of screen real estate. Very clear text rendering.
 I thought I was set forever.
 Since then, I&amp;rsquo;ve purchased a few Apple products with Retina displays.</description>
     </item>
@@ -652,7 +659,7 @@ Fountain pens are pretty pieces of art, but too messy and fiddly. Ballpoints are
       <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</guid>
-      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
+      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&#39; HTTP.
 Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
     </item>
     
@@ -707,7 +714,7 @@ This statement is based on two (unscientific) observations.</description>
       <description>Is it just me or does it seem like the &amp;ldquo;FREE Two-Day Shipping&amp;rdquo; promised by Amazon Prime never actually occurs?
 Sometimes I actually get things after one business day. But more often its three or four or five. Sometimes there&amp;rsquo;s an excuse like &amp;ldquo;Extreme Weather Conditions&amp;rdquo;. Sometimes things actually get here when promised.
 If Amazon is paying extra for two day shipping, they are getting robbed.
-Just sayin&amp;rsquo;.</description>
+Just sayin&#39;.</description>
     </item>
     
     <item>
@@ -1151,7 +1158,7 @@ That&amp;rsquo;s a handy facility to have, even on Windows, which can have diffe
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
-      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;ldquo;C:\Users\David Clark&amp;rdquo; on my system.)
+      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;quot;C:\Users\David Clark&amp;quot; on my system.)
 My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
     </item>
     

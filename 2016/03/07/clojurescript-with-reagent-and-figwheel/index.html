@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.79.1" />
 
   <title>ClojureScript with Reagent and figwheel &middot; Yo-Dave</title>
 
@@ -472,7 +472,7 @@ cljs.user=&gt;
 <p>The home-page should look something like this in your browser:</p>
 <p><a href="https://yo-dave.com/static/img/2016-03-07-rgt-fw-demo-home-page.PNG"><img src="https://yo-dave.com/static/img/2016-03-07-rgt-fw-demo-home-page.PNG" alt=""></a></p>
 <p>You should see your actual time that continually updates. All of the machinery for updating the view as the program state changes is out of site in the Reagent/React internals. We get the goodness for almost nothing.</p>
-<p>The <code>Var</code>s containing program state can be arbitrarily complex and there can be any number of them. You can treat them just like regular ol&rsquo; Clojure atoms but any components that use that state get updated as it changes. All for almost free.</p>
+<p>The <code>Var</code>s containing program state can be arbitrarily complex and there can be any number of them. You can treat them just like regular ol' Clojure atoms but any components that use that state get updated as it changes. All for almost free.</p>
 <p>It&rsquo;s like magic.</p>
 <p><!-- raw HTML omitted -->The complete project is available as a <a href="https://www.mercurial-scm.org/">Mercurial</a> repository on <a href="https://bitbucket.org/David_Clark/rgt-fw-demo">BitBucket</a>.<!-- raw HTML omitted --> (<strong>Broken Link</strong>) This project is no longer available in a repository.</p>
 <p><strong>Update 2016-09-25</strong>: Fixed a bug in the HTML where a <code>&lt;ul&gt;</code> element was embedded inside a <code>&lt;p&gt;</code> element. Updated dependencies in the project file. Updated the version number in the project and source file (although it is not shown in the copy of the screen shot.)</p>

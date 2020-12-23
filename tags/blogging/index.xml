@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 26 Mar 2018 10:09:24 -0400</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 26 Mar 2018 10:09:24 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New Blogging Setup</title>
       <link>https://yo-dave.com/2018/03/26/new-blogging-setup/</link>
@@ -93,7 +89,7 @@ In order to get a little more professional perspective, I follow the TypeWolf bl
       <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</guid>
-      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
+      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&#39; HTTP.
 Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
     </item>
     

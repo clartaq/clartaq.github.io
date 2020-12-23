@@ -6,10 +6,6 @@
     <description>Recent content in Topics on Yo-Dave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    
-	<atom:link href="https://yo-dave.com/topics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright><atom:link href="https://yo-dave.com/topics/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

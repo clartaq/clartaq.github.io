@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 14 May 2017 09:54:13 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/leiningen/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 14 May 2017 09:54:13 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/leiningen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leiningen passing Invalid Flags to Java Compiler</title>
       <link>https://yo-dave.com/2017/05/14/leiningen-passing-invalid-flags-to-java-compiler/</link>
@@ -48,7 +44,7 @@ A few weeks ago, I started noticing some weirdness in trying to use some tools w
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
-      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;ldquo;C:\Users\David Clark&amp;rdquo; on my system.)
+      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;quot;C:\Users\David Clark&amp;quot; on my system.)
 My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
     </item>
     

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 10 Feb 2018 10:16:57 -0500</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 10 Feb 2018 10:16:57 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Timestamp Plugin for Sublime Text 3</title>
       <link>https://yo-dave.com/2018/02/10/a-timestamp-plugin-for-sublime-text-3/</link>

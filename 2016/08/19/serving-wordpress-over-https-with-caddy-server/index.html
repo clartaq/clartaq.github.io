@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.79.1" />
 
   <title>Serving WordPress over HTTPS with Caddy Server &middot; Yo-Dave</title>
 
@@ -395,7 +395,7 @@ SET PASSWORD FOR wordpressuser@localhost<span style="color:#f92672">=</span> PAS
 GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
 FLUSH PRIVILEGES;
 exit
-</code></pre></div><p>After each entry you will receive a confirmation message that is not shown here. Those messages should start with&quot;<code>Query OK</code>&rdquo;.</p>
+</code></pre></div><p>After each entry you will receive a confirmation message that is not shown here. Those messages should start with&quot;<code>Query OK</code>&quot;.</p>
 <p>This creates a database named <code>wordpress</code> and a user of that database named <code>wordpressuser</code>. The user will have the password <code>password</code>. Of course, use something unique for your own password. Don&rsquo;t forget, you need to enter it in two places.</p>
 <h1 id="install-php">Install PHP</h1>
 <p>This is where I had the most difficulty.</p>
@@ -441,7 +441,7 @@ nano wordpress/wp-config.php
 </code></pre></div><p>This will start the server in a separate process and allow you to log off.</p>
 <p>This has been a long post, but the steps are pretty simple. I think using Caddy is actually easier to set up than the <a href="https://nginx.org/en/">nginx</a> or <a href="https://httpd.apache.org/">Apache</a> servers. And so far, MariaDB has been working without complaint.</p>
 <p>Perhaps you&rsquo;re wondering why this site isn&rsquo;t running on Caddy yet. The reasons are long and arcane and have nothing to do with the technology. Perhaps some day soon though.</p>
-<p>There&rsquo; plenty to write about, so tell people what you think and know.</p>
+<p>There' plenty to write about, so tell people what you think and know.</p>
   
   
 

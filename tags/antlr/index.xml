@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 08 Mar 2011 15:58:17 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/antlr/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 08 Mar 2011 15:58:17 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/antlr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Parsing Signed Numbers in ANTLR</title>
       <link>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</link>

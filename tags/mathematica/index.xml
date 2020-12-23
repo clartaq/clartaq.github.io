@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 14 Sep 2011 20:04:19 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 14 Sep 2011 20:04:19 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Color Deconvolution</title>
       <link>https://yo-dave.com/2011/09/14/color-deconvolution/</link>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 12 Aug 2018 13:36:36 -0400</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 12 Aug 2018 13:36:36 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>De-Tabifying</title>
       <link>https://yo-dave.com/2018/08/12/de-tabifying/</link>

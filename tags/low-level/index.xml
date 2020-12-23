@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>low-level on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/low-level/</link>
+    <description>Recent content in low-level on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 21 Dec 2020 17:40:44 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/low-level/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting the Terminal Window Size using Scheme</title>
+      <link>https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/</link>
+      <pubDate>Mon, 21 Dec 2020 17:40:44 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/</guid>
+      <description>Doing some experimenting with the Scheme programming language recently has been a lot of fun. It&amp;rsquo;s even simpler in most ways than Clojure.
+As part of that experimentation, I&amp;rsquo;ve been looking into implementing a simple, terminal-based text editor along the lines of kilo by following along with the tutorial series &amp;ldquo;Build Your Own Text Editor&amp;rdquo;.
+Working through those tutorials, one of the first things that smacks you in the face is just how low-level the C programming language is and how very different it feels when compared to Scheme or, really, any other Lisp variant.</description>
+    </item>
+    
+  </channel>
+</rss>

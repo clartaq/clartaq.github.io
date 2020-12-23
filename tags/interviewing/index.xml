@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 29 Mar 2012 08:48:17 +0000</lastBuildDate>
-    
-	<atom:link href="https://yo-dave.com/tags/interviewing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 29 Mar 2012 08:48:17 +0000</lastBuildDate><atom:link href="https://yo-dave.com/tags/interviewing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Developer Interview Questions</title>
       <link>https://yo-dave.com/2012/03/29/developer-interview-questions/</link>
