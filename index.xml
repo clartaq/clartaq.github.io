@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 21 Dec 2020 17:40:44 -0500</lastBuildDate><atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 16:45:32 -0500</lastBuildDate><atom:link href="https://yo-dave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raw Terminal IO in Scheme</title>
+      <link>https://yo-dave.com/2020/12/23/raw-terminal-io-in-scheme/</link>
+      <pubDate>Wed, 23 Dec 2020 16:45:32 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2020/12/23/raw-terminal-io-in-scheme/</guid>
+      <description>Recently I&amp;rsquo;ve written about doing some fairly low-level operations in Scheme, specifically how to get the window size of a terminal where the program is running. This was part of a little project to write a simple terminal-based text editor in Scheme along the lines of the kilo editor by following a tutorial entitled &amp;ldquo;Build Your Own Text Editor&amp;rdquo;.
+Another part of that project that was surprisingly difficult to accomplish in Scheme was putting the terminal in &amp;ldquo;raw&amp;rdquo; mode.</description>
+    </item>
+    
     <item>
       <title>Getting the Terminal Window Size using Scheme</title>
       <link>https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/</link>

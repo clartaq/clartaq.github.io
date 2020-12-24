@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.79.1" />
+
+  <title>Raw Terminal IO in Scheme &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Raw Terminal IO in Scheme</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>23 Dec 2020 4:45:32 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/scheme">Scheme</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/terminal">terminal</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/low-level">low-level</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Recently I&rsquo;ve <a href="https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/">written</a> about doing some fairly low-level operations in Scheme, specifically how to get the window size of a terminal where the program is running. This was part of a little project to write a simple terminal-based text editor in Scheme along the lines of the <a href="http://antirez.com/news/108">kilo</a> editor by following a tutorial entitled <a href="https://viewsourcecode.org/snaptoken/kilo/index.html">&ldquo;Build Your Own Text Editor&rdquo;</a>.</p>
+<p>Another part of that project that was surprisingly difficult to accomplish in Scheme was putting the terminal in &ldquo;raw&rdquo; mode. Text editors need very fine control of responses to keyboard input. A <a href="https://www.reddit.com/r/scheme/comments/ju3g1a/readchar_and_having_to_press_enter/">question</a> appeared on Reddit at about the same time that I was looking into the problem. I had posted a similar <a href="https://stackoverflow.com/questions/64706126/reading-characters-from-the-terminal-in-raw-mode-using-scheme">question</a> to StackOverflow later posted a <a href="https://stackoverflow.com/a/64791919/193509">solution</a> in Racket. I later went back and created a <a href="https://gist.github.com/clartaq/d7ff89a3fa150e1b281e8b83e8489a8b">gist</a> for a solution written in Chez Scheme.</p>
+<p>The solution for Chez is reproduced here and explained below. It&rsquo;s moderately long (about 250 lines), but broken up into somewhat logical sections.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scheme" data-lang="scheme"><span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; direct_tty.ss</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; This is a demonstration program using some of the Chez Scheme FFI to put the</span>
+<span style="color:#75715e">;; terminal into &#34;raw&#34; mode, read a line of characters, possibly containing</span>
+<span style="color:#75715e">;; control characters that would normally terminate input, without echoing</span>
+<span style="color:#75715e">;; the characters typed. Once the user presses the line termination character,</span>
+<span style="color:#75715e">;; (user defined), the program displays the line.</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; The program shows how to obtain character-by-character input with</span>
+<span style="color:#75715e">;; immediate examination of each character. Such a procedure is useful when</span>
+<span style="color:#75715e">;; writing things like text editors where you want the program to respond</span>
+<span style="color:#75715e">;; immediately to keyboard commands without waiting for the entire line</span>
+<span style="color:#75715e">;; to be entered.</span>
+<span style="color:#75715e">;;</span>
+
+<span style="color:#75715e">;;------------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; Procedures for convenient printing.</span>
+<span style="color:#75715e">;;</span>
+
+<span style="color:#75715e">;; Return #t if the character is an ASCII control character,</span>
+<span style="color:#75715e">;; false otherwise.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">char-control?</span> c)
+  (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">char-num</span> (char-&gt;integer c)))
+    (<span style="color:#66d9ef">or </span>(= char-num <span style="color:#ae81ff">127</span>)
+        (&lt; char-num <span style="color:#ae81ff">32</span>))))
+
+<span style="color:#75715e">;; If c is a control character, it is converted into a two-character</span>
+<span style="color:#75715e">;; string that indicates its special status by preceding it with a &#34;^&#34;.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">char-&gt;readable</span> c)
+  (<span style="color:#66d9ef">if </span>(<span style="color:#a6e22e">char-control?</span> c)
+      (string <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">\</span>^ (integer-&gt;char (+ <span style="color:#ae81ff">64</span> (char-&gt;integer c))))
+      (string c)))
+
+<span style="color:#75715e">;; Return a transform of the input string with embedded control chars converted</span>
+<span style="color:#75715e">;; to human-readable form showing a &#34;^&#34; prepended to it.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">string-&gt;readable</span> s)
+  (<span style="color:#66d9ef">let </span>loop ((<span style="color:#a6e22e">lst</span> (string-&gt;list s))
+             (<span style="color:#a6e22e">acc</span> <span style="color:#e6db74">&#34;&#34;</span>))
+    (<span style="color:#66d9ef">if </span>(null? lst)
+        acc
+        (<span style="color:#a6e22e">loop</span> (cdr lst) (string-append acc (<span style="color:#a6e22e">char-&gt;readable</span> (car lst)))))))
+
+<span style="color:#75715e">;; Display a series of arguments followed by a newline.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">println</span> <span style="color:#f92672">.</span> args)
+  (for-each display args)
+  (<span style="color:#a6e22e">newline</span>))
+
+<span style="color:#75715e">;; When in raw mode, lines need to be ended with CR/LF pairs to act</span>
+<span style="color:#75715e">;; like normal printing.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">println-in-raw</span> <span style="color:#f92672">.</span> args)
+  (for-each display args)
+  (display (string <span style="color:#e6db74">#\return</span> <span style="color:#e6db74">#\newline</span>)))
+
+<span style="color:#75715e">;;------------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; Foreign fuction stuff. Assure we have access to the needed functions from</span>
+<span style="color:#75715e">;; the C runtime and import them.</span>
+<span style="color:#75715e">;;</span>
+
+<span style="color:#75715e">;; Load the C runtime on macOS. Other OSs will require something different.</span>
+
+(<span style="color:#a6e22e">load-shared-object</span> <span style="color:#e6db74">&#34;libc.dylib&#34;</span>)
+
+<span style="color:#75715e">;; Assure that we have access to all of the functions we require.</span>
+
+(<span style="color:#66d9ef">if </span>(<span style="color:#66d9ef">and </span>(<span style="color:#a6e22e">foreign-entry?</span> <span style="color:#e6db74">&#34;isatty&#34;</span>)
+         (<span style="color:#a6e22e">foreign-entry?</span> <span style="color:#e6db74">&#34;tcgetattr&#34;</span>)
+         (<span style="color:#a6e22e">foreign-entry?</span> <span style="color:#e6db74">&#34;tcsetattr&#34;</span>)
+         (<span style="color:#a6e22e">foreign-entry?</span> <span style="color:#e6db74">&#34;cfmakeraw&#34;</span>))
+    (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;We have access to needed functions from the C standard library.&#34;</span>)
+    (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;Can&#39;t find needed functions in the C standard library&#34;</span>))
+
+(<span style="color:#66d9ef">if </span>(<span style="color:#66d9ef">and </span>(<span style="color:#a6e22e">foreign-entry?</span> <span style="color:#e6db74">&#34;(cs)s_errno&#34;</span>)
+         (<span style="color:#a6e22e">foreign-entry?</span> <span style="color:#e6db74">&#34;(cs)s_strerror&#34;</span>))
+    (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;We have access to needed functions from the Chez C runtime.&#34;</span>)
+    (<span style="color:#a6e22e">begin</span>
+      (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;Can&#39;t find needed functions in the Chez C runtime.&#34;</span>)
+      (<span style="color:#a6e22e">exit</span> <span style="color:#ae81ff">1</span>)))
+<span style="color:#75715e">;;-----------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; termios-related stuff.</span>
+
+<span style="color:#75715e">;; Explanation of `termios` and `cfmakeraw`. This is from the `cfmakeraw(3)`</span>
+<span style="color:#75715e">;; Linux man page. Descriptions reflect the result of related flags settings.</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; termios_p-&gt;c_iflag &amp;= ~(IGNBRK |  // Do not ignore a BREAK</span>
+<span style="color:#75715e">;;                         BRKINT |  // BREAK will produce a null byte</span>
+<span style="color:#75715e">;;                         PARMRK |  // Ignore parity errors</span>
+<span style="color:#75715e">;;                         ISTRIP |  // Do not strip the eigth bit</span>
+<span style="color:#75715e">;;                         INCLCR |  // Do not translate NL to CR on input</span>
+<span style="color:#75715e">;;                         IGNCR  |  // Do not ignore carriage return on input</span>
+<span style="color:#75715e">;;                         ICRNL  |  // Do not translate a carriage return to newline</span>
+<span style="color:#75715e">;;                         IXON   ); // Disable XON/XOFF flow control on output</span>
+<span style="color:#75715e">;; termios_p-&gt;c_oflag &amp;= ~OPOST;     // Disable implementation-defined output processing</span>
+<span style="color:#75715e">;; termios_p-&gt;c_lflag &amp;= ~(ECHO   |  // Do not echo characters</span>
+<span style="color:#75715e">;;                         ECHONL |  // Do not echo newline characters</span>
+<span style="color:#75715e">;;                         ICANON |  // Disable canonical mode (&#34;cooked&#34;) processing</span>
+<span style="color:#75715e">;;                         ISIG   |  // Do not generate INTR, QUIT, SUSP or DSUSP signals</span>
+<span style="color:#75715e">;;                         IEXTEN ); // Disable implemenation-defined input processing</span>
+<span style="color:#75715e">;; termios_p-&gt;c_cflag &amp;= ~(CSIZE  |  // No character size mask</span>
+<span style="color:#75715e">;;                         PARENB ); // Turn off parity generation</span>
+<span style="color:#75715e">;; termios_p-&gt;c_cflag |= CS8;        // 8-bit characters</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; NOTE: The use of 8-bit characters makes this a bit incompatible with the `read-char`</span>
+<span style="color:#75715e">;; procedure, which works with UTF-8 characters. Needs more work.</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; The following definitions and structure are from the file</span>
+<span style="color:#75715e">;; /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/termios.h</span>
+<span style="color:#75715e">;; on an iMac.</span>
+
+<span style="color:#75715e">;; #define NCCS            20</span>
+<span style="color:#75715e">;; typedef unsigned long   tcflag_t;</span>
+<span style="color:#75715e">;; typedef unsigned char   cc_t;</span>
+<span style="color:#75715e">;; typedef unsigned long   speed_t;</span>
+
+(<span style="color:#66d9ef">define </span>NCCS <span style="color:#ae81ff">20</span>)
+
+(<span style="color:#a6e22e">define-ftype</span> termios
+  (<span style="color:#a6e22e">struct</span>
+   [c_iflag unsigned-long] <span style="color:#75715e">; input flags</span>
+   [c_oflag unsigned-long] <span style="color:#75715e">; output flags</span>
+   [c_cflag unsigned-long] <span style="color:#75715e">; control flags</span>
+   [c_lflag unsigned-long] <span style="color:#75715e">; local flags</span>
+   <span style="color:#75715e">;; It seems like Chez will not let me use the defined constant</span>
+   <span style="color:#75715e">;; NCCS above for the size of the array. Gotta use the literal 20.</span>
+   [c_cc (<span style="color:#a6e22e">array</span> <span style="color:#ae81ff">20</span> char)] <span style="color:#75715e">; special control chars</span>
+   [c_ispeed unsigned-long] <span style="color:#75715e">; input speed</span>
+   [c_ospeed unsigned-long] <span style="color:#75715e">; output speed</span>
+   ))
+
+<span style="color:#75715e">;;-----------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; Give ourselves access to a bunch of foreign function interfaces.</span>
+
+<span style="color:#75715e">;; int isatty(int fildes);</span>
+<span style="color:#75715e">;; Returns 1 if the file descriptor represents a terminal, 0 otherwise.</span>
+(<span style="color:#66d9ef">define </span>isatty (<span style="color:#a6e22e">foreign-procedure</span> <span style="color:#e6db74">&#34;isatty&#34;</span> (<span style="color:#a6e22e">int</span>) int))
+
+<span style="color:#75715e">;; int tcgetattr(int fd, struct termios *termios_p);</span>
+<span style="color:#75715e">;; Copy the current attributes into the buffer (termios struct)</span>
+<span style="color:#75715e">;; pointed to. Returns 0 on success, -1 on failure in which case errno</span>
+<span style="color:#75715e">;; will contain the error code.</span>
+<span style="color:#75715e">;(define-c tcgetattr (_fun _int _pointer -&gt; _int))</span>
+(<span style="color:#66d9ef">define </span>tcgetattr (<span style="color:#a6e22e">foreign-procedure</span> <span style="color:#e6db74">&#34;tcgetattr&#34;</span> (<span style="color:#a6e22e">int</span> (* termios)) int))
+
+<span style="color:#75715e">;; int tcsetattr(inf fd, int optional_atcions,</span>
+<span style="color:#75715e">;;               const struct termios *termios_p);</span>
+<span style="color:#75715e">;; Copy the buffer (termios struct) pointed to into the terminal</span>
+<span style="color:#75715e">;; associated the the integer file descriptor. Returns 0 on success,</span>
+<span style="color:#75715e">;; -1 on failure code is copied into errno.</span>
+(<span style="color:#66d9ef">define </span>tcsetattr (<span style="color:#a6e22e">foreign-procedure</span> <span style="color:#e6db74">&#34;tcsetattr&#34;</span> (<span style="color:#a6e22e">int</span> int (* termios)) int))
+
+<span style="color:#75715e">;; void cfmakeraw(struct termios *termio_p);</span>
+(<span style="color:#66d9ef">define </span>cfmakeraw (<span style="color:#a6e22e">foreign-procedure</span> <span style="color:#e6db74">&#34;cfmakeraw&#34;</span> ((* termios)) void))
+
+<span style="color:#75715e">;; Don&#39;t actually use these anymore. Left them here as a reminder about</span>
+<span style="color:#75715e">;; using the &#34;(cs)&#34; calling scheme to reference functions in the</span>
+<span style="color:#75715e">;; Chez Scheme run time.</span>
+(<span style="color:#66d9ef">define </span>errno (<span style="color:#a6e22e">foreign-procedure</span> <span style="color:#e6db74">&#34;(cs)s_errno&#34;</span> () int))
+(<span style="color:#66d9ef">define </span>strerror (<span style="color:#a6e22e">foreign-procedure</span> <span style="color:#e6db74">&#34;(cs)s_strerror&#34;</span> (<span style="color:#a6e22e">int</span>) scheme-object))
+
+(<span style="color:#66d9ef">if </span>(= <span style="color:#ae81ff">1</span> (<span style="color:#a6e22e">isatty</span> <span style="color:#ae81ff">0</span>))
+    (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;We have a terminal.&#34;</span>)
+    (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;Output is not a terminal.&#34;</span>))
+
+<span style="color:#75715e">;; Allocate a buffer large enough to hold a termios struct</span>
+<span style="color:#75715e">;; and return a pointer to it. Don&#39;t forget to release it</span>
+<span style="color:#75715e">;; manually when finished with it.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">alloc-termios-buf</span>)
+  (<span style="color:#a6e22e">make-ftype-pointer</span> termios
+                      (<span style="color:#a6e22e">foreign-alloc</span> (<span style="color:#a6e22e">ftype-sizeof</span> termios))))
+
+<span style="color:#75715e">;;-----------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; Reading lines from a terminal.</span>
+
+<span style="color:#75715e">;; Read a line from the current input and return it. This procedure</span>
+<span style="color:#75715e">;; is not much different than the stanard get-line (R5RS) but reads</span>
+<span style="color:#75715e">;; examines individual characters for special actions that can be</span>
+<span style="color:#75715e">;; activated when in raw mode.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">inner-read-line</span>)
+  (<span style="color:#66d9ef">let </span>loop ((<span style="color:#a6e22e">running</span> <span style="color:#66d9ef">#t</span>)
+             (<span style="color:#a6e22e">acc</span> <span style="color:#e6db74">&#34;&#34;</span>)
+             (<span style="color:#a6e22e">c</span> (<span style="color:#a6e22e">read-char</span>)))
+    (<span style="color:#a6e22e">cond</span>
+     [(<span style="color:#66d9ef">or </span>(eof-object? c)
+          (char=? c <span style="color:#e6db74">#\q</span>)
+          (char=? c <span style="color:#e6db74">#\newline</span>)
+          (char=? c <span style="color:#e6db74">#\return</span>)) (<span style="color:#a6e22e">begin</span>
+                                 (<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;Finished  because c = &#34;</span>
+                                          (<span style="color:#a6e22e">char-&gt;readable</span> c))
+                                 (<span style="color:#66d9ef">set! </span>running <span style="color:#66d9ef">#f</span>))]
+     [<span style="color:#66d9ef">#t</span> (<span style="color:#a6e22e">begin</span>
+           (<span style="color:#66d9ef">set! </span>acc (string-append acc (string c))))])
+    (<span style="color:#66d9ef">if </span>(not running)
+        acc
+        (<span style="color:#a6e22e">loop</span> <span style="color:#66d9ef">#t</span> acc (<span style="color:#a6e22e">read-char</span>)))))
+
+<span style="color:#75715e">;; Return a pointer to a termios structure for the given</span>
+<span style="color:#75715e">;; file descriptor. Assumes the device is already set up</span>
+<span style="color:#75715e">;; in cooked mode.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">cooked-termios</span> fd)
+  (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">my-termios</span> (<span style="color:#a6e22e">alloc-termios-buf</span>)))
+    (<span style="color:#a6e22e">tcgetattr</span> fd my-termios)
+    my-termios))
+
+<span style="color:#75715e">;; Return a pointer to a termios structure for the given</span>
+<span style="color:#75715e">;; file descriptor. Assumes the device is already set up</span>
+<span style="color:#75715e">;; in cooked mode and creates a version of the termios</span>
+<span style="color:#75715e">;; structure initialized to set it up in raw mode.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">raw-termios</span> fd)
+  (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">my-termios</span> (<span style="color:#a6e22e">cooked-termios</span> fd)))
+    (<span style="color:#a6e22e">cfmakeraw</span> my-termios)
+    my-termios))
+
+<span style="color:#75715e">;; Define some file descriptors for stdin/out. Couldn&#39;t find this</span>
+<span style="color:#75715e">;; documented anywhere. These values are from Chez expediter.c.</span>
+(<span style="color:#66d9ef">define </span>STDIN_FD <span style="color:#ae81ff">0</span>)
+(<span style="color:#66d9ef">define </span>STDOUT_FD <span style="color:#ae81ff">1</span>)
+
+<span style="color:#75715e">;; Arguments passed to tcsetattr() describing how to switch to th</span>
+<span style="color:#75715e">;; new termios settings. From termios.h.</span>
+(<span style="color:#66d9ef">define </span>TCSA <span style="color:#ae81ff">0</span>)      <span style="color:#75715e">; Make change immediately.</span>
+(<span style="color:#66d9ef">define </span>TCSADRAIN <span style="color:#ae81ff">1</span>) <span style="color:#75715e">; Drain output, then change.</span>
+(<span style="color:#66d9ef">define </span>TCSAFLUSH <span style="color:#ae81ff">2</span>) <span style="color:#75715e">; Drain output, flush input.</span>
+
+<span style="color:#75715e">;; Read a line from the standard input in raw mode and return it. The</span>
+<span style="color:#75715e">;; existing terminal attributes are read and restored before exiting.</span>
+(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">read-raw-line</span>)
+  (<span style="color:#66d9ef">let* </span>((<span style="color:#a6e22e">cooked-attrs</span> (<span style="color:#a6e22e">cooked-termios</span> STDIN_FD))
+         (<span style="color:#a6e22e">raw-attrs</span> (<span style="color:#a6e22e">raw-termios</span> STDIN_FD)))
+    (<span style="color:#66d9ef">letrec </span>((<span style="color:#a6e22e">get-raw!</span> (<span style="color:#66d9ef">lambda </span>()
+                         (<span style="color:#a6e22e">tcsetattr</span> STDIN_FD TCSAFLUSH raw-attrs)))
+             (<span style="color:#a6e22e">get-cooked!</span> (<span style="color:#66d9ef">lambda </span>()
+                            (<span style="color:#a6e22e">tcsetattr</span> STDIN_FD TCSAFLUSH cooked-attrs)
+                            <span style="color:#75715e">;; Don&#39;t forget to handle foreign memory.</span>
+                            (<span style="color:#a6e22e">foreign-free</span> (<span style="color:#a6e22e">ftype-pointer-address</span> cooked-attrs))
+                            (<span style="color:#a6e22e">foreign-free</span> (<span style="color:#a6e22e">ftype-pointer-address</span> raw-attrs)))))
+      (<span style="color:#66d9ef">let </span>((<span style="color:#a6e22e">a-line</span> (<span style="color:#a6e22e">dynamic-wind</span>
+                      get-raw!
+                      inner-read-line
+                      get-cooked!)))
+        a-line))))
+
+(<span style="color:#a6e22e">println</span> <span style="color:#e6db74">&#34;Enter an invisible line of text:&#34;</span>)
+(<span style="color:#a6e22e">println-in-raw</span> <span style="color:#e6db74">&#34;\rResult of reading line in raw mode: &#34;</span>
+                (<span style="color:#a6e22e">string-&gt;readable</span> (<span style="color:#a6e22e">read-raw-line</span>)))
+</code></pre></div><p>If you have read the previous post, much of this should look familiar. The first group of procedures are for convenient display of results, used during the development of the solution.</p>
+<p>Next comes a section dealing with general FFI functions, loading the C run time library, assuring that expected functions are present, and accessing a couple of functions from the part of the Chez support library written in C.</p>
+<p>Following that is a long section of comments documenting the contents of the <code>termios</code> structure and declaring the structure for Chez. The fields are not used in this example but I kept the comments to remind me of how things are set up if I ever want to do some bit-fiddling with the flags.</p>
+<p>Local versions of some of the support library functions are declared next, ending with a check that the program is actually running in a terminal.</p>
+<p>Then we finally arrive at the code that will read the keyboard in &ldquo;raw&rdquo; mode. The big advantage of raw mode in a text editor is that the program can respond immediately to individual keystrokes. There is no buffering a line of input and returning it all after the return key is pressed.</p>
+<p>The <code>read-raw-line</code> procedure is responsible for putting the terminal in raw mode, collecting a line of text, and getting back to normal, sometimes called &ldquo;cooked&rdquo; mode. This is all accomplished through the use of the <code>dynamic-wind</code> procedure. The first of the three arguments to <code>dynamic-wind</code> puts the terminal in raw mode. The second collects the line of text in raw mode. The call to the third procedure assures that the terminal is placed back into &ldquo;cooked&rdquo; mode before the program exits.</p>
+<p>As mentioned, the actual character collection is done in the <code>inner-read-line</code> procedure. Because the terminal is in raw mode, the procedure can examine every character as it is typed and respond immediately. The <code>cond</code> can be expanded to perform multiple actions depending on the key pressed. Here, the only special thing it does is watch for the <code>q</code> character to terminate input. The keys are collected and clumsily built up into a line of text.</p>
+<p>The final few lines in the program will collect the characters for the keys pressed without showing them as they are typed (just for demonstration). When input is terminated, the collected text is displayed. You can also enter control characters that would normally terminate, or at least mess up, input. Control characters in the collected input will be displayed with a leading <code>^</code> character.</p>
+<p>The handling of getting into raw and cooked modes is not very bulletproof. Those states should probably be constructed explicitly in a real program. But this little demo does not include facilities to set flags within the <code>termios</code> structure. That is &ldquo;left as an exercise for the reader&rdquo; as they say.</p>
+<p>Enjoy!</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2020/12/21/getting-the-terminal-window-size-using-scheme/">Getting the Terminal Window Size using Scheme</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+<script src="https://yo-dave.com/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+
