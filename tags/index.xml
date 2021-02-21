@@ -7,22 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 23 Dec 2020 16:45:32 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 17:58:30 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>low-level</title>
-      <link>https://yo-dave.com/tags/low-level/</link>
-      <pubDate>Wed, 23 Dec 2020 16:45:32 -0500</pubDate>
+      <title>dictionary</title>
+      <link>https://yo-dave.com/tags/dictionary/</link>
+      <pubDate>Fri, 19 Feb 2021 17:58:30 -0500</pubDate>
       
-      <guid>https://yo-dave.com/tags/low-level/</guid>
+      <guid>https://yo-dave.com/tags/dictionary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>files</title>
+      <link>https://yo-dave.com/tags/files/</link>
+      <pubDate>Fri, 19 Feb 2021 17:58:30 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/files/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lisp</title>
+      <link>https://yo-dave.com/tags/lisp/</link>
+      <pubDate>Fri, 19 Feb 2021 17:58:30 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/lisp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scheme</title>
       <link>https://yo-dave.com/tags/scheme/</link>
-      <pubDate>Wed, 23 Dec 2020 16:45:32 -0500</pubDate>
+      <pubDate>Fri, 19 Feb 2021 17:58:30 -0500</pubDate>
       
       <guid>https://yo-dave.com/tags/scheme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>word list</title>
+      <link>https://yo-dave.com/tags/word-list/</link>
+      <pubDate>Fri, 19 Feb 2021 17:58:30 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/word-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>low-level</title>
+      <link>https://yo-dave.com/tags/low-level/</link>
+      <pubDate>Wed, 23 Dec 2020 16:45:32 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/tags/low-level/</guid>
       <description></description>
     </item>
     
@@ -1112,15 +1148,6 @@
       <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
       
       <guid>https://yo-dave.com/tags/speculation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lisp</title>
-      <link>https://yo-dave.com/tags/lisp/</link>
-      <pubDate>Thu, 01 Dec 2011 11:16:22 +0000</pubDate>
-      
-      <guid>https://yo-dave.com/tags/lisp/</guid>
       <description></description>
     </item>
     

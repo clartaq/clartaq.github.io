@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>word list on Yo-Dave</title>
+    <link>https://yo-dave.com/tags/word-list/</link>
+    <description>Recent content in word list on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 19 Feb 2021 17:58:30 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/word-list/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>File Operations in Scheme</title>
+      <link>https://yo-dave.com/2021/02/19/file-operations-in-scheme/</link>
+      <pubDate>Fri, 19 Feb 2021 17:58:30 -0500</pubDate>
+      
+      <guid>https://yo-dave.com/2021/02/19/file-operations-in-scheme/</guid>
+      <description>A little word game that I&amp;rsquo;ve been writing requires a list of acceptable words. For the game, acceptable words should be defined similarly to popular word games the player already knows like Scrabble® or Words with Friends. Luckily word lists for such games are readily available.
+For my little game, the list from Words with Friends seemed like the best choice. But it has about 175,000 English words. Way to many to use routinely in development.</description>
+    </item>
+    
+  </channel>
+</rss>

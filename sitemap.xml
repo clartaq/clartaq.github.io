@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yo-dave.com/tags/low-level/</loc>
-    <lastmod>2020-12-24T10:18:06-05:00</lastmod>
+    <loc>https://yo-dave.com/tags/dictionary/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/2021/02/19/file-operations-in-scheme/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/files/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/lisp/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/scheme/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/word-list/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yo-dave.com/tags/low-level/</loc>
     <lastmod>2020-12-24T10:18:06-05:00</lastmod>
   </url>
   
@@ -18,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://yo-dave.com/tags/scheme/</loc>
-    <lastmod>2020-12-24T10:18:06-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2020-12-24T10:18:06-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yo-dave.com/tags/terminal/</loc>
-    <lastmod>2020-12-24T10:18:06-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/</loc>
     <lastmod>2020-12-24T10:18:06-05:00</lastmod>
   </url>
   
@@ -1285,11 +1310,6 @@
   <url>
     <loc>https://yo-dave.com/2011/12/01/favorite-programming-books/</loc>
     <lastmod>2011-12-01T11:16:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yo-dave.com/tags/lisp/</loc>
-    <lastmod>2018-03-15T17:41:06-04:00</lastmod>
   </url>
   
   <url>
