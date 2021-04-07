@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 19 Feb 2021 17:58:30 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 12:55:22 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blogging</title>
+      <link>https://yo-dave.com/tags/blogging/</link>
+      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CWiki</title>
+      <link>https://yo-dave.com/tags/cwiki/</link>
+      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/cwiki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>friction</title>
+      <link>https://yo-dave.com/tags/friction/</link>
+      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/friction/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dictionary</title>
       <link>https://yo-dave.com/tags/dictionary/</link>
@@ -104,15 +131,6 @@
       <pubDate>Mon, 15 Jun 2020 15:50:09 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CWiki</title>
-      <link>https://yo-dave.com/tags/cwiki/</link>
-      <pubDate>Mon, 15 Jun 2020 15:50:09 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/cwiki/</guid>
       <description></description>
     </item>
     
@@ -608,15 +626,6 @@
       <pubDate>Wed, 28 Mar 2018 10:06:21 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/river5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blogging</title>
-      <link>https://yo-dave.com/tags/blogging/</link>
-      <pubDate>Mon, 26 Mar 2018 10:09:24 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/blogging/</guid>
       <description></description>
     </item>
     

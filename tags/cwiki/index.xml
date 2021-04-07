@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 15 Jun 2020 15:50:09 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/cwiki/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 12:55:22 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/cwiki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogging Friction</title>
+      <link>https://yo-dave.com/2021/04/07/blogging-friction/</link>
+      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2021/04/07/blogging-friction/</guid>
+      <description>Let&amp;rsquo;s face it. I&amp;rsquo;m an infrequent blogger. But I&amp;rsquo;m not an infrequent writer. So why does the (vast) majority of what I write never make it onto the blog?
+The answer is friction. And why is that? Here is my process.
+ Think of something that I want to write down so I remember it. Realize that what I&amp;rsquo;ve written might be useful to someone else too. (It could happen!) Look at what I have to do in order to get my thoughts from my editor to the blog.</description>
+    </item>
+    
     <item>
       <title>Counting Words in a Markdown File</title>
       <link>https://yo-dave.com/2020/06/15/counting-words-in-a-markdown-file/</link>
