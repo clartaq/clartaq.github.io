@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Yo-Dave</title>
+    <link>https://yo-dave.com/categories/</link>
+    <description>Recent content in Categories on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 28 Mar 2018 10:06:21 -0400</lastBuildDate><atom:link href="https://yo-dave.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming</title>
+      <link>https://yo-dave.com/categories/programming/</link>
+      <pubDate>Wed, 28 Mar 2018 10:06:21 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://yo-dave.com/categories/blogging/</link>
+      <pubDate>Mon, 26 Mar 2018 10:09:24 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pcs (and macs)</title>
+      <link>https://yo-dave.com/categories/pcs-and-macs/</link>
+      <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/categories/pcs-and-macs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>-- programming</title>
+      <link>https://yo-dave.com/categories/--programming/</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/categories/--programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rant</title>
+      <link>https://yo-dave.com/categories/rant/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/categories/rant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uncategorized</title>
+      <link>https://yo-dave.com/categories/uncategorized/</link>
+      <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/categories/uncategorized/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>photography</title>
+      <link>https://yo-dave.com/categories/photography/</link>
+      <pubDate>Sun, 03 Apr 2011 16:45:52 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/categories/photography/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

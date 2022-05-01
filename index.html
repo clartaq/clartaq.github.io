@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Yo-Dave</title>
 
@@ -233,6 +233,58 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2022/05/01/generating-pseudo-random-numbers-in-scheme/">Generating Pseudo-Random Numbers in Scheme</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>1 May 2022 10:31:17 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/random-numbers">Random Numbers</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/functional-programming">functional programming</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/scheme">Scheme</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/pseudo-random-numbers">pseudo-random numbers</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/prng">PRNG</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Recently, I needed to write a simple simulation in multiple programming languages. For the simulations to operate, they needed a source of random numbers from two statistical distributions: a uniform distribution and a standard distribution.
+The numbers from the distributions needed to be &ldquo;random&rdquo;, but not too random. I needed each generator in each language to produce the same sequence of &ldquo;pseudo-random&rdquo; numbers. And I needed the same sequence every time the simulators were run.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2022/05/01/generating-pseudo-random-numbers-in-scheme/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
   
     <article>
   <header>
@@ -477,7 +529,7 @@ Working through those tutorials, one of the first things that smacks you in the 
 
   <p>
   As part of repository maintenance, I often use a script to delete a group of directories, even if those directories are not empty. It looks something like this:
-(require &#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f] &#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&#34; (when (.isDirectory f) (doseq [f2 (.listFiles f)] (delete-children-recursively! f2))) (when (.exists f) (io/delete-file f))) (defn delete-clean-targets!
+(require &#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f]  &#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&#34;  (when (.isDirectory f)  (doseq [f2 (.listFiles f)]  (delete-children-recursively!
   </p>
 
   
@@ -652,7 +704,7 @@ The approach is to create a stack that holds every change to the state of the at
   
     <article>
   <header>
-    <h2><a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a></h2>
+    <h2><a href="https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a></h2>
 
     <div class="post-meta">
 
@@ -696,57 +748,7 @@ I&rsquo;ve been researching and using different approaches for decades. Over all
 
   
   <footer>
-    <a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/">Setting Up Remote Repositories for Mercurial</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Aug 2019 12:10:31 PM</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/hg">hg</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/mercurial">Mercurial</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/remote">remote</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/repositories">repositories</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  With the recent announcement that Bitbucket is &ldquo;sunsetting&rdquo; Mercurial support, I&rsquo;ve been looking at ways of hosting remote copies of my repositories on my own.
-In the short term, I have just cloned my repositories from Bitbucket onto a Raspberry Pi 4 sitting behind my home desktop. I use Pi to run a River of News aggregator for my family. It has plenty of capacity for a task like this.
-  </p>
-
-  
-  <footer>
-    <a href="https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+    <a href="https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Wiki Layout for Reading &middot; Yo-Dave</title>
 
@@ -262,7 +262,7 @@
 <p>One of the things I have been trying to get absolutely right (for me at least) is the layout. There are really only two layouts; one is for the &ldquo;reading&rdquo; view, the other for the &ldquo;editing&rdquo; view.</p>
 <p>But getting the &ldquo;reading&rdquo; and &ldquo;editing&rdquo; views just right has been a challenge. After CWiki became usable, I found a number of friction points that I wanted to correct. Many of the problematic areas were related to which parts of the view are stationary and which can scroll. There were also problems with getting identical behavior with different browsers.</p>
 <p>Since the CSS for CWiki is large and ugly (in my opinion), I decided to create a <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/clajistan/tree/default">very simple project</a> that just contains the layout. This project is an example of using a <a href="https://en.wikipedia.org/wiki/CSS_flex-box_layout">CSS flexible box</a> or &ldquo;flexbox&rdquo; layout for a straightforward web page. The main sections are a page header, an aside, and an article display area arranged like so:</p>
-<pre><code>+----------------------------------------------+
+<pre tabindex="0"><code>+----------------------------------------------+
 | Window Header                            Nav |
 +-------+-----------------+--------------------+
 | Aside | Article Header  |                    |

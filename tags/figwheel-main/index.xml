@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 05 Jan 2020 09:39:38 -0500</lastBuildDate><atom:link href="https://yo-dave.com/tags/figwheel-main/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>clown -- A Clojure/Script Outliner with Notes</title>
-      <link>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</link>
+      <link>https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/</link>
       <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
       
-      <guid>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</guid>
+      <guid>https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/</guid>
       <description>Questions about note-taking are very popular on Hacker News. I am always interested in the responses. It seems like developers are always interested in the best tools and methodologies. Me too.
 I&amp;rsquo;ve been researching and using different approaches for decades. Over all that time, I&amp;rsquo;ve written thousands of notes, both short and long. Most notes become uninteresting after awhile and are just erased. But thousands have persisted for many years because I still refer to them.</description>
     </item>

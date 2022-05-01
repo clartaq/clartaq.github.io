@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>A Timestamp Plugin for Sublime Text 3 &middot; Yo-Dave</title>
 
@@ -259,36 +259,36 @@
 <p>I found this <a href="https://stackoverflow.com/questions/11879481/can-i-add-date-time-for-sublime-snippet#13882791">answer</a> to a similar question on StackOverflow.</p>
 <p>Getting a timestamp worked, but it was in the wrong format. (Not really wrong, just an old version that I used based on the MarkdownPad editor.) I wanted to make the the output of the <code>Export</code> function of CWiki as compatible as possible with the input expected by the <a href="https://gohugo.io">Hugo</a> static blog generator. That required a different format. For example, as I write this, the ISO 8601 version of the current instant is <code>2018-03-09T10:26:35.249840-05:00</code>.</p>
 <p>Based on that, I added the following little snippet as a plugin for Sublime Text (Tools/Developer/New Plugin&hellip;).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> datetime<span style="color:#f92672">,</span> time<span style="color:#f92672">,</span> getpass
-<span style="color:#f92672">import</span> sublime<span style="color:#f92672">,</span> sublime_plugin
-
-<span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> gmtime, strftime
-<span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timezone
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddDateCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
-   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
-       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %B %Y (%A)&#34;</span>) } )
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTimeCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
-   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
-       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%H:%M&#34;</span>) } )
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddOldTimestampCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
-   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
-       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%Y %I:%M:%S %p&#34;</span>) } )
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTimestampCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
-   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
-       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  (datetime<span style="color:#f92672">.</span>now(timezone<span style="color:#f92672">.</span>utc)<span style="color:#f92672">.</span>astimezone()<span style="color:#f92672">.</span>isoformat() )} )
-</code></pre></div><p>The <code>AddOldTimestampCommand</code> produces timestamp formatting that is almost exactly the same as that used by MarkdownPad.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime<span style="color:#f92672">,</span> time<span style="color:#f92672">,</span> getpass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sublime<span style="color:#f92672">,</span> sublime_plugin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> gmtime, strftime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timezone
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddDateCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+</span></span><span style="display:flex;"><span>       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %B %Y (%A)&#34;</span>) } )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTimeCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+</span></span><span style="display:flex;"><span>       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%H:%M&#34;</span>) } )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddOldTimestampCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+</span></span><span style="display:flex;"><span>       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%Y %I:%M:%S %p&#34;</span>) } )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTimestampCommand</span>(sublime_plugin<span style="color:#f92672">.</span>TextCommand):
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, edit):
+</span></span><span style="display:flex;"><span>       self<span style="color:#f92672">.</span>view<span style="color:#f92672">.</span>run_command(<span style="color:#e6db74">&#34;insert_snippet&#34;</span>, { <span style="color:#e6db74">&#34;contents&#34;</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>  (datetime<span style="color:#f92672">.</span>now(timezone<span style="color:#f92672">.</span>utc)<span style="color:#f92672">.</span>astimezone()<span style="color:#f92672">.</span>isoformat() )} )
+</span></span></code></pre></div><p>The <code>AddOldTimestampCommand</code> produces timestamp formatting that is almost exactly the same as that used by MarkdownPad.</p>
 <p>The <code>AddTimestampCommand</code> produces the ISO format used by the export function and Hugo.</p>
 <p>Then I added the following code to my key preferences (Sublime Text/Preferences/Key Bindings)</p>
-<pre><code>[
-  { &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: {&quot;target&quot;: &quot;browser&quot;, &quot;parser&quot;:&quot;markdown&quot;} },
-  { &quot;keys&quot;: [&quot;ctrl+shift+,&quot;], &quot;command&quot;: &quot;add_date&quot; },
-  { &quot;keys&quot;: [&quot;ctrl+shift+.&quot;], &quot;command&quot;: &quot;add_time&quot; },
-  { &quot;keys&quot;: [&quot;alt+shift+t&quot;], &quot;command&quot;: &quot;add_old_timestamp&quot; },
-  { &quot;keys&quot;: [&quot;alt+t&quot;], &quot;command&quot;: &quot;add_timestamp&quot; }
+<pre tabindex="0"><code>[
+  { &#34;keys&#34;: [&#34;alt+m&#34;], &#34;command&#34;: &#34;markdown_preview&#34;, &#34;args&#34;: {&#34;target&#34;: &#34;browser&#34;, &#34;parser&#34;:&#34;markdown&#34;} },
+  { &#34;keys&#34;: [&#34;ctrl+shift+,&#34;], &#34;command&#34;: &#34;add_date&#34; },
+  { &#34;keys&#34;: [&#34;ctrl+shift+.&#34;], &#34;command&#34;: &#34;add_time&#34; },
+  { &#34;keys&#34;: [&#34;alt+shift+t&#34;], &#34;command&#34;: &#34;add_old_timestamp&#34; },
+  { &#34;keys&#34;: [&#34;alt+t&#34;], &#34;command&#34;: &#34;add_timestamp&#34; }
 ]
 </code></pre><p><em>Viola!</em> Now I can insert timestamps into my front matter to my heart&rsquo;s content.</p>
 
@@ -299,13 +299,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/">Another Useful Function -- convert-seq-to-comma-separated-string</a>
+      <a href="https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/">Another Useful Function -- convert-seq-to-comma-separated-string</a>
     </nav>
     
   </div>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  <title>Binomial Confidence Intervals -- BinomConf &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Binomial Confidence Intervals -- BinomConf</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jun 2011 4:57:28 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/statistics">statistics</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/utility">utility</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&rsquo;t seem to handle such large numbers of trials.</p>
+<p>For example, how often did a particular chemical reaction produce a positive result even when the conditions to produce a positive were not present (a &ldquo;false positive&rdquo;). If we ran thousands of these simple reactions, we could get an estimate of how frequently it produced a false positive. But that was just a point estimate. Conversations with managers on the program would go something like:</p>
+<p>Mgr: &ldquo;How confident are you that the false positive rate is 0.27%?&rdquo;</p>
+<p>Me: &ldquo;Not at all.&rdquo;</p>
+<p>Mgr: &ldquo;What!? What did you just spend all that time and money doing?&hellip;&rdquo;</p>
+<p>Me: &ldquo;All of these measurements are just estimates. What if I told you that I&rsquo;m 95% sure that the false positive rate is somewhere between 0.25% and 0.29%?&rdquo;</p>
+<p>Mgr: &ldquo;Oh. Well, that&rsquo;s OK then.&rdquo;</p>
+<p>Since the programs available to me at the time could not handle the level of replication we were using, I wrote my own. As I recall, the first version of the program was written in C and ran at the command line. Later versions were written in Delphi and gained a GUI. The current version is in Java. It looks like this.</p>
+<p><a href="https://yo-dave.com/static/img/2011-06-14-BinomConf.png"><img src="https://yo-dave.com/static/img/2011-06-14-BinomConf.png" alt="Image of binomial confidence interval calculator" title="BinomConf"><!-- raw HTML omitted --><!-- raw HTML omitted -->Screenshot of the Binomial Confidence Calculator<!-- raw HTML omitted --></a></p>
+<p>Although I still use the program for its original purpose, I also use it as a quick reminder of how to do certain things I do over and over. (I have no memory for small configuration details.) Some of these things include validation of user input, unit testing at the GUI level, saving user preference data, writing help, and so on.</p>
+<p>The Java version of the program was written back before IDEs were very good just using a text editor and Ant for the build instructions. It&rsquo;s been updated to a NetBeans project, but the conversion is incomplete. You can build and run the program in NetBeans, but to do unit testing, you have to use the command line and Ant:</p>
+<p><code>c:\ant test</code></p>
+<p>Still, it&rsquo;s a handy little utility and I&rsquo;ve made it available on HelixTeamHub at</p>
+<p><a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/binomconf/tree/default" title="Link to BinomConf repository on HelixTeamHub.">https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/binomconf/tree/default</a></p>
+<p>Enjoy!</p>
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/">Friendly Incompetence or Evil Conspiracy</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2011/06/17/things-to-remember-when-updating-java-version/">Things to Remember when Updating Java Version</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2011/06/17/things-to-remember-when-updating-java-version/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+<script src="https://yo-dave.com/js/math-code.js"></script>
+  <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

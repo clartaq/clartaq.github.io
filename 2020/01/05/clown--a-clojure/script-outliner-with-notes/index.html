@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  <title>clown -- A Clojure/Script Outliner with Notes &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>clown -- A Clojure/Script Outliner with Notes</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>5 Jan 2020 9:39:38 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">Clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojurescript">ClojureScript</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/figwheel-main">figwheel-main</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/note-taking">Note-Taking</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/outliner">Outliner</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Questions about note-taking are very popular on <a href="https://news.ycombinator.com">Hacker News</a>. I am always interested in the responses. It seems like developers are always interested in the best tools and methodologies. Me too.</p>
+<p>I&rsquo;ve been researching and using different approaches for decades. Over all that time, I&rsquo;ve written thousands of notes, both short and long. Most notes become uninteresting after awhile and are just erased. But thousands have persisted for many years because I still refer to them.</p>
+<p>Outliners are a natural way to organize a body of knowledge. They have been part of my workflow for many years from applying special formatting to Microsoft Word decades ago to OmniOutliner when I started working on a Mac a few years ago.</p>
+<p>Despite their strength at thought organization, outliners have one big weakness for me &ndash; visibility. The headlines can get quite long when you need to record lots of information in them. Not everything can be subdivided into subheadings. Sometimes you need to write long-form text. When you do that in an outline, you can lose sight of the overall organization of the document.</p>
+<p>So, after that long ramble, what to do? I&rsquo;ve started playing with a program I&rsquo;m calling <code>clown</code> (<strong>cl</strong>ojure <strong>o</strong>utliner <strong>w</strong>ith <strong>n</strong>otes). It works like a traditional outliner but with a second pane that can display any notes attached to a particular headline. This lets me retain visibility of the bigger picture, the outliner, while still being able to drill down into very detailed information in the notes.</p>
+<p>Here&rsquo;s a snippet of what it looks like.</p>
+<p><a href="https://yo-dave.com/static/img/2020-01-05-Clown-Screenshot.jpg"><img src="https://yo-dave.com/static/img/2020-01-05-Clown-Screenshot.jpg" alt="clown" title="A Screen Clip of the clown program"><!-- raw HTML omitted --><!-- raw HTML omitted -->clown<!-- raw HTML omitted --></a></p>
+<p>You can&rsquo;t see the buttons at the bottom, but they may disappear anyway.</p>
+<p>The app supports an outline with any number of headlines and sub headlines nested to any depth. Each headline may have an arbitrary number of notes associated with it. It&rsquo;s very early days, but there is a <a href="https://github.com/clartaq/clown">depository on GitHub</a> for anyone who wants to take a look at what I&rsquo;m talking about.</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2019/08/25/setting-up-remote-repositories-for-mercurial/">Setting Up Remote Repositories for Mercurial</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/">Undo/Redo with Clojure using the Memento Pattern</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2020/01/05/undo/redo-with-clojure-using-the-memento-pattern/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

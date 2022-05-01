@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Restart River5 after Reboot with PM2 &middot; Yo-Dave</title>
 
@@ -260,31 +260,31 @@ River5 is written for Node.</p>
 <h2 id="install-pm2">Install PM2</h2>
 <p>I assume you already have <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://www.npmjs.com">npm</a> installed. If not, get them now.</p>
 <p>Once you have <code>npm</code>, you can install <code>PM2</code> with the following command line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install pm2 -g
-</code></pre></div><h2 id="experiment-with-running-river5">Experiment with Running River5</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install pm2 -g
+</span></span></code></pre></div><h2 id="experiment-with-running-river5">Experiment with Running River5</h2>
 <p>Depending on how you installed River5, you may need to do some fiddling to get it running in PM2.</p>
 <p>In the simplest case, you could just run it from your home directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node river5.js
-</code></pre></div><p>If you installed it somewhere else, you must change your active directory to the same location where the <code>river5.js</code> script is stored. In my case, that means I run the following command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd river5
-</code></pre></div><p>Then I can start the river flowing by:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node river5.js
-</code></pre></div><p>Once you get it working, shut it down (Ctrl-C) and change back to your home directory. Then, use a command like the following to start the River5 server from your home directory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pm2 start /home/david/river5/river5.js --cwd /home/david/river5
-</code></pre></div><p>In this case, my username is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don&rsquo;t</em></strong> use relative paths for this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>node river5.js
+</span></span></code></pre></div><p>If you installed it somewhere else, you must change your active directory to the same location where the <code>river5.js</code> script is stored. In my case, that means I run the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd river5
+</span></span></code></pre></div><p>Then I can start the river flowing by:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>node river5.js
+</span></span></code></pre></div><p>Once you get it working, shut it down (Ctrl-C) and change back to your home directory. Then, use a command like the following to start the River5 server from your home directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 start /home/david/river5/river5.js --cwd /home/david/river5
+</span></span></code></pre></div><p>In this case, my username is <code>david</code> and I have River5 installed in the <code>river5</code> directory. <strong><em>Don&rsquo;t</em></strong> use relative paths for this.</p>
 <p>Assure that you can repeatedly start the River5 server using your command line. Once you are confident that you command line works, from your home directory, run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pm2 save
-</code></pre></div><p>The command above will save a set of information related to how PM2 is running your application. The file is in <code>~/.pm2/dump.pm2</code>. Have a look at it if you like.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 save
+</span></span></code></pre></div><p>The command above will save a set of information related to how PM2 is running your application. The file is in <code>~/.pm2/dump.pm2</code>. Have a look at it if you like.</p>
 <p>Now we can finally set up the system to restart River5 whenever the system reboots. From your home directory, execute the following command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pm2 startup
-</code></pre></div><p>This command will examine your system and figure out what information it needs to restart your app. Once executed you should see something like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>PM2<span style="color:#f92672">]</span> Init System found: systemd
-<span style="color:#f92672">[</span>PM2<span style="color:#f92672">]</span> You have to run this command as root. Execute the following command:
-sudo env PATH<span style="color:#f92672">=</span>$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u david --hp /home/david
-</code></pre></div><p>The important thing is that last line. You should run it exactly as written. You may have to supply your password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pm2 startup
+</span></span></code></pre></div><p>This command will examine your system and figure out what information it needs to restart your app. Once executed you should see something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>PM2<span style="color:#f92672">]</span> Init System found: systemd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>PM2<span style="color:#f92672">]</span> You have to run this command as root. Execute the following command:
+</span></span><span style="display:flex;"><span>sudo env PATH<span style="color:#f92672">=</span>$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u david --hp /home/david
+</span></span></code></pre></div><p>The important thing is that last line. You should run it exactly as written. You may have to supply your password.</p>
 <p>Once the command completes, your system should be set up to restart River5 whenever it reboots. You can test it by entering the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo reboot now
-</code></pre></div><p>Then wait a few minutes and see if you can connect to your River5 server in a browser. It should render and be serving new stories for you.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo reboot now
+</span></span></code></pre></div><p>Then wait a few minutes and see if you can connect to your River5 server in a browser. It should render and be serving new stories for you.</p>
 
   
   

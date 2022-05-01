@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategorized on Yo-Dave</title>
+    <link>https://yo-dave.com/categories/uncategorized/</link>
+    <description>Recent content in Uncategorized on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 04 Jan 2012 18:02:27 +0000</lastBuildDate><atom:link href="https://yo-dave.com/categories/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2012 - The Year We All Unplug?</title>
+      <link>https://yo-dave.com/2012/01/04/2012-the-year-we-all-unplug/</link>
+      <pubDate>Wed, 04 Jan 2012 18:02:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2012/01/04/2012-the-year-we-all-unplug/</guid>
+      <description>Well, Happy New Year everyone.
+It seems like I&amp;rsquo;ve been hearing a lot of buzz about getting unconnected. Everything from hotels offering special deals on stays where you are forced to turn off (or turn in) all your gizmos, to advice to disconnect to improve your productivity. Could it be that the pendulum has started to swing in the other direction?
+Sit back and enjoy the quiet.</description>
+    </item>
+    
+    <item>
+      <title>Unconnected</title>
+      <link>https://yo-dave.com/2011/10/27/unconnected/</link>
+      <pubDate>Thu, 27 Oct 2011 21:48:46 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/10/27/unconnected/</guid>
+      <description>My wife and I just returned from a long cruise to Hawaii and back. During that time, we were just about completely disconnected from the mobile world &amp;ndash; no access to email, cell phone, fax. There was sporadic television available.
+On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems in my head, looking forward to the chance to get back to work on them when we returned.</description>
+    </item>
+    
+    <item>
+      <title>Process versus Experience</title>
+      <link>https://yo-dave.com/2011/07/15/process-versus-experience/</link>
+      <pubDate>Fri, 15 Jul 2011 23:27:21 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/07/15/process-versus-experience/</guid>
+      <description>Today I came across a blog that describes a sentiment that comes up periodically. It describes a development group that does not believe it needs to follow the agile development process. The team is composed of experienced developers with a track record of delivering the goods.
+I&amp;rsquo;m not much of a fan of agile myself, but I believe in process as part of software development. I think the real sentiment being expressed is that experience trumps process.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Displaying Video from a Webcam using Clojurescript and Reagent &middot; Yo-Dave</title>
 
@@ -260,57 +260,57 @@
 <p>But before you can scan barcodes, you need to be able to get video from the webcam in the first place. And because of my fondness for all things Clojure, I want to do this with Clojurescript and <a href="https://reagent-project.github.io">Reagent</a>.</p>
 <p>It turns out that it isn&rsquo;t hard at all. But the relevant APIs for using the camera keep changing every few years. The most difficult part was filtering through all of the out-of-date information to come up with a working demonstration. There is a very nice article explaining how to make it work <a href="https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm">here</a>, but it is in JavaScript and doesn&rsquo;t use React.</p>
 <p>Here is what I came up with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>cljs-webcam-demo.core
-  (<span style="color:#e6db74">:require</span> [reagent.core <span style="color:#e6db74">:as</span> r <span style="color:#e6db74">:refer</span> [atom]]))
-
-(<span style="color:#a6e22e">enable-console-print!</span>)
-
-(<span style="color:#66d9ef">def </span>app-state (<span style="color:#a6e22e">r/atom</span> {<span style="color:#e6db74">:video-element-id</span>    <span style="color:#e6db74">&#34;live-video&#34;</span>
-                        <span style="color:#e6db74">:video-stream-object</span> nil}))
-
-(<span style="color:#66d9ef">defn </span>handle-video-success
-  [stream]
-  (<span style="color:#66d9ef">let </span>[video-element (<span style="color:#a6e22e">.getElementById</span> js/document
-                                       (<span style="color:#e6db74">:video-element-id</span> <span style="color:#f92672">@</span>app-state))]
-    (<span style="color:#a6e22e">swap!</span> app-state assoc <span style="color:#e6db74">:video-stream-object</span> stream)
-    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-srcObject</span> video-element) stream)))
-
-(<span style="color:#66d9ef">defn </span>handle-video-error
-  [error]
-  (println <span style="color:#e6db74">&#34;Error getting video: &#34;</span> (<span style="color:#a6e22e">.-message</span> error)))
-
-(<span style="color:#66d9ef">defn </span>start-streaming
-  [_]
-  (-&gt; js/navigator
-      .-mediaDevices
-      (<span style="color:#a6e22e">.getUserMedia</span> <span style="color:#f92672">#</span>js {<span style="color:#e6db74">:video</span> true <span style="color:#e6db74">:audio</span> false})
-      (<span style="color:#a6e22e">.then</span> handle-video-success)
-      (<span style="color:#a6e22e">.catch</span> handle-video-error)))
-
-(<span style="color:#66d9ef">defn </span>stop-streaming
-  [_]
-  (when-let [v-stream (<span style="color:#e6db74">:video-stream-object</span> <span style="color:#f92672">@</span>app-state)]
-    (doseq [t (<span style="color:#a6e22e">.getTracks</span> v-stream)]
-      (<span style="color:#a6e22e">.stop</span> t))
-    (<span style="color:#a6e22e">swap!</span> app-state assoc <span style="color:#e6db74">:video-stream-object</span> nil)))
-
-(<span style="color:#66d9ef">defn </span>video-component
-  [app-state-ratom]
-  (<span style="color:#66d9ef">fn </span>[app-state-ratom]
-    [<span style="color:#e6db74">:div.video-input</span> {<span style="color:#e6db74">:style</span> {<span style="color:#e6db74">:border</span> <span style="color:#e6db74">&#34;1px solid blue&#34;</span>}}
-     [<span style="color:#e6db74">:video</span> {<span style="color:#e6db74">:id</span>       (<span style="color:#e6db74">:video-element-id</span> <span style="color:#f92672">@</span>app-state-ratom)
-              <span style="color:#e6db74">:autoPlay</span> <span style="color:#e6db74">&#34;true&#34;</span>}]]))
-
-(<span style="color:#66d9ef">defn </span>home-page [app-state-ratom]
-  [<span style="color:#e6db74">:div</span>
-   [video-component app-state-ratom]
-   [<span style="color:#e6db74">:div</span>
-    [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:onClick</span> start-streaming} <span style="color:#e6db74">&#34;Start&#34;</span>]
-    [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:onClick</span> stop-streaming} <span style="color:#e6db74">&#34;Stop&#34;</span>]]])
-
-(<span style="color:#a6e22e">r/render-component</span> [home-page app-state]
-                    (<span style="color:#66d9ef">. </span>js/document (<span style="color:#a6e22e">getElementById</span> <span style="color:#e6db74">&#34;app&#34;</span>)))
-</code></pre></div><p>This is so simple that I haven&rsquo;t even created a repository for it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>cljs-webcam-demo.core
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:require</span> [reagent.core <span style="color:#e6db74">:as</span> r <span style="color:#e6db74">:refer</span> [atom]]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">enable-console-print!</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>app-state (<span style="color:#a6e22e">r/atom</span> {<span style="color:#e6db74">:video-element-id</span>    <span style="color:#e6db74">&#34;live-video&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">:video-stream-object</span> nil}))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>handle-video-success
+</span></span><span style="display:flex;"><span>  [stream]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[video-element (<span style="color:#a6e22e">.getElementById</span> js/document
+</span></span><span style="display:flex;"><span>                                       (<span style="color:#e6db74">:video-element-id</span> <span style="color:#f92672">@</span>app-state))]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">swap!</span> app-state assoc <span style="color:#e6db74">:video-stream-object</span> stream)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-srcObject</span> video-element) stream)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>handle-video-error
+</span></span><span style="display:flex;"><span>  [error]
+</span></span><span style="display:flex;"><span>  (println <span style="color:#e6db74">&#34;Error getting video: &#34;</span> (<span style="color:#a6e22e">.-message</span> error)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>start-streaming
+</span></span><span style="display:flex;"><span>  [_]
+</span></span><span style="display:flex;"><span>  (-&gt; js/navigator
+</span></span><span style="display:flex;"><span>      .-mediaDevices
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.getUserMedia</span> <span style="color:#f92672">#</span>js {<span style="color:#e6db74">:video</span> true <span style="color:#e6db74">:audio</span> false})
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.then</span> handle-video-success)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.catch</span> handle-video-error)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>stop-streaming
+</span></span><span style="display:flex;"><span>  [_]
+</span></span><span style="display:flex;"><span>  (when-let [v-stream (<span style="color:#e6db74">:video-stream-object</span> <span style="color:#f92672">@</span>app-state)]
+</span></span><span style="display:flex;"><span>    (doseq [t (<span style="color:#a6e22e">.getTracks</span> v-stream)]
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.stop</span> t))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">swap!</span> app-state assoc <span style="color:#e6db74">:video-stream-object</span> nil)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>video-component
+</span></span><span style="display:flex;"><span>  [app-state-ratom]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">fn </span>[app-state-ratom]
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">:div.video-input</span> {<span style="color:#e6db74">:style</span> {<span style="color:#e6db74">:border</span> <span style="color:#e6db74">&#34;1px solid blue&#34;</span>}}
+</span></span><span style="display:flex;"><span>     [<span style="color:#e6db74">:video</span> {<span style="color:#e6db74">:id</span>       (<span style="color:#e6db74">:video-element-id</span> <span style="color:#f92672">@</span>app-state-ratom)
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">:autoPlay</span> <span style="color:#e6db74">&#34;true&#34;</span>}]]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>home-page [app-state-ratom]
+</span></span><span style="display:flex;"><span>  [<span style="color:#e6db74">:div</span>
+</span></span><span style="display:flex;"><span>   [video-component app-state-ratom]
+</span></span><span style="display:flex;"><span>   [<span style="color:#e6db74">:div</span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:onClick</span> start-streaming} <span style="color:#e6db74">&#34;Start&#34;</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:onClick</span> stop-streaming} <span style="color:#e6db74">&#34;Stop&#34;</span>]]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">r/render-component</span> [home-page app-state]
+</span></span><span style="display:flex;"><span>                    (<span style="color:#66d9ef">. </span>js/document (<span style="color:#a6e22e">getElementById</span> <span style="color:#e6db74">&#34;app&#34;</span>)))
+</span></span></code></pre></div><p>This is so simple that I haven&rsquo;t even created a repository for it.</p>
 <p>I created the project using the <a href="https://github.com/bhauman/figwheel-template"><code>figwheel</code> project template</a> for <a href="https://github.com/technomancy/leiningen">leiningen</a>.</p>
 <p>After putting the text above into the <code>cljs-webcam-demo.core.cljs</code> file, you can run it by starting a leiningen REPL (<code>lein repl</code>) and executing the function <code>(fig-start)</code>.</p>
 <p>The project should compile, and your default web browser should open to the page created by the program.</p>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pcs (and macs) on Yo-Dave</title>
+    <link>https://yo-dave.com/categories/pcs-and-macs/</link>
+    <description>Recent content in pcs (and macs) on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 22 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://yo-dave.com/categories/pcs-and-macs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>River5 on Windows</title>
+      <link>https://yo-dave.com/2016/02/22/river5-on-windows/</link>
+      <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/02/22/river5-on-windows/</guid>
+      <description>&lt;p&gt;As you know, I&amp;rsquo;m a big fan of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dave_Winer&#34;&gt;Dave Winer&lt;/a&gt; and his &lt;a href=&#34;http://scripting.com/2014/06/02/whatIsARiverOfNewsAggregator.html&#34;&gt;River of News&lt;/a&gt; aggregators. His recent &lt;a href=&#34;https://github.com/scripting/river5&#34;&gt;River5&lt;/a&gt; is particularly nice.&lt;/p&gt;
+&lt;p&gt;(&lt;strong&gt;Update&lt;/strong&gt;: 17 Mar 2018. Although these notes discuss setting up River5 on a virtual server, I have used these instructions to set it up on a &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&#34;&gt;Raspberry Pi 3 Model B&lt;/a&gt; sitting on my desk. It has been running for months without issue. In fact, it&amp;rsquo;s more reliable than my CloudAtCost rented server ever was.)&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve already &lt;a href=&#34;https://clartaq.github.io/yo-dave/2016/02/12/2016-02-12-cloudatcost-setup-notes/&#34;&gt;posted&lt;/a&gt; about installing on a &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt; server running &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;. But it seems some folks are running into difficulty installing on Windows. It&amp;rsquo;s easy and works like a dream. Here&amp;rsquo;s how.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>My Windows 10 Update Experience</title>
+      <link>https://yo-dave.com/2015/08/29/my-windows-10-update-experience/</link>
+      <pubDate>Sat, 29 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/08/29/my-windows-10-update-experience/</guid>
+      <description>&lt;p&gt;Just like millions of others, I tried the free upgrade to Windows 10. I waited a few weeks after it was available before trying it, just to see what the early fallout was before committing myself. It was pretty much a disaster.&lt;/p&gt;
+&lt;p&gt;On my system it was&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Too buggy&lt;/li&gt;
+&lt;li&gt;Too slow&lt;/li&gt;
+&lt;li&gt;Too nosy&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>ssh Cleverness</title>
+      <link>https://yo-dave.com/2015/05/12/ssh-cleverness/</link>
+      <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/05/12/ssh-cleverness/</guid>
+      <description>Just a quick note about using SSH. Recently I had to wipe and re-install Ubuntu. (More on that later.) That meant my ssh private key was wiped as well. In order to replace it, I copied the file from a Windows machine onto my newly installed Linux partition.
+When I tried to log into some of my other servers, ssh gave me a warning about lax permissions and refused to log in without my password.</description>
+    </item>
+    
+    <item>
+      <title>Cloud Storage at Copy</title>
+      <link>https://yo-dave.com/2013/08/03/cloud-storage-at-copy/</link>
+      <pubDate>Sat, 03 Aug 2013 17:20:37 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/08/03/cloud-storage-at-copy/</guid>
+      <description>Update Copy was discontinued on 1 May 2016.
+I use the Cloud very simply, nothing elaborate. I use BitBucket(Now I use HelixTeamHub cloud.) to keep track of my repositories. I use DropBox to store copies of scientific publications and Fargo outlines. For important stuff, I use SpiderOak because of its great security model. I think I have an iCloud account somewhere. That&amp;rsquo;s it.
+This morning, I&amp;rsquo;ve been playing with a new service called Copy.</description>
+    </item>
+    
+    <item>
+      <title>Spare Time Projects</title>
+      <link>https://yo-dave.com/2011/06/27/spare-time-projects/</link>
+      <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Friendly Incompetence or Evil Conspiracy</title>
+      <link>https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/</link>
+      <pubDate>Sun, 12 Jun 2011 01:50:44 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/</guid>
+      <description>As regular readers know, there have been &amp;ldquo;issues&amp;rdquo; with my computer, a relatively new Falcon Northwest Talon. Their service representatives were never able to solve a relatively simple problem. Were they actually unable to do so or did they choose not to?
+This computer has generally been excellent. But there have been issues with it regularly. I believe the first was precipitated by Microsoft Update and was not at all the fault of the computer.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.04 Upgrade: Not So Excellent</title>
+      <link>https://yo-dave.com/2011/05/15/ubuntu-11.04-upgrade-not-so-excellent/</link>
+      <pubDate>Sun, 15 May 2011 17:03:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/05/15/ubuntu-11.04-upgrade-not-so-excellent/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://www.ubuntu.com&#34; title=&#34;Link to Ubuntu Linux home page&#34;&gt;Ubuntu&lt;/a&gt; &lt;a href=&#34;http://www.linux.com&#34; title=&#34;Link to Linux home page&#34;&gt;Linux&lt;/a&gt; distribution came out with version 11.04 a few days ago. These upgrades very seldom go smoothly on my systems. This was not an exception.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elise&#39;s Rule</title>
+      <link>https://yo-dave.com/2011/04/17/elises-rule/</link>
+      <pubDate>Sun, 17 Apr 2011 01:09:53 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/04/17/elises-rule/</guid>
+      <description>&lt;p&gt;Based on repeated observations, my wife, Elise, has formed a simple rule:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When Dave has any extra time off, the computer will be broken &amp;ndash; big time.
+It&amp;rsquo;s &lt;em&gt;freaking uncanny&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Me2 iPad2</title>
+      <link>https://yo-dave.com/2011/04/09/me2-ipad2/</link>
+      <pubDate>Sat, 09 Apr 2011 00:09:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/04/09/me2-ipad2/</guid>
+      <description>My wife and I have birthdays that are just a few days apart. This year we ended up getting each other an iPad 2. We have an iMac but have never bought into the whole iPod, iPhone, iThis&amp;rsquo;nThat thing.
+We were really excited to get started playing with our new toys. They came in nice boxes with the needed accessories, but little else including any guide on how to get started.</description>
+    </item>
+    
+    <item>
+      <title>Tidying up the Ubuntu Grub2 Boot Menu</title>
+      <link>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</link>
+      <pubDate>Sun, 13 Mar 2011 01:27:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</guid>
+      <description>&lt;p&gt;My wife and I share a computer that dual boots Ubuntu Linux and Windows. Too, when we upgrade computers, I tend to take the hard drive(s) from the old computer to the new computer. The boot menus created by the grub2 program can be a bit confusing for the uninitiated. As kernel updates are added, the list gets longer. The old Windows drive appears in the list, as well as the recovery partitions that manufacturers often put on Windows drives. In the normal course of things the Windows menu items can get pushed out of view at the bottom of the screen.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Where&amp;rsquo;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Not a happy situation.&lt;/p&gt;
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unknown USB Device</title>
+      <link>https://yo-dave.com/2011/02/22/unknown-usb-device/</link>
+      <pubDate>Tue, 22 Feb 2011 01:26:47 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/22/unknown-usb-device/</guid>
+      <description>After my many re-installations of Windows 7, I often have an &amp;ldquo;Unknown Device&amp;rdquo; in the list of USB devices shown by the Windows Device Manager. It is almost always because of my LogiTech G110 keyboard. It works as a USB keyboard with no additional setup after these re-installations, but its extra functionality (like the cool lighted key caps) require that the device driver be installed. Doing so invariably removes the last &amp;ldquo;Unknown Device&amp;rdquo; warning from the device list.</description>
+    </item>
+    
+    <item>
+      <title>Windows Update Trashed My Computer -- AGAIN!</title>
+      <link>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer--again/</link>
+      <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer--again/</guid>
+      <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

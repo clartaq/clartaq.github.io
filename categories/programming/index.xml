@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Yo-Dave</title>
+    <link>https://yo-dave.com/categories/programming/</link>
+    <description>Recent content in programming on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 28 Mar 2018 10:06:21 -0400</lastBuildDate><atom:link href="https://yo-dave.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Restart River5 after Reboot with PM2</title>
+      <link>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</link>
+      <pubDate>Wed, 28 Mar 2018 10:06:21 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2018/03/28/restart-river5-after-reboot-with-pm2/</guid>
+      <description>I run a River5 &amp;ldquo;River of News&amp;rdquo; on a Raspberry Pi wirelessly connected to my internal home network. Sometimes, the power fluctuates, and the Pi reboots. I want to have River5 restart when the system comes back up.
+There are lots of ways to restart stuff on Linux. (I am running Raspian GNU/Linux 8.0.) The process manager I use is PM2 &amp;ndash; mostly because it knows Nodejs. River5 is written for Node.</description>
+    </item>
+    
+    <item>
+      <title>Another Useful Function -- convert-seq-to-comma-separated-string</title>
+      <link>https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/</link>
+      <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/</guid>
+      <description>This is a little note about a function I find myself using frequently in Clojure.
+User interface code often needs to display a list of things as a comma-separated list, e.g. &amp;ldquo;a, b, c, d&amp;rdquo;.
+If all of the things are strings, you can use the built-in string/join function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use string/join.</description>
+    </item>
+    
+    <item>
+      <title>sorted-set-by</title>
+      <link>https://yo-dave.com/2018/01/19/sorted-set-by/</link>
+      <pubDate>Fri, 19 Jan 2018 13:49:13 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2018/01/19/sorted-set-by/</guid>
+      <description>This is just a little note about one of my favorite datatypes in Clojure.
+Like most Lisps, Clojure has a very useful group of datatypes built in including some set types. I use sorted-set a lot. Until recently, I hadn&amp;rsquo;t noticed sorted-set-by, a function that returns a sorted set using a comparator you specify. I found myself needing to create a sorted set of strings where the sorting was case-insensitive. The sorted-set-by function was exactly what I needed.</description>
+    </item>
+    
+    <item>
+      <title>A New Version of the Confidence Interval Program</title>
+      <link>https://yo-dave.com/2017/09/13/a-new-version-of-the-confidence-interval-program/</link>
+      <pubDate>Wed, 13 Sep 2017 17:18:01 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/09/13/a-new-version-of-the-confidence-interval-program/</guid>
+      <description>Recently, I wrote about updating an old program that did the Sign Test. Well, I have lots of old programs that could stand a bit of refreshing.
+Another of the simple ones calculates the confidence interval around the proportion of successes in a series of Bernoulli trials. I wrote about it way back in 2011. The original was written in Java and Swing many years ago. It is still available in a repository on Bitbucket.</description>
+    </item>
+    
+    <item>
+      <title>Spell Checking in the Editor Changes the Way I Name Things</title>
+      <link>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</link>
+      <pubDate>Thu, 31 Aug 2017 14:16:24 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/08/31/spell-checking-in-the-editor-changes-the-way-i-name-things/</guid>
+      <description>While editing some program text recently, I noticed myself doing something weird. I do most of my programming in Clojure these days. I mostly use IntelliJ IDEA with the Cursive plugin for Clojure. This turns out to be a great way to develop.
+One of the (many) things I love about IntelliJ IDEA is that it does spell checking in my code. Stops me looking (so much) like an idiot when I misspell stuff in comments.</description>
+    </item>
+    
+    <item>
+      <title>A Titled JavaFX Separator</title>
+      <link>https://yo-dave.com/2017/08/31/a-titled-javafx-separator/</link>
+      <pubDate>Thu, 31 Aug 2017 13:50:58 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/08/31/a-titled-javafx-separator/</guid>
+      <description>In the process of updating some old programs, I had to change the GUI frameworks used. The old programs were written in Java using the Swing GUI framework and the JGoodies Forms and Looks libraries. Nowadays, the official GUI framework for Java is JavaFX.
+Making the transition from Swing to JavaFX was relatively painless because the programs were so small. However, one of the things I missed from the JGoodies Forms library was the &amp;ldquo;titled separator&amp;rdquo;, that is a separator with a label in front of it.</description>
+    </item>
+    
+    <item>
+      <title>An Updated Sign Test Program</title>
+      <link>https://yo-dave.com/2017/08/31/an-updated-sign-test-program/</link>
+      <pubDate>Thu, 31 Aug 2017 13:05:51 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2017/08/31/an-updated-sign-test-program/</guid>
+      <description>Long ago, I wrote a post about a small program to calculate the probabilities of a sign test.
+A lot has happened since then.
+The sign test is still useful to me on occasion, but the application framework used to write the original program is now unsupported. Too, the original program used Java&amp;rsquo;s Swing framework for the GUI. The new official GUI framework for Java is JavaFX.
+So I&amp;rsquo;ve updated the program a bit.</description>
+    </item>
+    
+    <item>
+      <title>Hardening an ngnx Server</title>
+      <link>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</link>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/04/28/hardening-an-ngnx-server/</guid>
+      <description>&lt;p&gt;Besides the Clarkonium.net site where I host this blog, I have several other sites that I maintain. This is all more of an educational effort for myself than anything really important. That said, I am a neophyte in terms of server security. It&amp;rsquo;s something I want to do better. What better place to start than by evaluating security settings on some of my &amp;ldquo;play&amp;rdquo; sites that use &lt;a href=&#34;http://nginx.org&#34;&gt;nginx&lt;/a&gt; as the server component?&lt;/p&gt;
+&lt;p&gt;Like I said, I&amp;rsquo;m no expert, but these are some of the things I have done to my own sites.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ClojureScript with Reagent and figwheel</title>
+      <link>https://yo-dave.com/2016/03/07/clojurescript-with-reagent-and-figwheel/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/03/07/clojurescript-with-reagent-and-figwheel/</guid>
+      <description>&lt;p&gt;I have a bit of a love/hate relationship with &lt;a href=&#34;https://github.com/clojure/clojurescript&#34;&gt;ClojureScript&lt;/a&gt;. On the one hand, it is a Lisp, with all the power it entails. On the other, the development toolchain can be byzantine. With the advent of &lt;a href=&#34;http://www.2ality.com/2015/06/web-assembly.html&#34;&gt;WebAssembly&lt;/a&gt; and &lt;a href=&#34;https://github.com/lukehoban/es6features/blob/master/README.md&#34;&gt;ECMAScript6&lt;/a&gt;, I have hopes of seeing tail call optimization (allowing true recursion) handled in ClojureScript, if not Clojure itself. And &lt;a href=&#34;https://github.com/reagent-project/reagent&#34;&gt;Reagent&lt;/a&gt; and &lt;a href=&#34;https://github.com/bhauman/lein-figwheel&#34;&gt;figwheel&lt;/a&gt; can make web development (not my strong suite) much easier.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CloudAtCost Setup Notes</title>
+      <link>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2016/02/12/cloudatcost-setup-notes/</guid>
+      <description>&lt;h2 id=&#34;update-10-aug-2016&#34;&gt;Update: 10 Aug 2016&lt;/h2&gt;
+&lt;p&gt;There&amp;rsquo;s a new and improved version of this post &lt;a href=&#34;https://yo-dave.com/2016/08/10/my-server-setup-process/&#34;&gt;HERE&lt;/a&gt;. Look at that instead.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I&amp;rsquo;ve been experimenting with servers from &lt;a href=&#34;http://cloudatcost.com/&#34;&gt;CloudAtCost&lt;/a&gt;. As such, I tear them down and re-image them fairly frequently. These are my notes on how I do initial setup of servers that have been freshly imaged with &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt; 14.04 LTS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Local Java JARS in Clojure Projects</title>
+      <link>https://yo-dave.com/2015/10/03/using-local-java-jars-in-clojure-projects/</link>
+      <pubDate>Sat, 03 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/10/03/using-local-java-jars-in-clojure-projects/</guid>
+      <description>&lt;p&gt;Recently, I&amp;rsquo;ve been working on a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt; game program. Part of the program provides a user with the ability to generate new puzzles of a particular difficulty. Generating a puzzle usually requires two puzzle solvers: one that solves puzzles (slowly) like a human would, the other that solves puzzles (very quickly) like a computer would.&lt;/p&gt;
+&lt;p&gt;Rather than write my own from scratch, for this part of the development, I wanted to use an existing implementation of the machine-like solver. After a little research (more on this some other time), I found one I liked a lot &amp;ndash; the &lt;a href=&#34;https://github.com/attractivechaos/plb/tree/master/sudoku&#34;&gt;Kudoku solver written in Java&lt;/a&gt; from &lt;a href=&#34;https://attractivechaos.wordpress.com/2011/06/19/an-incomplete-review-of-sudoku-solver-implementations/&#34;&gt;attractive chaos&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But how does one use a local jar file in a Clojure Project? Read on&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Finding Mono-Spaced Fonts in JavaFX</title>
+      <link>https://yo-dave.com/2015/07/27/finding-mono-spaced-fonts-in-javafx/</link>
+      <pubDate>Mon, 27 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/07/27/finding-mono-spaced-fonts-in-javafx/</guid>
+      <description>There are many use cases where a mono-spaced (fixed-width) font is useful in programming. Programming editors and creating program listings come to mind. But there doesn&amp;rsquo;t seem to be a consistent way of obtaining a list of all of the mono-spaced fonts installed in the operating system.
+Back in the days of Swing, you usually had to grab a list of font families (e.g. Arial, Times New Roman, etc.) from AWT and then create a BufferedImage to print the font to and check layout widths.</description>
+    </item>
+    
+    <item>
+      <title>Tasks and UI Updates in JavaFX</title>
+      <link>https://yo-dave.com/2015/06/30/tasks-and-ui-updates-in-javafx/</link>
+      <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/06/30/tasks-and-ui-updates-in-javafx/</guid>
+      <description>&lt;p&gt;Recently, I answered a &lt;a href=&#34;http://stackoverflow.com/questions/30980138/javafx-indeterminate-progress-bar-while-doing-a-process/30986188#30986188&#34;&gt;question&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt; related to executing a long-running task in the background of a JavaFX application while updating the UI on the progress of that task. I have found myself coming back to that solution several times now.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Web vs. Native App Redux</title>
+      <link>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/05/28/web-vs.-native-app-redux/</guid>
+      <description>&lt;p&gt;If you have been following along for awhile, you may have noted how conflicted I am about writing web apps &lt;em&gt;vs&lt;/em&gt;. native apps. I&amp;rsquo;ve been looking into &lt;a href=&#34;https://www.meteor.com/&#34;&gt;Meteor&lt;/a&gt;, which makes the decision even thornier for me.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Focus Behavior Change between JavaFX 2 and JavaFX 8 when Selecting Rows in a TableView</title>
+      <link>https://yo-dave.com/2015/04/18/focus-behavior-change-between-javafx-2-and-javafx-8-when-selecting-rows-in-a-tableview/</link>
+      <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/04/18/focus-behavior-change-between-javafx-2-and-javafx-8-when-selecting-rows-in-a-tableview/</guid>
+      <description>&lt;p&gt;For a little while now, I&amp;rsquo;ve been working on an application that manages a list of documents, providing multiple views that the user can edit.&lt;/p&gt;
+&lt;p&gt;The application looks something like this:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture_Cropped.PNG&#34;&gt;&lt;img src=&#34;https://yo-dave.com/static/img/2015_04_18_Main_Screen_Capture.PNG&#34; alt=&#34;Image of the document manager main screen&#34; title=&#34;The document manager main screen&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;The document manager main screen&lt;!-- raw HTML omitted --&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The user selects the document they wish to view or edit by selecting it from the large &lt;code&gt;TableView&lt;/code&gt; in the middle of the window. The area on the right provides controls to view and edit details. (The area on the left is for filtering the documents displayed in the central table.)&lt;/p&gt;
+&lt;p&gt;Based on some early advice, I had watchers on the focus property of the fields that could be edited. When a control lost focus, any changes were written to the database. The user didn&amp;rsquo;t have to do anything to save their work. It just happened.&lt;/p&gt;
+&lt;p&gt;This worked with Java 7 and JavaFX 2. After the switch to Java 8 and JavaFX 8, things were not quite the same. If a user was making a change somewhere and then selected another document without moving to another editing view, the data was lost. The focus change notification did not arrive before the new document was selected in the table (repopulating the editing control before the data was saved.)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Overwhelming Java&#39;s Swing</title>
+      <link>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</link>
+      <pubDate>Tue, 06 Jan 2015 09:47:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2015/01/06/overwhelming-javas-swing/</guid>
+      <description>&lt;p&gt;An odd thing happened recently. I have been working on a simulation that produces graphical and text updates as it progresses. That involves drawing a picture of the system and updating some textual elements of the user interface.&lt;/p&gt;
+&lt;p&gt;Things seemed to work fine when the simulation was run with &amp;ldquo;normal&amp;rdquo; inputs. However, when supplied with a set of parameters to produce a much simpler simulation, the user interface essentially locked up.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Editor Productivity</title>
+      <link>https://yo-dave.com/2014/12/21/editor-productivity/</link>
+      <pubDate>Sun, 21 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/12/21/editor-productivity/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been away awhile, working on a new project. It&amp;rsquo;s part of an educational effort about molecular dynamics simulation. Although I&amp;rsquo;ve been working a lot with Clojure using emacs for editing, this project required a return to Java. As a result, I&amp;rsquo;ve been using NetBeans again. The difference in productivity was amazing and not in the way I expected.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Moving to Web Apps (or not)</title>
+      <link>https://yo-dave.com/2014/07/16/moving-to-web-apps-or-not/</link>
+      <pubDate>Wed, 16 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/07/16/moving-to-web-apps-or-not/</guid>
+      <description>I&amp;rsquo;m a desktop kind of guy. I prefer desktop PCs, desktop programs, desktop programming. But I am also a cross-platform guy. Hence my interest in Java, and by extension, Clojure. But I would like those things to run on my tablet and (other people&amp;rsquo;s) phone. Doing that with Java seems to be more work than it is worth.
+Hence, I&amp;rsquo;ve been considering web apps as a possible future direction. (Seems everyone else has figured this out already.</description>
+    </item>
+    
+    <item>
+      <title>Which Version of Java will Leiningen Run from an Emacs Shell</title>
+      <link>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</link>
+      <pubDate>Mon, 21 Apr 2014 13:51:52 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/04/21/which-version-of-java-will-leiningen-run-from-an-emacs-shell/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been updating some of my projects to use the newly released Java 8. That includes many Clojure projects. These are just &amp;ldquo;flow of consciousness&amp;rdquo; debugging notes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Updating to Java 8 and NetBeans 8 on Ubuntu</title>
+      <link>https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/</link>
+      <pubDate>Sun, 30 Mar 2014 13:42:07 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/03/30/updating-to-java-8-and-netbeans-8-on-ubuntu/</guid>
+      <description>&lt;p&gt;Just some notes on how I updated to the recent releases of Java 8 and NetBeans 8 on Ubuntu 13.10 (64 bit) running the Xfce desktop environment (Xubuntu).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Another Program I&#39;d Like to Find or Write</title>
+      <link>https://yo-dave.com/2014/03/04/another-program-id-like-to-find-or-write/</link>
+      <pubDate>Tue, 04 Mar 2014 13:26:26 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/03/04/another-program-id-like-to-find-or-write/</guid>
+      <description>As I&amp;rsquo;ve mentioned before, I use several cloud storage services. However, being a cheap bastard, I have only signed up for free accounts up to now. That means I have lots of little bits of storage scattered here and there (although recently Box gave me 50GB free and my Copy account has risen to 25GB). But that means having to keep track of where I put certain things. It sure would be nice to have a program that would aggregate all these little pieces into a single thing.</description>
+    </item>
+    
+    <item>
+      <title>Saving and Restoring Program Configuration across Sessions in Clojure</title>
+      <link>https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/</link>
+      <pubDate>Mon, 06 Jan 2014 13:13:46 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/</guid>
+      <description>&lt;p&gt;I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.&lt;/p&gt;
+&lt;p&gt;For some time, I&amp;rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>More on Loading Fonts</title>
+      <link>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</link>
+      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</guid>
+      <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&amp;rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
+Here&amp;rsquo;s the new snippet.
+ (ns clojure_font_loading.core  (:gen-class  :extends javafx.application.Application)  (:import  [javafx.application Application]  [javafx.event EventHandler]  [javafx.</description>
+    </item>
+    
+    <item>
+      <title>Loading Fonts Like CSS</title>
+      <link>https://yo-dave.com/2013/08/10/loading-fonts-like-css/</link>
+      <pubDate>Sat, 10 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/08/10/loading-fonts-like-css/</guid>
+      <description>Just wanted to pass along a little snippet I have found myself using fairly frequently. CSS has the ability to specify the appropriate font to use in displaying a document. It handles the tag in such a way that it can gracefully degrade from a &amp;ldquo;preferred&amp;rdquo; font through a series of less ideal typefaces depending on what&amp;rsquo;s available on the machine doing the display.
+That&amp;rsquo;s a handy facility to have, even on Windows, which can have different fonts available depending on the version of Windows and what software has been installed.</description>
+    </item>
+    
+    <item>
+      <title>Paths with Spaces, I Give Up</title>
+      <link>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</link>
+      <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
+      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;quot;C:\Users\David Clark&amp;quot; on my system.)
+My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
+    </item>
+    
+    <item>
+      <title>N-Queens</title>
+      <link>https://yo-dave.com/2013/08/06/n-queens/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/08/06/n-queens/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Eight_queens_puzzle&#34;&gt;N-Queens&lt;/a&gt; puzzle is a classic computer science problem. In fact, it&amp;rsquo;s much older than discipline of computer science. It is usually used as a problem to introduce students to &lt;a href=&#34;http://en.wikipedia.org/wiki/Backtracking&#34;&gt;backtracking algorithms&lt;/a&gt; in computer science. I was first introduced to the problem in Niklaus Wirth&amp;rsquo;s &lt;em&gt;&lt;a href=&#34;http://www.amazon.com/dp/0130224189&#34;&gt;Algorithms + Data Structures = Programs&lt;/a&gt;&lt;/em&gt; back in the &amp;rsquo;70s.&lt;/p&gt;
+&lt;p&gt;I thought it might be interesting to write an updated version in my continuing effort to become proficient in &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt;.  My intent was to write a simple working version, then use the concurrency features of the language to write a parallel version and see what kind of performance gain was possible.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java-Clojure Interop: An Update</title>
+      <link>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</link>
+      <pubDate>Tue, 25 Jun 2013 18:16:04 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/06/25/java-clojure-interop-an-update/</guid>
+      <description>My most popular answer on Stack Overflow has to do with Clojure-Java interop. Since that answer was written, some of the tools used in the answer, specifically enclojure(Broken Link), have been deprecated. Because many of the follow-up questions related to how to build a working version of the answer, I thought it might be a good idea to update the post with modern tools.
+As this is written, the tools used include:</description>
+    </item>
+    
+    <item>
+      <title>Default JavaFX Platform in NetBeans</title>
+      <link>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</link>
+      <pubDate>Wed, 19 Jun 2013 16:26:49 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/06/19/default-javafx-platform-in-netbeans/</guid>
+      <description>Update: With Java 8, the JavaFX library is included in the JDK. The machinations described here are no longer necessary.
+Every time I update the default JDK used by NetBeans, I also want to update the default JavaFX platform. And I always forget how. Looking on the web usually results in finding methods that just don&amp;rsquo;t work. Here&amp;rsquo;s how I do it.
+ In NetBeans (7.3 as of this writing), select the &amp;ldquo;Tools&amp;rdquo; menu and the &amp;ldquo;Java Platforms&amp;rdquo; drop-down menu.</description>
+    </item>
+    
+    <item>
+      <title>Keyboard Shortcuts for JavaFX Buttons</title>
+      <link>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</link>
+      <pubDate>Tue, 04 Jun 2013 04:24:09 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/</guid>
+      <description>Most programs written for graphical user interfaces still provide a way to operate with the keyboard, requiring minimal mouse usage. The thought is that expert users will want to speed through their work keeping their fingers on the keyboard rather than devote an entire hands worth of fingers to controlling the mouse. I&amp;rsquo;ve been learning JavaFX, the eventual replacement for the Swing UI framework on Java, and wanted to explore how shortcut functionality had changed.</description>
+    </item>
+    
+    <item>
+      <title>JavaFX KeyCodeCombinations in Clojure</title>
+      <link>https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/</link>
+      <pubDate>Sat, 01 Jun 2013 22:26:04 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been experimenting with adding keyboard accelerators to some of the &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; programs I&amp;rsquo;ve written with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34;&gt;JavaFX&lt;/a&gt;-based user interfaces. As part of that investigation, I tried to translate the &lt;a href=&#34;http://en.wikipedia.org/wiki/Java_%28programming_language%29&#34;&gt;Java &lt;/a&gt; program &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.example8.com/category/view/id/76&#34; title=&#34;Link to Java version of program.&#34;&gt;here&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) to Clojure. The program just puts up a window with a menu bar containing only a &amp;ldquo;&lt;code&gt;File&lt;/code&gt;&amp;rdquo; menu which itself contains one item, &amp;ldquo;&lt;code&gt;Exit&lt;/code&gt;&amp;rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a &lt;code&gt;Ctrl-X&lt;/code&gt; (on Windows). Figuring out how to add that functionality was a bit of an issue for me.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Clojure Development Toolchain</title>
+      <link>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</link>
+      <pubDate>Tue, 21 May 2013 21:58:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/05/21/the-clojure-development-toolchain/</guid>
+      <description>&lt;p&gt;One of the things about &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; that is difficult for beginners is the process of creating and running programs. I would argue that it is more difficult than learning the language itself. There is no &amp;ldquo;one-button&amp;rdquo; provisioning system that would set up some sort of canonical development environment. This long post will talk about setting up Leiningen and Emacs to make a comfortable environment for developing in Clojure.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Clojure, JavaFX and Tic-Tac-Toe</title>
+      <link>https://yo-dave.com/2013/05/08/clojure-javafx-and-tic-tac-toe/</link>
+      <pubDate>Wed, 08 May 2013 17:20:37 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/05/08/clojure-javafx-and-tic-tac-toe/</guid>
+      <description>&lt;p&gt;Recently, I have been experimenting with &lt;a href=&#34;http://www.oracle.com/technetwork/java/javafx/overview/index.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt; in &lt;a href=&#34;http://clojure.org/&#34; title=&#34;Link to the Clojure language home page.&#34;&gt;Clojure&lt;/a&gt;. Initially, in one of my experiments, I wanted to learn how to re-size a game-board interface as it&amp;rsquo;s containing window was re-sized. In the past I&amp;rsquo;ve had medical device interfaces that draw a representation of a physical device and these drawings must re-size as their window is re-sized. The &lt;a href=&#34;https://clartaq.github.io/yo-dave/2013/02/18/2013-02-18-re-sizing-an-interface-in-javafx-and-clojure/&#34;&gt;initial experiment&lt;/a&gt; was with a simple interface for Tic-Tac-Toe. Since I had such a nice interface, I thought, why not program the complete game.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Styled Dialogs in JavaFX with JFXtras MonologFX</title>
+      <link>https://yo-dave.com/2013/05/08/styled-dialogs-in-javafx-with-jfxtras-monologfx/</link>
+      <pubDate>Wed, 08 May 2013 14:14:30 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/05/08/styled-dialogs-in-javafx-with-jfxtras-monologfx/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been having a lot of fun learning &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html&#34; title=&#34;Link to JavaFX developer&#34;&gt;JavaFX&lt;/a&gt;, even after many years of using the Java Swing framework.&lt;/p&gt;
+&lt;p&gt;One thing about JavaFX that I still don&amp;rsquo;t understand is the lack of built-in support for dialogs. Well, that shortcoming has annoyed enough people that there are several efforts underway to provide dialog functionality. One of those is part of the &lt;a href=&#34;http://jfxtras.org/&#34; title=&#34;Link to the JFXtras home page.&#34;&gt;JFXtras&lt;/a&gt; project, &lt;a href=&#34;https://blogs.oracle.com/javajungle/entry/monologfx_floss_javafx_dialogs_for&#34; title=&#34;Link to MonologFX introduction blog.&#34;&gt;MonologFX&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Re-sizing an Interface in JavaFX and Clojure</title>
+      <link>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</link>
+      <pubDate>Mon, 18 Feb 2013 21:48:11 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/02/18/re-sizing-an-interface-in-javafx-and-clojure/</guid>
+      <description>Since JavaFX is the future of the user interface for Java, I&amp;rsquo;ve started trying to learn it. Since I&amp;rsquo;m also learning Clojure, I&amp;rsquo;m doing the work in that language.
+One of the things I&amp;rsquo;ve been looking into is how the interface responds to resizing. If you have all of your controls in a nice layout, that is usually taken care of for you. But how do you handle things if the interface is not made up of standard components, something like a graphical game interface for example?</description>
+    </item>
+    
+    <item>
+      <title>Back to a Real Keyboard</title>
+      <link>https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/</link>
+      <pubDate>Thu, 24 Jan 2013 22:00:12 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/01/24/back-to-a-real-keyboard/</guid>
+      <description>As some of you know, we&amp;rsquo;ve spent the last several months moving around looking for a nice place to settle down. That&amp;rsquo;s finished. We&amp;rsquo;re now in Salem, Virginia.
+Before starting that search, we bought a laptop to take over the duties of the desktop. On the night before we left Tucson, I dumped a cup of water on it and fried the keyboard and other parts. It turns out the model was too new to get replacement parts.</description>
+    </item>
+    
+    <item>
+      <title>Developer Interview Questions</title>
+      <link>https://yo-dave.com/2012/03/29/developer-interview-questions/</link>
+      <pubDate>Thu, 29 Mar 2012 08:48:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2012/03/29/developer-interview-questions/</guid>
+      <description>Picking the right people to expand an organization is one of the most important things you can do. In my career, I&amp;rsquo;ve participated in many, many interviews on both sides of the desk. As a scientist and manager, my interviews have been very different from those being proposed for hiring developers. From that perspective, there seem to be two categories of questions that are popular right now that seem to be pointless, potentially embarrassing, or outright business risks.</description>
+    </item>
+    
+    <item>
+      <title>Favorite Programming Books</title>
+      <link>https://yo-dave.com/2011/12/01/favorite-programming-books/</link>
+      <pubDate>Thu, 01 Dec 2011 11:16:22 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/12/01/favorite-programming-books/</guid>
+      <description>&lt;p&gt;Every programmer seems to have their own list of favorite programming books. The lists are very personal and seem to be influenced by the age of the programmer, their training, and their field of endeavor. My own list follows.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Functional Programming: A Paradox?</title>
+      <link>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</link>
+      <pubDate>Thu, 01 Dec 2011 09:25:53 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</guid>
+      <description>I like the idea of Functional Programming. It just appeals to my own mathematical bent I think. A few of the central tenets include immutability of data and creating functions that always produce the same results given the same arguments by avoiding side effects. All this to minimize generation of unpredictable results (errors). But wait a minute. There is another field of study with a long and deep history of research, random number generation, that says it is virtually impossible to generate truly random (unpredictable) results on a computer.</description>
+    </item>
+    
+    <item>
+      <title>Wilcoxon Matched Pairs</title>
+      <link>https://yo-dave.com/2011/11/14/wilcoxon-matched-pairs/</link>
+      <pubDate>Mon, 14 Nov 2011 18:32:38 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/11/14/wilcoxon-matched-pairs/</guid>
+      <description>&lt;p&gt;At my previous employer, our goal was to stain tissue samples such that a pathologist could examine them microscopically and easily make unambiguous diagnoses of disease state. Experiments typically involved getting subjective judgments from pathologists about which samples were &amp;ldquo;better&amp;rdquo; in some way. How do you do statistics on those type of results?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java Data Grid Component -- A Personal Failing</title>
+      <link>https://yo-dave.com/2011/09/22/java-data-grid-component--a-personal-failing/</link>
+      <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component--a-personal-failing/</guid>
+      <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spare Time Projects, Part 2</title>
+      <link>https://yo-dave.com/2011/09/17/spare-time-projects-part-2/</link>
+      <pubDate>Sat, 17 Sep 2011 00:11:21 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/17/spare-time-projects-part-2/</guid>
+      <description>A few weeks ago, I wrote a post about &amp;ldquo;spare time&amp;rdquo; projects &amp;ndash; programming projects undertaken to learn something new, try something out, see how something works. These are activities undertaken to improve your skills and, maybe, scratch an itch that&amp;rsquo;s been bothering you. These projects aren&amp;rsquo;t typically related to work.
+In the past few days, Oren Eini (aka Ayende Rahien) wrote a couple of posts expressing the opinion that if you don&amp;rsquo;t do such projects, he probably doesn&amp;rsquo;t want to hire you.</description>
+    </item>
+    
+    <item>
+      <title>In Praise of the Self-Taught Programmer</title>
+      <link>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</link>
+      <pubDate>Fri, 16 Sep 2011 01:14:20 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/16/in-praise-of-the-self-taught-programmer/</guid>
+      <description>Programming is one of the few professions where you regularly see self-taught practitioners. They have little or no formal education in the subject, but they often do quite well. In some cases, I&amp;rsquo;ve worked with some who were considered outstanding in their area of focus, like machine control or real-time.
+Granted, early in their careers, these folks often produce nasty messes that happen to work well enough but are simply not maintainable or not extendable.</description>
+    </item>
+    
+    <item>
+      <title>Color Deconvolution</title>
+      <link>https://yo-dave.com/2011/09/14/color-deconvolution/</link>
+      <pubDate>Wed, 14 Sep 2011 20:04:19 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/09/14/color-deconvolution/</guid>
+      <description>&lt;p&gt;One method I&amp;rsquo;ve used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Write the Manual First</title>
+      <link>https://yo-dave.com/2011/08/22/write-the-manual-first/</link>
+      <pubDate>Mon, 22 Aug 2011 16:16:52 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/08/22/write-the-manual-first/</guid>
+      <description>Back when I was involved in designing medical devices, I had a saying to help guide the design: &amp;ldquo;Write the manual first.&amp;rdquo; This seemed to be an easier way for the teams to clearly describe what the device should do. Once everyone had a good feeling for how the system should operate, it was easier to move on to the more formal requirements management. Surprisingly, not everyone on the team was as fascinated with that as the Systems Integration team ;-)</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s Cross-Platform Now?</title>
+      <link>https://yo-dave.com/2011/08/22/whats-cross-platform-now/</link>
+      <pubDate>Mon, 22 Aug 2011 10:13:25 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/08/22/whats-cross-platform-now/</guid>
+      <description>It used to be that &amp;ldquo;cross-platform&amp;rdquo; meant making a program that could be run on Windows, Macs, and Linux PCs. To create a program that worked on all three platforms, you could write it in Java, or maybe Python or C depending on what the program needed to do. That&amp;rsquo;s not really the case anymore.
+First there were smart-phones. In that case you could still fall back on Java ME for some phones, but not all.</description>
+    </item>
+    
+    <item>
+      <title>Old Programmers</title>
+      <link>https://yo-dave.com/2011/08/13/old-programmers/</link>
+      <pubDate>Sat, 13 Aug 2011 10:19:02 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/08/13/old-programmers/</guid>
+      <description>Seems like I&amp;rsquo;ve been reading a lot of conversation about when you become too old to be a good programmer. I&amp;rsquo;ve even seen someone ask, with apparent sincerity, if 26 was too old. Of course anyone with any sense realizes that the answer is &amp;ldquo;Never!&amp;rdquo; As I&amp;rsquo;ve watched how my own performance has changed over the years, there have been a few obvious changes.
+ I am way less likely to chase after the &amp;ldquo;shiny new thing&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>The Sign Test</title>
+      <link>https://yo-dave.com/2011/07/09/the-sign-test/</link>
+      <pubDate>Sat, 09 Jul 2011 22:37:26 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/07/09/the-sign-test/</guid>
+      <description>Sometimes weakness is a strength. That certainly seems to be the case for the lowly sign test. It is about the simplest statistical significance test imaginable. But if it tells you something is important, it probably is.
+Usually when you hear people talk about the &amp;ldquo;power&amp;rdquo; of a statistical test, they are referring to the ability of the test to detect a significant difference when one exists. For example, Student&amp;rsquo;s t test is a favorite and very powerful test for differences in means when you have data meeting the underlying assumptions of the test.</description>
+    </item>
+    
+    <item>
+      <title>Spare Time Projects</title>
+      <link>https://yo-dave.com/2011/06/27/spare-time-projects/</link>
+      <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/27/spare-time-projects/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s pretty common to see discussions about how to determine if a candidate for a programming job has a &amp;ldquo;passion&amp;rdquo; for programming and software. One of the usual pieces of advice is to ask about the projects someone does in their &amp;ldquo;spare time.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go Away! It Isn&#39;t Perfect Yet!</title>
+      <link>https://yo-dave.com/2011/06/26/go-away-it-isnt-perfect-yet/</link>
+      <pubDate>Sun, 26 Jun 2011 23:28:16 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/26/go-away-it-isnt-perfect-yet/</guid>
+      <description>Not a very inviting byline, I admit. People have asked what it means. It&amp;rsquo;s a joke of course.
+It&amp;rsquo;s a constant reminder not to fall prey to something I&amp;rsquo;ve seen block people from getting things done and out there time and time again. People (myself included) are afraid to put something in front of their peers or the public because it isn&amp;rsquo;t quite perfect yet. There&amp;rsquo;s just a little more fiddling needed to get it just right.</description>
+    </item>
+    
+    <item>
+      <title>Things to Remember when Updating Java Version</title>
+      <link>https://yo-dave.com/2011/06/17/things-to-remember-when-updating-java-version/</link>
+      <pubDate>Fri, 17 Jun 2011 14:27:57 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/17/things-to-remember-when-updating-java-version/</guid>
+      <description>New versions of Java come out fairly frequently. On my system, I need to remember to update other settings to use the updates. These include:
+ The JAVA_HOME environment variable The path to the bin directory in the PATH environment variable The &amp;ldquo;Program Files\Netbeans x.x\etc\netbeans.conf&amp;rdquo; file (on Windows) These settings keep everything building and running correctly.  </description>
+    </item>
+    
+    <item>
+      <title>Binomial Confidence Intervals -- BinomConf</title>
+      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals--binomconf/</link>
+      <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals--binomconf/</guid>
+      <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tidying up the Ubuntu Grub2 Boot Menu</title>
+      <link>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</link>
+      <pubDate>Sun, 13 Mar 2011 01:27:27 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/03/13/tidying-up-the-ubuntu-grub2-boot-menu/</guid>
+      <description>&lt;p&gt;My wife and I share a computer that dual boots Ubuntu Linux and Windows. Too, when we upgrade computers, I tend to take the hard drive(s) from the old computer to the new computer. The boot menus created by the grub2 program can be a bit confusing for the uninitiated. As kernel updates are added, the list gets longer. The old Windows drive appears in the list, as well as the recovery partitions that manufacturers often put on Windows drives. In the normal course of things the Windows menu items can get pushed out of view at the bottom of the screen.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Where&amp;rsquo;s the Windows menu item!?&amp;rdquo; &amp;ldquo;Which of all these Windows choices is the right one?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Not a happy situation.&lt;/p&gt;
+&lt;p&gt;In the interests of domestic harmony (and to assure that a Windows recovery partition is not booted inadvertently), a little clean up is required.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Parsing Signed Numbers in ANTLR</title>
+      <link>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</link>
+      <pubDate>Tue, 08 Mar 2011 15:58:17 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/03/08/parsing-signed-numbers-in-antlr/</guid>
+      <description>&lt;p&gt;One of the more interesting things I&amp;rsquo;ve been working on lately is a scripting language to drive a simulation system. It describes nominal values of key parameters, how to vary them, do an analysis, gather the results and present those results. &lt;a href=&#34;http://www.antlr.org/&#34; title=&#34;ANTLR Home Page&#34;&gt;ANTLR&lt;/a&gt; and &lt;a href=&#34;http://www.antlr3.org/works/&#34; title=&#34;ANTLRWorks Home Page&#34;&gt;ANTLRWorks&lt;/a&gt; are usually great tools to create the lexer and parser of such a scripting language. That&amp;rsquo;s how I started out this time too. Since I thought it would be trivial, I left parsing signed numbers to nearly the end of the project. It was a bit of a surprise how difficult this was.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Lisp/Scheme/Clojure</title>
+      <link>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</link>
+      <pubDate>Fri, 25 Feb 2011 16:10:29 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/25/getting-started-with-lisp/scheme/clojure/</guid>
+      <description>Ya know, this point just keeps slapping me in the face. It seems that people don&amp;rsquo;t stop trying to use Lisp because they don&amp;rsquo;t like the language. A lot of people stop because they don&amp;rsquo;t like the programming environment. Looking around the Q&amp;amp;A sites there seem to be many more questions about setting up a programming environment for the Lisp family of languages than there are for the more mainstream languages like Java and C++.</description>
+    </item>
+    
+    <item>
+      <title>Clojure and Java Interaction</title>
+      <link>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</link>
+      <pubDate>Sun, 13 Feb 2011 02:10:46 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</guid>
+      <description>&lt;p&gt;One of my most-upvoted &lt;a href=&#34;http://stackoverflow.com/questions/2181774/calling-clojure-from-java/2187427#2187427&#34;&gt;answers&lt;/a&gt; on &lt;a href=&#34;http://stackoverflow.com/&#34;&gt;Stackoverflow&lt;/a&gt; is a simple example of how to call &lt;a href=&#34;http://clojure.org/&#34;&gt;Clojure&lt;/a&gt; functions from Java. It doesn&amp;rsquo;t require calling through the Clojure run-time as so many responses do. But there is more to writing programs than calling static functions, as in my answer. You also might need to call methods &lt;em&gt;of&lt;/em&gt; objects and &lt;em&gt;on&lt;/em&gt; objects across the Clojure/Java divide.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mathematica and MATLAB</title>
+      <link>https://yo-dave.com/2011/02/11/mathematica-and-matlab/</link>
+      <pubDate>Fri, 11 Feb 2011 01:38:38 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/11/mathematica-and-matlab/</guid>
+      <description>In some ways there are many similarities between Mathematica® and MATLAB®. From the simplest point of view, both are computer mathematics systems. I use both at work and, thus, am a wizard at neither. Let me expose my biases up front though. I like Mathematica enough that I have paid actual money to have a copy at home. With that bias in mind, let&amp;rsquo;s look at some of the differences.</description>
+    </item>
+    
+    <item>
+      <title>Literate Programming</title>
+      <link>https://yo-dave.com/2011/02/06/literate-programming/</link>
+      <pubDate>Sun, 06 Feb 2011 01:38:36 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/02/06/literate-programming/</guid>
+      <description>&lt;p&gt;Ever since &lt;a href=&#34;http://www-cs-faculty.stanford.edu/~uno/index.html&#34;&gt;Donald Knuth&lt;/a&gt; published &amp;ldquo;&lt;a href=&#34;http://www.literateprogramming.com/knuthweb.pdf&#34;&gt;Literate Programming&lt;/a&gt;&amp;rdquo; back in 1984, I&amp;rsquo;ve been a fan. Telling a computer how to run a program and helping a human understand it are two different but very necessary things.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Closure in Clojure</title>
+      <link>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</link>
+      <pubDate>Sat, 29 Jan 2011 23:53:30 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/29/a-closure-in-clojure/</guid>
+      <description>&lt;p&gt;Back when closures were first explained to me, a long time ago, I thought &amp;ldquo;sounds like a language with pass-by-reference semantics like Pascal.&amp;rdquo; Of course, it isn&amp;rsquo;t quite that simple.&lt;/p&gt;
+&lt;p&gt;Clojure has a lot of nice features that work naturally to give you a &amp;ldquo;better Java than Java&amp;rdquo;. Here&amp;rsquo;s an example of using a closure that is not at all easy in Java.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting enclojure 1.4 to work</title>
+      <link>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</link>
+      <pubDate>Thu, 27 Jan 2011 01:31:33 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/27/getting-enclojure-1.4-to-work/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve used &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.enclojure.org&#34;&gt;enclojure&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; (&lt;strong&gt;Broken Link&lt;/strong&gt;) for a long time (in internet years). It has always seemed a bit finicky. However, with the 1.4 release and the switch to using &lt;a href=&#34;http://maven.apache.org&#34;&gt;Maven&lt;/a&gt; as the build tool, things stopped working. Projects that had worked fine before no longer compiled or executed. The &amp;ldquo;Getting Started&amp;rdquo; section of the enclojure web page appears to be hopelessly out of date and actually misleading. Here&amp;rsquo;s what I had to do.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ideas for Simulated Evolution</title>
+      <link>https://yo-dave.com/2011/01/25/ideas-for-simulated-evolution/</link>
+      <pubDate>Tue, 25 Jan 2011 00:30:34 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/25/ideas-for-simulated-evolution/</guid>
+      <description>Note: This is a re-post of an earlier entry recovered from a different blogging system.
+After entering and running the evolution.lisp example from Land of Lisp, I have some ideas for additional traits.
+Here are a few.
+ Size, Carnivorous Animals. Add a feature to allow the animals to be of different sizes. Larger animals would expend energy faster. When two animals occupy, the same cell, the larger would try to eat the smaller, taking it&amp;rsquo;s energy.</description>
+    </item>
+    
+    <item>
+      <title>Re-sizing an Icon in Java for Swing</title>
+      <link>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</link>
+      <pubDate>Sun, 23 Jan 2011 01:41:21 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</guid>
+      <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&amp;rsquo;s the code I came up with that actually worked.
+import javax.swing.*; import java.awt.*;  public class CornerButton extends JFrame {  public CornerButton()  {  JTextArea area = new JTextArea(20, 20);  JScrollPane scroll = new JScrollPane(area);  Icon icn = UIManager.</description>
+    </item>
+    
+  </channel>
+</rss>

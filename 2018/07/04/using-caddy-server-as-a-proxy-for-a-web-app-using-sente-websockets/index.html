@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Using Caddy Server as a Proxy for a Web App using Sente WebSockets &middot; Yo-Dave</title>
 
@@ -288,27 +288,27 @@
 </ul>
 <h3 id="other-relevant-facts">Other Relevant Facts</h3>
 <p>The <code>Caddyfile</code> used to configure the Caddy server contained:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clajistan.com <span style="color:#f92672">{</span>
-    proxy / http://localhost:1357
-    log access.log
-    errors error.log
-    gzip
-<span style="color:#f92672">}</span>
-</code></pre></div><p>These are the same contents that were used to proxy a previous version of the program written before WebSockets were added.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>clajistan.com <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    proxy / http://localhost:1357
+</span></span><span style="display:flex;"><span>    log access.log
+</span></span><span style="display:flex;"><span>    errors error.log
+</span></span><span style="display:flex;"><span>    gzip
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>These are the same contents that were used to proxy a previous version of the program written before WebSockets were added.</p>
 <p>The firewall (ufw) has open ports at address 1357 for TCP.</p>
 <p>There are no obvious errors in the log files <code>clajistan.log</code> or <code>error.log</code>, Caddy&rsquo;s log file. Caddy&rsquo;s access log, <code>access.log</code> <em>does</em> contain messages indicating that WebSocket messages were returning the unexpected return codes.</p>
 <h3 id="the-fix">The Fix</h3>
 <p>After a day of &ldquo;googling&rdquo; (really &ldquo;duck-duck-going&rdquo;),​ I couldn&rsquo;t find anything that seemed relevant but finally did find something interesting. As usual, it was a configuration problem due to my general ignorance. As a result, I made a small change to the <code>Caddyfile</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clajistan.com <span style="color:#f92672">{</span>
-    proxy / http://localhost:1357 <span style="color:#f92672">{</span>
-        websocket
-        transparent
-    <span style="color:#f92672">}</span>
-    log access.log
-    errors error.log
-    gzip
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Note the addition of <code>websocket</code> and <code>transparent</code> to the <code>proxy</code> statement. That seemed to get things working when connecting with Firefox. Eventually, Safari began to work correctly as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>clajistan.com <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    proxy / http://localhost:1357 <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        websocket
+</span></span><span style="display:flex;"><span>        transparent
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    log access.log
+</span></span><span style="display:flex;"><span>    errors error.log
+</span></span><span style="display:flex;"><span>    gzip
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Note the addition of <code>websocket</code> and <code>transparent</code> to the <code>proxy</code> statement. That seemed to get things working when connecting with Firefox. Eventually, Safari began to work correctly as well.</p>
 <p>That was one of the hardest things about getting this all to work. Safari seems to remember too much stuff. Clearing the cache and reloading the page is not always enough to bring changes into the displayed page. In this regard, Firefox seems to work better.​</p>
 <h3 id="remaining-issues">Remaining Issues</h3>
 <p>It seems like the socket connection will not remain active for a single session for more than a few hours. After that, Sente starts throwing errors, ​and the display stops updating. I have no idea why but the connection can be re-established by reloading the page.</p>

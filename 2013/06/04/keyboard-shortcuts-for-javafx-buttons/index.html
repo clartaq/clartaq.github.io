@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Keyboard Shortcuts for JavaFX Buttons &middot; Yo-Dave</title>
 
@@ -271,36 +271,36 @@
 <p>A good argument could be made that shortcuts are not very useful for a program with a button-based interface since buttons do not display the shortcut keys as do menus. The user would actually have to read some program documentation (egad!) in order to discover what shortcuts were available. However, many users are so used to some of the short cuts (<code>Ctrl-S</code>, <code>Ctrl-O</code>, <code>Ctrl-C</code>, <code>Ctrl-V</code>, etc.) that I include them anyway.</p>
 <p>Setting up shortcuts in JavaFX is a bit more complicated than it was in Swing since you can&rsquo;t seem to do it at the same time you create the button. It seems that the button must be attached to a <code>Scene</code> before you have a way to add a shortcut. Maybe this is just due to my own ignorance.</p>
 <p>Here&rsquo;s an example of how I set up a shortcut and mnemonic on an &ldquo;Exit&rdquo; button in a recent program. I hope the elided parts are obvious.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    ...
-    (<span style="color:#e6db74">:import</span>
-     [ javafx.scene.control Button CheckBox RadioButton ToggleGroup Tooltip]
-     [ javafx.scene.input KeyCode KeyCodeCombination KeyCombination
-       KeyCombination$Modifier KeyCombination$ModifierValue]
-    ...
-    
-    (<span style="color:#66d9ef">defn </span>init-exit-btn-accelerator [btn]
-      (<span style="color:#a6e22e">.put</span> (<span style="color:#a6e22e">.getAccelerators</span> (<span style="color:#a6e22e">.getScene</span> btn))
-            (<span style="color:#a6e22e">KeyCodeCombination.</span>
-             KeyCode/X (into-array KeyCombination$Modifier [KeyCombination/SHORTCUT_DOWN]))
-             (proxy [Runnable] []
-               (<span style="color:#a6e22e">run</span> []
-                 (<span style="color:#a6e22e">.fire</span> btn)))))
-    
-    (<span style="color:#66d9ef">defn </span>create-exit-button-click-handler
-      <span style="color:#e6db74">&#34;Handle a click on the &#39;Exit&#39; button.&#34;</span>
-      []
-      (<span style="color:#a6e22e">reify</span> EventHandler
-        (<span style="color:#a6e22e">handle</span> [this event]
-          (<span style="color:#a6e22e">Platform/exit</span>))))
-    
-    (<span style="color:#66d9ef">defn </span>create-exit-btn []
-      (<span style="color:#66d9ef">let </span>[btn (<span style="color:#a6e22e">btns/create-styled-button</span>
-                 <span style="color:#e6db74">&#34;E_xit&#34;</span> (<span style="color:#a6e22e">create-exit-button-click-handler</span>))]
-        (<span style="color:#a6e22e">.setTooltip</span> btn (<span style="color:#a6e22e">Tooltip.</span> <span style="color:#e6db74">&#34;Exit the program.&#34;</span>))
-        (<span style="color:#a6e22e">.setMnemonicParsing</span> btn true)
-        btn))
-    ...
-</code></pre></div><p>The button is created in the <code>create-exit-btn</code> function along with its event handler. The handling for the mnemonic is set up at the same time the button is created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">:import</span>
+</span></span><span style="display:flex;"><span>     [ javafx.scene.control Button CheckBox RadioButton ToggleGroup Tooltip]
+</span></span><span style="display:flex;"><span>     [ javafx.scene.input KeyCode KeyCodeCombination KeyCombination
+</span></span><span style="display:flex;"><span>       KeyCombination$Modifier KeyCombination$ModifierValue]
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>init-exit-btn-accelerator [btn]
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.put</span> (<span style="color:#a6e22e">.getAccelerators</span> (<span style="color:#a6e22e">.getScene</span> btn))
+</span></span><span style="display:flex;"><span>            (<span style="color:#a6e22e">KeyCodeCombination.</span>
+</span></span><span style="display:flex;"><span>             KeyCode/X (into-array KeyCombination$Modifier [KeyCombination/SHORTCUT_DOWN]))
+</span></span><span style="display:flex;"><span>             (proxy [Runnable] []
+</span></span><span style="display:flex;"><span>               (<span style="color:#a6e22e">run</span> []
+</span></span><span style="display:flex;"><span>                 (<span style="color:#a6e22e">.fire</span> btn)))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>create-exit-button-click-handler
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Handle a click on the &#39;Exit&#39; button.&#34;</span>
+</span></span><span style="display:flex;"><span>      []
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">reify</span> EventHandler
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">handle</span> [this event]
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">Platform/exit</span>))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>create-exit-btn []
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[btn (<span style="color:#a6e22e">btns/create-styled-button</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#e6db74">&#34;E_xit&#34;</span> (<span style="color:#a6e22e">create-exit-button-click-handler</span>))]
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setTooltip</span> btn (<span style="color:#a6e22e">Tooltip.</span> <span style="color:#e6db74">&#34;Exit the program.&#34;</span>))
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setMnemonicParsing</span> btn true)
+</span></span><span style="display:flex;"><span>        btn))
+</span></span><span style="display:flex;"><span>    ...
+</span></span></code></pre></div><p>The button is created in the <code>create-exit-btn</code> function along with its event handler. The handling for the mnemonic is set up at the same time the button is created.</p>
 <p>In the elided code that follows, the button is added to a layout pane, which is eventually attached to a <code>Scene</code>. Some time after that, the <code>init-exit-btn-accelerator</code> function is called to set up the shortcut. Note that the shortcut and an action handler are set up and added in the same function. As should also be apparent, it is not necessary that using the shortcut must activate the same event handler as a mouse click would. It does in this case, but that doesn&rsquo;t seem to be a requirement.</p>
 <p>The shortcut itself is set up by creating a <code>KeyCodeCombination</code> with the desired key. This is a bit more complicated than it was in Swing where a text string describing the key could be used as an argument. Not sure what advantage the new method provides.</p>
 <p>So every button that gets a shortcut gets this treatment. I haven&rsquo;t done it yet, but it seems like a good candidate for writing a macro to handle creation of the functions from a few pieces of data. Something to do and write about in the future.</p>

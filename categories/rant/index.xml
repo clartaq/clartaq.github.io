@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rant on Yo-Dave</title>
+    <link>https://yo-dave.com/categories/rant/</link>
+    <description>Recent content in rant on Yo-Dave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 29 Dec 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://yo-dave.com/categories/rant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaFX Still Not Ready?</title>
+      <link>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/12/29/javafx-still-not-ready/</guid>
+      <description>Just a short rant about JavaFX because I&amp;rsquo;m pissed about it at the moment. I enjoy using it for the most part but it sometimes throws up surprising obstacles in otherwise routine work. The latest for me was an unexpected lack of a spinner control. There are alternatives in some open source projects, but, really? No spinners built in?
+This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some dialogs, like for opening/saving files, but not much in the way of user-programmable dialogs built in.</description>
+    </item>
+    
+    <item>
+      <title>Paths with Spaces, I Give Up</title>
+      <link>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</link>
+      <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2013/08/08/paths-with-spaces-i-give-up/</guid>
+      <description>I&amp;rsquo;ve wanted to look into the Pedestal framework for creating web-based applications in Clojure. However, one of the requirements is Leiningen 2.2.0 or greater. And, as I&amp;rsquo;ve written before, version 2.2 will not install on my system because of spaces in the path of the user home directory. (&amp;quot;C:\Users\David Clark&amp;quot; on my system.)
+My user profile name is &amp;ldquo;david&amp;rdquo;. That&amp;rsquo;s what I use to sign on with. The fact that my home directory uses &amp;ldquo;David Clark&amp;rdquo; is an unfortunate result of how the computer was set up at the factory when I custom ordered it.</description>
+    </item>
+    
+    <item>
+      <title>Twitter: A Lack of Communication</title>
+      <link>https://yo-dave.com/2011/12/01/twitter-a-lack-of-communication/</link>
+      <pubDate>Thu, 01 Dec 2011 08:55:07 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/12/01/twitter-a-lack-of-communication/</guid>
+      <description>&lt;p&gt;This is a rant that I just have to get off my chest.Twitter just doesn&amp;rsquo;t provide any meaningful communication and I can&amp;rsquo;t understand the appeal. Imagine a newspaper consisting of just the headlines or a magazine containing only the article titles &amp;ndash; that is essentially Twitter.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vacuum Cleaners - A Rant</title>
+      <link>https://yo-dave.com/2011/04/03/vacuum-cleaners-a-rant/</link>
+      <pubDate>Sun, 03 Apr 2011 20:07:59 +0000</pubDate>
+      
+      <guid>https://yo-dave.com/2011/04/03/vacuum-cleaners-a-rant/</guid>
+      <description>&lt;p&gt;This is really something unrelated to most of the content here, but I have to get something off my chest. You would think that after more than a century of engineering effort vacuums cleaners would be a solved problem. Sadly, that is not the case.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

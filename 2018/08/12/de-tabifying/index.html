@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>De-Tabifying &middot; Yo-Dave</title>
 
@@ -256,49 +256,48 @@
 
   <p>There is probably no more boring task in programming than processing a file to replace tabs with spaces or doing the reverse and replacing spaces with tabs. And yet it has started religious wars that have raged for years in various programming communities.</p>
 <p>This &ldquo;tabifying&rdquo; or &ldquo;de-tabifying&rdquo; is not something I have to do frequently, but every once in a while, I need to convert tabs to spaces in some text. Sometimes I need to do it repeatedly and quickly. For example, in a Markdown editor, I basically need to do a de-tabify on every keystroke. It can&rsquo;t take long regardless of how long the input text is. Here&rsquo;s what I came up with.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn- </span>blanks
-  <span style="color:#e6db74">&#34;Return a string consisting of the number of spaces requested.&#34;</span>
-  [how-many]
-  (<span style="color:#a6e22e">str/join</span> (repeat how-many <span style="color:#e6db74">\s</span>pace)))
-
-(<span style="color:#66d9ef">defn- </span>make-blank-array
-  <span style="color:#e6db74">&#34;Return a vector of strings containing only blank characters. The vector
-</span><span style="color:#e6db74">  consists of strings of blanks of size &#39;most&#39; down to one.&#34;</span>
-  [most]
-  (<span style="color:#66d9ef">loop </span>[cnt most out []]
-    (<span style="color:#66d9ef">if </span>(zero? cnt)
-      out
-      (<span style="color:#a6e22e">recur</span> (dec cnt) (conj out (<span style="color:#a6e22e">blanks</span> cnt))))))
-
-<span style="color:#75715e">; Memoize so that we don&#39;t regenerate on every keystroke​.</span>
-(<span style="color:#66d9ef">def </span><span style="color:#f92672">^</span><span style="color:#e6db74">:private</span> memoized-blank-array (<span style="color:#a6e22e">memoize</span> make-blank-array))
-
-(<span style="color:#66d9ef">defn </span>detab
-  <span style="color:#e6db74">&#34;Replace any tabs in the input text with spaces. If no tab spacing is
-</span><span style="color:#e6db74">  set in the options, a default value of 4 is used.&#34;</span>
-  ([text]
-   (<span style="color:#a6e22e">detab</span> text {<span style="color:#e6db74">:tab-spacing</span> <span style="color:#ae81ff">4</span>}))
-  ([text options]
-   (<span style="color:#66d9ef">let </span>[tab-spacing (or (<span style="color:#e6db74">:tab-spacing</span> options) <span style="color:#ae81ff">4</span>)]
-     (if-not (or (nil? text)
-                 (<span style="color:#a6e22e">empty?</span> text)
-                 (<span style="color:#a6e22e">str/includes?</span> text <span style="color:#e6db74">\t</span>ab))
-       text
-       <span style="color:#75715e">; otherwise</span>
-       (<span style="color:#66d9ef">let </span>[spcs (<span style="color:#a6e22e">memoized-blank-array</span> tab-spacing)]
-         (<span style="color:#66d9ef">loop </span>[in text out <span style="color:#e6db74">&#34;&#34;</span> offset <span style="color:#ae81ff">0</span>]
-           (<span style="color:#66d9ef">if </span>(<span style="color:#a6e22e">empty?</span> in)
-             out
-             (<span style="color:#66d9ef">let </span>[nc (first in)
-                   rnc (<span style="color:#66d9ef">if </span>(= nc <span style="color:#e6db74">\t</span>ab)
-                         (get spcs offset)
-                         nc)
-                   ofs (<span style="color:#66d9ef">if </span>(= nc <span style="color:#e6db74">\n</span>ewline)
-                         <span style="color:#ae81ff">0</span>
-                         (<span style="color:#a6e22e">mod</span> (+ offset (count rnc)) tab-spacing))]
-               (<span style="color:#a6e22e">recur</span> (rest in) (str out rnc) ofs)))))))))
-
-</code></pre></div><p>It&rsquo;s pretty straightforward. Assuming the text needs to be de-tabified at all, just run through the text character-by-character keeping track of where the current character is relative to the beginning of the line. If a tab occurs​, determine the number of spaces to insert based on the offset from the beginning of the line, <em>i.e.</em> where the next tab stop occurs. Get a pre-computed string of spaces by doing a little table lookup and replace the tab. Then just keep going.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn- </span>blanks
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return a string consisting of the number of spaces requested.&#34;</span>
+</span></span><span style="display:flex;"><span>  [how-many]
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">str/join</span> (repeat how-many <span style="color:#e6db74">\s</span>pace)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn- </span>make-blank-array
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return a vector of strings containing only blank characters. The vector
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  consists of strings of blanks of size &#39;most&#39; down to one.&#34;</span>
+</span></span><span style="display:flex;"><span>  [most]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">loop </span>[cnt most out []]
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">if </span>(zero? cnt)
+</span></span><span style="display:flex;"><span>      out
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">recur</span> (dec cnt) (conj out (<span style="color:#a6e22e">blanks</span> cnt))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">; Memoize so that we don&#39;t regenerate on every keystroke​.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span><span style="color:#f92672">^</span><span style="color:#e6db74">:private</span> memoized-blank-array (<span style="color:#a6e22e">memoize</span> make-blank-array))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>detab
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Replace any tabs in the input text with spaces. If no tab spacing is
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  set in the options, a default value of 4 is used.&#34;</span>
+</span></span><span style="display:flex;"><span>  ([text]
+</span></span><span style="display:flex;"><span>   (<span style="color:#a6e22e">detab</span> text {<span style="color:#e6db74">:tab-spacing</span> <span style="color:#ae81ff">4</span>}))
+</span></span><span style="display:flex;"><span>  ([text options]
+</span></span><span style="display:flex;"><span>   (<span style="color:#66d9ef">let </span>[tab-spacing (or (<span style="color:#e6db74">:tab-spacing</span> options) <span style="color:#ae81ff">4</span>)]
+</span></span><span style="display:flex;"><span>     (if-not (or (nil? text)
+</span></span><span style="display:flex;"><span>                 (<span style="color:#a6e22e">empty?</span> text)
+</span></span><span style="display:flex;"><span>                 (<span style="color:#a6e22e">str/includes?</span> text <span style="color:#e6db74">\t</span>ab))
+</span></span><span style="display:flex;"><span>       text
+</span></span><span style="display:flex;"><span>       <span style="color:#75715e">; otherwise</span>
+</span></span><span style="display:flex;"><span>       (<span style="color:#66d9ef">let </span>[spcs (<span style="color:#a6e22e">memoized-blank-array</span> tab-spacing)]
+</span></span><span style="display:flex;"><span>         (<span style="color:#66d9ef">loop </span>[in text out <span style="color:#e6db74">&#34;&#34;</span> offset <span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>           (<span style="color:#66d9ef">if </span>(<span style="color:#a6e22e">empty?</span> in)
+</span></span><span style="display:flex;"><span>             out
+</span></span><span style="display:flex;"><span>             (<span style="color:#66d9ef">let </span>[nc (first in)
+</span></span><span style="display:flex;"><span>                   rnc (<span style="color:#66d9ef">if </span>(= nc <span style="color:#e6db74">\t</span>ab)
+</span></span><span style="display:flex;"><span>                         (get spcs offset)
+</span></span><span style="display:flex;"><span>                         nc)
+</span></span><span style="display:flex;"><span>                   ofs (<span style="color:#66d9ef">if </span>(= nc <span style="color:#e6db74">\n</span>ewline)
+</span></span><span style="display:flex;"><span>                         <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                         (<span style="color:#a6e22e">mod</span> (+ offset (count rnc)) tab-spacing))]
+</span></span><span style="display:flex;"><span>               (<span style="color:#a6e22e">recur</span> (rest in) (str out rnc) ofs)))))))))
+</span></span></code></pre></div><p>It&rsquo;s pretty straightforward. Assuming the text needs to be de-tabified at all, just run through the text character-by-character keeping track of where the current character is relative to the beginning of the line. If a tab occurs​, determine the number of spaces to insert based on the offset from the beginning of the line, <em>i.e.</em> where the next tab stop occurs. Get a pre-computed string of spaces by doing a little table lookup and replace the tab. Then just keep going.</p>
 <p>The only tricky thing in the above implementation is &ldquo;memoizing&rdquo; the table of pre-computed replacement strings.</p>
 
   

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>A Titled JavaFX Separator &middot; Yo-Dave</title>
 
@@ -254,43 +254,42 @@
 
   <p>In the process of updating some old programs, I had to change the GUI frameworks used. The old programs were written in Java using the Swing GUI framework and the <a href="http://www.jgoodies.com/">JGoodies</a> <a href="http://www.jgoodies.com/freeware/libraries/forms/">Forms</a> and <a href="http://www.jgoodies.com/freeware/libraries/looks/">Looks</a> libraries. Nowadays, the official GUI framework for Java is JavaFX.</p>
 <p>Making the transition from Swing to JavaFX was relatively painless because the programs were so small. However, one of the things I missed from the JGoodies Forms library was the &ldquo;titled separator&rdquo;, that is a separator with a label in front of it. I really liked the look. Turns out that making my own wasn&rsquo;t that difficult. Here&rsquo;s a program extract that implements my version. (This time it&rsquo;s written in Clojure.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Clojure" data-lang="Clojure">(<span style="color:#66d9ef">def </span>sep-color <span style="color:#e6db74">&#34;#4682b4&#34;</span>)                                   <span style="color:#75715e">; steelblue</span>
-(<span style="color:#66d9ef">def </span>sep-style (<span style="color:#a6e22e">str/join</span> <span style="color:#e6db74">&#34;&#34;</span> [<span style="color:#e6db74">&#34;-fx-border-color: &#34;</span>
-                             sep-color
-                             <span style="color:#e6db74">&#34;; -fx-border-width: 1 0 0 0 ;&#34;</span>]))
-
-(<span style="color:#66d9ef">defn </span>special-separator
-  <span style="color:#e6db74">&#34;Return a special separator used for titled separators below. This
-</span><span style="color:#e6db74">  separator is specially colored and set to fill as much space as
-</span><span style="color:#e6db74">  available in the HBox where it is used.&#34;</span>
-  []
-  (<span style="color:#66d9ef">let </span>[sep (<span style="color:#a6e22e">Separator.</span>)]
-    (doto sep
-      (<span style="color:#a6e22e">.setStyle</span> sep-style)
-      (<span style="color:#a6e22e">HBox/setHgrow</span> Priority/ALWAYS))
-    sep))
-
-(<span style="color:#66d9ef">defn </span>titled-separator
-  <span style="color:#e6db74">&#34;Return a separator with a title preceding the separator line. If title
-</span><span style="color:#e6db74">  is empty or nil, a separator consisting of only the line is returned.&#34;</span>
-  [title]
-  (<span style="color:#66d9ef">let </span>[labeled-separator (<span style="color:#a6e22e">HBox.</span>)
-        no-label (or (nil? title)
-                     (zero? (count title)))
-        label (<span style="color:#66d9ef">if </span>no-label
-                (<span style="color:#a6e22e">Label.</span> <span style="color:#e6db74">&#34;&#34;</span>)
-                (<span style="color:#a6e22e">Label.</span> title))]
-    (when-not no-label
-      (<span style="color:#a6e22e">.setPadding</span> label (<span style="color:#a6e22e">Insets.</span> <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">5.0</span> <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">0.0</span>))
-      (<span style="color:#a6e22e">.setStyle</span> label <span style="color:#e6db74">&#34;-fx-font-weight: bold;&#34;</span>)
-      (<span style="color:#a6e22e">.setTextFill</span> label (<span style="color:#a6e22e">Color/web</span> sep-color)))
-    (<span style="color:#a6e22e">.setAlignment</span> labeled-separator Pos/CENTER)
-    (<span style="color:#a6e22e">.addAll</span> (<span style="color:#a6e22e">.getChildren</span> labeled-separator) [label (<span style="color:#a6e22e">special-separator</span>)])
-    labeled-separator))
-
-</code></pre></div><p>Instead of the standard black separator, this one is a nice grayish-blue. It coordinates with lots of the color schemes I use but is easy to change. Using it is pretty easy too.  Just do something like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#a6e22e">titled-separator</span> <span style="color:#e6db74">&#34;Here&#39;s a Title&#34;</span>)
-</code></pre></div><p>and back comes a separator with a textual title in front of the rule line. If you call the function without a title, it will just return a nicely colored separator. The label will be in a bold version of the font normally used by the program and will be separated from the rule line by a few pixels. You can see what they look like in this screen shot of the <a href="https://yo-dave.com/2017/08/31/an-updated-sign-test-program/">sign test program that I udpated recently</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Clojure" data-lang="Clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>sep-color <span style="color:#e6db74">&#34;#4682b4&#34;</span>)                                   <span style="color:#75715e">; steelblue</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>sep-style (<span style="color:#a6e22e">str/join</span> <span style="color:#e6db74">&#34;&#34;</span> [<span style="color:#e6db74">&#34;-fx-border-color: &#34;</span>
+</span></span><span style="display:flex;"><span>                             sep-color
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">&#34;; -fx-border-width: 1 0 0 0 ;&#34;</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>special-separator
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return a special separator used for titled separators below. This
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  separator is specially colored and set to fill as much space as
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  available in the HBox where it is used.&#34;</span>
+</span></span><span style="display:flex;"><span>  []
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[sep (<span style="color:#a6e22e">Separator.</span>)]
+</span></span><span style="display:flex;"><span>    (doto sep
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.setStyle</span> sep-style)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">HBox/setHgrow</span> Priority/ALWAYS))
+</span></span><span style="display:flex;"><span>    sep))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>titled-separator
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return a separator with a title preceding the separator line. If title
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  is empty or nil, a separator consisting of only the line is returned.&#34;</span>
+</span></span><span style="display:flex;"><span>  [title]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[labeled-separator (<span style="color:#a6e22e">HBox.</span>)
+</span></span><span style="display:flex;"><span>        no-label (or (nil? title)
+</span></span><span style="display:flex;"><span>                     (zero? (count title)))
+</span></span><span style="display:flex;"><span>        label (<span style="color:#66d9ef">if </span>no-label
+</span></span><span style="display:flex;"><span>                (<span style="color:#a6e22e">Label.</span> <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>                (<span style="color:#a6e22e">Label.</span> title))]
+</span></span><span style="display:flex;"><span>    (when-not no-label
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.setPadding</span> label (<span style="color:#a6e22e">Insets.</span> <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">5.0</span> <span style="color:#ae81ff">0.0</span> <span style="color:#ae81ff">0.0</span>))
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.setStyle</span> label <span style="color:#e6db74">&#34;-fx-font-weight: bold;&#34;</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.setTextFill</span> label (<span style="color:#a6e22e">Color/web</span> sep-color)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">.setAlignment</span> labeled-separator Pos/CENTER)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">.addAll</span> (<span style="color:#a6e22e">.getChildren</span> labeled-separator) [label (<span style="color:#a6e22e">special-separator</span>)])
+</span></span><span style="display:flex;"><span>    labeled-separator))
+</span></span></code></pre></div><p>Instead of the standard black separator, this one is a nice grayish-blue. It coordinates with lots of the color schemes I use but is easy to change. Using it is pretty easy too.  Just do something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>    (<span style="color:#a6e22e">titled-separator</span> <span style="color:#e6db74">&#34;Here&#39;s a Title&#34;</span>)
+</span></span></code></pre></div><p>and back comes a separator with a textual title in front of the rule line. If you call the function without a title, it will just return a nicely colored separator. The label will be in a bold version of the font normally used by the program and will be separated from the rule line by a few pixels. You can see what they look like in this screen shot of the <a href="https://yo-dave.com/2017/08/31/an-updated-sign-test-program/">sign test program that I udpated recently</a>.</p>
 <p><a href="https://yo-dave.com/static/img/2017-08-32-new-sign-test-program.PNG"><img src="https://yo-dave.com/static/img/2017-08-32-new-sign-test-program.PNG" alt="A New Version of the Sign Test Program" title="A New Version of the Sign Test Program"><!-- raw HTML omitted --><!-- raw HTML omitted -->A New Version of the Sign Test Program<!-- raw HTML omitted --></a></p>
 
   

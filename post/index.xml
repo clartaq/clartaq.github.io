@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 12:55:22 -0400</lastBuildDate><atom:link href="https://yo-dave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 May 2022 10:31:17 -0400</lastBuildDate><atom:link href="https://yo-dave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating Pseudo-Random Numbers in Scheme</title>
+      <link>https://yo-dave.com/2022/05/01/generating-pseudo-random-numbers-in-scheme/</link>
+      <pubDate>Sun, 01 May 2022 10:31:17 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2022/05/01/generating-pseudo-random-numbers-in-scheme/</guid>
+      <description>Recently, I needed to write a simple simulation in multiple programming languages. For the simulations to operate, they needed a source of random numbers from two statistical distributions: a uniform distribution and a standard distribution.
+The numbers from the distributions needed to be &amp;ldquo;random&amp;rdquo;, but not too random. I needed each generator in each language to produce the same sequence of &amp;ldquo;pseudo-random&amp;rdquo; numbers. And I needed the same sequence every time the simulators were run.</description>
+    </item>
+    
     <item>
       <title>Blogging Friction</title>
       <link>https://yo-dave.com/2021/04/07/blogging-friction/</link>
@@ -57,7 +67,7 @@ Working through those tutorials, one of the first things that smacks you in the 
       
       <guid>https://yo-dave.com/2020/07/24/using-clojure-to-delete-directories-containing-symlinks/</guid>
       <description>As part of repository maintenance, I often use a script to delete a group of directories, even if those directories are not empty. It looks something like this:
-(require &amp;#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f] &amp;#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&amp;#34; (when (.isDirectory f) (doseq [f2 (.listFiles f)] (delete-children-recursively! f2))) (when (.exists f) (io/delete-file f))) (defn delete-clean-targets!</description>
+(require &amp;#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f]  &amp;#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&amp;#34;  (when (.isDirectory f)  (doseq [f2 (.listFiles f)]  (delete-children-recursively!</description>
     </item>
     
     <item>
@@ -96,10 +106,10 @@ The approach is to create a stack that holds every change to the state of the at
     
     <item>
       <title>clown -- A Clojure/Script Outliner with Notes</title>
-      <link>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</link>
+      <link>https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/</link>
       <pubDate>Sun, 05 Jan 2020 09:39:38 -0500</pubDate>
       
-      <guid>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</guid>
+      <guid>https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/</guid>
       <description>Questions about note-taking are very popular on Hacker News. I am always interested in the responses. It seems like developers are always interested in the best tools and methodologies. Me too.
 I&amp;rsquo;ve been researching and using different approaches for decades. Over all that time, I&amp;rsquo;ve written thousands of notes, both short and long. Most notes become uninteresting after awhile and are just erased. But thousands have persisted for many years because I still refer to them.</description>
     </item>
@@ -354,10 +364,10 @@ Since the switch, I&amp;rsquo;ve been using Sublime Text 3 as my editor for Mark
     
     <item>
       <title>Another Useful Function -- convert-seq-to-comma-separated-string</title>
-      <link>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</link>
+      <link>https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/</link>
       <pubDate>Fri, 19 Jan 2018 14:32:49 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</guid>
+      <guid>https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/</guid>
       <description>This is a little note about a function I find myself using frequently in Clojure.
 User interface code often needs to display a list of things as a comma-separated list, e.g. &amp;ldquo;a, b, c, d&amp;rdquo;.
 If all of the things are strings, you can use the built-in string/join function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use string/join.</description>
@@ -690,7 +700,7 @@ Fountain pens are pretty pieces of art, but too messy and fiddly. Ballpoints are
       <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</guid>
-      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&#39; HTTP.
+      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
 Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
     </item>
     
@@ -1170,7 +1180,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
       <guid>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</guid>
       <description>A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&amp;rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
 Here&amp;rsquo;s the new snippet.
-(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.</description>
+ (ns clojure_font_loading.core  (:gen-class  :extends javafx.application.Application)  (:import  [javafx.application Application]  [javafx.event EventHandler]  [javafx.</description>
     </item>
     
     <item>
@@ -1369,10 +1379,10 @@ On balance I didn&amp;rsquo;t miss it too much. I continued to work on problems 
     
     <item>
       <title>Java Data Grid Component -- A Personal Failing</title>
-      <link>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</link>
+      <link>https://yo-dave.com/2011/09/22/java-data-grid-component--a-personal-failing/</link>
       <pubDate>Thu, 22 Sep 2011 08:06:10 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</guid>
+      <guid>https://yo-dave.com/2011/09/22/java-data-grid-component--a-personal-failing/</guid>
       <description>&lt;p&gt;Many of the programs I write need a way to enter and edit a two-dimensional grid of data in the user interface. Such a grid doesn&amp;rsquo;t need to be a full-fledged spreadsheet, just provide flexible data entry and editing. Alas, there doesn&amp;rsquo;t seem to be such a thing and I haven&amp;rsquo;t created one that I&amp;rsquo;m satisfied with.&lt;/p&gt;</description>
     </item>
     
@@ -1485,10 +1495,10 @@ It&amp;rsquo;s a constant reminder not to fall prey to something I&amp;rsquo;ve 
     
     <item>
       <title>Binomial Confidence Intervals -- BinomConf</title>
-      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</link>
+      <link>https://yo-dave.com/2011/06/14/binomial-confidence-intervals--binomconf/</link>
       <pubDate>Tue, 14 Jun 2011 16:57:28 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</guid>
+      <guid>https://yo-dave.com/2011/06/14/binomial-confidence-intervals--binomconf/</guid>
       <description>&lt;p&gt;Way back in my career there was a need to calculate binomial confidence intervals on experiments with very large numbers of trials (thousands to tens of thousands.) The statistics packages of the time couldn&amp;rsquo;t seem to handle such large numbers of trials.&lt;/p&gt;</description>
     </item>
     
@@ -1616,10 +1626,10 @@ If you&amp;rsquo;re a golf fan, you are probably aware that the Accenture Golf T
     
     <item>
       <title>Windows Update Trashed My Computer -- AGAIN!</title>
-      <link>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</link>
+      <link>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer--again/</link>
       <pubDate>Tue, 22 Feb 2011 00:23:13 +0000</pubDate>
       
-      <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</guid>
+      <guid>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer--again/</guid>
       <description>&lt;p&gt;Ever since the purchase of a nice new system running Windows 7 Professional, I have been plagued by periodic system crashes. Crashes that make the system unstable and that finally make it unbootable. And it&amp;rsquo;s all the fault of Windows Update.&lt;/p&gt;</description>
     </item>
     
@@ -1708,7 +1718,7 @@ Here are a few.
       
       <guid>https://yo-dave.com/2011/01/23/re-sizing-an-icon-in-java-for-swing/</guid>
       <description>Sometimes you have a resource like an icon or image that almost works, but not quite. For example, there was a question on StackOverflow about how to re-size an existing icon to fit in the smaller location at the lower right corner of a JScrollPane. The original poster was close. Here&amp;rsquo;s the code I came up with that actually worked.
-import javax.swing.*; import java.awt.*; public class CornerButton extends JFrame { public CornerButton() { JTextArea area = new JTextArea(20, 20); JScrollPane scroll = new JScrollPane(area); Icon icn = UIManager.</description>
+import javax.swing.*; import java.awt.*;  public class CornerButton extends JFrame {  public CornerButton()  {  JTextArea area = new JTextArea(20, 20);  JScrollPane scroll = new JScrollPane(area);  Icon icn = UIManager.</description>
     </item>
     
     <item>

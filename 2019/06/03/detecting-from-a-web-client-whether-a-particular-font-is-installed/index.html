@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Detecting from a Web Client Whether a Particular Font is Installed &middot; Yo-Dave</title>
 
@@ -281,97 +281,97 @@
 <p>There have been different approaches but the one I prefer is to create an HTML <code>canvas</code> element (unconnected to the DOM), get its 2-dimensional context, set the font size and family, and use the <code>measureText</code> method to get the width.</p>
 <h3 id="which-font-from-a-font-family-declaration-is-actually-being-used">Which Font from a <code>font-family</code> Declaration is Actually Being Used?</h3>
 <p>The rule is that when a CSS <code>font-family</code> is applied to an element the actual font used is the first one that is found to be installed. For example, if a CSS rule is applied to <code>body</code> like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
-    <span style="color:#66d9ef">font-family</span>: Boojum, Woojum, Helvetica, Wanger, Banger, <span style="color:#66d9ef">serif</span>;
-}
-</code></pre></div><p>In all likelihood, &ldquo;Helvetica&rdquo; will be the selected font. Writing a function to figure out which font will be applied is trivial.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>: Boojum, Woojum, Helvetica, Wanger, Banger, <span style="color:#66d9ef">serif</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In all likelihood, &ldquo;Helvetica&rdquo; will be the selected font. Writing a function to figure out which font will be applied is trivial.</p>
 <h2 id="some-code">Some Code</h2>
 <p>Here&rsquo;s my implementation in ClojureScript:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;;;;</span>
-<span style="color:#75715e">;;;; Utilities to help with determining what if particulare fonts are</span>
-<span style="color:#75715e">;;;; installed on the client system.</span>
-<span style="color:#75715e">;;;;</span>
-
-(<span style="color:#66d9ef">ns </span>cwiki-mde.font-detection
-  (<span style="color:#e6db74">:require</span> [clojure.string <span style="color:#e6db74">:as</span> string]))
-
-<span style="color:#75715e">;; Filled in during loading of namespace.</span>
-(<span style="color:#66d9ef">def </span>measured-font-widths (<span style="color:#a6e22e">atom</span> {}))
-
-(<span style="color:#66d9ef">def </span>generic-fonts [<span style="color:#e6db74">:monospace</span> <span style="color:#e6db74">:serif</span> <span style="color:#e6db74">:sans-serif</span>])
-
-<span style="color:#75715e">;; Suggested by Lalit Patel</span>
-<span style="color:#75715e">;; Website: http://www.lalit.org/lab/javascript-css-font-detect/ (broken)</span>
-(<span style="color:#66d9ef">def </span>test-string <span style="color:#e6db74">&#34;mmmmmmmmmmlli&#34;</span>)
-(<span style="color:#66d9ef">def </span>test-size <span style="color:#ae81ff">72</span>)
-
-(<span style="color:#66d9ef">def </span>canvas (<span style="color:#a6e22e">.createElement</span> js/document <span style="color:#e6db74">&#34;canvas&#34;</span>))
-(<span style="color:#66d9ef">def </span>context (<span style="color:#a6e22e">.getContext</span> canvas <span style="color:#e6db74">&#34;2d&#34;</span>))
-
-(<span style="color:#66d9ef">defn- </span>measure-string-width
-  <span style="color:#e6db74">&#34;Return the width in pixels required to render the string in the given
-</span><span style="color:#e6db74">  font at the given size.&#34;</span>
-  [s font-name font-size]
-  (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-font</span> context) (str font-size <span style="color:#e6db74">&#34;px &#34;</span> font-name))
-  (<span style="color:#a6e22e">.-width</span> (<span style="color:#a6e22e">.measureText</span> context s)))
-
-(<span style="color:#66d9ef">defn- </span>init-generic-font-widths!
-  <span style="color:#e6db74">&#34;Set the global variable containing the measured widths of the test
-</span><span style="color:#e6db74">  string at the test size for each of the test fonts.&#34;</span>
-  []
-  (<span style="color:#a6e22e">mapv</span> <span style="color:#f92672">#</span>(<span style="color:#a6e22e">swap!</span> measured-font-widths
-                merge
-                {% (<span style="color:#a6e22e">measure-string-width</span> test-string (name %) test-size)})
-        generic-fonts))
-
-(<span style="color:#a6e22e">init-generic-font-widths!</span>)
-
-(<span style="color:#66d9ef">defn- </span>measure-against-generic
-  <span style="color:#e6db74">&#34;Measure the width of the test string using the font name and compare it
-</span><span style="color:#e6db74">  to the width when one of the generic fonts (given by the generic-key) is
-</span><span style="color:#e6db74">  used. Return true if the width does NOT match the width produced by the
-</span><span style="color:#e6db74">  generic font. Return false otherwise.&#34;</span>
-  [font-name generic-key]
-  (<span style="color:#66d9ef">let </span>[family (str test-size <span style="color:#e6db74">&#34;px &#34;</span> font-name <span style="color:#e6db74">&#34;, &#34;</span> (name generic-key))]
-    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-font</span> context) family)
-    (<span style="color:#66d9ef">let </span>[width (<span style="color:#a6e22e">measure-string-width</span> test-string family test-size)]
-      (not= width (<span style="color:#a6e22e">generic-key</span> <span style="color:#f92672">@</span>measured-font-widths)))))
-
-(<span style="color:#66d9ef">defn </span>font-available?
-  <span style="color:#e6db74">&#34;Return true if the font named is available on the system.&#34;</span>
-  [font-name]
-  (reduce <span style="color:#f92672">#</span>(or %1 (<span style="color:#a6e22e">measure-against-generic</span> font-name %2)) false generic-fonts))
-
-<span style="color:#75715e">;; Usage:</span>
-<span style="color:#75715e">;;</span>
-<span style="color:#75715e">;; (println &#34;(font-available? \&#34;Calibri\&#34;): &#34; (font-available? &#34;Calibri&#34;))</span>
-<span style="color:#75715e">;; =&gt; true on Windows, false on Mac</span>
-<span style="color:#75715e">; (println &#34;(font-available? \&#34;Calibri Regular\&#34;): &#34; (font-available? &#34;Calibri Regular&#34;))</span>
-<span style="color:#75715e">;; =&gt; false</span>
-<span style="color:#75715e">;; (println &#34;(font-available? \&#34;Arial\&#34;): &#34; (font-available? &#34;Arial&#34;))</span>
-<span style="color:#75715e">;; =&gt; true</span>
-<span style="color:#75715e">;; (println &#34;(font-available? \&#34;Boojum\&#34;): &#34; (font-available? &#34;Boojum&#34;))</span>
-<span style="color:#75715e">;; =&gt; false</span>
-<span style="color:#75715e">;; (println &#34;(font-available? \&#34;Helvetica Neue\&#34;): &#34; (font-available? &#34;Helvetica Neue&#34;))</span>
-<span style="color:#75715e">;; =&gt; false on Windows, true on Mac</span>
-<span style="color:#75715e">;; (println &#34;(font-available? \&#34;Helvetica Newish\&#34;): &#34; (font-available? &#34;Helvetica Newish&#34;))</span>
-<span style="color:#75715e">;; =&gt; false</span>
-
-(<span style="color:#66d9ef">defn </span>font-family-&gt;font-used
-  <span style="color:#e6db74">&#34;Given a CSS font family, determine which is actually used. This is the
-</span><span style="color:#e6db74">  first name in the list that is actually installed. Return nil if none of
-</span><span style="color:#e6db74">  the fonts in the list are installed.&#34;</span>
-  [font-family]
-  (<span style="color:#66d9ef">let </span>[names (<span style="color:#a6e22e">mapv</span> string/trim (<span style="color:#a6e22e">string/split</span> font-family <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;,&#34;</span>))]
-    (some <span style="color:#f92672">#</span>(when (<span style="color:#a6e22e">font-available?</span> %) %) names)))
-
-<span style="color:#75715e">;; (println &#34;Selected from headline font family: &#34; (font-family-&gt;font-used &#34;\&#34;Century Gothic\&#34;, Muli, \&#34;Segoe UI\&#34;, Arial, sans-serif&#34;))</span>
-<span style="color:#75715e">;; =&gt; Muli ; on my system</span>
-<span style="color:#75715e">;; (println &#34;Selected from body font family: &#34; (font-family-&gt;font-used &#34;Palatino, \&#34;Palatino Linotype\&#34;, \&#34;Palatino LT STD\&#34;, \&#34;Book Antiqua\&#34;, Georgia, serif&#34;))</span>
-<span style="color:#75715e">;; =&gt; Palatino ; on my system</span>
-<span style="color:#75715e">;; (println &#34;Selected from fixed font family: &#34; (font-family-&gt;font-used &#34;Consolas, \&#34;Ubuntu Mono\&#34;, Menlo, Monaco, \&#34;Lucida Console\&#34;,\n    \&#34;Liberation Mono\&#34;, \&#34;DejaVu Sans Mono\&#34;, \&#34;Bitstream Vera Sans Mono\&#34;,\n    \&#34;Courier New\&#34;, monospace, serif&#34;))</span>
-<span style="color:#75715e">;; =&gt; &#34;Ubuntu Mono&#34; ; on my system</span>
-</code></pre></div><p>The two important public functions are:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span><span style="color:#75715e">;;;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;;;; Utilities to help with determining what if particulare fonts are</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;;;; installed on the client system.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;;;;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>cwiki-mde.font-detection
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">:require</span> [clojure.string <span style="color:#e6db74">:as</span> string]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Filled in during loading of namespace.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>measured-font-widths (<span style="color:#a6e22e">atom</span> {}))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>generic-fonts [<span style="color:#e6db74">:monospace</span> <span style="color:#e6db74">:serif</span> <span style="color:#e6db74">:sans-serif</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Suggested by Lalit Patel</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Website: http://www.lalit.org/lab/javascript-css-font-detect/ (broken)</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>test-string <span style="color:#e6db74">&#34;mmmmmmmmmmlli&#34;</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>test-size <span style="color:#ae81ff">72</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>canvas (<span style="color:#a6e22e">.createElement</span> js/document <span style="color:#e6db74">&#34;canvas&#34;</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>context (<span style="color:#a6e22e">.getContext</span> canvas <span style="color:#e6db74">&#34;2d&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn- </span>measure-string-width
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return the width in pixels required to render the string in the given
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  font at the given size.&#34;</span>
+</span></span><span style="display:flex;"><span>  [s font-name font-size]
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-font</span> context) (str font-size <span style="color:#e6db74">&#34;px &#34;</span> font-name))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">.-width</span> (<span style="color:#a6e22e">.measureText</span> context s)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn- </span>init-generic-font-widths!
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Set the global variable containing the measured widths of the test
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  string at the test size for each of the test fonts.&#34;</span>
+</span></span><span style="display:flex;"><span>  []
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">mapv</span> <span style="color:#f92672">#</span>(<span style="color:#a6e22e">swap!</span> measured-font-widths
+</span></span><span style="display:flex;"><span>                merge
+</span></span><span style="display:flex;"><span>                {% (<span style="color:#a6e22e">measure-string-width</span> test-string (name %) test-size)})
+</span></span><span style="display:flex;"><span>        generic-fonts))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">init-generic-font-widths!</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn- </span>measure-against-generic
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Measure the width of the test string using the font name and compare it
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  to the width when one of the generic fonts (given by the generic-key) is
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  used. Return true if the width does NOT match the width produced by the
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  generic font. Return false otherwise.&#34;</span>
+</span></span><span style="display:flex;"><span>  [font-name generic-key]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[family (str test-size <span style="color:#e6db74">&#34;px &#34;</span> font-name <span style="color:#e6db74">&#34;, &#34;</span> (name generic-key))]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-font</span> context) family)
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">let </span>[width (<span style="color:#a6e22e">measure-string-width</span> test-string family test-size)]
+</span></span><span style="display:flex;"><span>      (not= width (<span style="color:#a6e22e">generic-key</span> <span style="color:#f92672">@</span>measured-font-widths)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>font-available?
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return true if the font named is available on the system.&#34;</span>
+</span></span><span style="display:flex;"><span>  [font-name]
+</span></span><span style="display:flex;"><span>  (reduce <span style="color:#f92672">#</span>(or %1 (<span style="color:#a6e22e">measure-against-generic</span> font-name %2)) false generic-fonts))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;(font-available? \&#34;Calibri\&#34;): &#34; (font-available? &#34;Calibri&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; true on Windows, false on Mac</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">; (println &#34;(font-available? \&#34;Calibri Regular\&#34;): &#34; (font-available? &#34;Calibri Regular&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; false</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;(font-available? \&#34;Arial\&#34;): &#34; (font-available? &#34;Arial&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;(font-available? \&#34;Boojum\&#34;): &#34; (font-available? &#34;Boojum&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; false</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;(font-available? \&#34;Helvetica Neue\&#34;): &#34; (font-available? &#34;Helvetica Neue&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; false on Windows, true on Mac</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;(font-available? \&#34;Helvetica Newish\&#34;): &#34; (font-available? &#34;Helvetica Newish&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>font-family-&gt;font-used
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Given a CSS font family, determine which is actually used. This is the
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  first name in the list that is actually installed. Return nil if none of
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  the fonts in the list are installed.&#34;</span>
+</span></span><span style="display:flex;"><span>  [font-family]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[names (<span style="color:#a6e22e">mapv</span> string/trim (<span style="color:#a6e22e">string/split</span> font-family <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;,&#34;</span>))]
+</span></span><span style="display:flex;"><span>    (some <span style="color:#f92672">#</span>(when (<span style="color:#a6e22e">font-available?</span> %) %) names)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;Selected from headline font family: &#34; (font-family-&gt;font-used &#34;\&#34;Century Gothic\&#34;, Muli, \&#34;Segoe UI\&#34;, Arial, sans-serif&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; Muli ; on my system</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;Selected from body font family: &#34; (font-family-&gt;font-used &#34;Palatino, \&#34;Palatino Linotype\&#34;, \&#34;Palatino LT STD\&#34;, \&#34;Book Antiqua\&#34;, Georgia, serif&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; Palatino ; on my system</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; (println &#34;Selected from fixed font family: &#34; (font-family-&gt;font-used &#34;Consolas, \&#34;Ubuntu Mono\&#34;, Menlo, Monaco, \&#34;Lucida Console\&#34;,\n    \&#34;Liberation Mono\&#34;, \&#34;DejaVu Sans Mono\&#34;, \&#34;Bitstream Vera Sans Mono\&#34;,\n    \&#34;Courier New\&#34;, monospace, serif&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =&gt; &#34;Ubuntu Mono&#34; ; on my system</span>
+</span></span></code></pre></div><p>The two important public functions are:</p>
 <ul>
 <li><code>font-available?</code> used to determine if a particular font is installed.</li>
 <li><code>font-family-&gt;font-used</code> that will return the name of the font that will be used in the browser from a <code>font-family</code> declaration.</li>

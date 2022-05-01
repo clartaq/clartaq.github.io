@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  <title>Blogging &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+  <link rel="alternate" type="application/rss+xml" title="Yo-Dave"
+    href='https://yo-dave.com/categories/blogging/index.xml' />
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href='https://yo-dave.com/categories/blogging/index.xml'><i
+          class="fas fa-rss"></i>RSS</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Blogging</h1>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2018/03/26/new-blogging-setup/">New Blogging Setup</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>26 Mar 2018 10:09:24 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/hugo">hugo</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/blogging">blogging</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/github-pages">github pages</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/cdns">cdns</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/cloudflare">cloudflare</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  It&rsquo;s been a bit of a slog, but things should be up and running again. The transition was a bit harder than expected.
+Here are some things you should know:
+ The site is generated by the Hugo static site generator. The site uses a trivial modification of the very pleasant Blackburn theme. There are still some kinks I want to work out, but it is very useful overall. The repository for the site is on GitHub here and is generated from the information in the repository here.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2018/03/26/new-blogging-setup/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2018/03/17/so-many-broken-links/">So Many Broken Links</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>17 Mar 2018 1:24:20 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/blogging">blogging</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/upgrading">upgrading</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  As noted in yesterday&rsquo;s blog, I&rsquo;m making a sweep through my previous posts trying to fix links that have broken over the years. This is in preparation for switching to another blogging platform.
+I find that the rot even creeps into the README.md files in my own code repositories. Many of them refer back to descriptions of the repositories posted to no longer existing versions of the blog.
+I&rsquo;ll fix those as soon as I can.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2018/03/17/so-many-broken-links/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2018/03/16/bit-rot/">Bit Rot</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>16 Mar 2018 9:41:04 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/blogging">blogging</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Every once in awhile, I change blogging platforms. Recently I have been working on a switch to Hugo. Whenever I go through this exercise, I religiously check for broken links. There are always plenty.
+Most of the time, when broken links are found, I can find a replacement. Sometimes not though. Sometimes something is just gone. No new address. No record in the Internet Archive Wayback Machine. Just gone.
+I know I&rsquo;m contributing to this myself by changing hosts and blogging platforms.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2018/03/16/bit-rot/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2017/08/25/proofreading-i-am-humbled/">Proofreading: I am Humbled</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>25 Aug 2017 2:15:45 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/quality">quality</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Often, when reading blogs, I am struck by the number of misspellings, incorrect word usages, bad grammar, and so on.
+But the experience of transferring this blog from other systems to it&rsquo;s current home has been an eye opener. I proofread my posts, usually multiple times. However, in doing so I was struck by the number of misspellings, incorrect word usages, bad grammar, and so on.
+I am humbled (in the real sense of the word.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2017/08/25/proofreading-i-am-humbled/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2015/05/15/no-more-disqus/">No More Disqus</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 May 2015 5:09:14 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/commenting">commenting</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Man, I am so fed up with companies that insist on tracking me. Disqus has a great commenting system. Great features. Widely used.
+But they track you, building a pretty detailed profile, which they sell. They do it to both me and you if you comment on this site. Without telling either of us. So, Disqus is out.
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2014/04/30/a-new-theme/">A New Theme</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Apr 2014 9:59:36 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/design">design</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/perfectionism">perfectionism</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/wordpress">wordpress</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  This probably has no interest to anyone but me, but you may notice a change in the blog theme today. I&rsquo;ve been dissatisfied with the typography of the blog for quite some time. Today I set out to try to find a theme that had better typography. Man, what a mess!
+There are a zillion WordPress themes out there. Some awful, but many quite good. However, finding a minimalist theme intended for writing and reading is surprisingly difficult.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2014/04/30/a-new-theme/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2014/03/26/something-new.-comments/">Something New. Comments!</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>26 Mar 2014 1:33:45 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/commenting">commenting</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/wordpress">wordpress</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Well, it&rsquo;s been a long time coming and I&rsquo;m still a little unsure about it, but starting now, this site will allow comments. I&rsquo;ve explained why I didn&rsquo;t allow them before, but I&rsquo;m adding Disqus-powered discussions to the blog. We&rsquo;ll see how that goes.
+If everything that comes in is just spam, I&rsquo;ll disable comments again. If comments are useful, civil and on topic, they will remain.
+And we&rsquo;ll see if anyone thinks any of this stuff is interesting enough to comment on in the first place.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2014/03/26/something-new.-comments/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2011/03/18/why-no-comments/">Why No Comments?</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Mar 2011 5:29:47 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/commenting">commenting</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  There are two primary reasons that comments are not enabled on this site.
+ These are just notes I write to myself. They don&rsquo;t get much attention other than when I want to remind myself of something. It wouldn&rsquo;t be fair to solicit comments and then just ignore them. Comment spam. Related to the above, I just don&rsquo;t check in often enough and would not effectively moderate and eliminate spam.  This does not mean that the site will never be opened up to comments.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2011/03/18/why-no-comments/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2011/01/30/syntax-highlighting/">Syntax Highlighting</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Jan 2011 1:11:28 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/highlighting">highlighting</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Update 2017-08-19: This post refers to a time when the blog was hosted in WordPress. It isn&rsquo;t really applicable anymore. But it may provide some guidance to someone who happens to come across it.
+Since this blog is mostly about programming, there are a lot of code listings. To make those listings more easily readable, highlighting syntax in the listings is a good thing.
+Of all of the syntax highlighters I have tried, the SyntaxHighlighter JavaScript tool by Alex Gorbachev is the one I most prefer.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2011/01/30/syntax-highlighting/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2011/01/23/moving-old-posts/">Moving Old Posts</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>23 Jan 2011 12:56:10 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/wordpress">wordpress</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Since I&rsquo;m going through the setup again, I thought I would start out with some older posts from other systems (the few that remain). Don&rsquo;t pay much attention to the dates.
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://yo-dave.com/2011/01/22/so-dr.-clark.-we-meet-again/">So, Dr. Clark. We meet again!</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>22 Jan 2011 11:31:31 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/wordpress">wordpress</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Well, here we are again. You, me, and WordPress. It seems like I go through this setup a lot. Over the years, I&rsquo;ve tried other blogging platforms, and even toyed with the idea of creating one of my own for fun like one of my heroes, Brian Carper(Broken Link). But I just keep coming back here. Why do I ever leave?
+There are really a couple of reasons. I do this a lot because of hardware and backup failures.
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2011/01/22/so-dr.-clark.-we-meet-again/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

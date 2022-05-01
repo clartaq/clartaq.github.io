@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  <title>Another Useful Function -- convert-seq-to-comma-separated-string &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Another Useful Function -- convert-seq-to-comma-separated-string</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>19 Jan 2018 2:32:49 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/utility">utility</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>This is a little note about a function I find myself using frequently in <a href="https://clojure.org/">Clojure</a>.</p>
+<p>User interface code often needs to display a list of things as a comma-separated list, e.g. &ldquo;a, b, c, d&rdquo;.</p>
+<p>If all of the things are strings, you can use the built-in <code>string/join</code> function to build such a string. When you have a sequence of things that are not strings, I suppose you could convert each element to a string and then use <code>string/join</code>. Or you could build your own. I like the function presented below, <code>convert-seq-to-comma-separated-string</code>. (Ok, the name needs some work.)</p>
+<p>Here&rsquo;s an example of usage.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Clojure" data-lang="Clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>convert-seq-to-comma-separated-string
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return a string containing the members of the sequence separated by commas.&#34;</span>
+</span></span><span style="display:flex;"><span>  [the-seq]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[but-last-comma-mapped (map <span style="color:#f92672">#</span>(str % <span style="color:#e6db74">&#34;, &#34;</span>) (butlast the-seq))]
+</span></span><span style="display:flex;"><span>        (apply str (concat but-last-comma-mapped (str (last the-seq))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>get-tag-names-for-page
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Returns a case-insensitive sorted-set of tag names associated with the page.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  If ther are no such tags (it&#39;s nil or an empy seq), returns a sorted set
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  containing the word &#39;None&#39;.&#34;</span>
+</span></span><span style="display:flex;"><span>  ([page-id]
+</span></span><span style="display:flex;"><span>   (<span style="color:#a6e22e">get-tag-names-for-page</span> page-id h2-db))
+</span></span><span style="display:flex;"><span>  ([page-id db]
+</span></span><span style="display:flex;"><span>   (<span style="color:#66d9ef">let </span>[tag-ids (<span style="color:#a6e22e">get-tag-ids-for-page</span> page-id)]
+</span></span><span style="display:flex;"><span>     (<span style="color:#66d9ef">if </span>(or (nil? tag-ids) (<span style="color:#a6e22e">empty?</span> tag-ids))
+</span></span><span style="display:flex;"><span>       (into (<span style="color:#a6e22e">sorted-set-by</span> case-insensitive-comparator) [<span style="color:#e6db74">&#34;None&#34;</span>])
+</span></span><span style="display:flex;"><span>       (<span style="color:#66d9ef">let </span>[tag-ids-as-string (<span style="color:#a6e22e">convert-seq-to-comma-separated-string</span> tag-ids)
+</span></span><span style="display:flex;"><span>             sql (str <span style="color:#e6db74">&#34;select tag_name from tags where tag_id in (&#34;</span>
+</span></span><span style="display:flex;"><span>                      tag-ids-as-string <span style="color:#e6db74">&#34;);&#34;</span>)
+</span></span><span style="display:flex;"><span>             rs (<span style="color:#a6e22e">jdbc/query</span> db [sql])]
+</span></span><span style="display:flex;"><span>         (reduce <span style="color:#f92672">#</span>(conj %1 (<span style="color:#e6db74">:tag_name</span> %2))
+</span></span><span style="display:flex;"><span>                 (<span style="color:#a6e22e">sorted-set-by</span> case-insensitive-comparator) rs))))))
+</span></span></code></pre></div><p>In this case, I wanted to build a SQL command that included a list of identifiers, integers in this case. The function has come in very handy for things like this.</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2018/01/19/sorted-set-by/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2018/01/19/sorted-set-by/">sorted-set-by</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://yo-dave.com/2018/02/10/a-timestamp-plugin-for-sublime-text-3/">A Timestamp Plugin for Sublime Text 3</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://yo-dave.com/2018/02/10/a-timestamp-plugin-for-sublime-text-3/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

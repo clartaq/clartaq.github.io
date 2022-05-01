@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Yo-Dave</title>
 
@@ -236,6 +236,52 @@
   
     <article>
   <header>
+    <h2><a href="https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/">Saving and Restoring Program Configuration across Sessions in Clojure</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>6 Jan 2014 1:13:46 PM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/javafx">javafx</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  <p>I like to use programs that can remember what I was doing the last time I was working with them. They should restore the window just as I had it, remember which file(s) I was working with, what preferences I had selected, and so on. Naturally, I want the programs I write to be just as considerate of the user.</p>
+<p>For some time, I&rsquo;ve been fretting over the best way to do this in a Clojure program. Should I provide wrappers around the Java Preferences API? Some other mechanism? Turns out I should just embrace simplicity.</p>
+  </p>
+
+  
+  <footer>
+    <a href="https://yo-dave.com/2014/01/06/saving-and-restoring-program-configuration-across-sessions-in-clojure/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://yo-dave.com/2013/12/29/javafx-still-not-ready/">JavaFX Still Not Ready?</a></h2>
 
     <div class="post-meta">
@@ -322,7 +368,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
   <p>
   A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
 Here&rsquo;s the new snippet.
-(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.
+ (ns clojure_font_loading.core  (:gen-class  :extends javafx.application.Application)  (:import  [javafx.application Application]  [javafx.event EventHandler]  [javafx.
   </p>
 
   
@@ -655,53 +701,6 @@ Every time I update the default JDK used by NetBeans, I also want to update the 
   
   <footer>
     <a href="https://yo-dave.com/2013/06/04/keyboard-shortcuts-for-javafx-buttons/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/">JavaFX KeyCodeCombinations in Clojure</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>1 Jun 2013 10:26:04 PM</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/clojure">clojure</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/java">java</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/javafx">javafx</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  <p>I&rsquo;ve been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I&rsquo;ve written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
-  </p>
-
-  
-  <footer>
-    <a href="https://yo-dave.com/2013/06/01/javafx-keycodecombinations-in-clojure/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  <title>Generating Pseudo-Random Numbers in Scheme &middot; Yo-Dave</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://yo-dave.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://yo-dave.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dos.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://yo-dave.com/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/about/about"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://yo-dave.com/contact/contact"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href=""></a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/clartaq" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://stackoverflow.com/users/193509" rel="me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2011-2020, David D. Clark. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Generating Pseudo-Random Numbers in Scheme</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>1 May 2022 10:31:17 AM</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/random-numbers">Random Numbers</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/functional-programming">functional programming</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/scheme">Scheme</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/pseudo-random-numbers">pseudo-random numbers</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://yo-dave.com/tags/prng">PRNG</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>Recently, I needed to write a simple simulation in multiple programming languages. For the simulations to operate, they needed a source of random numbers from two statistical distributions: a uniform distribution and a standard distribution.</p>
+<p>The numbers from the distributions needed to be &ldquo;random&rdquo;, but not too random. I needed each generator in each language to produce the same sequence of &ldquo;pseudo-random&rdquo; numbers. And I needed the same sequence every time the simulators were run.</p>
+<p>There are a number of algorithms to generate such sequences that always produce the same sequence starting from the same &ldquo;seed&rdquo;.</p>
+<p>The one I chose was an oldy but goody. (<strong>NOTE</strong>: This is a pseudo-random number generator. This is not adequate for cryptograhy or other uses where true randomness is required.)</p>
+<p>Back in 1986, Bennet L Fox published <a href="https://dl.acm.org/doi/10.1145/22721.356187">&ldquo;ALGORITHM 647: Implementation and Relative Efficiency of Quasirandom Sequence Generators&rdquo; in ACM Transactions on Mathematical Software Volume 12 Issue 4 Dec. 1986 pp 362-376 https://doi.org/10.1145/22721.356187</a>. One of the generators described in the paper produces pseudo-random numbers from a uniform distribution of numbers between 0 and 1. A listing of the software from that paper is available as a compressed file (<code>.gz</code>) <a href="https://calgo.acm.org/647.gz">here</a>. Towards the bottom of the file you can find the function <code>UNIF</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span>      <span style="color:#66d9ef">REAL </span><span style="color:#66d9ef">FUNCTION </span>UNIF(IX)
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C       PORTABLE PSEUDORANDOM NUMBER
+</span></span><span style="display:flex;"><span>C       GENERATOR IMPLEMENTING THE RECURSION
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C       IX<span style="color:#f92672">=</span><span style="color:#ae81ff">16807</span><span style="color:#f92672">*</span>IX MOD(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">31</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>C       UNIF<span style="color:#f92672">=</span>IX<span style="color:#f92672">/</span>(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">31</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C       USING ONLY <span style="color:#ae81ff">32</span> BITS INCLUDING
+</span></span><span style="display:flex;"><span>C       SIGN
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C       INPUT:
+</span></span><span style="display:flex;"><span>C        IX <span style="color:#f92672">=</span><span style="color:#66d9ef">INTEGER </span>STRICTLY BETWEEN
+</span></span><span style="display:flex;"><span>C           <span style="color:#ae81ff">0</span> AND <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span> <span style="color:#ae81ff">31</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C       OUTPUTS:
+</span></span><span style="display:flex;"><span>C        IX<span style="color:#f92672">=</span>NEW PSEUDORANDOM <span style="color:#66d9ef">INTEGER
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span>C           STRICTLY BETWEEN <span style="color:#ae81ff">0</span> AND
+</span></span><span style="display:flex;"><span>C           <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">31</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>C        UNIF<span style="color:#f92672">=</span>UNIFORM VARIATE (FRACTION)
+</span></span><span style="display:flex;"><span>C             STRICTLY BETWEEN <span style="color:#ae81ff">0</span> AND <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C      FOR JUSTIFICATION, SEE P. BRATLEY,
+</span></span><span style="display:flex;"><span>C      B.L. FOX, AND L.E. SCHRAGE (<span style="color:#ae81ff">1983</span>)
+</span></span><span style="display:flex;"><span>C      <span style="color:#e6db74">&#34;A GUIDE TO SIMULATION&#34;</span>
+</span></span><span style="display:flex;"><span>C      SPRINGER<span style="color:#f92672">-</span>VERLAG, PAGES <span style="color:#ae81ff">201</span><span style="color:#f92672">-</span><span style="color:#ae81ff">202</span>
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">INTEGER </span>K1,IX
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>      K1 <span style="color:#f92672">=</span> IX<span style="color:#f92672">/</span><span style="color:#ae81ff">127773</span>
+</span></span><span style="display:flex;"><span>      IX <span style="color:#f92672">=</span> <span style="color:#ae81ff">16807</span><span style="color:#f92672">*</span> (IX<span style="color:#f92672">-</span>K1<span style="color:#f92672">*</span><span style="color:#ae81ff">127773</span>) <span style="color:#f92672">-</span> K1<span style="color:#f92672">*</span><span style="color:#ae81ff">2836</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">IF</span> (IX.LT.<span style="color:#ae81ff">0</span>) IX <span style="color:#f92672">=</span> IX <span style="color:#f92672">+</span> <span style="color:#ae81ff">2147483647</span>
+</span></span><span style="display:flex;"><span>      UNIF <span style="color:#f92672">=</span> IX<span style="color:#f92672">*</span><span style="color:#ae81ff">4.656612875E-10</span>
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">RETURN
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">      END</span>
+</span></span></code></pre></div><p>Implementations in other, &ldquo;traditional&rdquo; languages like C, Java, Julia, Zig, <em>etc</em>. look similar.</p>
+<p>For Lisp family languages, I wanted to do something a little more idiomatic. One thing I wanted was better handling of the seed value, <code>IX</code> in the listing above. It should not require external storage somewhere, but should be easy to change too.</p>
+<p>The function should not have side effects either. The original function from the paper changes the value of its arguments. Versions that use a global seed variable need to mutate that global as well. Languages, like C, that have &ldquo;static&rdquo; variables can maintain changes to variables declared within the function across function invocations, but that makes it hard to use different starting values for the seed.</p>
+<p>None of that is a problem in Scheme. The following is my attempt at the same function written in Scheme (Chez Scheme 9.5.8).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span><span style="color:#75715e">;; Return a random uniform deviate in the range 0 &lt;= x &lt; 1.0.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">define </span>algo-647-uniform
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>([seed <span style="color:#ae81ff">12345</span>])
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">lambda </span>new-seed
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">if </span>(pair? new-seed)
+</span></span><span style="display:flex;"><span>          (<span style="color:#66d9ef">set! </span>seed (car new-seed))
+</span></span><span style="display:flex;"><span>          (<span style="color:#66d9ef">let* </span>([k (floor (/ seed <span style="color:#ae81ff">127773</span>))]
+</span></span><span style="display:flex;"><span>                 [partial (- (* <span style="color:#ae81ff">16807</span> (- seed (* k <span style="color:#ae81ff">127773</span>))) (* k <span style="color:#ae81ff">2836</span>))])
+</span></span><span style="display:flex;"><span>            (<span style="color:#66d9ef">if </span>(&lt; partial <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>                (<span style="color:#66d9ef">set! </span>seed (+ partial <span style="color:#ae81ff">2147483647</span>))
+</span></span><span style="display:flex;"><span>                (<span style="color:#66d9ef">set! </span>seed partial))
+</span></span><span style="display:flex;"><span>            (* seed <span style="color:#ae81ff">4.656612875</span>e-10))))))
+</span></span></code></pre></div><p>Seasoned Schemers probably responded to the above with a &ldquo;Well, duh!&rdquo;. For those not familiar with Scheme or some other member of the Lisp family of languages, let&rsquo;s walk through it.</p>
+<p><code>define</code> <em>binds</em> an identifier to a <em>location</em> in memory, not a value. So, above, the identifier <code>algo-647-uniform</code> is bound to the location of the object returned by the <code>let</code> form that follows.</p>
+<p>The <code>let</code> form creates a lexical environment with local variables. In this case <code>seed</code> is bound to a location containing the value <code>12345</code>. Think of 12345 as the &ldquo;default&rdquo; seed, the one that will be used unless some action is taken to change it.</p>
+<p>After the bindings, any number of expressions can be evaluated. In the listing, the <code>lambda</code> creates a new function (without a name) that takes a single argument, <code>new-seed</code>.</p>
+<p>In the <code>lambda</code>, the arguments (<code>new-seed</code>) are passed as a list. If the function is invoked with a single argument, that list is a pair and <code>seed</code> is re-assigned to the value <code>new-seed</code>.</p>
+<p>If the function is invoked without arguments, the <code>lambda</code> receives an empty list, <code>()</code>, which is not a pair and execution proceeds to generate the next pseudo-random number.</p>
+<p>The result of the <code>let</code> form is the <code>lambda</code> function and the <code>define</code> associates the identifier <code>algo-647-uniform</code> with the location where the <code>lambda</code> is stored.</p>
+<p>So, the function can be used two ways:</p>
+<ol>
+<li><code>(algo-647-uniform)</code>, with no arguments, will return the next pseudo-random number in the sequence.</li>
+<li><code>(algo-647-uniform 999)</code> will change the value of the seed used in the generator and returns nothing. The seed value can be changed at any time.</li>
+</ol>
+<p>The first 10 calls to <code>(algo-647-uniform)</code> with the default seed value of 12345 produce:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>0.09661652850250932
+</span></span><span style="display:flex;"><span>0.8339946273432385
+</span></span><span style="display:flex;"><span>0.9477024976351657
+</span></span><span style="display:flex;"><span>0.0358785949795561
+</span></span><span style="display:flex;"><span>0.011545853228418662
+</span></span><span style="display:flex;"><span>0.051155220272651215
+</span></span><span style="display:flex;"><span>0.7657871677908032
+</span></span><span style="display:flex;"><span>0.5849297393665769
+</span></span><span style="display:flex;"><span>0.9141300529290503
+</span></span><span style="display:flex;"><span>0.7838003894756332
+</span></span></code></pre></div><p>A way to generate random numbers from a normal, standard deviate was needed also. For that I chose the method of <a href="https://en.wikipedia.org/wiki/Marsaglia_polar_method">Marsaglia</a> to generate a standard deviate from numbers provided by a uniform deviate, which we have above.</p>
+<p>The Marsaglia Polar Method computes two values at a time. One call returns the first value and the next will return the second.</p>
+<p>The Marsaglia method requires maintaining a little more state than the algorithm above, but we use a similar approach to writing the code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span><span style="color:#75715e">;; Return a random standard normal deviate.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">define </span>gaussian-deviate-marsaglia
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let* </span>([has-spare <span style="color:#66d9ef">#f</span>]
+</span></span><span style="display:flex;"><span>         [spare <span style="color:#ae81ff">0.0</span>]
+</span></span><span style="display:flex;"><span>         [rsq <span style="color:#ae81ff">0.0</span>] [r1 <span style="color:#ae81ff">0.0</span>] [r2 <span style="color:#ae81ff">0.0</span>]
+</span></span><span style="display:flex;"><span>         [nxt-rsq (<span style="color:#66d9ef">lambda </span>()
+</span></span><span style="display:flex;"><span>                    (<span style="color:#66d9ef">set! </span>r1 (- (* <span style="color:#ae81ff">2.0</span> (<span style="color:#a6e22e">algo-647-uniform</span>)) <span style="color:#ae81ff">1.0</span>))
+</span></span><span style="display:flex;"><span>                    (<span style="color:#66d9ef">set! </span>r2 (- (* <span style="color:#ae81ff">2.0</span> (<span style="color:#a6e22e">algo-647-uniform</span>)) <span style="color:#ae81ff">1.0</span>))
+</span></span><span style="display:flex;"><span>                    (<span style="color:#66d9ef">set! </span>rsq (+ (* r1 r1) (* r2 r2)))
+</span></span><span style="display:flex;"><span>                    rsq)])
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">lambda </span>()
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">if </span>has-spare
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">begin</span>
+</span></span><span style="display:flex;"><span>            (<span style="color:#66d9ef">set! </span>has-spare <span style="color:#66d9ef">#f</span>)
+</span></span><span style="display:flex;"><span>            spare)
+</span></span><span style="display:flex;"><span>          (<span style="color:#66d9ef">let </span>loop ([_ (<span style="color:#a6e22e">nxt-rsq</span>)])
+</span></span><span style="display:flex;"><span>            (<span style="color:#66d9ef">if </span>(<span style="color:#66d9ef">or </span>(&gt;= rsq <span style="color:#ae81ff">1.0</span>) (= rsq <span style="color:#ae81ff">0.0</span>))
+</span></span><span style="display:flex;"><span>                (<span style="color:#a6e22e">loop</span> (<span style="color:#a6e22e">nxt-rsq</span>))
+</span></span><span style="display:flex;"><span>                (<span style="color:#66d9ef">let </span>([fac (sqrt (/ (* <span style="color:#ae81ff">-2.0</span> (log rsq)) rsq))])
+</span></span><span style="display:flex;"><span>                  (<span style="color:#66d9ef">set! </span>spare (* r1 fac))
+</span></span><span style="display:flex;"><span>                  (<span style="color:#66d9ef">set! </span>has-spare <span style="color:#66d9ef">#t</span>)
+</span></span><span style="display:flex;"><span>                  (* r2 fac))))))))
+</span></span></code></pre></div><p>As before, the identifier is associated with the output of a variation of <code>let</code> named <code>let*</code>. Unlike <code>let</code>, the results of earlier bindings in a <code>let*</code> form can be used in later binding calculations in the same form. For example, the bindings for <code>r1</code> and <code>r2</code> are used in the binding for the <code>next-rsq</code> <code>lambda</code>.</p>
+<p>Also, as before, the identifier is bound to the result of the <code>let*</code> form, e.g. the <code>lambda</code> that computes the random numbers.</p>
+<p>In Chez 9.5.8, the first 10 results should be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-1.0580380669115383
+</span></span><span style="display:flex;"><span>-0.5790254729247644
+</span></span><span style="display:flex;"><span>0.8434589541668004
+</span></span><span style="display:flex;"><span>-0.6708443571574382
+</span></span><span style="display:flex;"><span>-0.22644041228981196
+</span></span><span style="display:flex;"><span>-0.07818079860601053
+</span></span><span style="display:flex;"><span>-0.7443285279492631
+</span></span><span style="display:flex;"><span>-0.5232388154010481
+</span></span><span style="display:flex;"><span>-0.3300334725931046
+</span></span><span style="display:flex;"><span>0.41341813121639936
+</span></span></code></pre></div><p>This technique, creating functions with access to state that was available at the time the function was created, is incredibly useful.</p>
+<p>You can create functions that maintain state, but that state is only visible within the function, not outside. The chances of identifier collision are greatly reduced and the state needed by the function cannot be altered by calculations outside of the function.</p>
+<p>When the utility of this finally dawned on me in the early days of studying the language, it was another one of those &ldquo;Aha!&rdquo; moments that Lisp family languages are so famous for.</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://yo-dave.com/2021/04/07/blogging-friction/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://yo-dave.com/2021/04/07/blogging-friction/">Blogging Friction</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://yo-dave.com/js/ui.js"></script>
+<script src="https://yo-dave.com/js/menus.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

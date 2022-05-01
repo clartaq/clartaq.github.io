@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yo-dave.com/tags/functional-programming/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/2022/05/01/generating-pseudo-random-numbers-in-scheme/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/prng/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/pseudo-random-numbers/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/random-numbers/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/scheme/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
+  </url><url>
     <loc>https://yo-dave.com/tags/api/</loc>
     <lastmod>2021-04-07T17:28:55-04:00</lastmod>
   </url><url>
@@ -26,15 +53,6 @@
     <loc>https://yo-dave.com/tags/github-pages/</loc>
     <lastmod>2021-04-07T17:28:55-04:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/post/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
     <loc>https://yo-dave.com/tags/dictionary/</loc>
     <lastmod>2021-02-21T13:39:58-05:00</lastmod>
   </url><url>
@@ -45,9 +63,6 @@
     <lastmod>2021-02-21T13:39:58-05:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/lisp/</loc>
-    <lastmod>2021-02-21T13:39:58-05:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/scheme/</loc>
     <lastmod>2021-02-21T13:39:58-05:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/word-list/</loc>
@@ -131,7 +146,7 @@
     <loc>https://yo-dave.com/tags/clojurescript/</loc>
     <lastmod>2020-01-05T16:07:50-05:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/</loc>
+    <loc>https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/</loc>
     <lastmod>2020-01-05T16:07:50-05:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/figwheel-main/</loc>
@@ -305,7 +320,13 @@
     <loc>https://yo-dave.com/2018/04/15/using-anonymous-functions-in-the-clojure/script-thrush-macro/</loc>
     <lastmod>2018-04-15T12:03:23-04:00</lastmod>
   </url><url>
+    <loc>https://yo-dave.com/categories/</loc>
+    <lastmod>2018-04-10T10:08:46-04:00</lastmod>
+  </url><url>
     <loc>https://yo-dave.com/tags/pm2/</loc>
+    <lastmod>2018-04-10T10:08:46-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/categories/programming/</loc>
     <lastmod>2018-04-10T10:08:46-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/raspberry-pi/</loc>
@@ -316,6 +337,9 @@
   </url><url>
     <loc>https://yo-dave.com/tags/river5/</loc>
     <lastmod>2018-04-10T10:08:46-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/categories/blogging/</loc>
+    <lastmod>2018-03-27T11:53:34-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/cdns/</loc>
     <lastmod>2018-03-27T11:53:34-04:00</lastmod>
@@ -365,7 +389,7 @@
     <loc>https://yo-dave.com/tags/timestamp/</loc>
     <lastmod>2018-03-12T17:30:11-04:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/</loc>
+    <loc>https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/</loc>
     <lastmod>2018-03-17T13:20:23-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/utility/</loc>
@@ -593,6 +617,9 @@
     <loc>https://yo-dave.com/tags/web-development/</loc>
     <lastmod>2018-03-17T09:54:48-04:00</lastmod>
   </url><url>
+    <loc>https://yo-dave.com/categories/pcs-and-macs/</loc>
+    <lastmod>2018-03-17T09:43:06-04:00</lastmod>
+  </url><url>
     <loc>https://yo-dave.com/tags/platforms/</loc>
     <lastmod>2018-03-17T09:43:06-04:00</lastmod>
   </url><url>
@@ -601,6 +628,9 @@
   </url><url>
     <loc>https://yo-dave.com/2016/02/22/river5-on-windows/</loc>
     <lastmod>2018-03-17T09:43:06-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/categories/--programming/</loc>
+    <lastmod>2016-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/nodejs/</loc>
     <lastmod>2016-02-14T00:00:00+00:00</lastmod>
@@ -737,6 +767,9 @@
     <loc>https://yo-dave.com/tags/literate-programming/</loc>
     <lastmod>2018-03-27T09:45:01-04:00</lastmod>
   </url><url>
+    <loc>https://yo-dave.com/categories/rant/</loc>
+    <lastmod>2018-03-16T16:53:44-04:00</lastmod>
+  </url><url>
     <loc>https://yo-dave.com/2013/08/12/more-on-loading-fonts/</loc>
     <lastmod>2018-03-27T10:05:47-04:00</lastmod>
   </url><url>
@@ -800,11 +833,11 @@
     <loc>https://yo-dave.com/tags/speculation/</loc>
     <lastmod>2012-01-04T18:02:27+00:00</lastmod>
   </url><url>
+    <loc>https://yo-dave.com/categories/uncategorized/</loc>
+    <lastmod>2018-03-12T10:58:17-04:00</lastmod>
+  </url><url>
     <loc>https://yo-dave.com/2011/12/01/favorite-programming-books/</loc>
     <lastmod>2011-12-01T11:16:22+00:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/functional-programming/</loc>
-    <lastmod>2011-12-01T09:25:53+00:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/2011/12/01/functional-programming-a-paradox/</loc>
     <lastmod>2011-12-01T09:25:53+00:00</lastmod>
@@ -821,7 +854,7 @@
     <loc>https://yo-dave.com/tags/improvement/</loc>
     <lastmod>2018-03-25T15:45:34-04:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/2011/09/22/java-data-grid-component-a-personal-failing/</loc>
+    <loc>https://yo-dave.com/2011/09/22/java-data-grid-component--a-personal-failing/</loc>
     <lastmod>2018-03-25T15:45:34-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/2011/09/17/spare-time-projects-part-2/</loc>
@@ -863,7 +896,7 @@
     <loc>https://yo-dave.com/2011/06/17/things-to-remember-when-updating-java-version/</loc>
     <lastmod>2011-06-17T14:27:57+00:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/2011/06/14/binomial-confidence-intervals-binomconf/</loc>
+    <loc>https://yo-dave.com/2011/06/14/binomial-confidence-intervals--binomconf/</loc>
     <lastmod>2018-03-25T15:37:06-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/2011/06/12/friendly-incompetence-or-evil-conspiracy/</loc>
@@ -888,6 +921,9 @@
     <lastmod>2018-03-27T09:51:20-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/photo-credit/</loc>
+    <lastmod>2018-03-27T09:51:20-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/categories/photography/</loc>
     <lastmod>2018-03-27T09:51:20-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/2011/03/18/why-no-comments/</loc>
@@ -926,7 +962,7 @@
     <loc>https://yo-dave.com/2011/02/22/unknown-usb-device/</loc>
     <lastmod>2011-02-22T01:26:47+00:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer-again/</loc>
+    <loc>https://yo-dave.com/2011/02/22/windows-update-trashed-my-computer--again/</loc>
     <lastmod>2011-02-22T00:23:13+00:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/2011/02/13/clojure-and-java-interaction/</loc>
@@ -970,7 +1006,5 @@
   </url><url>
     <loc>https://yo-dave.com/2011/01/22/so-dr.-clark.-we-meet-again/</loc>
     <lastmod>2011-01-22T23:31:31+00:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/topics/</loc>
   </url>
 </urlset>

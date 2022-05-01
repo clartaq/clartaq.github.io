@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Parsing Signed Numbers in ANTLR &middot; Yo-Dave</title>
 
@@ -257,31 +257,31 @@
 <p>After the first few failed attempts, it was off to the web, where there was no shortage of advice and pointers to code. None of it worked. Oh, there were lots of methods that parsed unsigned integers, a few working examples of unsigned floats, and one very large example of the grammar to parse numbers in JavaFX. But none of them worked for my application. I&rsquo;m not giving pointers here since that code didn&rsquo;t work as expected.</p>
 <p>What finally <em>did</em> work was a trivial modification to the relevant piece of a <a href="https://github.com/antlr/grammars-v4/blob/master/c/C.g4" title="An ANTLR Grammar for ANSI C">grammar for C</a> that was written by <del><a href="http://www.cs.usfca.edu/~parrt/" title="Terence Parr">Terence Parr</a> (the creator of ANTLR) back in 2006</del>  Sam Harwell back in 2013.</p>
 <p>So, here&rsquo;s the modification that worked for me.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">number
- :    unary_operator? unsigned_number
- ;
-
-unary_operator
- :    <span style="color:#e6db74">&#39;+&#39;</span>
- |    <span style="color:#e6db74">&#39;-&#39;</span>
- ;
-
-unsigned_number
- :    UNSIGNED_INT
- |    UNSIGNED_FLOAT
- ;
-
-UNSIGNED_INT : <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span> | <span style="color:#e6db74">&#39;1&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span> <span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span>*<span style="color:#f92672">)</span>;
-
-UNSIGNED_FLOAT
- :   <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>* Exponent?
- |   <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ Exponent?
- |   <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ Exponent
- ;
-
-fragment
-Exponent : <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;e&#39;</span>|<span style="color:#e6db74">&#39;E&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;+&#39;</span>|<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">)</span>? <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ ;
-</code></pre></div><p>When you want an unsigned integer, use <code>UNSIGNED_INT</code>. When you want a signed integer or float, use <code>number</code>, and so on.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>number
+</span></span><span style="display:flex;"><span> :    unary_operator? unsigned_number
+</span></span><span style="display:flex;"><span> ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>unary_operator
+</span></span><span style="display:flex;"><span> :    <span style="color:#e6db74">&#39;+&#39;</span>
+</span></span><span style="display:flex;"><span> |    <span style="color:#e6db74">&#39;-&#39;</span>
+</span></span><span style="display:flex;"><span> ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>unsigned_number
+</span></span><span style="display:flex;"><span> :    UNSIGNED_INT
+</span></span><span style="display:flex;"><span> |    UNSIGNED_FLOAT
+</span></span><span style="display:flex;"><span> ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>UNSIGNED_INT : <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span> | <span style="color:#e6db74">&#39;1&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span> <span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span>*<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>UNSIGNED_FLOAT
+</span></span><span style="display:flex;"><span> :   <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>* Exponent?
+</span></span><span style="display:flex;"><span> |   <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ Exponent?
+</span></span><span style="display:flex;"><span> |   <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ Exponent
+</span></span><span style="display:flex;"><span> ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fragment
+</span></span><span style="display:flex;"><span>Exponent : <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;e&#39;</span>|<span style="color:#e6db74">&#39;E&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;+&#39;</span>|<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">)</span>? <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;0&#39;</span>..<span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">)</span>+ ;
+</span></span></code></pre></div><p>When you want an unsigned integer, use <code>UNSIGNED_INT</code>. When you want a signed integer or float, use <code>number</code>, and so on.</p>
 <p>Just to point out one detail, this grammar produces a lexer that recognizes numbers that your underlying implementation language may not be able to represent. For example, the lexer recognizes 1.347e-47026 as a legitimate number even though you can&rsquo;t represent it in Java. That&rsquo;s something for other parts of the program to handle.</p>
   
   

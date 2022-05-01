@@ -56,7 +56,7 @@ Usually, I can just file a ticket and get help in a day or so.</description>
       <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://yo-dave.com/2016/08/09/caddy-server-and-lets-encrypt/</guid>
-      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&#39; HTTP.
+      <description>The observant among you may have noticed a small change in the blog. It&amp;rsquo;s that little lock symbol next to the URL for the post. That means the blog is being served on HTTPS instead of plain ol&amp;rsquo; HTTP.
 Ever since hearing about it, I&amp;rsquo;ve had mixed feelings about the push to HTTPS. Of course, it will provide some benefit in terms of security. But if Google weights its search results based on whether or not a site supports it, access to some early web sites may be lost.</description>
     </item>
     

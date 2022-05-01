@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Closing Branches in Mercurial &middot; Yo-Dave</title>
 
@@ -259,12 +259,12 @@
 <p>For more significant, more difficult pieces of work, I usually create a &ldquo;feature branch.&rdquo; I do this with the expectation that if things get messed up too badly, I can delete the branch and start over without affecting the readiness of the default branch.</p>
 <p>Typically, after merging branches back into the main trunk of development, I leave them alone. They are inactive, but still there. But recently I decided that leaving them in place made the output of the <code>hg heads</code> command too messy. I needed to do some tidying. Now some of these branches were created years ago. I was curious about just how difficult it would be to close a branch from such a long time ago. It turns out it wasn&rsquo;t hard at all.</p>
 <p>The sequence of steps is straightforward.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ hg up branch-name    <span style="color:#75715e"># update to branch you want to close</span>
-    $ hg ci -m <span style="color:#e6db74">&#34;Closing branch &#39;branch-name.&#39;&#34;</span> --close-branch 
-    $ hg up default        <span style="color:#75715e"># back to default branch</span>
-    $ hg merge branch-name <span style="color:#75715e"># merge the closed branch</span>
-    $ hg ci -m merge       <span style="color:#75715e"># commit the merge of the closed branch</span>
-</code></pre></div><p>While closing about a dozen branches using this method, the only problem that I ran into was a case where an auto-generated file had once been added to the repository and was later removed. The solution was to delete the current version of that file and proceed as usual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    $ hg up branch-name    <span style="color:#75715e"># update to branch you want to close</span>
+</span></span><span style="display:flex;"><span>    $ hg ci -m <span style="color:#e6db74">&#34;Closing branch &#39;branch-name.&#39;&#34;</span> --close-branch 
+</span></span><span style="display:flex;"><span>    $ hg up default        <span style="color:#75715e"># back to default branch</span>
+</span></span><span style="display:flex;"><span>    $ hg merge branch-name <span style="color:#75715e"># merge the closed branch</span>
+</span></span><span style="display:flex;"><span>    $ hg ci -m merge       <span style="color:#75715e"># commit the merge of the closed branch</span>
+</span></span></code></pre></div><p>While closing about a dozen branches using this method, the only problem that I ran into was a case where an auto-generated file had once been added to the repository and was later removed. The solution was to delete the current version of that file and proceed as usual.</p>
 
   
   

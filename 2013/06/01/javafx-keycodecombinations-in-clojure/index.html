@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>JavaFX KeyCodeCombinations in Clojure &middot; Yo-Dave</title>
 
@@ -257,48 +257,48 @@
   <p>I&rsquo;ve been experimenting with adding keyboard accelerators to some of the <a href="http://clojure.org/">Clojure</a> programs I&rsquo;ve written with <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>-based user interfaces. As part of that investigation, I tried to translate the <a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java </a> program <!-- raw HTML omitted --><a href="http://www.example8.com/category/view/id/76" title="Link to Java version of program.">here</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>) to Clojure. The program just puts up a window with a menu bar containing only a &ldquo;<code>File</code>&rdquo; menu which itself contains one item, &ldquo;<code>Exit</code>&rdquo;. Most programs provide a keyboard shortcut or accelerator to close the program with a <code>Ctrl-X</code> (on Windows). Figuring out how to add that functionality was a bit of an issue for me.</p>
 <p>It turns out that the constructor for a <code>KeyCodeCombination</code> accepts a variable length argument array. In a few cases, you can get lucky and simply provide a Clojure vector of the arguments. This wasn&rsquo;t one of those happy coincidences. Instead, you need to use the canonical method of packing all of those arguments into a Java array using Clojure&rsquo;s <code>into-array</code> function. You need to do it even if you have only one argument, as was the case for me. That isn&rsquo;t usually so bad, but this time I had a little trouble figuring out the type of array to create. Turns out you have to specify that the list of modifiers expected by the constructor are <code>KeyCombination.Modifier</code> arguments in Java are <code>KeyCombination$Modifier</code> in Clojure.</p>
 <p>Here&rsquo;s the translated program:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">ns </span>cljkeycodecombination.core
-      (<span style="color:#e6db74">:gen-class</span>
-       <span style="color:#e6db74">:extends</span> javafx.application.Application)
-      (<span style="color:#e6db74">:import</span>
-       [ javafx.application Application Platform]
-       [ javafx.event EventHandler]
-       [ javafx.scene Scene]
-       [ javafx.scene.control Menu MenuBar MenuItem]
-       [ javafx.scene.input KeyCode KeyCodeCombination KeyCombination KeyCombination$Modifier]
-       [ javafx.scene.layout BorderPane]
-       [ javafx.scene.paint Color]))
-    
-    (<span style="color:#66d9ef">defn </span>-start [this stage]
-      (<span style="color:#66d9ef">let </span>[root (<span style="color:#a6e22e">BorderPane.</span>)
-            scene (<span style="color:#a6e22e">Scene.</span> root <span style="color:#ae81ff">400.0</span> <span style="color:#ae81ff">300.0</span> Color/WHITE)
-            menu-bar (<span style="color:#a6e22e">MenuBar.</span>)
-            menu (<span style="color:#a6e22e">Menu.</span> <span style="color:#e6db74">&#34;File&#34;</span>)
-            exit-item (<span style="color:#a6e22e">MenuItem.</span> <span style="color:#e6db74">&#34;Exit&#34;</span>)]
-    
-        (<span style="color:#a6e22e">.setMnemonicParsing</span> exit-item true)
-        (<span style="color:#a6e22e">.setAccelerator</span> exit-item
-                         (<span style="color:#a6e22e">KeyCodeCombination.</span>
-                          KeyCode/X
-                          into-array KeyCombination$Modifier [KeyCombination/SHORTCUT_DOWN])))
-    
-        (<span style="color:#a6e22e">.setOnAction</span> exit-item
-                      (proxy [EventHandler] []
-                        (<span style="color:#a6e22e">handle</span> [event]
-                          (<span style="color:#a6e22e">Platform/exit</span>))))
-    
-        (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getItems</span> menu) exit-item)
-        (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getMenus</span> menu-bar) menu)
-        (<span style="color:#a6e22e">.setTop</span> root menu-bar)
-    
-        (doto stage
-          (<span style="color:#a6e22e">.setTitle</span> <span style="color:#e6db74">&#34;KeyCodeCombination Test&#34;</span>)
-          (<span style="color:#a6e22e">.setScene</span> scene)
-          (<span style="color:#a6e22e">.show</span>))))
-    
-    (<span style="color:#66d9ef">defn </span>-main [<span style="color:#f92672">&amp;</span> args]
-      (<span style="color:#a6e22e">Application/launch</span> cljkeycodecombination.core args))
-</code></pre></div><p>Looking back, it&rsquo;s a little embarrassing that it took so long to figure out since the clue was right there in the error messages. But at least it&rsquo;s figured out now.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>    (<span style="color:#66d9ef">ns </span>cljkeycodecombination.core
+</span></span><span style="display:flex;"><span>      (<span style="color:#e6db74">:gen-class</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#e6db74">:extends</span> javafx.application.Application)
+</span></span><span style="display:flex;"><span>      (<span style="color:#e6db74">:import</span>
+</span></span><span style="display:flex;"><span>       [ javafx.application Application Platform]
+</span></span><span style="display:flex;"><span>       [ javafx.event EventHandler]
+</span></span><span style="display:flex;"><span>       [ javafx.scene Scene]
+</span></span><span style="display:flex;"><span>       [ javafx.scene.control Menu MenuBar MenuItem]
+</span></span><span style="display:flex;"><span>       [ javafx.scene.input KeyCode KeyCodeCombination KeyCombination KeyCombination$Modifier]
+</span></span><span style="display:flex;"><span>       [ javafx.scene.layout BorderPane]
+</span></span><span style="display:flex;"><span>       [ javafx.scene.paint Color]))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>-start [this stage]
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[root (<span style="color:#a6e22e">BorderPane.</span>)
+</span></span><span style="display:flex;"><span>            scene (<span style="color:#a6e22e">Scene.</span> root <span style="color:#ae81ff">400.0</span> <span style="color:#ae81ff">300.0</span> Color/WHITE)
+</span></span><span style="display:flex;"><span>            menu-bar (<span style="color:#a6e22e">MenuBar.</span>)
+</span></span><span style="display:flex;"><span>            menu (<span style="color:#a6e22e">Menu.</span> <span style="color:#e6db74">&#34;File&#34;</span>)
+</span></span><span style="display:flex;"><span>            exit-item (<span style="color:#a6e22e">MenuItem.</span> <span style="color:#e6db74">&#34;Exit&#34;</span>)]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setMnemonicParsing</span> exit-item true)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setAccelerator</span> exit-item
+</span></span><span style="display:flex;"><span>                         (<span style="color:#a6e22e">KeyCodeCombination.</span>
+</span></span><span style="display:flex;"><span>                          KeyCode/X
+</span></span><span style="display:flex;"><span>                          into-array KeyCombination$Modifier [KeyCombination/SHORTCUT_DOWN])))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setOnAction</span> exit-item
+</span></span><span style="display:flex;"><span>                      (proxy [EventHandler] []
+</span></span><span style="display:flex;"><span>                        (<span style="color:#a6e22e">handle</span> [event]
+</span></span><span style="display:flex;"><span>                          (<span style="color:#a6e22e">Platform/exit</span>))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getItems</span> menu) exit-item)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getMenus</span> menu-bar) menu)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setTop</span> root menu-bar)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (doto stage
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.setTitle</span> <span style="color:#e6db74">&#34;KeyCodeCombination Test&#34;</span>)
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.setScene</span> scene)
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.show</span>))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>-main [<span style="color:#f92672">&amp;</span> args]
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">Application/launch</span> cljkeycodecombination.core args))
+</span></span></code></pre></div><p>Looking back, it&rsquo;s a little embarrassing that it took so long to figure out since the clue was right there in the error messages. But at least it&rsquo;s figured out now.</p>
   
   
 

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>CloudAtCost Setup Notes &middot; Yo-Dave</title>
 
@@ -260,86 +260,86 @@
 <p>I do the configuration over <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>. Since I am running on Windows, there are a few options for SSH clients. I like <a href="http://www.putty.org/">PuTTY</a>, but the <a href="https://www.bitvise.com/ssh-client-download">Bitvise</a> client is nice too.</p>
 <h2 id="update-the-system">Update the System</h2>
 <p>The process starts by logging into the SSH server newly imaged machine as root. The first thing to do is update Ubuntu with the following commands</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# apt-get update
-root@ubuntu:~# apt-get upgrade
-</code></pre></div><p>This can take some time as it will upgrade a <em>lot</em> of files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@ubuntu:~# apt-get update
+</span></span><span style="display:flex;"><span>root@ubuntu:~# apt-get upgrade
+</span></span></code></pre></div><p>This can take some time as it will upgrade a <em>lot</em> of files.</p>
 <p>After the upgrade is complete, reboot the system.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# reboot
-</code></pre></div><p>This will break the SSH connection of course. So wait a few minutes for the reboot to complete, then log back in.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@ubuntu:~# reboot
+</span></span></code></pre></div><p>This will break the SSH connection of course. So wait a few minutes for the reboot to complete, then log back in.</p>
 <h2 id="create-a-new-user-with-super-powers">Create a New User with Super Powers</h2>
 <p>Next, we want to add a new user who is not root but can have all of the powers of root when needed.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# adduser user-name
-Adding user <span style="color:#e6db74">`</span>user-name<span style="color:#e6db74">&#39; ...
-</span><span style="color:#e6db74">Adding new group `user-name&#39;</span> <span style="color:#f92672">(</span>1001<span style="color:#f92672">)</span> ...
-Adding new user <span style="color:#e6db74">`</span>user-name<span style="color:#e6db74">&#39; (1001) with group `user-name&#39;</span> ...
-Creating home directory <span style="color:#e6db74">`</span>/home/user-name<span style="color:#e6db74">&#39; ...
-</span><span style="color:#e6db74">Copying files from `/etc/skel&#39;</span> ...
-Enter new UNIX password:
-Retype new UNIX password:
-passwd: password updated successfully
-Changing the user information <span style="color:#66d9ef">for</span> user-name
-Enter the new value, or press ENTER <span style="color:#66d9ef">for</span> the default
-        Full Name <span style="color:#f92672">[]</span>: Super User
-        Room Number <span style="color:#f92672">[]</span>:
-        Work Phone <span style="color:#f92672">[]</span>:
-        Home Phone <span style="color:#f92672">[]</span>:
-        Other <span style="color:#f92672">[]</span>:
-Is the information correct? <span style="color:#f92672">[</span>Y/n<span style="color:#f92672">]</span>
-root@ubuntu:~# 
-</code></pre></div><p>Of course, the name you use can be anything, not just &ldquo;user-name&rdquo; (or &ldquo;root&rdquo;).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@ubuntu:~# adduser user-name
+</span></span><span style="display:flex;"><span>Adding user <span style="color:#e6db74">`</span>user-name<span style="color:#e6db74">&#39; ...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Adding new group `user-name&#39;</span> <span style="color:#f92672">(</span>1001<span style="color:#f92672">)</span> ...
+</span></span><span style="display:flex;"><span>Adding new user <span style="color:#e6db74">`</span>user-name<span style="color:#e6db74">&#39; (1001) with group `user-name&#39;</span> ...
+</span></span><span style="display:flex;"><span>Creating home directory <span style="color:#e6db74">`</span>/home/user-name<span style="color:#e6db74">&#39; ...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Copying files from `/etc/skel&#39;</span> ...
+</span></span><span style="display:flex;"><span>Enter new UNIX password:
+</span></span><span style="display:flex;"><span>Retype new UNIX password:
+</span></span><span style="display:flex;"><span>passwd: password updated successfully
+</span></span><span style="display:flex;"><span>Changing the user information <span style="color:#66d9ef">for</span> user-name
+</span></span><span style="display:flex;"><span>Enter the new value, or press ENTER <span style="color:#66d9ef">for</span> the default
+</span></span><span style="display:flex;"><span>        Full Name <span style="color:#f92672">[]</span>: Super User
+</span></span><span style="display:flex;"><span>        Room Number <span style="color:#f92672">[]</span>:
+</span></span><span style="display:flex;"><span>        Work Phone <span style="color:#f92672">[]</span>:
+</span></span><span style="display:flex;"><span>        Home Phone <span style="color:#f92672">[]</span>:
+</span></span><span style="display:flex;"><span>        Other <span style="color:#f92672">[]</span>:
+</span></span><span style="display:flex;"><span>Is the information correct? <span style="color:#f92672">[</span>Y/n<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>root@ubuntu:~# 
+</span></span></code></pre></div><p>Of course, the name you use can be anything, not just &ldquo;user-name&rdquo; (or &ldquo;root&rdquo;).</p>
 <p>At this point, we can tell the system to allow the new user root access by adding them to the &ldquo;sudo&rdquo; group.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@ubuntu:~# gpasswd -a david sudo
-Adding user david to group sudo
-</code></pre></div><p>Now, you can log off as root and log back in as your new user. It&rsquo;s important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@ubuntu:~# gpasswd -a david sudo
+</span></span><span style="display:flex;"><span>Adding user david to group sudo
+</span></span></code></pre></div><p>Now, you can log off as root and log back in as your new user. It&rsquo;s important to know that you can log in with this new user because in a moment, we are going to change settings such that you will no longer be able to log in remotely as root.</p>
 <h2 id="set-up-public-key-ssh-access">Set Up Public Key SSH Access</h2>
 <p>Public key access is an additional method to authenticate yourself when signing into your server. It is considered to be more secure and flexible, but more difficult to set up. I think it is only more difficult in that there are more steps to do, none of which are particularly difficult. Just sayin'.</p>
 <p>First off, you need public and private encryption keys. If you don&rsquo;t know what I&rsquo;m talking about, <a href="http://tartarus.org/~simon/putty-snapshots/htmldoc/Chapter8.html">take a look here</a>. After reading it, if you really think it&rsquo;s too difficult, you can skip the remainder of this section, otherwise, follow along.</p>
 <p>I usually start by changing the permissions of my home directory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ chmod <span style="color:#ae81ff">750</span> ~
-</code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no else at this point) can read and execute, but not write into the directory. Others can&rsquo;t do any of those things.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ chmod <span style="color:#ae81ff">750</span> ~
+</span></span></code></pre></div><p>These permissions mean I can read/write/execute in my directory. Members of my group (usually no else at this point) can read and execute, but not write into the directory. Others can&rsquo;t do any of those things.</p>
 <p>Next you need to create a place to save public encryption keys. By convention, this is a sub-directory of your home directory.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ mkdir .ssh
-user-name@ubuntu:~$ chmod <span style="color:#ae81ff">700</span> .ssh
-</code></pre></div><p>These permissions mean that only I can read/write/execute in the <code>.ssh</code> directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ mkdir .ssh
+</span></span><span style="display:flex;"><span>user-name@ubuntu:~$ chmod <span style="color:#ae81ff">700</span> .ssh
+</span></span></code></pre></div><p>These permissions mean that only I can read/write/execute in the <code>.ssh</code> directory.</p>
 <p>Since I do it so often, I have a file on the system that I use to set up the servers called &ldquo;authorized_keys&rdquo;. In that file, I have concatenated all of the public encryption keys that I tend to use on my servers. It&rsquo;s just a text file that I need to be able to send to the new server. <strong>Make sure</strong> that only your <em>public</em> keys go in this file.</p>
 <p>Now you need to be able to transfer that file into the <!-- raw HTML omitted -->.ssh<!-- raw HTML omitted --> directory on the server. If you only have PuTTY to work with, it can be a bit of a chore. This is one area where the Bitvise client has an advantage &ndash; it has an SFTP (Secure File Transfer Protocol) client that provides a side-by-side listing of files on the client and the server. Copying the file is a simple matter of dragging the file from one window to the other.</p>
 <p>If you are comfortable typing long command lines in the terminal, you can use plink.exe (one of the programs installed with PuTTY) to complete the transfer in a single line. From the directory where PuTTY is installed, type:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batchfile" data-lang="batchfile">C:\Program<span style="color:#75715e"> Files (x86)\PuTTY&gt;type C:\Users\user-name\.ssh | plink.exe -ssh user-name@host-ip -pw password &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-</code></pre></div><p>Use the appropriate user name, server IP address and server password for your account. If you have any problems or this looks too intimidating, grab a copy of the Bitvise client and use its' SFTP program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-batchfile" data-lang="batchfile"><span style="display:flex;"><span>C:\Program<span style="color:#75715e"> Files (x86)\PuTTY&gt;type C:\Users\user-name\.ssh | plink.exe -ssh user-name@host-ip -pw password &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+</span></span></code></pre></div><p>Use the appropriate user name, server IP address and server password for your account. If you have any problems or this looks too intimidating, grab a copy of the Bitvise client and use its&rsquo; SFTP program.</p>
 <p>Next, set the permissions on the newly transferred file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ chmod <span style="color:#ae81ff">600</span> .ssh/authorized_keys
-</code></pre></div><p>These permissions mean that only you can read or write the file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ chmod <span style="color:#ae81ff">600</span> .ssh/authorized_keys
+</span></span></code></pre></div><p>These permissions mean that only you can read or write the file.</p>
 <p>Now we want to change some of the things about the way the SSH program works. I change my settings such that SSH no longer uses the default port, no longer allows root logins to SSH, and allows only specific users to log in. As a super user, fire up the nano editor on the <code>/etc/ssh/sshd_config file</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo nano /etc/ssh/sshd_config
-</code></pre></div><p>First look for the line that says &ldquo;Port 22&rdquo; and change it to &ldquo;Port 1935&rdquo; or some other number. This line is about the fifth line in the file on my system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ sudo nano /etc/ssh/sshd_config
+</span></span></code></pre></div><p>First look for the line that says &ldquo;Port 22&rdquo; and change it to &ldquo;Port 1935&rdquo; or some other number. This line is about the fifth line in the file on my system.</p>
 <p>Then find the line that reads &ldquo;PermitRootLogin yes&rdquo;. Change &ldquo;yes&rdquo; to &ldquo;no&rdquo;.</p>
 <p>Next, go all the way to the bottom of the file. Add an empty line and the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># user-name
-AllowUsers user-name
-# user-name
-</code></pre></div><p>The lines beginning with the &ldquo;#&rdquo; character are just comments to remind us of who made the change. Again, substitute your actual user name for &ldquo;user-name&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># user-name
+</span></span><span style="display:flex;"><span>AllowUsers user-name
+</span></span><span style="display:flex;"><span># user-name
+</span></span></code></pre></div><p>The lines beginning with the &ldquo;#&rdquo; character are just comments to remind us of who made the change. Again, substitute your actual user name for &ldquo;user-name&rdquo;.</p>
 <p>Close the file and save it (Ctrl-X, &ldquo;y&rdquo;, Return).</p>
 <p>Now, restart the SSH service with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo service ssh restart
-ssh stop/waiting
-ssh start/running, process <span style="color:#ae81ff">1402</span>
-</code></pre></div><p>The process number you see is likely to be different.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ sudo service ssh restart
+</span></span><span style="display:flex;"><span>ssh stop/waiting
+</span></span><span style="display:flex;"><span>ssh start/running, process <span style="color:#ae81ff">1402</span>
+</span></span></code></pre></div><p>The process number you see is likely to be different.</p>
 <p>Now you need the change the firewall configuration a bit to let SSH listen on the port you specified in the <code>sshd_config</code> file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo ufw allow 1935/tcp
-Rules updated
-Rules updated <span style="color:#f92672">(</span>v6<span style="color:#f92672">)</span>
-</code></pre></div><h2 id="time-zones-and-the-network-time-protocol">Time Zones and the Network Time Protocol</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ sudo ufw allow 1935/tcp
+</span></span><span style="display:flex;"><span>Rules updated
+</span></span><span style="display:flex;"><span>Rules updated <span style="color:#f92672">(</span>v6<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="time-zones-and-the-network-time-protocol">Time Zones and the Network Time Protocol</h2>
 <p>It&rsquo;s likely that the time zone is already set correctly, but you can check with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo dpkg-reconfigure tzdata
-... your local time ...
-... universal time ...
-</code></pre></div><p>You can assure synchronization with the Network Time Protocol (NTP) by installing the ntp package.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo apt-get install ntp
-</code></pre></div><p>At this point, you should be set up and ready to go.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ sudo dpkg-reconfigure tzdata
+</span></span><span style="display:flex;"><span>... your local time ...
+</span></span><span style="display:flex;"><span>... universal time ...
+</span></span></code></pre></div><p>You can assure synchronization with the Network Time Protocol (NTP) by installing the ntp package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ sudo apt-get install ntp
+</span></span></code></pre></div><p>At this point, you should be set up and ready to go.</p>
 <p>##Update: 17 Mar 2016##</p>
 <p><a href="http://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban</a> is daemon that monitors frequent attempts to log into your system, and probing for exploits. It will ban IPs that repeatedly exhibit these suspicious activities. It&rsquo;s easy to set up and is pre-configured to work pretty well. It&rsquo;s &ldquo;set it and forget it.&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user-name@ubuntu:~$ sudo apt-get install fail2ban
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user-name@ubuntu:~$ sudo apt-get install fail2ban
+</span></span></code></pre></div>
   
   
 

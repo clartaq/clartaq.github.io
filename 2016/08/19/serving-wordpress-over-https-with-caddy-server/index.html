@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Serving WordPress over HTTPS with Caddy Server &middot; Yo-Dave</title>
 
@@ -258,73 +258,73 @@
 <p>Of course, <a href="https://wordpress.org/">WordPress</a> is a very popular blogging platform. Caddy provides some <a href="https://github.com/caddyserver/examples/tree/master/wordpress">guidance</a> on getting WordPress up and running on the server. However, it wasn&rsquo;t enough for me. Here&rsquo;s some step-by-step guidance on how I got it working on some of my own self-hosted sites.</p>
 <h1 id="some-preliminaries">Some Preliminaries</h1>
 <p>Starting from a freshly imaged and updated Ubuntu 16.04 installation, do the following.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir downloads
-mkdir wordpress
-</code></pre></div><p>Increase the number of files that the operating system can open. Caddy complains if the limit is below 8K. I have run with a lower limit; you probably can too. I just wanted to get rid of the nag. To do so, you need to edit a configuration file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nano /etc/security/limits.conf
-</code></pre></div><p>Then add the following two lines near the bottom of the file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">*   soft    nofile    <span style="color:#ae81ff">8192</span>
-*   hard    nofile    <span style="color:#ae81ff">8192</span>
-</code></pre></div><p>Reboot to make the changes effective.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir downloads
+</span></span><span style="display:flex;"><span>mkdir wordpress
+</span></span></code></pre></div><p>Increase the number of files that the operating system can open. Caddy complains if the limit is below 8K. I have run with a lower limit; you probably can too. I just wanted to get rid of the nag. To do so, you need to edit a configuration file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/security/limits.conf
+</span></span></code></pre></div><p>Then add the following two lines near the bottom of the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>*   soft    nofile    <span style="color:#ae81ff">8192</span>
+</span></span><span style="display:flex;"><span>*   hard    nofile    <span style="color:#ae81ff">8192</span>
+</span></span></code></pre></div><p>Reboot to make the changes effective.</p>
 <h1 id="install-caddy">Install Caddy</h1>
 <p>With the preliminaries out of the way, it&rsquo;s time to install Caddy. Caddy can be installed with many optional packages. Read the docs. For our purposes, a &ldquo;plain vanilla&rdquo; install will work fine.</p>
 <h2 id="download-and-install">Download and Install</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https:/getcaddy.com | bash
-</code></pre></div><p>The installation script will figure out the OS and architecture to use then build and download the appropriate version. On my system it looked something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-<span style="color:#ae81ff">100</span>  <span style="color:#ae81ff">4801</span>  <span style="color:#ae81ff">100</span>  <span style="color:#ae81ff">4801</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">133</span>      <span style="color:#ae81ff">0</span>  0:00:36  0:00:35  0:00:01   <span style="color:#ae81ff">133</span>
-Downloading Caddy <span style="color:#66d9ef">for</span> linux/amd64...
-https://caddyserver.com/download/build?os<span style="color:#f92672">=</span>linux&amp;arch<span style="color:#f92672">=</span>amd64&amp;arm<span style="color:#f92672">=</span>&amp;features<span style="color:#f92672">=</span>
-Extracting...
-Putting caddy in /usr/local/bin <span style="color:#f92672">(</span>may require password<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> user:
-Caddy 0.9.0
-Successfully installed
-</code></pre></div><p>As you can see, you will need to supply your <code>sudo</code> password near the end of the installation process. You can verify the installation location of the program like this.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">which caddy
-/usr/local/bin/caddy
-</code></pre></div><h2 id="set-up-a-caddyfile">Set Up a Caddyfile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https:/getcaddy.com | bash
+</span></span></code></pre></div><p>The installation script will figure out the OS and architecture to use then build and download the appropriate version. On my system it looked something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</span></span><span style="display:flex;"><span>                                 Dload  Upload   Total   Spent    Left  Speed
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span>  <span style="color:#ae81ff">4801</span>  <span style="color:#ae81ff">100</span>  <span style="color:#ae81ff">4801</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">133</span>      <span style="color:#ae81ff">0</span>  0:00:36  0:00:35  0:00:01   <span style="color:#ae81ff">133</span>
+</span></span><span style="display:flex;"><span>Downloading Caddy <span style="color:#66d9ef">for</span> linux/amd64...
+</span></span><span style="display:flex;"><span>https://caddyserver.com/download/build?os<span style="color:#f92672">=</span>linux&amp;arch<span style="color:#f92672">=</span>amd64&amp;arm<span style="color:#f92672">=</span>&amp;features<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>Extracting...
+</span></span><span style="display:flex;"><span>Putting caddy in /usr/local/bin <span style="color:#f92672">(</span>may require password<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> user:
+</span></span><span style="display:flex;"><span>Caddy 0.9.0
+</span></span><span style="display:flex;"><span>Successfully installed
+</span></span></code></pre></div><p>As you can see, you will need to supply your <code>sudo</code> password near the end of the installation process. You can verify the installation location of the program like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>which caddy
+</span></span><span style="display:flex;"><span>/usr/local/bin/caddy
+</span></span></code></pre></div><h2 id="set-up-a-caddyfile">Set Up a Caddyfile</h2>
 <p>Caddy operation is controlled by a configuration file, just like most other servers. There is plenty of documentation of the options on the Caddy site itself. For now, create a Caddy file in your home directory and edit it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nano Caddyfile
-</code></pre></div><p>Make it look like this.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">www.example.com <span style="color:#f92672">{</span>
-    redir https://example.com<span style="color:#f92672">{</span>uri<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-
-example.com <span style="color:#f92672">{</span>
-    root wordpress
-    log access.log
-    errors error.log
-
-  gzip
-
-  header / <span style="color:#f92672">{</span>
-    <span style="color:#75715e"># Enable HTTP Strict Transport Security (HSTS) to force clients to always</span>
-    <span style="color:#75715e"># connect via HTTPS (not recommended if only experimenting with HTTPS)</span>
-    Strict-Transport-Security  <span style="color:#e6db74">&#34;max-age=31536000;&#34;</span>
-    <span style="color:#75715e"># Enable cross-site filter (XSS) and tell browser to block detected attacks</span>
-    X-XSS-Protection <span style="color:#e6db74">&#34;1; mode=block&#34;</span>
-    <span style="color:#75715e"># Prevent some browsers from MIME-sniffing a response away from the declared Content-Type</span>
-    X-Content-Type-Options <span style="color:#e6db74">&#34;nosniff&#34;</span>
-    <span style="color:#75715e"># Disallow the site to be rendered within a frame (clickjacking protection)</span>
-    X-Frame-Options <span style="color:#e6db74">&#34;DENY&#34;</span>
-    <span style="color:#75715e"># Disallow loading of resources from other sites</span>
-<span style="color:#75715e">#    Content-Security-Policy &#34;default-src &#39;self&#39;; script-src &#39;self&#39; maxcdn.bootstrapcdn.com code.jq$</span>
-  <span style="color:#f92672">}</span>
-
-    <span style="color:#75715e"># PHP-FPM with Unix socket</span>
-    fastcgi / /var/run/php/php7.0-fpm.sock php
-
-    <span style="color:#75715e"># PHP-FPM with regular udp socket</span>
-<span style="color:#75715e">#    fastcgi / 127.0.0.1:9000 php</span>
-
-    <span style="color:#75715e"># Routing for WordPress</span>
-    rewrite / <span style="color:#f92672">{</span>
-        to <span style="color:#f92672">{</span>path<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>path<span style="color:#f92672">}</span>/ /index.php?<span style="color:#f92672">{</span>query<span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>This Caddyfile is based on one I found <a href="https://denbeke.be/blog/servers/caddy-server-and-wordpress-php-fpm/">here</a>. It is pretty obvious what is happening here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano Caddyfile
+</span></span></code></pre></div><p>Make it look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>www.example.com <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    redir https://example.com<span style="color:#f92672">{</span>uri<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>example.com <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    root wordpress
+</span></span><span style="display:flex;"><span>    log access.log
+</span></span><span style="display:flex;"><span>    errors error.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  gzip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  header / <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Enable HTTP Strict Transport Security (HSTS) to force clients to always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># connect via HTTPS (not recommended if only experimenting with HTTPS)</span>
+</span></span><span style="display:flex;"><span>    Strict-Transport-Security  <span style="color:#e6db74">&#34;max-age=31536000;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Enable cross-site filter (XSS) and tell browser to block detected attacks</span>
+</span></span><span style="display:flex;"><span>    X-XSS-Protection <span style="color:#e6db74">&#34;1; mode=block&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Prevent some browsers from MIME-sniffing a response away from the declared Content-Type</span>
+</span></span><span style="display:flex;"><span>    X-Content-Type-Options <span style="color:#e6db74">&#34;nosniff&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Disallow the site to be rendered within a frame (clickjacking protection)</span>
+</span></span><span style="display:flex;"><span>    X-Frame-Options <span style="color:#e6db74">&#34;DENY&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Disallow loading of resources from other sites</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    Content-Security-Policy &#34;default-src &#39;self&#39;; script-src &#39;self&#39; maxcdn.bootstrapcdn.com code.jq$</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># PHP-FPM with Unix socket</span>
+</span></span><span style="display:flex;"><span>    fastcgi / /var/run/php/php7.0-fpm.sock php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># PHP-FPM with regular udp socket</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    fastcgi / 127.0.0.1:9000 php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Routing for WordPress</span>
+</span></span><span style="display:flex;"><span>    rewrite / <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        to <span style="color:#f92672">{</span>path<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>path<span style="color:#f92672">}</span>/ /index.php?<span style="color:#f92672">{</span>query<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>This Caddyfile is based on one I found <a href="https://denbeke.be/blog/servers/caddy-server-and-wordpress-php-fpm/">here</a>. It is pretty obvious what is happening here.</p>
 <ul>
 <li>On your system, replace &ldquo;example.com&rdquo; with your domain name.</li>
 <li>The root directory of the served site is in the directory <code>wordpress</code>.</li>
@@ -336,37 +336,37 @@ example.com <span style="color:#f92672">{</span>
 <p>The rest hints at things to come that will be discussed later.</p>
 <h2 id="add-a-simple-home-page">Add a Simple Home Page</h2>
 <p>Create a home page for the site.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nano wordpress/index.html
-</code></pre></div><p>Add the following contents to the file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-    &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-        &lt;<span style="color:#f92672">head</span>&gt;
-            &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-            &lt;<span style="color:#f92672">title</span>&gt;My Caddy Site&lt;/<span style="color:#f92672">title</span>&gt;
-        &lt;/<span style="color:#f92672">head</span>&gt;
-        &lt;<span style="color:#f92672">body</span>&gt;
-            &lt;<span style="color:#f92672">h1</span>&gt;Here&#39;s the Site&lt;/<span style="color:#f92672">h1</span>&gt;
-            &lt;<span style="color:#f92672">p</span>&gt;Pretty neat, huh?&lt;/<span style="color:#f92672">p</span>&gt;
-        &lt;/<span style="color:#f92672">body</span>&gt;
-    &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>We plan to launch WordPress and the server as a &ldquo;normal&rdquo; user, that is, one without root privileges. However, Linux typically does not allow user-level programs to listen to ports below 1024. There are several ways this could be handled, for example, run the server configured to listen to higher ports. That&rsquo;s inconvenient in my opinion. One way to allow a user level program to listen on ports 80 and 443 (HTTP and HTTPS) is to use the <code>setcap</code> program.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo setcap cap_net_bind_service<span style="color:#f92672">=</span>+ep /usr/local/bin/caddy
-</code></pre></div><h1 id="start-it-up">Start It Up</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano wordpress/index.html
+</span></span></code></pre></div><p>Add the following contents to the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">title</span>&gt;My Caddy Site&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h1</span>&gt;Here&#39;s the Site&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;Pretty neat, huh?&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>We plan to launch WordPress and the server as a &ldquo;normal&rdquo; user, that is, one without root privileges. However, Linux typically does not allow user-level programs to listen to ports below 1024. There are several ways this could be handled, for example, run the server configured to listen to higher ports. That&rsquo;s inconvenient in my opinion. One way to allow a user level program to listen on ports 80 and 443 (HTTP and HTTPS) is to use the <code>setcap</code> program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo setcap cap_net_bind_service<span style="color:#f92672">=</span>+ep /usr/local/bin/caddy
+</span></span></code></pre></div><h1 id="start-it-up">Start It Up</h1>
 <p>You&rsquo;re now ready to start Caddy and serve your site. When you start Caddy for the first time, you will be asked to enter your email address to aid in account recovery if it is ever needed later.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">caddy
-Activating privacy features...
-Your sites will be served over HTTPS automatically using Let<span style="color:#e6db74">&#39;s Encrypt.
-</span><span style="color:#e6db74">By continuing, you agree to the Let&#39;</span>s Encrypt Subscriber Agreement at:
-  https://letsencrypt.org/documents/LE-SA-v1.0.1-July-27-2015.pdf
-Please enter your email address so you can recover your account <span style="color:#66d9ef">if</span> needed.
-You can leave it blank, but you<span style="color:#960050;background-color:#1e0010">&#39;</span>ll lose the ability to recover your account.
-Email address: Lost in Translation
-Activating privacy features... <span style="color:#66d9ef">done</span>.
-https://www.example.com
-https://example.com
-http://www.example.com
-http://example.com
-</code></pre></div><p>If you point your browser to your site you should see the little web page we created above. But the exciting part is the little green lock icon that should be present next to the URL indicating you&rsquo;ve successfully generated and retrieved SSL/TLS certificates from Let&rsquo;s Encrypt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>caddy
+</span></span><span style="display:flex;"><span>Activating privacy features...
+</span></span><span style="display:flex;"><span>Your sites will be served over HTTPS automatically using Let<span style="color:#e6db74">&#39;s Encrypt.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">By continuing, you agree to the Let&#39;</span>s Encrypt Subscriber Agreement at:
+</span></span><span style="display:flex;"><span>  https://letsencrypt.org/documents/LE-SA-v1.0.1-July-27-2015.pdf
+</span></span><span style="display:flex;"><span>Please enter your email address so you can recover your account <span style="color:#66d9ef">if</span> needed.
+</span></span><span style="display:flex;"><span>You can leave it blank, but you<span style="color:#960050;background-color:#1e0010">&#39;</span>ll lose the ability to recover your account.
+</span></span><span style="display:flex;"><span>Email address: Lost in Translation
+</span></span><span style="display:flex;"><span>Activating privacy features... <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>https://www.example.com
+</span></span><span style="display:flex;"><span>https://example.com
+</span></span><span style="display:flex;"><span>http://www.example.com
+</span></span><span style="display:flex;"><span>http://example.com
+</span></span></code></pre></div><p>If you point your browser to your site you should see the little web page we created above. But the exciting part is the little green lock icon that should be present next to the URL indicating you&rsquo;ve successfully generated and retrieved SSL/TLS certificates from Let&rsquo;s Encrypt.</p>
 <p>When I use the Firefox web console to monitor retrieval of the page, there are no errors or warnings. When I shut down the server (<code>Ctrl-C</code>), an new file, <code>access.log</code>, has appeared in my home directory containing details about the recent accesses from my browser. There is no <code>errors.log</code> file, indicating that caddy did not detect any errors. Woohoo!</p>
 <p>So, that should be working. If you experience any errors, fix them before moving on.</p>
 <h1 id="install-mariadb">Install MariaDB</h1>
@@ -377,59 +377,59 @@ http://example.com
 </ul>
 <p>I didn&rsquo;t know much about MariaDB, so I looked into it a little. It&rsquo;s a drop in replacement for MySQL from the same folks who originally developed MySQL. So&hellip;, let&rsquo;s give it a try.</p>
 <p>Since MariaDB is not in the Ubuntu package repositories, the <a href="https://downloads.mariadb.org/mariadb/repositories/#mirror=jmu">MariaDB site</a> will walk you through how to get it. These are the commands suggested to install MariaDB on my server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install software-properties-common
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-sudo add-apt-repository <span style="color:#e6db74">&#39;deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mariadb/repo/10.1/ubuntu xenial main&#39;</span>
-sudo apt update 
-sudo apt install mariadb-server
-</code></pre></div><p>You should use their tool to get the latest stable version for your distro and architecture.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install software-properties-common
+</span></span><span style="display:flex;"><span>sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+</span></span><span style="display:flex;"><span>sudo add-apt-repository <span style="color:#e6db74">&#39;deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mariadb/repo/10.1/ubuntu xenial main&#39;</span>
+</span></span><span style="display:flex;"><span>sudo apt update 
+</span></span><span style="display:flex;"><span>sudo apt install mariadb-server
+</span></span></code></pre></div><p>You should use their tool to get the latest stable version for your distro and architecture.</p>
 <p>The installation will take several minutes. During installation, you will be asked to provide a root password for the database. Keep it somewhere safe.</p>
 <p>After installation is complete, you should be able to do a<code> ps aux | grep 'mysql'</code> and see a <code>mysql</code> process somewhere in the list of running processes.</p>
 <h3 id="lets-create-the-wordpress-database">Let&rsquo;s Create the WordPress Database</h3>
 <p>Now is a fine time to create the database that WordPress will use. Log into the MariaDB shell.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
-</code></pre></div><p>You will be prompted to enter the database root password you created when installing MariaDB. Next, enter the following contents at the shell prompt.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CREATE DATABASE wordpress;
-CREATE USER wordpressuser@localhost;
-SET PASSWORD FOR wordpressuser@localhost<span style="color:#f92672">=</span> PASSWORD<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">)</span>;
-GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
-FLUSH PRIVILEGES;
-exit
-</code></pre></div><p>After each entry you will receive a confirmation message that is not shown here. Those messages should start with&quot;<code>Query OK</code>&quot;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u root -p
+</span></span></code></pre></div><p>You will be prompted to enter the database root password you created when installing MariaDB. Next, enter the following contents at the shell prompt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CREATE DATABASE wordpress;
+</span></span><span style="display:flex;"><span>CREATE USER wordpressuser@localhost;
+</span></span><span style="display:flex;"><span>SET PASSWORD FOR wordpressuser@localhost<span style="color:#f92672">=</span> PASSWORD<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH PRIVILEGES;
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div><p>After each entry you will receive a confirmation message that is not shown here. Those messages should start with&quot;<code>Query OK</code>&quot;.</p>
 <p>This creates a database named <code>wordpress</code> and a user of that database named <code>wordpressuser</code>. The user will have the password <code>password</code>. Of course, use something unique for your own password. Don&rsquo;t forget, you need to enter it in two places.</p>
 <h1 id="install-php">Install PHP</h1>
 <p>This is where I had the most difficulty.</p>
 <p>You can show which package will be installed by default by typing</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt policy php
-</code></pre></div><p>On my system, this output</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php:
- Installed: <span style="color:#f92672">(</span>none<span style="color:#f92672">)</span>
- Candidate: 1:7.0+35ubuntu6
- Version table:
- *** 1:7.0+35ubuntu6 <span style="color:#ae81ff">500</span>
-        <span style="color:#ae81ff">500</span> http://us.archive.ubuntu.com/ubuntu xenial/main amd64 Packages
-        <span style="color:#ae81ff">500</span> http://us.archive.ubuntu.com/ubuntu xenial/main i386 Packages
-        <span style="color:#ae81ff">100</span> /var/lib/dpkg/status
-</code></pre></div><p>I&rsquo;m sure you know the drill by now.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install php php7.0-mysqlnd
-</code></pre></div><p>(Note: On Ubuntu 14.04, the command to install php will install the php<strong>5</strong> package. Doing so includes a lot of other stuff, like setting up a version of the apache server, which takes over the port you want to use to serve caddy. Different installation instructions for that version.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt policy php
+</span></span></code></pre></div><p>On my system, this output</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php:
+</span></span><span style="display:flex;"><span> Installed: <span style="color:#f92672">(</span>none<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> Candidate: 1:7.0+35ubuntu6
+</span></span><span style="display:flex;"><span> Version table:
+</span></span><span style="display:flex;"><span> *** 1:7.0+35ubuntu6 <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">500</span> http://us.archive.ubuntu.com/ubuntu xenial/main amd64 Packages
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">500</span> http://us.archive.ubuntu.com/ubuntu xenial/main i386 Packages
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">100</span> /var/lib/dpkg/status
+</span></span></code></pre></div><p>I&rsquo;m sure you know the drill by now.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install php php7.0-mysqlnd
+</span></span></code></pre></div><p>(Note: On Ubuntu 14.04, the command to install php will install the php<strong>5</strong> package. Doing so includes a lot of other stuff, like setting up a version of the apache server, which takes over the port you want to use to serve caddy. Different installation instructions for that version.)</p>
 <p>I had to install the updated <code>php7.0-mysqlnd</code> package because WordPress would not operate with the version installed in the main package. Still don&rsquo;t know why.</p>
 <p>You also need to add your user to the <code>www-data</code> group.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -a -G www-data username
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -a -G www-data username
+</span></span></code></pre></div><ul>
 <li>Now, edit <code>/etc/php/7.0/fpm/pool.d/www.conf</code>.</li>
 <li>Search (<code>Ctrl-W</code> on nano) for the line that says <code>user=www-data</code> and change it to <code>user=username</code> where you replace username with the name of the user on your system.</li>
 <li>Reboot.</li>
 </ul>
 <h1 id="install-wordpress">Install WordPress</h1>
 <p>Download the latest version of the WordPress system, unzip it, and modify the configuration to reflect the choices you made when setting up the database.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd downloads
-wget https://wordpress.org/latest.tar.gz
-cd ..
-tar -xzvf downloads/latest.tar.gz
-cp wordpress/wp-config-sample.php wordpress/wp-config.php
-nano wordpress/wp-config.php
-</code></pre></div><p>In the <code>wp-config.php</code> file, replace the database name, database user and user password with the values you set earlier. While the editor is open, go the block of code with the comment saying &ldquo;Authentication Unique Keys and Salts&amp;&rdquo; and point your browser at the location mentioned ( <a href="https://api.wordpress.org/secret-key/1.1/salt/)">https://api.wordpress.org/secret-key/1.1/salt/)</a>. When you open that page, it will display a code block with new, unique values you can use. Just cut and paste it right over the top of the pre-existing dummy values. Save and exit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd downloads
+</span></span><span style="display:flex;"><span>wget https://wordpress.org/latest.tar.gz
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>tar -xzvf downloads/latest.tar.gz
+</span></span><span style="display:flex;"><span>cp wordpress/wp-config-sample.php wordpress/wp-config.php
+</span></span><span style="display:flex;"><span>nano wordpress/wp-config.php
+</span></span></code></pre></div><p>In the <code>wp-config.php</code> file, replace the database name, database user and user password with the values you set earlier. While the editor is open, go the block of code with the comment saying &ldquo;Authentication Unique Keys and Salts&amp;&rdquo; and point your browser at the location mentioned ( <a href="https://api.wordpress.org/secret-key/1.1/salt/)">https://api.wordpress.org/secret-key/1.1/salt/)</a>. When you open that page, it will display a code block with new, unique values you can use. Just cut and paste it right over the top of the pre-existing dummy values. Save and exit.</p>
 <p>OK. You are ready for WordPress to start installing. Start Caddy again and point your browser at &ldquo;<code>example.com/readme.html</code>&rdquo;, replacing &ldquo;<code>example.com</code>&rdquo; with your domain name. You should see a welcome message, including a section on the &ldquo;Famous 5-minute install&rdquo;. In step 2, click the link to &ldquo;<code>&lt;span class=&quot;file&quot;&gt;wp-admin/install.php&lt;/span&gt;</code>&rdquo;.</p>
 <p>A new page will appear prompting you to select your language.</p>
 <p>After selecting a language, a new page will load with spaces to input a bunch of information like the site name (what WordPress displays) a root user name for WordPress, a password for that user (the installation program will suggest a strong one for you), and an email address.</p>
@@ -437,11 +437,11 @@ nano wordpress/wp-config.php
 <p>In a few seconds, you should be shown a new page indicating success and telling you to log in with the new user name and password. Click the button that says &ldquo;Log In&rdquo;;. Upon a successful log in, you will be taken to the WordPress dashboard for your site, ready to customize and start posting.</p>
 <p>Since you used Caddy to serve the site, you should also see a green lock icon somewhere on your URL address line. Happy Posting!</p>
 <p>Back in your SSH client, you will likely want to be able to log off your server, but leave Caddy and WordPress running. The <a href="http://manpages.ubuntu.com/manpages/precise/man1/nohup.1.html">nohup</a> command is what you want. First stop the server you started earlier with the <code>caddy</code> command. Then enter the following command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nohup caddy &amp;
-</code></pre></div><p>This will start the server in a separate process and allow you to log off.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nohup caddy &amp;
+</span></span></code></pre></div><p>This will start the server in a separate process and allow you to log off.</p>
 <p>This has been a long post, but the steps are pretty simple. I think using Caddy is actually easier to set up than the <a href="https://nginx.org/en/">nginx</a> or <a href="https://httpd.apache.org/">Apache</a> servers. And so far, MariaDB has been working without complaint.</p>
 <p>Perhaps you&rsquo;re wondering why this site isn&rsquo;t running on Caddy yet. The reasons are long and arcane and have nothing to do with the technology. Perhaps some day soon though.</p>
-<p>There' plenty to write about, so tell people what you think and know.</p>
+<p>There&rsquo; plenty to write about, so tell people what you think and know.</p>
   
   
 

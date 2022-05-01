@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Undo/Redo with Clojure using the Memento Pattern &middot; Yo-Dave</title>
 
@@ -263,108 +263,108 @@
 <p>Redo is just a variation. You create another stack, the redo stack, where the current state is pushed just before popping the old state on the undo stack. Undo and redo operations can be interleaved until an additional action, not recorded on either stack, modifies the atom. At that point the redo stack is cleared.</p>
 <p>This is an informal implementation of the <a href="https://en.wikipedia.org/wiki/Memento_pattern">Memento Pattern</a>.</p>
 <p>So, how would this be implemented? Well, it just so happens I have one right here.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defprotocol </span>UndoProtocol
-  <span style="color:#e6db74">&#34;A protocol track changes to an atom, allowing undo and redo! operations on that atom.&#34;</span>
-  (<span style="color:#a6e22e">init</span> [this] <span style="color:#e6db74">&#34;Initialize the state of thing implementing this protocol.&#34;</span>)
-  (<span style="color:#a6e22e">num-undos</span> [this] <span style="color:#e6db74">&#34;Return the number of states that can be undone.&#34;</span>)
-  (<span style="color:#a6e22e">num-redos</span> [this] <span style="color:#e6db74">&#34;Return the number of states that can be redone.&#34;</span>)
-  (<span style="color:#a6e22e">can-undo?</span> [this] <span style="color:#e6db74">&#34;Return true if a state change can be undone.&#34;</span>)
-  (<span style="color:#a6e22e">can-redo?</span> [this] <span style="color:#e6db74">&#34;Return true if a state change can be redone.&#34;</span>)
-  (<span style="color:#a6e22e">undo!</span> [this] <span style="color:#e6db74">&#34;Reverse one recorded state change. Return the restored state.&#34;</span>)
-  (<span style="color:#a6e22e">redo!</span> [this] <span style="color:#e6db74">&#34;Re-apply a recorded state change. Return the re-applied state.&#34;</span>)
-  (<span style="color:#a6e22e">clear-undo!</span> [this] <span style="color:#e6db74">&#34;Empty the redo! stack.&#34;</span>)
-  (<span style="color:#a6e22e">clear-redo!</span> [this] <span style="color:#e6db74">&#34;Empty the redo! stack.&#34;</span>)
-  (<span style="color:#a6e22e">pause-tracking!</span> [this] <span style="color:#e6db74">&#34;Pause recording state changes.&#34;</span>)
-  (<span style="color:#a6e22e">resume-tracking!</span> [this] <span style="color:#e6db74">&#34;Resume recording state changes.&#34;</span>)
-  (<span style="color:#a6e22e">stop-tracking!</span> [this] <span style="color:#e6db74">&#34;Stop tracking changes. Disconnect the watching function. Forget all saved state changes.&#34;</span>))
-
-(<span style="color:#66d9ef">defrecord </span>UndoManager [id tracked-atom undo-stack redo-stack paused watch-fn]
-
-  UndoProtocol
-
-  (<span style="color:#a6e22e">init</span> [this]
-    (<span style="color:#a6e22e">swap!</span> undo-stack conj <span style="color:#f92672">@</span>tracked-atom)
-    (<span style="color:#a6e22e">add-watch</span> tracked-atom id watch-fn)
-    this)
-
-  (<span style="color:#a6e22e">num-undos</span> [_] (count <span style="color:#f92672">@</span>undo-stack))
-
-  (<span style="color:#a6e22e">num-redos</span> [_] (count <span style="color:#f92672">@</span>redo-stack))
-
-  (<span style="color:#a6e22e">can-undo?</span> [this] (&gt; (<span style="color:#a6e22e">num-undos</span> this) <span style="color:#ae81ff">1</span>))
-
-  (<span style="color:#a6e22e">can-redo?</span> [this] (pos? (<span style="color:#a6e22e">num-redos</span> this)))
-
-  (<span style="color:#a6e22e">undo!</span> [this]
-    (when (<span style="color:#a6e22e">can-undo?</span> this)
-      (<span style="color:#66d9ef">let </span>[current-state (peek <span style="color:#f92672">@</span>undo-stack)
-            _ (<span style="color:#a6e22e">swap!</span> undo-stack pop)
-            restored-state (peek <span style="color:#f92672">@</span>undo-stack)]
-        (<span style="color:#a6e22e">swap!</span> redo-stack conj current-state)
-        (<span style="color:#a6e22e">pause-tracking!</span> this)
-        (<span style="color:#a6e22e">reset!</span> tracked-atom restored-state)
-        (<span style="color:#a6e22e">resume-tracking!</span> this)
-        restored-state)))
-
-  (<span style="color:#a6e22e">redo!</span> [this]
-    (when (<span style="color:#a6e22e">can-redo?</span> this)
-      (<span style="color:#66d9ef">let </span>[state-to-restore (peek <span style="color:#f92672">@</span>redo-stack)]
-        (<span style="color:#a6e22e">swap!</span> redo-stack pop)
-        (<span style="color:#a6e22e">swap!</span> undo-stack conj state-to-restore)
-        (<span style="color:#a6e22e">pause-tracking!</span> this)
-        (<span style="color:#a6e22e">reset!</span> tracked-atom state-to-restore)
-        (<span style="color:#a6e22e">resume-tracking!</span> this)
-        state-to-restore)))
-
-  (<span style="color:#a6e22e">clear-undo!</span> [_] (<span style="color:#a6e22e">reset!</span> undo-stack []))
-
-  (<span style="color:#a6e22e">clear-redo!</span> [_] (<span style="color:#a6e22e">reset!</span> redo-stack []))
-
-  (<span style="color:#a6e22e">pause-tracking!</span> [_] (<span style="color:#a6e22e">reset!</span> paused true))
-
-  (<span style="color:#a6e22e">resume-tracking!</span> [_] (<span style="color:#a6e22e">reset!</span> paused false))
-
-  (<span style="color:#a6e22e">stop-tracking!</span> [this]
-    (<span style="color:#a6e22e">remove-watch</span> tracked-atom id)
-    (<span style="color:#a6e22e">clear-undo!</span> this)
-    (<span style="color:#a6e22e">clear-redo!</span> this)))
-
-(<span style="color:#66d9ef">defn </span>undo-manager
-  <span style="color:#e6db74">&#34;Return an initialized UndoManager object for the tracked atom.&#34;</span>
-  [tracked-atom]
-  (<span style="color:#66d9ef">let </span>[id (keyword (str <span style="color:#e6db74">&#34;undo-manager-tracker-&#34;</span> (<span style="color:#a6e22e">goog/getUid</span> <span style="color:#f92672">@</span>tracked-atom)))
-        undo-stack (<span style="color:#a6e22e">atom</span> [])
-        redo-stack (<span style="color:#a6e22e">atom</span> [])
-        paused (<span style="color:#a6e22e">atom</span> false)
-        watching-fn (<span style="color:#66d9ef">fn </span>[key atom old-state new-state]
-                      <span style="color:#75715e">;(prn &#34;-- Atom Changed --&#34;)</span>
-                      <span style="color:#75715e">;(prn &#34;key: &#34; key)</span>
-                      <span style="color:#75715e">;(prn &#34;atom: &#34; atom)</span>
-                      <span style="color:#75715e">;(prn &#34;old-state: &#34; old-state)</span>
-                      <span style="color:#75715e">;(prn &#34;new-state: &#34; new-state)</span>
-                      <span style="color:#75715e">;(prn &#34;paused: &#34; @paused)</span>
-                      <span style="color:#75715e">;(let [ae (.-activeElement js/document)]</span>
-                      <span style="color:#75715e">;  (when (= &#34;TEXTAREA&#34; (.-tagName ae))</span>
-                      <span style="color:#75715e">;    (let [sel-start (.-selectionStart ae)</span>
-                      <span style="color:#75715e">;          sel-end (.-selectionEnd ae)]</span>
-                      <span style="color:#75715e">;      (println &#34;sel-start: &#34; sel-start)</span>
-                      <span style="color:#75715e">;      (println &#34;sel-end: &#34; sel-end))))</span>
-                      (when-not <span style="color:#f92672">@</span>paused
-                        (<span style="color:#a6e22e">reset!</span> redo-stack [])
-                        (<span style="color:#a6e22e">reset!</span> paused true)
-                        (<span style="color:#a6e22e">swap!</span> undo-stack conj new-state)
-                        (<span style="color:#a6e22e">reset!</span> paused false)))]
-    (<span style="color:#a6e22e">init</span> (<span style="color:#a6e22e">UndoManager.</span> id tracked-atom undo-stack redo-stack paused watching-fn))))
-</code></pre></div><p>I believe this is my very first use of Clojure&rsquo;s <a href="https://clojure.org/reference/protocols"><code>defprotocol</code></a> and <a href="https://clojure.org/reference/datatypes#_deftype_and_defrecord"><code>defrecord</code></a> facilities.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defprotocol </span>UndoProtocol
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;A protocol track changes to an atom, allowing undo and redo! operations on that atom.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">init</span> [this] <span style="color:#e6db74">&#34;Initialize the state of thing implementing this protocol.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">num-undos</span> [this] <span style="color:#e6db74">&#34;Return the number of states that can be undone.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">num-redos</span> [this] <span style="color:#e6db74">&#34;Return the number of states that can be redone.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">can-undo?</span> [this] <span style="color:#e6db74">&#34;Return true if a state change can be undone.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">can-redo?</span> [this] <span style="color:#e6db74">&#34;Return true if a state change can be redone.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">undo!</span> [this] <span style="color:#e6db74">&#34;Reverse one recorded state change. Return the restored state.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">redo!</span> [this] <span style="color:#e6db74">&#34;Re-apply a recorded state change. Return the re-applied state.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">clear-undo!</span> [this] <span style="color:#e6db74">&#34;Empty the redo! stack.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">clear-redo!</span> [this] <span style="color:#e6db74">&#34;Empty the redo! stack.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">pause-tracking!</span> [this] <span style="color:#e6db74">&#34;Pause recording state changes.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">resume-tracking!</span> [this] <span style="color:#e6db74">&#34;Resume recording state changes.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">stop-tracking!</span> [this] <span style="color:#e6db74">&#34;Stop tracking changes. Disconnect the watching function. Forget all saved state changes.&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defrecord </span>UndoManager [id tracked-atom undo-stack redo-stack paused watch-fn]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  UndoProtocol
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">init</span> [this]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">swap!</span> undo-stack conj <span style="color:#f92672">@</span>tracked-atom)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">add-watch</span> tracked-atom id watch-fn)
+</span></span><span style="display:flex;"><span>    this)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">num-undos</span> [_] (count <span style="color:#f92672">@</span>undo-stack))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">num-redos</span> [_] (count <span style="color:#f92672">@</span>redo-stack))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">can-undo?</span> [this] (&gt; (<span style="color:#a6e22e">num-undos</span> this) <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">can-redo?</span> [this] (pos? (<span style="color:#a6e22e">num-redos</span> this)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">undo!</span> [this]
+</span></span><span style="display:flex;"><span>    (when (<span style="color:#a6e22e">can-undo?</span> this)
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[current-state (peek <span style="color:#f92672">@</span>undo-stack)
+</span></span><span style="display:flex;"><span>            _ (<span style="color:#a6e22e">swap!</span> undo-stack pop)
+</span></span><span style="display:flex;"><span>            restored-state (peek <span style="color:#f92672">@</span>undo-stack)]
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">swap!</span> redo-stack conj current-state)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">pause-tracking!</span> this)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">reset!</span> tracked-atom restored-state)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">resume-tracking!</span> this)
+</span></span><span style="display:flex;"><span>        restored-state)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">redo!</span> [this]
+</span></span><span style="display:flex;"><span>    (when (<span style="color:#a6e22e">can-redo?</span> this)
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[state-to-restore (peek <span style="color:#f92672">@</span>redo-stack)]
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">swap!</span> redo-stack pop)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">swap!</span> undo-stack conj state-to-restore)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">pause-tracking!</span> this)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">reset!</span> tracked-atom state-to-restore)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">resume-tracking!</span> this)
+</span></span><span style="display:flex;"><span>        state-to-restore)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">clear-undo!</span> [_] (<span style="color:#a6e22e">reset!</span> undo-stack []))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">clear-redo!</span> [_] (<span style="color:#a6e22e">reset!</span> redo-stack []))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">pause-tracking!</span> [_] (<span style="color:#a6e22e">reset!</span> paused true))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">resume-tracking!</span> [_] (<span style="color:#a6e22e">reset!</span> paused false))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">stop-tracking!</span> [this]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">remove-watch</span> tracked-atom id)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">clear-undo!</span> this)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">clear-redo!</span> this)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>undo-manager
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Return an initialized UndoManager object for the tracked atom.&#34;</span>
+</span></span><span style="display:flex;"><span>  [tracked-atom]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[id (keyword (str <span style="color:#e6db74">&#34;undo-manager-tracker-&#34;</span> (<span style="color:#a6e22e">goog/getUid</span> <span style="color:#f92672">@</span>tracked-atom)))
+</span></span><span style="display:flex;"><span>        undo-stack (<span style="color:#a6e22e">atom</span> [])
+</span></span><span style="display:flex;"><span>        redo-stack (<span style="color:#a6e22e">atom</span> [])
+</span></span><span style="display:flex;"><span>        paused (<span style="color:#a6e22e">atom</span> false)
+</span></span><span style="display:flex;"><span>        watching-fn (<span style="color:#66d9ef">fn </span>[key atom old-state new-state]
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(prn &#34;-- Atom Changed --&#34;)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(prn &#34;key: &#34; key)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(prn &#34;atom: &#34; atom)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(prn &#34;old-state: &#34; old-state)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(prn &#34;new-state: &#34; new-state)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(prn &#34;paused: &#34; @paused)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;(let [ae (.-activeElement js/document)]</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;  (when (= &#34;TEXTAREA&#34; (.-tagName ae))</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;    (let [sel-start (.-selectionStart ae)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;          sel-end (.-selectionEnd ae)]</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;      (println &#34;sel-start: &#34; sel-start)</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#75715e">;      (println &#34;sel-end: &#34; sel-end))))</span>
+</span></span><span style="display:flex;"><span>                      (when-not <span style="color:#f92672">@</span>paused
+</span></span><span style="display:flex;"><span>                        (<span style="color:#a6e22e">reset!</span> redo-stack [])
+</span></span><span style="display:flex;"><span>                        (<span style="color:#a6e22e">reset!</span> paused true)
+</span></span><span style="display:flex;"><span>                        (<span style="color:#a6e22e">swap!</span> undo-stack conj new-state)
+</span></span><span style="display:flex;"><span>                        (<span style="color:#a6e22e">reset!</span> paused false)))]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">init</span> (<span style="color:#a6e22e">UndoManager.</span> id tracked-atom undo-stack redo-stack paused watching-fn))))
+</span></span></code></pre></div><p>I believe this is my very first use of Clojure&rsquo;s <a href="https://clojure.org/reference/protocols"><code>defprotocol</code></a> and <a href="https://clojure.org/reference/datatypes#_deftype_and_defrecord"><code>defrecord</code></a> facilities.</p>
 <p>You might use it like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[tracked-atom (<span style="color:#a6e22e">atom</span> <span style="color:#e6db74">&#34;Initial State&#34;</span>)
-      ur (<span style="color:#a6e22e">undo-manager</span> tracked-atom)]
-  <span style="color:#75715e">; Make your tracked changes here. Do your</span>
-  <span style="color:#75715e">; undo and redo operations by calling</span>
-  (<span style="color:#a6e22e">ur/undo</span>)
-  <span style="color:#75715e">; or</span>
-  (<span style="color:#a6e22e">ur/redo</span>))
-</code></pre></div><h4 id="what-this-isnt-good-for">What This Isn&rsquo;t Good For</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">let </span>[tracked-atom (<span style="color:#a6e22e">atom</span> <span style="color:#e6db74">&#34;Initial State&#34;</span>)
+</span></span><span style="display:flex;"><span>      ur (<span style="color:#a6e22e">undo-manager</span> tracked-atom)]
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">; Make your tracked changes here. Do your</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">; undo and redo operations by calling</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">ur/undo</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">; or</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">ur/redo</span>))
+</span></span></code></pre></div><h4 id="what-this-isnt-good-for">What This Isn&rsquo;t Good For</h4>
 <p>I learned these things because they are actually what I built it for and it was totally inadequate.</p>
 <h5 id="text-editing">Text Editing</h5>
 <p>If your text is in an <code>atom</code>, editing the text while using this type of undo manager will make a copy of the complete contents of the atom on every keystroke.</p>
@@ -385,13 +385,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a>
+      <a href="https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a>
     </nav>
     
   </div>

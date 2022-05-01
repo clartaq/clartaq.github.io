@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Autosave Functionality in ClojureScript &middot; Yo-Dave</title>
 
@@ -255,22 +255,22 @@
   <p>Most programs provide an &ldquo;Autosave&rdquo; feature these days. The feature gives the user a chance to minimize the amount of work lost due to some unforeseen mishap, like a sudden power outage.</p>
 <p>When I write a program in Clojure that requires such a feature, I have the entire Java library at my disposal. I usually create something based on a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html"><code>ScheduledExecutorService</code></a> &ndash; something that watches for a change in the document then allows a certain amount of user inactivity to pass before automatically saving the document. If the user makes another revision before the executor is triggered, the executor timer is reset to trigger after another period of inactivity.</p>
 <p>When programming in ClojureScript, those concurrency facilities​ are not available. Instead, I came up with something like the following.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>delay-handle (<span style="color:#a6e22e">atom</span> nil))
-
-(<span style="color:#66d9ef">defn </span>clear-autosave-delay! []
-  (<span style="color:#a6e22e">.clearTimeout</span> js/window <span style="color:#f92672">@</span>delay-handle))
-
-(<span style="color:#66d9ef">defn </span>start-autosave-delay!
-  [doc-save-fn delay-ms page-map-atom]
-  (<span style="color:#a6e22e">reset!</span> delay-handle (<span style="color:#a6e22e">.setTimeout</span> js/window doc-save-fn delay-ms page-map-atom)))
-
-(<span style="color:#66d9ef">defn </span>change-watcher!
-  [doc-save-fn page-map-atom]
-  (<span style="color:#66d9ef">let </span>[delay (* <span style="color:#ae81ff">1000</span> (<span style="color:#a6e22e">get-in</span> <span style="color:#f92672">@</span>page-map-atom [<span style="color:#e6db74">:options</span> <span style="color:#e6db74">:editor_autosave_interval</span>]))]
-    (when (pos? delay)
-      (<span style="color:#a6e22e">clear-autosave-delay!</span>)
-      (<span style="color:#a6e22e">start-autosave-delay!</span> doc-save-fn delay page-map-atom))))
-</code></pre></div><p>I put the <code>change-watcher!</code> function in the <code>:on-ch​ange</code> handler for a control (or multiple controls). Whenever a change occurs, it resets the delay. If the delay expires, the <code>doc-save-fn</code> is called to do the save.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>delay-handle (<span style="color:#a6e22e">atom</span> nil))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>clear-autosave-delay! []
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">.clearTimeout</span> js/window <span style="color:#f92672">@</span>delay-handle))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>start-autosave-delay!
+</span></span><span style="display:flex;"><span>  [doc-save-fn delay-ms page-map-atom]
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">reset!</span> delay-handle (<span style="color:#a6e22e">.setTimeout</span> js/window doc-save-fn delay-ms page-map-atom)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>change-watcher!
+</span></span><span style="display:flex;"><span>  [doc-save-fn page-map-atom]
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[delay (* <span style="color:#ae81ff">1000</span> (<span style="color:#a6e22e">get-in</span> <span style="color:#f92672">@</span>page-map-atom [<span style="color:#e6db74">:options</span> <span style="color:#e6db74">:editor_autosave_interval</span>]))]
+</span></span><span style="display:flex;"><span>    (when (pos? delay)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">clear-autosave-delay!</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">start-autosave-delay!</span> doc-save-fn delay page-map-atom))))
+</span></span></code></pre></div><p>I put the <code>change-watcher!</code> function in the <code>:on-ch​ange</code> handler for a control (or multiple controls). Whenever a change occurs, it resets the delay. If the delay expires, the <code>doc-save-fn</code> is called to do the save.</p>
 <p>It isn&rsquo;t very &ldquo;Clojuresque,&ldquo;​ but it does seem to work ok.</p>
 <p>Trying to find a more idiomatic solution, I posted <a href="https://stackoverflow.com/questions/51661320/autosave-functionality-in-clojurescript">this question</a> on StackOverflow. It generated very little interest, but the single commenter did say that this seems to be a common practice &ndash; putting a thin wrapper around some ugly JavaScript.​</p>
 

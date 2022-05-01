@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>More on Loading Fonts &middot; Yo-Dave</title>
 
@@ -254,100 +254,100 @@
 
   <p>A couple days ago, I <a href="https://yo-dave.com/2013/08/10/loading-fonts-like-css/">posted a little snippet</a> showing how to load and font from a list of preferred fonts using <a href="http://clojure.org/">Clojure</a> and <a href="http://www.oracle.com/technetwork/java/javafx/overview/index.html">JavaFX</a>. Well, I&rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS <em>and</em> fonts from a resource file.</p>
 <p>Here&rsquo;s the new snippet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">ns </span>clojure_font_loading.core
-      (<span style="color:#e6db74">:gen-class</span>
-       <span style="color:#e6db74">:extends</span> javafx.application.Application)
-      (<span style="color:#e6db74">:import</span>
-       [javafx.application Application]
-       [javafx.event EventHandler]
-       [javafx.scene Scene]
-       [avafx.scene.control Button]
-       [javafx.scene.layout StackPane  VBox]
-       [javafx.scene.text Font])
-      (<span style="color:#e6db74">:require</span> [clojure.java.io <span style="color:#e6db74">:as</span> jio]))
-    
-    (<span style="color:#66d9ef">defn- </span>get-pref
-      <span style="color:#e6db74">&#34;Return the first name from prefs that appears in the
-</span><span style="color:#e6db74">       list of font families.&#34;</span>
-      [prefs families]
-      (first (reverse (reduce (<span style="color:#66d9ef">fn </span>[result item]
-                                (<span style="color:#66d9ef">if </span>(<span style="color:#a6e22e">.contains</span> families item)
-                                  (cons item result)
-                                  result))
-                              () prefs))))
-    
-    (<span style="color:#66d9ef">defn- </span>pref-typeface
-      <span style="color:#e6db74">&#34;Return the typeface to be used at run time. Select the
-</span><span style="color:#e6db74">       typeface from a group of pre-defined font families.&#34;</span>
-      []
-      (<span style="color:#66d9ef">let </span>[prefs <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Fantasy&#34;</span> <span style="color:#e6db74">&#34;Not Real&#34;</span> <span style="color:#e6db74">&#34;Segoe UI&#34;</span> <span style="color:#e6db74">&#34;Verdana&#34;</span>
-                    <span style="color:#e6db74">&#34;Trebuchet MS&#34;</span> <span style="color:#e6db74">&#34;Tahoma&#34;</span> <span style="color:#e6db74">&#34;Arial&#34;</span> <span style="color:#e6db74">&#34;Helvetica&#34;</span>
-                    <span style="color:#e6db74">&#34;sans-serif&#34;</span> <span style="color:#e6db74">&#34;System&#34;</span>)
-            families (<span style="color:#a6e22e">Font/getFamilies</span>)]
-        (<span style="color:#a6e22e">get-pref</span> prefs families)))
-    
-    (<span style="color:#66d9ef">defn- </span>get-font-from-resource
-      <span style="color:#e6db74">&#34;Load the named font from a resource.&#34;</span>
-      [font-name]
-      (<span style="color:#66d9ef">let </span>[prefix <span style="color:#e6db74">&#34;clojure_font_loading/resources/&#34;</span>
-            url (<span style="color:#a6e22e">jio/resource</span> (str prefix font-name))
-            fnt (<span style="color:#a6e22e">Font/loadFont</span> (<span style="color:#a6e22e">.toExternalForm</span> url) <span style="color:#ae81ff">20.0</span>)]
-        fnt))
-    
-    (<span style="color:#66d9ef">defn </span>-start
-      <span style="color:#e6db74">&#34;Build the application interface and start it up.&#34;</span>
-      [this stage]
-      (<span style="color:#66d9ef">let </span>[root (<span style="color:#a6e22e">StackPane.</span>)
-            vbox (<span style="color:#a6e22e">VBox.</span>)
-            scene (<span style="color:#a6e22e">Scene.</span> root <span style="color:#ae81ff">600</span> <span style="color:#ae81ff">400</span>)
-            fnt1 (<span style="color:#a6e22e">Font.</span> (<span style="color:#a6e22e">pref-typeface</span>) <span style="color:#ae81ff">16</span>)
-            fnt2 (<span style="color:#a6e22e">get-font-from-resource</span> <span style="color:#e6db74">&#34;ITCBLKAD.TTF&#34;</span>)
-            btn1 (<span style="color:#a6e22e">Button.</span> <span style="color:#e6db74">&#34;Click to load Installed font&#34;</span>)
-            btn2 (<span style="color:#a6e22e">Button.</span> <span style="color:#e6db74">&#34;Click to load from Resource&#34;</span>)]
-    
-        (<span style="color:#a6e22e">.setOnAction</span> btn1
-                     (<span style="color:#a6e22e">reify</span> EventHandler
-                       (<span style="color:#a6e22e">handle</span> [this event]
-                         (doto btn1
-                           (<span style="color:#a6e22e">.setText</span> (str <span style="color:#e6db74">&#34;This is &#34;</span> (<span style="color:#a6e22e">.getName</span> fnt1)
-                                          <span style="color:#e6db74">&#34; loaded from an installed font&#34;</span>))
-                           (<span style="color:#a6e22e">.setFont</span> fnt1)))))
-    
-         (<span style="color:#a6e22e">.setOnAction</span> btn2
-                      (<span style="color:#a6e22e">reify</span> EventHandler
-                        (<span style="color:#a6e22e">handle</span> [this event]
-                          (doto btn2
-                            (<span style="color:#a6e22e">.setText</span> (str <span style="color:#e6db74">&#34;This is &#34;</span> (<span style="color:#a6e22e">.getName</span> fnt2)
-                                           <span style="color:#e6db74">&#34; loaded from a font file&#34;</span>))
-                            (<span style="color:#a6e22e">.setFont</span> fnt2)))))
-    
-        (<span style="color:#a6e22e">.setSpacing</span> vbox <span style="color:#ae81ff">10.0</span>)
-    
-        (doto (<span style="color:#a6e22e">.getChildren</span> vbox)
-          (<span style="color:#a6e22e">.add</span> btn1)
-          (<span style="color:#a6e22e">.add</span> btn2))
-    
-        (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getChildren</span> root) vbox)
-    
-        (doto stage
-          (<span style="color:#a6e22e">.setTitle</span> <span style="color:#e6db74">&#34;Font Loading Demo&#34;</span>)
-          (<span style="color:#a6e22e">.setScene</span> scene)
-          (<span style="color:#a6e22e">.show</span>))))
-    
-    (<span style="color:#66d9ef">defn </span>-main
-      [<span style="color:#f92672">&amp;</span> args]
-      (<span style="color:#a6e22e">Application/launch</span> clojure_font_loading.core args))
-</code></pre></div><p>Here&rsquo;s the project file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#66d9ef">defproject </span>clojure_font_loading <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
-      <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demonstration of loading fonts in Clojure and JavaFX&#34;</span>
-      <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;https://bitbucket.org/David_Clark/clojure-font-loading&#34;</span>
-      <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Eclipse Public License&#34;</span>
-                <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
-      <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.5.1&#34;</span>]]
-      <span style="color:#e6db74">:resource-paths</span> [<span style="color:#e6db74">&#34;c:\\Program Files\\Java\\jdk1.7.0_25\\jre\\lib\\jfxrt.jar&#34;</span>]
-      <span style="color:#e6db74">:aot</span> [clojure_font_loading.core]
-      <span style="color:#e6db74">:main</span> clojure_font_loading.core)
-</code></pre></div><p>I&rsquo;ve put this in a <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/clojure-font-loading/tree/default">repository</a> at HelixTeamHub if you&rsquo;re interested. Note that you will have to create a sub-directory off of the <code>src/clojure_font_loading/</code> directory called <code>resources</code>. Then copy a font file of your choice into that directory. Then you will need to change the name of the font file in the source. (I did this because of fears of putting someone&rsquo;s copyrighted material into the repository. Don&rsquo;t want to do that.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>    (<span style="color:#66d9ef">ns </span>clojure_font_loading.core
+</span></span><span style="display:flex;"><span>      (<span style="color:#e6db74">:gen-class</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#e6db74">:extends</span> javafx.application.Application)
+</span></span><span style="display:flex;"><span>      (<span style="color:#e6db74">:import</span>
+</span></span><span style="display:flex;"><span>       [javafx.application Application]
+</span></span><span style="display:flex;"><span>       [javafx.event EventHandler]
+</span></span><span style="display:flex;"><span>       [javafx.scene Scene]
+</span></span><span style="display:flex;"><span>       [avafx.scene.control Button]
+</span></span><span style="display:flex;"><span>       [javafx.scene.layout StackPane  VBox]
+</span></span><span style="display:flex;"><span>       [javafx.scene.text Font])
+</span></span><span style="display:flex;"><span>      (<span style="color:#e6db74">:require</span> [clojure.java.io <span style="color:#e6db74">:as</span> jio]))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn- </span>get-pref
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Return the first name from prefs that appears in the
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       list of font families.&#34;</span>
+</span></span><span style="display:flex;"><span>      [prefs families]
+</span></span><span style="display:flex;"><span>      (first (reverse (reduce (<span style="color:#66d9ef">fn </span>[result item]
+</span></span><span style="display:flex;"><span>                                (<span style="color:#66d9ef">if </span>(<span style="color:#a6e22e">.contains</span> families item)
+</span></span><span style="display:flex;"><span>                                  (cons item result)
+</span></span><span style="display:flex;"><span>                                  result))
+</span></span><span style="display:flex;"><span>                              () prefs))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn- </span>pref-typeface
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Return the typeface to be used at run time. Select the
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       typeface from a group of pre-defined font families.&#34;</span>
+</span></span><span style="display:flex;"><span>      []
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[prefs <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Fantasy&#34;</span> <span style="color:#e6db74">&#34;Not Real&#34;</span> <span style="color:#e6db74">&#34;Segoe UI&#34;</span> <span style="color:#e6db74">&#34;Verdana&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;Trebuchet MS&#34;</span> <span style="color:#e6db74">&#34;Tahoma&#34;</span> <span style="color:#e6db74">&#34;Arial&#34;</span> <span style="color:#e6db74">&#34;Helvetica&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;sans-serif&#34;</span> <span style="color:#e6db74">&#34;System&#34;</span>)
+</span></span><span style="display:flex;"><span>            families (<span style="color:#a6e22e">Font/getFamilies</span>)]
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">get-pref</span> prefs families)))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn- </span>get-font-from-resource
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Load the named font from a resource.&#34;</span>
+</span></span><span style="display:flex;"><span>      [font-name]
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[prefix <span style="color:#e6db74">&#34;clojure_font_loading/resources/&#34;</span>
+</span></span><span style="display:flex;"><span>            url (<span style="color:#a6e22e">jio/resource</span> (str prefix font-name))
+</span></span><span style="display:flex;"><span>            fnt (<span style="color:#a6e22e">Font/loadFont</span> (<span style="color:#a6e22e">.toExternalForm</span> url) <span style="color:#ae81ff">20.0</span>)]
+</span></span><span style="display:flex;"><span>        fnt))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>-start
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Build the application interface and start it up.&#34;</span>
+</span></span><span style="display:flex;"><span>      [this stage]
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">let </span>[root (<span style="color:#a6e22e">StackPane.</span>)
+</span></span><span style="display:flex;"><span>            vbox (<span style="color:#a6e22e">VBox.</span>)
+</span></span><span style="display:flex;"><span>            scene (<span style="color:#a6e22e">Scene.</span> root <span style="color:#ae81ff">600</span> <span style="color:#ae81ff">400</span>)
+</span></span><span style="display:flex;"><span>            fnt1 (<span style="color:#a6e22e">Font.</span> (<span style="color:#a6e22e">pref-typeface</span>) <span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>            fnt2 (<span style="color:#a6e22e">get-font-from-resource</span> <span style="color:#e6db74">&#34;ITCBLKAD.TTF&#34;</span>)
+</span></span><span style="display:flex;"><span>            btn1 (<span style="color:#a6e22e">Button.</span> <span style="color:#e6db74">&#34;Click to load Installed font&#34;</span>)
+</span></span><span style="display:flex;"><span>            btn2 (<span style="color:#a6e22e">Button.</span> <span style="color:#e6db74">&#34;Click to load from Resource&#34;</span>)]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setOnAction</span> btn1
+</span></span><span style="display:flex;"><span>                     (<span style="color:#a6e22e">reify</span> EventHandler
+</span></span><span style="display:flex;"><span>                       (<span style="color:#a6e22e">handle</span> [this event]
+</span></span><span style="display:flex;"><span>                         (doto btn1
+</span></span><span style="display:flex;"><span>                           (<span style="color:#a6e22e">.setText</span> (str <span style="color:#e6db74">&#34;This is &#34;</span> (<span style="color:#a6e22e">.getName</span> fnt1)
+</span></span><span style="display:flex;"><span>                                          <span style="color:#e6db74">&#34; loaded from an installed font&#34;</span>))
+</span></span><span style="display:flex;"><span>                           (<span style="color:#a6e22e">.setFont</span> fnt1)))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>         (<span style="color:#a6e22e">.setOnAction</span> btn2
+</span></span><span style="display:flex;"><span>                      (<span style="color:#a6e22e">reify</span> EventHandler
+</span></span><span style="display:flex;"><span>                        (<span style="color:#a6e22e">handle</span> [this event]
+</span></span><span style="display:flex;"><span>                          (doto btn2
+</span></span><span style="display:flex;"><span>                            (<span style="color:#a6e22e">.setText</span> (str <span style="color:#e6db74">&#34;This is &#34;</span> (<span style="color:#a6e22e">.getName</span> fnt2)
+</span></span><span style="display:flex;"><span>                                           <span style="color:#e6db74">&#34; loaded from a font file&#34;</span>))
+</span></span><span style="display:flex;"><span>                            (<span style="color:#a6e22e">.setFont</span> fnt2)))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.setSpacing</span> vbox <span style="color:#ae81ff">10.0</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (doto (<span style="color:#a6e22e">.getChildren</span> vbox)
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.add</span> btn1)
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.add</span> btn2))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">.add</span> (<span style="color:#a6e22e">.getChildren</span> root) vbox)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        (doto stage
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.setTitle</span> <span style="color:#e6db74">&#34;Font Loading Demo&#34;</span>)
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.setScene</span> scene)
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">.show</span>))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">defn </span>-main
+</span></span><span style="display:flex;"><span>      [<span style="color:#f92672">&amp;</span> args]
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">Application/launch</span> clojure_font_loading.core args))
+</span></span></code></pre></div><p>Here&rsquo;s the project file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>    (<span style="color:#66d9ef">defproject </span>clojure_font_loading <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;Demonstration of loading fonts in Clojure and JavaFX&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;https://bitbucket.org/David_Clark/clojure-font-loading&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Eclipse Public License&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.5.1&#34;</span>]]
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:resource-paths</span> [<span style="color:#e6db74">&#34;c:\\Program Files\\Java\\jdk1.7.0_25\\jre\\lib\\jfxrt.jar&#34;</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:aot</span> [clojure_font_loading.core]
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:main</span> clojure_font_loading.core)
+</span></span></code></pre></div><p>I&rsquo;ve put this in a <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/clojure-font-loading/tree/default">repository</a> at HelixTeamHub if you&rsquo;re interested. Note that you will have to create a sub-directory off of the <code>src/clojure_font_loading/</code> directory called <code>resources</code>. Then copy a font file of your choice into that directory. Then you will need to change the name of the font file in the source. (I did this because of fears of putting someone&rsquo;s copyrighted material into the repository. Don&rsquo;t want to do that.)</p>
 
   
   

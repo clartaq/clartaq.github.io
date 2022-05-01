@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Color Deconvolution &middot; Yo-Dave</title>
 
@@ -253,7 +253,7 @@
   <p>One method I&rsquo;ve used in a number of imaging tasks is Color Deconvolution. You can think of color deconvolution as figuring out how much of each of a group of colors contributes to the final color of the pixels in an image.</p>
 <p>In my previous work, I&rsquo;ve used this technique to analyze and quantify the amount of dye in a histologically stained tissue sample. For example, you may want to know how much eosin (a bright pinkish-red dye) and hematoxylin (purplish-blue dye) are present in a region of stained tissue.</p>
 <p>Here&rsquo;s a magnified image of a piece of tissue stained with hematoxylin and eosin. Those are red blood cells near the top. The dark purple structures near the bottom are nuclei. The rest of the pink stuff is stained mostly with eosin.</p>
-<p><a href="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg"><img src="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg" alt="Example of H&E Stained Tissue" title="Example of H&amp;E Stained Tissue"> <!-- raw HTML omitted --><!-- raw HTML omitted -->Example of H&amp;E Stained Tissue<!-- raw HTML omitted --></a></p>
+<p><a href="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg"><img src="https://yo-dave.com/static/img/2011-09-14-HnEImage.jpg" alt="Example of H&amp;E Stained Tissue" title="Example of H&amp;E Stained Tissue"> <!-- raw HTML omitted --><!-- raw HTML omitted -->Example of H&amp;E Stained Tissue<!-- raw HTML omitted --></a></p>
 <p>What if you want to know how much of each dye is staining a particular structure. Color deconvolution is the technique to use to find out. In addition to a big pile of numbers, the output can be shown visually to give an impression of the relative intensities. Below is an example of such output</p>
 <p><a href="https://yo-dave.com/static/img/2011-09-14-DeconvSnip.PNG"><img src="https://yo-dave.com/static/img/2011-09-14-DeconvSnip.PNG" alt="Three Channels of Deconvolved Image" title="Three Channels of Deconvolved Image"><!-- raw HTML omitted --><!-- raw HTML omitted -->Three Channels of Deconvolved Image<!-- raw HTML omitted --></a></p>
 <p>The left sub-image represents the intensity of hematoxylin and is shown in roughly the color of the dye itself. The middle image shows how eosin is distributed through the tissue. The right image is what&rsquo;s &ldquo;left over&rdquo;, neither hematoxylin or eosin.</p>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Syntax Highlighting &middot; Yo-Dave</title>
 
@@ -255,21 +255,21 @@
 <p>Of all of the syntax highlighters I have tried, the <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a> JavaScript tool by Alex Gorbachev is the one I most prefer. The <a href="https://wordpress.org/plugins/syntaxhighlighter/">SyntaxHighlighter Evolved</a> is a nice WordPress plugin wrapped around the Gorbachev package. Setting things up in WordPress is trivial and just works.</p>
 <p>Although the plugin comes with many &ldquo;brushes&rdquo; for different languages, the one for Clojure is a bit simplistic. However, Brian Carper has taken the time to create <!-- raw HTML omitted --><a href="http://briancarper.net/blog/556/">a more sophisticated highlighter for Clojure</a><!-- raw HTML omitted --> (<strong>Broken Link</strong>). He has even supplied a tweaked theme. The theme doesn&rsquo;t suit my tastes, but it looks good on his site.</p>
 <p>Brian&rsquo;s Clojure brush even seems to work well with Lisp</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">defun</span> verbose-sum (<span style="color:#a6e22e">x</span> y)
-  <span style="color:#f92672">&amp;</span>quot<span style="color:#75715e">;Sum any two numbers after printing a message.&amp;quot;</span>
-  (<span style="color:#a6e22e">format</span> t <span style="color:#e6db74">&#34;Summing ~d and ~d.~%&#34;</span> x y)
-  (+ x y))
-</code></pre></div><p>and Scheme</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">define</span> product
-  (<span style="color:#a6e22e">lambda</span> (<span style="color:#a6e22e">ls</span>)
-    (<span style="color:#a6e22e">call/cc</span>
-     (<span style="color:#a6e22e">lambda</span> (<span style="color:#a6e22e">break</span>)
-       (<span style="color:#66d9ef">let </span>f ([ls ls])
-         (<span style="color:#a6e22e">cond</span>
-           [(<span style="color:#a6e22e">null?</span> ls) <span style="color:#ae81ff">1</span>]
-           [(= (<span style="color:#a6e22e">car</span> ls) <span style="color:#ae81ff">0</span>) (<span style="color:#a6e22e">break</span> <span style="color:#ae81ff">0</span>)]
-           [else (* (<span style="color:#a6e22e">car</span> ls) (<span style="color:#a6e22e">f</span> (<span style="color:#a6e22e">cdr</span> ls)))]))))))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#a6e22e">defun</span> verbose-sum (<span style="color:#a6e22e">x</span> y)
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span>quot<span style="color:#75715e">;Sum any two numbers after printing a message.&amp;quot;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">format</span> t <span style="color:#e6db74">&#34;Summing ~d and ~d.~%&#34;</span> x y)
+</span></span><span style="display:flex;"><span>  (+ x y))
+</span></span></code></pre></div><p>and Scheme</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#a6e22e">define</span> product
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">lambda</span> (<span style="color:#a6e22e">ls</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">call/cc</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#a6e22e">lambda</span> (<span style="color:#a6e22e">break</span>)
+</span></span><span style="display:flex;"><span>       (<span style="color:#66d9ef">let </span>f ([ls ls])
+</span></span><span style="display:flex;"><span>         (<span style="color:#a6e22e">cond</span>
+</span></span><span style="display:flex;"><span>           [(<span style="color:#a6e22e">null?</span> ls) <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>           [(= (<span style="color:#a6e22e">car</span> ls) <span style="color:#ae81ff">0</span>) (<span style="color:#a6e22e">break</span> <span style="color:#ae81ff">0</span>)]
+</span></span><span style="display:flex;"><span>           [else (* (<span style="color:#a6e22e">car</span> ls) (<span style="color:#a6e22e">f</span> (<span style="color:#a6e22e">cdr</span> ls)))]))))))
+</span></span></code></pre></div>
   
   
 

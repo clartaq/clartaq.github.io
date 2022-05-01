@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>clojure &middot; Yo-Dave</title>
 
@@ -270,7 +270,7 @@
 
   <p>
   As part of repository maintenance, I often use a script to delete a group of directories, even if those directories are not empty. It looks something like this:
-(require &#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f] &#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&#34; (when (.isDirectory f) (doseq [f2 (.listFiles f)] (delete-children-recursively! f2))) (when (.exists f) (io/delete-file f))) (defn delete-clean-targets!
+(require &#39;[clojure.java.io :as io]) . . . (defn delete-children-recursively! [f]  &#34;Given a file, delete it. If the file is a directory delete its contents first. This version does not handle symlinks.&#34;  (when (.isDirectory f)  (doseq [f2 (.listFiles f)]  (delete-children-recursively!
   </p>
 
   
@@ -335,7 +335,7 @@ The approach is to create a stack that holds every change to the state of the at
   
     <article>
   <header>
-    <h2><a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a></h2>
+    <h2><a href="https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/">clown -- A Clojure/Script Outliner with Notes</a></h2>
 
     <div class="post-meta">
 
@@ -379,7 +379,7 @@ I&rsquo;ve been researching and using different approaches for decades. Over all
 
   
   <footer>
-    <a href="https://yo-dave.com/2020/01/05/clown-a-clojure/script-outliner-with-notes/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+    <a href="https://yo-dave.com/2020/01/05/clown--a-clojure/script-outliner-with-notes/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>
@@ -689,7 +689,7 @@ What could be more natural than to string those pieces of code together with one
   
     <article>
   <header>
-    <h2><a href="https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/">Another Useful Function -- convert-seq-to-comma-separated-string</a></h2>
+    <h2><a href="https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/">Another Useful Function -- convert-seq-to-comma-separated-string</a></h2>
 
     <div class="post-meta">
 
@@ -728,7 +728,7 @@ If all of the things are strings, you can use the built-in string/join function 
 
   
   <footer>
-    <a href="https://yo-dave.com/2018/01/19/another-useful-function-convert-seq-to-comma-separated-string/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+    <a href="https://yo-dave.com/2018/01/19/another-useful-function--convert-seq-to-comma-separated-string/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>
@@ -1307,7 +1307,7 @@ This is almost as gob-smacking weird as the lack of dialogs. (Ok, there are some
   <p>
   A couple days ago, I posted a little snippet showing how to load and font from a list of preferred fonts using Clojure and JavaFX. Well, I&rsquo;ve extended the demo a bit to show how to load both fonts installed on the OS and fonts from a resource file.
 Here&rsquo;s the new snippet.
-(ns clojure_font_loading.core (:gen-class :extends javafx.application.Application) (:import [javafx.application Application] [javafx.event EventHandler] [javafx.scene Scene] [avafx.scene.control Button] [javafx.scene.layout StackPane VBox] [javafx.
+ (ns clojure_font_loading.core  (:gen-class  :extends javafx.application.Application)  (:import  [javafx.application Application]  [javafx.event EventHandler]  [javafx.
   </p>
 
   

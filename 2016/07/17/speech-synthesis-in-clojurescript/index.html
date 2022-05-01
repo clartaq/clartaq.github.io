@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.98.0" />
 
   <title>Speech Synthesis in ClojureScript &middot; Yo-Dave</title>
 
@@ -257,41 +257,41 @@
   <p>Just like everyone else, it seems, I&rsquo;ve been following all of the news about voice-activated personal assistants. There are all the commercial offerings like Siri, Alexa, Cortana, and so on, as well as some DIY projects on the web, like this <a href="https://blog.truthlabs.com/rethinking-voice-search-2496640fdec2#.uvnrkmji0">one</a> and <a href="https://howchoo.com/g/yti5mmq0ntu/add-voice-controls-to-your-raspberry-pi-using-jasper">this one</a> and <a href="http://www.instructables.com/id/Raspberri-Personal-Assistant/">this one</a>.</p>
 <p>These types of projects typically involve a front end that converts voice to text, some middle piece that interprets the text and obtains some answer or creates an action, ending up with a voice response by the system back to the user. I have some (out-of-date) experience with speech to text, but not the other end of the process: text to speech. So here&rsquo;s a little investigation into how to do it with ClojureScript. Turns out that it is almost trivial these days.</p>
 <p>Since all great programmers are lazy thieves, I took this lesson to heart and basically ripped-off this pre-existing <a href="http://blog.teamtreehouse.com/getting-started-speech-synthesis-api">example in JavaScript</a>. I used the CSS for the project almost verbatim. To create a ClojureScript project, I used <a href="http://leiningen.org/">Leiningen</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">lein new figwheel voice-demo --reagent
-</code></pre></div><p>Of course, <code>[figwheel](https://github.com/bhauman/lein-figwheel)</code> is there since it is such a help with ClojureScript development. The <code>--reagent</code> flag means that the project should be created to use the marvelous <a href="https://reagent-project.github.io/">Reagent</a> library. Reagent is used primarily to do intelligent, dynamic updates to the DOM, but for this project, it is only used for its ease of creating UI components with the <a href="https://github.com/weavejester/hiccup/wiki/Syntax">Hiccup syntax</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lein new figwheel voice-demo --reagent
+</span></span></code></pre></div><p>Of course, <code>[figwheel](https://github.com/bhauman/lein-figwheel)</code> is there since it is such a help with ClojureScript development. The <code>--reagent</code> flag means that the project should be created to use the marvelous <a href="https://reagent-project.github.io/">Reagent</a> library. Reagent is used primarily to do intelligent, dynamic updates to the DOM, but for this project, it is only used for its ease of creating UI components with the <a href="https://github.com/weavejester/hiccup/wiki/Syntax">Hiccup syntax</a>.</p>
 <p>You can grab a copy of the code from the <a href="https://helixteamhub.cloud/Regolith/projects/binom-stats/repositories/voice-demo/tree/default">repository on HelixTeamHub</a>. If you look in the README file and execute the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">lein figwheel
-</code></pre></div><p>you will build the project and start it running in your default browser. If your browser supports speech synthesis, the browser page should look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lein figwheel
+</span></span></code></pre></div><p>you will build the project and start it running in your default browser. If your browser supports speech synthesis, the browser page should look like this:</p>
 <p><a href="https://yo-dave.com/static/img/2016-07-17-Speech_Synthesis_UI_Clip.PNG"><img src="https://yo-dave.com/static/img/2016-07-17-Speech_Synthesis_UI_Clip.PNG" alt="Speech Synthesis UI Clip" title="Speech Synthesis UI"><!-- raw HTML omitted --><!-- raw HTML omitted -->Speech Synthesis UI<!-- raw HTML omitted --></a></p>
 <p>In my testing on Windows 10, only <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> and <a href="https://www.google.com/chrome/">Chrome</a> supported the necessary API. Just type something into the empty text box and click the big button at the bottom labeled &ldquo;Speak&rdquo;. You can also fiddle with the voice used, the volume it speaks at, the rate it speaks, and the pitch.</p>
 <p>The code is pretty straightforward. It first determines if the browser supports speech synthesis and constructs the appropriate version of the UI and awaits your input. Most everything else is dealing with the settings you&rsquo;ve made and speaking.</p>
 <p>The only moderately tricky thing about the code is how to load the voices. For Firefox, you just load them. But Chrome loads voices asynchronously. That means they may load after the DOM has been built. Also, they may reload at other times, hence this code that builds the GUI when speech synthesis is supported. The call to<code> load-voices</code> upon detection of the <code>&quot;DOMContentLoaded&quot;</code> event loads the voices for Firefox but typically loads nothing when running Chrome. The listener for <code>&quot;onvoiceschanged&quot;</code> calls the function to load the voices on Chrome.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>supported-page []
-  (<span style="color:#a6e22e">.addEventListener</span> js/window <span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span> load-voices)
-  (<span style="color:#66d9ef">let </span>[speech-syn (<span style="color:#a6e22e">.-speechSynthesis</span> js/window)]
-    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-onvoiceschanged</span> speech-syn) load-voices))
-  [<span style="color:#e6db74">:div</span>
-   [<span style="color:#e6db74">:p</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;is-supported&#34;</span>} <span style="color:#e6db74">&#34;Your browser &#34;</span> [<span style="color:#e6db74">:strong</span> <span style="color:#e6db74">&#34;supports&#34;</span>] <span style="color:#e6db74">&#34;speech synthesis.&#34;</span>]
-   [speech-msg]
-   [voice-selection]
-   [option-sliders]
-   [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;speak&#34;</span> <span style="color:#e6db74">:on-click</span> handle-click} <span style="color:#e6db74">&#34;Speak&#34;</span>]])
-</code></pre></div><p>Likewise, since<code> load-voices</code> may be called multiple times, it needs to clear out any previous contents in the drop-down selection box.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>load-voices []
-  (<span style="color:#66d9ef">let </span>[speech-syn (<span style="color:#a6e22e">.-speechSynthesis</span> js/window)
-        voices (<span style="color:#a6e22e">.getVoices</span> speech-syn)
-        va (<span style="color:#a6e22e">js-&gt;clj</span> voices)
-        voice-selecter (<span style="color:#a6e22e">.getElementById</span> js/document <span style="color:#e6db74">&#34;voice&#34;</span>)]
-    <span style="color:#75715e">;; clear any existing choices</span>
-    (<span style="color:#a6e22e">while</span> (pos? (<span style="color:#a6e22e">.-length</span> voice-selecter))
-      (<span style="color:#a6e22e">.remove</span> voice-selecter <span style="color:#e6db74">&#34;0&#34;</span>))
-    (doall (for [v va]
-             (<span style="color:#66d9ef">let </span>[option (<span style="color:#a6e22e">.createElement</span> js/document <span style="color:#e6db74">&#34;option&#34;</span>)
-                   name (<span style="color:#a6e22e">.-name</span> v)]
-               (aset option <span style="color:#e6db74">&#34;value&#34;</span> name)
-               (aset option <span style="color:#e6db74">&#34;innerHTML&#34;</span> name)
-               (<span style="color:#a6e22e">.appendChild</span> voice-selecter option))))))
-</code></pre></div><p>Still, getting things to start working is pretty easy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>supported-page []
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">.addEventListener</span> js/window <span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span> load-voices)
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[speech-syn (<span style="color:#a6e22e">.-speechSynthesis</span> js/window)]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">set!</span> (<span style="color:#a6e22e">.-onvoiceschanged</span> speech-syn) load-voices))
+</span></span><span style="display:flex;"><span>  [<span style="color:#e6db74">:div</span>
+</span></span><span style="display:flex;"><span>   [<span style="color:#e6db74">:p</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;is-supported&#34;</span>} <span style="color:#e6db74">&#34;Your browser &#34;</span> [<span style="color:#e6db74">:strong</span> <span style="color:#e6db74">&#34;supports&#34;</span>] <span style="color:#e6db74">&#34;speech synthesis.&#34;</span>]
+</span></span><span style="display:flex;"><span>   [speech-msg]
+</span></span><span style="display:flex;"><span>   [voice-selection]
+</span></span><span style="display:flex;"><span>   [option-sliders]
+</span></span><span style="display:flex;"><span>   [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;speak&#34;</span> <span style="color:#e6db74">:on-click</span> handle-click} <span style="color:#e6db74">&#34;Speak&#34;</span>]])
+</span></span></code></pre></div><p>Likewise, since<code> load-voices</code> may be called multiple times, it needs to clear out any previous contents in the drop-down selection box.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>load-voices []
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let </span>[speech-syn (<span style="color:#a6e22e">.-speechSynthesis</span> js/window)
+</span></span><span style="display:flex;"><span>        voices (<span style="color:#a6e22e">.getVoices</span> speech-syn)
+</span></span><span style="display:flex;"><span>        va (<span style="color:#a6e22e">js-&gt;clj</span> voices)
+</span></span><span style="display:flex;"><span>        voice-selecter (<span style="color:#a6e22e">.getElementById</span> js/document <span style="color:#e6db74">&#34;voice&#34;</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">;; clear any existing choices</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">while</span> (pos? (<span style="color:#a6e22e">.-length</span> voice-selecter))
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">.remove</span> voice-selecter <span style="color:#e6db74">&#34;0&#34;</span>))
+</span></span><span style="display:flex;"><span>    (doall (for [v va]
+</span></span><span style="display:flex;"><span>             (<span style="color:#66d9ef">let </span>[option (<span style="color:#a6e22e">.createElement</span> js/document <span style="color:#e6db74">&#34;option&#34;</span>)
+</span></span><span style="display:flex;"><span>                   name (<span style="color:#a6e22e">.-name</span> v)]
+</span></span><span style="display:flex;"><span>               (aset option <span style="color:#e6db74">&#34;value&#34;</span> name)
+</span></span><span style="display:flex;"><span>               (aset option <span style="color:#e6db74">&#34;innerHTML&#34;</span> name)
+</span></span><span style="display:flex;"><span>               (<span style="color:#a6e22e">.appendChild</span> voice-selecter option))))))
+</span></span></code></pre></div><p>Still, getting things to start working is pretty easy.</p>
 <p>Although working with Chrome is more troublesome. It seems to support many more voices, at least on my system. It is kind of fun to hear how all of the ex-US voices pronounce things.</p>
   
   
