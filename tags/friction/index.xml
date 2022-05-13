@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 12:55:22 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/friction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 16:37:44 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/friction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogging Friction (part 2)</title>
+      <link>https://yo-dave.com/2022/05/13/blogging-friction-part-2/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/2022/05/13/blogging-friction-part-2/</guid>
+      <description>Ironically, after posting about &amp;ldquo;Blogging Friction&amp;rdquo;, I took a break from blogging at all for awhile.
+When it came time that there was something I wanted to post about again, things didn&amp;rsquo;t work.
+Yet again, things had changed on GitHub and GitHub Pages. First GitHub stopped allowing access via passwords. You had to move to SSH access. Then, for GitHub Pages, you had to add &amp;ldquo;Deploy Tokens&amp;rdquo;, another kind of SSH token.</description>
+    </item>
+    
     <item>
       <title>Blogging Friction</title>
       <link>https://yo-dave.com/2021/04/07/blogging-friction/</link>

@@ -2,13 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yo-dave.com/tags/api/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/blogging/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/2022/05/13/blogging-friction-part-2/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/cwiki/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/friction/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/git/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/github/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/github-pages/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/post/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/tags/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
+    <loc>https://yo-dave.com/</loc>
+    <lastmod>2022-05-13T16:59:36-04:00</lastmod>
+  </url><url>
     <loc>https://yo-dave.com/tags/functional-programming/</loc>
     <lastmod>2022-05-01T16:53:56-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/2022/05/01/generating-pseudo-random-numbers-in-scheme/</loc>
-    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/post/</loc>
     <lastmod>2022-05-01T16:53:56-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/prng/</loc>
@@ -23,34 +53,7 @@
     <loc>https://yo-dave.com/tags/scheme/</loc>
     <lastmod>2022-05-01T16:53:56-04:00</lastmod>
   </url><url>
-    <loc>https://yo-dave.com/tags/</loc>
-    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/</loc>
-    <lastmod>2022-05-01T16:53:56-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/api/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/blogging/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
     <loc>https://yo-dave.com/2021/04/07/blogging-friction/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/cwiki/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/friction/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/git/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/github/</loc>
-    <lastmod>2021-04-07T17:28:55-04:00</lastmod>
-  </url><url>
-    <loc>https://yo-dave.com/tags/github-pages/</loc>
     <lastmod>2021-04-07T17:28:55-04:00</lastmod>
   </url><url>
     <loc>https://yo-dave.com/tags/dictionary/</loc>

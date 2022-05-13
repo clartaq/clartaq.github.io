@@ -7,7 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2011-2020, David D. Clark. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 01 May 2022 10:31:17 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 16:37:44 -0400</lastBuildDate><atom:link href="https://yo-dave.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://yo-dave.com/tags/api/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogging</title>
+      <link>https://yo-dave.com/tags/blogging/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CWiki</title>
+      <link>https://yo-dave.com/tags/cwiki/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/cwiki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>friction</title>
+      <link>https://yo-dave.com/tags/friction/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/friction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://yo-dave.com/tags/git/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://yo-dave.com/tags/github/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github pages</title>
+      <link>https://yo-dave.com/tags/github-pages/</link>
+      <pubDate>Fri, 13 May 2022 16:37:44 -0400</pubDate>
+      
+      <guid>https://yo-dave.com/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>functional programming</title>
       <link>https://yo-dave.com/tags/functional-programming/</link>
@@ -50,69 +113,6 @@
       <pubDate>Sun, 01 May 2022 10:31:17 -0400</pubDate>
       
       <guid>https://yo-dave.com/tags/scheme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>API</title>
-      <link>https://yo-dave.com/tags/api/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blogging</title>
-      <link>https://yo-dave.com/tags/blogging/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/blogging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CWiki</title>
-      <link>https://yo-dave.com/tags/cwiki/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/cwiki/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>friction</title>
-      <link>https://yo-dave.com/tags/friction/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/friction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://yo-dave.com/tags/git/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GitHub</title>
-      <link>https://yo-dave.com/tags/github/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github pages</title>
-      <link>https://yo-dave.com/tags/github-pages/</link>
-      <pubDate>Wed, 07 Apr 2021 12:55:22 -0400</pubDate>
-      
-      <guid>https://yo-dave.com/tags/github-pages/</guid>
       <description></description>
     </item>
     
